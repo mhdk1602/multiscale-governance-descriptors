@@ -1,0 +1,62 @@
+{
+  "total_nodes": 108,
+  "total_edges": 161,
+  "domains": {
+    "domain_1": {
+      "maturity": "high",
+      "node_count": 28,
+      "edge_count": 46,
+      "pct_has_steward": 0.82,
+      "pct_has_tests": 0.82,
+      "pct_has_documentation": 0.89
+    },
+    "domain_2": {
+      "maturity": "high",
+      "node_count": 18,
+      "edge_count": 23,
+      "pct_has_steward": 0.94,
+      "pct_has_tests": 0.94,
+      "pct_has_documentation": 0.83
+    },
+    "domain_3": {
+      "maturity": "medium",
+      "node_count": 21,
+      "edge_count": 34,
+      "pct_has_steward": 0.43,
+      "pct_has_tests": 0.57,
+      "pct_has_documentation": 0.38
+    },
+    "domain_4": {
+      "maturity": "low",
+      "node_count": 16,
+      "edge_count": 28,
+      "pct_has_steward": 0.19,
+      "pct_has_tests": 0.06,
+      "pct_has_documentation": 0.06
+    },
+    "domain_5": {
+      "maturity": "medium",
+      "node_count": 13,
+      "edge_count": 18,
+      "pct_has_steward": 0.62,
+      "pct_has_tests": 0.54,
+      "pct_has_documentation": 0.69
+    },
+    "domain_6": {
+      "maturity": "low",
+      "node_count": 12,
+      "edge_count": 19,
+      "pct_has_steward": 0.17,
+      "pct_has_tests": 0.08,
+      "pct_has_documentation": 0.17
+    }
+  },
+  "layer_counts": {
+    "source": 33,
+    "staging": 29,
+    "intermediate": 21,
+    "mart": 15,
+    "exposure": 10
+  },
+  "cross_domain_edges": 7
+}
