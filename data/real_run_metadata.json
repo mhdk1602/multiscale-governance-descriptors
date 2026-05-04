@@ -1,0 +1,57 @@
+{
+  "created_at_utc": "2026-05-04T20:25:46.441623+00:00",
+  "artifact_type": "anonymized_static_code_derived_lineage_topology",
+  "graph_kind": "static ETL dependency topology derived from accessible source artifacts; not a dbt manifest export",
+  "source_scope": "one accessible backend repository; raw source identifiers redacted from exported graph",
+  "node_count": 86,
+  "edge_count": 97,
+  "weak_component_count": 1,
+  "largest_weak_component_node_count": 86,
+  "passes_requested_minimum_50_nodes": true,
+  "anonymization": {
+    "node_ids": "sequential opaque identifiers",
+    "domains": "mapped to domain_N labels",
+    "identifier_map_exported": false,
+    "salt_exported": false,
+    "real_names_exported": false,
+    "schemas_columns_sql_or_business_logic_exported": false
+  },
+  "governance_field_semantics": {
+    "has_steward": "false means no steward signal was available in accessible source artifacts; not a catalog assertion",
+    "has_tests": "false means no dbt/data-quality test signal was available in accessible source artifacts; code unit tests were not counted as data-quality tests",
+    "has_documentation": "false means no catalog description was available in accessible source artifacts"
+  },
+  "layer_counts": {
+    "intermediate/aggregate": 2,
+    "intermediate/features": 3,
+    "intermediate/filter": 3,
+    "intermediate/join": 15,
+    "mart/inference_input": 1,
+    "mart/inference_lookup": 10,
+    "mart/model_ready": 1,
+    "mart/training_input": 1,
+    "source/raw": 29,
+    "staging/extract": 21
+  },
+  "domain_counts": {
+    "domain_1": 6,
+    "domain_10": 2,
+    "domain_11": 3,
+    "domain_12": 3,
+    "domain_13": 1,
+    "domain_14": 33,
+    "domain_2": 13,
+    "domain_3": 3,
+    "domain_4": 2,
+    "domain_5": 2,
+    "domain_6": 2,
+    "domain_7": 8,
+    "domain_8": 6,
+    "domain_9": 2
+  },
+  "known_limitations": [
+    "No dbt manifest.json or catalog.json was reachable via the active connectors at export time.",
+    "The topology reflects static source-code lineage inference, not runtime execution lineage.",
+    "Governance attributes are observation-based placeholders because no catalog export was reachable."
+  ]
+}
