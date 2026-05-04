@@ -1,0 +1,39 @@
+{
+  "generated_at_utc": "2026-05-04T21:11:22.291157+00:00",
+  "source_artifacts": [
+    "manifest.json",
+    "catalog.json"
+  ],
+  "manifest_dbt_schema_version": "https://schemas.getdbt.com/dbt/manifest/v12.json",
+  "catalog_dbt_schema_version": "https://schemas.getdbt.com/dbt/catalog/v1.json",
+  "dbt_version": "1.11.0rc1",
+  "manifest_generated_at": "2026-05-04T20:56:11.678138Z",
+  "catalog_generated_at": "2026-05-04T20:56:24.762641Z",
+  "manifest_and_catalog_invocation_match": true,
+  "export_policy": {
+    "included": [
+      "anonymized asset nodes",
+      "anonymized dependency edges",
+      "coarse layer/tier labels",
+      "anonymized domain groups",
+      "steward/test/documentation booleans/counts"
+    ],
+    "excluded": [
+      "raw unique_id",
+      "database",
+      "schema",
+      "alias/name",
+      "relation_name",
+      "SQL",
+      "compiled SQL",
+      "file paths",
+      "column names",
+      "descriptions/comments",
+      "owner names/emails",
+      "anonymization salt",
+      "identifier mapping"
+    ],
+    "identifier_strategy": "private-salt HMAC node IDs; salt and mapping not exported",
+    "domain_strategy": "inferred from source/model grouping, then randomized to domain_### labels without exporting mapping"
+  }
+}

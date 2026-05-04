@@ -1,0 +1,41 @@
+{
+  "status": "complete",
+  "graph_scope": "dbt manifest asset dependency topology",
+  "node_count": 223,
+  "edge_count": 263,
+  "component_count": 38,
+  "largest_component_node_count": 185,
+  "largest_component_edge_count": 262,
+  "passes_50_node_segment_threshold": true,
+  "is_dag": true,
+  "isolated_node_count": 36,
+  "nodes_with_tests": 30,
+  "total_attached_test_count": 81,
+  "nodes_with_documentation": 96,
+  "nodes_with_steward": 0,
+  "layer_counts": {
+    "gold/mart": 35,
+    "silver/intermediate": 33,
+    "source/raw": 155
+  },
+  "resource_type_counts": {
+    "model": 68,
+    "source": 155
+  },
+  "materialization_counts": {
+    "ephemeral": 22,
+    "incremental": 8,
+    "not_applicable": 155,
+    "table": 35,
+    "view": 3
+  },
+  "catalog_coverage": {
+    "assets_with_catalog_entry": 190,
+    "assets_without_catalog_entry": 33
+  },
+  "notes": [
+    "Raw dbt unique IDs, relation names, schemas, file paths, column names, descriptions, SQL, and owner names were not exported.",
+    "has_steward is false unless steward/owner metadata was explicitly present in manifest/catalog metadata.",
+    "has_documentation is true when model/source descriptions, relation comments, or column descriptions/comments were present; text was not exported."
+  ]
+}
