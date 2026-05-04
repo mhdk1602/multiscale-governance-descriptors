@@ -11,3 +11,6 @@ from governance_descriptors.blast_radius import (
 from governance_descriptors.spectral import (
     spectral_descriptors,
 )
+from governance_descriptors.persistent_homology import (
+    topological_descriptors,
+)
