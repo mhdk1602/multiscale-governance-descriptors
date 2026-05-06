@@ -25,7 +25,7 @@ def _to_undirected_connected(g):
 
 
 def _laplacian_eigenvalues(g, k=None):
-    """Compute Laplacian eigenvalues. Full spectrum for small graphs, partial for large."""
+    """Eigenvalues of the combinatorial (unnormalized) Laplacian L = D - A."""
     L = nx.laplacian_matrix(g).astype(float)
     n = g.number_of_nodes()
 

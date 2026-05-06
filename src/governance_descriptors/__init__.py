@@ -13,4 +13,5 @@ from governance_descriptors.spectral import (
 )
 from governance_descriptors.persistent_homology import (
     topological_descriptors,
+    cycle_rank_descriptors,
 )

@@ -22,8 +22,9 @@ import networkx as nx
 from governance_descriptors.community_stability import community_descriptor_summary
 from governance_descriptors.blast_radius import concentration_profile
 from governance_descriptors.spectral import spectral_descriptors
-from governance_descriptors.persistent_homology import topological_descriptors
+from governance_descriptors.persistent_homology import topological_descriptors, cycle_rank_descriptors
 from governance_descriptors.generators import scaled_lineage
+from governance_descriptors.stats_utils import benjamini_hochberg
 from governance_descriptors.mttd import (
     place_monitors_stewardship,
     place_monitors_betweenness,
@@ -98,6 +99,7 @@ def run_experiment(scales=None, seeds=None):
 
                 # D4
                 d4 = topological_descriptors(g)
+                cr = cycle_rank_descriptors(g)
 
                 # Baselines
                 bl = single_scale_baselines(g)
@@ -137,6 +139,8 @@ def run_experiment(scales=None, seeds=None):
                     "D4_h1_persist": d4["h1_total_persistence"],
                     "D4_h1_entropy": d4["h1_persistence_entropy"],
                     "D4_h1_bars_norm": d4["h1_n_bars"] / n if n > 0 else 0,
+                    "D4_cycle_rank": cr["cycle_rank"],
+                    "D4_cycle_rank_norm": cr["cycle_rank_norm"],
                     # Baselines
                     **{f"BL_{k}": v for k, v in bl.items()},
                     # MTTD
@@ -159,7 +163,8 @@ def summarize(df):
 
     key_cols = [
         "D1_csi", "D1_frag_onset", "D2_max_gini", "D3_norm_gap",
-        "D3_fiedler_bim", "D4_h1_bars_norm", "MTTD_stew_mean",
+        "D3_fiedler_bim", "D4_h1_bars_norm", "D4_cycle_rank_norm",
+        "MTTD_stew_mean",
         "BL_mean_degree", "BL_max_betweenness", "BL_diameter",
     ]
 
@@ -190,6 +195,62 @@ def summarize(df):
                 d = 0.0
             sig = "***" if abs(d) > 0.8 else "**" if abs(d) > 0.5 else "*" if abs(d) > 0.2 else ""
             print(f"    {col:25s}: d={d:+.3f} {sig}")
+
+    # Mann-Whitney U with BH FDR correction
+    print("\n" + "=" * 70)
+    print("MANN-WHITNEY U (well vs poor) + BH FDR CORRECTION")
+    print("=" * 70)
+
+    from scipy import stats as sp_stats
+
+    all_mw_tests = []
+    for scale in df["scale"].unique():
+        sub = df[df["scale"] == scale]
+        well = sub[sub["governance"] == "well"]
+        poor = sub[sub["governance"] == "poor"]
+        for col in key_cols:
+            wv = well[col].dropna().values
+            pv = poor[col].dropna().values
+            if len(wv) >= 3 and len(pv) >= 3:
+                u_stat, p_val = sp_stats.mannwhitneyu(wv, pv, alternative="two-sided")
+                all_mw_tests.append({
+                    "scale": scale, "descriptor": col,
+                    "u_stat": u_stat, "p_val": p_val,
+                    "well_mean": float(np.mean(wv)), "poor_mean": float(np.mean(pv)),
+                })
+
+    if all_mw_tests:
+        raw_ps = np.array([t["p_val"] for t in all_mw_tests])
+        fdr_ps = benjamini_hochberg(raw_ps)
+        for i, t in enumerate(all_mw_tests):
+            t["fdr_p"] = float(fdr_ps[i])
+
+        for scale in df["scale"].unique():
+            subset = [t for t in all_mw_tests if t["scale"] == scale]
+            subset.sort(key=lambda t: t["fdr_p"])
+            print(f"\n  Scale: {scale}")
+            print(f"    {'Descriptor':25s} {'U':>7s} {'raw_p':>8s} {'FDR_p':>8s} {'Sig':>5s}")
+            print(f"    {'-'*53}")
+            for t in subset:
+                sig = "***" if t["fdr_p"] < 0.01 else "**" if t["fdr_p"] < 0.05 else "*" if t["fdr_p"] < 0.10 else "ns"
+                print(f"    {t['descriptor']:25s} {t['u_stat']:7.0f} "
+                      f"{t['p_val']:8.4f} {t['fdr_p']:8.4f} {sig:>5s}")
+
+    # D4 ablation: H1/N vs cycle_rank/N effect sizes
+    print("\n" + "=" * 70)
+    print("D4 ABLATION: H1/N vs cycle_rank/N (Cohen's d, well vs poor)")
+    print("=" * 70)
+    for scale in df["scale"].unique():
+        sub = df[df["scale"] == scale]
+        well = sub[sub["governance"] == "well"]
+        poor = sub[sub["governance"] == "poor"]
+        print(f"\n  Scale: {scale}")
+        for col in ["D4_h1_bars_norm", "D4_cycle_rank_norm"]:
+            w_mean, w_std = well[col].mean(), well[col].std()
+            p_mean, p_std = poor[col].mean(), poor[col].std()
+            pooled_std = np.sqrt((w_std**2 + p_std**2) / 2)
+            d = (w_mean - p_mean) / pooled_std if pooled_std > 0 else 0.0
+            print(f"    {col:25s}: well={w_mean:.4f}, poor={p_mean:.4f}, d={d:+.3f}")
 
 
 def main():

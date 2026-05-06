@@ -13,8 +13,8 @@
 \usepackage{multirow}
 \usepackage{xcolor}
 
-\title{Multi-Scale Structural Descriptors for Data Governance:\\
-Measuring Institutional Maturity Through Lineage Graph Topology}
+\title{Multi-Scale Structural Descriptors for Governance-Relevant\\
+Patterns in Data Lineage Graphs}
 
 \author{
   Dineshkumar Malemapti Hari \\
@@ -29,27 +29,29 @@ Measuring Institutional Maturity Through Lineage Graph Topology}
 
 \begin{abstract}
 Data governance maturity is typically assessed through surveys, audits,
-and capability-model checklists. These methods capture stated policy but
-not realized practice. We propose four multi-scale structural descriptors
-that measure governance quality directly from the topology of data lineage
-graphs: community stability under resolution sweep (D1), blast-radius
-concentration profile (D2), spectral gap and Fiedler structure (D3), and
-persistent homology of shortest-path filtrations (D4). In controlled
-experiments on synthetic lineage graphs at three governance quality levels,
-all four descriptors achieve statistically significant differentiation
-($p < 0.001$, Mann--Whitney $U$), with Cohen's $d$ ranging from 1.7 to
-16.0 at the largest scale tested ($N = 200$). The descriptors respond to
-governance-relevant interventions (domain boundary reorganization,
-orphan removal) with signal-to-noise ratios exceeding 6.5, while remaining
-insensitive to random perturbations of comparable magnitude. Multi-scale
-features explain 75\% more variance in Mean-Time-to-Detect simulations
-than single-scale baselines ($R^2 = 0.307$ vs.\ $0.175$). Validation on
-an anonymized production dbt lineage graph (223 nodes, 263 edges, 26
-domains) yields Spearman correlations between D3 descriptors and
-governance metadata (documentation rate $\rho = -0.71$, $p = 0.001$;
-composite governance score $\rho = -0.64$, $p = 0.004$). These results
-suggest that lineage topology encodes recoverable governance signal,
-opening a path toward continuous, audit-free governance monitoring.
+and capability-model checklists that capture stated policy but not
+realized practice. We propose four multi-scale structural descriptors
+that detect governance-relevant patterns in the topology of data
+lineage graphs: community stability under resolution sweep (D1),
+blast-radius concentration profile (D2), spectral gap and Fiedler
+structure (D3), and persistent homology of shortest-path filtrations
+(D4). In controlled experiments on synthetic lineage graphs at three
+governance levels, D1, D2, and D4 achieve statistically significant
+differentiation after Benjamini--Hochberg FDR correction at the
+largest scale tested ($N \approx 130$), with Cohen's $d$ exceeding
+3.9 for D1 and 15.0 for D4. Validation on an anonymized production
+dbt lineage graph (223 nodes, 263 edges, 26 domains) yields
+permutation-based Spearman correlations between D3 algebraic
+connectivity and documentation rate ($\rho = -0.71$, permutation
+$p = 0.002$, FDR-adjusted $p = 0.043$). This association survives
+partial correlation controlling for domain size, edge count, and
+source fraction (partial $\rho = -0.55$, $p = 0.021$). A
+degree-preserving rewiring null model confirms that D1, D3 Fiedler
+bimodality, and D4 H1 features capture structure beyond what degree
+sequences alone determine ($|z| > 2.9$). These results, drawn from
+a single case study, suggest that lineage topology encodes
+governance-relevant structural signal, though generalization
+requires validation across additional organizations.
 \end{abstract}
 
 \section{Introduction}
@@ -62,50 +64,51 @@ and documented interfaces between stages of a data pipeline. Immature
 governance manifests as orphaned assets, unclear ownership, redundant
 paths, and untested transformations.
 
-The dominant approach to measuring governance maturity relies on
-self-assessment against capability models such as DAMA-DMBOK or DCAM.
-These instruments capture stated policy. They do not capture the actual
-structural organization of data assets. Two organizations with identical
-DMBOK maturity scores can have radically different lineage topologies:
-one with clean layered DAGs and well-separated domain boundaries, another
-with tangled cross-domain dependencies and redundant paths.
+The dominant approach to assessing governance maturity relies on
+self-assessment against capability models such as DAMA-DMBOK
+\citep{dama2017} or DCAM. These frameworks are reference guides: they
+organize knowledge areas and suggest best practices, but do not
+prescribe a single maturity ladder. More fundamentally, they capture
+stated policy rather than the actual structural organization of data
+assets. Two organizations with similar self-assessment scores can have
+very different lineage topologies: one with clean layered DAGs and
+well-separated domain boundaries, another with tangled cross-domain
+dependencies and redundant paths.
 
-We hypothesize that governance maturity leaves structural fingerprints in
-data lineage graphs. If domain boundaries are well-enforced, community
+We hypothesize that governance practices leave structural fingerprints in
+data lineage graphs. If domain boundaries are enforced, community
 detection at the appropriate resolution should recover stable, modular
-partitions. If transformations are well-tested, the blast radius of any
-single failure should be concentrated rather than dispersed. If the
-pipeline architecture is clean, the algebraic connectivity of the lineage
-graph should reflect appropriate coupling between components. If
-redundant paths exist (a sign of technical debt or unclear ownership),
-persistent homology should detect cycles in the undirected skeleton.
+partitions. If transformations are tested, the blast radius of any
+single failure should be concentrated rather than diffuse. If the
+pipeline architecture is clean, the spectral properties of the lineage
+graph should reflect appropriate coupling. If redundant dependency paths
+exist (a sign of organic growth without architectural oversight),
+persistent homology should detect reconvergent structure in the
+undirected skeleton.
 
 This paper introduces four multi-scale structural descriptors designed
 to capture these properties, validates them on synthetic lineage graphs
 with controlled governance variation, tests their sensitivity to
 governance-relevant interventions, and provides initial validation on
-a real production dbt lineage graph.
+a real production dbt lineage graph with genuine governance metadata.
 
 \subsection{Contributions}
 
 \begin{enumerate}
-  \item Four graph-theoretic descriptors (D1--D4) that measure governance
-        quality from lineage topology, each operating at a different
-        structural scale. To our knowledge, no prior work applies
-        community stability, blast-radius Gini profiles, spectral gap
-        analysis, or persistent homology to data governance measurement.
+  \item Four graph-theoretic descriptors (D1--D4) that detect
+        governance-relevant structural patterns from lineage topology,
+        each operating at a different structural scale.
 
-  \item An empirical validation framework with synthetic lineage generators
-        at three governance quality levels, demonstrating statistically
-        significant differentiation and intervention sensitivity.
-
-  \item A predictive comparison showing that multi-scale structural
-        features explain substantially more variance in simulated
-        governance outcomes (Mean-Time-to-Detect) than single-scale
-        graph statistics.
+  \item An empirical validation framework with synthetic lineage
+        generators at three governance levels, demonstrating statistically
+        significant differentiation with FDR correction and a
+        degree-preserving null model.
 
   \item Initial real-data validation on an anonymized production dbt
-        lineage graph with genuine governance metadata.
+        lineage graph (223 nodes, 26 domains) with permutation-based
+        inference, partial correlations controlling for structural
+        confounds, and a cycle-rank ablation for the topological
+        descriptor.
 \end{enumerate}
 
 \section{Related Work}
@@ -113,33 +116,31 @@ a real production dbt lineage graph.
 \subsection{Governance Measurement}
 
 Data governance frameworks define structural and procedural mechanisms
-for data management \citep{khatri2010,abraham2019}. Assessment relies on
-maturity models: DAMA-DMBOK prescribes five levels across eleven
-knowledge areas; DCAM evaluates institutional readiness for data
-management. \citet{weber2009} argue that governance design is contingent
-on organizational strategy, implying that a single maturity scale is
-insufficient.
+for data management \citep{khatri2010,abraham2019}. Assessment typically
+relies on maturity models: DAMA-DMBOK \citep{dama2017} organizes eleven
+knowledge areas as a reference guide (not a prescriptive maturity
+ladder); DCAM evaluates institutional readiness. \citet{weber2009}
+argue that governance design is contingent on organizational strategy,
+implying that a single maturity scale is insufficient.
 
 Institutional theory provides a theoretical lens. \citet{dimaggio1983}
 describe three isomorphic pressures (coercive, mimetic, normative) that
 cause organizations to converge structurally under shared governance
 regimes. \citet{scott2013} extends this via regulative, normative, and
-cultural-cognitive pillars. Recent work positions governance principles
-as emergent institutional arrangements rather than top-down mandates.
-We operationalize this view: if governance is an institutional
-arrangement, it should produce measurable structural signatures in the
-artifacts it governs.
+cultural-cognitive pillars. We adopt this view: if governance is an
+institutional arrangement, it should produce detectable structural
+signatures in the artifacts it governs.
 
 \subsection{Graph Analysis of Data Pipelines}
 
-\citet{li2025} apply temporal convolutional and graph convolutional
+\citet{hou2026} apply temporal convolutional and graph convolutional
 networks to data lineage DAGs for fault classification (1,240 nodes,
 5,870 edges), achieving 95.8\% accuracy. Their work uses lineage
-structure as input to prediction but does not measure governance
-quality from that structure.
+structure as input to prediction but does not extract governance-relevant
+patterns from that structure.
 
 Knowledge graph quality metrics \citep{seo2022} define six structural
-measures for knowledge graphs. \citet{tiddi2024} position knowledge
+measures for knowledge graphs. \citet{merono2024} position knowledge
 graphs as governance backbones for AI systems. Neither applies
 multi-scale graph descriptors to lineage topology.
 
@@ -151,9 +152,10 @@ The resolution parameter in modularity optimization
 \citet{delvenne2010} introduce stability as plateau detection via
 normalized variation of information (NVI). The Leiden algorithm
 \citep{traag2019} guarantees connected communities, addressing a known
-Louvain failure mode. We adapt the resolution sweep as a governance
-descriptor by measuring the stability of recovered communities across
-the full resolution range.
+Louvain failure mode. Our implementation uses the Louvain algorithm
+(via NetworkX) rather than Leiden, as the resolution sweep measures
+partition stability across resolutions rather than depending on
+within-resolution community connectedness guarantees.
 
 \subsection{Spectral Methods}
 
@@ -161,8 +163,8 @@ Algebraic connectivity (the second-smallest Laplacian eigenvalue)
 measures graph cohesion \citep{fiedler1973}. Spectral gap correlates
 with robustness to random failure and inversely with mean path length.
 Von Neumann spectral entropy \citep{domenico2016} quantifies complexity
-of the eigenvalue distribution. We compose these into a governance
-descriptor that captures coupling structure between pipeline components.
+of the eigenvalue distribution. We compose these into a descriptor
+that captures coupling structure between pipeline components.
 
 \subsection{Persistent Homology on Networks}
 
@@ -171,7 +173,8 @@ brain networks, social networks, and protein interaction networks
 \citep{otter2017,petri2013}. \citet{chowdhury2018} introduce directed
 persistent path homology. For DAGs, directed H1 is trivially zero (no
 directed cycles by definition), but H1 in the undirected skeleton
-detects redundant dependency paths. To our knowledge, no prior work
+detects reconvergent dependency paths where multiple routes exist
+between a source and its consumers. To our knowledge, no prior work
 applies persistent homology to data lineage or governance graphs.
 
 \section{Descriptors}
@@ -183,35 +186,41 @@ Edges represent dependency: $(u, v) \in E$ means $v$ depends on $u$.
 
 \subsection{D1: Community Stability Index (CSI)}
 
-We sweep the resolution parameter $\gamma$ of the Leiden algorithm over
-$[0.1, 3.0]$ on the undirected skeleton of $G$, computing community
-partitions $\mathcal{C}(\gamma)$ at each resolution. For adjacent
-resolution pairs $(\gamma_i, \gamma_{i+1})$, we compute the normalized
-variation of information:
+We sweep the resolution parameter $\gamma$ of the Louvain algorithm
+over $[0.1, 10.0]$ in 20 logarithmically spaced steps on the
+undirected skeleton of $G$, computing community partitions
+$\mathcal{C}(\gamma)$ at each resolution. For adjacent resolution
+pairs $(\gamma_i, \gamma_{i+1})$, we compute the normalized variation
+of information:
 
 \begin{equation}
   \text{NVI}(\gamma_i, \gamma_{i+1})
-  = \frac{H(\mathcal{C}_i | \mathcal{C}_{i+1})
-          + H(\mathcal{C}_{i+1} | \mathcal{C}_i)}
-         {H(\mathcal{C}_i, \mathcal{C}_{i+1})}
+  = \frac{\text{VI}(\mathcal{C}_i, \mathcal{C}_{i+1})}
+         {\log_2 N}
 \end{equation}
 
-The Community Stability Index aggregates this into a single scalar:
+\noindent where $\text{VI} = H(\mathcal{C}_i | \mathcal{C}_{i+1})
++ H(\mathcal{C}_{i+1} | \mathcal{C}_i)$ is the variation of
+information and $\log_2 N$ is the maximum possible entropy for $N$
+nodes. The Community Stability Index counts the fraction of
+consecutive resolution steps where the partition remains stable:
 
 \begin{equation}
-  \text{CSI} = 1 - \text{mean}(\text{NVI}(\gamma_i, \gamma_{i+1}))
+  \text{CSI} = \frac{|\{i : \text{NVI}(\gamma_i, \gamma_{i+1}) < \tau\}|}
+                    {n_{\text{steps}} - 1}, \quad \tau = 0.1
 \end{equation}
 
 CSI $\in [0, 1]$, with higher values indicating more stable community
-structure. We additionally extract fragmentation onset (the $\gamma$
-at which the number of communities first exceeds 1), modularity at
-$\gamma = 1$, and number of communities at $\gamma = 1$.
+structure across resolutions. We additionally extract fragmentation
+onset (the $\gamma$ at which the number of communities first exceeds
+twice the minimum), modularity at $\gamma = 1$, and number of
+communities at $\gamma = 1$.
 
 \textbf{Governance interpretation.} Well-governed pipelines with clear
-domain boundaries should exhibit high CSI (communities are stable across
-resolutions, reflecting genuine organizational structure). Poorly governed
-pipelines with tangled cross-domain dependencies should exhibit low CSI
-(communities shift erratically as resolution changes).
+domain boundaries should exhibit high CSI: communities are robust
+across resolutions because they reflect genuine organizational
+structure. Poorly governed pipelines with tangled cross-domain
+dependencies should exhibit low CSI.
 
 \subsection{D2: Blast-Radius Concentration Profile}
 
@@ -231,25 +240,27 @@ never reached).
 \textbf{Governance interpretation.} In well-governed pipelines, blast
 radius should be concentrated: a few hub nodes affect many downstream
 assets, while most nodes have limited impact. High max Gini indicates
-concentrated risk, which, when combined with stewardship data, reflects
-intentional architectural design. Low max Gini suggests diffuse,
-unpredictable failure propagation.
+concentrated risk, which, when combined with stewardship data, can
+reflect intentional architectural design.
 
 \subsection{D3: Spectral Gap and Fiedler Structure}
 
-From the normalized Laplacian $\mathcal{L}$ of the undirected skeleton,
-we extract:
+From the combinatorial (unnormalized) Laplacian $L = D - A$ of the
+undirected skeleton, where $D$ is the degree matrix and $A$ the
+adjacency matrix, we extract:
 
 \begin{itemize}
   \item Algebraic connectivity $\lambda_2$: the smallest nonzero
-        eigenvalue.
-  \item Normalized spectral gap: $\lambda_2 / N$.
+        eigenvalue of $L$.
+  \item Normalized spectral gap: $\lambda_2 / \lambda_{\max}$, where
+        $\lambda_{\max}$ is the largest eigenvalue.
   \item Fiedler bimodality: bimodality coefficient of the Fiedler vector
         (the eigenvector associated with $\lambda_2$).
-  \item Spectral entropy: von Neumann entropy of the normalized
-        eigenvalue distribution, $S = -\sum_i \bar{\lambda}_i
-        \log \bar{\lambda}_i$ where
-        $\bar{\lambda}_i = \lambda_i / \sum_j \lambda_j$.
+  \item Spectral entropy: von Neumann entropy of the eigenvalue
+        distribution, $S = -\sum_i \bar{\lambda}_i
+        \log_2 \bar{\lambda}_i$ where
+        $\bar{\lambda}_i = \lambda_i / \sum_j \lambda_j$
+        (computed over nonzero eigenvalues).
 \end{itemize}
 
 \textbf{Governance interpretation.} Algebraic connectivity measures
@@ -262,8 +273,8 @@ the coupling structure.
 \subsection{D4: Persistent Homology via Shortest-Path Filtration}
 
 We compute the all-pairs shortest-path distance matrix on the
-undirected skeleton of $G$ and construct a Rips complex filtration. For
-each filtration threshold $\epsilon$, we compute homology groups in
+undirected skeleton of $G$ and construct a Vietoris--Rips filtration.
+For each filtration threshold $\epsilon$, we compute homology groups in
 dimensions 0 and 1. The resulting persistence diagram records birth and
 death times for each topological feature.
 
@@ -275,23 +286,31 @@ From the H1 (cycle) persistence diagram, we extract:
   \item Total H1 persistence:
         $P_1 = \sum_i (d_i - b_i)$ over all H1 bars.
   \item H1 persistence entropy:
-        $S_1 = -\sum_i p_i \log p_i$ where
+        $S_1 = -\sum_i p_i \log_2 p_i$ where
         $p_i = (d_i - b_i) / P_1$.
 \end{itemize}
 
+As a simpler baseline, we also compute the cycle rank $\beta_1 = M - N + C$
+of the undirected skeleton (where $C$ is the number of connected
+components), which counts the total number of independent cycles without
+regard to their persistence or scale.
+
 \textbf{Governance interpretation.} H1 features in the undirected
-skeleton represent redundant dependency paths: alternative routes between
-nodes that do not exist in a clean tree-structured pipeline. High
-$n_{\text{H1}} / N$ indicates structural redundancy, which may reflect
-technical debt, unclear ownership, or organic growth without
-architectural oversight.
+skeleton represent reconvergent dependency paths: alternative routes
+between a source node and its consumers that do not exist in a clean
+tree-structured pipeline. Unlike cycle rank, persistent homology
+distinguishes between long-lived structural cycles (reflecting
+persistent architectural redundancy) and short-lived transient features.
+High $n_{\text{H1}} / N$ indicates reconvergent dependency structure.
 
 \section{Experimental Design}
 
 \subsection{Synthetic Lineage Generator}
 
 We generate directed acyclic lineage graphs at four scales
-($N \in \{30, 50, 100, 200\}$) and three governance quality levels:
+(tiny: $N \approx 14$--$34$; small: $N \approx 28$--$48$;
+medium: $N \approx 65$--$81$; large: $N \approx 114$--$133$)
+and three governance quality levels:
 
 \begin{description}
   \item[Well-governed:] Three clearly separated domains with layered
@@ -312,114 +331,104 @@ $4 \times 3 \times 10 = 120$ synthetic graphs.
 
 \subsection{Experiment 1: Governance Differentiation}
 
-For each graph, we compute all four descriptors (D1--D4), nine
-single-scale baselines (mean/max/std of degree, betweenness, and
-PageRank; diameter; density), and three MTTD-based outcome measures
-(monitor placement by stewardship, betweenness, and blast-radius
-strategies). Mann--Whitney $U$ tests compare well-governed vs.\
-poorly governed at each scale, with Cohen's $d$ for effect size.
+For each graph, we compute all four descriptors (D1--D4) plus
+cycle rank, nine single-scale baselines (degree, betweenness,
+PageRank statistics; diameter; density), and three MTTD-based outcome
+measures. Mann--Whitney $U$ tests compare well-governed vs.\
+poorly governed at each scale, with Benjamini--Hochberg FDR correction
+applied across all tests within each scale.
 
 \subsection{Experiment 2: Real Data Validation}
 
-We validate on two real lineage topologies:
+We validate on an anonymized production dbt manifest lineage (223 nodes,
+263 edges, 26 domains) exported using HMAC-SHA256 anonymization. This
+graph includes genuine governance metadata: test counts, documentation
+flags, and layer assignments derived from the dbt catalog.
 
-\begin{enumerate}
-  \item An anonymized production dbt manifest lineage (223 nodes, 263
-        edges, 26 domains) exported from a production dbt project using
-        HMAC-SHA256 anonymization. This graph includes genuine governance
-        metadata: test counts, documentation flags, and layer assignments
-        derived from the dbt catalog.
+For the dbt lineage, we partition by domain and compute permutation-based
+Spearman correlations (10,000 permutations) between per-domain descriptor
+values and governance metadata (test rate, documentation rate, composite
+governance score). All $p$-values are FDR-corrected via
+Benjamini--Hochberg. For D3 descriptors, we additionally report partial
+Spearman correlations controlling for domain size, edge count, and source
+fraction to address size-related confounding.
 
-  \item A static-code-derived ML pipeline topology (86 nodes, 97 edges,
-        14 domains) with observation-based governance placeholders.
-\end{enumerate}
+\subsection{Experiment 2b: Degree-Preserving Null Model}
 
-For the dbt lineage, we partition by domain and compute Spearman
-correlations between per-domain descriptor values and governance
-metadata (test rate, documentation rate, composite governance score).
+To test whether the descriptors capture structure beyond what degree
+sequences alone determine, we apply 100 degree-preserving directed edge
+rewirings to the real dbt graph (10$M$ swaps per rewiring). We compute
+D1--D4 and cycle rank on each rewired graph and report $z$-scores of
+the real values relative to the null distribution.
 
 \subsection{Experiment 3: Intervention Sensitivity}
 
 We apply four governance-relevant interventions to a baseline synthetic
-graph ($N = 132$, 3 domains):
-
-\begin{enumerate}
-  \item \textbf{Add domains:} Reorganize a fraction of nodes into new
-        domain boundaries.
-  \item \textbf{Remove orphans:} Delete nodes with no incoming or
-        outgoing edges.
-  \item \textbf{Remove shortcuts:} Delete edges that skip architectural
-        layers.
-  \item \textbf{Add monitors:} Place quality monitors at high-centrality
-        nodes.
-\end{enumerate}
-
-Each intervention is compared against 60 random perturbation trials
-(edge removal, addition, and rewiring at the same magnitude). The
+graph ($N = 132$, 3 domains): domain reorganization, orphan removal,
+shortcut removal, and monitor placement. Each intervention is compared
+against 60 random perturbation trials at the same magnitude. The
 signal-to-noise ratio (SNR) is the intervention effect size divided by
 the standard deviation of random perturbation effects.
 
 \subsection{Experiment 4: Predictive Comparison}
 
 We compare multi-scale features (D1--D4) against single-scale baselines
-in two prediction tasks:
+in two prediction tasks: classification of governance level (logistic
+regression and random forest) and regression of Mean-Time-to-Detect
+(Ridge and random forest). All models are evaluated via 5-fold
+cross-validation.
 
-\begin{itemize}
-  \item \textbf{Classification:} Logistic regression and random forest
-        predicting governance quality level (well vs.\ poor).
-  \item \textbf{Regression:} Ridge and random forest predicting
-        Mean-Time-to-Detect from structural features.
-\end{itemize}
-
-All models are evaluated via 5-fold cross-validation.
+\textbf{Note on MTTD.} The MTTD simulation places monitors at nodes
+flagged as stewards or at high-betweenness nodes. Since stewardship data
+overlaps with governance metadata, MTTD is not independent of the
+governance labels used elsewhere. The regression task tests whether
+structural descriptors predict MTTD beyond what single-scale graph
+statistics capture, not whether MTTD independently validates the
+descriptors.
 
 \section{Results}
-
-\subsection{Phase 1: Descriptor Validation}
-
-All four descriptors produce interpretable output on known graph
-families (complete graphs, barbell graphs, star DAGs, path graphs,
-Erd\H{o}s--R\'{e}nyi random graphs, and Zachary's karate club) at
-$N = 30$--$200$. D1 recovers the known two-community structure of the
-karate club (CSI = 0.886). D3 correctly identifies the complete graph
-as maximally connected ($\lambda_2 = N$) and the barbell as having near-zero
-algebraic connectivity. D4 detects cycles in the grid graph and reports
-zero H1 for tree structures.
 
 \subsection{Experiment 1: Governance Differentiation}
 
 \begin{table}[htb]
 \centering
-\caption{Governance differentiation at large scale ($N = 200$).
+\caption{Governance differentiation at large scale ($N \approx 114$--$133$).
   Mann--Whitney $U$ test, well-governed vs.\ poorly governed,
-  10 replicates per condition.}
+  10 replicates per condition. All $p$-values BH FDR-corrected.}
 \label{tab:exp1}
-\begin{tabular}{lrrrrr}
+\begin{tabular}{lrrrrrr}
 \toprule
-Descriptor & Well (mean) & Poor (mean) & $d$ & $U$ & $p$ \\
+Descriptor & Well & Poor & $d$ & $U$ & raw $p$ & FDR $p$ \\
 \midrule
-D1 CSI & 0.653 & 0.374 & 3.90 & 100 & $< 0.001$ \\
-D1 frag.\ onset & 0.800 & 0.154 & 4.74 & 100 & $< 0.001$ \\
-D2 max Gini & 0.568 & 0.527 & 1.70 & 90 & 0.003 \\
-D3 Fiedler bim. & 0.573 & 0.489 & 2.38 & 98 & $< 0.001$ \\
-D3 spectral ent. & 6.46 & 6.23 & 2.09 & 95 & $< 0.001$ \\
-D4 H1/N & 0.589 & 0.743 & $-15.99$ & 0 & $< 0.001$ \\
+D1 CSI & 0.653 & 0.374 & +3.90 & 100 & $< 0.001$ & $< 0.001$ \\
+D1 frag.\ onset & 0.800 & 0.154 & +4.74 & 100 & $< 0.001$ & $< 0.001$ \\
+D2 max Gini & 0.696 & 0.678 & +1.71 & 90 & 0.003 & 0.005 \\
+D3 Fiedler bim. & 0.709 & 0.864 & $-1.22$ & 14 & 0.007 & 0.011 \\
+D3 norm.\ gap & 0.005 & 0.005 & $-0.11$ & 55 & 0.734 & 0.769 \\
+D4 H1/N & 0.589 & 0.743 & $-16.0$ & 0 & $< 0.001$ & $< 0.001$ \\
+D4 cycle rank/N & 0.589 & 0.743 & $-16.0$ & 0 & $< 0.001$ & $< 0.001$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-All four descriptors achieve statistically significant differentiation
-($p < 0.01$) at $N = 200$. D4 (H1/N) shows the largest effect size
-($|d| = 15.99$): poorly governed graphs have more redundant paths
-per node. D1 (CSI) and D1 (fragmentation onset) show large effects
-($d > 3$), confirming that domain boundary quality is recoverable from
-community structure. D2 (max Gini) shows the weakest differentiation
-($d = 1.70$), suggesting that blast-radius concentration is less
-sensitive to governance variation at this scale.
+After FDR correction, D1 (CSI, fragmentation onset), D2 (max Gini),
+D3 (Fiedler bimodality), and D4 (H1/N) achieve statistically
+significant differentiation at the large scale. D3 normalized spectral
+gap does \emph{not} survive FDR correction (FDR $p = 0.77$), a
+discrepancy we revisit in the null model analysis.
 
-At medium scale ($N = 100$), three of four descriptors remain
-significant. At small scale ($N = 30$--$50$), only D4 and D1
-fragmentation onset achieve $p < 0.05$.
+D4 (H1/N) shows the largest effect size ($|d| = 16.0$): poorly
+governed graphs have more reconvergent dependency paths per node.
+D1 CSI and fragmentation onset show large effects ($d > 3.9$),
+confirming that domain boundary quality is recoverable from community
+structure. D2 max Gini shows the weakest differentiation ($d = 1.7$).
+
+\textbf{D4 ablation.} At the large scale, H1/N and cycle rank/N yield
+identical effect sizes ($d = -16.0$) because the synthetic generators
+produce graphs where all H1 cycles have similar persistence. At the
+tiny scale, a modest divergence appears (H1/N $d = -11.5$ vs.\ cycle
+rank/N $d = -9.0$). In this synthetic setting, the simpler cycle rank
+captures the same governance signal as persistent homology.
 
 \subsection{Experiment 2: Real Data Validation}
 
@@ -431,76 +440,157 @@ gold/mart) and 26 anonymized domains. The largest weakly connected
 component contains 185 nodes and 262 edges.
 
 Governance metadata reveals a clear gradient: gold/mart nodes have
-86\% test coverage and 91\% documentation coverage, while source/raw
-nodes have 0\% test coverage and 41\% documentation. Silver/intermediate
-nodes have 0\% for both. No steward metadata was available in this
-organization.
+86\% test coverage and 91\% documentation, while source/raw nodes have
+0\% test coverage and 41\% documentation. Silver/intermediate nodes
+have 0\% for both. No steward metadata was available.
 
 \begin{table}[htb]
 \centering
-\caption{Spearman correlations between per-domain descriptors and
-  governance metadata (18 domains with $N \geq 5$).}
+\caption{Permutation Spearman correlations between per-domain descriptors
+  and governance metadata (18 domains with $N \geq 5$). Permutation
+  $p$-values from 10,000 permutations; FDR $p$ via Benjamini--Hochberg.}
 \label{tab:exp2}
-\begin{tabular}{lrrl}
+\begin{tabular}{lrrrl}
 \toprule
-Descriptor vs.\ target & $\rho$ & $p$ & \\
+Descriptor vs.\ target & $\rho$ & perm.\ $p$ & FDR $p$ & \\
 \midrule
-\multicolumn{4}{l}{\textit{vs.\ composite governance score}} \\
-D3 algebraic connectivity & $-0.643$ & 0.004 & *** \\
-D3 normalized gap & $-0.635$ & 0.005 & *** \\
-D2 max Gini & $-0.447$ & 0.063 & * \\
-D3 spectral entropy & $-0.447$ & 0.063 & * \\
+\multicolumn{5}{l}{\textit{vs.\ composite governance score}} \\
+D3 algebraic connectivity & $-0.643$ & 0.006 & 0.080 & $\dagger$ \\
+D3 normalized gap & $-0.635$ & 0.007 & 0.080 & $\dagger$ \\
+D3 spectral entropy & $-0.447$ & 0.067 & 0.123 & \\
 \midrule
-\multicolumn{4}{l}{\textit{vs.\ documentation rate}} \\
-D3 algebraic connectivity & $-0.708$ & 0.001 & *** \\
-D3 normalized gap & $-0.701$ & 0.001 & *** \\
-D2 max Gini & $-0.563$ & 0.015 & ** \\
-D3 Fiedler bimodality & $-0.561$ & 0.016 & ** \\
+\multicolumn{5}{l}{\textit{vs.\ documentation rate}} \\
+D3 algebraic connectivity & $-0.708$ & 0.002 & 0.043 & * \\
+D3 normalized gap & $-0.701$ & 0.002 & 0.043 & * \\
+D3 Fiedler bimodality & $-0.561$ & 0.017 & 0.116 & \\
+D2 max Gini & $-0.563$ & 0.017 & 0.116 & \\
 \midrule
-\multicolumn{4}{l}{\textit{vs.\ test rate}} \\
-D4 H1/N & $+1.000$ & $< 0.001$ & *** \\
-D2 max Gini & $+0.475$ & 0.046 & ** \\
-D3 spectral entropy & $+0.475$ & 0.046 & ** \\
+\multicolumn{5}{l}{\textit{vs.\ test rate (qualitative only; see text)}} \\
+D4 H1/N & $+1.000$ & 0.058 & 0.116 & \\
+D4 cycle rank/N & $+1.000$ & 0.058 & 0.116 & \\
 \bottomrule
+\multicolumn{5}{l}{\small $\dagger$ FDR $< 0.10$; * FDR $< 0.05$}
 \end{tabular}
 \end{table}
 
-The negative D3 correlations reflect a genuine organizational pattern:
-domains with higher internal connectivity (transformation-heavy,
-structurally dense) tend to have lower documentation coverage than
-source-only domains, which are documented at the point of ingestion
-but have no internal edges.
+After FDR correction, D3 algebraic connectivity and normalized gap
+are associated with documentation rate (FDR $p = 0.043$) and
+marginally with composite governance score (FDR $p = 0.080$). No
+other descriptors survive FDR correction.
 
-The perfect D4 correlation with test rate ($\rho = 1.0$) is driven by
-a binary split: the single well-governed domain (domain\_012, gold/mart,
-86\% tested) is also the only domain with H1 topological features.
-While technically correct, this result should be interpreted as
-confirming that topological complexity and testing co-occur in this
-production system, not as evidence of a continuous relationship.
+\subsubsection{D4 and Test Rate: A Qualitative Observation}
 
-\subsubsection{Cross-Topology Comparison}
+The $\rho = 1.0$ correlation between D4 H1/N and test rate is driven
+by a binary split: exactly one domain (domain\_012, the gold/mart
+layer, 35 nodes, 63 edges) has both H1 topological features and
+nonzero test coverage. The remaining 17 analyzed domains have zero for
+both. Under permutation, the probability of this alignment by chance is
+approximately $1/18 \approx 0.056$. This represents a case-study
+observation consistent with topological complexity and testing
+co-occurring in a production system. It is not evidence of a continuous
+relationship, and we do not claim it as a confirmed finding.
+
+\subsubsection{Partial Correlations}
+
+Because D3 descriptors may correlate with governance metadata simply
+because larger, denser domains tend to have different governance
+practices, we computed partial Spearman correlations controlling for
+domain size ($N$), edge count ($M$), and source fraction.
 
 \begin{table}[htb]
 \centering
-\caption{Structural profiles across three lineage topologies.}
-\label{tab:cross}
-\begin{tabular}{lrrrrrr}
+\caption{D3 partial correlations controlling for domain size, edge count,
+  and source fraction (18 domains, permutation $p$ from 10,000 perms).}
+\label{tab:partial}
+\begin{tabular}{llrrrr}
 \toprule
-Topology & $N$ & CSI & max Gini & gap & $S$ & H1/N \\
+D3 descriptor & Target & Raw $\rho$ & Partial $\rho$ & Partial $p$ \\
 \midrule
-dbt manifest (real) & 223 & 0.947 & 0.480 & 0.003 & 6.67 & 0.220 \\
-Static code (real) & 86 & 0.947 & 0.320 & 0.003 & 5.86 & 0.128 \\
-Synthetic 6-domain & 108 & 0.684 & 0.506 & 0.002 & 6.20 & 0.556 \\
+Algebraic conn. & governance score & $-0.643$ & $-0.684$ & 0.002 \\
+Algebraic conn. & documentation rate & $-0.708$ & $-0.546$ & 0.021 \\
+Norm.\ gap & governance score & $-0.635$ & $+0.171$ & 0.488 \\
+Norm.\ gap & documentation rate & $-0.701$ & $+0.113$ & 0.650 \\
+Fiedler bim. & governance score & $-0.446$ & $+0.451$ & 0.061 \\
+Spectral entropy & governance score & $-0.447$ & $+0.060$ & 0.809 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Both real topologies show CSI = 0.947, substantially higher than the
-synthetic baseline (0.684), indicating that real production pipelines
-have more stable community structure than our synthetic generators
-produce. The real graphs also show lower H1/N (0.128--0.220 vs.\
-0.556), consistent with production pipelines having fewer redundant
-dependency paths than synthetic graphs with random cross-domain edges.
+Only D3 algebraic connectivity survives partial correlation: the
+association with governance score \emph{strengthens} slightly (partial
+$\rho = -0.68$, $p = 0.002$) and remains significant for documentation
+rate (partial $\rho = -0.55$, $p = 0.021$). The normalized spectral
+gap, despite having the second-strongest raw correlation, reverses sign
+after controlling for confounds and becomes nonsignificant. This
+indicates that the normalized gap association was confounded by domain
+size.
+
+\subsubsection{Cycle Rank Ablation}
+
+In the real-data analysis, H1/N and cycle rank/N produce identical
+correlations with all governance targets ($\rho = +0.404$ vs.\
+governance score for both, $p = 0.058$). On this dataset, the simpler
+cycle rank captures the same signal as persistent homology, likely
+because the single structurally complex domain dominates both measures.
+
+\subsubsection{Metadata-Only Negative Control}
+
+Of 18 domains with $N \geq 5$, twelve are source-only clusters with
+zero internal edges. These domains have nonzero governance metadata
+(documentation rates from 0.04 to 1.00) but degenerate descriptor
+values (all D1--D4 descriptors equal zero). If the descriptors were
+merely recapitulating governance metadata through some hidden
+correlation, these domains would show descriptor variation. Their
+uniform descriptor values confirm that the descriptors respond to
+structural topology, not metadata artifacts.
+
+\subsection{Experiment 2b: Null Model}
+
+\begin{table}[htb]
+\centering
+\caption{$Z$-scores of real dbt graph descriptors relative to
+  100 degree-preserving rewirings.}
+\label{tab:null}
+\begin{tabular}{lrrrr}
+\toprule
+Descriptor & Real & Null mean & Null std & $z$ \\
+\midrule
+D1 CSI & 0.947 & 0.615 & 0.090 & $+3.70$*** \\
+D1 $n$ communities & 10 & 13.2 & 1.02 & $-3.14$*** \\
+D2 max Gini & 0.480 & 0.579 & 0.042 & $-2.33$** \\
+D3 alg.\ connectivity & 0.067 & 0.071 & 0.011 & $-0.42$ \\
+D3 norm.\ gap & 0.003 & 0.003 & 0.001 & $-0.38$ \\
+D3 Fiedler bimodality & 0.302 & 0.934 & 0.027 & $-23.8$*** \\
+D3 spectral entropy & 6.674 & 6.679 & 0.003 & $-1.64$ \\
+D4 H1/N & 0.220 & 0.272 & 0.018 & $-2.95$** \\
+D4 H1 entropy & 5.563 & 5.910 & 0.097 & $-3.57$*** \\
+D4 cycle rank/N & 0.350 & 0.347 & 0.003 & $+0.88$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The null model yields three classes of results:
+
+\textbf{Structure beyond degree sequence.} D1 CSI ($z = +3.70$),
+D3 Fiedler bimodality ($z = -23.8$), and D4 H1 features ($z = -2.95$
+to $-3.57$) are significantly different from degree-preserving rewirings.
+The real graph has higher community stability, lower Fiedler bimodality,
+and fewer H1 cycles than degree-matched random graphs. These descriptors
+capture genuine structural organization.
+
+\textbf{Degree-determined descriptors.} D3 algebraic connectivity
+($z = -0.42$) and normalized spectral gap ($z = -0.38$) are
+indistinguishable from the null. Their values are largely determined by
+the degree sequence, not by governance-relevant topology. This is
+consistent with the partial correlation results: normalized gap lost
+significance after controlling for size-related confounds.
+
+\textbf{Cycle rank.} As expected, cycle rank ($z = +0.88$) varies
+minimally under degree-preserving rewiring because $M$ and $N$ are
+fixed, and the number of connected components changes only slightly.
+In contrast, H1 features change substantially ($z = -2.95$),
+confirming that persistent homology captures structural information
+that cycle rank does not.
 
 \subsection{Experiment 3: Intervention Sensitivity}
 
@@ -525,12 +615,11 @@ D4 H1/N & 8.67 & 1.96 & 0.14 & 1.33 \\
 \end{table}
 
 Each descriptor responds most strongly to a different intervention
-type, validating the multi-descriptor approach. D4 is most sensitive to
-domain boundary reorganization (SNR = 8.67), D3 to orphan removal
-(SNR = 6.53), and D2 to monitor placement (SNR = 2.79). Shortcut
-removal produces weak signal across all descriptors because the
-intervention magnitude (4 edges removed from 132-node graph) falls
-below the noise floor.
+type. D4 is most sensitive to domain reorganization (SNR = 8.67),
+D3 normalized gap to orphan removal (SNR = 6.53), and D2 to monitor
+placement (SNR = 2.79). Shortcut removal produces weak signal across
+all descriptors because the intervention magnitude (4 edges removed
+from a 132-node graph) falls below the noise floor.
 
 \subsection{Experiment 4: Predictive Comparison}
 
@@ -561,103 +650,166 @@ information in single-scale statistics for this prediction task.
 
 \section{Discussion}
 
-\subsection{What the Descriptors Measure}
+\subsection{Which Descriptors Survive Scrutiny}
 
-The four descriptors capture governance quality at complementary
-structural scales. D1 (community stability) measures whether domain
-boundaries are architecturally enforced or merely nominal. D2
-(blast-radius concentration) measures whether failure impact is
-predictable and concentrated. D3 (spectral structure) measures the
-coupling strength between pipeline components. D4 (persistent homology)
-measures the prevalence of redundant dependency paths.
+The convergent evidence from synthetic experiments, real-data
+correlations, partial correlations, and null models identifies which
+descriptors capture governance-relevant structure and which do not.
 
-The real-data validation reveals that these dimensions are partially
-independent. In the production dbt lineage, D3 (spectral) correlates
-with documentation rate while D4 (topological) correlates with test
-rate. This makes organizational sense: documentation is about making
-existing structure legible (captured by connectivity patterns), while
-testing is about validating specific dependency paths (captured by
-topological features).
+D1 CSI passes all tests: it differentiates synthetic governance levels
+after FDR correction ($d = 3.9$), and the null model confirms it
+captures structure beyond degree sequences ($z = +3.7$). Its real-data
+correlation with governance metadata is not tested here because most
+domains lack internal edges for meaningful community detection.
+
+D3 algebraic connectivity produces the strongest real-data signal
+($\rho = -0.71$ vs.\ documentation, FDR $p = 0.043$) and survives
+partial correlation. However, the null model shows it is
+indistinguishable from degree-preserving rewirings ($z = -0.42$),
+meaning its value is largely determined by degree sequence. This is
+not necessarily disqualifying: degree sequence itself may encode
+governance-relevant information (well-governed domains may have
+characteristic degree distributions), but it means algebraic
+connectivity is not capturing ``hidden'' structural signal beyond
+what simple degree statistics provide.
+
+D3 Fiedler bimodality is the most striking null model result ($z = -23.8$):
+the real graph has dramatically lower bimodality than degree-matched
+random graphs, suggesting that the real graph's Fiedler vector reflects
+genuine organizational structure (a smooth gradient across pipeline
+layers) rather than the sharp random bipartitions that emerge from
+rewiring.
+
+D4 H1 features differentiate governance levels in synthetic experiments
+and capture structure beyond degree sequences ($z = -2.95$), while
+cycle rank does not ($z = +0.88$). This is the setting where persistent
+homology adds value over the simpler baseline: when testing whether
+structure goes beyond what degree sequences determine, cycle rank
+trivially passes (it is nearly preserved by rewiring), while H1
+features provide a meaningful test.
+
+D3 normalized spectral gap fails both the partial correlation test (sign
+reversal, $p = 0.49$) and the null model ($z = -0.38$). Its apparent
+real-data correlation was confounded by domain size.
 
 \subsection{The Negative D3--Governance Correlation}
 
 The negative correlation between D3 algebraic connectivity and
-documentation rate ($\rho = -0.71$) warrants explanation. In this
-production system, source-only domains have moderate documentation
-(41\%) but zero internal edges, yielding algebraic connectivity of
-zero. Transformation-heavy domains (silver/intermediate) have high
-internal connectivity but zero documentation. The well-governed
-gold/mart domain sits in between. This pattern reflects a genuine
-organizational dynamic: documentation effort is concentrated at system
-boundaries (data ingestion) and final outputs (marts), not at
-intermediate transformations.
+documentation rate ($\rho = -0.71$) warrants explanation. Source-only
+domains have moderate documentation (41\%) but zero internal edges,
+yielding algebraic connectivity of zero. Transformation-heavy domains
+(silver/intermediate) have high internal connectivity but zero
+documentation. The well-governed gold/mart domain sits in between.
+This pattern reflects a genuine organizational dynamic: documentation
+effort is concentrated at data ingestion points and final outputs,
+not at intermediate transformations.
 
 \subsection{Limitations}
 
-\textbf{Single production instance.} The real-data validation uses one
-organization's dbt lineage. Cross-organizational generalization requires
-additional datasets. The open datasets identified in our literature
-review (DW-Bench, Huawei DLG, WfCommons) could extend validation.
+\textbf{Single case study.} The real-data validation uses one
+organization's dbt lineage. The results support feasibility, not
+generalization. Cross-organizational validation requires additional
+datasets. The open lineage corpora in the literature (DW-Bench, Huawei
+DLG, WfCommons) could extend this work.
 
-\textbf{Steward metadata absent.} The production dbt catalog contains
-no steward or owner metadata, reducing the composite governance score
-to a two-component measure (tests + documentation). Organizations with
+\textbf{Small sample size.} The 18 analyzable domains provide limited
+statistical power. Of these, only 6 have internal edges sufficient for
+meaningful descriptor computation. Larger or more architecturally
+complex lineage graphs would provide more per-domain variation.
+
+\textbf{Missing metadata.} The production dbt catalog contains no
+steward or owner metadata, reducing the governance score to a
+two-component measure (tests + documentation). Organizations with
 richer metadata would enable testing D1's hypothesized association with
 ownership structure.
 
-\textbf{Domain-level sparsity.} Of 26 domains, only 6 have internal
-edges sufficient for meaningful D1 computation. The remaining 20 are
-source-only clusters with degenerate descriptor values. Larger or more
-architecturally complex lineage graphs would provide more per-domain
-variation.
-
 \textbf{Synthetic generator validity.} The governance variation in our
 synthetic generators is architectural (edge patterns, domain boundaries),
-not metadata-only. This is by design: the descriptors measure structure,
-not metadata. However, the generators produce cleaner separation between
+not metadata-only. The generators produce cleaner separation between
 governance levels than likely exists in practice, contributing to the
-classification ceiling effect.
+large effect sizes and classification ceiling.
 
-\textbf{Causal direction undetermined.} The correlations between
-descriptors and governance metadata could reflect either direction:
-governance practices producing cleaner structure, or cleaner structure
-enabling easier governance. Our design measures association, not
-causation.
+\textbf{Causal direction.} Correlations between descriptors and
+governance metadata could reflect either direction: governance practices
+producing cleaner structure, or cleaner structure enabling easier
+governance. We measure association, not causation.
+
+\textbf{D4 cycle rank equivalence.} In both the synthetic and real-data
+settings, cycle rank captures the same governance signal as H1 persistent
+features. The null model is the only test where H1 adds value over cycle
+rank. For practical applications, cycle rank may be sufficient and is
+vastly cheaper to compute.
 
 \subsection{Practical Implications}
 
-If validated on additional datasets, these descriptors could enable:
+If validated on additional datasets, these descriptors could support:
 
 \begin{enumerate}
-  \item \textbf{Continuous governance monitoring.} Computing D1--D4 on
-        each CI/CD push provides a structural governance score without
-        requiring manual assessment.
-  \item \textbf{Governance drift detection.} CSI degradation over time
-        signals erosion of domain boundaries. Increasing H1/N signals
-        accumulating technical debt through redundant paths.
+  \item \textbf{Structural monitoring.} Computing D1 and D3 Fiedler
+        bimodality on each CI/CD push provides a structural signal
+        without manual assessment. CSI degradation over time signals
+        erosion of domain boundaries.
   \item \textbf{Targeted intervention.} D3 identifies structurally
         isolated components. D2 identifies nodes with outsized blast
         radius. These guide where to invest governance effort.
+  \item \textbf{Complementary evidence.} The descriptors complement
+        existing governance frameworks by providing structural measurement
+        where traditional methods provide periodic assessment.
 \end{enumerate}
 
 \section{Conclusion}
 
-We introduced four multi-scale structural descriptors for measuring data
-governance quality from lineage graph topology. Synthetic experiments
-confirm that all four descriptors differentiate governance quality levels
-with statistical significance and respond to governance-relevant
-interventions above random noise. Real-data validation on a production
-dbt lineage graph yields statistically significant correlations between
-structural descriptors and governance metadata. Multi-scale features
-explain 75\% more outcome variance than single-scale baselines.
+We introduced four multi-scale structural descriptors for detecting
+governance-relevant patterns in data lineage graph topology. Synthetic
+experiments confirm that D1 (community stability), D2 (blast-radius
+concentration), and D4 (persistent homology) differentiate governance
+levels with statistical significance after FDR correction. A
+degree-preserving null model shows that D1, D3 Fiedler bimodality, and
+D4 H1 features capture structure beyond degree sequences. Real-data
+validation on a production dbt lineage graph yields a significant
+association between D3 algebraic connectivity and documentation rate
+that survives partial correlation controlling for structural confounds.
 
-These findings suggest that lineage topology encodes recoverable
-governance signal. The descriptors are computable from any lineage graph
-(dbt manifests, data catalog exports, code-derived dependency graphs)
-and require no access to the underlying data. They complement, rather
-than replace, existing governance frameworks by providing continuous
-structural measurement where traditional methods provide periodic
-assessment.
+The results are drawn from a single case study and should be interpreted
+as evidence of feasibility, not generalization. D3 normalized spectral
+gap, which showed the second-strongest raw correlation, was confounded
+by domain size and did not survive either partial correlation or the null
+model. D4 persistent features added value over the simpler cycle rank
+baseline only in the null model test. These negative results are as
+informative as the positive ones: they constrain which structural
+features carry genuine governance-relevant signal.
+
+The descriptors are computable from any lineage graph (dbt manifests,
+data catalog exports, code-derived dependency graphs) and require no
+access to the underlying data. They provide continuous structural
+measurement where traditional governance assessment methods provide
+periodic snapshots.
+
+\appendix
+
+\section{Reproducibility}
+
+All code, anonymized data, and experiment scripts are available at
+\url{https://github.com/mhdk1602/multiscale-governance-descriptors}.
+The repository includes:
+
+\begin{itemize}
+  \item \texttt{src/governance\_descriptors/}: Python package implementing
+        D1--D4 and statistical utilities (permutation Spearman,
+        Benjamini--Hochberg FDR, partial Spearman correlation).
+  \item \texttt{experiments/}: Experiment scripts that reproduce all
+        tables in this paper.
+  \item \texttt{data/}: Anonymized dbt lineage data (HMAC-SHA256 hashed
+        node identifiers, domain labels, governance metadata).
+\end{itemize}
+
+\noindent Dependencies: Python 3.11+, NetworkX 3.x, NumPy, SciPy, pandas,
+GUDHI (for persistent homology), scikit-learn (for Experiment 4).
+
+\noindent Anonymization: All node identifiers, domain names, and schema
+names in the production dbt data were replaced with HMAC-SHA256 hashes
+prior to export. No organizational identifiers, table names, or column
+names are present in the released data.
 
 \bibliographystyle{plainnat}
 \bibliography{references}

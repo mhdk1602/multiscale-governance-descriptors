@@ -106,6 +106,19 @@ def n_persistent_features(diagram: list[tuple[float, float]], threshold: str = "
     return int(np.sum(lifetimes > thresh_val))
 
 
+def cycle_rank_descriptors(g) -> dict:
+    """Simple cycle-rank baseline: M - N + C on the undirected skeleton."""
+    u = g.to_undirected() if isinstance(g, nx.DiGraph) else g.copy()
+    n = u.number_of_nodes()
+    m = u.number_of_edges()
+    c = nx.number_connected_components(u)
+    cr = m - n + c
+    return {
+        "cycle_rank": cr,
+        "cycle_rank_norm": cr / n if n > 0 else 0.0,
+    }
+
+
 def topological_descriptors(g, max_dimension: int = 1) -> dict:
     """Compute all D4 descriptors in one call."""
     diagrams = persistence_diagrams(g, max_dimension=max_dimension)
