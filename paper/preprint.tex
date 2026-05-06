@@ -144,6 +144,16 @@ measures for knowledge graphs. \citet{merono2024} position knowledge
 graphs as governance backbones for AI systems. Neither applies
 multi-scale graph descriptors to lineage topology.
 
+Preliminary work on fractal descriptors for enterprise data graphs
+\citep{hari2026fractal} investigated whether box-covering fractal
+dimension could characterize governance-relevant structure in data
+lineage. That investigation found fractal dimension to be sensitive
+to graph scale and topology but insufficient as a standalone governance
+signal, motivating the broader multi-scale descriptor set developed
+here. The fractal analysis methodology (Hurst exponents, detrended
+fluctuation analysis) has a longer history in the author's work on
+temporal scaling in financial systems \citep{hari2026pvcoupling}.
+
 \subsection{Community Detection at Multiple Resolutions}
 
 The resolution parameter in modularity optimization
@@ -709,8 +719,13 @@ not at intermediate transformations.
 \textbf{Single case study.} The real-data validation uses one
 organization's dbt lineage. The results support feasibility, not
 generalization. Cross-organizational validation requires additional
-datasets. The open lineage corpora in the literature (DW-Bench, Huawei
-DLG, WfCommons) could extend this work.
+datasets. Three open corpora are candidates: DLG-DG-23
+\citep{dlgdg2024} provides 18 real-world data lineage graphs from
+Huawei Cloud (278--17,085 nodes) with governance labels;
+WfCommons \citep{coleman2022wfcommons} offers 180 scientific workflow
+DAGs whose task-dependency structure is topologically analogous to
+data lineage; and DW-Bench \citep{dwbench2025} provides five data
+warehouse schemas with FK and lineage edges.
 
 \textbf{Small sample size.} The 18 analyzable domains provide limited
 statistical power. Of these, only 6 have internal edges sufficient for
