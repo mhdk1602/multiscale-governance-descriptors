@@ -153,6 +153,13 @@ signal, motivating the broader multi-scale descriptor set developed
 here. The fractal analysis methodology (Hurst exponents, detrended
 fluctuation analysis) has a longer history in the author's work on
 temporal scaling in financial systems \citep{hari2026pvcoupling}.
+A complementary line of work applies boundary-risk detection to
+master data governance \citep{hari2026boundary}, identifying entity
+clusters whose governance status is sensitive to local threshold
+perturbation. That approach targets record-level entity resolution
+rather than pipeline-level lineage topology, but shares the premise
+that governance properties are recoverable from structural analysis
+of data artifacts.
 
 \subsection{Community Detection at Multiple Resolutions}
 
@@ -379,6 +386,18 @@ shortcut removal, and monitor placement. Each intervention is compared
 against 60 random perturbation trials at the same magnitude. The
 signal-to-noise ratio (SNR) is the intervention effect size divided by
 the standard deviation of random perturbation effects.
+
+\subsection{Experiment 5: Cross-Dataset Structural Characterization}
+
+To test whether the descriptors generalize beyond our synthetic
+generators and single dbt instance, we compute D1--D4 on two open
+datasets: 11 scientific workflow DAGs from WfCommons
+\citep{coleman2022wfcommons} spanning astronomy, bioinformatics, and
+agroecosystem applications (101--4,846 nodes), and 2 data warehouse
+schemas from DW-Bench \citep{dwbench2025} (OMOP clinical data model,
+TPC-DI brokerage; 31--37 tables). These lack governance metadata, so the
+comparison is purely structural: do real pipeline architectures from
+different domains occupy distinguishable regions of descriptor space?
 
 \subsection{Experiment 4: Predictive Comparison}
 
@@ -630,6 +649,47 @@ D3 normalized gap to orphan removal (SNR = 6.53), and D2 to monitor
 placement (SNR = 2.79). Shortcut removal produces weak signal across
 all descriptors because the intervention magnitude (4 edges removed
 from a 132-node graph) falls below the noise floor.
+
+\subsection{Experiment 5: Cross-Dataset Structural Characterization}
+
+To assess whether real pipeline topologies occupy a distinct region of
+descriptor space, we computed D1--D4 on 11 scientific workflow DAGs from
+WfCommons \citep{coleman2022wfcommons} (101--4,846 nodes), two data
+warehouse schemas from DW-Bench \citep{dwbench2025} (31--37 tables), and
+the production dbt manifest.
+
+\begin{table}[htb]
+\centering
+\caption{Structural profiles across 14 graphs from three sources.
+  WfCommons values are means with ranges in parentheses.}
+\label{tab:crossdataset}
+\begin{tabular}{lrrrrrr}
+\toprule
+Source & $n$ & CSI & max Gini & gap & Fiedler bim. & CR/N \\
+\midrule
+WfCommons (11) & 101--4846 & 0.78 & 0.39 & 0.011 & 0.56 & 0.91 \\
+ & & \footnotesize{(.53--.84)} & \footnotesize{(.00--.80)} & \footnotesize{(.00--.04)} & \footnotesize{(.08--.93)} & \footnotesize{(.00--2.99)} \\
+DW-Bench (2) & 31--37 & 0.68 & 0.54 & 0.030 & 0.66 & 0.95 \\
+dbt manifest (1) & 223 & 0.95 & 0.48 & 0.003 & 0.30 & 0.35 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The production dbt lineage has the highest CSI (0.95) of any graph
+tested, and the lowest Fiedler bimodality (0.30) and cycle rank
+per node (0.35). Scientific workflows show wide topological variation:
+seismology pipelines are nearly tree-structured (CR/N = 0), while
+bioinformatics alignment workflows (BWA, BLAST) have CR/N $> 1.9$.
+DW-Bench schemas occupy an intermediate position.
+
+These results confirm that the descriptors produce interpretable
+variation across genuinely different pipeline architectures, not
+only synthetic governance variants. The dbt manifest's high CSI and
+low cycle rank relative to unstructured scientific workflows is
+consistent with governed production pipelines exhibiting different
+structural signatures from ad hoc computational workflows, though
+alternative explanations (domain differences, scale effects) cannot
+be ruled out from this comparison alone.
 
 \subsection{Experiment 4: Predictive Comparison}
 
