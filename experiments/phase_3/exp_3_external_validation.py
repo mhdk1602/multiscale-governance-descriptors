@@ -46,6 +46,39 @@ def load_wfcommons_graph(json_path):
     return g
 
 
+def load_dlg_graph(node_path, edge_path, table_level=True):
+    """Load a DLG-DG-23 lineage graph.
+
+    If table_level=True, returns only Data Table + Data Job nodes with
+    DATA_FLOW edges (comparable to dbt lineage). Otherwise returns the
+    full graph including Data Field nodes and PARENT_CHILD edges.
+    """
+    with open(node_path) as f:
+        nodes = json.load(f)["nodes"]
+    with open(edge_path) as f:
+        edges = json.load(f)["edges"]
+
+    g = nx.DiGraph()
+    node_types = {}
+    for n in nodes:
+        nid = n["asset_id"]
+        ntype = n.get("asset_type", "unknown")
+        node_types[nid] = ntype
+        if table_level and ntype == "Data Field":
+            continue
+        g.add_node(nid, asset_type=ntype)
+
+    for e in edges:
+        src, tgt = e["source"], e["target"]
+        rtype = e.get("relation_type", "unknown")
+        if table_level and rtype == "PARENT_CHILD":
+            continue
+        if src in g and tgt in g:
+            g.add_edge(src, tgt, relation_type=rtype)
+
+    return g
+
+
 def load_dwbench_graph(nodes_path, edges_path):
     nodes_df = pd.read_csv(nodes_path)
     edges_df = pd.read_csv(edges_path)
@@ -156,6 +189,32 @@ def main():
     else:
         print(f"\n  WfCommons dir not found: {wf_dir}")
 
+    # --- DLG-DG-23 (Huawei Cloud lineage graphs) ---
+    dlg_dir = os.path.join(ext_dir, "dlg-dg-23")
+    if os.path.isdir(dlg_dir):
+        print("\n--- DLG-DG-23 Data Lineage Graphs (table-level) ---")
+        for i in range(1, 19):
+            npath = os.path.join(dlg_dir, "Node", f"DLG{i}-node.json")
+            epath = os.path.join(dlg_dir, "Edge", f"DLG{i}-edge.json")
+            if not (os.path.exists(npath) and os.path.exists(epath)):
+                continue
+            g = load_dlg_graph(npath, epath, table_level=True)
+            label = f"DLG{i}"
+            print(f"  {label} (N={g.number_of_nodes()}, M={g.number_of_edges()})...", flush=True)
+            desc = compute_descriptors_safe(g, label=label)
+            desc["source"] = "dlg-dg-23"
+            desc["application"] = "huawei_lineage"
+            rows.append(desc)
+
+            if not desc.get("too_small"):
+                for prefix in ["D1", "D2", "D3", "D4"]:
+                    if f"{prefix}_error" in desc:
+                        print(f"    {prefix}: ERROR {desc[f'{prefix}_error']}")
+                    elif f"{prefix}_skipped" in desc:
+                        print(f"    {prefix}: {desc[f'{prefix}_skipped']}")
+    else:
+        print(f"\n  DLG-DG-23 dir not found: {dlg_dir}")
+
     # --- DW-Bench ---
     dwb_dir = os.path.join(ext_dir, "dw-bench")
     if os.path.isdir(dwb_dir):
@@ -224,13 +283,16 @@ def main():
     print("WfCommons vs SYNTHETIC GENERATORS (from Exp 1)")
     print("=" * 70)
 
-    wf_rows = df[df["source"] == "wfcommons"]
-    if len(wf_rows) > 0:
+    for src_name, src_key in [("WfCommons", "wfcommons"), ("DLG-DG-23", "dlg-dg-23")]:
+        src_rows = df[df["source"] == src_key]
+        if len(src_rows) == 0:
+            continue
+        print(f"\n  {src_name} ({len(src_rows)} graphs):")
         for col in ["D1_csi", "D2_max_gini", "D3_norm_gap", "D3_fiedler_bim",
                      "D4_cycle_rank_norm"]:
-            vals = wf_rows[col].dropna()
+            vals = src_rows[col].dropna()
             if len(vals) > 0:
-                print(f"  {col:25s}: mean={vals.mean():.4f}, "
+                print(f"    {col:25s}: mean={vals.mean():.4f}, "
                       f"std={vals.std():.4f}, "
                       f"range=[{vals.min():.4f}, {vals.max():.4f}]")
 

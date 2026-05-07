@@ -48,10 +48,15 @@ partial correlation controlling for domain size, edge count, and
 source fraction (partial $\rho = -0.55$, $p = 0.021$). A
 degree-preserving rewiring null model confirms that D1, D3 Fiedler
 bimodality, and D4 H1 features capture structure beyond what degree
-sequences alone determine ($|z| > 2.9$). These results, drawn from
-a single case study, suggest that lineage topology encodes
-governance-relevant structural signal, though generalization
-requires validation across additional organizations.
+sequences alone determine ($|z| > 2.9$). Cross-dataset comparison on 32 graphs from four sources (WfCommons
+scientific workflows, DLG-DG-23 Huawei Cloud lineage graphs, DW-Bench
+warehouse schemas, and the dbt manifest) shows that production data
+lineage graphs from two independent organizations converge on high
+community stability and small spectral gaps, occupying a region of
+descriptor space distinct from scientific workflows. These results
+suggest that lineage topology encodes governance-relevant structural
+signal, though the governance correlation analysis rests on a single
+case study and generalization requires further validation.
 \end{abstract}
 
 \section{Introduction}
@@ -390,14 +395,19 @@ the standard deviation of random perturbation effects.
 \subsection{Experiment 5: Cross-Dataset Structural Characterization}
 
 To test whether the descriptors generalize beyond our synthetic
-generators and single dbt instance, we compute D1--D4 on two open
+generators and single dbt instance, we compute D1--D4 on three open
 datasets: 11 scientific workflow DAGs from WfCommons
 \citep{coleman2022wfcommons} spanning astronomy, bioinformatics, and
-agroecosystem applications (101--4,846 nodes), and 2 data warehouse
-schemas from DW-Bench \citep{dwbench2025} (OMOP clinical data model,
-TPC-DI brokerage; 31--37 tables). These lack governance metadata, so the
+agroecosystem applications (101--4,846 nodes); 18 production data
+lineage graphs from DLG-DG-23 \citep{dlgdg2024}, extracted from Huawei
+Cloud DataArts governance projects (24--1,059 table-level nodes after
+restricting to Data Table and Data Job assets with DATA\_FLOW edges);
+and 2 data warehouse schemas from DW-Bench \citep{dwbench2025} (OMOP
+clinical data model, TPC-DI brokerage; 31--37 tables). These lack the
+domain-level governance metadata needed for correlation analysis, so the
 comparison is purely structural: do real pipeline architectures from
-different domains occupy distinguishable regions of descriptor space?
+different domains and organizations occupy distinguishable regions of
+descriptor space?
 
 \subsection{Experiment 4: Predictive Comparison}
 
@@ -654,42 +664,57 @@ from a 132-node graph) falls below the noise floor.
 
 To assess whether real pipeline topologies occupy a distinct region of
 descriptor space, we computed D1--D4 on 11 scientific workflow DAGs from
-WfCommons \citep{coleman2022wfcommons} (101--4,846 nodes), two data
-warehouse schemas from DW-Bench \citep{dwbench2025} (31--37 tables), and
-the production dbt manifest.
+WfCommons \citep{coleman2022wfcommons} (101--4,846 nodes), 18 production
+data lineage graphs from DLG-DG-23 \citep{dlgdg2024} (24--1,059
+table-level nodes), two data warehouse schemas from DW-Bench
+\citep{dwbench2025} (31--37 tables), and the production dbt manifest.
 
 \begin{table}[htb]
 \centering
-\caption{Structural profiles across 14 graphs from three sources.
-  WfCommons values are means with ranges in parentheses.}
+\caption{Structural profiles across 32 graphs from four sources.
+  WfCommons and DLG-DG-23 values are means with ranges in parentheses.}
 \label{tab:crossdataset}
 \begin{tabular}{lrrrrrr}
 \toprule
 Source & $n$ & CSI & max Gini & gap & Fiedler bim. & CR/N \\
 \midrule
-WfCommons (11) & 101--4846 & 0.78 & 0.39 & 0.011 & 0.56 & 0.91 \\
- & & \footnotesize{(.53--.84)} & \footnotesize{(.00--.80)} & \footnotesize{(.00--.04)} & \footnotesize{(.08--.93)} & \footnotesize{(.00--2.99)} \\
+WfCommons (11) & 101--4846 & 0.78 & 0.39 & 0.011 & 0.59 & 0.91 \\
+ & & \footnotesize{(.53--.84)} & \footnotesize{(.00--.80)} & \footnotesize{(.00--.04)} & \footnotesize{(.28--.93)} & \footnotesize{(.00--2.99)} \\
+DLG-DG-23 (18) & 24--1059 & 0.87 & 0.61 & 0.003 & 0.66 & 0.26 \\
+ & & \footnotesize{(.68--1.0)} & \footnotesize{(.35--.73)} & \footnotesize{(.00--.01)} & \footnotesize{(.33--.98)} & \footnotesize{(.00--.68)} \\
 DW-Bench (2) & 31--37 & 0.68 & 0.54 & 0.030 & 0.66 & 0.95 \\
 dbt manifest (1) & 223 & 0.95 & 0.48 & 0.003 & 0.30 & 0.35 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The production dbt lineage has the highest CSI (0.95) of any graph
-tested, and the lowest Fiedler bimodality (0.30) and cycle rank
-per node (0.35). Scientific workflows show wide topological variation:
-seismology pipelines are nearly tree-structured (CR/N = 0), while
-bioinformatics alignment workflows (BWA, BLAST) have CR/N $> 1.9$.
-DW-Bench schemas occupy an intermediate position.
+The DLG-DG-23 graphs, which represent production data lineage from
+Huawei Cloud governance projects, are the most structurally similar to
+the dbt manifest: both show high community stability (CSI $\geq$ 0.68,
+mean 0.87 vs.\ 0.95 for dbt), very small normalized spectral gaps
+($< 0.014$), and moderate cycle rank density (CR/N $\leq$ 0.68). Three
+DLG graphs achieve CSI = 1.0, indicating perfect community stability
+across the full resolution sweep. Scientific workflows, by contrast,
+show wider topological variation: seismology pipelines are nearly
+tree-structured (CR/N = 0), while bioinformatics alignment workflows
+(BWA, BLAST) have CR/N $> 1.9$.
+
+The production dbt manifest retains the lowest Fiedler bimodality (0.30)
+of all 32 graphs, suggesting the clearest spectral separation between
+its two dominant subgraphs. DW-Bench schemas occupy an intermediate
+position with moderate CSI but the highest spectral gaps ($> 0.01$),
+reflecting their shorter dependency chains.
 
 These results confirm that the descriptors produce interpretable
-variation across genuinely different pipeline architectures, not
-only synthetic governance variants. The dbt manifest's high CSI and
-low cycle rank relative to unstructured scientific workflows is
-consistent with governed production pipelines exhibiting different
-structural signatures from ad hoc computational workflows, though
-alternative explanations (domain differences, scale effects) cannot
-be ruled out from this comparison alone.
+variation across genuinely different pipeline architectures, not only
+synthetic governance variants. The convergence of dbt and DLG-DG-23
+descriptor profiles, both from governed production environments but from
+different organizations and technology stacks, suggests that data
+lineage graphs exhibit structural regularities distinct from scientific
+workflows and data warehouse schemas. Alternative explanations (domain
+differences, scale effects) cannot be ruled out from this comparison
+alone, but the consistency across 19 independent production lineage
+graphs from two organizations is encouraging.
 
 \subsection{Experiment 4: Predictive Comparison}
 
@@ -776,16 +801,18 @@ not at intermediate transformations.
 
 \subsection{Limitations}
 
-\textbf{Single case study.} The real-data validation uses one
-organization's dbt lineage. The results support feasibility, not
-generalization. Cross-organizational validation requires additional
-datasets. Three open corpora are candidates: DLG-DG-23
-\citep{dlgdg2024} provides 18 real-world data lineage graphs from
-Huawei Cloud (278--17,085 nodes) with governance labels;
-WfCommons \citep{coleman2022wfcommons} offers 180 scientific workflow
-DAGs whose task-dependency structure is topologically analogous to
-data lineage; and DW-Bench \citep{dwbench2025} provides five data
-warehouse schemas with FK and lineage edges.
+\textbf{Limited governance correlation data.} The governance correlation
+analysis (Experiment 2) rests on a single organization's dbt lineage
+with 18 analyzable domains. Experiment 5 extends structural
+characterization to 32 graphs across four sources, including 18
+production lineage graphs from DLG-DG-23 \citep{dlgdg2024}. The
+convergence of dbt and DLG-DG-23 profiles on high CSI and small spectral
+gaps is suggestive, but the DLG-DG-23 public release lacks domain-level
+governance metadata (documentation rate, test coverage, owner
+assignment), so we cannot test whether the descriptor--governance
+correlations replicate. Full replication requires an organization willing
+to share both lineage topology and governance metadata at domain
+granularity.
 
 \textbf{Small sample size.} The 18 analyzable domains provide limited
 statistical power. Of these, only 6 have internal edges sufficient for
