@@ -58,11 +58,11 @@ community stability and small spectral gaps, occupying a region of
 descriptor space distinct from scientific workflows. Cross-organization validation on two additional public dbt projects
 (Cal-ITP, 26 domains; Mattermost, 6 domains) finds no replication:
 the D3 correlation does not reach significance in Cal-ITP and reverses
-sign in Mattermost, confirming the between-layer architecture
+sign in Mattermost, consistent with the between-layer architecture
 interpretation. The descriptors produce reproducible structural
 characterization across organizations; governance prediction requires
 within-organization calibration and cannot be generalized from a
-single case study.
+single production case; cross-organization validation shows no replication.
 \end{abstract}
 
 \smallskip
@@ -120,9 +120,19 @@ a real production dbt lineage graph with genuine governance metadata.
 
   \item Initial real-data validation on an anonymized production dbt
         lineage graph (223 nodes, 26 domains) with permutation-based
-        inference, partial correlations controlling for structural
-        confounds, and a cycle-rank ablation for the topological
-        descriptor.
+        inference, partial correlations, subset robustness analysis, and
+        layer-stratified permutation showing D3 captures between-layer
+        architecture, not within-layer governance quality.
+
+  \item Cross-dataset structural characterization of 32 graphs from
+        workflow, lineage, warehouse-schema, and dbt sources, showing
+        that production lineage graphs occupy a distinct descriptor
+        region from scientific workflows.
+
+  \item Cross-organization validation on two public dbt projects (Cal-ITP,
+        Mattermost) showing the D3/documentation association does not
+        replicate and reverses sign, establishing a principled boundary
+        condition for topology-based governance inference.
 \end{enumerate}
 
 \section{Related Work}
@@ -561,9 +571,14 @@ D4 cycle rank/N & $+1.000$ & 0.058 & 0.116 & \\
 After FDR correction, D3 algebraic connectivity and normalized gap
 are associated with documentation rate (FDR $p = 0.043$) and
 marginally with composite governance score (FDR $p = 0.080$). No
-other descriptors survive FDR correction. Experiment~2e subsequently
-shows this D3 association is a between-layer architectural pattern
-rather than a within-layer governance signal.
+other descriptors survive FDR correction. (Table~\ref{tab:subset}
+reports FDR $p = 0.029$ for the same Subset~A result; the difference
+arises because the two tables apply BH correction to different
+hypothesis families: Table~\ref{tab:exp2} corrects across all
+descriptor--target pairs in Experiment~2, while Table~\ref{tab:subset}
+corrects within the subset-robustness family only.)
+Experiment~2e subsequently shows this association is a between-layer
+architectural pattern rather than a within-layer governance signal.
 
 \subsubsection{D4 and Test Rate: A Qualitative Observation}
 
@@ -705,7 +720,7 @@ optimizer noise increases.
 \begin{table}[htb]
 \centering
 \caption{$Z$-scores of real dbt descriptors relative to 100
-  layer-preserving DAG rewirings (swap acceptance rate 22.8\%;
+  layer-preserving edge rewirings (swap acceptance rate 22.8\%;
   11\% of rewired graphs remain DAGs).}
 \label{tab:null_layer}
 \begin{tabular}{lrrrr}
@@ -973,7 +988,7 @@ medium $= 0.8\times$, large $= 2.8\times$. At tiny through medium
 scales, Louvain seed variance is comparable to or larger than the
 governance-level separation, making single-seed D1 results at those
 scales unreliable. The large-scale D1 result (mean separation 0.307,
-SNR 2.8×) is the only scale where the differentiation clearly exceeds
+SNR $2.8\times$) is the only scale where the differentiation clearly exceeds
 optimizer noise.
 
 \section{Discussion}
@@ -1052,18 +1067,16 @@ reflecting a direct governance-to-topology relationship.
 
 \subsection{Limitations}
 
-\textbf{Limited governance correlation data.} The governance correlation
-analysis (Experiment 2) rests on a single organization's dbt lineage
-with 18 analyzable domains. Experiment 5 extends structural
-characterization to 32 graphs across four sources, including 18
-production lineage graphs from DLG-DG-23 \citep{dlgdg2024}. The
-convergence of dbt and DLG-DG-23 profiles on high CSI and small spectral
-gaps is suggestive, but the DLG-DG-23 public release lacks domain-level
-governance metadata (documentation rate, test coverage, owner
-assignment), so we cannot test whether the descriptor--governance
-correlations replicate. Full replication requires an organization willing
-to share both lineage topology and governance metadata at domain
-granularity.
+\textbf{Governance correlation does not generalize.} The original D3/documentation
+correlation comes from one anonymized production dbt case. Two public dbt
+replications (Experiment~6) did not reproduce the association: Cal-ITP
+($n = 26$ domains) shows no correlation, and Mattermost ($n = 6$) shows a
+positive trend in the opposite direction. We interpret D3/documentation
+as an organization-specific layer-architecture effect. The structural
+characterization results (D1 null model, cross-dataset clustering) are
+robust across datasets; the governance-prediction interpretation requires
+local calibration and cannot be generalized without further
+governance-labeled lineage data from additional organizations.
 
 \textbf{Small sample size.} The 18 analyzable domains provide limited
 statistical power. Of these, only 6 have internal edges sufficient for
@@ -1124,15 +1137,15 @@ sample but fails both the internal-edge subset filter and layer-stratified
 permutation, indicating it captures between-layer architecture rather
 than within-layer governance quality.
 
-The results are drawn from a single case study and should be interpreted
-as evidence of feasibility, not generalization. D1 differentiation at
-large scale and the degree-preserving null model results are the most
-robust findings. D3 normalized spectral gap was confounded by domain
-size; D3 algebraic connectivity is between-layer architecture; D4
-persistent features add value over cycle rank only in null model
-testing. These negative findings matter: they show the descriptors
-are sensitive to structure while being honest about the limits of
-current evidence.
+D1 differentiation at large scale and the degree-preserving null model
+results are the most robust findings. D3 normalized spectral gap was
+confounded by domain size; D3 algebraic connectivity captures
+organization-specific layer architecture rather than universal governance
+quality, as confirmed by cross-organization non-replication. D4 persistent
+features add value over cycle rank in null model testing but not in direct
+governance correlations. These negative findings are as informative as
+the positive ones: they establish where topology-based governance
+inference is and is not warranted.
 
 The descriptors are computable from any lineage graph (dbt manifests,
 data catalog exports, code-derived dependency graphs) and require no
