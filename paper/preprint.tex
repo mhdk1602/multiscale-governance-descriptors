@@ -263,11 +263,10 @@ measure of optimizer variance. CSI$_{\text{std}} < 0.05$ and
 seed-NVI $< 0.05$ indicates the result is not an artifact of seed
 choice.
 
-\textbf{Governance interpretation.} Well-governed pipelines with clear
-domain boundaries should exhibit high CSI: communities are robust
-across resolutions because they reflect genuine organizational
-structure. Poorly governed pipelines with tangled cross-domain
-dependencies should exhibit low CSI.
+\textbf{Governance interpretation.} Well-governed pipelines exhibit
+high CSI: communities are robust across resolutions because they
+reflect genuine organizational structure. Poorly governed pipelines
+with tangled cross-domain dependencies exhibit low CSI.
 
 \subsection{D2: Blast-Radius Concentration Profile}
 
@@ -541,7 +540,9 @@ D4 cycle rank/N & $+1.000$ & 0.058 & 0.116 & \\
 After FDR correction, D3 algebraic connectivity and normalized gap
 are associated with documentation rate (FDR $p = 0.043$) and
 marginally with composite governance score (FDR $p = 0.080$). No
-other descriptors survive FDR correction.
+other descriptors survive FDR correction. Experiment~2e subsequently
+shows this D3 association is a between-layer architectural pattern
+rather than a within-layer governance signal.
 
 \subsubsection{D4 and Test Rate: A Qualitative Observation}
 
@@ -560,7 +561,13 @@ relationship, and we do not claim it as a confirmed finding.
 Because D3 descriptors may correlate with governance metadata simply
 because larger, denser domains tend to have different governance
 practices, we computed partial Spearman correlations controlling for
-domain size ($N$), edge count ($M$), and source fraction.
+domain size ($N$), edge count ($M$), and source fraction. The method
+rank-transforms all variables, residualizes both the descriptor and
+the outcome on the rank-transformed covariates via ordinary least
+squares, then computes Spearman correlation on the residuals with
+permutation $p$-values (10,000 permutations of residuals). This is a
+rank-residualization approach; $p$-values were not generated via
+Freedman--Lane residual permutation.
 
 \begin{table}[htb]
 \centering
@@ -766,10 +773,32 @@ from a 132-node graph) falls below the noise floor.
 
 To assess whether real pipeline topologies occupy a distinct region of
 descriptor space, we computed D1--D4 on 11 scientific workflow DAGs from
-WfCommons \citep{coleman2022wfcommons} (101--4,846 nodes), 18 production
-data lineage graphs from DLG-DG-23 \citep{dlgdg2024} (24--1,059
-table-level nodes), two data warehouse schemas from DW-Bench
-\citep{dwbench2025} (31--37 tables), and the production dbt manifest.
+WfCommons \citep{coleman2022wfcommons}, 18 production data lineage graphs
+from DLG-DG-23 \citep{dlgdg2024}, two data warehouse schemas from
+DW-Bench \citep{dwbench2025}, and the production dbt manifest.
+Table~\ref{tab:preprocess} summarises the preprocessing applied to each
+dataset before descriptor computation.
+
+\begin{table}[htb]
+\centering
+\caption{Dataset preprocessing for cross-dataset structural comparison.
+  Final $N$/$M$ are what descriptors are computed on.
+  $^\dagger$DLG-DG-23 filtered to Data Table + Data Job nodes with DATA\_FLOW
+  edges only (removes Data Field nodes and PARENT\_CHILD schema edges).
+  $^\ddagger$dbt LWCC: 38 isolated source tables removed.}
+\label{tab:preprocess}
+\begin{tabular}{lrrrr}
+\toprule
+Source & Raw $N$ & Raw $M$ & Final $N$ & Final $M$ \\
+\midrule
+WfCommons (11 DAGs) & 101--4846 & 100--12849 & 101--4846 & 100--12849 \\
+DLG-DG-23 (18 graphs)$^\dagger$ & 298--17085 & 298--17720 & 24--1059 & 24--1694 \\
+DW-Bench OMOP & 37 & 95 & 37 & 95 \\
+DW-Bench TPC-DI & 31 & 44 & 31 & 44 \\
+dbt manifest$^\ddagger$ & 223 & 263 & 185 & 262 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{table}[htb]
 \centering
@@ -836,14 +865,32 @@ Regression $R^2$ (MTTD) & Random Forest & 0.175 & 0.307 \\
 \end{tabular}
 \end{table}
 
-Classification achieves ceiling AUC = 1.0 for all feature sets,
-confirming that synthetic governance variation produces structurally
-separable graphs but providing no discriminative evidence between
-feature sets. The informative comparison is MTTD regression: multi-scale
-features explain 75\% more variance than baselines ($R^2 = 0.307$ vs.\
-$0.175$, random forest). Combined features do not improve over
-multi-scale alone, suggesting the multi-scale descriptors subsume the
-information in single-scale statistics for this prediction task.
+Standard 5-fold cross-validation achieves ceiling AUC = 1.0 for all
+feature sets, confirming that synthetic governance variation produces
+structurally separable graphs but providing no discriminative evidence
+between feature sets at this evaluation. Leave-scale-out cross-validation
+(training on three scales, testing on the held-out scale) gives a more
+stringent test of generalisation across graph sizes. Under this scheme,
+baselines achieve AUC = 1.000 across all four held-out folds; multi-scale
+descriptors achieve AUC = 0.935 $\pm$ 0.113, dropping to 0.74 when
+medium-scale graphs are held out. Baselines, which include diameter and
+degree statistics that scale predictably with graph size, generalise
+better across scales than the multi-scale features in this controlled
+experiment. The MTTD regression result ($R^2 = 0.307$ for multi-scale vs.\
+$0.175$ for baselines) should be interpreted in this light: the gain may
+not hold on graph sizes outside the training distribution.
+
+\textbf{D1 seed robustness on synthetic graphs.}
+Running 25 Louvain seeds per condition reveals that D1 differentiation
+survives seed noise only at large scale. Separation between well and
+poor governance as a multiple of seed standard deviation (SNR):
+tiny $= -0.5\times$ (well CSI lower than poor), small $= 0.9\times$,
+medium $= 0.8\times$, large $= 2.8\times$. At tiny through medium
+scales, Louvain seed variance is comparable to or larger than the
+governance-level separation, making single-seed D1 results at those
+scales unreliable. The large-scale D1 result (mean separation 0.307,
+SNR 2.8×) is the only scale where the differentiation clearly exceeds
+optimizer noise.
 
 \section{Discussion}
 
@@ -853,11 +900,17 @@ The convergent evidence from synthetic experiments, real-data
 correlations, partial correlations, and null models identifies which
 descriptors capture governance-relevant structure and which do not.
 
-D1 CSI passes all tests: it differentiates synthetic governance levels
-after FDR correction ($d = 3.9$), and the null model confirms it
-captures structure beyond degree sequences ($z = +3.7$). Its real-data
-correlation with governance metadata is not tested here because most
-domains lack internal edges for meaningful community detection.
+D1 CSI differentiates synthetic governance levels after FDR correction
+($d = 3.9$ at large scale) and the null model confirms it captures
+structure beyond degree sequences ($z = +3.7$). Seed robustness
+analysis qualifies this: at large scale the separation between well
+and poor governance exceeds seed variance by 2.8×, but at tiny through
+medium scales the seed variance is comparable to the governance
+separation, making those results unreliable. The large-scale synthetic
+result and the null model finding are the most defensible evidence for
+D1. Real-data correlation with governance metadata is not directly
+testable because most domain subgraphs lack internal edges for
+meaningful community detection.
 
 D3 algebraic connectivity showed the strongest initial real-data
 correlation ($\rho = -0.71$ vs.\ documentation, FDR $p = 0.043$), but
@@ -980,19 +1033,21 @@ experiments confirm that D1 (community stability), D2 (blast-radius
 concentration), and D4 (persistent homology) differentiate governance
 levels with statistical significance after FDR correction. A
 degree-preserving null model shows that D1, D3 Fiedler bimodality, and
-D4 H1 features capture structure beyond degree sequences. Real-data
-validation on a production dbt lineage graph yields a significant
-association between D3 algebraic connectivity and documentation rate
-that survives partial correlation controlling for structural confounds.
+D4 H1 features capture structure beyond degree sequences. Real-data validation yields a D3 algebraic connectivity correlation
+with documentation rate that survives partial correlation in the full
+sample but fails both the internal-edge subset filter and layer-stratified
+permutation, indicating it captures between-layer architecture rather
+than within-layer governance quality.
 
 The results are drawn from a single case study and should be interpreted
-as evidence of feasibility, not generalization. D3 normalized spectral
-gap, which showed the second-strongest raw correlation, was confounded
-by domain size and did not survive either partial correlation or the null
-model. D4 persistent features added value over the simpler cycle rank
-baseline only in the null model test. These negative results are as
-informative as the positive ones: they constrain which structural
-features carry genuine governance-relevant signal.
+as evidence of feasibility, not generalization. D1 differentiation at
+large scale and the degree-preserving null model results are the most
+robust findings. D3 normalized spectral gap was confounded by domain
+size; D3 algebraic connectivity is between-layer architecture; D4
+persistent features add value over cycle rank only in null model
+testing. These negative findings matter: they show the descriptors
+are sensitive to structure while being honest about the limits of
+current evidence.
 
 The descriptors are computable from any lineage graph (dbt manifests,
 data catalog exports, code-derived dependency graphs) and require no
