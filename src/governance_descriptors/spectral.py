@@ -80,10 +80,11 @@ def bimodality_coefficient(values) -> float:
 
 
 def von_neumann_entropy(g) -> float:
-    """Von Neumann entropy of the normalized Laplacian.
+    """Von Neumann-style entropy of the combinatorial (unnormalized) Laplacian.
 
-    Treats the normalized Laplacian as a density matrix (after scaling
-    so trace = 1) and computes Shannon entropy of its eigenvalues.
+    Treats the positive Laplacian eigenvalues as an unnormalized density
+    matrix (scaled so sum = 1) and computes Shannon entropy. Uses the
+    combinatorial Laplacian L = D - A, not the normalized Laplacian.
     Higher entropy = more complex/heterogeneous structure.
     """
     g = _to_undirected_connected(g)

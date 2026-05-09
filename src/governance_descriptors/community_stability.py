@@ -161,6 +161,45 @@ def stability_variance(sweep_results: list[dict]) -> float:
     return float(np.var(mods))
 
 
+def community_stability_index_multiseed(
+    g, n_seeds: int = 25, gamma_min: float = 0.1, gamma_max: float = 10.0, n_steps: int = 20
+) -> dict:
+    """Run CSI computation with multiple random seeds to quantify Louvain stochasticity.
+
+    Returns mean, std, min, max of CSI across seeds, and per-seed values.
+    Also returns mean seed-NVI at gamma=1.0 to measure within-resolution optimizer variance.
+    """
+    g = _to_undirected_connected(g)
+    n_nodes = g.number_of_nodes()
+    csi_values = []
+    partitions_at_gamma1 = []
+
+    for seed in range(n_seeds):
+        sweep = resolution_sweep(g, gamma_min=gamma_min, gamma_max=gamma_max,
+                                 n_steps=n_steps, seed=seed)
+        csi_values.append(community_stability_index(sweep))
+        # Record partition closest to gamma=1.0 for seed-NVI
+        best = min(sweep, key=lambda r: abs(r["gamma"] - 1.0))
+        partitions_at_gamma1.append(best["partition"])
+
+    # Seed-NVI at gamma≈1: mean NVI between all pairs of seed partitions
+    nvi_pairs = []
+    for i in range(n_seeds):
+        for j in range(i + 1, n_seeds):
+            nvi_pairs.append(_nvi(partitions_at_gamma1[i], partitions_at_gamma1[j], n_nodes))
+
+    return {
+        "csi_mean": float(np.mean(csi_values)),
+        "csi_std": float(np.std(csi_values)),
+        "csi_min": float(np.min(csi_values)),
+        "csi_max": float(np.max(csi_values)),
+        "seed_nvi_mean": float(np.mean(nvi_pairs)) if nvi_pairs else 0.0,
+        "seed_nvi_std": float(np.std(nvi_pairs)) if nvi_pairs else 0.0,
+        "n_seeds": n_seeds,
+        "csi_values": csi_values,
+    }
+
+
 def community_descriptor_summary(g, **sweep_kwargs) -> dict:
     """Compute all D1 descriptors in one call."""
     sweep = resolution_sweep(g, **sweep_kwargs)

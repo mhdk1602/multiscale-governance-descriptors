@@ -1,6 +1,7 @@
 from governance_descriptors.community_stability import (
     resolution_sweep,
     community_stability_index,
+    community_stability_index_multiseed,
     fragmentation_onset,
 )
 from governance_descriptors.blast_radius import (

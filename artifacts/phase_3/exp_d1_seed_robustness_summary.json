@@ -1,0 +1,8 @@
+{
+  "experiment": "d1_seed_robustness",
+  "n_seeds": 25,
+  "graphs_tested": 18,
+  "max_csi_std": 0.13490121552505932,
+  "max_seed_nvi": 0.26789563440221864,
+  "conclusion": "seed-sensitive"
+}
