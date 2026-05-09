@@ -319,11 +319,16 @@ the coupling structure.
 
 \subsection{D4: Persistent Homology via Shortest-Path Filtration}
 
-We compute the all-pairs shortest-path distance matrix on the
-undirected skeleton of $G$ and construct a Vietoris--Rips filtration.
-For each filtration threshold $\epsilon$, we compute homology groups in
-dimensions 0 and 1. The resulting persistence diagram records birth and
-death times for each topological feature.
+We compute all-pairs shortest-path distances on the LWCC of the
+undirected skeleton and construct a Vietoris--Rips complex using
+GUDHI~\citep{otter2017} with \texttt{max\_dimension=2} (so that the
+simplex tree includes 2-simplices, enabling H1 deaths) and
+\texttt{max\_edge\_length} set to the graph diameter plus one. Persistence
+is computed over $\mathbb{F}_2$ coefficients; zero-persistence intervals
+(birth = death) and infinite bars are discarded. Domain subgraphs with
+$N < 3$ or no internal edges contribute zero H1 bars by convention.
+For each filtration threshold $\epsilon$, we compute homology in
+dimensions 0 and 1, and record persistence diagrams of birth--death pairs.
 
 From the H1 (cycle) persistence diagram, we extract:
 
@@ -621,7 +626,9 @@ structural topology, not metadata artifacts.
 \begin{table}[htb]
 \centering
 \caption{$Z$-scores of real dbt graph descriptors relative to
-  100 degree-preserving rewirings.}
+  100 degree-preserving rewirings. All descriptor values use a fixed
+  canonical seed (seed\,=\,42) for consistency across null-model runs;
+  Experiment~2c reports CSI = $0.87 \pm 0.08$ over 25 seeds.}
 \label{tab:null}
 \begin{tabular}{lrrrr}
 \toprule
@@ -731,8 +738,10 @@ D: no largest domain & 17 & $-0.806$ & $<0.01$ & Spurious$^\dagger$ \\
 \end{table}
 
 D3 takes the value 0 for all 12 source-dominant domains (no internal
-edges) and the value 1.0 for all 5 silver/intermediate domains (small
-fully-connected clusters), with intermediate D3 for the gold/mart
+edges) and the value 1.0 for all 5 silver/intermediate domains (all five
+are star-structured subgraphs $K_{1,k}$ with $N \in \{5, 6\}$; algebraic
+connectivity of a star equals 1 for any $k \geq 1$), with intermediate
+D3 for the gold/mart
 domain. Layer-stratified permutation (5,000 permutations of
 documentation labels within each layer stratum) yields $p = 1.000$:
 D3 is constant within each stratum, so every permutation reproduces
@@ -836,16 +845,35 @@ its two dominant subgraphs. DW-Bench schemas occupy an intermediate
 position with moderate CSI but the highest spectral gaps ($> 0.01$),
 reflecting their shorter dependency chains.
 
+Figure~\ref{fig:pca} shows a PCA projection of all five standardized
+descriptors. Production data lineage graphs (dbt, DLG-DG-23) cluster
+in the positive-PC1 region, which loads on high CSI, low spectral gap,
+and low cycle rank density. WfCommons scientific workflows span a wider
+region, and DW-Bench warehouse schemas are separated on both axes (high
+spectral gaps, low cycle density). The two-component projection
+explains 54.7\% of descriptor variance, so the visual separation is
+suggestive rather than definitive.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/crossdataset_pca.pdf}
+\caption{PCA of five standardized descriptors (D1 CSI, D2 max Gini,
+  D3 norm.\ gap, D3 Fiedler bim., D4 cycle rank/N) for 27 graphs
+  with complete descriptor coverage. PC1 (29.5\%) loads on high CSI /
+  low norm.\ gap / low cycle rank; PC2 (25.2\%) on high Fiedler bim.\ /
+  high Gini. Production lineage graphs (dbt, DLG-DG-23) occupy the
+  high-CSI / low-gap region; WfCommons workflows span broader space.}
+\label{fig:pca}
+\end{figure}
+
 These results confirm that the descriptors produce interpretable
-variation across genuinely different pipeline architectures, not only
-synthetic governance variants. The convergence of dbt and DLG-DG-23
-descriptor profiles, both from governed production environments but from
-different organizations and technology stacks, suggests that data
-lineage graphs exhibit structural regularities distinct from scientific
-workflows and data warehouse schemas. Alternative explanations (domain
-differences, scale effects) cannot be ruled out from this comparison
-alone, but the consistency across 19 independent production lineage
-graphs from two organizations is encouraging.
+variation across genuinely different pipeline architectures. The
+convergence of dbt and DLG-DG-23 profiles, from different organizations
+and technology stacks, suggests structural regularities in production
+lineage graphs. Alternative explanations (domain differences, scale
+effects) cannot be ruled out from a descriptive comparison alone, but
+the consistency across 19 production lineage graphs from two source
+ecosystems is informative.
 
 \subsection{Experiment 4: Predictive Comparison}
 
@@ -948,7 +976,8 @@ The D3 algebraic connectivity--documentation association ($\rho =
 -0.71$, FDR $p = 0.043$) is a between-layer architectural pattern,
 not a within-layer governance signal. Source-dominant domains all have
 D3 = 0 (no internal edges) and varying documentation; silver/intermediate
-domains all have D3 = 1.0 (small fully-connected clusters) and zero
+domains all have D3 algebraic connectivity = 1.0 (all are star-structured
+subgraphs $K_{1,k}$, for which $\lambda_2 = 1$ regardless of $k$) and zero
 documentation; the gold/mart domain has intermediate D3 and high
 documentation. D3 is constant within each layer stratum, which means
 layer-stratified permutation of governance labels cannot change the
