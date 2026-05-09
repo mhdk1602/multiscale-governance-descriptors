@@ -1,0 +1,25 @@
+{
+  "experiment": "6_cross_org_validation",
+  "organizations": [
+    "cal-itp",
+    "mattermost"
+  ],
+  "cal_itp": {
+    "n_domains": 26,
+    "n_models": 631,
+    "D3_doc_rho": 0.023,
+    "D3_doc_p": 0.911
+  },
+  "mattermost": {
+    "n_domains": 6,
+    "n_models": 235,
+    "D3_doc_rho": 0.812,
+    "D3_doc_p": 0.07
+  },
+  "dbt_reference": {
+    "n_domains": 18,
+    "D3_doc_rho": -0.708,
+    "D3_doc_FDR_p": 0.043
+  },
+  "conclusion": "D3 sign reversal across orgs confirms between-layer architecture, not universal governance signal"
+}

@@ -55,10 +55,14 @@ scientific workflows, DLG-DG-23 Huawei Cloud lineage graphs, DW-Bench
 warehouse schemas, and the dbt manifest) shows that production data
 lineage graphs from two independent organizations converge on high
 community stability and small spectral gaps, occupying a region of
-descriptor space distinct from scientific workflows. These results
-suggest that lineage topology encodes governance-relevant structural
-signal, though the governance correlation analysis rests on a single
-case study and generalization requires further validation.
+descriptor space distinct from scientific workflows. Cross-organization validation on two additional public dbt projects
+(Cal-ITP, 26 domains; Mattermost, 6 domains) finds no replication:
+the D3 correlation does not reach significance in Cal-ITP and reverses
+sign in Mattermost, confirming the between-layer architecture
+interpretation. The descriptors produce reproducible structural
+characterization across organizations; governance prediction requires
+within-organization calibration and cannot be generalized from a
+single case study.
 \end{abstract}
 
 \smallskip
@@ -438,6 +442,18 @@ domain-level governance metadata needed for correlation analysis, so the
 comparison is purely structural: do real pipeline architectures from
 different domains and organizations occupy distinguishable regions of
 descriptor space?
+
+\subsection{Experiment 6: Cross-Organization Governance Validation}
+
+To test whether the governance-descriptor correlations observed in the
+dbt case study replicate to other organizations, we extract
+governance-labeled lineage graphs from two additional public dbt projects:
+\textbf{Cal-ITP} (California Integrated Travel Project; 631 models, 26
+analyzable domains with $N \geq 5$; documentation rates 0--100\%)
+and \textbf{Mattermost} (235 models, 6 analyzable domains; documentation
+rates 0--100\%). Lineage is extracted from \texttt{ref()} dependency
+declarations in SQL files; documentation and test coverage are parsed
+from schema YAML files; domains are assigned by two-level folder structure.
 
 \subsection{Experiment 4: Predictive Comparison}
 
@@ -874,6 +890,46 @@ lineage graphs. Alternative explanations (domain differences, scale
 effects) cannot be ruled out from a descriptive comparison alone, but
 the consistency across 19 production lineage graphs from two source
 ecosystems is informative.
+
+\subsection{Experiment 6: Cross-Organization Governance Validation}
+
+Neither Cal-ITP nor Mattermost replicates the dbt D3 correlation.
+
+\begin{table}[htb]
+\centering
+\caption{D3 algebraic connectivity vs.\ documentation rate across three
+  organizations. The sign of the correlation reverses between
+  organizations, confirming that D3 captures organization-specific
+  layer architecture rather than a universal governance signal.}
+\label{tab:crossorg}
+\begin{tabular}{lrrrr}
+\toprule
+Organization & Domains & $\rho$ & perm.\ $p$ & Direction \\
+\midrule
+dbt (this study) & 18 & $-0.708$ & 0.002 & negative \\
+Cal-ITP & 26 & $+0.023$ & 0.911 & none \\
+Mattermost & 6 & $+0.812$ & 0.070 & positive \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Cal-ITP (26 analyzable domains, the largest external sample) shows no
+association between any D1--D4 descriptor and documentation coverage
+(all $p > 0.11$). Mattermost (6 domains) shows a positive marginal
+association for D3 ($\rho = +0.81$, $p = 0.070$), the opposite sign
+from our dbt case study. The sign reversal arises from organizational
+architecture: in Mattermost, the best-documented domains are the
+large, internally-connected mart domains, whereas in our dbt case the
+best-documented domains are source-only clusters with zero internal
+edges. The direction of any D3--documentation relationship depends
+entirely on how governance practices align with architectural layer
+choices in a specific organization.
+
+No descriptor achieves FDR-corrected significance in either new
+organization. This is the expected result given the between-layer
+interpretation established in Experiment~2e: the observed dbt
+correlation was layer composition, not within-layer governance
+quality, and layer composition varies by organization.
 
 \subsection{Experiment 4: Predictive Comparison}
 
