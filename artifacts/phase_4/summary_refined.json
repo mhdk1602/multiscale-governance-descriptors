@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "cal-itp": {
+      "n_snapshots": 51,
+      "span_years": 4.0,
+      "N_growth": "74 -> 562 (7.6x)"
+    },
+    "mattermost": {
+      "n_snapshots": 55,
+      "span_years": 5.0,
+      "N_growth": "197 -> 235 (1.2x)"
+    }
+  },
+  "total_snapshots": 106,
+  "cumulative_years": 9.0,
+  "drift_events_detected_20pct_threshold": 44,
+  "method": "step-change detection at >20% relative change in consecutive snapshots"
+}

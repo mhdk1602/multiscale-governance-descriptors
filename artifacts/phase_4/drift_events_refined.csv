@@ -1,0 +1,45 @@
+project,date,descriptor,prev,curr,pct_change,commit_msg
+cal-itp,2022-07-26,D3_alg_conn,0.2423366357660914,0.057575185586558,76.24165021332936,Merge pull request #1418 from cal-itp/payments-dbt-migration
+cal-itp,2023-01-20,D3_alg_conn,0.0561183773673458,0.0238067332832361,57.57765209888484,switch rt feed presence check to new daily rt url index (#2195)
+cal-itp,2023-03-22,D3_alg_conn,0.0261708417254482,0.0381309527067824,45.700138752909645,Convert array/struct to JSON string in reports index (#2415)
+cal-itp,2023-07-20,D3_alg_conn,0.042637811304047,0.0288653446420742,32.301063869724416,remove feature filter (#2809)
+cal-itp,2025-05-06,D3_alg_conn,0.028681399354547,0.0183497251816812,36.02221092893737,Update warehouse/models/mart/transit_database/_mart_transit_database.yml
+cal-itp,2025-06-02,D3_alg_conn,0.0183497251816812,0.0091632203625296,50.06344633609348,NTD: mart table usability and testing (#3909)
+cal-itp,2022-05-27,D1_csi,0.7142857142857143,0.5714285714285714,20.000000000000007,missing comma and updated code descriptions
+cal-itp,2022-09-23,D1_csi,0.6428571428571429,0.8571428571428571,33.333333333333314,temporarily add services.gtfs schedule quality column & add associated documentation (#1839)
+cal-itp,2022-11-23,D1_csi,0.8571428571428571,0.6428571428571429,24.999999999999993,Airtable schema updates (#2011)
+cal-itp,2022-12-21,D1_csi,0.6428571428571429,0.7857142857142857,22.22222222222221,Make fct_schedule_feed_files (#2097)
+cal-itp,2023-03-22,D1_csi,0.7142857142857143,0.5,30.000000000000004,Convert array/struct to JSON string in reports index (#2415)
+cal-itp,2023-04-16,D1_csi,0.5,0.7142857142857143,42.85714285714286,added missing columns from Littlepay authorisations and settlements files to external and staging tables (#2480)
+cal-itp,2023-08-18,D1_csi,0.9285714285714286,0.7142857142857143,23.076923076923077,bug fix: missing `mart_gtfs.fct_daily_scheduled_stops` (#2901)
+cal-itp,2024-09-05,D1_csi,0.9285714285714286,0.5,46.15384615384615,Correcting a mistake in private dataset description in yml file!
+cal-itp,2024-10-10,D1_csi,0.5,0.6428571428571429,28.57142857142858,"Add validation and move ROUND at the end of calculation to fix division by zero error on NTD Validation Service Check, a"
+cal-itp,2025-02-07,D1_csi,0.7857142857142857,0.5714285714285714,27.272727272727277,Fix NTD nonmajor_safety_and_security_events data type errors
+cal-itp,2025-03-11,D1_csi,0.5714285714285714,0.7857142857142857,37.50000000000001,"Adding rtpa and mpo to stg, int, mart dim_organizations"
+cal-itp,2025-04-02,D1_csi,0.7857142857142857,0.5,36.36363636363636,Fix dt error on fct_vehicle_locations_grouped (#3806)
+cal-itp,2025-05-06,D1_csi,0.5,0.6428571428571429,28.57142857142858,Update warehouse/models/mart/transit_database/_mart_transit_database.yml
+cal-itp,2025-12-05,D1_csi,0.7142857142857143,0.5714285714285714,20.000000000000007,GTFS schedule + RT operator summary (#4558)
+cal-itp,2026-02-03,D1_csi,0.6428571428571429,0.7857142857142857,22.22222222222221,Payments (enghouse): mart and reliability table revisions (#4750)
+cal-itp,2026-05-08,D1_csi,0.6428571428571429,0.7857142857142857,22.22222222222221,Adding GTFS url to expiring issues model (#5290)
+cal-itp,2022-07-26,D4_cycle_rank_norm,0.3780487804878049,0.2582781456953642,31.68126468703269,Merge pull request #1418 from cal-itp/payments-dbt-migration
+cal-itp,2022-09-23,D4_cycle_rank_norm,0.2368421052631578,0.423728813559322,78.9077212806027,temporarily add services.gtfs schedule quality column & add associated documentation (#1839)
+cal-itp,2022-10-14,D4_cycle_rank_norm,0.423728813559322,0.3318965517241379,21.67241379310345,Remaining base tables (#1902)
+cal-itp,2022-11-23,D4_cycle_rank_norm,0.3318965517241379,0.4507042253521127,35.79659776842877,Airtable schema updates (#2011)
+mattermost,2020-03-16,D3_alg_conn,0.4258889445162139,0.0228931136753686,94.62462832854845,Fixed server_licensee_details date range.
+mattermost,2021-03-11,D3_alg_conn,0.0174437515807403,0.0579752132608748,232.35518742932229,Adding daily_server_user_agent_events (#638)
+mattermost,2020-03-16,D1_csi,0.5714285714285714,0.8571428571428571,50.0,Fixed server_licensee_details date range.
+mattermost,2021-04-08,D1_csi,0.9285714285714286,0.5,46.15384615384615,Add Column (#662)
+mattermost,2021-05-07,D1_csi,0.5,0.7857142857142857,57.14285714285714,Ic fix (#712)
+mattermost,2021-12-15,D1_csi,0.6428571428571429,0.7857142857142857,22.22222222222221,Added external ID models to backfill any salesforce objects that are missing an external ID. (#879)
+mattermost,2022-05-03,D1_csi,0.6428571428571429,0.7857142857142857,22.22222222222221,Removing DLL function to avoid DBT error (#912)
+mattermost,2022-06-28,D1_csi,0.7142857142857143,0.5714285714285714,20.000000000000007,Update cs_signup_campaign.sql (#949)
+mattermost,2022-09-01,D1_csi,0.6428571428571429,0.5,22.22222222222223,MM-45774 cloud starter bug (#988)
+mattermost,2022-10-26,D1_csi,0.5,0.7142857142857143,42.85714285714286,Creating Table for LTV Calculation (#1031)
+mattermost,2024-01-13,D1_csi,0.6428571428571429,0.7857142857142857,22.22222222222221,deprecates user_28day_retention (#1424)
+mattermost,2024-07-22,D1_csi,0.7857142857142857,0.3571428571428571,54.545454545454554,Hotfix: fix failing ARR model (#1558)
+mattermost,2024-12-18,D1_csi,0.3571428571428571,0.7142857142857143,100.00000000000004,Mm 62195 remove deprecated models (#1684)
+mattermost,2020-02-15,D4_cycle_rank_norm,0.1875,0.0545454545454545,70.90909090909092,Fixed syntax and naming errors.
+mattermost,2020-03-16,D4_cycle_rank_norm,0.0545454545454545,0.134020618556701,145.70446735395203,Fixed server_licensee_details date range.
+mattermost,2020-04-14,D4_cycle_rank_norm,0.134020618556701,0.1619047619047619,20.80586080586084,updates to handle 15 digits
+mattermost,2020-05-14,D4_cycle_rank_norm,0.1619047619047619,0.28,72.94117647058825,Licensed servers (#242)
+mattermost,2021-03-11,D4_cycle_rank_norm,0.2802197802197802,0.4585635359116022,63.64424222727765,Adding daily_server_user_agent_events (#638)

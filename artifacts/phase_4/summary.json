@@ -1,0 +1,11 @@
+{
+  "cal-itp": {
+    "n_snapshots": 51,
+    "span_days": 1473
+  },
+  "mattermost": {
+    "n_snapshots": 55,
+    "span_days": 1831
+  },
+  "drift_events_detected": 0
+}
