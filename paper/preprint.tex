@@ -29,41 +29,43 @@ Patterns in Data Lineage Graphs}
 \maketitle
 
 \begin{abstract}
-Data governance maturity is typically assessed through surveys, audits,
-and capability-model checklists that capture stated policy but not
-realized practice. We propose four multi-scale structural descriptors
-that detect governance-relevant patterns in the topology of data
-lineage graphs: community stability under resolution sweep (D1),
-blast-radius concentration profile (D2), spectral gap and Fiedler
-structure (D3), and persistent homology of shortest-path filtrations
-(D4). In controlled experiments on synthetic lineage graphs at three
-governance levels, D1, D2, and D4 achieve statistically significant
-differentiation after Benjamini--Hochberg FDR correction at the
-largest scale tested ($N \approx 130$), with Cohen's $d$ exceeding
-3.9 for D1 and 15.0 for D4. Validation on an anonymized production dbt lineage graph (223 nodes,
-263 edges, 26 domains) yields permutation Spearman $\rho = -0.71$
-between D3 algebraic connectivity and documentation rate across 18
-domains (FDR-adjusted $p = 0.043$). Subset robustness analysis shows
-this association does not survive restriction to the 6 domains with
-internal edges ($p = 0.19$), and layer-stratified permutation confirms
-D3 is constant within each layer stratum ($p = 1.0$): the correlation
-is a between-layer architectural pattern, not a within-layer governance
-signal. A degree-preserving rewiring null model confirms that D1, D3
-Fiedler bimodality, and D4 H1 features capture structure beyond degree
-sequences ($|z| > 2.9$); layer-preserving rewiring yields D1 $z =
-+2.68$ and D3 alg.\ conn.\ $z = -2.27$. Cross-dataset comparison on 32 graphs from four sources (WfCommons
-scientific workflows, DLG-DG-23 Huawei Cloud lineage graphs, DW-Bench
-warehouse schemas, and the dbt manifest) shows that production data
-lineage graphs from two independent organizations converge on high
-community stability and small spectral gaps, occupying a region of
-descriptor space distinct from scientific workflows. Cross-organization validation on two additional public dbt projects
-(Cal-ITP, 26 domains; Mattermost, 6 domains) finds no replication:
-the D3 correlation does not reach significance in Cal-ITP and reverses
-sign in Mattermost, consistent with the between-layer architecture
-interpretation. The descriptors produce reproducible structural
-characterization across organizations; governance prediction requires
-within-organization calibration and cannot be generalized from a
-single production case; cross-organization validation shows no replication.
+This paper presents a feasibility study of multi-scale graph-theoretic
+descriptors for data lineage analysis, with two empirical contributions
+and one negative pilot result. We define four descriptors of directed
+acyclic lineage graphs: community stability under Louvain resolution
+sweep (D1), blast-radius concentration (D2), spectral gap and Fiedler
+structure from the combinatorial Laplacian (D3), and persistent H1
+homology over a Vietoris--Rips filtration of shortest-path distances
+(D4). We compute the four descriptors on 32 graphs from four
+heterogeneous sources: 11 scientific workflow DAGs (WfCommons), 18
+production data lineage graphs from Huawei Cloud (DLG-DG-23), 2 data
+warehouse schemas (DW-Bench), and an anonymized production dbt
+manifest. Principal component analysis on standardized descriptors
+shows that production data lineage graphs cluster on high community
+stability and low normalized spectral gap, distinct from scientific
+workflow topologies; this structural separation is the paper's most
+robust empirical finding.
+As a single-organization pilot of governance--topology correlation, we
+test whether descriptor values at the domain level associate with
+documentation coverage in a 223-node, 26-domain dbt lineage. Across
+the 18 domains with $N \geq 5$, D3 algebraic connectivity has
+permutation Spearman $\rho = -0.71$ with documentation rate (FDR-corrected
+$p = 0.043$; bootstrap 95\% CI $[-0.92, -0.27]$). However, D3 takes only
+three distinct values across the 18 domains (rank-degenerate: 12 source
+domains have $D3 = 0$, five star-structured silver domains have $D3 = 1$,
+one gold domain has $D3 = 0.17$), so the association is operationally
+a 3-tier between-layer ordering rather than a continuous within-layer
+relationship. Layer-stratified permutation gives $p = 1.0$, confirming
+the correlation is captured entirely by between-layer architecture. A
+preliminary cross-organisation comparison on two public dbt projects
+(Cal-ITP, Mattermost) with folder-derived domain partitions does not
+replicate the dbt finding, but the construct mismatch between
+metadata-assigned and folder-derived domains makes this inconclusive.
+We frame the paper as feasibility evidence and methodological scaffolding
+rather than validated governance prediction. Sufficient validation of
+the governance hypothesis requires curated domain-level metadata from
+multiple organisations under partnership arrangements; we outline this
+future work concretely.
 \end{abstract}
 
 \smallskip
@@ -110,30 +112,48 @@ a real production dbt lineage graph with genuine governance metadata.
 \subsection{Contributions}
 
 \begin{enumerate}
-  \item Four graph-theoretic descriptors (D1--D4) that detect
-        governance-relevant structural patterns from lineage topology,
-        each operating at a different structural scale.
+  \item \textbf{Cross-dataset structural characterization}, the paper's
+        primary empirical contribution. Four graph-theoretic descriptors
+        (D1--D4) are computed on 32 graphs from four heterogeneous
+        sources (WfCommons scientific workflows, DLG-DG-23 Huawei Cloud
+        lineage, DW-Bench warehouse schemas, anonymized production dbt
+        manifest). Principal component analysis shows that production
+        data lineage graphs occupy a distinct descriptor region
+        characterized by high community stability and small spectral
+        gaps. This is reproducible, descriptive, and does not depend on
+        any governance metadata.
 
-  \item An empirical validation framework with synthetic lineage
-        generators at three governance levels, demonstrating statistically
-        significant differentiation with FDR correction and a
-        degree-preserving null model.
+  \item \textbf{Precise descriptor definitions and implementation},
+        including LWCC handling for disconnected graphs, combinatorial
+        (unnormalized) Laplacian for D3, GUDHI parameters for D4
+        (\texttt{max\_dimension=2}, $\mathbb{F}_2$ coefficients), and
+        cycle rank baseline. All computations are reproducible from the
+        public Zenodo archive.
 
-  \item Initial real-data validation on an anonymized production dbt
-        lineage graph (223 nodes, 26 domains) with permutation-based
-        inference, partial correlations, subset robustness analysis, and
-        layer-stratified permutation showing D3 captures between-layer
-        architecture, not within-layer governance quality.
+  \item \textbf{Methodological scaffolding for governance--topology
+        studies}: permutation-based inference, Benjamini--Hochberg FDR
+        correction with explicit hypothesis families, rank-residualization
+        partial correlations, bootstrap confidence intervals, two null
+        models (degree-preserving and layer-preserving), subset robustness,
+        layer-stratified permutation, D1 seed-robustness, leave-scale-out
+        cross-validation, and power analysis under the rank-degenerate
+        structure observed in real data.
 
-  \item Cross-dataset structural characterization of 32 graphs from
-        workflow, lineage, warehouse-schema, and dbt sources, showing
-        that production lineage graphs occupy a distinct descriptor
-        region from scientific workflows.
+  \item \textbf{A single-organisation pilot of governance--topology
+        correlation} on a production dbt lineage with explicit
+        acknowledgement of rank-degeneracy in D3 (3 effective values
+        across 18 domains), detection-threshold-level effect size
+        (observed $|\rho| = 0.71$ vs.\ minimum detectable $\approx 0.7$--$0.8$
+        at 80\% power), and layer-stratified permutation $p = 1.0$
+        showing the association is between-layer architectural rather than
+        within-layer governance signal.
 
-  \item Cross-organization validation on two public dbt projects (Cal-ITP,
-        Mattermost) showing the D3/documentation association does not
-        replicate and reverses sign, establishing a principled boundary
-        condition for topology-based governance inference.
+  \item \textbf{Negative cross-organisation pilot with methodological
+        caveat.} D3/documentation does not replicate to two public dbt
+        projects (Cal-ITP, Mattermost) under folder-derived domain
+        partitioning. We discuss why folder-derived domains are not
+        the same construct as metadata-assigned dbt domains, and we
+        outline what curated cross-organisation validation would require.
 \end{enumerate}
 
 \section{Related Work}
@@ -540,46 +560,88 @@ Governance metadata reveals a clear gradient: gold/mart nodes have
 0\% test coverage and 41\% documentation. Silver/intermediate nodes
 have 0\% for both. No steward metadata was available.
 
+\paragraph{Rank degeneracy of D3 in the dbt sample.}
+Before reporting the correlations, we note an important structural
+feature of the data. Across the 18 domains with $N \geq 5$, D3
+algebraic connectivity takes only three distinct values:
+
+\begin{itemize}
+  \item 12 source-only domains have $M = 0$ (no internal edges) and
+        therefore $D3 = 0$ exactly;
+  \item 5 silver/intermediate domains are star-structured subgraphs
+        $K_{1,k}$ (with $N \in \{5, 6\}$, $M = N{-}1$); algebraic
+        connectivity of a star equals $1$ for any $k$;
+  \item 1 gold/mart domain (domain\_012, $N = 35$, $M = 63$) has
+        intermediate $D3 = 0.168$.
+\end{itemize}
+
+This rank-degenerate structure is intrinsic to the dataset: per-domain
+internal connectivity in production dbt projects is dominated by tiny
+fully-connected subgraphs at silver/intermediate layers, with most
+``analyzable'' domains actually being collections of disconnected source
+tables. Any correlation involving D3 at the domain level is therefore
+operationally a 3-tier rank ordering test rather than a continuous
+correlation. We report it explicitly with bootstrap confidence
+intervals (Table~\ref{tab:exp2}) and revisit the implications in
+Experiment 2e.
+
 \begin{table}[htb]
 \centering
-\caption{Permutation Spearman correlations between per-domain descriptors
-  and governance metadata (18 domains with $N \geq 5$). Permutation
-  $p$-values from 10,000 permutations; FDR $p$ via Benjamini--Hochberg.}
+\caption{Per-domain correlations between descriptors and governance
+  metadata (18 domains with $N \geq 5$). Permutation $p$ from 10,000
+  permutations; FDR $p$ via Benjamini--Hochberg across the full
+  Experiment~2 descriptor--target family; bootstrap 95\% CIs from
+  10,000 resamples.}
 \label{tab:exp2}
-\begin{tabular}{lrrrl}
+\begin{tabular}{lrrrrl}
 \toprule
-Descriptor vs.\ target & $\rho$ & perm.\ $p$ & FDR $p$ & \\
+Descriptor vs.\ target & $\rho$ & perm.\ $p$ & FDR $p$ & 95\% CI & \\
 \midrule
-\multicolumn{5}{l}{\textit{vs.\ composite governance score}} \\
-D3 algebraic connectivity & $-0.643$ & 0.006 & 0.080 & $\dagger$ \\
-D3 normalized gap & $-0.635$ & 0.007 & 0.080 & $\dagger$ \\
-D3 spectral entropy & $-0.447$ & 0.067 & 0.123 & \\
+\multicolumn{6}{l}{\textit{vs.\ composite governance score}} \\
+D3 algebraic conn. & $-0.643$ & 0.006 & 0.080 & $[-0.91, -0.03]$ & $\dagger$ \\
+D3 normalized gap & $-0.635$ & 0.007 & 0.080 & $[-0.88, -0.09]$ & $\dagger$ \\
+D3 spectral entropy & $-0.447$ & 0.067 & 0.123 & $[-0.88, +0.21]$ & \\
 \midrule
-\multicolumn{5}{l}{\textit{vs.\ documentation rate}} \\
-D3 algebraic connectivity & $-0.708$ & 0.002 & 0.043 & * \\
-D3 normalized gap & $-0.701$ & 0.002 & 0.043 & * \\
-D3 Fiedler bimodality & $-0.561$ & 0.017 & 0.116 & \\
-D2 max Gini & $-0.563$ & 0.017 & 0.116 & \\
+\multicolumn{6}{l}{\textit{vs.\ documentation rate}} \\
+D3 algebraic conn. & $-0.708$ & 0.002 & 0.043 & $[-0.92, -0.27]$ & * \\
+D3 normalized gap & $-0.701$ & 0.002 & 0.043 & $[-0.88, -0.28]$ & * \\
+D3 Fiedler bim. & $-0.561$ & 0.017 & 0.116 & $[-0.86, -0.07]$ & \\
+D2 max Gini & $-0.563$ & 0.017 & 0.116 & $[-0.88, -0.07]$ & \\
+D4 H1/N & $+0.214$ & --- & --- & $[+0.05, +0.49]$ & \\
+D4 cycle rank/N & $+0.214$ & --- & --- & $[+0.03, +0.50]$ & \\
 \midrule
-\multicolumn{5}{l}{\textit{vs.\ test rate (qualitative only; see text)}} \\
-D4 H1/N & $+1.000$ & 0.058 & 0.116 & \\
-D4 cycle rank/N & $+1.000$ & 0.058 & 0.116 & \\
+\multicolumn{6}{l}{\textit{vs.\ test rate (qualitative only; see text)}} \\
+D4 H1/N & $+1.000$ & 0.058 & 0.116 & --- & \\
+D4 cycle rank/N & $+1.000$ & 0.058 & 0.116 & --- & \\
 \bottomrule
-\multicolumn{5}{l}{\small $\dagger$ FDR $< 0.10$; * FDR $< 0.05$}
+\multicolumn{6}{l}{\small $\dagger$ FDR $< 0.10$; * FDR $< 0.05$}
 \end{tabular}
 \end{table}
 
 After FDR correction, D3 algebraic connectivity and normalized gap
 are associated with documentation rate (FDR $p = 0.043$) and
-marginally with composite governance score (FDR $p = 0.080$). No
-other descriptors survive FDR correction. (Table~\ref{tab:subset}
-reports FDR $p = 0.029$ for the same Subset~A result; the difference
-arises because the two tables apply BH correction to different
-hypothesis families: Table~\ref{tab:exp2} corrects across all
-descriptor--target pairs in Experiment~2, while Table~\ref{tab:subset}
-corrects within the subset-robustness family only.)
-Experiment~2e subsequently shows this association is a between-layer
-architectural pattern rather than a within-layer governance signal.
+marginally with composite governance score (FDR $p = 0.080$). Bootstrap
+confidence intervals exclude zero for both, supporting the rank
+ordering despite the 3-tier structure. D4 H1/N and cycle rank/N show
+small positive correlations with documentation rate whose bootstrap
+CIs also exclude zero ($[+0.05, +0.49]$ and $[+0.03, +0.50]$
+respectively). Table~\ref{tab:subset} reports FDR $p = 0.029$ for the
+same Subset A result; the difference arises because BH correction is
+applied to different hypothesis families across the two tables.
+
+\paragraph{Power analysis.}
+With $n = 18$ and the rank-degenerate D3 structure observed above
+(12 ties at 0, 5 ties at 1.0, one intermediate value), simulation
+estimates the minimum effect size detectable at 80\% power and
+$\alpha = 0.05$ to be $|\rho| \in [0.7, 0.8]$. The observed $|\rho|
+= 0.71$ for D3 vs.\ doc\_rate sits at this detection threshold. The
+result is statistically real but the dataset cannot distinguish a
+true correlation of $0.71$ from a true correlation of $0.85$ at this
+sample size.
+
+Experiment 2e subsequently shows that the D3 association is captured
+entirely by between-layer architecture rather than within-layer
+governance signal.
 
 \subsubsection{D4 and Test Rate: A Qualitative Observation}
 
@@ -907,45 +969,59 @@ effects) cannot be ruled out from a descriptive comparison alone, but
 the consistency across 19 production lineage graphs from two source
 ecosystems is informative.
 
-\subsection{Experiment 6: Cross-Organization Governance Validation}
+\subsection{Experiment 6: Preliminary Cross-Organisation Comparison}
 
-Neither Cal-ITP nor Mattermost replicates the dbt D3 correlation.
+We attempt cross-organisation replication of the dbt D3 finding on two
+public dbt projects (Cal-ITP, 631 models; Mattermost, 235 models).
+
+\paragraph{Unit-of-analysis caveat.}
+The replication faces an unavoidable construct-validity issue. In our
+dbt case study, ``domain'' is an explicit metadata assignment
+(\texttt{domain\_or\_team\_owner}) curated by the data team. Cal-ITP
+and Mattermost do not consistently populate \texttt{meta.domain} or
+\texttt{meta.owner} on most models; we therefore partition by two-level
+folder path (e.g., \texttt{staging/gtfs}, \texttt{mart/payments}). Folder
+structure in dbt projects often reflects pipeline-layer organisation
+rather than business-domain assignment. The Cal-ITP and Mattermost
+``domains'' are therefore not the same construct as the dbt case-study
+domains. We report Experiment~6 as preliminary cross-organisation
+exploration, not validated cross-organisation replication.
 
 \begin{table}[htb]
 \centering
 \caption{D3 algebraic connectivity vs.\ documentation rate across three
-  organizations. The sign of the correlation reverses between
-  organizations, confirming that D3 captures organization-specific
-  layer architecture rather than a universal governance signal.}
+  organisations. The dbt case uses metadata-assigned domains;
+  Cal-ITP and Mattermost use folder-derived domains.}
 \label{tab:crossorg}
-\begin{tabular}{lrrrr}
+\begin{tabular}{lllrrl}
 \toprule
-Organization & Domains & $\rho$ & perm.\ $p$ & Direction \\
+Organisation & Domain unit & $n$ & $\rho$ & perm.\ $p$ & 95\% CI \\
 \midrule
-dbt (this study) & 18 & $-0.708$ & 0.002 & negative \\
-Cal-ITP & 26 & $+0.023$ & 0.911 & none \\
-Mattermost & 6 & $+0.812$ & 0.070 & positive \\
+dbt (this study) & metadata-assigned & 18 & $-0.708$ & 0.002 & $[-0.92, -0.27]$ \\
+Cal-ITP & folder-derived & 26 & $+0.023$ & 0.911 & $[-0.42, +0.44]$ \\
+Mattermost & folder-derived & 6 & $+0.812$ & 0.070 & $[+0.00, +1.00]$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 Cal-ITP (26 analyzable domains, the largest external sample) shows no
 association between any D1--D4 descriptor and documentation coverage
-(all $p > 0.11$). Mattermost (6 domains) shows a positive marginal
-association for D3 ($\rho = +0.81$, $p = 0.070$), the opposite sign
-from our dbt case study. The sign reversal arises from organizational
-architecture: in Mattermost, the best-documented domains are the
-large, internally-connected mart domains, whereas in our dbt case the
-best-documented domains are source-only clusters with zero internal
-edges. The direction of any D3--documentation relationship depends
-entirely on how governance practices align with architectural layer
-choices in a specific organization.
+(all $p > 0.11$). The bootstrap 95\% confidence interval for D3 vs.\
+doc\_rate spans zero. Mattermost ($n = 6$) shows a positive marginal
+association ($\rho = +0.81$, $p = 0.070$), but the bootstrap CI is
+$[+0.00, +1.00]$ -- the sample size is too small for the bootstrap to
+constrain the lower bound away from zero, so the directional reversal
+relative to dbt is suggestive but not statistically supported.
 
-No descriptor achieves FDR-corrected significance in either new
-organization. This is the expected result given the between-layer
-interpretation established in Experiment~2e: the observed dbt
-correlation was layer composition, not within-layer governance
-quality, and layer composition varies by organization.
+Two readings are equally consistent with the data: (a) the original
+dbt finding is organisation-specific and does not generalise (the
+between-layer architecture interpretation from Experiment~2e); or (b)
+the folder-derived domain construct in Cal-ITP and Mattermost is too
+different from the metadata-assigned dbt domains to constitute a
+proper replication attempt. We cannot distinguish these without
+curated domain metadata from a third organisation. The honest
+conclusion is that the dbt finding has not been replicated and will
+not be replicable from public dbt projects alone.
 
 \subsection{Experiment 4: Predictive Comparison}
 
@@ -1068,44 +1144,106 @@ reflecting a direct governance-to-topology relationship.
 
 \subsection{Limitations}
 
-\textbf{Governance correlation does not generalize.} The original D3/documentation
-correlation comes from one anonymized production dbt case. Two public dbt
-replications (Experiment~6) did not reproduce the association: Cal-ITP
-($n = 26$ domains) shows no correlation, and Mattermost ($n = 6$) shows a
-positive trend in the opposite direction. We interpret D3/documentation
-as an organization-specific layer-architecture effect. The structural
-characterization results (D1 null model, cross-dataset clustering) are
-robust across datasets; the governance-prediction interpretation requires
-local calibration and cannot be generalized without further
-governance-labeled lineage data from additional organizations.
+\textbf{Rank-degenerate D3 in the dbt sample.} D3 algebraic connectivity
+takes only three distinct values across the 18 analyzable dbt domains.
+The headline $\rho = -0.71$ correlation is therefore a 3-tier ordering
+test rather than a continuous correlation. Bootstrap CIs and the
+permutation test confirm the rank ordering is statistically real, but
+the relationship cannot resolve continuous within-tier variation. This
+is not a flaw in the descriptor itself; it is a feature of how production
+dbt domains decompose into source clusters, silver stars, and a small
+number of complex mart domains. Larger lineage graphs with more
+intermediate-complexity domains would address this.
 
-\textbf{Small sample size.} The 18 analyzable domains provide limited
-statistical power. Of these, only 6 have internal edges sufficient for
-meaningful descriptor computation. Larger or more architecturally
-complex lineage graphs would provide more per-domain variation.
+\textbf{Effect size at detection threshold.} Power analysis under the
+observed rank degeneracy shows minimum detectable $|\rho|$ at 80\% power
+is $0.7$--$0.8$ for $n = 18$. The observed $|\rho| = 0.71$ for D3 vs.\
+doc\_rate is at this threshold. The dataset cannot distinguish a true
+correlation of $0.71$ from a true correlation of $0.85$.
+
+\textbf{Cross-organisation construct mismatch.} The Cal-ITP and Mattermost
+domains are folder-derived, while the dbt case study domains are metadata-
+assigned. Folder structure in dbt projects often reflects pipeline-layer
+organisation rather than business-domain assignment. The non-replication
+in Experiment 6 therefore confounds (i) actual non-replication of the
+governance--topology relationship with (ii) construct mismatch in the
+unit of analysis. We cannot separate these without curated cross-
+organisation metadata.
+
+\textbf{D3 Fiedler bimodality null-model result is partly tautological.}
+The $z = -23.8$ result reflects gross structural differences between
+sparse layered DAGs and their degree-matched random rewirings (which tend
+to be more bipartite-like). It does not isolate a subtle governance-
+relevant property of the real graph.
+
+\textbf{Generator circularity in synthetic experiment.} The generator's
+\textit{well/baseline/poor} knobs control structural features (cross-layer
+edge density, hub centrality) that overlap with what D1--D4 measure.
+Experiment 1 should be read as a software-correctness / pipeline
+validation step, not as external validation. The leave-scale-out CV
+result (baselines AUC $= 1.000$ vs.\ multi-scale AUC $= 0.935 \pm 0.113$)
+confirms multi-scale features do not generalise across scales better
+than simple baselines in this controlled synthetic setting.
+
+\textbf{D4 cycle rank equivalence on real data.} In both synthetic and
+real-data settings, cycle rank $\beta_1 = M - N + C$ captures the same
+governance correlation as H1 persistent features ($\rho = +1.000$ between
+the two across domains). D4's added value over the simpler baseline is
+restricted to null-model testing. For practical applications, cycle rank
+may be sufficient and is vastly cheaper to compute.
 
 \textbf{Missing metadata.} The production dbt catalog contains no
 steward or owner metadata, reducing the governance score to a
-two-component measure (tests + documentation). Organizations with
-richer metadata would enable testing D1's hypothesized association with
-ownership structure.
-
-\textbf{Synthetic generator validity.} The governance variation in our
-synthetic generators is architectural (edge patterns, domain boundaries),
-not metadata-only. The generators produce cleaner separation between
-governance levels than likely exists in practice, contributing to the
-large effect sizes and classification ceiling.
+two-component measure (tests + documentation). Organisations with
+richer metadata would enable testing D1's hypothesised association
+with ownership structure.
 
 \textbf{Causal direction.} Correlations between descriptors and
 governance metadata could reflect either direction: governance practices
 producing cleaner structure, or cleaner structure enabling easier
 governance. We measure association, not causation.
 
-\textbf{D4 cycle rank equivalence.} In both the synthetic and real-data
-settings, cycle rank captures the same governance signal as H1 persistent
-features. The null model is the only test where H1 adds value over cycle
-rank. For practical applications, cycle rank may be sufficient and is
-vastly cheaper to compute.
+\subsection{Future Work: Partnership-Required Validation}
+
+The methodological limitations above are not addressable from publicly
+available dbt projects, because public dbt projects rarely carry curated
+domain-level metadata. We outline what cross-organisation validation
+would require:
+
+\begin{itemize}
+  \item \textbf{3--5 organisations} willing to share lineage manifests
+        and per-asset (or per-domain) governance metadata, ideally under
+        an NDA arrangement that preserves anonymisation while enabling
+        topology--metadata correlation analysis.
+
+  \item \textbf{Curated domain-level metadata}: explicit \texttt{meta.domain}
+        or \texttt{meta.owner} assignments declared by data engineering
+        teams, not inferred from folder structure. Without this, the
+        unit-of-analysis problem from Experiment 6 recurs.
+
+  \item \textbf{Sample size per organisation}: at least 20--30 analyzable
+        domains with $N \geq 5$ to escape the rank-degeneracy and detection-
+        threshold issues observed in our 18-domain pilot. This rules out
+        small dbt projects.
+
+  \item \textbf{Layer composition diversity}: domains where governance
+        practices vary within a layer (e.g., some well-tested mart
+        domains and some poorly-tested mart domains in the same
+        organisation), enabling within-layer governance signal to be
+        separated from between-layer architectural signal.
+
+  \item \textbf{Versioned manifests over time} (6--12 months of weekly
+        snapshots) to support temporal change detection studies, which
+        would shift the contribution from cross-sectional correlation
+        to longitudinal governance drift detection.
+\end{itemize}
+
+The most direct routes are: (i) emailing the DLG-DG-23 authors for the
+core-asset annotations referenced in their paper but absent from the
+public release; (ii) the OpenMetadata or DataHub user communities, some
+of whose member organisations have published anonymised catalogue
+exports; (iii) direct enterprise partnerships under NDA. We are pursuing
+the first route concurrently with this submission.
 
 \subsection{Practical Implications}
 
@@ -1126,33 +1264,41 @@ If validated on additional datasets, these descriptors could support:
 
 \section{Conclusion}
 
-We introduced four multi-scale structural descriptors for detecting
-governance-relevant patterns in data lineage graph topology. Synthetic
-experiments confirm that D1 (community stability), D2 (blast-radius
-concentration), and D4 (persistent homology) differentiate governance
-levels with statistical significance after FDR correction. A
-degree-preserving null model shows that D1, D3 Fiedler bimodality, and
-D4 H1 features capture structure beyond degree sequences. Real-data validation yields a D3 algebraic connectivity correlation
-with documentation rate that survives partial correlation in the full
-sample but fails both the internal-edge subset filter and layer-stratified
-permutation, indicating it captures between-layer architecture rather
-than within-layer governance quality.
+We defined four multi-scale graph-theoretic descriptors for data lineage
+topology and assessed them across 32 graphs from four heterogeneous
+sources. The paper's primary contribution is empirical and descriptive:
+production data lineage graphs (from one dbt instance and 18 Huawei
+Cloud DLGs) occupy a distinct region of descriptor space, characterised
+by high community stability and small normalised spectral gaps, distinct
+from scientific workflow topologies. This structural characterization
+is reproducible and does not depend on governance metadata.
 
-D1 differentiation at large scale and the degree-preserving null model
-results are the most robust findings. D3 normalized spectral gap was
-confounded by domain size; D3 algebraic connectivity captures
-organization-specific layer architecture rather than universal governance
-quality, as confirmed by cross-organization non-replication. D4 persistent
-features add value over cycle rank in null model testing but not in direct
-governance correlations. These negative findings are as informative as
-the positive ones: they establish where topology-based governance
-inference is and is not warranted.
+As a single-organisation governance pilot, we found a 3-tier rank
+ordering between D3 algebraic connectivity and documentation rate in
+one dbt lineage ($\rho = -0.71$, bootstrap CI $[-0.92, -0.27]$). Layer-
+stratified permutation ($p = 1.0$) showed the relationship is captured
+entirely by between-layer architecture, not within-layer governance
+variation. The effect size sits at the detection threshold for the
+observed sample structure. A preliminary cross-organisation comparison
+on two public dbt projects did not replicate the dbt finding, but
+construct mismatch between metadata-assigned and folder-derived domains
+prevents a clean conclusion about replicability.
+
+The paper's contribution is therefore: a validated structural
+characterization framework, methodological scaffolding for governance--
+topology studies (permutation inference, bootstrap CIs, null models,
+subset robustness, layer-stratified permutation, seed robustness, power
+analysis), a single-organisation pilot establishing the feasibility of
+the analysis pipeline, and an explicit boundary condition: cross-
+organisation governance validation requires curated domain-level
+metadata that is not available from public dbt projects. We outline
+what such validation would require and pursue it in future work.
 
 The descriptors are computable from any lineage graph (dbt manifests,
 data catalog exports, code-derived dependency graphs) and require no
-access to the underlying data. They provide continuous structural
-measurement where traditional governance assessment methods provide
-periodic snapshots.
+access to the underlying data. The structural characterization
+component is immediately useful as a comparative tool. The governance
+prediction component requires further evidence before deployment.
 
 \appendix
 
