@@ -114,12 +114,17 @@ Status tracking inline below as each phase completes.
 - [x] Extraction pipeline (`experiments/phase_4/exp_longitudinal_dbt.py`)
 - [x] Per-commit descriptor computation (106 snapshots, 9 cumulative years)
 - [x] Univariate drift detection (step-change >20%, 44 events)
-- [x] Multivariate change-point detection (CUSUM, 16 events total across two projects)
+- [x] Multivariate change-point detection (CUSUM, 16 events total)
 - [x] Commit message annotation
-- [x] Time-series figure with annotated drift events
+- [x] Time-series figure (`paper/figures/longitudinal_dbt.pdf`)
+- [x] Drift distribution figure (`paper/figures/drift_distribution.pdf`)
 - [x] Paper outline (`artifacts/pivot_c_paper_outline.md`)
-- [ ] Full paper draft
-- [ ] Venue selection (DEEM 2027 / DBML / VLDB Industrial Track 2027)
+- [x] **Full paper draft (8 pages, `paper/pivot_c/preprint.pdf`)** — Week 1 complete
+- [ ] Internal review pass (Week 2)
+- [ ] Add GitLab Analytics as 3rd project (Week 2)
+- [ ] Bayesian online change-point comparison (Week 2)
+- [ ] Final commit-level annotation pass (Week 2)
+- [ ] Venue selection (DEEM 2027 / DBML / VLDB Industrial Track 2027 / Empirical SE)
 - [ ] Submission (deadlines early 2027)
 
 ## Phase 4: APC pivot (after PLOS ONE rejection)
