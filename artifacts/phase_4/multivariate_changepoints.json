@@ -1,0 +1,144 @@
+{
+  "cal-itp": {
+    "cusum_events": [
+      {
+        "snapshot": 0,
+        "magnitude": 5.6670903259792285
+      },
+      {
+        "snapshot": 3,
+        "magnitude": 10.675253065699378
+      },
+      {
+        "snapshot": 11,
+        "magnitude": 4.370880303549556
+      },
+      {
+        "snapshot": 20,
+        "magnitude": 4.002397560838502
+      },
+      {
+        "snapshot": 26,
+        "magnitude": 4.954151362445993
+      },
+      {
+        "snapshot": 37,
+        "magnitude": 4.680934231504286
+      },
+      {
+        "snapshot": 42,
+        "magnitude": 4.1854584194743785
+      }
+    ],
+    "top10pct_jumps": [
+      {
+        "date": "2022-07-26",
+        "snapshot": 3,
+        "descriptor_jump_norm": 5.642606123778108,
+        "commit_msg": "Merge pull request #1418 from cal-itp/payments-dbt-migration"
+      },
+      {
+        "date": "2022-09-23",
+        "snapshot": 5,
+        "descriptor_jump_norm": 3.281645389777639,
+        "commit_msg": "temporarily add services.gtfs schedule quality column & add associated documenta"
+      },
+      {
+        "date": "2024-09-05",
+        "snapshot": 29,
+        "descriptor_jump_norm": 3.529271317474707,
+        "commit_msg": "Correcting a mistake in private dataset description in yml file!"
+      },
+      {
+        "date": "2025-05-06",
+        "snapshot": 37,
+        "descriptor_jump_norm": 4.015848956672531,
+        "commit_msg": "Update warehouse/models/mart/transit_database/_mart_transit_database.yml"
+      },
+      {
+        "date": "2025-06-02",
+        "snapshot": 38,
+        "descriptor_jump_norm": 3.526659135523687,
+        "commit_msg": "NTD: mart table usability and testing (#3909)"
+      }
+    ]
+  },
+  "mattermost": {
+    "cusum_events": [
+      {
+        "snapshot": 0,
+        "magnitude": 6.609785604606772
+      },
+      {
+        "snapshot": 3,
+        "magnitude": 6.463117855045587
+      },
+      {
+        "snapshot": 8,
+        "magnitude": 5.176014701015969
+      },
+      {
+        "snapshot": 12,
+        "magnitude": 4.350733130452537
+      },
+      {
+        "snapshot": 29,
+        "magnitude": 4.266097572106434
+      },
+      {
+        "snapshot": 39,
+        "magnitude": 4.456718307969249
+      },
+      {
+        "snapshot": 44,
+        "magnitude": 4.1062605918075334
+      },
+      {
+        "snapshot": 49,
+        "magnitude": 4.875241417867867
+      },
+      {
+        "snapshot": 52,
+        "magnitude": 5.430036271055615
+      }
+    ],
+    "top10pct_jumps": [
+      {
+        "date": "2020-03-16",
+        "snapshot": 2,
+        "descriptor_jump_norm": 8.269163026043161,
+        "commit_msg": "Fixed server_licensee_details date range."
+      },
+      {
+        "date": "2021-04-08",
+        "snapshot": 15,
+        "descriptor_jump_norm": 3.5155439007928355,
+        "commit_msg": "Add Column (#662)"
+      },
+      {
+        "date": "2021-05-07",
+        "snapshot": 16,
+        "descriptor_jump_norm": 2.3483463966713893,
+        "commit_msg": "Ic fix (#712)"
+      },
+      {
+        "date": "2022-12-27",
+        "snapshot": 36,
+        "descriptor_jump_norm": 2.1406620812362616,
+        "commit_msg": "MM-42949: Creating Scripts for LTV for EMEA APAC and ROW (#1124)"
+      },
+      {
+        "date": "2024-07-22",
+        "snapshot": 51,
+        "descriptor_jump_norm": 3.5091432526981667,
+        "commit_msg": "Hotfix: fix failing ARR model (#1558)"
+      },
+      {
+        "date": "2024-12-18",
+        "snapshot": 53,
+        "descriptor_jump_norm": 2.9790506351465496,
+        "commit_msg": "Mm 62195 remove deprecated models (#1684)"
+      }
+    ]
+  }
+}

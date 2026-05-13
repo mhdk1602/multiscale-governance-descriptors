@@ -110,10 +110,24 @@ Status tracking inline below as each phase completes.
 - [x] Compiled `artifacts/data_sources_catalog.md` with 16 entries
 
 ## Phase 3 status (Pivot C — separate paper)
-- [ ] Data viability check (commit history depth in Cal-ITP, Mattermost)
-- [ ] Extraction pipeline (per-commit dbt manifest reconstruction)
-- [ ] Per-commit descriptor computation
-- [ ] Drift detection (control-chart on descriptor time series)
-- [ ] Commit message annotation
-- [ ] Paper draft
-- [ ] Venue selection + submission
+- [x] Data viability check (Cal-ITP 1019 commits, Mattermost 1335 commits affecting models)
+- [x] Extraction pipeline (`experiments/phase_4/exp_longitudinal_dbt.py`)
+- [x] Per-commit descriptor computation (106 snapshots, 9 cumulative years)
+- [x] Univariate drift detection (step-change >20%, 44 events)
+- [x] Multivariate change-point detection (CUSUM, 16 events total across two projects)
+- [x] Commit message annotation
+- [x] Time-series figure with annotated drift events
+- [x] Paper outline (`artifacts/pivot_c_paper_outline.md`)
+- [ ] Full paper draft
+- [ ] Venue selection (DEEM 2027 / DBML / VLDB Industrial Track 2027)
+- [ ] Submission (deadlines early 2027)
+
+## Phase 4: APC pivot (after PLOS ONE rejection)
+- [x] Verified no-APC subscription-based venues
+- [x] Cover letter for Data & Knowledge Engineering (primary target)
+- [x] Cover letter for KAIS (Springer, backup)
+- [x] Suggested reviewer list
+- [x] Submission strategy document
+- [ ] Submit to D&KE via Elsevier editorial system (user action required)
+- [ ] If rejected, submit to KAIS
+- [ ] Track decision timelines
