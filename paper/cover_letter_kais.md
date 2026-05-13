@@ -31,7 +31,7 @@ I request traditional subscription-based publication without APC.
 
 Sincerely,
 
-Dineshkumar Malempati Hari
+Dineshkumar Malempati Hari, Ph.D.
 Independent Researcher
 mhdk.dinesh@gmail.com
 ORCID: 0009-0003-1036-9477

@@ -71,7 +71,7 @@ Submitted via Springer Editorial Manager: https://www.editorialmanager.com/kais/
 Title: Multi-Scale Structural Descriptors for Governance-Relevant
        Patterns in Data Lineage Graphs
 
-Author: Dineshkumar Malempati Hari
+Author: Dineshkumar Malempati Hari, Ph.D.
 Affiliation: Independent Researcher
 Email: mhdk.dinesh@gmail.com
 ORCID: 0009-0003-1036-9477
