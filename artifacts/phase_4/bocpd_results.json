@@ -1,0 +1,26 @@
+{
+  "cal-itp": {
+    "per_descriptor_changes": {
+      "D1_csi": [],
+      "D3_alg_conn": [],
+      "D3_norm_gap": [],
+      "D3_fiedler_bim": [],
+      "D4_cycle_rank_norm": []
+    },
+    "unique_cp_snapshots": [],
+    "commit_messages_at_cp": [],
+    "dates_at_cp": []
+  },
+  "mattermost": {
+    "per_descriptor_changes": {
+      "D1_csi": [],
+      "D3_alg_conn": [],
+      "D3_norm_gap": [],
+      "D3_fiedler_bim": [],
+      "D4_cycle_rank_norm": []
+    },
+    "unique_cp_snapshots": [],
+    "commit_messages_at_cp": [],
+    "dates_at_cp": []
+  }
+}

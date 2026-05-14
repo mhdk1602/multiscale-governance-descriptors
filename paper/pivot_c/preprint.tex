@@ -111,29 +111,77 @@ CUSUM to the resulting time series.
 
 \section{Related Work}
 
-\textbf{Data lineage and metadata management.}
-\citet{chen2024dlgdg} released an open dataset of 18 production data
-lineage graphs from Huawei Cloud, structural only.
-\citet{merono2024} survey knowledge graph approaches to data
-governance. Industry tools (DataHub, OpenMetadata, Marquez) provide
-lineage views but do not analyse topological drift.
+\textbf{Change-point detection on graph time series.}
+The closest methodological precedent for our work is the Laplacian
+Anomaly Detection framework \citep{huang2020laplacian,huang2024multilad},
+which computes the Laplacian spectrum of each snapshot in a sequence of
+graphs and applies sliding-window similarity comparison to detect
+anomalous time points. Our D3 spectral descriptors generalise this
+spectral-summary paradigm by adding community-level (D1) and topological
+(D4) summaries to the snapshot embedding. The broader graph-anomaly
+detection literature is surveyed by \citet{akoglu2015graph}; principled
+massive-graph similarity functions are developed by
+\citet{koutra2016deltacon}. Recent reviews include
+\citet{chen2024graph} for graph-based change-point analysis and
+\citet{sannapassino2025online} for online Bayesian change-point detection
+on networks with community structure.
 
-\textbf{Change-point detection on graphs.}
-The change-point detection literature on graphs largely treats nodes
-or edges as observations under a stationary distribution
-\citep{barnett2016change,wang2017fast}. Our setting is different:
-each snapshot is itself a complete graph, and we monitor a small
-vector of scalar descriptors computed on that graph. This reduces the
-problem to multivariate change-point detection on a low-dimensional
-time series, where classical methods (CUSUM
-\citep{page1954continuous}, X-bar control charts, Bayesian online
-change-point detection \citep{adams2007bayesian}) apply.
+\textbf{Multivariate change-point detection.}
+We apply two complementary methods. CUSUM \citep{page1954continuous} is
+the canonical sequential change-point procedure; \citet{aue2024state}
+provide a recent 70-year retrospective. Binary segmentation and PELT
+\citep{killick2012optimal} provide offline alternatives implemented in
+the \texttt{ruptures} library \citep{truong2020selective}. Bayesian
+online change-point detection \citep{adams2007bayesian} is the
+state-of-the-art recursive method. \citet{aminikhanghahi2017survey}
+survey the broader time-series change-point literature.
 
-\textbf{Software repository mining and evolution.}
-Mining software repositories for evolution metrics is well-established
-\citep{dambros2012evaluating}. Our work transfers the methodology to
-dbt lineage graphs, which sit at the intersection of code and data
-engineering.
+\textbf{Software repository mining for evolution analysis.}
+Mining git history to extract longitudinal metrics is well-established
+in software engineering research. \citet{eick2001does} introduced the
+``code decay'' framing for assessing software degradation from change
+management data --- this paper is the direct conceptual analogue of our
+``lineage drift'' framing in data engineering.
+\citet{kamei2013large} is the canonical Just-In-Time defect prediction
+work, demonstrating that per-commit metrics extracted from git history
+are predictive of code quality outcomes. \citet{bird2009promises}
+characterises the promises and perils of mining git, including the
+threats-to-validity considerations we adopt when reconstructing dbt
+manifests at historical commits. \citet{li2022understanding} survey
+architecture erosion, the long-term software-engineering analogue of
+the architectural drift we detect in lineage graphs.
+
+\textbf{Data lineage and data quality in production.}
+The academic literature on dbt-specific lineage analysis is thin;
+\citet{chen2024dlgdg} released an open dataset of 18 production lineage
+graphs from Huawei Cloud (structural only). \citet{polyzotis2018data}
+survey data lifecycle challenges in production machine learning.
+\citet{sculley2015hidden} frame ``pipeline jungles'' as a form of
+hidden technical debt in ML systems --- a concept that motivates our
+drift-detection approach. Industry tools (DataHub, OpenMetadata,
+Marquez/OpenLineage) provide lineage visualisation but no published
+peer-reviewed studies of topological drift over time.
+
+\textbf{Continuous data quality monitoring.}
+Deequ \citep{schelter2018automating} pioneered automated data-quality
+verification at scale. TensorFlow Data Validation
+\citep{breck2019data} and TFX \citep{modi2017tfx} extended this to
+ML pipelines. Our contribution is complementary: we monitor structural
+properties of the lineage graph itself, not data values flowing
+through it.
+
+\textbf{Topological data analysis on networks.}
+The persistent-homology baseline (D4) draws on the topological data
+analysis framework surveyed by \citet{carlsson2009topology} and
+\citet{ghrist2008barcodes}. \citet{myers2019persistent} apply
+persistent homology to complex networks for dynamic state detection,
+the closest application precedent for a topological time-series
+analysis. \citet{kim2021spatiotemporal} provide rigorous theoretical
+foundations for persistent homology on dynamic metric spaces, and
+\citet{myers2023temporal} apply zigzag persistence to temporal
+networks. We use cycle rank $\beta_1$ as a one-dimensional summary
+rather than full persistence diagrams; full barcode analysis is
+future work.
 
 \textbf{Multi-scale graph descriptors for lineage.}
 The four descriptors used in this paper (D1--D4) are introduced and
@@ -142,9 +190,11 @@ descriptors are evaluated as candidate governance-prediction features
 on a single-organisation pilot; they fail to generalise as
 within-organisation governance signals due to layer-architecture
 confounding. The current paper repurposes the same descriptors as
-change-detection signals on temporally-evolving graphs --- a setting
+change-detection signals on temporally-evolving graphs, a setting
 where their sensitivity to topology change is a feature rather than a
-confound.
+confound. To our knowledge this is the first peer-reviewed study to
+apply multi-scale graph descriptors longitudinally to dbt manifests
+reconstructed from version-control history.
 
 \section{Method}
 
@@ -362,18 +412,59 @@ observations:
 
 \subsection{Method comparison}
 
-Univariate step-change at 20\% threshold detects 44 events across the
-two projects (Cal-ITP 27, Mattermost 17). Multivariate CUSUM at the
-calibrated threshold detects 16 events (Cal-ITP 7, Mattermost 9).
-All 16 multivariate events overlap with at least one univariate event
-in the same or adjacent snapshot. Multivariate detection is stricter
-and produces fewer false alerts at the cost of missing isolated
-single-descriptor changes.
+We compare three change-point detection methods on the same multivariate
+descriptor time series (Table~\ref{tab:methods}).
+
+\begin{table}[htb]
+\centering
+\small
+\caption{Comparison of change-point detection methods on multivariate
+  descriptor time series. Step-change: univariate, $>20\%$ relative
+  change threshold. CUSUM: multivariate, $k=0.5$, $h=4.0$. PELT and
+  Binary Segmentation: \texttt{ruptures} library
+  \citep{truong2020selective}.}
+\label{tab:methods}
+\begin{tabular}{lrrl}
+\toprule
+Method & Cal-ITP events & Mattermost events & Family \\
+\midrule
+Univariate step-change ($>20\%$) & 27 & 17 & Threshold-based \\
+Multivariate CUSUM ($h=4.0$) & 7 & 9 & Sequential \\
+Binary segmentation ($n_{\text{bkps}}=5$) & 5 & 5 & Offline \\
+PELT (RBF kernel, pen=10) & 0 & 0 & Offline penalized \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Step-change} flags every transition that crosses the
+descriptor-relative threshold. It is appropriate for a single-descriptor
+dashboard alert; many of the 44 events it flags are minor.
+
+\textbf{Multivariate CUSUM} integrates across descriptors and
+accumulates evidence sequentially. All 16 multivariate CUSUM events
+overlap with at least one univariate step-change event in the same or
+adjacent snapshot. CUSUM is stricter and produces fewer false alerts at
+the cost of missing isolated single-descriptor changes. CUSUM identifies
+Cal-ITP's \textit{payments-dbt-migration} as the dominant event
+(magnitude 10.68) and Mattermost's early-project reorganisation (2020)
+events.
+
+\textbf{Binary segmentation} (5 break-points per project, $\ell_2$ cost)
+yields a different complementary set. Notably it surfaces Mattermost's
+\textit{Deprecates BLAPI models} commit (2024-03-19) which CUSUM
+missed but is intuitively an architecturally significant event.
+
+\textbf{PELT} with RBF kernel cost at penalty 10 detects no
+change-points in either series, indicating that under a non-parametric
+kernel-based cost the data does not exhibit segments distinct enough to
+clear the penalty. This is consistent with the gradual evolutionary
+nature of dbt project growth: most variation is within-segment.
 
 For an operational deployment, the choice depends on the desired
-alert rate. Step-change is appropriate for a single-descriptor
-dashboard alert; CUSUM is appropriate for a higher-priority
-multi-descriptor anomaly signal.
+alert rate. Step-change is appropriate for high-recall dashboards;
+CUSUM is appropriate for higher-priority multi-descriptor anomaly
+signals; binary segmentation is appropriate for offline post-hoc
+analysis when the analyst wants exactly $k$ events surfaced.
 
 \section{Discussion}
 
@@ -442,9 +533,14 @@ interpretation is "the project's architecture changed" rather than
 \section{Future Work}
 
 \textbf{Replication on additional projects.} GitLab's analytics dbt
-project (500+ models, public on GitLab) is the most promising
-candidate. Lyft Amundsen examples, Airbnb Minerva, and Spotify
-Backstage software catalogues are secondary candidates.
+project is publicly readable on GitLab but requires authenticated
+clone access; we attempted unauthenticated clone and were unable to
+retrieve the repository. With authenticated access (any GitLab
+account) the same extraction pipeline applies. Candidates that did
+not yield sufficient git history under unauthenticated access include
+dbt-labs Jaffle Shop (insufficient model count, $\leq 10$). Future
+work should add 3--5 additional public dbt projects to characterise
+the distribution of drift events across organisational practices.
 
 \textbf{Bayesian online change-point detection.} The CUSUM approach is
 batch and requires the full history. Online detection
