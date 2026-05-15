@@ -1,0 +1,140 @@
+{
+  "DLG1": {
+    "total_nodes": 298,
+    "labeled_ids": [
+      "35152af4-9211-4a5e-abca-feb49c70743d",
+      "4d7895e6-6376-401d-9164-792eb4327195",
+      "c55e1828-6b17-4bbb-b7b5-03d3c794eddd"
+    ],
+    "verified_ids": [
+      "35152af4-9211-4a5e-abca-feb49c70743d",
+      "4d7895e6-6376-401d-9164-792eb4327195",
+      "c55e1828-6b17-4bbb-b7b5-03d3c794eddd"
+    ],
+    "missing_ids": [],
+    "asset_type_breakdown": {
+      "Data Table": 3
+    }
+  },
+  "DLG2": {
+    "total_nodes": 464,
+    "labeled_ids": [
+      "d7a8326b-460e-4238-b4ce-c95a964adf9a",
+      "783ba88f-86a9-463d-a329-7be8a122a452",
+      "c3e4a4ba-9ad4-4364-8e65-3baaa76a0481",
+      "65fd86fb-9321-4b16-9888-d7afd62202b0",
+      "4b0b3d72-4602-440a-b190-75859501c1d5"
+    ],
+    "verified_ids": [
+      "d7a8326b-460e-4238-b4ce-c95a964adf9a",
+      "783ba88f-86a9-463d-a329-7be8a122a452",
+      "c3e4a4ba-9ad4-4364-8e65-3baaa76a0481",
+      "65fd86fb-9321-4b16-9888-d7afd62202b0",
+      "4b0b3d72-4602-440a-b190-75859501c1d5"
+    ],
+    "missing_ids": [],
+    "asset_type_breakdown": {
+      "Data Table": 5
+    }
+  },
+  "DLG9": {
+    "total_nodes": 756,
+    "labeled_ids": [
+      "2d975164-2e40-4331-8e79-89562690dad0",
+      "cc80bf0f-7e4f-44a1-9b6e-976755b48929",
+      "0c3aff84-25dd-4a10-bc0b-86e59ef21770",
+      "3a71edf0-e416-4064-b2c5-fa04c90acea1",
+      "26ef0607-467f-481e-b284-868f4bee1c43",
+      "02af7d6f-f5ab-45fa-8e40-f91a3dcd3c78",
+      "7d171f49-c15c-44df-8a9e-88fd45b322ac",
+      "9d7beaa4-fe0b-417b-ba0c-8040107e7873"
+    ],
+    "verified_ids": [
+      "2d975164-2e40-4331-8e79-89562690dad0",
+      "cc80bf0f-7e4f-44a1-9b6e-976755b48929",
+      "0c3aff84-25dd-4a10-bc0b-86e59ef21770",
+      "3a71edf0-e416-4064-b2c5-fa04c90acea1",
+      "26ef0607-467f-481e-b284-868f4bee1c43",
+      "02af7d6f-f5ab-45fa-8e40-f91a3dcd3c78",
+      "7d171f49-c15c-44df-8a9e-88fd45b322ac",
+      "9d7beaa4-fe0b-417b-ba0c-8040107e7873"
+    ],
+    "missing_ids": [],
+    "asset_type_breakdown": {
+      "Data Table": 8
+    }
+  },
+  "DLG11": {
+    "total_nodes": 2024,
+    "labeled_ids": [
+      "70d8371f-9262-4139-aae4-55f6321acbbd",
+      "29133f78-aa7e-4d97-a578-6efef757f985",
+      "67d79363-c4d5-4776-9e86-a4bc246dda9b",
+      "432f5499-a617-40d5-b647-777ff04e09cb",
+      "fb73ddcc-ae25-492c-9fca-1a3e9534459f",
+      "6fb8299c-ffe8-47c2-87e2-e01d5ea06029"
+    ],
+    "verified_ids": [
+      "70d8371f-9262-4139-aae4-55f6321acbbd",
+      "29133f78-aa7e-4d97-a578-6efef757f985",
+      "67d79363-c4d5-4776-9e86-a4bc246dda9b",
+      "432f5499-a617-40d5-b647-777ff04e09cb",
+      "fb73ddcc-ae25-492c-9fca-1a3e9534459f",
+      "6fb8299c-ffe8-47c2-87e2-e01d5ea06029"
+    ],
+    "missing_ids": [],
+    "asset_type_breakdown": {
+      "Data Table": 6
+    }
+  },
+  "DLG13": {
+    "total_nodes": 2157,
+    "labeled_ids": [
+      "fb73ddcc-ae25-492c-9fca-1a3e9534459f",
+      "29133f78-aa7e-4d97-a578-6efef757f985",
+      "644390eb-5d14-46f8-8c85-0a0b74bdfc52",
+      "9b408b3d-c8b2-4c99-a224-34463610d30d",
+      "62633e2c-2819-467d-9bf2-8e85bde00baf",
+      "ffd28ea3-3784-45b2-87fa-99214ba15137",
+      "055d4918-ce84-4fe4-957b-b044dbff9785",
+      "0382984d-09f9-47f2-bbac-0eb252d6723d",
+      "86245453-d208-4260-8c8a-8ed299d1bb51",
+      "a08abfe2-9210-4936-893e-29852aedcaf4",
+      "cab58466-d666-4e4c-be99-209e552fc11d"
+    ],
+    "verified_ids": [
+      "fb73ddcc-ae25-492c-9fca-1a3e9534459f",
+      "29133f78-aa7e-4d97-a578-6efef757f985",
+      "644390eb-5d14-46f8-8c85-0a0b74bdfc52",
+      "9b408b3d-c8b2-4c99-a224-34463610d30d",
+      "62633e2c-2819-467d-9bf2-8e85bde00baf",
+      "ffd28ea3-3784-45b2-87fa-99214ba15137",
+      "055d4918-ce84-4fe4-957b-b044dbff9785",
+      "0382984d-09f9-47f2-bbac-0eb252d6723d",
+      "86245453-d208-4260-8c8a-8ed299d1bb51",
+      "a08abfe2-9210-4936-893e-29852aedcaf4",
+      "cab58466-d666-4e4c-be99-209e552fc11d"
+    ],
+    "missing_ids": [],
+    "asset_type_breakdown": {
+      "Data Table": 11
+    }
+  },
+  "DLG15": {
+    "total_nodes": 558,
+    "labeled_ids": [
+      "0c3aff84-25dd-4a10-bc0b-86e59ef21770",
+      "a24915a6-f08e-4990-9c01-91a83b5d2cb6",
+      "7e3ec6e6-7735-4276-af43-96f75586f247"
+    ],
+    "verified_ids": [
+      "0c3aff84-25dd-4a10-bc0b-86e59ef21770",
+      "a24915a6-f08e-4990-9c01-91a83b5d2cb6",
+      "7e3ec6e6-7735-4276-af43-96f75586f247"
+    ],
+    "missing_ids": [],
+    "asset_type_breakdown": {
+      "Data Table": 3
+    }
+  }
+}

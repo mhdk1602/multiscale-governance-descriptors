@@ -1,0 +1,100 @@
+{
+  "experiment": "7_dlg_core_asset_prediction",
+  "n_graphs": 6,
+  "n_data_tables": 267,
+  "n_core_labels": 36,
+  "class_balance": 0.1348314606741573,
+  "per_feature_auc": {
+    "in_degree": 0.678992303992304,
+    "out_degree": 0.6643819143819143,
+    "total_degree": 0.6768278018278018,
+    "df_in_degree": 0.678992303992304,
+    "df_out_degree": 0.6636604136604136,
+    "pc_child_count": 0.5606661856661856,
+    "pagerank_df": 0.7333453583453584,
+    "pagerank_df_reverse": 0.7784391534391535,
+    "betweenness_df": 0.653018278018278,
+    "descendants_df": 0.6343193843193843,
+    "ancestors_df": 0.7042448292448292
+  },
+  "leave_one_out_results": {
+    "logreg_mean_auc": 0.8970498858330314,
+    "logreg_std_auc": 0.09852018184090056,
+    "rf_mean_auc": 0.8879835757009067,
+    "rf_std_auc": 0.09317110468409047,
+    "outdeg_mean_auc": 0.5756231268437525,
+    "outdeg_std_auc": 0.15456525981494845,
+    "random_mean_auc": 0.5457864309176234,
+    "random_std_auc": 0.1266331019249905
+  },
+  "fold_details": [
+    {
+      "held_out": "DLG1",
+      "n_test": 15,
+      "core_in_test": 3,
+      "logreg_auc": 0.7222222222222221,
+      "rf_auc": 0.7222222222222222,
+      "outdeg_auc": 0.4444444444444444,
+      "random_auc": 0.75
+    },
+    {
+      "held_out": "DLG11",
+      "n_test": 73,
+      "core_in_test": 6,
+      "logreg_auc": 0.9502487562189055,
+      "rf_auc": 0.9552238805970148,
+      "outdeg_auc": 0.6902985074626865,
+      "random_auc": 0.6044776119402985
+    },
+    {
+      "held_out": "DLG13",
+      "n_test": 105,
+      "core_in_test": 11,
+      "logreg_auc": 0.95357833655706,
+      "rf_auc": 0.9173114119922631,
+      "outdeg_auc": 0.8027079303675049,
+      "random_auc": 0.48065764023210833
+    },
+    {
+      "held_out": "DLG15",
+      "n_test": 25,
+      "core_in_test": 3,
+      "logreg_auc": 1.0,
+      "rf_auc": 0.9393939393939393,
+      "outdeg_auc": 0.3787878787878788,
+      "random_auc": 0.3333333333333333
+    },
+    {
+      "held_out": "DLG2",
+      "n_test": 21,
+      "core_in_test": 5,
+      "logreg_auc": 0.95,
+      "rf_auc": 0.9875,
+      "outdeg_auc": 0.4625000000000001,
+      "random_auc": 0.525
+    },
+    {
+      "held_out": "DLG9",
+      "n_test": 28,
+      "core_in_test": 8,
+      "logreg_auc": 0.80625,
+      "rf_auc": 0.80625,
+      "outdeg_auc": 0.675,
+      "random_auc": 0.58125
+    }
+  ],
+  "feature_importance": {
+    "pagerank_df_reverse": 0.1748435477987527,
+    "df_out_degree": 0.16103862343054604,
+    "pagerank_df": 0.15258378260619815,
+    "ancestors_df": 0.14494312900805015,
+    "descendants_df": 0.0661725248166899,
+    "total_degree": 0.06604639572597042,
+    "out_degree": 0.056055134383596945,
+    "pc_child_count": 0.055365271374803765,
+    "df_in_degree": 0.04395244932793862,
+    "in_degree": 0.039760088589760295,
+    "betweenness_df": 0.03923905293769293,
+    "clustering": 0.0
+  }
+}
