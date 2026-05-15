@@ -3,3 +3,5 @@ numpy>=1.24
 scipy>=1.10
 matplotlib>=3.7
 pandas>=2.0
+gudhi>=3.9
+scikit-learn>=1.3

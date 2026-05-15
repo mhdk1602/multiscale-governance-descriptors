@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="560" viewBox="0 0 1280 560" role="img" aria-labelledby="title desc">
+  <title id="title">Multiscale Governance Descriptors</title>
+  <desc id="desc">A dark technical banner showing lineage graph nodes flowing into four descriptor families and empirical results.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.48" stop-color="#0d1e2c"/>
+      <stop offset="1" stop-color="#162211"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12283d" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#0f1a24" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#55d6be"/>
+      <stop offset="0.45" stop-color="#6ea8fe"/>
+      <stop offset="1" stop-color="#f5b84b"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .small { font: 500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #9fb5c8; }
+      .tiny { font: 600 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #8aa2b8; letter-spacing: 0.08em; }
+      .title { font: 800 56px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #f5f9ff; }
+      .subtitle { font: 500 24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #b9c7d5; }
+      .metric { font: 800 32px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; }
+      .label { font: 650 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #dce8f4; }
+      .mono { font: 700 16px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8ff2df; }
+      .line { stroke: #35516a; stroke-width: 2; fill: none; }
+      .hotline { stroke: url(#accent); stroke-width: 3; fill: none; stroke-linecap: round; opacity: 0.85; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="560" fill="url(#bg)"/>
+  <path d="M0 460 C170 390 275 520 420 450 C535 395 620 380 760 420 C900 460 1010 350 1280 395 L1280 560 L0 560 Z" fill="#0a1622" opacity="0.76"/>
+  <path d="M0 94 C170 126 244 42 408 78 C538 107 625 178 769 126 C945 62 1050 130 1280 83" class="line" opacity="0.55"/>
+  <path d="M0 482 C165 402 322 485 488 402 C620 336 760 456 920 376 C1050 311 1128 345 1280 302" class="hotline" opacity="0.55"/>
+
+  <g opacity="0.22">
+    <circle cx="92" cy="80" r="2" fill="#b7f7e9"/>
+    <circle cx="161" cy="138" r="2" fill="#b7f7e9"/>
+    <circle cx="280" cy="96" r="2" fill="#f5cf76"/>
+    <circle cx="506" cy="72" r="2" fill="#8fb9ff"/>
+    <circle cx="904" cy="96" r="2" fill="#b7f7e9"/>
+    <circle cx="1120" cy="132" r="2" fill="#f5cf76"/>
+    <circle cx="1205" cy="70" r="2" fill="#8fb9ff"/>
+  </g>
+
+  <g transform="translate(70 78)">
+    <text class="tiny">DATA LINEAGE AS MEASUREMENT OBJECT</text>
+    <text class="title" y="72">Multiscale Governance</text>
+    <text class="title" y="134">Descriptors</text>
+    <text class="subtitle" y="184">Graph-theoretic instruments for reading domain structure, blast radius,</text>
+    <text class="subtitle" y="218">spectral coupling, and persistent paths in data lineage systems.</text>
+
+    <g transform="translate(0 266)">
+      <rect width="228" height="86" rx="18" fill="#102033" stroke="#31506e" filter="url(#shadow)"/>
+      <text class="tiny" x="24" y="30">NODE-LEVEL TEST</text>
+      <text class="metric" x="24" y="65">AUC 0.897</text>
+    </g>
+    <g transform="translate(252 266)">
+      <rect width="228" height="86" rx="18" fill="#102033" stroke="#31506e" filter="url(#shadow)"/>
+      <text class="tiny" x="24" y="30">DBT HISTORY</text>
+      <text class="metric" x="24" y="65">106 snapshots</text>
+    </g>
+    <g transform="translate(504 266)">
+      <rect width="228" height="86" rx="18" fill="#102033" stroke="#31506e" filter="url(#shadow)"/>
+      <text class="tiny" x="24" y="30">PUBLIC DLGs</text>
+      <text class="metric" x="24" y="65">18 graphs</text>
+    </g>
+  </g>
+
+  <g transform="translate(825 70)">
+    <rect width="390" height="405" rx="26" fill="url(#card)" stroke="#314b63" filter="url(#shadow)"/>
+    <text class="tiny" x="34" y="48">DESCRIPTOR STACK</text>
+
+    <g transform="translate(34 78)">
+      <path d="M22 58 L84 22 L148 62 L212 34 L286 76" class="hotline" filter="url(#softGlow)"/>
+      <circle cx="22" cy="58" r="12" fill="#55d6be"/>
+      <circle cx="84" cy="22" r="12" fill="#6ea8fe"/>
+      <circle cx="148" cy="62" r="12" fill="#f5b84b"/>
+      <circle cx="212" cy="34" r="12" fill="#55d6be"/>
+      <circle cx="286" cy="76" r="12" fill="#6ea8fe"/>
+      <path d="M84 22 L212 34 M22 58 L148 62 M148 62 L286 76" stroke="#5a7894" stroke-width="2" opacity="0.8"/>
+    </g>
+
+    <g transform="translate(34 188)">
+      <rect width="150" height="54" rx="14" fill="#0a1826" stroke="#33516c"/>
+      <text class="mono" x="18" y="23">D1</text>
+      <text class="label" x="54" y="23">Community</text>
+      <text class="small" x="18" y="43">resolution stability</text>
+    </g>
+    <g transform="translate(204 188)">
+      <rect width="150" height="54" rx="14" fill="#0a1826" stroke="#33516c"/>
+      <text class="mono" x="18" y="23">D2</text>
+      <text class="label" x="54" y="23">Blast radius</text>
+      <text class="small" x="18" y="43">impact concentration</text>
+    </g>
+    <g transform="translate(34 260)">
+      <rect width="150" height="54" rx="14" fill="#0a1826" stroke="#33516c"/>
+      <text class="mono" x="18" y="23">D3</text>
+      <text class="label" x="54" y="23">Spectral</text>
+      <text class="small" x="18" y="43">Fiedler geometry</text>
+    </g>
+    <g transform="translate(204 260)">
+      <rect width="150" height="54" rx="14" fill="#0a1826" stroke="#33516c"/>
+      <text class="mono" x="18" y="23">D4</text>
+      <text class="label" x="54" y="23">Topology</text>
+      <text class="small" x="18" y="43">persistent paths</text>
+    </g>
+
+    <g transform="translate(34 346)">
+      <rect width="320" height="34" rx="17" fill="#14251d" stroke="#3a714f"/>
+      <text class="small" x="18" y="23" fill="#bceccf">Anonymized dbt + WfCommons + DLG-DG-23</text>
+    </g>
+  </g>
+</svg>
