@@ -49,7 +49,7 @@ Each journal needs:
 - Author information form
 - ORCID (linked: 0009-0003-1036-9477)
 - Suggested reviewers (3–5 names; not yet prepared)
-- A statement of data availability (Zenodo DOI: 10.5281/zenodo.20101643)
+- A statement of data availability (Zenodo DOI: 10.5281/zenodo.20209148)
 - A research ethics declaration (no human subjects)
 - Conflict-of-interest declaration (none)
 

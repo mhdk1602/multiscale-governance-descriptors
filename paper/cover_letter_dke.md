@@ -28,7 +28,7 @@ Data lineage is increasingly central to data engineering and regulatory complian
 
 ## Reproducibility
 
-All code, anonymised data, and experiment scripts are archived on Zenodo (DOI: 10.5281/zenodo.20101643), with the development repository at https://github.com/mhdk1602/multiscale-governance-descriptors. The archive reproduces every table and figure in the paper.
+All code, anonymised data, and experiment scripts are archived on Zenodo (DOI: 10.5281/zenodo.20209148), with the development repository at https://github.com/mhdk1602/multiscale-governance-descriptors. The archive reproduces every table and figure in the paper.
 
 ## Author declarations
 

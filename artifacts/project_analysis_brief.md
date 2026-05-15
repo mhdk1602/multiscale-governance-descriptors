@@ -11,7 +11,7 @@ This brief is written for a fresh, high-capability model with no prior context. 
 The paper proposes four graph-theoretic descriptors — D1 (community stability index via Louvain resolution sweep), D2 (blast-radius Gini concentration), D3 (spectral gap and Fiedler structure from the combinatorial Laplacian), D4 (persistent H1 homology via Vietoris-Rips filtration) — applied to directed acyclic data lineage graphs. The original hypothesis was that lineage topology carries measurable governance-relevant information. After extensive revision and external calibration review, the paper's defensible contribution is narrower: it delivers (a) a structural characterization framework validated across 32 graphs from four sources, (b) a pilot real-data feasibility study on one organization's dbt lineage with explicit acknowledgement of rank-degeneracy and small-sample limitations, and (c) a methodologically caveated cross-organization non-replication that is consistent with but does not prove a between-layer architecture interpretation.
 
 **Repository:** https://github.com/mhdk1602/multiscale-governance-descriptors (private)  
-**Zenodo DOI:** 10.5281/zenodo.20101643 (v2.0.0)  
+**Zenodo DOI:** 10.5281/zenodo.20209148 (v2.0.0)  
 **Author:** Dineshkumar Malempati Hari, ORCID 0009-0003-1036-9477  
 **Status:** Feasibility study with negative real-data findings; preprint-ready for SSRN; **not journal-ready in current form** without further work
 

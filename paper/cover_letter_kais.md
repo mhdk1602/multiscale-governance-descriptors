@@ -16,7 +16,7 @@ KAIS's scope on knowledge management, data mining, information systems, and grap
 
 ## Reproducibility
 
-Code, anonymised data, and experiment scripts are archived on Zenodo (DOI: 10.5281/zenodo.20101643). Development repository: https://github.com/mhdk1602/multiscale-governance-descriptors.
+Code, anonymised data, and experiment scripts are archived on Zenodo (DOI: 10.5281/zenodo.20209148). Development repository: https://github.com/mhdk1602/multiscale-governance-descriptors.
 
 ## Author declarations
 
