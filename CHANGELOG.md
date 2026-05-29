@@ -70,5 +70,5 @@
 
 ### Publication readiness
 - PDF now 16 pages, 9 tables.
-- Zenodo DOI: 10.5281/zenodo.20100000 (note: token must be rotated before next API use).
+- Zenodo DOI: 10.5281/zenodo.20209148 (note: token must be rotated before next API use).
 - SSRN-ready: keywords added, affiliation set to "Independent Researcher".

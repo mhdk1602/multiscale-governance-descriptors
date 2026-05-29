@@ -27,13 +27,14 @@ This repository asks a narrow research question:
 
 > When governance metadata is missing, sparse, or too sensitive to publish, how much governance signal is already present in the topology of the lineage graph?
 
-The answer is conditional. Domain-level aggregate correlations are unstable when layer composition dominates the graph. Node-level prediction, against curated expert labels, is much stronger: in DLG-DG-23 Huawei Cloud lineage graphs, topological features distinguish expert-marked core assets at mean logistic-regression AUC `0.897 +/- 0.099`.
+The answer is mostly negative, and the negative result is the contribution. A strong-looking domain-level correlation between a spectral-gap descriptor and documentation rate (Spearman `rho = -0.71`) collapses under layer-stratified permutation (`p = 1.000`): the signal is between-layer architecture (source / staging / mart), not within-layer governance. Node-level core-asset prediction does reach mean AUC `0.897 +/- 0.099` on the DLG-DG-23 graphs, but that **reproduces** the centrality result of Chen et al. (2023) on the same data; the D1-D4 descriptors add no lift beyond centrality. The defensible finding is therefore deflationary: lineage topology under-determines governance maturity, and the portable contribution is the inference protocol that proves it (`src/governance_descriptors/inference_protocol.py`).
 
 ## Signal
 
 | Finding | Evidence | Where |
 |---|---:|---|
-| Core asset prediction on DLG-DG-23 | LR AUC `0.897 +/- 0.099`, random baseline `0.546`, `p = 0.0003` | `artifacts/phase_5/` |
+| **Topology under-determines governance maturity** (headline) | D3 vs doc_rate `rho = -0.71` collapses under layer-stratified permutation, `p = 1.000` | `artifacts/phase_3/exp6_summary.json` |
+| Core asset prediction reproduces Chen et al. (2023) centrality (D1-D4 add no lift) | LR AUC `0.897 +/- 0.099`, random baseline `0.546` | `artifacts/phase_5/` |
 | Shared-ID leakage check | AUC remains `0.890` after removing 3 repeated core IDs | `artifacts/phase_5/exp7_hardening.json` |
 | Production dbt descriptor profile | `223` nodes, `263` edges, `26` anonymized domains | `artifacts/phase_3/` |
 | Longitudinal dbt drift | `106` snapshots across `9.0` project-years, `44` large drift events | `artifacts/phase_4/summary_refined.json` |
