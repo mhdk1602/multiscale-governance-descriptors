@@ -277,8 +277,10 @@ $G$, since community detection and spectral methods require a connected
 graph. D2 (blast-radius) uses the full directed graph because
 downstream reachability is defined per node regardless of global
 connectivity. For the production dbt graph, the LWCC contains 185 of
-223 nodes (83\%); the 38 remaining nodes are isolated source tables
-with no intra-domain edges.
+223 nodes (83\%); the 38 remaining nodes are source tables outside the
+main pipeline (36 isolated singletons plus one disconnected pair, which
+carries the single edge dropped when restricting to the LWCC, $263 \to
+262$).
 
 \subsection{D1: Community Stability Index (CSI)}
 
@@ -547,6 +549,13 @@ statistics capture, not whether MTTD independently validates the
 descriptors.
 
 \section{Results}
+
+Experiments are presented in order of logical argument rather than
+experiment number: the synthetic, real-data, null-model, and
+cross-dataset analyses (1--3, 5, 6) build toward the node-level result
+(7), and the predictive comparison (4) is reported last because it
+synthesises the descriptor evidence accumulated in the preceding
+experiments.
 
 \subsection{Experiment 1: Governance Differentiation}
 
@@ -996,8 +1005,9 @@ suggestive rather than definitive.
 \centering
 \includegraphics[width=0.78\linewidth]{figures/crossdataset_pca.pdf}
 \caption{PCA of five standardized descriptors (D1 CSI, D2 max Gini,
-  D3 norm.\ gap, D3 Fiedler bim., D4 cycle rank/N) for 27 graphs
-  with complete descriptor coverage. PC1 (29.5\%) loads on high CSI /
+  D3 norm.\ gap, D3 Fiedler bim., D4 cycle rank/N) for all 32 graphs
+  (cycle rank/N is defined for every graph, so descriptor coverage is
+  complete). PC1 (29.5\%) loads on high CSI /
   low norm.\ gap / low cycle rank; PC2 (25.2\%) on high Fiedler bim.\ /
   high Gini. Production lineage graphs (dbt, DLG-DG-23) occupy the
   high-CSI / low-gap region; WfCommons workflows span broader space.}
