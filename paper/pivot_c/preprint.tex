@@ -36,10 +36,10 @@ rarely measured directly. We extract dbt manifests at one snapshot per
 projects (Cal-ITP, 4 years, 51 snapshots; Mattermost, 5 years, 55
 snapshots), giving 106 snapshots over 9 cumulative years of production
 lineage evolution. At each snapshot we compute four multi-scale graph
-descriptors --- community stability (D1), blast-radius Gini
-concentration (D2), spectral gap and Fiedler structure (D3), and cycle
-rank as a baseline for persistent homology (D4) --- on the largest
-weakly connected component of the lineage graph. We then apply
+descriptors on the largest weakly connected component of the lineage
+graph: community stability (D1), blast-radius Gini concentration (D2),
+spectral gap and Fiedler structure (D3), and cycle rank as a baseline
+for persistent homology (D4). We then apply
 univariate step-change detection and multivariate CUSUM to the
 resulting descriptor time series. Step-change detection finds 44
 events at $> 20\%$ relative change; multivariate CUSUM finds 16
@@ -50,7 +50,7 @@ connectivity and the largest multivariate CUSUM magnitude in the
 project's history (10.7); Mattermost's
 \textit{Adding daily\_server\_user\_agent\_events} causes a 232\%
 jump in D3. Between events, descriptors evolve smoothly. The method
-requires no metadata --- only the git history --- and offers a
+requires no metadata, only the git history, and offers a
 governance-metadata-free signal for topology change detection in
 continuous integration. We argue this is the operationally useful
 application of the multi-scale descriptors developed in
@@ -64,8 +64,8 @@ graph drift, structural monitoring, continuous integration, data engineering
 
 \section{Introduction}
 
-Data lineage --- the directed graph of dependencies between data
-assets in a pipeline --- is a central artifact of modern data
+Data lineage, the directed graph of dependencies between data
+assets in a pipeline, is a central artifact of modern data
 engineering. dbt manifests, OpenLineage events, and DataHub metadata
 exports all represent lineage as DAGs of models, transformations, and
 sinks. Production lineage graphs evolve continuously: teams add
@@ -140,7 +140,7 @@ survey the broader time-series change-point literature.
 Mining git history to extract longitudinal metrics is well-established
 in software engineering research. \citet{eick2001does} introduced the
 ``code decay'' framing for assessing software degradation from change
-management data --- this paper is the direct conceptual analogue of our
+management data. This paper is the direct conceptual analogue of our
 ``lineage drift'' framing in data engineering.
 \citet{kamei2013large} is the canonical Just-In-Time defect prediction
 work, demonstrating that per-commit metrics extracted from git history
@@ -157,7 +157,7 @@ The academic literature on dbt-specific lineage analysis is thin;
 graphs from Huawei Cloud (structural only). \citet{polyzotis2018data}
 survey data lifecycle challenges in production machine learning.
 \citet{sculley2015hidden} frame ``pipeline jungles'' as a form of
-hidden technical debt in ML systems --- a concept that motivates our
+hidden technical debt in ML systems, a concept that motivates our
 drift-detection approach. Industry tools (DataHub, OpenMetadata,
 Marquez/OpenLineage) provide lineage visualisation but no published
 peer-reviewed studies of topological drift over time.
@@ -350,8 +350,8 @@ Mattermost & 2024-02-16 & 4.88 & Move telemetry columns model to nightly schedul
 \end{tabular}
 \end{table}
 
-The single largest event in either project --- Cal-ITP's
-\textit{payments-dbt-migration} at magnitude 10.7 --- is a documented
+The single largest event in either project, Cal-ITP's
+\textit{payments-dbt-migration} at magnitude 10.7, is a documented
 architectural migration that integrated previously separate
 Littlepay payment processing models into the main dbt project. D3
 algebraic connectivity dropped from 0.242 to 0.058 (76\% reduction)
@@ -400,7 +400,7 @@ observations:
         through mid-2025 (18 months). Mattermost's D3 stayed near
         0.062 from late 2021 through 2024 (3 years). Stable D3
         periods correspond to absence of major architectural
-        reorganisation --- the kind of period a governance team
+        reorganisation, the kind of period a governance team
         wants to see.
   \item \textbf{D1 CSI is noisier.} D1 fluctuates between $\sim$0.5
         and $\sim$0.93 across snapshots even within stable D3
@@ -443,8 +443,8 @@ dashboard alert; many of the 44 events it flags are minor.
 \textbf{Multivariate CUSUM} integrates across descriptors and
 accumulates evidence sequentially. All 16 multivariate CUSUM events
 overlap with at least one univariate step-change event in the same or
-adjacent snapshot. CUSUM is stricter and produces fewer false alerts at
-the cost of missing isolated single-descriptor changes. CUSUM identifies
+adjacent snapshot. Being stricter, it produces fewer false alerts at
+the cost of missing isolated single-descriptor changes. It identifies
 Cal-ITP's \textit{payments-dbt-migration} as the dominant event
 (magnitude 10.68) and Mattermost's early-project reorganisation (2020)
 events.
@@ -461,10 +461,10 @@ clear the penalty. This is consistent with the gradual evolutionary
 nature of dbt project growth: most variation is within-segment.
 
 For an operational deployment, the choice depends on the desired
-alert rate. Step-change is appropriate for high-recall dashboards;
-CUSUM is appropriate for higher-priority multi-descriptor anomaly
-signals; binary segmentation is appropriate for offline post-hoc
-analysis when the analyst wants exactly $k$ events surfaced.
+alert rate. Step-change suits high-recall dashboards. CUSUM is better
+for higher-priority multi-descriptor anomaly signals, while binary
+segmentation fits offline post-hoc analysis when the analyst wants
+exactly $k$ events surfaced.
 
 \section{Discussion}
 
@@ -476,8 +476,8 @@ governance metadata. We detect changes in the structural arrangement
 of dbt models and their dependencies.
 
 This is governance-adjacent monitoring. Major topological events
-typically correspond to high-stakes engineering events --- migrations,
-deprecations, schema overhauls --- where governance review is most
+typically correspond to high-stakes engineering events (migrations,
+deprecations, schema overhauls) where governance review is most
 warranted. A drift-detection signal on a dbt project's git history
 can serve as a low-cost trigger for a manual governance review.
 

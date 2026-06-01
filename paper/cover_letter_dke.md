@@ -6,7 +6,7 @@ I submit the manuscript "Multi-Scale Structural Descriptors for Governance-Relev
 
 ## What this paper does
 
-The paper defines four graph-theoretic descriptors of directed acyclic data lineage graphs — community stability under Louvain resolution sweep, blast-radius Gini concentration, spectral gap and Fiedler structure from the combinatorial Laplacian, and persistent H1 homology over Vietoris–Rips filtrations — and computes them on 32 graphs from four heterogeneous sources: 11 scientific workflow DAGs (WfCommons), 18 production data lineage graphs from Huawei Cloud (DLG-DG-23), 2 data warehouse schemas (DW-Bench), and an anonymised production dbt manifest from a single organisation.
+The paper defines four graph-theoretic descriptors of directed acyclic data lineage graphs (community stability under Louvain resolution sweep, blast-radius Gini concentration, spectral gap and Fiedler structure from the combinatorial Laplacian, and persistent H1 homology over Vietoris–Rips filtrations) and computes them on 32 graphs from four heterogeneous sources: 11 scientific workflow DAGs (WfCommons), 18 production data lineage graphs from Huawei Cloud (DLG-DG-23), 2 data warehouse schemas (DW-Bench), and an anonymised production dbt manifest from a single organisation.
 
 ## Why Data & Knowledge Engineering
 

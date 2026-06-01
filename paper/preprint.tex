@@ -44,7 +44,7 @@ manifest. Principal component analysis on standardized descriptors
 shows that production data lineage graphs cluster on high community
 stability and low normalized spectral gap, distinct from scientific
 workflow topologies; this structural separation is the paper's most
-robust empirical finding.
+strongly supported empirical finding.
 As a single-organization pilot of governance--topology correlation, we
 test whether descriptor values at the domain level associate with
 documentation coverage in a 223-node, 26-domain dbt lineage. Across
@@ -815,7 +815,7 @@ Louvain is stochastic. We ran the D1 resolution sweep with 25 random
 seeds on the dbt manifest, two synthetic graphs ($N = 130$), and 15
 DLG-DG-23 graphs ($N \leq 400$). For the dbt manifest, CSI = $0.87
 \pm 0.08$ (range 0.68--1.00, seed-NVI = 0.062). CSI is consistently
-high across seeds---the minimum over 25 seeds is still 0.68---confirming
+high across seeds (the minimum over 25 seeds is still 0.68), confirming
 a genuine signal. Synthetic graphs show higher variance (std 0.09--0.14),
 and DLG-DG-23 graphs are generally stable (seed-NVI $< 0.07$ for 11/15
 graphs, mean CSI $= 0.85 \pm 0.06$). The three DLG graphs with
@@ -1053,7 +1053,7 @@ association between any D1--D4 descriptor and documentation coverage
 (all $p > 0.11$). The bootstrap 95\% confidence interval for D3 vs.\
 doc\_rate spans zero. Mattermost ($n = 6$) shows a positive marginal
 association ($\rho = +0.81$, $p = 0.070$), but the bootstrap CI is
-$[+0.00, +1.00]$ -- the sample size is too small for the bootstrap to
+$[+0.00, +1.00]$: the sample size is too small for the bootstrap to
 constrain the lower bound away from zero, so the directional reversal
 relative to dbt is suggestive but not statistically supported.
 

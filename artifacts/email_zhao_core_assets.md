@@ -1,4 +1,12 @@
-# Draft email — DLG-DG-23 core-asset annotations (Ying Zhao group, CSU)
+# RESOLVED (2026-05-15): Zhao group replied — no additional labels exist
+
+> 赵颖 <132390@csu.edu.cn>, Fri May 15: "the annotations of six graphs are provided in the paper. Other graphs are not provided currently."
+
+**Consequence for the JDIQ paper.** The label ceiling is now confirmed by the dataset authors, not assumed: only the six annotated DLG-DG-23 graphs carry core-asset labels, so the descriptor-vs-centrality comparison cannot be powered beyond the published set. State this explicitly in the paper as a confirmed external constraint ("the dataset authors confirmed in correspondence that no further core-asset annotations are available"), and frame Experiment 7 as a reproduction of Chen et al. (2023) centrality at the available label ceiling rather than an underpowered test of our own. No further outreach needed; the draft below is retained for the record only.
+
+---
+
+# Draft email (SUPERSEDED) — DLG-DG-23 core-asset annotations (Ying Zhao group, CSU)
 
 **To:** Ying Zhao (and co-authors), Central South University — corresponding author of the DLG-DG-23 dataset paper (Chen, Zhao, Li, Zhang, Long, Zhou, *Visual Informatics* 8(1), 2024).
 **From:** Dineshkumar Malempati Hari (ORCID 0009-0003-1036-9477).
