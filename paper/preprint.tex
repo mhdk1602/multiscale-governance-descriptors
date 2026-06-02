@@ -13,8 +13,8 @@
 \usepackage{multirow}
 \usepackage{xcolor}
 
-\title{Multi-Scale Structural Descriptors for Governance-Relevant\\
-Patterns in Data Lineage Graphs}
+\title{Topology Under-Determines Governance Maturity in Data Lineage\\
+Graphs: A Negative Result and a Reusable Inference Protocol}
 
 \author{
   Dineshkumar Malempati Hari, Ph.D. \\
@@ -29,55 +29,35 @@ Patterns in Data Lineage Graphs}
 \maketitle
 
 \begin{abstract}
-This paper presents a feasibility study of multi-scale graph-theoretic
-descriptors for data lineage analysis, with two empirical contributions
-and one negative pilot result. We define four descriptors of directed
-acyclic lineage graphs: community stability under Louvain resolution
-sweep (D1), blast-radius concentration (D2), spectral gap and Fiedler
-structure from the combinatorial Laplacian (D3), and persistent H1
-homology over a Vietoris--Rips filtration of shortest-path distances
-(D4). We compute the four descriptors on 32 graphs from four
-heterogeneous sources: 11 scientific workflow DAGs (WfCommons), 18
-production data lineage graphs from Huawei Cloud (DLG-DG-23), 2 data
-warehouse schemas (DW-Bench), and an anonymized production dbt
-manifest. Principal component analysis on standardized descriptors
-shows that production data lineage graphs cluster on high community
-stability and low normalized spectral gap, distinct from scientific
-workflow topologies; this structural separation is the paper's most
-strongly supported empirical finding.
-As a single-organization pilot of governance--topology correlation, we
-test whether descriptor values at the domain level associate with
-documentation coverage in a 223-node, 26-domain dbt lineage. Across
-the 18 domains with $N \geq 5$, D3 algebraic connectivity has
-permutation Spearman $\rho = -0.71$ with documentation rate (FDR-corrected
-$p = 0.043$; bootstrap 95\% CI $[-0.92, -0.27]$). However, D3 takes only
-three distinct values across the 18 domains (rank-degenerate: 12 source
-domains have $D3 = 0$, five star-structured silver domains have $D3 = 1$,
-one gold domain has $D3 = 0.17$), so the association is operationally
-a 3-tier between-layer ordering rather than a continuous within-layer
-relationship. Layer-stratified permutation gives $p = 1.0$, indicating
-that the correlation is captured by between-layer architecture rather
-than within-layer governance variation. A
-preliminary cross-organisation comparison on two public dbt projects
-(Cal-ITP, Mattermost) with folder-derived domain partitions does not
-replicate the dbt finding, but the construct mismatch between
-metadata-assigned and folder-derived domains makes this inconclusive.
-As a stronger cross-organisation test, we extract from the published
-DLG-DG-23 paper (Visual Informatics 2024) the expert-annotated
-``core data asset'' labels on six Huawei Cloud lineage graphs (36
-labels across 267 candidate Data Tables). Trained on five graphs and
-evaluated leave-one-graph-out on the sixth, node-level topological
-descriptors (DATA\_FLOW PageRank, ancestor count, out-degree)
-distinguish core from non-core Data Tables with mean AUC $= 0.897 \pm
-0.099$ (logistic regression) and $0.888 \pm 0.093$ (random forest),
-against a random baseline of $0.546$ and an out-degree-only baseline
-of $0.576$ ($p = 0.0003$ vs random). The result is robust to excluding
-three core-asset IDs shared across paired graphs ($\text{AUC} =
-0.890$). This is a direct cross-organisation positive governance
-finding at node granularity, complementing the negative graph-level
-finding. The two findings together suggest that the right granularity
-for topology-based governance inference is node-level classification
-against expert labels, not domain-level continuous correlation.
+A recurring assumption in data-governance tooling and in the
+lineage-graph literature is that governance maturity leaves a measurable
+structural signature: better-governed estates should produce
+topologically distinct lineage graphs. We test that assumption directly.
+On a curated-metadata production dbt estate (18 analyzable domains), a
+spectral-gap descriptor correlates strongly with documentation rate
+(Spearman $\rho = -0.71$, bootstrap 95\% CI $[-0.92, -0.27]$). The
+correlation does not mean what it appears to: the descriptor takes three
+distinct values across the eighteen domains, a layer-stratified
+permutation test returns $p = 1.000$, and the relationship is carried
+entirely by between-layer architecture (source, staging, mart), not
+within-layer governance. A rank-degeneracy power analysis shows the
+observed effect sits at the design's minimum detectable size. The
+relationship does not replicate across organizations, and the apparent
+non-replication is confounded with a domain-construct mismatch we make
+explicit. A persistent-homology descriptor reduces exactly to the
+cycle-rank baseline ($\rho = +1.000$) on real graphs, and a
+node-importance prediction result (AUC 0.90) reproduces a published
+centrality finding rather than extending it. Our contribution is
+therefore twofold and deliberately deflationary: (1) a carefully bounded
+negative result, that lineage topology is a poor proxy for governance
+maturity once the architectural-layer confound is removed; and (2) a
+reusable inference protocol for small-$n$ graph-descriptor correlation
+studies, covering permutation and FDR control, layer-stratified
+permutation, degree-preserving nulls, and a rank-degeneracy-aware power
+analysis, packaged as tested, runnable code. The protocol is the
+transferable artifact: it lets future structure-versus-attribute studies
+distinguish a real relationship from one manufactured by rank degeneracy
+or a confounding partition.
 \end{abstract}
 
 \smallskip
@@ -167,15 +147,18 @@ a real production dbt lineage graph with genuine governance metadata.
         domains are not the same construct as metadata-assigned dbt
         domains.
 
-  \item \textbf{Positive cross-organisation governance finding at node
+  \item \textbf{A reproduction of a published centrality result at node
         granularity.} On the DLG-DG-23 dataset with expert-annotated
         core data assets (36 labels across 6 Huawei Cloud graphs from
         Table 5 of \citep{chen2024dlgdg}), node-level topological
         descriptors trained on five graphs predict core-asset status in
         the held-out sixth graph at mean LR AUC $= 0.897 \pm 0.099$
         (LOGO cross-validation), substantially above random ($0.546$)
-        and out-degree-only ($0.576$) baselines. This is the paper's
-        strongest cross-organisation governance prediction result.
+        and out-degree-only ($0.576$) baselines. This reproduces the
+        node-centrality finding of \citet{chen2023centrality} on the
+        same corpus: the top predictors are PageRank and out-degree, and
+        the D1--D4 descriptors add no measurable lift beyond centrality.
+        We report it as a reproduction, not as a new governance result.
 \end{enumerate}
 
 \section{Related Work}
@@ -227,6 +210,38 @@ perturbation. That approach targets record-level entity resolution
 rather than pipeline-level lineage topology, but shares the premise
 that governance properties are recoverable from structural analysis
 of data artifacts.
+
+\subsection{Prior Findings This Work Confronts}
+
+Three published results bound what we can and cannot claim, and we
+position our experiments against them explicitly rather than as novel
+discovery.
+
+\citet{chen2023centrality} show that node-centrality metrics identify
+core data assets on the DLG-DG-23 lineage graphs. Our Experiment~7
+(core-asset prediction, AUC 0.90) is, under leave-one-graph-out
+cross-validation on the same corpus, a reproduction of that result:
+the top predictors are PageRank and out-degree, and the D1--D4
+descriptors add no measurable lift beyond centrality. We report this as
+confirmation that lineage structure carries node-importance signal that
+is already captured by simple centrality, not as a new finding, and not
+as evidence that multi-scale descriptors detect governance.
+
+The DLG-DG-23 dataset paper \citep{chen2024dlgdg} already characterizes
+data-lineage graphs as sparse, scale-free, and cluster-rich. We
+therefore scope our cross-source structural comparison (Experiment~5)
+narrowly, as a contrast between production lineage, scientific workflows
+(WfCommons), and warehouse schemas (DW-Bench), rather than as new
+structural discovery.
+
+Spectral change-point detection on dynamic graphs is a solved problem
+with a published, benchmarked method: LAD \citep{huang2020laplacian} and
+its multi-view extension MultiLAD \citep{huang2024multilad}. Our
+longitudinal descriptor-monitoring idea is an under-powered
+re-derivation of it; we do not claim change detection as a contribution,
+and we defer the git-history dbt time series to a separate
+dataset/resource paper where the contribution is the data, not the
+detector.
 
 \subsection{Community Detection at Multiple Resolutions}
 
@@ -1188,14 +1203,18 @@ the expert annotation rationale described in \citet{chen2024dlgdg}:
 ``T1 is a core data asset because it serves as a base table for
 generating new tables.''
 
-The result is a positive cross-organisation governance finding at node
-granularity. The same multi-scale descriptor framework that failed at
-the graph-aggregate level (Experiments 2--6) succeeds when the unit
-of analysis matches the granularity of the available expert labels.
-This refines the boundary condition for topology-based governance
-inference: node-level expert labels yield a tractable supervised
-learning problem; domain-level continuous metadata aggregated across
-heterogeneous layers does not.
+The result is a reproduction of the node-centrality finding of
+\citet{chen2023centrality} on the same DLG-DG-23 corpus, not a new
+governance result. The two dominant predictors are centrality measures
+(DATA\_FLOW reverse-PageRank and out-degree), and the D1--D4 descriptors
+add no measurable lift beyond them; what carries the signal is exactly
+the centrality that Chen et al.\ already identified. We report the AUC
+to confirm that lineage structure encodes node-importance signal
+captured by simple centrality, and to delineate a boundary condition:
+node-level expert labels yield a tractable supervised learning problem
+that centrality already solves, whereas domain-level continuous metadata
+aggregated across heterogeneous layers does not yield a within-layer
+governance signal at all (Experiments 2--6).
 
 \subsection{Experiment 4: Predictive Comparison}
 
@@ -1458,15 +1477,19 @@ replicate the dbt finding, but construct mismatch between
 metadata-assigned and folder-derived domains prevents a clean
 conclusion about replicability.
 
-\textbf{However, at node granularity the cross-organisation governance
-prediction succeeds.} Using the expert-annotated core-asset labels
+\textbf{At node granularity, a centrality-based prediction reproduces a
+published result.} Using the expert-annotated core-asset labels
 published in \citep{chen2024dlgdg} for six Huawei Cloud lineage graphs,
 node-level topological features (DATA\_FLOW PageRank, ancestor count,
 out-degree) predict core-asset status under leave-one-graph-out
 cross-validation at LR AUC $= 0.897 \pm 0.099$ (random baseline
 $0.546$, $p = 0.0003$). The result is robust to excluding shared
-core-asset IDs (AUC $= 0.890$). This is the paper's strongest
-cross-organisation positive governance finding.
+core-asset IDs (AUC $= 0.890$). The predictive signal is carried by
+centrality (PageRank and out-degree), and the D1--D4 descriptors add no
+lift beyond it; the AUC therefore reproduces the node-centrality finding
+of \citet{chen2023centrality} on the same corpus rather than extending
+it. We report it as such, not as a positive governance finding for the
+descriptors.
 
 The paper's contribution is therefore: (i) a validated structural
 characterization framework across 32 lineage graphs from four sources;
@@ -1474,12 +1497,14 @@ characterization framework across 32 lineage graphs from four sources;
 (permutation inference, bootstrap CIs, null models, subset robustness,
 layer-stratified permutation, seed robustness, power analysis); (iii) a
 single-organisation graph-aggregate governance pilot with explicit
-between-layer-architecture caveat; (iv) a node-level cross-organisation
-core-asset prediction validating that topological features generalise
-across Huawei Cloud DLGs when the unit of analysis matches the
-expert-label granularity. The right granularity for topology-based
-governance inference is node-level classification against curated
-expert labels, not domain-level continuous correlation.
+between-layer-architecture caveat; (iv) a node-level core-asset
+prediction (AUC 0.90) that reproduces the centrality finding of
+\citet{chen2023centrality} on the Huawei Cloud DLGs and adds no lift
+beyond centrality, reported as a reproduction rather than a governance
+result for the descriptors. Governance maturity is better measured
+through process and curated metadata than through graph structure;
+where structure does carry node-importance signal, simple centrality
+already captures it.
 
 The descriptors are computable from any lineage graph (dbt manifests,
 data catalog exports, code-derived dependency graphs) and require no
