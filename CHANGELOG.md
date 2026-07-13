@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## Unreleased: Governance-Mediated Change Risk
+
+### New study
+
+- Added a preregistered PR-level successor study with post-merge adverse events
+  as the primary outcome.
+- Added exact dbt manifest extraction with canonical IDs, typed dependencies,
+  tests, contracts, ownership, descriptions, and source freshness controls.
+- Added ordinary graph-diff, governance, and multiscale feature families with
+  fixed analysis prefixes.
+- Added leave-project-out and terminal-time evaluation. Imputation and scaling
+  occur inside each training fold.
+- Added a descriptor-blind annotation codebook and a manifest-pair data contract.
+- Added a hermetic git-ref collector that records resolved refs, commands, dbt
+  versions, and SHA-256 artifact hashes.
+- Ran exact before/after extraction on five public dbt projects. Four pairs had
+  a manifest-visible exposure; one successful no-op pair established an explicit
+  confirmatory exclusion rule.
+- Added registry hash enforcement and zero-filled absent resource-type deltas.
+
+### Corrections
+
+- Constant-input permutation tests now return `rho=NaN, p=1.0` instead of the
+  minimum attainable p-value.
+- Corrected the README statement about phase five: it reproduces centrality-based
+  core-asset prediction but does not evaluate D1-D4 incremental value.
+
 ## Revision 2 (2026-05-09) — Mathematical and Statistical Hardening
 
 ### Security

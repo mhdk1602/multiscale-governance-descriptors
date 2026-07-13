@@ -20,6 +20,12 @@ def permutation_spearman(x, y, n_perms: int = 10_000, seed: int = 42):
     x, y = x[mask], y[mask]
     if len(x) < 4:
         return (np.nan, 1.0, 1.0)
+    if len(np.unique(x)) < 2 or len(np.unique(y)) < 2:
+        # scipy returns NaN for a constant input. Comparing every permuted NaN
+        # with the observed NaN is always false, which previously produced the
+        # minimum attainable p-value. A constant vector contains no evidence of
+        # association, so the conservative result is p=1.
+        return (np.nan, 1.0, 1.0)
 
     rho_obs, p_param = stats.spearmanr(x, y)
     rng = np.random.default_rng(seed)

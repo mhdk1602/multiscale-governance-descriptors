@@ -17,6 +17,7 @@
 
 <p align="center">
   <a href="#signal">Signal</a> /
+  <a href="#active-study">Active Study</a> /
   <a href="#descriptor-stack">Descriptor Stack</a> /
   <a href="#quick-start">Quick Start</a> /
   <a href="#reproducibility">Reproducibility</a> /
@@ -27,14 +28,14 @@ This repository asks a narrow research question:
 
 > When governance metadata is missing, sparse, or too sensitive to publish, how much governance signal is already present in the topology of the lineage graph?
 
-The answer is mostly negative, and the negative result is the contribution. A strong-looking domain-level correlation between a spectral-gap descriptor and documentation rate (Spearman `rho = -0.71`) collapses under layer-stratified permutation (`p = 1.000`): the signal is between-layer architecture (source / staging / mart), not within-layer governance. Node-level core-asset prediction does reach mean AUC `0.897 +/- 0.099` on the DLG-DG-23 graphs, but that **reproduces** the centrality result of Chen et al. (2023) on the same data; the D1-D4 descriptors add no lift beyond centrality. The defensible finding is therefore deflationary: lineage topology under-determines governance maturity, and the portable contribution is the inference protocol that proves it (`src/governance_descriptors/inference_protocol.py`).
+The answer is mostly negative, and the negative result is the contribution. A strong-looking domain-level correlation between a spectral-gap descriptor and documentation rate (Spearman `rho = -0.71`) collapses under layer-stratified permutation (`p = 1.000`): the signal is between-layer architecture (source / staging / mart), not within-layer governance. Node-level core-asset prediction does reach mean AUC `0.897 +/- 0.099` on the DLG-DG-23 graphs, but that **reproduces** the centrality result of Chen et al. (2023) on the same data. Phase five tests ordinary centrality and reachability features; it does not test whether D1-D4 add incremental node-level information. The defensible finding is therefore deflationary: lineage topology under-determines governance maturity, and the portable contribution is the inference protocol that proves it (`src/governance_descriptors/inference_protocol.py`).
 
 ## Signal
 
 | Finding | Evidence | Where |
 |---|---:|---|
 | **Topology under-determines governance maturity** (headline) | D3 vs doc_rate `rho = -0.71` collapses under layer-stratified permutation, `p = 1.000` | `artifacts/phase_3/exp6_summary.json` |
-| Core asset prediction reproduces Chen et al. (2023) centrality (D1-D4 add no lift) | LR AUC `0.897 +/- 0.099`, random baseline `0.546` | `artifacts/phase_5/` |
+| Core asset prediction reproduces Chen et al. (2023) centrality; D1-D4 were not evaluated in that model | LR AUC `0.897 +/- 0.099`, random baseline `0.546` | `artifacts/phase_5/` |
 | Shared-ID leakage check | AUC remains `0.890` after removing 3 repeated core IDs | `artifacts/phase_5/exp7_hardening.json` |
 | Production dbt descriptor profile | `223` nodes, `263` edges, `26` anonymized domains | `artifacts/phase_3/` |
 | Longitudinal dbt drift | `106` snapshots across `9.0` project-years, `44` large drift events | `artifacts/phase_4/summary_refined.json` |
@@ -44,6 +45,37 @@ The answer is mostly negative, and the negative result is the contribution. A st
 The core boundary condition:
 
 > Topology-based governance inference works best at node granularity with curated expert labels. It is weaker at domain granularity when the target is aggregated governance metadata.
+
+## Active Study
+
+The next study changes the unit and the outcome rather than searching the same
+small cross-section for another correlation:
+
+> Do exact lineage changes improve prediction of post-merge adverse events, and
+> is changed blast-radius risk weaker when tests, contracts, ownership, and
+> freshness controls are present?
+
+Each observation is a merged change with exact before and after dbt manifests.
+The implementation preserves typed dependencies, measures control coverage,
+separates cheap graph-diff baselines from multiscale features, and refuses to
+evaluate labels that have not completed descriptor-blind adjudication.
+
+| Component | Location |
+|---|---|
+| Preregistered protocol | `research/governance_change_risk/PREREGISTRATION.md` |
+| Adverse-event codebook | `research/governance_change_risk/ANNOTATION_CODEBOOK.md` |
+| Manifest-pair contract | `research/governance_change_risk/DATA_CONTRACT.md` |
+| Public feasibility pass | `research/governance_change_risk/PILOT_FEASIBILITY_2026-07-13.md` |
+| Extraction and feature code | `src/governance_descriptors/change_risk/` |
+| End-to-end tests | `tests/test_change_risk.py` |
+
+```bash
+governance-change-risk build --registry pairs.jsonl --output change-risk.csv
+governance-change-risk evaluate --dataset change-risk.csv --output evaluation.json
+```
+
+This work is a separate confirmatory program. The existing paper remains the
+negative-result and inference-protocol record.
 
 ## Descriptor Stack
 
@@ -125,6 +157,8 @@ The repo is organized around executable experiments and saved result artifacts.
 | `experiments/phase_3/` | real-data validation, null models, seed checks, cross-organisation comparison |
 | `experiments/phase_4/` | longitudinal dbt topology drift over public project histories |
 | `experiments/phase_5/` | DLG-DG-23 node-level core-asset prediction |
+| `research/governance_change_risk/` | preregistration, annotation codebook, and manifest-pair contract for the PR-level successor study |
+| `src/governance_descriptors/change_risk/` | exact manifest extraction, graph-delta features, collection, and held-out evaluation |
 | `data/` | anonymized dbt metadata plus public external graph datasets |
 | `paper/` | preprint source, references, submission materials |
 | `artifacts/` | JSON, CSV, and Markdown outputs used by the paper |

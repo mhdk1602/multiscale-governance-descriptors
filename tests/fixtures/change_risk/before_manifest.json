@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "dbt_schema_version": "https://schemas.getdbt.com/dbt/manifest/v12.json",
+    "dbt_version": "1.8.7",
+    "generated_at": "2026-01-01T00:00:00Z"
+  },
+  "nodes": {
+    "model.demo.stg_orders": {
+      "unique_id": "model.demo.stg_orders",
+      "resource_type": "model",
+      "package_name": "demo",
+      "original_file_path": "models/staging/stg_orders.sql",
+      "description": "",
+      "checksum": {"name": "sha256", "checksum": "before-stg"},
+      "config": {"materialized": "view", "contract": {"enforced": false}},
+      "depends_on": {"nodes": ["source.demo.raw_orders"]}
+    },
+    "model.demo.orders": {
+      "unique_id": "model.demo.orders",
+      "resource_type": "model",
+      "package_name": "demo",
+      "original_file_path": "models/marts/orders.sql",
+      "description": "Order facts",
+      "checksum": {"name": "sha256", "checksum": "before-orders"},
+      "config": {"materialized": "table", "contract": {"enforced": false}},
+      "depends_on": {"nodes": ["model.demo.stg_orders"]}
+    },
+    "model.demo.customers": {
+      "unique_id": "model.demo.customers",
+      "resource_type": "model",
+      "package_name": "demo",
+      "original_file_path": "models/marts/customers.sql",
+      "description": "Customer facts",
+      "checksum": {"name": "sha256", "checksum": "before-customers"},
+      "config": {"materialized": "table", "contract": {"enforced": false}},
+      "depends_on": {"nodes": ["source.demo.raw_customers"]}
+    },
+    "test.demo.not_null_orders_id": {
+      "unique_id": "test.demo.not_null_orders_id",
+      "resource_type": "test",
+      "depends_on": {"nodes": ["model.demo.orders"]}
+    }
+  },
+  "sources": {
+    "source.demo.raw_orders": {
+      "unique_id": "source.demo.raw_orders",
+      "resource_type": "source",
+      "package_name": "demo",
+      "description": "Raw orders",
+      "freshness": {"warn_after": {"count": 24, "period": "hour"}},
+      "depends_on": {"nodes": []}
+    },
+    "source.demo.raw_customers": {
+      "unique_id": "source.demo.raw_customers",
+      "resource_type": "source",
+      "package_name": "demo",
+      "description": "",
+      "depends_on": {"nodes": []}
+    }
+  },
+  "exposures": {
+    "exposure.demo.executive_dashboard": {
+      "unique_id": "exposure.demo.executive_dashboard",
+      "resource_type": "exposure",
+      "package_name": "demo",
+      "description": "Executive dashboard",
+      "owner": {"name": "Analytics", "email": "analytics@example.com"},
+      "depends_on": {"nodes": ["model.demo.orders"]}
+    }
+  }
+}
