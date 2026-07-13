@@ -13,3 +13,5 @@ venv/
 *.csv
 *.png
 *.pdf
+data/change_risk/**
+!data/change_risk/README.md

@@ -93,6 +93,8 @@ def layer_stratified_permutation(
     descriptor, target, strata = descriptor[mask], target[mask], strata[mask]
     if len(descriptor) < 4:
         return (np.nan, 1.0, effective_distinct_values(descriptor))
+    if len(np.unique(descriptor)) < 2 or len(np.unique(target)) < 2:
+        return (np.nan, 1.0, effective_distinct_values(descriptor))
 
     rho_obs, _ = stats.spearmanr(descriptor, target)
     rng = np.random.default_rng(seed)

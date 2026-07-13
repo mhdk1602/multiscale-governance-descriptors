@@ -51,6 +51,22 @@ def test_naive_permutation_significant_but_stratified_collapses():
     assert p_strat > 0.9                                  # collapses: within-layer, nothing
 
 
+def test_constant_input_is_non_evidence_not_minimum_p_value():
+    rho, p_perm, p_param = permutation_spearman(
+        np.ones(8), np.arange(8), n_perms=100, seed=1
+    )
+    assert np.isnan(rho)
+    assert p_perm == 1.0
+    assert p_param == 1.0
+
+    rho_strat, p_strat, distinct = layer_stratified_permutation(
+        np.ones(8), np.arange(8), np.repeat([0, 1], 4), n_perms=100, seed=1
+    )
+    assert np.isnan(rho_strat)
+    assert p_strat == 1.0
+    assert distinct == 1
+
+
 def test_run_family_applies_fdr():
     desc, target, _ = _layered_design()
     rng = np.random.default_rng(3)
