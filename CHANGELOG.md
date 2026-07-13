@@ -19,6 +19,9 @@
   a manifest-visible exposure; one successful no-op pair established an explicit
   confirmatory exclusion rule.
 - Added registry hash enforcement and zero-filled absent resource-type deltas.
+- Declared runtime and test dependencies in package metadata. CI now installs the
+  package without masking failures, runs both matrix jobs independently, and uses
+  the Node 24 GitHub action releases.
 
 ### Corrections
 
