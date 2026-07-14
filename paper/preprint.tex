@@ -23,7 +23,7 @@ Graphs: A Negative Result and a Reusable Inference Protocol}
   \href{https://orcid.org/0009-0003-1036-9477}{orcid.org/0009-0003-1036-9477}
 }
 
-\date{May 2026}
+\date{July 2026}
 
 \begin{document}
 \maketitle
@@ -152,13 +152,15 @@ a real production dbt lineage graph with genuine governance metadata.
         core data assets (36 labels across 6 Huawei Cloud graphs from
         Table 5 of \citep{chen2024dlgdg}), node-level topological
         descriptors trained on five graphs predict core-asset status in
-        the held-out sixth graph at mean LR AUC $= 0.897 \pm 0.099$
+        the held-out sixth graph at mean LR AUC $= 0.898 \pm 0.098$
         (LOGO cross-validation), substantially above random ($0.546$)
         and out-degree-only ($0.576$) baselines. This reproduces the
         node-centrality finding of \citet{chen2023centrality} on the
-        same corpus: the top predictors are PageRank and out-degree, and
-        the D1--D4 descriptors add no measurable lift beyond centrality.
-        We report it as a reproduction, not as a new governance result.
+        same corpus: the top predictors are PageRank and out-degree. Phase
+        5 evaluates ordinary node-level centrality, reachability, degree,
+        and clustering features; it does not evaluate incremental D1--D4
+        information. We report it as a reproduction, not as a new
+        governance result.
 \end{enumerate}
 
 \section{Related Work}
@@ -196,7 +198,7 @@ multi-scale graph descriptors to lineage topology.
 
 Preliminary work on fractal descriptors for enterprise data graphs
 \citep{hari2026fractal} investigated whether box-covering fractal
-dimension could characterize governance-relevant structure in data
+dimension could characterize a governance signal in data
 lineage. That investigation found fractal dimension to be sensitive
 to graph scale and topology but insufficient as a standalone governance
 signal, motivating the broader multi-scale descriptor set developed
@@ -221,11 +223,13 @@ discovery.
 core data assets on the DLG-DG-23 lineage graphs. Our Experiment~7
 (core-asset prediction, AUC 0.90) is, under leave-one-graph-out
 cross-validation on the same corpus, a reproduction of that result:
-the top predictors are PageRank and out-degree, and the D1--D4
-descriptors add no measurable lift beyond centrality. We report this as
-confirmation that lineage structure carries node-importance signal that
-is already captured by simple centrality, not as a new finding, and not
-as evidence that multi-scale descriptors detect governance.
+the top predictors are PageRank and out-degree. The experiment contains
+ordinary node features and does not test D1--D4 at node granularity. We
+therefore make no claim about their incremental value from this analysis.
+We report the AUC as confirmation that lineage structure carries
+node-importance signal already captured by simple centrality, not as a
+new finding and not as evidence that multi-scale descriptors detect
+governance.
 
 The DLG-DG-23 dataset paper \citep{chen2024dlgdg} already characterizes
 data-lineage graphs as sparse, scale-free, and cluster-rich. We
@@ -503,7 +507,7 @@ generators and single dbt instance, we compute D1--D4 on three open
 datasets: 11 scientific workflow DAGs from WfCommons
 \citep{coleman2022wfcommons} spanning astronomy, bioinformatics, and
 agroecosystem applications (101--4,846 nodes); 18 production data
-lineage graphs from DLG-DG-23 \citep{dlgdg2024}, extracted from Huawei
+lineage graphs from DLG-DG-23 \citep{chen2024dlgdg}, extracted from Huawei
 Cloud DataArts governance projects (24--1,059 table-level nodes after
 restricting to Data Table and Data Job assets with DATA\_FLOW edges);
 and 2 data warehouse schemas from DW-Bench \citep{dwbench2025} (OMOP
@@ -945,7 +949,7 @@ from a 132-node graph) falls below the noise floor.
 To assess whether real pipeline topologies occupy a distinct region of
 descriptor space, we computed D1--D4 on 11 scientific workflow DAGs from
 WfCommons \citep{coleman2022wfcommons}, 18 production data lineage graphs
-from DLG-DG-23 \citep{dlgdg2024}, two data warehouse schemas from
+from DLG-DG-23 \citep{chen2024dlgdg}, two data warehouse schemas from
 DW-Bench \citep{dwbench2025}, and the production dbt manifest.
 Table~\ref{tab:preprocess} summarises the preprocessing applied to each
 dataset before descriptor computation.
@@ -1104,8 +1108,8 @@ prevalence ranges from 8.2\% in DLG11 to 28.6\% in DLG9).
 
 \paragraph{Per-feature univariate AUC.}
 On the pooled set of 267 Data Tables, the strongest univariate
-predictors of core status are DATA\_FLOW reverse-PageRank (AUC =
-0.778), DATA\_FLOW PageRank (0.733), ancestor count on DATA\_FLOW
+predictors of core status are reverse-PageRank on DATA\_FLOW (AUC =
+0.778), PageRank on DATA\_FLOW (0.733), the corresponding ancestor count
 (0.704), and in/out-degree (0.679 / 0.664). Local clustering on the
 undirected projection is uninformative (constant zero on Data Table
 nodes whose neighbourhoods are bipartite-to-fields).
@@ -1113,7 +1117,9 @@ nodes whose neighbourhoods are bipartite-to-fields).
 \paragraph{Leave-one-graph-out cross-validation.}
 We train logistic regression and random forest classifiers on five
 graphs and predict core-asset status on the held-out sixth, repeating
-for each graph (Table~\ref{tab:dlg_prediction}).
+for each graph (Table~\ref{tab:dlg_prediction}). The logistic-regression
+standardizer is fitted on the five training graphs inside each fold;
+the random forest receives unscaled features.
 
 \begin{table}[htb]
 \centering
@@ -1128,18 +1134,18 @@ for each graph (Table~\ref{tab:dlg_prediction}).
 Held-out graph & $n_{\text{test}}$ & core & LR AUC & 95\% CI & RF AUC \\
 \midrule
 DLG1 & 15 & 3 & 0.722 & $[0.385, 1.000]$ & 0.722 \\
-DLG2 & 21 & 5 & 0.950 & $[0.823, 1.000]$ & 0.988 \\
-DLG9 & 28 & 8 & 0.806 & $[0.604, 0.965]$ & 0.806 \\
-DLG11 & 73 & 6 & 0.950 & $[0.875, 1.000]$ & 0.955 \\
-DLG13 & 105 & 11 & 0.954 & $[0.878, 1.000]$ & 0.917 \\
+DLG2 & 21 & 5 & 0.950 & $[0.822, 1.000]$ & 0.975 \\
+DLG9 & 28 & 8 & 0.812 & $[0.612, 0.963]$ & 0.794 \\
+DLG11 & 73 & 6 & 0.950 & $[0.885, 1.000]$ & 0.960 \\
+DLG13 & 105 & 11 & 0.954 & $[0.875, 1.000]$ & 0.921 \\
 DLG15 & 25 & 3 & 1.000 & $[1.000, 1.000]$ & 0.939 \\
 \midrule
-Mean $\pm$ std & & & $0.897 \pm 0.099$ & & $0.888 \pm 0.093$ \\
+Mean $\pm$ std & & & $0.898 \pm 0.098$ & & $0.885 \pm 0.094$ \\
 Random baseline & & & $0.546 \pm 0.127$ & & \\
 Out-degree only & & & $0.576 \pm 0.155$ & & \\
 \bottomrule
 \multicolumn{6}{l}{\small One-sample $t$-test vs $\text{AUC}=0.5$:
-LR $t=9.01$, $p=0.0003$; RF $t=9.31$, $p=0.0002$.}
+LR $t=9.12$, $p=0.0003$; RF $t=9.18$, $p=0.0003$.}
 \end{tabular}
 \end{table}
 
@@ -1160,13 +1166,13 @@ the per-fold ROC curves and random-forest feature importance.
 \label{fig:dlg_prediction}
 \end{figure}
 
-\paragraph{Sensitivity: shared-ID exclusion.}
-Three core-asset IDs appear in two graphs each (DLG9/DLG15 share one;
-DLG11/DLG13 share two). To verify the result is not an artifact of
+\paragraph{Shared-ID sensitivity.}
+Three core-asset IDs appear in two graphs each. DLG9 and DLG15 share one;
+DLG11 and DLG13 share two. To verify the result is not an artifact of
 identical assets appearing in train and test sets with similar
 topological features, we re-ran the leave-one-graph-out evaluation
 with these IDs removed from each test set. The mean LR AUC drops only
-from $0.897$ to $0.890$ (Table~\ref{tab:dlg_sensitivity}), confirming
+from $0.898$ to $0.891$ (Table~\ref{tab:dlg_sensitivity}), confirming
 that the predictive signal is not a leakage artifact.
 
 \begin{table}[htb]
@@ -1181,19 +1187,19 @@ Held-out graph & IDs removed & LR AUC (excl. shared) \\
 \midrule
 DLG1 & 0 & 0.722 \\
 DLG2 & 0 & 0.950 \\
-DLG9 & 1 & 0.800 \\
+DLG9 & 1 & 0.807 \\
 DLG11 & 2 & 0.925 \\
 DLG13 & 2 & 0.943 \\
 DLG15 & 1 & 1.000 \\
 \midrule
-Mean & & $0.890 \pm 0.097$ \\
+Mean & & $0.891 \pm 0.096$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \paragraph{Interpretation.}
 Two structural properties dominate: DATA\_FLOW reverse-PageRank
-(importance 0.175) and DATA\_FLOW out-degree (0.161). A high
+(importance 0.179) and DATA\_FLOW out-degree (0.166). A high
 reverse-PageRank value indicates that random walks starting from
 downstream nodes are biased toward the node in question; substantively,
 the table is an upstream source for many downstream consumers. High
@@ -1206,11 +1212,11 @@ generating new tables.''
 The result is a reproduction of the node-centrality finding of
 \citet{chen2023centrality} on the same DLG-DG-23 corpus, not a new
 governance result. The two dominant predictors are centrality measures
-(DATA\_FLOW reverse-PageRank and out-degree), and the D1--D4 descriptors
-add no measurable lift beyond them; what carries the signal is exactly
-the centrality that Chen et al.\ already identified. We report the AUC
-to confirm that lineage structure encodes node-importance signal
-captured by simple centrality, and to delineate a boundary condition:
+(DATA\_FLOW reverse-PageRank and out-degree). Because the feature set
+does not contain node-level versions of D1--D4, this experiment cannot
+estimate their incremental value. We report the AUC to confirm that
+lineage structure encodes node-importance signal captured by simple
+centrality, and to delineate a boundary condition:
 node-level expert labels yield a tractable supervised learning problem
 that centrality already solves, whereas domain-level continuous metadata
 aggregated across heterogeneous layers does not yield a within-layer
@@ -1431,12 +1437,25 @@ would require:
         to longitudinal governance drift detection.
 \end{itemize}
 
-The most direct routes are: (i) emailing the DLG-DG-23 authors for the
-core-asset annotations referenced in their paper but absent from the
-public release; (ii) the OpenMetadata or DataHub user communities, some
-of whose member organisations have published anonymised catalogue
-exports; (iii) direct enterprise partnerships under NDA. We are pursuing
-the first route concurrently with this submission.
+The DLG-DG-23 authors confirmed in correspondence that no additional
+core-asset annotations are available, so that route has reached its
+label ceiling. Remaining routes include the OpenMetadata and DataHub
+user communities, where some organisations publish anonymised catalogue
+exports, and direct enterprise partnerships under NDA.
+
+A separate preregistered successor study moves to a per-change unit:
+exact before/after dbt manifests, post-merge repairs adjudicated within
+a fixed 30-day window, and declared tests, contracts, ownership, and
+freshness as potential moderators. Its ordinary change statistics are
+compared with global graph deltas and a separately named change-centred
+geometry family. This follows change-level quality-assurance design
+\citep{kamei2013large} while retaining whole-graph change measures such
+as DeltaCon as baselines \citep{koutra2016deltacon}. No outcome model has
+been fitted. One deliberately selected repair-linked feasibility case is
+excluded from confirmation, and the consecutive outcome cohort will be
+frozen before labels are opened. The successor is not empirical support
+for the present paper; it is the protocol implied by this paper's
+negative result.
 
 \subsection{Practical Implications}
 
@@ -1482,26 +1501,27 @@ published result.} Using the expert-annotated core-asset labels
 published in \citep{chen2024dlgdg} for six Huawei Cloud lineage graphs,
 node-level topological features (DATA\_FLOW PageRank, ancestor count,
 out-degree) predict core-asset status under leave-one-graph-out
-cross-validation at LR AUC $= 0.897 \pm 0.099$ (random baseline
+cross-validation at LR AUC $= 0.898 \pm 0.098$ (random baseline
 $0.546$, $p = 0.0003$). The result is robust to excluding shared
-core-asset IDs (AUC $= 0.890$). The predictive signal is carried by
-centrality (PageRank and out-degree), and the D1--D4 descriptors add no
-lift beyond it; the AUC therefore reproduces the node-centrality finding
-of \citet{chen2023centrality} on the same corpus rather than extending
-it. We report it as such, not as a positive governance finding for the
+core-asset IDs (AUC $= 0.891$). The predictive signal is carried by
+ordinary node features led by PageRank and out-degree. D1--D4 are not
+features in this model, so no descriptor-versus-centrality comparison is
+available. The AUC therefore reproduces the node-centrality finding of
+\citet{chen2023centrality} on the same corpus rather than extending it.
+We report it as such, not as a positive governance finding for the
 descriptors.
 
 The paper's contribution is therefore: (i) a validated structural
 characterization framework across 32 lineage graphs from four sources;
-(ii) methodological scaffolding for governance--topology studies
+(ii) an inference protocol for governance--topology studies
 (permutation inference, bootstrap CIs, null models, subset robustness,
 layer-stratified permutation, seed robustness, power analysis); (iii) a
-single-organisation graph-aggregate governance pilot with explicit
+graph-aggregate governance pilot within one organisation, with an explicit
 between-layer-architecture caveat; (iv) a node-level core-asset
 prediction (AUC 0.90) that reproduces the centrality finding of
-\citet{chen2023centrality} on the Huawei Cloud DLGs and adds no lift
-beyond centrality, reported as a reproduction rather than a governance
-result for the descriptors. Governance maturity is better measured
+\citet{chen2023centrality} on the Huawei Cloud DLGs, reported as a
+reproduction rather than a governance result for the descriptors. The
+Phase 5 model does not test D1--D4 incremental value. Governance maturity is better measured
 through process and curated metadata than through graph structure;
 where structure does carry node-importance signal, simple centrality
 already captures it.

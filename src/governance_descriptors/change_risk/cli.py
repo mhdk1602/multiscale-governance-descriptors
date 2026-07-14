@@ -9,6 +9,7 @@ from pathlib import Path
 import pandas as pd
 
 from .collection import collect_manifest_pair
+from .cohort import freeze_candidate_cohort
 from .evaluation import evaluate_study
 from .study import (
     BASELINE_REGISTRY_COVARIATES,
@@ -86,6 +87,17 @@ def _collect(args) -> int:
     return 0
 
 
+def _freeze_cohort(args) -> int:
+    records = load_pair_records(args.candidates)
+    frozen = freeze_candidate_cohort(
+        records,
+        protocol_version=args.protocol_version,
+        feature_spec_version=FEATURE_SPEC_VERSION,
+    )
+    _write_json(Path(args.output), frozen)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="governance-change-risk")
     commands = parser.add_subparsers(dest="subcommand", required=True)
@@ -111,6 +123,15 @@ def build_parser() -> argparse.ArgumentParser:
         help="Locked pre-outcome repository covariate; repeat for each value",
     )
     collect.set_defaults(handler=_collect)
+
+    freeze = commands.add_parser(
+        "freeze-cohort",
+        help="Validate and hash a consecutive pre-outcome candidate ledger",
+    )
+    freeze.add_argument("--candidates", required=True)
+    freeze.add_argument("--output", required=True)
+    freeze.add_argument("--protocol-version", default="0.3")
+    freeze.set_defaults(handler=_freeze_cohort)
 
     build = commands.add_parser("build", help="Build a feature table from a JSONL pair registry")
     build.add_argument("--registry", required=True)

@@ -2,7 +2,7 @@
 
 Dear Editors,
 
-I submit the manuscript "Multi-Scale Structural Descriptors for Governance-Relevant Patterns in Data Lineage Graphs" for consideration at PLOS ONE.
+I submit the manuscript "Topology Under-Determines Governance Maturity in Data Lineage Graphs: A Negative Result and a Reusable Inference Protocol" for consideration at PLOS ONE.
 
 ## What this paper does
 

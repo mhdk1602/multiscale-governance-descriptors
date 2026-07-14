@@ -67,6 +67,27 @@ test of the research premise: ordinary code and graph-diff features may carry
 most of the usable signal. The preregistered ablation retains that possibility
 as a valid negative result.
 
+## Protocol 0.3 feature rerun
+
+The same five immutable manifest pairs were rebuilt under
+`governance-change-risk-v2` after the pre-outcome protocol amendment. No label
+was assigned and no model was fitted. The derived CSV remains outside Git; its
+SHA-256 is
+`6fabda018e5e1fdad85abea45865469a75780357375f90fd4cbd5c32d0b1c7bd`.
+
+The added `change_geometry__` family contains 24 fixed before, after, and delta
+features. All four manifest-visible pairs have a nonzero post-change local
+geometry, two have a nonzero before/after geometry delta, and the Mattermost
+no-op remains zero. Cal-ITP and MDSFest illustrate why both post-change position
+and delta are retained: their fingerprints change at fixed topology, so the
+changed models occupy an affected region even though the region's topology does
+not change.
+
+This is a measurement result, not evidence of predictive value. The Cal-ITP
+positive control remains outside confirmation. Exact selected values and the
+derived-table hash are recorded in
+`pilot_feature_rerun_2026-07-13.json`.
+
 ## Reproduction boundary
 
 The first four projects were parsed with dbt Core 1.9.10. Cal-ITP was parsed with

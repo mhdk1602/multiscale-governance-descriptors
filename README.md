@@ -28,15 +28,15 @@ This repository asks a narrow research question:
 
 > When governance metadata is missing, sparse, or too sensitive to publish, how much governance signal is already present in the topology of the lineage graph?
 
-The answer is mostly negative, and the negative result is the contribution. A strong-looking domain-level correlation between a spectral-gap descriptor and documentation rate (Spearman `rho = -0.71`) collapses under layer-stratified permutation (`p = 1.000`): the signal is between-layer architecture (source / staging / mart), not within-layer governance. Node-level core-asset prediction does reach mean AUC `0.897 +/- 0.099` on the DLG-DG-23 graphs, but that **reproduces** the centrality result of Chen et al. (2023) on the same data. Phase five tests ordinary centrality and reachability features; it does not test whether D1-D4 add incremental node-level information. The defensible finding is therefore deflationary: lineage topology under-determines governance maturity, and the portable contribution is the inference protocol that proves it (`src/governance_descriptors/inference_protocol.py`).
+The answer is mostly negative, and the negative result is the contribution. A strong-looking domain-level correlation between a spectral-gap descriptor and documentation rate (Spearman `rho = -0.71`) collapses under layer-stratified permutation (`p = 1.000`): the signal is between-layer architecture (source / staging / mart), not within-layer governance. Node-level core-asset prediction does reach mean AUC `0.898 +/- 0.098` on the DLG-DG-23 graphs, but that **reproduces** the centrality result of Chen et al. (2023) on the same data. Phase five tests ordinary centrality and reachability features; it does not test whether D1-D4 add incremental node-level information. The defensible finding is therefore deflationary: lineage topology under-determines governance maturity, and the portable contribution is the inference protocol that proves it (`src/governance_descriptors/inference_protocol.py`).
 
 ## Signal
 
 | Finding | Evidence | Where |
 |---|---:|---|
 | **Topology under-determines governance maturity** (headline) | D3 vs doc_rate `rho = -0.71` collapses under layer-stratified permutation, `p = 1.000` | `artifacts/phase_3/exp6_summary.json` |
-| Core asset prediction reproduces Chen et al. (2023) centrality; D1-D4 were not evaluated in that model | LR AUC `0.897 +/- 0.099`, random baseline `0.546` | `artifacts/phase_5/` |
-| Shared-ID leakage check | AUC remains `0.890` after removing 3 repeated core IDs | `artifacts/phase_5/exp7_hardening.json` |
+| Core asset prediction reproduces Chen et al. (2023) centrality; D1-D4 were not evaluated in that model | LR AUC `0.898 +/- 0.098`, random baseline `0.546` | `artifacts/phase_5/` |
+| Shared-ID leakage check | AUC remains `0.891` after removing 3 repeated core IDs | `artifacts/phase_5/exp7_hardening.json` |
 | Production dbt descriptor profile | `223` nodes, `263` edges, `26` anonymized domains | `artifacts/phase_3/` |
 | Longitudinal dbt drift | `106` snapshots across `9.0` project-years, `44` large drift events | `artifacts/phase_4/summary_refined.json` |
 | Cross-organisation caution | Cal-ITP and Mattermost do not reproduce the single-organisation D3 correlation | `artifacts/phase_3/exp6_summary.json` |
@@ -63,16 +63,28 @@ evaluate labels that have not completed descriptor-blind adjudication.
 | Component | Location |
 |---|---|
 | Preregistered protocol | `research/governance_change_risk/PREREGISTRATION.md` |
+| Primary-source evidence map | `research/governance_change_risk/LITERATURE_POSITIONING.md` |
+| Consecutive cohort and confirmation firewall | `research/governance_change_risk/COHORT_COLLECTION_PLAN.md` |
 | Adverse-event codebook | `research/governance_change_risk/ANNOTATION_CODEBOOK.md` |
 | Manifest-pair contract | `research/governance_change_risk/DATA_CONTRACT.md` |
 | Public feasibility pass | `research/governance_change_risk/PILOT_FEASIBILITY_2026-07-13.md` |
+| Version 2 feature audit | `research/governance_change_risk/pilot_feature_rerun_2026-07-13.json` |
 | Extraction and feature code | `src/governance_descriptors/change_risk/` |
 | End-to-end tests | `tests/test_change_risk.py` |
 
 ```bash
+governance-change-risk freeze-cohort --candidates candidates.jsonl \
+  --protocol-version 0.3 --output cohort-frozen.json
 governance-change-risk build --registry pairs.jsonl --output change-risk.csv
 governance-change-risk evaluate --dataset change-risk.csv --output evaluation.json
 ```
+
+Feature spec v2 preserves the four primary global-graph model comparisons and
+adds a separately named, pre-outcome `change_geometry__` family. It measures
+directed ball growth, saturation, affected-subgraph conductance and cycle rank,
+and community-boundary crossing around the changed models. The scales were
+fixed before consecutive outcome sampling. The repair-linked Cal-ITP case that
+motivated the amendment cannot enter confirmation.
 
 This work is a separate confirmatory program. The existing paper remains the
 negative-result and inference-protocol record.

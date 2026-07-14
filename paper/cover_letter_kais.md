@@ -2,13 +2,13 @@
 
 Dear Editor-in-Chief,
 
-I submit the manuscript "Multi-Scale Structural Descriptors for Governance-Relevant Patterns in Data Lineage Graphs" for consideration at Knowledge and Information Systems, traditional subscription-based publication (no APC requested).
+I submit the manuscript "Topology Under-Determines Governance Maturity in Data Lineage Graphs: A Negative Result and a Reusable Inference Protocol" for consideration at Knowledge and Information Systems, traditional subscription-based publication (no APC requested).
 
 ## Summary
 
 The paper defines four graph-theoretic descriptors of directed acyclic data lineage graphs (community stability via Louvain resolution sweep, blast-radius Gini concentration, spectral gap and Fiedler structure, persistent H1 homology via Vietoris–Rips filtration) and applies them to 32 graphs from four heterogeneous sources: scientific workflows, production data lineage from Huawei Cloud, data warehouse schemas, and an anonymised dbt manifest.
 
-The primary contribution is a reproducible structural characterisation: production data lineage graphs occupy a descriptor-space region characterised by high community stability and small spectral gaps, distinct from scientific workflow topologies. The paper also delivers a methodological framework for small-sample, rank-degenerate governance--topology correlation studies (bootstrap CIs, null models, layer-stratified permutation, power analysis); a single-organisation feasibility pilot at graph-aggregate level with explicit negative findings on cross-organisation replication; and a **positive cross-organisation governance prediction at node granularity** on the DLG-DG-23 dataset, using expert-annotated core-asset labels from the original publication. Leave-one-graph-out cross-validation across six Huawei Cloud graphs achieves mean logistic-regression AUC = 0.897 ± 0.099 against a random baseline of 0.546 (p = 0.0003). The paper establishes a clear boundary condition: topology-based governance inference works at node granularity with curated expert labels, not at domain granularity with aggregated metadata.
+The primary contribution is a reproducible structural characterisation: production data lineage graphs occupy a descriptor-space region characterised by high community stability and small spectral gaps, distinct from scientific workflow topologies. The paper also supplies an inference protocol for small-sample, rank-degenerate governance--topology correlation studies; a single-organisation graph-aggregate pilot whose apparent association collapses under layer-stratified permutation; and a node-level reproduction on the DLG-DG-23 dataset. Ordinary centrality and reachability features achieve leave-one-graph-out logistic-regression AUC = 0.898 ± 0.098 against a random baseline of 0.546. Phase 5 does not evaluate D1--D4, so the result is presented only as a reproduction of the published centrality finding. The boundary is specific: simple topology identifies expert-labelled node importance in this corpus, but graph-level topology does not recover governance maturity after the architectural-layer confound is addressed.
 
 ## Fit for KAIS
 

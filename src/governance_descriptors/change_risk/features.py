@@ -9,6 +9,9 @@ Feature names encode their inferential role:
 ``multiscale__``
     D1-D3 snapshot deltas. D4 is reported as cycle rank because the existing
     real-data experiment showed that persistent H1 collapsed to that quantity.
+``change_geometry__``
+    Pre-outcome, change-centred multiscale summaries of directed ball growth,
+    affected-subgraph geometry, and community-boundary crossing.
 
 That naming makes the primary incremental-value test mechanical rather than a
 researcher-selected feature comparison after looking at outcomes.
@@ -37,6 +40,7 @@ FEATURE_GROUP_PREFIXES = {
     "baseline": "baseline__",
     "governance": "governance__",
     "multiscale": "multiscale__",
+    "change_geometry": "change_geometry__",
 }
 
 
@@ -166,6 +170,125 @@ def _max_depth_blast_radius(graph: nx.DiGraph, nodes: set[str], max_depth: int) 
     return max(values, default=0)
 
 
+def _directed_ball_profile(
+    graph: nx.DiGraph,
+    seeds: set[str],
+    max_depth: int,
+) -> tuple[list[int], set[str]]:
+    """Return cumulative downstream ball sizes from radius zero to max_depth."""
+
+    reached = {node for node in seeds if node in graph}
+    frontier = set(reached)
+    profile = [len(reached)]
+    for _ in range(max_depth):
+        next_frontier = {
+            successor
+            for node in frontier
+            for successor in graph.successors(node)
+            if successor not in reached
+        }
+        reached.update(next_frontier)
+        frontier = next_frontier
+        profile.append(len(reached))
+    return profile, reached
+
+
+def _ball_growth_exponent(profile: list[int]) -> tuple[float, float]:
+    """Estimate log-ball growth over the fixed positive-radius scale range."""
+
+    if len(profile) < 3 or profile[0] == 0:
+        return 0.0, 0.0
+    radii = np.arange(1, len(profile), dtype=float)
+    counts = np.asarray(profile[1:], dtype=float)
+    design = np.column_stack([np.log(radii), np.ones(len(radii))])
+    slope, intercept = np.linalg.lstsq(design, np.log(counts), rcond=None)[0]
+    fitted = design @ np.array([slope, intercept])
+    observed = np.log(counts)
+    total = float(np.sum((observed - observed.mean()) ** 2))
+    residual = float(np.sum((observed - fitted) ** 2))
+    r_squared = 1.0 - residual / total if total > 0 else 0.0
+    return float(max(0.0, slope)), float(max(0.0, min(1.0, r_squared)))
+
+
+def _affected_conductance(graph: nx.DiGraph, affected: set[str]) -> float:
+    undirected = graph.to_undirected()
+    affected = set(affected) & set(undirected)
+    complement = set(undirected) - affected
+    if not affected or not complement:
+        return 0.0
+    cut_edges = sum(1 for left, right in undirected.edges() if (left in affected) != (right in affected))
+    affected_volume = sum(dict(undirected.degree(affected)).values())
+    complement_volume = sum(dict(undirected.degree(complement)).values())
+    denominator = min(affected_volume, complement_volume)
+    return _ratio(cut_edges, denominator)
+
+
+def _community_boundary_spectrum(
+    graph: nx.DiGraph,
+    affected: set[str],
+    resolutions: tuple[float, ...] = (0.5, 1.0, 2.0),
+) -> tuple[float, float]:
+    """Summarize affected-edge boundary crossing over fixed resolutions."""
+
+    undirected = graph.to_undirected()
+    affected_graph = undirected.subgraph(set(affected) & set(undirected))
+    if undirected.number_of_edges() == 0 or affected_graph.number_of_edges() == 0:
+        return 0.0, 0.0
+    fractions = []
+    for resolution in resolutions:
+        communities = nx.community.louvain_communities(
+            undirected,
+            resolution=resolution,
+            seed=42,
+        )
+        membership = {
+            node: community_index
+            for community_index, community in enumerate(communities)
+            for node in community
+        }
+        crossings = sum(
+            membership[left] != membership[right]
+            for left, right in affected_graph.edges()
+        )
+        fractions.append(_ratio(crossings, affected_graph.number_of_edges()))
+    return float(np.mean(fractions)), float(max(fractions) - min(fractions))
+
+
+def _change_centred_geometry(
+    graph: nx.DiGraph,
+    seeds: set[str],
+    max_depth: int,
+) -> dict[str, float]:
+    """Compute local multiscale geometry around a fixed set of changed nodes."""
+
+    profile, affected = _directed_ball_profile(graph, seeds, max_depth)
+    exponent, fit_r_squared = _ball_growth_exponent(profile)
+    n_nodes = graph.number_of_nodes()
+    positive_radius = profile[1:]
+    final_size = profile[-1] if profile else 0
+    threshold = 0.95 * final_size
+    saturation_radius = next(
+        (radius for radius, size in enumerate(profile) if size >= threshold),
+        max_depth,
+    ) if final_size else 0
+    affected_graph = graph.subgraph(affected).copy()
+    cycle = cycle_rank_descriptors(affected_graph) if affected else {"cycle_rank_norm": 0.0}
+    boundary_mean, boundary_range = _community_boundary_spectrum(graph, affected)
+    return {
+        "ball_growth_exponent": exponent,
+        "ball_growth_fit_r2": fit_r_squared,
+        "ball_growth_auc_norm": (
+            float(np.mean(positive_radius)) / n_nodes
+            if positive_radius and n_nodes else 0.0
+        ),
+        "saturation_depth_norm": _ratio(saturation_radius, max_depth),
+        "affected_conductance": _affected_conductance(graph, affected),
+        "affected_cycle_rank_norm": float(cycle["cycle_rank_norm"]),
+        "community_boundary_crossing_mean": boundary_mean,
+        "community_boundary_crossing_range": boundary_range,
+    }
+
+
 def extract_change_features(
     before: ManifestSnapshot,
     after: ManifestSnapshot,
@@ -262,6 +385,23 @@ def extract_change_features(
         features[f"multiscale__after__{descriptor}"] = right_multiscale[descriptor]
         features[f"multiscale__delta__{descriptor}"] = (
             right_multiscale[descriptor] - left_multiscale[descriptor]
+        )
+
+    left_geometry = _change_centred_geometry(
+        left,
+        removed_nodes | modified_nodes,
+        max_depth=max_depth,
+    )
+    right_geometry = _change_centred_geometry(
+        right,
+        added_nodes | modified_nodes,
+        max_depth=max_depth,
+    )
+    for descriptor in sorted(left_geometry):
+        features[f"change_geometry__before__{descriptor}"] = left_geometry[descriptor]
+        features[f"change_geometry__after__{descriptor}"] = right_geometry[descriptor]
+        features[f"change_geometry__delta__{descriptor}"] = (
+            right_geometry[descriptor] - left_geometry[descriptor]
         )
 
     return features
