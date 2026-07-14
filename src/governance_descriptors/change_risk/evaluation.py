@@ -17,12 +17,34 @@ from .features import select_feature_columns
 from .labels import validate_annotation_table
 
 
-MODEL_GROUPS = {
+PRIMARY_MODEL_GROUPS = {
     "baseline": ("baseline",),
     "baseline_governance": ("baseline", "governance"),
     "baseline_multiscale": ("baseline", "multiscale"),
     "full": ("baseline", "governance", "multiscale"),
 }
+
+SECONDARY_MODEL_GROUPS = {
+    "baseline_change_geometry": ("baseline", "change_geometry"),
+    "baseline_multiscale_change_geometry": (
+        "baseline",
+        "multiscale",
+        "change_geometry",
+    ),
+    "baseline_governance_change_geometry": (
+        "baseline",
+        "governance",
+        "change_geometry",
+    ),
+    "all_features": (
+        "baseline",
+        "governance",
+        "multiscale",
+        "change_geometry",
+    ),
+}
+
+MODEL_GROUPS = {**PRIMARY_MODEL_GROUPS, **SECONDARY_MODEL_GROUPS}
 
 
 @dataclass
@@ -255,6 +277,8 @@ def evaluate_study(
     return {
         "protocol": {
             "models": {name: list(groups) for name, groups in MODEL_GROUPS.items()},
+            "primary_models": list(PRIMARY_MODEL_GROUPS),
+            "pre_outcome_secondary_models": list(SECONDARY_MODEL_GROUPS),
             "classifier": "median-impute + standardize + class-balanced logistic regression",
             "regularization_C": 1.0,
             "primary_metric": "leave-project-out incremental average precision",
@@ -274,6 +298,28 @@ def evaluate_study(
         ),
         "incremental_multiscale_given_governance": _cluster_bootstrap_ap_difference(
             logo["baseline_governance"], logo["full"], n_bootstrap=n_bootstrap, seed=seed + 1
+        ),
+        "secondary_incremental_change_geometry_vs_baseline": _cluster_bootstrap_ap_difference(
+            logo["baseline"],
+            logo["baseline_change_geometry"],
+            n_bootstrap=n_bootstrap,
+            seed=seed + 2,
+        ),
+        "secondary_incremental_change_geometry_given_multiscale": (
+            _cluster_bootstrap_ap_difference(
+                logo["baseline_multiscale"],
+                logo["baseline_multiscale_change_geometry"],
+                n_bootstrap=n_bootstrap,
+                seed=seed + 3,
+            )
+        ),
+        "secondary_incremental_change_geometry_given_governance": (
+            _cluster_bootstrap_ap_difference(
+                logo["baseline_governance"],
+                logo["baseline_governance_change_geometry"],
+                n_bootstrap=n_bootstrap,
+                seed=seed + 4,
+            )
         ),
         "governance_moderation_direction": _moderation_summary(logo["full"]),
     }

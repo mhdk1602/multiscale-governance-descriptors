@@ -1,4 +1,4 @@
-"""Experiment 7: Cross-organisation governance prediction on DLG-DG-23.
+"""Experiment 7: Cross-graph core-asset prediction on DLG-DG-23.
 
 The DLG-DG-23 dataset (Chen et al., Visual Informatics 2024) includes expert-
 labeled "core data assets" for 6 of the 18 production lineage graphs from
@@ -21,23 +21,41 @@ predict core status on the 6th. Compare against:
   - Logistic regression on all topological features
   - Random forest on all topological features
 
-This is the strongest cross-organisation governance-prediction test the
-paper can do with publicly available data and curated expert labels.
+This analysis reproduces the node-centrality signal reported for these
+graphs. It does not evaluate the paper's graph-level D1--D4 descriptors.
 """
 import sys, os, json
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 
 from pathlib import Path
+from collections import Counter
 import numpy as np
 import pandas as pd
 import networkx as nx
+import matplotlib.pyplot as plt
+from scipy.stats import ttest_1samp
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import roc_auc_score, average_precision_score, roc_curve
 from sklearn.model_selection import LeaveOneGroupOut
 import warnings
 warnings.filterwarnings('ignore')
+
+
+def bootstrap_auc(y_true, scores, n_resamples=2000, seed=42):
+    """Return a percentile bootstrap interval for ROC AUC."""
+    y_true = np.asarray(y_true)
+    scores = np.asarray(scores)
+    rng = np.random.default_rng(seed)
+    estimates = []
+    for _ in range(n_resamples):
+        sample = rng.integers(0, len(y_true), len(y_true))
+        if len(np.unique(y_true[sample])) < 2:
+            continue
+        estimates.append(roc_auc_score(y_true[sample], scores[sample]))
+    return tuple(np.quantile(estimates, [0.025, 0.975]))
 
 
 def load_dlg(graph_id, data_dir):
@@ -238,22 +256,46 @@ def main():
 
     groups = tables['graph'].values
     X = tables[features].values
-    X_scaled = StandardScaler().fit_transform(X)
+    core_id_counts = Counter(
+        asset_id
+        for graph_assets in core_assets.values()
+        for asset_id in graph_assets
+    )
+    shared_core_ids = sorted(
+        asset_id for asset_id, count in core_id_counts.items() if count > 1
+    )
 
     logo = LeaveOneGroupOut()
     results = {'logreg': [], 'rf': [], 'baseline_outdeg': [], 'baseline_random': []}
     fold_details = []
-    for train_idx, test_idx in logo.split(X_scaled, y, groups):
+    fold_curves = []
+    hardening_folds = []
+    sensitivity_results = []
+    for fold_number, (train_idx, test_idx) in enumerate(
+        logo.split(X, y, groups), start=1,
+    ):
         held_out = groups[test_idx][0]
         y_train, y_test = y[train_idx], y[test_idx]
-        X_train, X_test = X_scaled[train_idx], X_scaled[test_idx]
+        X_train, X_test = X[train_idx], X[test_idx]
 
-        # Logistic regression
-        lr = LogisticRegression(class_weight='balanced', max_iter=1000, C=1.0)
+        # Fit the scaler inside each fold so the held-out graph does not
+        # influence preprocessing.
+        lr = Pipeline([
+            ('scale', StandardScaler()),
+            ('model', LogisticRegression(
+                class_weight='balanced', max_iter=1000, C=1.0,
+            )),
+        ])
         lr.fit(X_train, y_train)
         lr_scores = lr.predict_proba(X_test)[:, 1]
         lr_auc = roc_auc_score(y_test, lr_scores) if len(np.unique(y_test)) > 1 else np.nan
         results['logreg'].append(lr_auc)
+        if len(np.unique(y_test)) > 1:
+            fpr, tpr, _ = roc_curve(y_test, lr_scores)
+            fold_curves.append((held_out, len(y_test), lr_auc, fpr, tpr))
+        ci_low, ci_high = bootstrap_auc(
+            y_test, lr_scores, seed=42 + fold_number,
+        )
 
         # Random forest
         rf = RandomForestClassifier(n_estimators=200, class_weight='balanced',
@@ -282,6 +324,28 @@ def main():
             'outdeg_auc': float(od_auc) if not np.isnan(od_auc) else None,
             'random_auc': float(rand_auc) if not np.isnan(rand_auc) else None,
         })
+        hardening_folds.append({
+            'held_out': held_out,
+            'n_test': len(y_test),
+            'core_in_test': int(y_test.sum()),
+            'lr_auc': float(lr_auc),
+            'lr_ci_low': float(ci_low),
+            'lr_ci_high': float(ci_high),
+            'rf_auc': float(rf_auc),
+        })
+        retained = ~tables.iloc[test_idx]['asset_id'].isin(shared_core_ids).to_numpy()
+        y_filtered = y_test[retained]
+        scores_filtered = lr_scores[retained]
+        filtered_auc = (
+            roc_auc_score(y_filtered, scores_filtered)
+            if len(np.unique(y_filtered)) > 1 else np.nan
+        )
+        sensitivity_results.append({
+            'held_out': held_out,
+            'n_filtered': int(retained.sum()),
+            'removed': int((~retained).sum()),
+            'lr_auc_filtered': float(filtered_auc),
+        })
         print(f"  Held-out {held_out}: n_test={len(y_test):>5}, core={int(y_test.sum()):>2}  "
               f"LR={lr_auc:.3f}  RF={rf_auc:.3f}  out-deg={od_auc:.3f}  random={rand_auc:.3f}")
 
@@ -297,11 +361,72 @@ def main():
     print("=" * 70)
     rf_full = RandomForestClassifier(n_estimators=500, class_weight='balanced',
                                      random_state=42, n_jobs=-1)
-    rf_full.fit(X_scaled, y)
+    rf_full.fit(X, y)
     importances = sorted(zip(features, rf_full.feature_importances_), key=lambda kv: -kv[1])
     print(f"  {'Feature':<22} {'Importance':>12}")
     for feat, imp in importances:
         print(f"  {feat:<22} {imp:>12.4f}")
+
+    # Regenerate the manuscript figure from the corrected fold-local model.
+    fig, axes = plt.subplots(1, 2, figsize=(16, 6))
+    ax = axes[0]
+    for held_out, n_test, auc, fpr, tpr in fold_curves:
+        ax.step(fpr, tpr, where='post', linewidth=2,
+                label=f'{held_out} (AUC={auc:.2f}, n={n_test})')
+    ax.plot([0, 1], [0, 1], linestyle='--', color='0.55', label='random')
+    ax.set(
+        xlabel='False positive rate',
+        ylabel='True positive rate',
+        title=('(a) ROC per held-out graph '
+               f'(mean AUC = {np.nanmean(results["logreg"]):.3f})'),
+    )
+    ax.grid(alpha=0.25)
+    ax.legend(loc='lower right', fontsize=9)
+
+    ax = axes[1]
+    importance_features = [feature for feature, _ in importances][::-1]
+    importance_values = [importance for _, importance in importances][::-1]
+    ax.barh(importance_features, importance_values, color='#4c78a8')
+    ax.set(
+        xlabel='Random forest feature importance',
+        title='(b) Feature importance (Gini, trained on all 6 graphs)',
+    )
+    ax.grid(axis='x', alpha=0.25)
+    fig.tight_layout()
+    figure_dir = Path(__file__).resolve().parent.parent.parent / 'paper' / 'figures'
+    figure_dir.mkdir(parents=True, exist_ok=True)
+    fig.savefig(figure_dir / 'dlg_core_asset_prediction.pdf', bbox_inches='tight')
+    fig.savefig(figure_dir / 'dlg_core_asset_prediction.png', dpi=200,
+                bbox_inches='tight')
+    plt.close(fig)
+
+    lr_ttest = ttest_1samp(results['logreg'], popmean=0.5)
+    rf_ttest = ttest_1samp(results['rf'], popmean=0.5)
+    hardening = {
+        'experiment_7_hardening': {
+            'preprocessing': {
+                'logistic_regression': 'StandardScaler fitted within each training fold',
+                'random_forest': 'unscaled features',
+            },
+            'shared_core_ids': shared_core_ids,
+            'n_shared': len(shared_core_ids),
+            'fold_results_with_bootstrap': hardening_folds,
+            'lr_mean_auc': float(np.nanmean(results['logreg'])),
+            'lr_std_auc': float(np.nanstd(results['logreg'])),
+            'rf_mean_auc': float(np.nanmean(results['rf'])),
+            'rf_std_auc': float(np.nanstd(results['rf'])),
+            'lr_t_vs_chance': float(lr_ttest.statistic),
+            'lr_p_vs_chance': float(lr_ttest.pvalue),
+            'rf_t_vs_chance': float(rf_ttest.statistic),
+            'rf_p_vs_chance': float(rf_ttest.pvalue),
+            'sensitivity_excl_shared_ids': sensitivity_results,
+            'sensitivity_mean_auc': float(np.nanmean([
+                fold['lr_auc_filtered'] for fold in sensitivity_results
+            ])),
+        },
+    }
+    with open(art_dir / 'exp7_hardening.json', 'w') as f:
+        json.dump(hardening, f, indent=2)
 
     # Save outputs
     tables.to_csv(art_dir / 'dlg_node_features_tables.csv', index=False)
@@ -312,6 +437,10 @@ def main():
         'n_data_tables': int(len(tables)),
         'n_core_labels': int(tables['is_core'].sum()),
         'class_balance': float(tables['is_core'].mean()),
+        'preprocessing': {
+            'logistic_regression': 'StandardScaler fitted within each training fold',
+            'random_forest': 'unscaled features',
+        },
         'per_feature_auc': {k: float(v) for k, v in feature_aucs.items()},
         'leave_one_out_results': {
             'logreg_mean_auc': float(np.nanmean(results['logreg'])),

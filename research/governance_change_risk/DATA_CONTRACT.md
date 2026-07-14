@@ -41,6 +41,12 @@ collection time. It also records whether node fingerprints or the lineage edge
 set changed. Rebuilding the dataset stores another hash over the derived CSV. A
 changed manifest therefore cannot pass unnoticed.
 
+Derived tables built under protocol 0.3 must record
+`feature_spec_version=governance-change-risk-v2`. Version 2 adds the
+`change_geometry__` columns while preserving the baseline, governance, and
+global multiscale definitions from version 1. Feature tables from the two
+versions must not be concatenated.
+
 Pairs with no changed node fingerprint and no changed edge remain in the
 extraction audit as `manifest_visible_change=false`. They are not eligible for
 confirmatory evaluation. A changed fingerprint with stable topology is eligible:

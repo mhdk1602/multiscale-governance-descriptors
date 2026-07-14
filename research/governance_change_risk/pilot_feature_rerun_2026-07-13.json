@@ -1,0 +1,87 @@
+{
+  "feature_spec_version": "governance-change-risk-v2",
+  "protocol_version": "0.3",
+  "run_date": "2026-07-13",
+  "source_provenance": "pilot_provenance_2026-07-13.json",
+  "selection": "engineering_feasibility_not_outcome_random",
+  "model_fitted": false,
+  "derived_dataset": {
+    "n_changes": 5,
+    "n_projects": 5,
+    "n_adjudicated": 0,
+    "n_events": 0,
+    "sha256": "6fabda018e5e1fdad85abea45865469a75780357375f90fd4cbd5c32d0b1c7bd",
+    "committed": false
+  },
+  "summary": {
+    "manifest_visible_pairs": 4,
+    "pairs_with_nonzero_global_multiscale_delta": 1,
+    "pairs_with_nonzero_post_change_geometry": 4,
+    "pairs_with_nonzero_change_geometry_delta": 2,
+    "noop_pairs_with_nonzero_change_geometry": 0,
+    "change_geometry_feature_count": 24
+  },
+  "selected_post_change_geometry": [
+    {
+      "project": "cagov-data-infrastructure",
+      "change_id": "590",
+      "ball_growth_exponent": 0.0,
+      "ball_growth_fit_r2": 0.0,
+      "ball_growth_auc_norm": 0.1276595744680851,
+      "saturation_depth_norm": 0.0,
+      "affected_conductance": 0.0,
+      "affected_cycle_rank_norm": 0.0,
+      "community_boundary_crossing_mean": 0.0,
+      "community_boundary_crossing_range": 0.0
+    },
+    {
+      "project": "cal-itp-data-infra",
+      "change_id": "5392",
+      "ball_growth_exponent": 0.9983923014225055,
+      "ball_growth_fit_r2": 0.9554210207225653,
+      "ball_growth_auc_norm": 0.1179661016949152,
+      "saturation_depth_norm": 0.8,
+      "affected_conductance": 0.196870925684485,
+      "affected_cycle_rank_norm": 1.0738255033557047,
+      "community_boundary_crossing_mean": 0.1590909090909091,
+      "community_boundary_crossing_range": 0.1980519480519480
+    },
+    {
+      "project": "dagster-mdsfest-opensource-mds",
+      "change_id": "2",
+      "ball_growth_exponent": 0.0,
+      "ball_growth_fit_r2": 0.0,
+      "ball_growth_auc_norm": 0.2222222222222222,
+      "saturation_depth_norm": 0.2,
+      "affected_conductance": 0.6,
+      "affected_cycle_rank_norm": 0.0,
+      "community_boundary_crossing_mean": 0.3333333333333333,
+      "community_boundary_crossing_range": 1.0
+    },
+    {
+      "project": "matsonj-nba-monte-carlo",
+      "change_id": "193",
+      "ball_growth_exponent": 0.0791438932433664,
+      "ball_growth_fit_r2": 0.7093851264991964,
+      "ball_growth_auc_norm": 0.0987341772151898,
+      "saturation_depth_norm": 0.4,
+      "affected_conductance": 0.4222222222222222,
+      "affected_cycle_rank_norm": 0.75,
+      "community_boundary_crossing_mean": 0.2051282051282051,
+      "community_boundary_crossing_range": 0.3076923076923077
+    },
+    {
+      "project": "mattermost-data-warehouse",
+      "change_id": "1686",
+      "ball_growth_exponent": 0.0,
+      "ball_growth_fit_r2": 0.0,
+      "ball_growth_auc_norm": 0.0,
+      "saturation_depth_norm": 0.0,
+      "affected_conductance": 0.0,
+      "affected_cycle_rank_norm": 0.0,
+      "community_boundary_crossing_mean": 0.0,
+      "community_boundary_crossing_range": 0.0
+    }
+  ],
+  "interpretation": "Feature extraction check only. The repair-linked Cal-ITP case remains excluded from confirmation, and no value in this file is an outcome estimate."
+}

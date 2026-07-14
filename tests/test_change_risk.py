@@ -6,6 +6,7 @@ import pytest
 
 from governance_descriptors.change_risk.evaluation import evaluate_study
 from governance_descriptors.change_risk.features import extract_change_features
+from governance_descriptors.change_risk.cohort import freeze_candidate_cohort
 from governance_descriptors.change_risk.labels import candidate_repair_signal
 from governance_descriptors.change_risk.manifest import load_manifest
 from governance_descriptors.change_risk.study import build_study_dataset
@@ -47,6 +48,9 @@ def test_change_features_separate_baselines_controls_and_multiscale_deltas():
     assert "governance__interaction__blast_fraction_x_model_test_coverage" in features
     assert "multiscale__delta__d2_gini_auc" in features
     assert "multiscale__delta__d4_cycle_rank_norm" in features
+    assert "change_geometry__after__ball_growth_exponent" in features
+    assert "change_geometry__delta__affected_conductance" in features
+    assert "change_geometry__after__community_boundary_crossing_mean" in features
     assert all(np.isfinite(value) for value in features.values())
 
 
@@ -63,7 +67,7 @@ def test_dataset_records_manifest_hashes_and_refuses_duplicate_changes(tmp_path)
     frame = build_study_dataset([record])
     assert len(frame) == 1
     assert len(frame.loc[0, "before_manifest_sha256"]) == 64
-    assert frame.loc[0, "feature_spec_version"] == "governance-change-risk-v1"
+    assert frame.loc[0, "feature_spec_version"] == "governance-change-risk-v2"
     assert bool(frame.loc[0, "manifest_visible_change"])
     assert np.isnan(frame.loc[0, "baseline__repo__lines_added"])
 
@@ -136,6 +140,9 @@ def _evaluation_frame():
                     "governance__interaction__blast_fraction_x_model_test_coverage": risk
                     * coverage,
                     "multiscale__delta__d2_gini_auc": risk + rng.normal(0, 0.05),
+                    "change_geometry__after__ball_growth_exponent": (
+                        risk + rng.normal(0, 0.03)
+                    ),
                 }
             )
     return pd.DataFrame(rows)
@@ -149,9 +156,19 @@ def test_evaluation_is_project_held_out_and_requires_adjudication():
         "baseline_governance",
         "baseline_multiscale",
         "full",
+        "baseline_change_geometry",
+        "baseline_multiscale_change_geometry",
+        "baseline_governance_change_geometry",
+        "all_features",
     }
     assert report["leave_project_out"]["full"]["n"] == len(frame)
     assert report["primary_incremental_multiscale_vs_baseline"]["n_bootstrap_valid"] > 0
+    assert (
+        report["secondary_incremental_change_geometry_vs_baseline"][
+            "n_bootstrap_valid"
+        ]
+        > 0
+    )
 
     frame.loc[0, "label_status"] = "single_review"
     with pytest.raises(ValueError, match="refuses non-adjudicated"):
@@ -169,3 +186,57 @@ def test_evaluation_refuses_manifest_noops():
 def test_repair_keyword_is_only_a_candidate_signal():
     assert candidate_repair_signal(["Hotfix downstream customer model"])
     assert not candidate_repair_signal(["Add customer lifetime value mart"])
+
+
+def _cohort_candidate(project, change_id, sequence_index, status="include"):
+    candidate = {
+        "project": project,
+        "change_id": change_id,
+        "change_url": f"https://example.invalid/{project}/pull/{change_id}",
+        "merged_at": f"2026-01-{sequence_index:02d}T00:00:00Z",
+        "before_ref": "1" * 40,
+        "after_ref": "2" * 40,
+        "sequence_index": sequence_index,
+        "eligibility_status": status,
+    }
+    if status == "exclude":
+        candidate["exclusion_reason"] = "manifest generation failed"
+    return candidate
+
+
+def test_cohort_freeze_is_order_stable_and_keeps_exclusions_in_sequence():
+    first = _cohort_candidate("alpha", "2", 2, status="exclude")
+    second = _cohort_candidate("alpha", "1", 1)
+    frozen = freeze_candidate_cohort(
+        [first, second],
+        protocol_version="0.3",
+        feature_spec_version="governance-change-risk-v2",
+    )
+    reordered = freeze_candidate_cohort(
+        [second, first],
+        protocol_version="0.3",
+        feature_spec_version="governance-change-risk-v2",
+    )
+    assert frozen["cohort_id"] == reordered["cohort_id"]
+    assert frozen["summary"]["n_included"] == 1
+    assert frozen["summary"]["n_excluded_pre_outcome"] == 1
+    assert [row["sequence_index"] for row in frozen["records"]] == [1, 2]
+
+
+def test_cohort_freeze_rejects_outcomes_and_sequence_gaps():
+    candidate = _cohort_candidate("alpha", "1", 1)
+    candidate["outcome_primary"] = 0
+    with pytest.raises(ValueError, match="Outcome information is prohibited"):
+        freeze_candidate_cohort(
+            [candidate],
+            protocol_version="0.3",
+            feature_spec_version="governance-change-risk-v2",
+        )
+
+    gap = _cohort_candidate("alpha", "2", 2)
+    with pytest.raises(ValueError, match="contiguous from 1"):
+        freeze_candidate_cohort(
+            [gap],
+            protocol_version="0.3",
+            feature_spec_version="governance-change-risk-v2",
+        )

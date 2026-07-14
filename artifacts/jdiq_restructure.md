@@ -1,15 +1,15 @@
 # JDIQ restructure: from descriptor instrument to a negative result + protocol
 
 Drop-in material for converting the manuscript from "a multi-scale descriptor battery"
-(unpublishable: the branded D1-D4 do no work on real data, and the one strong result
-replicates Chen 2023) into "lineage topology under-determines governance maturity: a
-negative result and a reusable inference protocol." Target: **ACM JDIQ**, challenge/
-experience-paper track (provenance/lineage in scope, double-anonymous, no APC).
+(unpublishable: the available real-data tests do not support D1-D4 as governance
+proxies, and the one strong result replicates Chen 2023) into "lineage topology
+under-determines governance maturity: a negative result and a reusable inference
+protocol." Target: **ACM JDIQ**, challenge/experience-paper track
+(provenance/lineage in scope, double-anonymous, no APC).
 
 All numbers below are verified against the saved JSONs (`bootstrap_cis.json`,
-`exp6_summary.json`, `phase_5/...prediction_summary.json`) and the test suite
-(`tests/`, 37 passing) and the new protocol module (`src/governance_descriptors/
-inference_protocol.py`).
+`exp6_summary.json`, `phase_5/...prediction_summary.json`), the test suite, and
+the new protocol module (`src/governance_descriptors/inference_protocol.py`).
 
 ---
 
@@ -75,10 +75,11 @@ descriptors are the *instrument under test*, not the contribution.)
 that node-centrality metrics identify core data assets on the DLG-DG-23 lineage graphs.
 Our Experiment 7 (core-asset prediction, AUC 0.90) is, under leave-one-graph-out
 cross-validation on the same corpus, a reproduction of that result: the top predictors
-are PageRank and out-degree, and the D1-D4 descriptors add no measurable lift beyond
-centrality. We report this as confirmation that lineage structure carries node-importance
-signal that is already captured by simple centrality, not as a new finding, and not as
-evidence that multi-scale descriptors detect governance.
+are PageRank and out-degree. The model contains ordinary node features and does not
+evaluate D1-D4, so it cannot estimate their incremental value. We report this as
+confirmation that lineage structure carries node-importance signal already captured by
+simple centrality, not as a new finding and not as evidence that multi-scale descriptors
+detect governance.
 
 **Chen et al. (2024), *Visual Informatics* 8(1).** The DLG-DG-23 dataset paper already
 characterizes data-lineage graphs as sparse, scale-free, and cluster-rich. We therefore
@@ -95,8 +96,8 @@ contribution is the data, not the detector.
 
 ## 5. README headline fix (before -> after)
 
-**Before** (current README leads with the indefensible number):
-> Multi-scale structural descriptors achieve **AUC 0.897** for core-asset prediction...
+**Before** (historical README led with the wrong construct):
+> Multi-scale structural descriptors achieve **AUC 0.898** for core-asset prediction...
 
 **After**:
 > A negative result: lineage topology under-determines governance maturity (the strong
@@ -104,7 +105,7 @@ contribution is the data, not the detector.
 > p = 1.000), plus a reusable small-n graph-correlation inference protocol. The
 > node-importance AUC reproduces Chen et al. (2023) centrality and is reported as such.
 
-The README must not contradict the methods. Leading with AUC 0.897 invites the exact
+The README must not contradict the methods. Leading with AUC 0.898 invites the exact
 "oversold" objection a reviewer will raise.
 
 ## 6. JDIQ submission checklist
@@ -118,7 +119,7 @@ The README must not contradict the methods. Leading with AUC 0.897 invites the e
 | Rank-degeneracy + power-analysis section | `min_detectable_rho` packaged; write the section |
 | Housekeeping (stale DOI, token, empty stubs) | pending — `CHANGELOG` DOI, rotate token |
 | Retitle + abstract + README | drafted above |
-| Email Ying Zhao group for more core-asset labels | pending — one email, non-blocking |
+| Additional DLG-DG-23 core-asset labels | **Closed** — the authors confirmed that none are available |
 | arXiv/SSRN preprint before the defense | post after restructure |
 
 **Honest probability with the full reframe:** JDIQ challenge paper 45-60%; DOLAP/DEEM 2027

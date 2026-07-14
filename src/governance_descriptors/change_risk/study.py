@@ -12,7 +12,7 @@ from .labels import validate_annotation_table
 from .manifest import load_manifest
 
 
-FEATURE_SPEC_VERSION = "governance-change-risk-v1"
+FEATURE_SPEC_VERSION = "governance-change-risk-v2"
 BASELINE_REGISTRY_COVARIATES = (
     "lines_added",
     "lines_deleted",
