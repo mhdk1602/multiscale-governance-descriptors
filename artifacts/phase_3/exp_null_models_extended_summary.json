@@ -19,22 +19,22 @@
         "z": -0.7879232702083465
       },
       "D3_alg_conn": {
-        "real": 0.06679030238817349,
-        "null_mean": 0.11349755898263907,
-        "null_std": 0.02054159528173067,
-        "z": -2.2737891556909604
+        "real": 0.06679030238817577,
+        "null_mean": 0.11349755898263929,
+        "null_std": 0.020541595281730513,
+        "z": -2.2737891556908774
       },
       "D3_fiedler_bim": {
-        "real": 0.301569405831592,
-        "null_mean": 0.6240777154064974,
-        "null_std": 0.2154800167643837,
-        "z": -1.4966970692509967
+        "real": 0.3015680197525563,
+        "null_mean": 0.6240769185841475,
+        "null_std": 0.21548055226091098,
+        "z": -1.4966960843853325
       },
       "D3_norm_gap": {
-        "real": 0.0030287152145725953,
-        "null_mean": 0.005147275580103234,
-        "null_std": 0.0009313741790065735,
-        "z": -2.2746608302107822
+        "real": 0.0030287152145726986,
+        "null_mean": 0.005147275580103243,
+        "null_std": 0.0009313741790065663,
+        "z": -2.2746608302106983
       },
       "D4_cycle_rank_norm": {
         "real": 0.34977578475336324,
@@ -43,5 +43,30 @@
         "z": 0.9100989145088128
       }
     }
+  },
+  "null_B": {
+    "descriptor": "D3_alg_conn",
+    "target": "doc_rate",
+    "n_domains": 18,
+    "real_rho": -0.7084712767944846,
+    "layer_perm_p": 1.0,
+    "null_rho_mean": -0.7084712767944846,
+    "null_rho_std": 0.0,
+    "n_permutations": 5000,
+    "strata": {
+      "gold": {
+        "n": 1,
+        "n_distinct_descriptor_values": 1
+      },
+      "silver": {
+        "n": 5,
+        "n_distinct_descriptor_values": 1
+      },
+      "source": {
+        "n": 12,
+        "n_distinct_descriptor_values": 1
+      }
+    },
+    "descriptor_constant_within_every_stratum": true
   }
 }

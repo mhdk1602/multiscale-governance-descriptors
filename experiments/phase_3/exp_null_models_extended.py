@@ -216,19 +216,22 @@ def main():
     print("=" * 70)
     print("Tests: does D3 correlate with doc_rate after removing layer confound?")
 
-    # Build domain-level dataset with layer-dominant stratum
-    domain_summary = pd.read_csv(
-        os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'dbt_domain_summary.csv')
-    )
+    # Build domain-level dataset with layer-dominant stratum.
+    # exp_2b_dbt_domain_descriptors.csv already carries both the descriptor
+    # (D3_alg_conn) and the governance target (doc_rate) on the canonical
+    # zero-padded domain key used by dbt_nodes.csv, so it is read directly.
+    # An earlier version joined it against dbt_domain_summary.csv, whose
+    # unpadded keys (domain_1 vs domain_001) never matched and silently
+    # emptied this null model.
     domain_desc_path = os.path.join(
         os.path.dirname(__file__), '..', '..', 'artifacts', 'phase_3', 'exp_2b_dbt_domain_descriptors.csv'
     )
+    null_b_result = None
     if not os.path.exists(domain_desc_path):
         print("  Domain descriptor CSV not found — run exp_2b_dbt_real_data.py first.")
     else:
-        domain_desc = pd.read_csv(domain_desc_path)
-        domain_desc = domain_desc.rename(columns={'domain': 'domain_or_team_owner'})
-        merged = domain_summary.merge(domain_desc, on='domain_or_team_owner', how='inner')
+        merged = pd.read_csv(domain_desc_path)
+        merged = merged.rename(columns={'domain': 'domain_or_team_owner'})
         merged = merged[~merged.get('too_small', pd.Series([False]*len(merged)))].copy()
 
         # Assign dominant layer per domain
@@ -249,7 +252,9 @@ def main():
         print(f"  Layer distribution: {merged['dominant_layer'].value_counts().to_dict()}")
 
         rng = np.random.default_rng(42)
-        target = 'documentation_coverage'
+        # doc_rate is the documentation target the headline D3 correlation
+        # (rho = -0.708, n = 18) is computed against elsewhere in phase 3.
+        target = 'doc_rate'
         descriptor = 'D3_alg_conn'
 
         if descriptor not in merged.columns:
@@ -259,7 +264,7 @@ def main():
         else:
             valid = merged[[descriptor, target, 'dominant_layer']].dropna()
             real_rho, _, _ = permutation_spearman(
-                valid[descriptor].values, valid[target].values, n_permutations=10000
+                valid[descriptor].values, valid[target].values, n_perms=10000
             )
 
             # Permutation: shuffle target within each layer stratum
@@ -290,14 +295,30 @@ def main():
                 print("    → D3 correlation SURVIVES layer-stratified permutation.")
                 print("      The association holds within layer strata, not only across them.")
 
+            # Record the per-stratum descriptor spread. When the descriptor is
+            # constant inside every stratum the null distribution collapses to
+            # a point mass at the observed rho, which is why p reaches 1.000.
+            stratum_detail = {
+                str(stratum): {
+                    'n': int(len(gp)),
+                    'n_distinct_descriptor_values': int(gp[descriptor].round(9).nunique()),
+                }
+                for stratum, gp in valid.groupby('dominant_layer')
+            }
+
             null_b_result = {
                 'descriptor': descriptor,
                 'target': target,
+                'n_domains': int(len(valid)),
                 'real_rho': float(real_rho),
                 'layer_perm_p': float(perm_p),
                 'null_rho_mean': float(perm_rhos.mean()),
                 'null_rho_std': float(perm_rhos.std()),
                 'n_permutations': N_PERM,
+                'strata': stratum_detail,
+                'descriptor_constant_within_every_stratum': bool(
+                    all(s['n_distinct_descriptor_values'] <= 1 for s in stratum_detail.values())
+                ),
             }
 
     # Save
@@ -311,8 +332,13 @@ def main():
                    'pct_dag': float(pct_dag),
                    'z_scores': z_results},
     }
-    if 'null_b_result' in dir():
-        summary['null_B'] = null_b_result
+    if null_b_result is None:
+        raise RuntimeError(
+            "Null model B produced no result. The summary would be written "
+            "without null_B and the layer-stratified permutation claim would "
+            "have no artifact behind it. Fix the input data before rerunning."
+        )
+    summary['null_B'] = null_b_result
     with open(os.path.join(out_dir, 'exp_null_models_extended_summary.json'), 'w') as f:
         json.dump(summary, f, indent=2)
 
