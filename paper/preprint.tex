@@ -196,13 +196,19 @@ measures for knowledge graphs. \citet{merono2024} position knowledge
 graphs as governance backbones for AI systems. Neither applies
 multi-scale graph descriptors to lineage topology.
 
-Preliminary work on fractal descriptors for enterprise data graphs
-\citep{hari2026fractal} investigated whether box-covering fractal
-dimension could characterize a governance signal in data
-lineage. That investigation found fractal dimension to be sensitive
-to graph scale and topology but insufficient as a standalone governance
-signal, motivating the broader multi-scale descriptor set developed
-here. The fractal analysis methodology (Hurst exponents, detrended
+An unpublished phase 0 feasibility analysis by the author
+\citep{hari2026fractal} asked whether box-covering fractal dimension
+could characterize a governance signal in data lineage. It could not.
+Box-covering needs a diameter of roughly 8 or more and a locally
+connected lattice-like topology before its scaling estimates stabilize,
+and enterprise governance graphs supply neither. Lineage DAGs run to a
+diameter of 3--6, entity-relationship graphs to 2--4 over a bipartite
+hub topology, and product hierarchies are trees on which box-covering
+is trivial. We read that as the geometry of the domain rather than a
+deficiency in the data, since a well-governed lineage is a shallow DAG
+by design. The descriptors used here were chosen to fit that geometry,
+and we make no fractal claim about governance graphs anywhere in this
+paper. The fractal analysis methodology (Hurst exponents, detrended
 fluctuation analysis) has a longer history in the author's work on
 temporal scaling in financial systems \citep{hari2026pvcoupling}.
 A complementary line of work applies boundary-risk detection to
@@ -1537,7 +1543,7 @@ prediction component requires further evidence before deployment.
 \section{Reproducibility}
 
 All code, anonymized data, and experiment scripts are archived at
-Zenodo\footnote{DOI: \href{https://doi.org/10.5281/zenodo.20209148}{10.5281/zenodo.20209148} (v2.0.0)}
+Zenodo\footnote{Version DOI \href{https://doi.org/10.5281/zenodo.20209148}{10.5281/zenodo.20209148} for v2.1.0. The concept DOI \href{https://doi.org/10.5281/zenodo.20099999}{10.5281/zenodo.20099999} always resolves to the latest version.}
 and on GitHub.\footnote{\url{https://github.com/mhdk1602/multiscale-governance-descriptors}}
 The repository includes:
 

@@ -65,7 +65,7 @@
     <g transform="translate(0 266)">
       <rect width="238" height="86" rx="18" fill="#102033" stroke="#31506e" filter="url(#shadow)"/>
       <text class="tiny" x="24" y="30">NODE-LEVEL TEST</text>
-      <text class="metric" x="24" y="65">AUC 0.897</text>
+      <text class="metric" x="24" y="65">AUC 0.898</text>
     </g>
     <g transform="translate(258 266)">
       <rect width="238" height="86" rx="18" fill="#102033" stroke="#31506e" filter="url(#shadow)"/>

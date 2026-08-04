@@ -27,14 +27,65 @@
 
 - Constant-input permutation tests now return `rho=NaN, p=1.0` instead of the
   minimum attainable p-value.
-- Corrected the README statement about phase five: it reproduces centrality-based
+- Corrected the README statement about phase five. It reproduces centrality-based
   core-asset prediction but does not evaluate D1-D4 incremental value.
+
+### Null model B had never run (2026-08-04)
+
+The layer-stratified permutation result is the paper's headline negative
+finding, and until now no artifact contained it. `exp_null_models_extended.py`
+carried three defects that made null model B skip silently and write a summary
+with only null model A in it.
+
+- The domain join compared unpadded keys from `data/dbt_domain_summary.csv`
+  (`domain_1`) against zero-padded keys from
+  `artifacts/phase_3/exp_2b_dbt_domain_descriptors.csv` (`domain_001`). The
+  inner join returned zero rows every time. The descriptor CSV already carries
+  both the descriptor and the target on the canonical key, so the join is gone.
+- `permutation_spearman` was called with `n_permutations=`, which is not its
+  keyword. The correct name is `n_perms=`. The zero-row join masked this.
+- The permutation target was `documentation_coverage`, which is a different
+  column from the `doc_rate` the headline `rho = -0.708` is computed against.
+- The guard `if 'null_b_result' in dir()` swallowed the skip. A missing null
+  model B now raises instead of writing a partial summary.
+
+Rerunning reproduces the published claim exactly. `rho = -0.708` on n = 18
+domains, layer-stratified permutation `p = 1.000`, null rho std `0.0`. The
+artifact now also records the per-stratum descriptor spread, which shows D3 is
+constant inside all three strata and explains why every permutation returns the
+observed correlation. Null model A is unchanged to ten significant figures.
+
+### Pointer and citation hygiene (2026-08-04)
+
+- README now points each headline number at the artifact that contains it.
+- Added `CITATION.cff` with the concept DOI, the three version DOIs, and ORCID.
+- Recorded the Zenodo concept DOI `10.5281/zenodo.20099999` alongside the
+  version DOI. It always resolves to the latest version.
+- Corrected the preprint and analysis-brief footnotes that labelled the
+  v2.1.0 archive DOI as v2.0.0.
+- Updated the stale `AUC 0.897` in the README hero graphic to the current
+  `0.898`, which is the value after the within-fold StandardScaler fix.
+- `hari2026fractal` pointed at `github.com/mhdk1602/fractal-enterprise-graphs`,
+  which returns 404 and has never existed. It is now an `@unpublished` entry
+  with no URL, and the preprint states the phase 0 finding in full so the
+  citation carries no load.
 
 ## Revision 2 (2026-05-09) — Mathematical and Statistical Hardening
 
 ### Security
-- Confirmed Zenodo API token not committed to repo files
-- Zenodo token exposed in conversation session: **rotate immediately** at zenodo.org/account/settings/applications
+
+> **OPEN as of 2026-08-04. Rotate the Zenodo API token.**
+> Rotation requires an interactive login at zenodo.org/account/settings/applications
+> and has not been performed. This warning stays here until it has.
+
+- Confirmed the Zenodo API token is not committed to any repo file.
+- Re-verified on 2026-08-04 across every object in the repository history,
+  573 objects including unreachable and dangling blobs. No credential-shaped
+  string is present in any of them. The only long alphanumeric strings in
+  tracked files are the documented SHA-256 manifest hashes under
+  `research/governance_change_risk/`.
+- The exposure was to a conversation session, not to the repository. Git
+  history therefore needs no rewrite, and the token still needs rotating.
 
 ### Code corrections
 
@@ -100,5 +151,6 @@
 
 ### Publication readiness
 - PDF now 16 pages, 9 tables.
-- Zenodo DOI: 10.5281/zenodo.20209148 (note: token must be rotated before next API use).
+- Zenodo version DOI 10.5281/zenodo.20209148. The API token must be rotated
+  before the next API use, see the Security note above.
 - SSRN-ready: keywords added, affiliation set to "Independent Researcher".

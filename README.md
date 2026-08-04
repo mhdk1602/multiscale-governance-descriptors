@@ -34,10 +34,10 @@ The answer is mostly negative, and the negative result is the contribution. A st
 
 | Finding | Evidence | Where |
 |---|---:|---|
-| **Topology under-determines governance maturity** (headline) | D3 vs doc_rate `rho = -0.71` collapses under layer-stratified permutation, `p = 1.000` | `artifacts/phase_3/exp6_summary.json` |
-| Core asset prediction reproduces Chen et al. (2023) centrality; D1-D4 were not evaluated in that model | LR AUC `0.898 +/- 0.098`, random baseline `0.546` | `artifacts/phase_5/` |
+| **Topology under-determines governance maturity** (headline) | D3 vs doc_rate `rho = -0.708` (n = 18) collapses under layer-stratified permutation, `p = 1.000` | `artifacts/phase_3/exp_null_models_extended_summary.json` (`null_B`) |
+| Core asset prediction reproduces Chen et al. (2023) centrality; D1-D4 were not evaluated in that model | LR AUC `0.898 +/- 0.098`, random baseline `0.546` | `artifacts/phase_5/dlg_core_asset_prediction_summary.json` |
 | Shared-ID leakage check | AUC remains `0.891` after removing 3 repeated core IDs | `artifacts/phase_5/exp7_hardening.json` |
-| Production dbt descriptor profile | `223` nodes, `263` edges, `26` anonymized domains | `artifacts/phase_3/` |
+| Production dbt descriptor profile | `223` nodes, `263` edges, `26` anonymized domains | `artifacts/phase_3/real_data_validation_summary.md` |
 | Longitudinal dbt drift | `106` snapshots across `9.0` project-years, `44` large drift events | `artifacts/phase_4/summary_refined.json` |
 | Cross-organisation caution | Cal-ITP and Mattermost do not reproduce the single-organisation D3 correlation | `artifacts/phase_3/exp6_summary.json` |
 | Synthetic scale check | Multiscale descriptors reach AUC `0.935 +/- 0.113`; simpler baselines reach `1.000` | `artifacts/phase_3/exp4_grouped_cv.json` |
@@ -214,6 +214,7 @@ That distinction matters. The methods are useful when the unit of analysis and l
 ## Repository Status
 
 - Latest release: `v2.1.0`
-- Archive DOI: `10.5281/zenodo.20209148`
+- Concept DOI (always resolves to the latest version): `10.5281/zenodo.20099999`
+- Version DOI for `v2.1.0`: `10.5281/zenodo.20209148`
 - Primary language: Python
 - Main dependencies: NetworkX, NumPy, SciPy, pandas, GUDHI, scikit-learn
