@@ -63,8 +63,20 @@ SERIES_PALETTE = [
 MUTED = "#999999"
 ACCENT = "#0072B2"
 
-STRUCTURAL_COLUMNS = ("date", "sha", "commit_msg", "too_small", "N", "M")
+STRUCTURAL_COLUMNS = (
+    "date", "sha", "commit_msg", "too_small", "N", "M",
+    # Connectivity and provenance fields the corpus extractor emits. These
+    # describe the graph rather than measure it, so they must not appear as
+    # descriptor panels or sit beside D2/D3/D4 in the summary table.
+    "n_components", "giant_component_frac", "isolated_frac",
+    "n_sql_files", "n_dbt_projects",
+)
 REQUIRED_COLUMNS = ("date", "N", "M")
+
+# D1 and D3 are computed on the largest connected component only. Below this
+# fraction the descriptor describes a minority of the nodes the axis label
+# reports, so the project is excluded from those panels rather than annotated.
+MIN_GIANT_COMPONENT_FRAC = 0.5
 
 DRIFT_THRESHOLD_PCT = 20.0
 SAMPLING_WINDOW_DAYS = 30
@@ -136,7 +148,12 @@ FIELD_DOCS = {
 # extraction that lands next only has to emit one of these shapes for the figure
 # to appear, and the skip message states the contract verbatim.
 LAYER_PREFIX = "layer_"
-LAYER_COUNT_COLUMNS = ("n_source", "n_staging", "n_intermediate", "n_mart")
+# A dbt source is declared in YAML and is not a model, so a count over model
+# files correctly has no source bucket. n_unclassified is the honest remainder
+# and dropping it renormalises the stack to a total that excludes real models.
+LAYER_COUNT_COLUMNS = (
+    "n_staging", "n_intermediate", "n_mart", "n_unclassified", "n_source",
+)
 COVERAGE_COLUMNS = {
     "doc_rate": ("doc_rate", "documentation_coverage", "documented_frac"),
     "test_rate": ("test_rate", "test_coverage", "tested_frac"),
@@ -184,9 +201,18 @@ def discover_projects(corpus_dir):
 
 
 def label_of(project):
-    """Display label. Known slugs keep their capitalisation."""
+    """Display label. Known slugs keep their capitalisation.
+
+    Corpus project ids are `owner__repo`, so the separator is rendered as a
+    slash rather than collapsed into whitespace.
+    """
     special = {"cal-itp": "Cal-ITP", "mattermost": "Mattermost"}
-    return special.get(project, project.replace("_", " "))
+    if project in special:
+        return special[project]
+    if "__" in project:
+        owner, _, repo = project.partition("__")
+        return f"{owner}/{repo}"
+    return project.replace("_", " ")
 
 
 def descriptor_fields(frames, also_exclude=()):
@@ -243,13 +269,41 @@ def drift_dates(drift, project):
 
 
 def layer_columns(frames):
-    """Layer-composition columns if the corpus carries them, else []."""
+    """Layer-composition columns if the corpus carries them, else [].
+
+    Refuses to return a partial set. A stacked composition renormalised over
+    a subset of the layers asserts that the omitted layers are empty, which is
+    a fabricated claim rather than a missing one, so an incomplete set is
+    dropped with a printed reason instead of rendered.
+    """
     df = next(iter(frames.values()))
     prefixed = sorted(c for c in df.columns if c.startswith(LAYER_PREFIX))
     if len(prefixed) >= 2:
         return prefixed
+
     counts = [c for c in LAYER_COUNT_COLUMNS if c in df.columns]
-    return counts if len(counts) >= 2 else []
+    if len(counts) < 2:
+        return []
+
+    # Every model must land in exactly one bucket. If the buckets do not
+    # account for N, a layer is missing from LAYER_COUNT_COLUMNS and the
+    # figure would silently redistribute the shortfall across the rest.
+    for project, frame in frames.items():
+        if not set(counts) <= set(frame.columns):
+            print(f"  layer: skipped, {project} lacks {sorted(set(counts) - set(frame.columns))}")
+            return []
+        totals = frame[list(counts)].sum(axis=1)
+        shortfall = (frame["N"] - totals).abs()
+        worst = float(shortfall.max()) if len(shortfall) else 0.0
+        if worst > 0:
+            print(
+                f"  layer: skipped, buckets {counts} do not account for every model "
+                f"in {project}, worst snapshot is short by {worst:.0f} of "
+                f"{int(frame['N'].max())}. Add the missing layer column rather than "
+                f"renormalising over a subset."
+            )
+            return []
+    return counts
 
 
 def coverage_columns(frames):
@@ -754,10 +808,39 @@ def fig_density_evolution(frames, fig_dir):
     return save(fig, "figA_density_evolution", fig_dir)
 
 
+def component_gated_frames(frames, descriptors):
+    """Drop projects whose descriptors describe a minority of their nodes.
+
+    D1 and D3 are computed on the largest connected component. Where that
+    component holds less than MIN_GIANT_COMPONENT_FRAC of the graph, the N in
+    an axis label is not the N the descriptor saw, so the project is excluded
+    rather than annotated. Returns (kept, n_dropped).
+    """
+    gated = [d for d in descriptors if d.startswith(("D1_", "D3_"))]
+    if not gated:
+        return frames, 0
+    kept, dropped = {}, 0
+    for project, df in frames.items():
+        if "giant_component_frac" not in df.columns:
+            kept[project] = df
+            continue
+        if float(df["giant_component_frac"].median()) >= MIN_GIANT_COMPONENT_FRAC:
+            kept[project] = df
+        else:
+            dropped += 1
+    if dropped:
+        print(
+            f"  descriptors: excluded {dropped} project(s) with median "
+            f"giant_component_frac below {MIN_GIANT_COMPONENT_FRAC:g}"
+        )
+    return (kept or frames), dropped
+
+
 def fig_descriptor_trajectories(frames, descriptors, fig_dir):
     """One panel per deterministic descriptor, every project overlaid."""
     if not descriptors:
         return []
+    frames, n_gated = component_gated_frames(frames, descriptors)
     n = len(frames)
     thin = n > LEGEND_MAX_PROJECTS
     k = len(descriptors)
