@@ -639,3 +639,110 @@ def test_edges_can_never_introduce_a_node(tmp_path, monkeypatch):
     # the guard is cheap and only fires on a genuine regression
     g2, _ = extract_lineage_at_commit(repo, head, ["models"])
     assert g2.number_of_nodes() == g.number_of_nodes()
+
+
+# --------------------------------------------------------------------------- #
+# The object-database read path against a real checkout
+# --------------------------------------------------------------------------- #
+
+def _lineage_from_worktree(root, model_paths):
+    """Rebuild the graph from files on disk, the way the predecessor did.
+
+    Only the file access differs from `extract_lineage_at_commit`. Comment
+    stripping, both ref patterns and the model-name filter are imported from the
+    module, so a mismatch can only come from `ls-tree` plus `cat-file` disagreeing
+    with a checkout, which is the claim under test.
+    """
+    sql = []
+    for base in model_paths:
+        for dirpath, _dirs, files in os.walk(os.path.join(root, base)):
+            for fn in files:
+                if not fn.endswith(".sql"):
+                    continue
+                full = os.path.join(dirpath, fn)
+                rel = os.path.relpath(full, root).replace(os.sep, "/")
+                if ("macros" in rel or "/tests/" in rel
+                        or "/snapshots/" in rel or is_vendored(rel)):
+                    continue
+                sql.append((full, rel))
+
+    stems = {}
+    for full, rel in sql:
+        stems.setdefault(os.path.splitext(os.path.basename(rel))[0], rel)
+    model_names = set(stems)
+
+    g = nx.DiGraph()
+    g.add_nodes_from(sorted(model_names))
+    for full, rel in sorted(sql, key=lambda x: x[1]):
+        with open(full, encoding="utf-8", errors="replace") as fh:
+            clean = strip_sql_comments(fh.read())
+        stem = os.path.splitext(os.path.basename(rel))[0]
+        for r in sorted({r for r in REF_PERMISSIVE.findall(clean)
+                         if r in model_names}):
+            g.add_edge(r, stem)
+    return g
+
+
+@pytest.mark.slow
+def test_object_database_read_matches_a_real_checkout(tmp_path):
+    """The claim that replacing per-snapshot checkout costs no fidelity.
+
+    `ls-tree` plus `cat-file --batch` is roughly an order of magnitude faster
+    than checking each commit out, and the speedup is only worth having if the
+    two produce the same graph. This checks every commit of a history that
+    contains the cases most likely to diverge, which are a ref passed to a macro,
+    a commented-out ref, a vendored package, a stem collision across two
+    directories, and a model deleted partway through.
+    """
+    repo = init_repo(str(tmp_path / "equiv"))
+    write(repo, "dbt_project.yml", "name: equiv\nversion: '1.0'\n")
+    for i in range(4):
+        write(repo, f"models/staging/stg_{i}.sql", model(f"stg_{i}"))
+    commit(repo, "seed", "2023-01-10T12:00:00")
+
+    # a ref the anchored pattern cannot see, and one the comment stripper must
+    write(repo, "models/marts/fct_union.sql",
+          "{{ dbt_utils.union_relations([\n  ref('stg_0'),\n  ref('stg_1'),\n]) }}\n")
+    write(repo, "models/marts/fct_commented.sql",
+          "-- select * from {{ ref('stg_2') }}\n"
+          "/* {{ ref('stg_3') }} */\n"
+          "select * from {{ ref('stg_0') }}\n")
+    commit(repo, "macro and comment cases", "2023-02-10T12:00:00")
+
+    # vendored trees under the model path must be invisible to both paths
+    write(repo, "models/dbt_packages/other/vendor.sql", model("vendor"))
+    write(repo, "models/integration_tests/it_probe.sql",
+          model("it_probe", ["stg_0"]))
+    write(repo, "dbt_packages/other/models/outside.sql", model("outside"))
+    write(repo, "models/marts/fct_2.sql", model("fct_2", ["stg_1"]))
+    commit(repo, "vendored package", "2023-03-10T12:00:00")
+
+    # two files sharing a stem collapse to one node, in both paths
+    write(repo, "models/intermediate/shared.sql", model("shared", ["stg_0"]))
+    write(repo, "models/marts/shared.sql", model("shared", ["stg_1"]))
+    commit(repo, "stem collision", "2023-04-10T12:00:00")
+
+    os.remove(os.path.join(repo, "models/staging/stg_3.sql"))
+    commit(repo, "delete a model", "2023-05-10T12:00:00")
+
+    shas = git(repo, "rev-list", "--first-parent", "HEAD").split()
+    assert len(shas) == 5
+
+    checkout = str(tmp_path / "wt")
+    for sha in shas:
+        g_obj, _meta = extract_lineage_at_commit(repo, sha, ["models"])
+        git(repo, "worktree", "add", "--detach", "-f", checkout, sha)
+        try:
+            g_wt = _lineage_from_worktree(checkout, ["models"])
+        finally:
+            git(repo, "worktree", "remove", "--force", checkout)
+
+        assert set(g_obj.nodes) == set(g_wt.nodes), f"nodes differ at {sha[:12]}"
+        assert set(g_obj.edges) == set(g_wt.edges), f"edges differ at {sha[:12]}"
+
+    # the history must actually exercise the cases, or the test proves nothing
+    g_head, meta_head = extract_lineage_at_commit(repo, shas[0], ["models"])
+    assert meta_head["M_recovered_by_permissive"] >= 2
+    assert meta_head["n_stem_collisions"] == 1
+    for vendored in ("vendor", "it_probe", "outside"):
+        assert vendored not in g_head
