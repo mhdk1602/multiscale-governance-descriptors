@@ -31,9 +31,10 @@ Data lineage graphs in production data engineering systems evolve
 continuously as teams add models, refactor pipelines, and deprecate
 assets. Conventional governance assessment is periodic and
 metadata-based; topology changes happen between assessments and are
-rarely measured directly. We extract dbt manifests at one snapshot per
-30-day window from the full version-control history of two public dbt
-projects (Cal-ITP, 4 years, 51 snapshots; Mattermost, 5 years, 55
+rarely measured directly. We reconstruct dbt lineage graphs at one
+snapshot per 30-day window from the full version-control history of two
+public dbt projects, by parsing \texttt{ref()} declarations out of model
+SQL without executing dbt or connecting to a warehouse (Cal-ITP, 4 years, 51 snapshots; Mattermost, 5 years, 55
 snapshots), giving 106 snapshots over 9 cumulative years of production
 lineage evolution. At each snapshot we compute four multi-scale graph
 descriptors on the largest weakly connected component of the lineage
@@ -98,9 +99,13 @@ CUSUM to the resulting time series.
         version-control history without dbt-tool execution
         (\texttt{ref()} parsing only; works for any historical
         commit).
-  \item Two longitudinal datasets: 106 dbt manifest snapshots over 9
-        cumulative years of production data engineering, with
-        descriptor values at each snapshot, archived publicly.
+  \item Two longitudinal datasets: 106 reconstructed lineage snapshots
+        over 9 cumulative years of production data engineering, with
+        descriptor values at each snapshot, archived publicly. These
+        are model-to-model graphs recovered from repository history,
+        not compiled manifests; against a real \texttt{dbt compile}
+        they recover 631 of 885 nodes on the larger project, the
+        shortfall being sources and seeds.
   \item Empirical demonstration that step-change and multivariate
         CUSUM detection on D1--D4 time series flag commits
         corresponding to documented architectural reorganisations,
@@ -193,8 +198,8 @@ confounding. The current paper repurposes the same descriptors as
 change-detection signals on temporally-evolving graphs, a setting
 where their sensitivity to topology change is a feature rather than a
 confound. To our knowledge this is the first peer-reviewed study to
-apply multi-scale graph descriptors longitudinally to dbt manifests
-reconstructed from version-control history.
+apply multi-scale graph descriptors longitudinally to dbt lineage
+graphs reconstructed from version-control history.
 
 \section{Method}
 
@@ -217,9 +222,15 @@ the dbt version or profile has changed.
 \subsection{Descriptors}
 
 We compute four descriptors on each $G_t$. We summarise here; full
-definitions are in \citep{hari2026descriptors}. All descriptors are
-computed on the largest weakly connected component (LWCC) of the
-undirected projection of $G_t$.
+definitions are in \citep{hari2026descriptors}. D1 and D3 are computed
+on the largest weakly connected component (LWCC) of the undirected
+projection of $G_t$, while D2 and D4 are computed on the whole graph.
+The distinction matters because our extraction does not resolve
+\texttt{source()} declarations, which fragments graphs that a compiled
+manifest would leave connected. On the larger of our two projects the
+median share of D4 attributable to the component count term is
+$67.4\%$, so D4 substantially reflects fragmentation introduced by the
+extraction rather than structure in the project.
 
 \begin{itemize}
   \item \textbf{D1 (community stability index)}: fraction of

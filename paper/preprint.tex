@@ -339,13 +339,29 @@ onset (the $\gamma$ at which the number of communities first exceeds
 twice the minimum), modularity at $\gamma = 1$, and number of
 communities at $\gamma = 1$.
 
-\textbf{Louvain stochasticity.} The Louvain algorithm is a heuristic
-with random seed dependence. We audited D1 CSI over 25 random seeds
-per graph and report seed-NVI at $\gamma \approx 1.0$ (mean
-pairwise NVI between seed partitions at a fixed resolution) as a
-measure of optimizer variance. CSI$_{\text{std}} < 0.05$ and
-seed-NVI $< 0.05$ indicates the result is not an artifact of seed
-choice.
+\textbf{Louvain stochasticity, and a second variance source the audit
+does not cover.} The Louvain algorithm is a heuristic with random seed
+dependence. We audited D1 CSI over 25 random seeds per graph and report
+seed-NVI at $\gamma \approx 1.0$ (mean pairwise NVI between seed
+partitions at a fixed resolution) as a measure of optimizer variance.
+CSI$_{\text{std}} < 0.05$ and seed-NVI $< 0.05$ across those seeds.
+
+That audit holds the graph fixed and varies only the optimizer's seed,
+and it does not bound the variance that matters most here. Louvain is
+sensitive to the order in which nodes are inserted, and our extraction
+built each graph from an unordered Python set, so insertion order
+followed the interpreter's per-process string hash randomization rather
+than anything about the data. Holding one graph fixed and permuting only
+the insertion order, D1 CSI takes values spanning $0.500$ to $0.786$,
+a range of $0.286$ against a corpus standard deviation of $0.123$. The
+optimizer-seed audit is therefore not evidence that D1 is reproducible,
+and the earlier claim to that effect does not follow from it. Insertion
+order is now sorted and the hash seed pinned, which makes D1
+deterministic going forward but not comparable to previously released
+values. D2 and D4 are unaffected, and D3 algebraic connectivity and
+normalized gap reproduce to $10^{-14}$; D3 Fiedler bimodality varies at
+$5 \times 10^{-6}$ relative, since the Fiedler vector is not unique
+under near-degenerate eigenvalues.
 
 \textbf{Governance interpretation.} Well-governed pipelines exhibit
 high CSI: communities are robust across resolutions because they
