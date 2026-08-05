@@ -6,7 +6,8 @@
     file. Fields marked not reproducible are excluded from every figure
     and from Table~\ref{tab:summary}.}
   \label{tab:schema}
-  \begin{tabular}{llcp{0.55\linewidth}}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{llcp{0.46\linewidth}}
     \toprule
     Field & Type & Repro. & Description \\
     \midrule
@@ -27,21 +28,21 @@
     \texttt{n\_components} & integer & yes & Weakly connected components in the lineage DAG. \\
     \texttt{giant\_component\_frac} & float (0,1] & yes & Share of N in the largest weakly connected component. The covariate for every LWCC descriptor: where it is small, those descriptors describe a fraction of the project. \\
     \texttt{isolated\_frac} & float [0,1] & yes & Share of N with no lineage edge at all. \\
-    \texttt{n\_staging} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{n\_intermediate} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{n\_mart} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{n\_unclassified} & integer & yes & Undocumented field, present in the corpus. \\
+    \texttt{n\_staging} & integer & yes & Models classified into the staging layer. \\
+    \texttt{n\_intermediate} & integer & yes & Models classified into the intermediate layer. \\
+    \texttt{n\_mart} & integer & yes & Models classified into the mart layer. \\
+    \texttt{n\_unclassified} & integer & yes & Models matching no layer rule. The four layer counts sum to N at every snapshot, which the layer figure asserts before rendering. \\
     \texttt{n\_sql\_files} & integer & yes & Model .sql files found at the sampled commit. \\
     \texttt{n\_dbt\_projects} & integer & yes & dbt\_project.yml files found at the sampled commit. \\
-    \texttt{M\_strict} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{M\_recovered\_by\_permissive} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{nodes\_touched\_by\_recovered} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{edges\_dropped\_as\_commented\_out} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{n\_documented} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{n\_tested} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{n\_yaml\_files} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{doc\_rate} & float & yes & Undocumented field, present in the corpus. \\
-    \texttt{test\_rate} & float & yes & Undocumented field, present in the corpus. \\
+    \texttt{M\_strict} & integer & yes & Edges from the anchored ref() pattern alone, before macro-passed refs are recovered. Parse-fidelity bookkeeping, not a graph property. \\
+    \texttt{M\_recovered\_by\_permissive} & integer & yes & Edges the permissive pattern found that the anchored one missed. \\
+    \texttt{nodes\_touched\_by\_recovered} & integer & yes & Nodes incident to at least one recovered edge. \\
+    \texttt{edges\_dropped\_as\_commented\_out} & integer & yes & Candidate edges discarded because the ref() sat in commented-out SQL. Before comment stripping these entered the graph as real lineage. \\
+    \texttt{n\_documented} & integer & yes & Models carrying a description in a .yml schema file. \\
+    \texttt{n\_tested} & integer & yes & Models carrying at least one dbt test. \\
+    \texttt{n\_yaml\_files} & integer & yes & .yml schema files found at the sampled commit. \\
+    \texttt{doc\_rate} & float [0,1] & yes & n\_documented divided by N. \\
+    \texttt{test\_rate} & float [0,1] & yes & n\_tested divided by N. \\
     \bottomrule
   \end{tabular}
   \par\vspace{3pt}

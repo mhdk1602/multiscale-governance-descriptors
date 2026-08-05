@@ -27,6 +27,7 @@ and D4 are order-stable and are kept.
 import argparse
 import json
 import math
+import os
 import sys
 import textwrap
 from pathlib import Path
@@ -44,6 +45,12 @@ from scipy.stats import spearmanr
 
 SEED = 42
 np.random.seed(SEED)
+
+# matplotlib stamps /CreationDate into every PDF, so two runs over identical data
+# produce byte-different files and a reproducibility check sees ten changed
+# figures that are in fact identical. SOURCE_DATE_EPOCH makes it deterministic.
+# Respect the value if the caller already set one.
+os.environ.setdefault("SOURCE_DATE_EPOCH", "0")
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 OUT_DIR = Path(__file__).resolve().parent
@@ -176,6 +183,35 @@ FIELD_DOCS = {
     "n_sql_files": ("integer", "Model .sql files found at the sampled commit."),
     "n_dbt_projects": ("integer", "dbt_project.yml files found at the sampled commit."),
     "project_id": ("string", "GitHub owner and repo joined by a double underscore."),
+    "n_staging": ("integer", "Models classified into the staging layer."),
+    "n_intermediate": ("integer", "Models classified into the intermediate layer."),
+    "n_mart": ("integer", "Models classified into the mart layer."),
+    "n_unclassified": (
+        "integer",
+        "Models matching no layer rule. The four layer counts sum to N at every "
+        "snapshot, which the layer figure asserts before rendering.",
+    ),
+    "M_strict": (
+        "integer",
+        "Edges from the anchored ref() pattern alone, before macro-passed refs "
+        "are recovered. Parse-fidelity bookkeeping, not a graph property.",
+    ),
+    "M_recovered_by_permissive": (
+        "integer", "Edges the permissive pattern found that the anchored one missed.",
+    ),
+    "nodes_touched_by_recovered": (
+        "integer", "Nodes incident to at least one recovered edge.",
+    ),
+    "edges_dropped_as_commented_out": (
+        "integer",
+        "Candidate edges discarded because the ref() sat in commented-out SQL. "
+        "Before comment stripping these entered the graph as real lineage.",
+    ),
+    "n_documented": ("integer", "Models carrying a description in a .yml schema file."),
+    "n_tested": ("integer", "Models carrying at least one dbt test."),
+    "n_yaml_files": ("integer", ".yml schema files found at the sampled commit."),
+    "doc_rate": ("float [0,1]", "n_documented divided by N."),
+    "test_rate": ("float [0,1]", "n_tested divided by N."),
     "D4_cycle_rank_norm": (
         "float ≥ 0",
         "Cycle rank (M - N + C) of the undirected skeleton, divided by N.",
@@ -1596,7 +1632,8 @@ def table_schema(frames, corpus_dir, tab_dir):
         r"    file. Fields marked not reproducible are excluded from every figure",
         r"    and from Table~\ref{tab:summary}.}",
         r"  \label{tab:schema}",
-        r"  \begin{tabular}{llcp{0.55\linewidth}}",
+        r"  \setlength{\tabcolsep}{4pt}",
+        r"  \begin{tabular}{llcp{0.46\linewidth}}",
         r"    \toprule",
         r"    Field & Type & Repro. & Description \\",
         r"    \midrule",

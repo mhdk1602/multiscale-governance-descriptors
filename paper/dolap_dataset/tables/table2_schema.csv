@@ -16,18 +16,18 @@ file,field,type,reproducible,description
 "longitudinal_<project>.csv, 154 files in longitudinal/",n_components,integer,yes,Weakly connected components in the lineage DAG.
 "longitudinal_<project>.csv, 154 files in longitudinal/",giant_component_frac,"float (0,1]",yes,"Share of N in the largest weakly connected component. The covariate for every LWCC descriptor: where it is small, those descriptors describe a fraction of the project."
 "longitudinal_<project>.csv, 154 files in longitudinal/",isolated_frac,"float [0,1]",yes,Share of N with no lineage edge at all.
-"longitudinal_<project>.csv, 154 files in longitudinal/",n_staging,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",n_intermediate,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",n_mart,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",n_unclassified,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_staging,integer,yes,Models classified into the staging layer.
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_intermediate,integer,yes,Models classified into the intermediate layer.
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_mart,integer,yes,Models classified into the mart layer.
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_unclassified,integer,yes,"Models matching no layer rule. The four layer counts sum to N at every snapshot, which the layer figure asserts before rendering."
 "longitudinal_<project>.csv, 154 files in longitudinal/",n_sql_files,integer,yes,Model .sql files found at the sampled commit.
 "longitudinal_<project>.csv, 154 files in longitudinal/",n_dbt_projects,integer,yes,dbt_project.yml files found at the sampled commit.
-"longitudinal_<project>.csv, 154 files in longitudinal/",M_strict,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",M_recovered_by_permissive,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",nodes_touched_by_recovered,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",edges_dropped_as_commented_out,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",n_documented,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",n_tested,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",n_yaml_files,integer,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",doc_rate,float,yes,"Undocumented field, present in the corpus."
-"longitudinal_<project>.csv, 154 files in longitudinal/",test_rate,float,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",M_strict,integer,yes,"Edges from the anchored ref() pattern alone, before macro-passed refs are recovered. Parse-fidelity bookkeeping, not a graph property."
+"longitudinal_<project>.csv, 154 files in longitudinal/",M_recovered_by_permissive,integer,yes,Edges the permissive pattern found that the anchored one missed.
+"longitudinal_<project>.csv, 154 files in longitudinal/",nodes_touched_by_recovered,integer,yes,Nodes incident to at least one recovered edge.
+"longitudinal_<project>.csv, 154 files in longitudinal/",edges_dropped_as_commented_out,integer,yes,Candidate edges discarded because the ref() sat in commented-out SQL. Before comment stripping these entered the graph as real lineage.
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_documented,integer,yes,Models carrying a description in a .yml schema file.
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_tested,integer,yes,Models carrying at least one dbt test.
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_yaml_files,integer,yes,.yml schema files found at the sampled commit.
+"longitudinal_<project>.csv, 154 files in longitudinal/",doc_rate,"float [0,1]",yes,n_documented divided by N.
+"longitudinal_<project>.csv, 154 files in longitudinal/",test_rate,"float [0,1]",yes,n_tested divided by N.
