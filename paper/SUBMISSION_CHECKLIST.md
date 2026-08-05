@@ -23,9 +23,18 @@ that the current development manuscript is submission-ready.
 - [ ] Convert the accepted draft to the current venue template. ACM journals
   require the ACM authoring template; the present `article` source is a working
   manuscript.
-- [ ] Confirm whether the selected JDIQ article type uses anonymous review, then
-  create a separate anonymous source if required. Do not anonymize the archival
+- [ ] Submit as a JDIQ **research paper**, not a challenge paper (3 pages,
+  vision, unsolved problems) and not an experience paper (10 pages, mandatory
+  `Experience:` title prefix). Rationale and sources in
+  `artifacts/submission_strategy.md`.
+- [ ] JDIQ review is double-anonymous. Create a separate anonymous source with
+  author names, affiliation, and funding removed, and check that file metadata
+  and self-citations do not leak identity. Do not anonymize the archival
   repository by rewriting history.
+- [ ] Verify on the day of submission that University of the Cumberlands is
+  still on the ACM Open participant list, and that the corresponding-author
+  affiliation on the submission record is UC. Otherwise the 2026 APC of $1,450
+  applies.
 - [ ] Add accessible descriptions for every figure in the venue template.
 - [ ] Resolve every LaTeX warning that affects references, floats, or text.
 - [ ] Confirm the title, abstract, and contribution language match across the

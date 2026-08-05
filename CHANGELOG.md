@@ -2,6 +2,96 @@
 
 ## Unreleased: Governance-Mediated Change Risk
 
+### The preprint stops attacking a strawman and starts explaining its null (2026-08-05)
+
+Four changes to `paper/preprint.tex`, none of which touches a number.
+
+**The abstract opened on a claim nobody makes.** It asserted that
+data-governance tooling and the lineage-graph literature assume governance
+maturity leaves a measurable structural signature, then refuted it. No source in
+this repository supports the premise, and the external memo concedes the search
+found none. Checked against the products instead of asserting from memory,
+Microsoft Purview scores data health from metadata completeness checks,
+Collibra drives trust scores from policy, glossary and stewardship workflow, and
+Atlan builds them from contracts, tests, ownership and usage. Alation, Monte
+Carlo and Metaplane are the same shape. None computes a spectral property and
+calls it governance maturity, so there was no assumption to refute.
+
+The hypothesis is now framed as what it actually is, an untested implication of
+institutional theory. DiMaggio-Powell isomorphism predicts structural
+convergence under a shared regime; carried to the artifacts governance produces,
+that predicts a signature in lineage topology. The paper states the implication,
+records that we could find no prior work stating it in refutable form, and tests
+it. That framing is stronger than the strawman because the theory genuinely does
+imply it.
+
+**The inference protocol is a transfer and now says so.** `inference_protocol.py`
+cited Benjamini-Hochberg, Good, Maslov-Sneppen and Fortunato-Barthelemy, and no
+network-null-model reference at all. Layer-stratified permutation is textbook
+restricted permutation, general treatment in Anderson and ter Braak (2003),
+standard in ecology for decades and shipped in the R `permute` package.
+Degree-preserving rewiring is Maslov-Sneppen. Composing a family of nulls and
+reading a descriptor against all of them is how network neuroscience has worked
+for years, surveyed in Vasa and Misic (2022) with the false-positive evidence in
+Markello and Misic (2021). New section 5, `sec:protocol`, traces each component
+to its source discipline and claims only the rank-degeneracy diagnostic, which
+counts distinct descriptor values per stratum and computes minimum detectable
+rho under the observed tie structure. Six references added to `references.bib`,
+every one verified against Crossref or CRAN.
+
+**The mechanism is now the headline instead of a subsection of Experiment 2e.**
+Verified directly against `artifacts/phase_3/exp_2b_dbt_domain_descriptors.csv`.
+Across the 18 domains with N >= 5, D3 algebraic connectivity takes three values
+and no others.
+
+| layer | n | internal structure | lambda_2 | doc rate | distinct lambda_2 |
+|---|---|---|---|---|---|
+| source/raw | 12 | M = 0, edgeless | 0.000 | 0.04-1.00 | 1 |
+| silver/staging | 5 | star K_{1,k}, k in {4,5} | 1.000 | 0.00 (all) | 1 |
+| gold/mart | 1 | N = 35, M = 63 | 0.168 | 0.91 | 1 |
+
+The correlation is an ordering of three architectural layers. The paper now says
+why no quantity of additional data repairs it. Raw sources land without internal
+dependencies, staging models sit one-to-one over them and fan out from a shared
+parent, joins are deferred to the mart, so the layered build pattern produces
+edgeless domains and stars, and graph theory pins lambda_2 at 0 and at 1 on
+those two classes. More estates of the same architecture add observations at the
+same three values. The claim appears in the abstract, in a new introduction
+subsection, in `sec:degeneracy` with its own table, and in the conclusion. The
+limitations entry that said "larger lineage graphs with more
+intermediate-complexity domains would address this" contradicted it and is
+rewritten, as is the future-work bullet that put sample size before within-layer
+variation.
+
+**Two math corrections.** The paper twice said the algebraic connectivity of a
+star equals 1 "for any k" and "for any k >= 1". K_{1,1} is K_2, whose spectrum is
+{0, 2}. The bound is k >= 2, and the Laplacian spectrum {0, 1^(k-1), k+1} is now
+given so the claim can be checked.
+
+**Venue and paper type resolved.** Three documents disagreed on whether JDIQ
+charges an APC. `artifacts/submission_strategy.md` was right that ACM went
+fully open access on 1 January 2026 at $1,450, and wrong to file JDIQ under
+venues no longer viable. University of the Cumberlands is on the ACM Open
+participant list, so a submission under that affiliation carries no APC. The
+byline moves from "Independent Researcher" to University of the Cumberlands in
+the preprint and in `CITATION.cff`, which is also the more accurate description.
+
+The paper type was wrong too. JDIQ challenge papers are three pages of vision on
+an unsolved problem, with an abstract not required. Experience papers are ten
+pages with a mandatory `Experience:` title prefix. Research papers run 20-25
+single-spaced pages and the call for papers explicitly admits empirical research.
+A 28-page empirical study reporting a bounded null is a research paper.
+`artifacts/submission_strategy.md` is rewritten around that, `jdiq_restructure.md`
+and `paper/SUBMISSION_CHECKLIST.md` updated to match.
+
+**Prose.** Every colon in running prose removed, roughly seventy of them, along
+with the verbless fragments, cleft constructions and dropped relative pronouns
+that came with them. Section headings and set-builder notation keep theirs.
+
+The manuscript is 28 pages, not the 16 recorded under Revision 2 below, which
+went stale as the paper grew. It recompiles under tectonic with no errors and no
+undefined references.
+
 ### Longitudinal dbt lineage corpus, two projects to 154 (2026-08-04)
 
 The longitudinal study in `artifacts/phase_4/` rested on Cal-ITP and Mattermost,

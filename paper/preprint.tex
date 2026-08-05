@@ -18,7 +18,7 @@ Graphs: A Negative Result and a Reusable Inference Protocol}
 
 \author{
   Dineshkumar Malempati Hari, Ph.D. \\
-  \textit{Independent Researcher} \\
+  \textit{University of the Cumberlands, Williamsburg, KY, USA} \\
   \texttt{mhdk.dinesh@gmail.com} \\
   \href{https://orcid.org/0009-0003-1036-9477}{orcid.org/0009-0003-1036-9477}
 }
@@ -29,35 +29,43 @@ Graphs: A Negative Result and a Reusable Inference Protocol}
 \maketitle
 
 \begin{abstract}
-A recurring assumption in data-governance tooling and in the
-lineage-graph literature is that governance maturity leaves a measurable
-structural signature: better-governed estates should produce
-topologically distinct lineage graphs. We test that assumption directly.
-On a curated-metadata production dbt estate (18 analyzable domains), a
-spectral-gap descriptor correlates strongly with documentation rate
-(Spearman $\rho = -0.71$, bootstrap 95\% CI $[-0.92, -0.27]$). The
-correlation does not mean what it appears to: the descriptor takes three
-distinct values across the eighteen domains, a layer-stratified
-permutation test returns $p = 1.000$, and the relationship is carried
-entirely by between-layer architecture (source, staging, mart), not
-within-layer governance. A rank-degeneracy power analysis shows the
-observed effect sits at the design's minimum detectable size. The
-relationship does not replicate across organizations, and the apparent
-non-replication is confounded with a domain-construct mismatch we make
-explicit. A persistent-homology descriptor reduces exactly to the
-cycle-rank baseline ($\rho = +1.000$) on real graphs, and a
-node-importance prediction result (AUC 0.90) reproduces a published
-centrality finding rather than extending it. Our contribution is
-therefore twofold and deliberately deflationary: (1) a carefully bounded
-negative result, that lineage topology is a poor proxy for governance
-maturity once the architectural-layer confound is removed; and (2) a
-reusable inference protocol for small-$n$ graph-descriptor correlation
-studies, covering permutation and FDR control, layer-stratified
-permutation, degree-preserving nulls, and a rank-degeneracy-aware power
-analysis, packaged as tested, runnable code. The protocol is the
-transferable artifact: it lets future structure-versus-attribute studies
-distinguish a real relationship from one manufactured by rank degeneracy
-or a confounding partition.
+Institutional theory holds that organizations under shared governance
+pressures converge structurally. Carried over to the artifacts that
+governance produces, the claim implies that better-governed data estates
+should yield topologically distinct lineage graphs. The implication is
+plausible and it follows from well-established theory, but we could find
+no study that has tested it. We test it here. On a curated-metadata
+production dbt estate with 18 analyzable domains, a spectral descriptor
+correlates strongly with documentation rate (Spearman $\rho = -0.71$,
+bootstrap 95\% CI $[-0.92, -0.27]$). The correlation is not what it
+looks like. Algebraic connectivity takes exactly three values across the
+eighteen domains, one per architectural layer, and it is constant inside
+every layer. Twelve source-only domains carry no internal edges, so
+$\lambda_2 = 0$. Five staging domains are stars, and a star with more
+than one leaf has algebraic connectivity of exactly 1. The single mart
+sits between the two at $0.168$. A layer-stratified
+permutation test consequently returns $p = 1.000$, because every
+admissible relabelling reproduces the observed correlation exactly. The
+association orders three architectural layers and does nothing else. A
+rank-degeneracy power analysis puts the observed
+effect at the design's minimum detectable size. The relationship does
+not replicate on two public dbt projects, though the non-replication is
+confounded with a domain-construct mismatch we make explicit. A
+persistent-homology descriptor reduces exactly to the cycle-rank
+baseline ($\rho = +1.000$) on real graphs, and a node-importance
+prediction (AUC 0.90) reproduces a published centrality finding rather
+than extending it. We offer two things. The first is a bounded negative
+result. Lineage topology is a poor proxy for governance maturity once
+the architectural-layer confound is removed, and that confound is no
+accident of this estate but a consequence of how layered analytics
+estates are built, so more data of the same kind will not repair it. The
+second is an inference protocol for small-$n$ graph-descriptor
+correlation studies. We borrowed most of it, restricted permutation from
+experimental design and degree-preserving rewiring from network science,
+composed the way network neuroscience composes its null models. The
+rank-degeneracy diagnostic is the part we have not found elsewhere. It
+counts distinct descriptor values within each stratum and flags a
+degenerate design before anyone believes the correlation.
 \end{abstract}
 
 \smallskip
@@ -66,54 +74,109 @@ or a confounding partition.
 \section{Introduction}
 
 Data governance frameworks specify how organizations should manage data
-assets: who owns them, how quality is assured, what documentation exists,
-and how changes propagate through transformation pipelines. Mature
-governance manifests as clear domain boundaries, tested transformations,
-and documented interfaces between stages of a data pipeline. Immature
-governance manifests as orphaned assets, unclear ownership, redundant
-paths, and untested transformations.
+assets. They set out who owns an asset, how its quality is assured, what
+documentation exists, and how changes propagate through transformation
+pipelines. Mature governance is supposed to show up as clear domain
+boundaries, tested transformations, and documented interfaces between
+pipeline stages. Immature governance shows up as orphaned assets,
+unclear ownership, redundant paths, and untested transformations.
 
-The dominant approach to assessing governance maturity relies on
-self-assessment against capability models such as DAMA-DMBOK
-\citep{dama2017} or DCAM. These frameworks are reference guides: they
-organize knowledge areas and suggest best practices, but do not
-prescribe a single maturity ladder. More fundamentally, they capture
-stated policy rather than the actual structural organization of data
-assets. Two organizations with similar self-assessment scores can have
-very different lineage topologies: one with clean layered DAGs and
-well-separated domain boundaries, another with tangled cross-domain
-dependencies and redundant paths.
+None of that is assessed structurally in practice. The dominant approach
+is self-assessment against capability models such as DAMA-DMBOK
+\citep{dama2017} or DCAM, which are reference guides rather than
+maturity ladders, and which record stated policy rather than the
+organization of the assets themselves. Commercial catalog and
+observability tooling automates that idea without changing it, deriving
+governance and trust scores from metadata completeness, policy and
+glossary coverage, stewardship workflow, declared tests, ownership and
+usage. We know of no product that derives a governance score from a
+topological property of the lineage graph.
 
-We hypothesize that governance practices leave structural fingerprints in
-data lineage graphs. If domain boundaries are enforced, community
-detection at the appropriate resolution should recover stable, modular
-partitions. If transformations are tested, the blast radius of any
-single failure should be concentrated rather than diffuse. If the
-pipeline architecture is clean, the spectral properties of the lineage
-graph should reflect appropriate coupling. If redundant dependency paths
-exist (a sign of organic growth without architectural oversight),
+\subsection{Where the structural hypothesis comes from}
+
+The structural hypothesis is a live one all the same, and its warrant is
+theoretical. \citet{dimaggio1983} argue that coercive, mimetic and
+normative pressures drive organizations under a shared regime toward
+structural convergence, and \citet{scott2013} develops the same logic
+through regulative, normative and cultural-cognitive pillars. If data
+governance is an institutional arrangement in that sense, organizations
+governed alike should build alike, and the resemblance ought to be
+legible in the artifacts governance produces. Lineage graphs are the
+obvious artifact to look at. They are machine-readable, they fall out of
+the transformation code rather than being authored for assessment, and
+they record the dependency structure that governance is meant to
+discipline.
+
+We could not find prior work that states the implication in a form a
+topological measurement could refute, so we state it ourselves and test
+it rather than assume it. Operationally, if domain boundaries are
+enforced, community detection at the appropriate resolution should
+recover stable modular partitions. If transformations are tested, the
+blast radius of any single failure should be concentrated rather than
+diffuse. If the pipeline architecture is clean, the spectral properties
+of the graph should reflect the coupling. If redundant dependency paths
+exist, a sign of organic growth without architectural oversight,
 persistent homology should detect reconvergent structure in the
-undirected skeleton.
+undirected skeleton. Four descriptors, D1 through D4, operationalize
+those four readings. They are the instrument under test, not the
+contribution.
 
-This paper introduces four multi-scale structural descriptors designed
-to capture these properties, validates them on synthetic lineage graphs
-with controlled governance variation, tests their sensitivity to
-governance-relevant interventions, and provides initial validation on
-a real production dbt lineage graph with genuine governance metadata.
+\subsection{What we found, and why it cannot be fixed with more data}
+
+The instrument returns a strong reading and the reading is spurious. We
+state that up front, ahead of the evidence, because the mechanism is
+more useful to a reader than the null it produces. On the one production
+estate in our sample that carries curated domain metadata, the D3
+spectral descriptor correlates with documentation rate at $\rho = -0.71$
+with a bootstrap interval clear of zero. Algebraic connectivity across
+those eighteen domains takes three values and no others. Twelve
+source-only domains have no internal edges at all, which forces
+$\lambda_2 = 0$. Five staging domains are stars, and a star with more
+than one leaf has algebraic connectivity of exactly 1. The single mart
+sits at $0.168$. Within each of the three architectural
+layers the descriptor is constant, so a layer-stratified permutation of
+the governance labels cannot move the statistic and the test returns
+$p = 1.000$.
+
+The correlation therefore orders three architectural layers while
+wearing the notation of a graph metric. Anyone who runs this study again
+needs one further fact about it. The degeneracy is not small-sample bad
+luck; it is what the layered build pattern produces. Raw sources are
+landed without internal dependencies, staging models sit one-to-one over
+those sources and so fan out from a shared parent, and joins are
+deferred to the mart. An estate built that way decomposes into edgeless
+domains, star-shaped domains, and a handful of reticulated mart domains,
+and on the first two classes graph theory pins $\lambda_2$ at $0$ and at
+$1$ irrespective of anything the organization does. Sampling more
+estates of the same architecture supplies more observations at those
+same three values. It supplies no new ones.
 
 \subsection{Contributions}
 
 \begin{enumerate}
-  \item \textbf{Cross-dataset structural characterization}, the paper's
-        primary empirical contribution. Four graph-theoretic descriptors
-        (D1--D4) are computed on 32 graphs from four heterogeneous
-        sources (WfCommons scientific workflows, DLG-DG-23 Huawei Cloud
-        lineage, DW-Bench warehouse schemas, anonymized production dbt
-        manifest). Principal component analysis shows that production
-        data lineage graphs occupy a distinct descriptor region
-        characterized by high community stability and small spectral
-        gaps. This is reproducible, descriptive, and does not depend on
-        any governance metadata.
+  \item \textbf{A bounded negative result with its mechanism named.}
+        Lineage topology under-determines governance maturity on the
+        cleanest real data we could obtain. The apparent D3--documentation
+        association ($\rho = -0.71$, bootstrap 95\% CI $[-0.92, -0.27]$)
+        is carried entirely by architectural layer. Layer-stratified
+        permutation returns $p = 1.000$ and the per-stratum count of
+        distinct descriptor values is 1 in all three strata. We also give
+        the graph-theoretic reason the degeneracy arises. That reason is
+        what separates this from a null reported without explanation, and
+        it tells a reader when to expect the same trap elsewhere.
+
+  \item \textbf{An inference protocol for small-$n$ graph-descriptor
+        studies, most of it transferred rather than invented.} The
+        protocol collects permutation-based inference,
+        Benjamini--Hochberg FDR correction over explicit hypothesis
+        families, rank-residualization partial correlations, bootstrap
+        intervals, degree-preserving and layer-preserving nulls,
+        layer-stratified permutation, Louvain seed-robustness, and
+        leave-scale-out cross-validation. Section~\ref{sec:protocol}
+        traces every component to the discipline it came from. Only the rank-degeneracy diagnostic
+        appears to be new. It counts distinct descriptor values per
+        stratum and estimates the minimum detectable $|\rho|$ under the
+        observed tie structure instead of a continuous assumption.
 
   \item \textbf{Precise descriptor definitions and implementation},
         including LWCC handling for disconnected graphs, combinatorial
@@ -122,23 +185,15 @@ a real production dbt lineage graph with genuine governance metadata.
         cycle rank baseline. All computations are reproducible from the
         public Zenodo archive.
 
-  \item \textbf{Methodological scaffolding for governance--topology
-        studies}: permutation-based inference, Benjamini--Hochberg FDR
-        correction with explicit hypothesis families, rank-residualization
-        partial correlations, bootstrap confidence intervals, two null
-        models (degree-preserving and layer-preserving), subset robustness,
-        layer-stratified permutation, D1 seed-robustness, leave-scale-out
-        cross-validation, and power analysis under the rank-degenerate
-        structure observed in real data.
-
-  \item \textbf{A single-organisation pilot of governance--topology
-        correlation} on a production dbt lineage with explicit
-        acknowledgement of rank-degeneracy in D3 (3 effective values
-        across 18 domains), detection-threshold-level effect size
-        (observed $|\rho| = 0.71$ vs.\ minimum detectable $\approx 0.7$--$0.8$
-        at 80\% power), and layer-stratified permutation $p = 1.0$
-        showing the association is between-layer architectural rather than
-        within-layer governance signal.
+  \item \textbf{Cross-dataset structural characterization.} D1--D4
+        computed on 32 graphs from four heterogeneous sources (WfCommons
+        scientific workflows, DLG-DG-23 Huawei Cloud lineage, DW-Bench
+        warehouse schemas, anonymized production dbt manifest).
+        Principal component analysis places production data lineage
+        graphs in a distinct descriptor region marked by high community
+        stability and small spectral gaps. This part is descriptive, it
+        reproduces, and it needs no governance metadata, which is
+        precisely why it survives while the governance claim does not.
 
   \item \textbf{Negative cross-organisation pilot at graph level with
         methodological caveat.} D3/documentation does not replicate to
@@ -156,7 +211,8 @@ a real production dbt lineage graph with genuine governance metadata.
         (LOGO cross-validation), substantially above random ($0.546$)
         and out-degree-only ($0.576$) baselines. This reproduces the
         node-centrality finding of \citet{chen2023centrality} on the
-        same corpus: the top predictors are PageRank and out-degree. Phase
+        same corpus, where the top predictors are PageRank and out-degree.
+Phase
         5 evaluates ordinary node-level centrality, reachability, degree,
         and clustering features; it does not evaluate incremental D1--D4
         information. We report it as a reproduction, not as a new
@@ -169,19 +225,33 @@ a real production dbt lineage graph with genuine governance metadata.
 
 Data governance frameworks define structural and procedural mechanisms
 for data management \citep{khatri2010,abraham2019}. Assessment typically
-relies on maturity models: DAMA-DMBOK \citep{dama2017} organizes eleven
-knowledge areas as a reference guide (not a prescriptive maturity
-ladder); DCAM evaluates institutional readiness. \citet{weber2009}
+relies on maturity models. DAMA-DMBOK \citep{dama2017} organizes eleven
+knowledge areas as a reference guide rather than a prescriptive maturity
+ladder, and DCAM evaluates institutional readiness. \citet{weber2009}
 argue that governance design is contingent on organizational strategy,
-implying that a single maturity scale is insufficient.
+which implies that a single maturity scale is insufficient.
 
-Institutional theory provides a theoretical lens. \citet{dimaggio1983}
-describe three isomorphic pressures (coercive, mimetic, normative) that
-cause organizations to converge structurally under shared governance
-regimes. \citet{scott2013} extends this via regulative, normative, and
-cultural-cognitive pillars. We adopt this view: if governance is an
-institutional arrangement, it should produce detectable structural
-signatures in the artifacts it governs.
+Every one of these instruments measures declared policy, process, and
+metadata. So does the commercial tooling that has grown up beside them,
+which computes governance health and trust scores from metadata
+completeness, glossary and policy coverage, stewardship workflow,
+declared tests, ownership and usage. We are aware of no framework and no
+product that reads a governance score off a topological property of the
+lineage graph. We want to be clear about what follows from that. The
+hypothesis this paper tests is not a claim that the field has asserted
+and that we are refuting. It is a claim that the field's theory implies
+and that nobody appears to have checked.
+
+Institutional theory supplies that implication. \citet{dimaggio1983}
+describe three isomorphic pressures, coercive, mimetic and normative,
+that push organizations under shared governance regimes toward
+structural convergence, and \citet{scott2013} extends the account
+through regulative, normative and cultural-cognitive pillars. Take the
+view seriously and a prediction follows. If governance is an
+institutional arrangement, it should leave detectable structural
+signatures in the artifacts it governs, and the lineage graph is the
+artifact where such a signature would be cheapest to read. The rest of
+this paper tests that prediction.
 
 \subsection{Graph Analysis of Data Pipelines}
 
@@ -228,8 +298,8 @@ discovery.
 \citet{chen2023centrality} show that node-centrality metrics identify
 core data assets on the DLG-DG-23 lineage graphs. Our Experiment~7
 (core-asset prediction, AUC 0.90) is, under leave-one-graph-out
-cross-validation on the same corpus, a reproduction of that result:
-the top predictors are PageRank and out-degree. The experiment contains
+cross-validation on the same corpus, a reproduction of that result.
+The top predictors are PageRank and out-degree. The experiment contains
 ordinary node features and does not test D1--D4 at node granularity. We
 therefore make no claim about their incremental value from this analysis.
 We report the AUC as confirmation that lineage structure carries
@@ -245,7 +315,7 @@ narrowly, as a contrast between production lineage, scientific workflows
 structural discovery.
 
 Spectral change-point detection on dynamic graphs is a solved problem
-with a published, benchmarked method: LAD \citep{huang2020laplacian} and
+with a published, benchmarked method, LAD \citep{huang2020laplacian} and
 its multi-view extension MultiLAD \citep{huang2024multilad}. Our
 longitudinal descriptor-monitoring idea is an under-powered
 re-derivation of it; we do not claim change detection as a contribution,
@@ -291,12 +361,12 @@ applies persistent homology to data lineage or governance graphs.
 We define four structural descriptors for directed acyclic data
 lineage graphs $G = (V, E)$ with $|V| = N$ nodes and $|E| = M$ edges.
 Each node represents a data asset (source, transformation, or mart).
-Edges represent dependency: $(u, v) \in E$ means $v$ depends on $u$.
+Edges represent dependency, so $(u, v) \in E$ means $v$ depends on $u$.
 
 \textbf{Graph preprocessing.} Production lineage graphs are often
-weakly disconnected: isolated source tables and small clusters that
-share no edges with the main pipeline appear in every real dataset
-we examined. Descriptors D1, D3, and D4 are computed on the largest
+weakly disconnected. Isolated source tables and small clusters that
+share no edges with the main pipeline appear in every real dataset we
+examined. Descriptors D1, D3, and D4 are computed on the largest
 weakly connected component (LWCC) of the undirected projection of
 $G$, since community detection and spectral methods require a connected
 graph. D2 (blast-radius) uses the full directed graph because
@@ -314,7 +384,7 @@ over $[0.1, 10.0]$ in 20 logarithmically spaced steps on the
 undirected skeleton of $G$, computing community partitions
 $\mathcal{C}(\gamma)$ at each resolution. For adjacent resolution
 pairs $(\gamma_i, \gamma_{i+1})$, we compute the normalized variation
-of information:
+of information.
 
 \begin{equation}
   \text{NVI}(\gamma_i, \gamma_{i+1})
@@ -326,7 +396,7 @@ of information:
 + H(\mathcal{C}_{i+1} | \mathcal{C}_i)$ is the variation of
 information and $\log_2 N$ is the maximum possible entropy for $N$
 nodes. The Community Stability Index counts the fraction of
-consecutive resolution steps where the partition remains stable:
+consecutive resolution steps where the partition remains stable.
 
 \begin{equation}
   \text{CSI} = \frac{|\{i : \text{NVI}(\gamma_i, \gamma_{i+1}) < \tau\}|}
@@ -364,7 +434,7 @@ $5 \times 10^{-6}$ relative, since the Fiedler vector is not unique
 under near-degenerate eigenvalues.
 
 \textbf{Governance interpretation.} Well-governed pipelines exhibit
-high CSI: communities are robust across resolutions because they
+high CSI, because their communities stay robust across resolutions and
 reflect genuine organizational structure. Poorly governed pipelines
 with tangled cross-domain dependencies exhibit low CSI.
 
@@ -373,7 +443,7 @@ with tangled cross-domain dependencies exhibit low CSI.
 For each node $v \in V$ and depth $d \in \{1, 2, \ldots\}$, we compute
 $R_d(v) = |\{u : \text{dist}(v, u) = d\}|$, the number of nodes
 reachable at exactly depth $d$ downstream. The Gini coefficient of
-$\{R_d(v)\}_{v \in V}$ at each depth $d$ yields a concentration profile:
+$\{R_d(v)\}_{v \in V}$ at each depth $d$ yields a concentration profile.
 
 \begin{equation}
   G(d) = \text{Gini}(\{R_d(v) : v \in V\})
@@ -384,8 +454,8 @@ transition depth (the depth at which Gini first exceeds 0.5, or $-1$ if
 never reached).
 
 \textbf{Governance interpretation.} In well-governed pipelines, blast
-radius should be concentrated: a few hub nodes affect many downstream
-assets, while most nodes have limited impact. High max Gini indicates
+radius should be concentrated. A few hub nodes affect many downstream
+assets while most nodes have limited impact. High max Gini indicates
 concentrated risk, which, when combined with stewardship data, can
 reflect intentional architectural design.
 
@@ -393,21 +463,21 @@ reflect intentional architectural design.
 
 From the combinatorial (unnormalized) Laplacian $L = D - A$ of the
 undirected skeleton, where $D$ is the degree matrix and $A$ the
-adjacency matrix, we extract:
+adjacency matrix, we extract four quantities.
 
 \begin{itemize}
-  \item Algebraic connectivity $\lambda_2$: the second-smallest
+  \item Algebraic connectivity $\lambda_2$, the second-smallest
         eigenvalue of $L$ on the LWCC. Because the LWCC is connected by
         construction, $\lambda_1 = 0$ and $\lambda_2 > 0$ always.
-  \item Normalized spectral gap: $\lambda_2 / \lambda_{\max}$, where
+  \item Normalized spectral gap $\lambda_2 / \lambda_{\max}$, where
         $\lambda_{\max}$ is the largest eigenvalue.
-  \item Fiedler bimodality: bimodality coefficient of the Fiedler vector
+  \item Fiedler bimodality, the bimodality coefficient of the Fiedler vector
         (the eigenvector associated with $\lambda_2$).
-  \item Spectral entropy: von Neumann entropy of the eigenvalue
-        distribution, $S = -\sum_i \bar{\lambda}_i
-        \log_2 \bar{\lambda}_i$ where
-        $\bar{\lambda}_i = \lambda_i / \sum_j \lambda_j$
-        (computed over nonzero eigenvalues).
+  \item Spectral entropy, the von Neumann entropy
+        $S = -\sum_i \bar{\lambda}_i \log_2 \bar{\lambda}_i$ of the
+        eigenvalue distribution, where
+        $\bar{\lambda}_i = \lambda_i / \sum_j \lambda_j$ and the sum runs
+        over the nonzero eigenvalues.
 \end{itemize}
 
 \textbf{Governance interpretation.} Algebraic connectivity measures
@@ -430,15 +500,14 @@ $N < 3$ or no internal edges contribute zero H1 bars by convention.
 For each filtration threshold $\epsilon$, we compute homology in
 dimensions 0 and 1, and record persistence diagrams of birth--death pairs.
 
-From the H1 (cycle) persistence diagram, we extract:
+From the H1 (cycle) persistence diagram, we extract three quantities.
 
 \begin{itemize}
   \item Number of H1 bars ($n_{\text{H1}}$) and its normalization
         $n_{\text{H1}} / N$.
-  \item Total H1 persistence:
-        $P_1 = \sum_i (d_i - b_i)$ over all H1 bars.
-  \item H1 persistence entropy:
-        $S_1 = -\sum_i p_i \log_2 p_i$ where
+  \item Total H1 persistence $P_1 = \sum_i (d_i - b_i)$, summed over all
+        H1 bars.
+  \item H1 persistence entropy $S_1 = -\sum_i p_i \log_2 p_i$, where
         $p_i = (d_i - b_i) / P_1$.
 \end{itemize}
 
@@ -448,32 +517,100 @@ components), which counts the total number of independent cycles without
 regard to their persistence or scale.
 
 \textbf{Governance interpretation.} H1 features in the undirected
-skeleton represent reconvergent dependency paths: alternative routes
+skeleton represent reconvergent dependency paths, alternative routes
 between a source node and its consumers that do not exist in a clean
 tree-structured pipeline. Unlike cycle rank, persistent homology
 distinguishes between long-lived structural cycles (reflecting
 persistent architectural redundancy) and short-lived transient features.
 High $n_{\text{H1}} / N$ indicates reconvergent dependency structure.
 
+\section{The Inference Protocol, and What in It Is Ours}
+\label{sec:protocol}
+
+The checks that produced this paper's negative result are packaged as a
+runnable module (\texttt{inference\_protocol.py}) and we offer them as
+the transferable part of the work. Most of the protocol is borrowed. We
+set out the borrowings first, because a methods contribution that
+overstates its own novelty invites a reviewer to discount the part that
+is genuinely new.
+
+\textbf{Restricted permutation is textbook experimental design.}
+Layer-stratified permutation, the test that carries our central result,
+shuffles the outcome only within strata and leaves the between-stratum
+ordering intact. \citet{anderson2003permutation} give the general
+treatment for multi-factorial designs, and the technique has been
+standard in ecology for decades, shipped for R users in the
+\texttt{permute} package \citep{simpson2026permute}. Nothing about
+applying it to graph strata is new. Only the stratifying variable is
+ours. Pipeline layer is recorded in any dbt or catalog manifest, and we
+argue it is the correct blocking factor for lineage work.
+
+\textbf{Degree-preserving rewiring is Maslov--Sneppen.} Our
+degree-preserving null uses double-edge swaps that hold the degree
+sequence fixed \citep{maslov2002specificity}. The layer-preserving
+variant constrains swaps to edge pairs whose source and target layers
+match, which is a lineage-specific restriction of the same mechanism
+rather than a different method.
+
+\textbf{The composition has a published analogue.} Network neuroscience
+has built families of nulls this way for some years, each null
+preserving a different structural property and the descriptor read
+against all of them. \citet{vasa2022nullmodels} survey that design space
+and how to interpret it. \citet{markello2021spatial} show empirically
+that a null which fails to preserve the relevant nuisance structure
+inflates the false-positive rate, and inflated significance from an
+unpreserved nuisance is precisely what our layer-stratified test guards
+against. We claim the transfer, not the invention.
+
+The transfer is not free, because the nuisance structure differs. Brain
+maps are confounded by spatial autocorrelation. Lineage graphs are
+confounded by architectural layer, and layer membership is a discrete
+label the manifest already carries, so the correct null is easier to
+construct here than it is there.
+
+\textbf{The remaining primitives are standard.} Permutation inference
+follows \citet{good2005permutation}, false-discovery control follows
+\citet{benjamini1995controlling} over hypothesis families we state
+explicitly, and the Louvain seed-robustness audit exists because
+modularity optimization is a stochastic heuristic with a known
+resolution limit \citep{fortunato2007resolution}.
+
+\textbf{The rank-degeneracy diagnostic is the part we have not found
+elsewhere.} It has two components. The first counts distinct descriptor
+values overall and within each stratum, before any correlation is
+computed. A descriptor taking $k$ values across $n \gg k$ observations
+supports at most a $k$-tier ordering test, and a per-stratum count of 1
+means a stratified permutation cannot move the statistic at all, so the
+diagnostic predicts the $p = 1.000$ result rather than discovering it
+afterwards. The second estimates the minimum detectable $|\rho|$ by
+simulation under the observed tie structure instead of the continuous
+assumption a standard power calculation makes. Those two numbers, three
+distinct values and a detection floor of $0.7$ to $0.8$ against an
+observed $0.71$, between them reduce a significant correlation to a
+non-result. Section~\ref{sec:degeneracy} gives the specific fact
+about dbt estate decomposition that the diagnostic is keyed to. We
+expect it to earn its keep wherever a descriptor is pinned by
+architecture instead of varying with the attribute under study.
+
 \section{Experimental Design}
 
 \subsection{Synthetic Lineage Generator}
 
 We generate directed acyclic lineage graphs at four scales
-(tiny: $N \approx 14$--$34$; small: $N \approx 28$--$48$;
-medium: $N \approx 65$--$81$; large: $N \approx 114$--$133$)
-and three governance quality levels:
+(tiny at $N \approx 14$--$34$, small at $N \approx 28$--$48$, medium at
+$N \approx 65$--$81$, large at $N \approx 114$--$133$) and three
+governance quality levels.
 
 \begin{description}
-  \item[Well-governed:] Three clearly separated domains with layered
+  \item[Well-governed.] Three clearly separated domains with layered
     structure (source $\to$ staging $\to$ mart). Cross-domain edges
     only at mart layer. Test and documentation coverage assigned to
     70--90\% of nodes.
 
-  \item[Baseline:] Same domain count but with moderate cross-domain
+  \item[Baseline.] Same domain count but with moderate cross-domain
     coupling at all layers. Test coverage 40--60\%.
 
-  \item[Poorly governed:] Flat structure with frequent cross-domain
+  \item[Poorly governed.] Flat structure with frequent cross-domain
     shortcuts and orphaned nodes. Test coverage 10--30\%. Random edge
     additions creating shortcut paths.
 \end{description}
@@ -494,8 +631,8 @@ applied across all tests within each scale.
 
 We validate on an anonymized production dbt manifest lineage (223 nodes,
 263 edges, 26 domains) exported using HMAC-SHA256 anonymization. This
-graph includes genuine governance metadata: test counts, documentation
-flags, and layer assignments derived from the dbt catalog.
+graph carries genuine governance metadata, namely test counts,
+documentation flags, and layer assignments derived from the dbt catalog.
 
 For the dbt lineage, we partition by domain and compute permutation-based
 Spearman correlations (10,000 permutations) between per-domain descriptor
@@ -516,8 +653,8 @@ the real values relative to the null distribution.
 \subsection{Experiment 3: Intervention Sensitivity}
 
 We apply four governance-relevant interventions to a baseline synthetic
-graph ($N = 132$, 3 domains): domain reorganization, orphan removal,
-shortcut removal, and monitor placement. Each intervention is compared
+graph ($N = 132$, 3 domains). They are domain reorganization, orphan
+removal, shortcut removal, and monitor placement. Each intervention is compared
 against 60 random perturbation trials at the same magnitude. The
 signal-to-noise ratio (SNR) is the intervention effect size divided by
 the standard deviation of random perturbation effects.
@@ -526,7 +663,7 @@ the standard deviation of random perturbation effects.
 
 To test whether the descriptors generalize beyond our synthetic
 generators and single dbt instance, we compute D1--D4 on three open
-datasets: 11 scientific workflow DAGs from WfCommons
+datasets. Eleven scientific workflow DAGs come from WfCommons
 \citep{coleman2022wfcommons} spanning astronomy, bioinformatics, and
 agroecosystem applications (101--4,846 nodes); 18 production data
 lineage graphs from DLG-DG-23 \citep{chen2024dlgdg}, extracted from Huawei
@@ -535,16 +672,16 @@ restricting to Data Table and Data Job assets with DATA\_FLOW edges);
 and 2 data warehouse schemas from DW-Bench \citep{dwbench2025} (OMOP
 clinical data model, TPC-DI brokerage; 31--37 tables). These lack the
 domain-level governance metadata needed for correlation analysis, so the
-comparison is purely structural: do real pipeline architectures from
-different domains and organizations occupy distinguishable regions of
-descriptor space?
+comparison is purely structural, and the question is whether real
+pipeline architectures from different domains and organizations occupy
+distinguishable regions of descriptor space.
 
 \subsection{Experiment 6: Cross-Organization Governance Validation}
 
 To test whether the governance-descriptor correlations observed in the
 dbt case study replicate to other organizations, we extract
-governance-labeled lineage graphs from two additional public dbt projects:
-\textbf{Cal-ITP} (California Integrated Travel Project; 631 models, 26
+governance-labeled lineage graphs from two additional public dbt
+projects. \textbf{Cal-ITP} (California Integrated Travel Project; 631 models, 26
 analyzable domains with $N \geq 5$; documentation rates 0--100\%)
 and \textbf{Mattermost} (235 models, 6 analyzable domains; documentation
 rates 0--100\%). Lineage is extracted from \texttt{ref()} dependency
@@ -563,20 +700,21 @@ by Huawei Cloud data experts based on professional experience.
 
 We compute node-level topological features on each of the six full
 heterogeneous DLGs (Data Table + Data Job + Data Field nodes with
-DATA\_FLOW and PARENT\_CHILD edges): in-degree, out-degree, total
+DATA\_FLOW and PARENT\_CHILD edges). The features are in-degree,
+out-degree, total
 degree, DATA\_FLOW in/out-degree, PARENT\_CHILD child count,
 DATA\_FLOW PageRank, DATA\_FLOW reverse-PageRank, DATA\_FLOW
 betweenness centrality, descendants and ancestors count on the
 DATA\_FLOW subgraph, and undirected local clustering. The
 classification task is restricted to Data Table nodes (where the
 binary core/non-core label lives). Evaluation uses leave-one-graph-out
-cross-validation: train on five graphs, predict core status on the
-held-out sixth.
+cross-validation, training on five graphs and predicting core status on
+the held-out sixth.
 
 \subsection{Experiment 4: Predictive Comparison}
 
 We compare multi-scale features (D1--D4) against single-scale baselines
-in two prediction tasks: classification of governance level (logistic
+in two prediction tasks, classification of governance level (logistic
 regression and random forest) and regression of Mean-Time-to-Detect
 (Ridge and random forest). All models are evaluated via 5-fold
 cross-validation.
@@ -592,7 +730,7 @@ descriptors.
 \section{Results}
 
 Experiments are presented in order of logical argument rather than
-experiment number: the synthetic, real-data, null-model, and
+experiment number. The synthetic, real-data, null-model, and
 cross-dataset analyses (1--3, 5, 6) build toward the node-level result
 (7), and the predictive comparison (4) is reported last because it
 synthesises the descriptor evidence accumulated in the preceding
@@ -627,7 +765,7 @@ significant differentiation at the large scale. D3 normalized spectral
 gap does \emph{not} survive FDR correction (FDR $p = 0.77$), a
 discrepancy we revisit in the null model analysis.
 
-D4 (H1/N) shows the largest effect size ($|d| = 16.0$): poorly
+D4 (H1/N) shows the largest effect size ($|d| = 16.0$), since poorly
 governed graphs have more reconvergent dependency paths per node.
 D1 CSI and fragmentation onset show large effects ($d > 3.9$),
 confirming that domain boundary quality is recoverable from community
@@ -649,35 +787,74 @@ DAG with three layers (155 source/raw, 33 silver/intermediate, 35
 gold/mart) and 26 anonymized domains. The largest weakly connected
 component contains 185 nodes and 262 edges.
 
-Governance metadata reveals a clear gradient: gold/mart nodes have
+Governance metadata reveals a clear gradient. Gold/mart nodes have
 86\% test coverage and 91\% documentation, while source/raw nodes have
 0\% test coverage and 41\% documentation. Silver/intermediate nodes
 have 0\% for both. No steward metadata was available.
 
-\paragraph{Rank degeneracy of D3 in the dbt sample.}
-Before reporting the correlations, we note an important structural
-feature of the data. Across the 18 domains with $N \geq 5$, D3
-algebraic connectivity takes only three distinct values:
+\subsubsection{Why the D3 Correlation Cannot Mean What It Looks Like}
+\label{sec:degeneracy}
 
-\begin{itemize}
-  \item 12 source-only domains have $M = 0$ (no internal edges) and
-        therefore $D3 = 0$ exactly;
-  \item 5 silver/intermediate domains are star-structured subgraphs
-        $K_{1,k}$ (with $N \in \{5, 6\}$, $M = N{-}1$); algebraic
-        connectivity of a star equals $1$ for any $k$;
-  \item 1 gold/mart domain (domain\_012, $N = 35$, $M = 63$) has
-        intermediate $D3 = 0.168$.
-\end{itemize}
+We report the mechanism before the correlation it explains, because a
+reader who sees $\rho = -0.71$ first will spend the rest of the section
+discounting it rather than reading it.
 
-This rank-degenerate structure is intrinsic to the dataset: per-domain
-internal connectivity in production dbt projects is dominated by tiny
-fully-connected subgraphs at silver/intermediate layers, with most
-``analyzable'' domains actually being collections of disconnected source
-tables. Any correlation involving D3 at the domain level is therefore
-operationally a 3-tier rank ordering test rather than a continuous
-correlation. We report it explicitly with bootstrap confidence
-intervals (Table~\ref{tab:exp2}) and revisit the implications in
-Experiment 2e.
+Across the 18 domains with $N \geq 5$, D3 algebraic connectivity takes
+exactly three values (Table~\ref{tab:degeneracy}). Twelve source-only
+domains have $M = 0$, no internal edges at all, so $\lambda_2 = 0$ by
+convention. Five silver/intermediate domains are stars $K_{1,k}$ with
+$N \in \{5,6\}$ and $M = N-1$, and the Laplacian spectrum of a star on
+$k+1$ vertices is $\{0,\, 1^{(k-1)},\, k+1\}$, so $\lambda_2 = 1$
+exactly for every $k \geq 2$ irrespective of the number of leaves. One
+gold/mart domain (domain\_012, $N = 35$, $M = 63$) has
+$\lambda_2 = 0.168$. The count of distinct descriptor values inside each
+of the three strata is 1.
+
+\begin{table}[htb]
+\centering
+\caption{D3 algebraic connectivity by architectural layer across the 18
+  analyzable dbt domains. The descriptor is constant within every
+  stratum, which is what makes the between-layer ordering
+  indistinguishable from a governance signal.}
+\label{tab:degeneracy}
+\begin{tabular}{lrlrlr}
+\toprule
+Layer & $n$ & Internal structure & $\lambda_2$ & doc.\ rate & distinct $\lambda_2$ \\
+\midrule
+source/raw & 12 & $M = 0$, edgeless & $0.000$ & 0.04--1.00 & 1 \\
+silver/staging & 5 & star $K_{1,k}$, $k \in \{4,5\}$ & $1.000$ & 0.00 (all) & 1 \\
+gold/mart & 1 & $N = 35$, $M = 63$ & $0.168$ & 0.91 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two consequences follow immediately, before any test is run. A
+correlation over three descriptor values across eighteen observations is
+a three-tier ordering, not a continuous association. And because the
+descriptor is constant within each stratum, permuting the governance
+labels within layers cannot change the statistic, so a layer-stratified
+permutation test is guaranteed to return $p \approx 1$. Experiment 2e
+confirms $p = 1.000$ with a null $\rho$ standard deviation of exactly
+zero, which is the arithmetic working out rather than an empirical
+surprise.
+
+\paragraph{The degeneracy is architectural, not accidental.}
+Reading this as an unlucky sample would be convenient. It would also be
+wrong. The three values come from the layered build pattern that
+medallion-style analytics estates follow almost universally. Raw sources
+land as independent tables and do not reference one another, so a
+source-heavy domain has no internal edges and $\lambda_2 = 0$ is forced.
+Staging models sit one-to-one over those sources and are conventionally
+kept free of joins, so a staging domain fans out from a shared parent,
+is therefore a star, and takes $\lambda_2 = 1$ from the spectrum above.
+Joins are deferred downstream, which leaves the mart as the only layer
+with interesting internal connectivity. An estate built this way cannot
+produce a continuously varying per-domain $\lambda_2$, whatever its
+size. Sampling further estates of the same architecture adds
+observations at $0$ and at $1$ and adds nothing between them. Making the
+design informative therefore takes an architectural change rather than a
+statistical one, and Section~\ref{sec:futurework} says which. Bootstrap
+intervals for the correlation are in Table~\ref{tab:exp2}.
 
 \begin{table}[htb]
 \centering
@@ -740,7 +917,7 @@ governance signal.
 \subsubsection{D4 and Test Rate: A Qualitative Observation}
 
 The $\rho = 1.0$ correlation between D4 H1/N and test rate is driven
-by a binary split: exactly one domain (domain\_012, the gold/mart
+by a binary split. Exactly one domain (domain\_012, the gold/mart
 layer, 35 nodes, 63 edges) has both H1 topological features and
 nonzero test coverage. The remaining 17 analyzed domains have zero for
 both. Under permutation, the probability of this alignment by chance is
@@ -781,7 +958,7 @@ Spectral entropy & governance score & $-0.447$ & $+0.060$ & 0.809 \\
 \end{tabular}
 \end{table}
 
-Only D3 algebraic connectivity survives partial correlation: the
+Only D3 algebraic connectivity survives partial correlation. The
 association with governance score \emph{strengthens} slightly (partial
 $\rho = -0.68$, $p = 0.002$) and remains significant for documentation
 rate (partial $\rho = -0.55$, $p = 0.021$). The normalized spectral
@@ -836,7 +1013,7 @@ D4 cycle rank/N & 0.350 & 0.347 & 0.003 & $+0.88$ \\
 \end{tabular}
 \end{table}
 
-The null model yields three classes of results:
+The null model yields three classes of result.
 
 \textbf{Structure beyond degree sequence.} D1 CSI ($z = +3.70$),
 D3 Fiedler bimodality ($z = -23.8$), and D4 H1 features ($z = -2.95$
@@ -849,8 +1026,8 @@ capture genuine structural organization.
 ($z = -0.42$) and normalized spectral gap ($z = -0.38$) are
 indistinguishable from the null. Their values are largely determined by
 the degree sequence, not by governance-relevant topology. This is
-consistent with the partial correlation results: normalized gap lost
-significance after controlling for size-related confounds.
+consistent with the partial correlation results, where normalized gap
+lost significance after controlling for size-related confounds.
 
 \textbf{Cycle rank.} As expected, cycle rank ($z = +0.88$) varies
 minimally under degree-preserving rewiring because $M$ and $N$ are
@@ -910,17 +1087,17 @@ among rewired graphs.
 \begin{table}[htb]
 \centering
 \caption{Subset robustness for D3 algebraic connectivity vs.\
-  documentation rate. Internal edges: $M_{\text{internal}} > 0$.}
+  documentation rate. Internal edges means $M_{\text{internal}} > 0$.}
 \label{tab:subset}
 \begin{tabular}{lrrrr}
 \toprule
 Subset & $n$ & $\rho$ & FDR $p$ & Status \\
 \midrule
-A: all $N \geq 5$ & 18 & $-0.708$ & 0.029 & Survives \\
-B: internal edges only & 6 & $-1.000$ & 0.189 & Fails \\
-C: no source-dominant & 6 & $-1.000$ & 0.189 & Fails \\
-D: no largest domain & 17 & $-0.806$ & 0.004 & Survives$^\dagger$ \\
-E: internal + no largest & 5 & undefined & 1.000 & Undefined$^\ddagger$ \\
+A, all $N \geq 5$ & 18 & $-0.708$ & 0.029 & Survives \\
+B, internal edges only & 6 & $-1.000$ & 0.189 & Fails \\
+C, no source-dominant & 6 & $-1.000$ & 0.189 & Fails \\
+D, no largest domain & 17 & $-0.806$ & 0.004 & Survives$^\dagger$ \\
+E, internal + no largest & 5 & undefined & 1.000 & Undefined$^\ddagger$ \\
 \bottomrule
 \multicolumn{5}{p{0.86\linewidth}}{\small $^\dagger$Dropping the largest
 domain leaves the layer composition intact, so surviving this subset says
@@ -933,17 +1110,25 @@ evidence either way.}
 \end{tabular}
 \end{table}
 
-D3 takes the value 0 for all 12 source-dominant domains (no internal
-edges) and the value 1.0 for all 5 silver/intermediate domains (all five
-are star-structured subgraphs $K_{1,k}$ with $N \in \{5, 6\}$; algebraic
-connectivity of a star equals 1 for any $k \geq 1$), with intermediate
-D3 for the gold/mart
-domain. Layer-stratified permutation (5,000 permutations of
-documentation labels within each layer stratum) yields $p = 1.000$:
-D3 is constant within each stratum, so every permutation reproduces
-the real correlation exactly. The D3--documentation association is a
-between-layer architectural pattern. It does not capture within-layer
-governance quality.
+Layer-stratified permutation (5,000 permutations of documentation labels
+within each layer stratum) yields $p = 1.000$ with a null $\rho$
+standard deviation of exactly zero. Section~\ref{sec:degeneracy}
+explains why. D3 is constant inside each stratum, so every admissible
+permutation reproduces the observed correlation to the last digit. The
+D3--documentation association is a between-layer architectural pattern
+and it does not capture within-layer governance quality.
+
+The subsets tell the same story from a different angle. Subset B keeps
+only the six domains with internal edges and the association fails FDR
+correction at $n = 6$. Subset D drops the largest domain and the
+association survives, which sounds reassuring but is not, since dropping
+one mart leaves the source and staging strata whole and so preserves the
+between-layer ordering that produced the correlation. Subset E removes
+both the source domains and the mart, at which point D3 is constant
+across the five remaining domains, $\rho$ is undefined, and the row
+carries no evidence in either direction. No subset of this estate
+isolates within-layer variation in D3, because within a layer there is
+none to isolate.
 
 \subsection{Experiment 3: Intervention Sensitivity}
 
@@ -990,7 +1175,7 @@ dataset before descriptor computation.
   Final $N$/$M$ are what descriptors are computed on.
   $^\dagger$DLG-DG-23 filtered to Data Table + Data Job nodes with DATA\_FLOW
   edges only (removes Data Field nodes and PARENT\_CHILD schema edges).
-  $^\ddagger$dbt LWCC: 38 isolated source tables removed.}
+  $^\ddagger$dbt LWCC, 38 isolated source tables removed.}
 \label{tab:preprocess}
 \begin{tabular}{lrrrr}
 \toprule
@@ -1026,12 +1211,12 @@ dbt manifest (1) & 223 & 0.95 & 0.48 & 0.003 & 0.30 & 0.35 \\
 
 The DLG-DG-23 graphs, which represent production data lineage from
 Huawei Cloud governance projects, are the most structurally similar to
-the dbt manifest: both show high community stability (CSI $\geq$ 0.68,
+the dbt manifest. Both show high community stability (CSI $\geq$ 0.68,
 mean 0.87 vs.\ 0.95 for dbt), very small normalized spectral gaps
 ($< 0.014$), and moderate cycle rank density (CR/N $\leq$ 0.68). Three
 DLG graphs achieve CSI = 1.0, indicating perfect community stability
 across the full resolution sweep. Scientific workflows, by contrast,
-show wider topological variation: seismology pipelines are nearly
+show wider topological variation. Seismology pipelines are nearly
 tree-structured (CR/N = 0), while bioinformatics alignment workflows
 (BWA, BLAST) have CR/N $> 1.9$.
 
@@ -1112,11 +1297,11 @@ association between any D1--D4 descriptor and documentation coverage
 (all $p > 0.11$). The bootstrap 95\% confidence interval for D3 vs.\
 doc\_rate spans zero. Mattermost ($n = 6$) shows a positive marginal
 association ($\rho = +0.81$, $p = 0.070$), but the bootstrap CI is
-$[+0.00, +1.00]$: the sample size is too small for the bootstrap to
+$[+0.00, +1.00]$, because the sample size is too small for the bootstrap to
 constrain the lower bound away from zero, so the directional reversal
 relative to dbt is suggestive but not statistically supported.
 
-Two readings are equally consistent with the data: (a) the original
+Two readings are equally consistent with the data. Either (a) the original
 dbt finding is organisation-specific and does not generalise (the
 between-layer architecture interpretation from Experiment~2e); or (b)
 the folder-derived domain construct in Cal-ITP and Mattermost is too
@@ -1174,8 +1359,8 @@ Mean $\pm$ std & & & $0.898 \pm 0.098$ & & $0.885 \pm 0.094$ \\
 Random baseline & & & $0.546 \pm 0.127$ & & \\
 Out-degree only & & & $0.576 \pm 0.155$ & & \\
 \bottomrule
-\multicolumn{6}{l}{\small One-sample $t$-test vs $\text{AUC}=0.5$:
-LR $t=9.12$, $p=0.0003$; RF $t=9.18$, $p=0.0003$.}
+\multicolumn{6}{l}{\small One-sample $t$-test vs $\text{AUC}=0.5$ gives
+LR $t=9.12$, $p=0.0003$ and RF $t=9.18$, $p=0.0003$.}
 \end{tabular}
 \end{table}
 
@@ -1208,7 +1393,7 @@ that the predictive signal is not a leakage artifact.
 \begin{table}[htb]
 \centering
 \small
-\caption{Sensitivity analysis: leave-one-graph-out LR AUC with the
+\caption{Sensitivity analysis. Leave-one-graph-out LR AUC with the
   three shared core-asset IDs excluded from each test set.}
 \label{tab:dlg_sensitivity}
 \begin{tabular}{lrr}
@@ -1228,15 +1413,15 @@ Mean & & $0.891 \pm 0.096$ \\
 \end{table}
 
 \paragraph{Interpretation.}
-Two structural properties dominate: DATA\_FLOW reverse-PageRank
+Two structural properties dominate, DATA\_FLOW reverse-PageRank
 (importance 0.179) and DATA\_FLOW out-degree (0.166). A high
 reverse-PageRank value indicates that random walks starting from
 downstream nodes are biased toward the node in question; substantively,
 the table is an upstream source for many downstream consumers. High
-DATA\_FLOW out-degree is the local version of the same property:
+DATA\_FLOW out-degree is the local version of the same property, since
 the table is directly read by many downstream jobs. Both align with
-the expert annotation rationale described in \citet{chen2024dlgdg}:
-``T1 is a core data asset because it serves as a base table for
+the expert annotation rationale described in \citet{chen2024dlgdg},
+that ``T1 is a core data asset because it serves as a base table for
 generating new tables.''
 
 The result is a reproduction of the node-centrality finding of
@@ -1246,8 +1431,8 @@ governance result. The two dominant predictors are centrality measures
 does not contain node-level versions of D1--D4, this experiment cannot
 estimate their incremental value. We report the AUC to confirm that
 lineage structure encodes node-importance signal captured by simple
-centrality, and to delineate a boundary condition:
-node-level expert labels yield a tractable supervised learning problem
+centrality, and to delineate a boundary condition.
+Node-level expert labels yield a tractable supervised learning problem
 that centrality already solves, whereas domain-level continuous metadata
 aggregated across heterogeneous layers does not yield a within-layer
 governance signal at all (Experiments 2--6).
@@ -1282,13 +1467,13 @@ medium-scale graphs are held out. Baselines, which include diameter and
 degree statistics that scale predictably with graph size, generalise
 better across scales than the multi-scale features in this controlled
 experiment. The MTTD regression result ($R^2 = 0.307$ for multi-scale vs.\
-$0.175$ for baselines) should be interpreted in this light: the gain may
+$0.175$ for baselines) should be read in that light, since the gain may
 not hold on graph sizes outside the training distribution.
 
 \textbf{D1 seed robustness on synthetic graphs.}
 Running 25 Louvain seeds per condition reveals that D1 differentiation
 survives seed noise only at large scale. Separation between well and
-poor governance as a multiple of seed standard deviation (SNR):
+poor governance as a multiple of seed standard deviation (SNR) runs
 tiny $= -0.5\times$ (well CSI lower than poor), small $= 0.9\times$,
 medium $= 0.8\times$, large $= 2.8\times$. At tiny through medium
 scales, Louvain seed variance is comparable to or larger than the
@@ -1308,7 +1493,7 @@ descriptors capture governance-relevant structure and which do not.
 D1 CSI differentiates synthetic governance levels after FDR correction
 ($d = 3.9$ at large scale) and the null model confirms it captures
 structure beyond degree sequences ($z = +3.7$). Seed robustness
-analysis qualifies this: at large scale the separation between well
+analysis qualifies this. At large scale the separation between well
 and poor governance exceeds seed variance by 2.8×, but at tiny through
 medium scales the seed variance is comparable to the governance
 separation, making those results unreliable. The large-scale synthetic
@@ -1320,16 +1505,17 @@ meaningful community detection.
 D3 algebraic connectivity showed the strongest initial real-data
 correlation ($\rho = -0.71$ vs.\ documentation, FDR $p = 0.043$), but
 subset robustness analysis and layer-stratified permutation reveal this
-is a between-layer architectural artifact: D3 = 0 for source domains,
-D3 = 1.0 for silver domains, intermediate for gold/mart. The association
+is a between-layer architectural artifact, with D3 = 0 for source
+domains, D3 = 1.0 for silver domains, and an intermediate value for
+gold/mart. The association
 does not survive restriction to domains with internal edges (Subset B,
-$n = 6$, FDR $p = 0.19$). The null model is consistent: D3 algebraic
-connectivity is degree-sequence-determined ($z = -0.42$), not capturing
+$n = 6$, FDR $p = 0.19$). The null model agrees. D3 algebraic
+connectivity is degree-sequence-determined ($z = -0.42$) and captures no
 hidden structural signal. D3 characterizes layer architecture reliably,
 but cannot distinguish governance levels within layers.
 
-D3 Fiedler bimodality is the most striking null model result ($z = -23.8$):
-the real graph has dramatically lower bimodality than degree-matched
+D3 Fiedler bimodality is the most striking null model result ($z = -23.8$).
+The real graph has dramatically lower bimodality than degree-matched
 random graphs, suggesting that the real graph's Fiedler vector reflects
 genuine organizational structure (a smooth gradient across pipeline
 layers) rather than the sharp random bipartitions that emerge from
@@ -1338,7 +1524,7 @@ rewiring.
 D4 H1 features differentiate governance levels in synthetic experiments
 and capture structure beyond degree sequences ($z = -2.95$), while
 cycle rank does not ($z = +0.88$). This is the setting where persistent
-homology adds value over the simpler baseline: when testing whether
+homology adds value over the simpler baseline. When testing whether
 structure goes beyond what degree sequences determine, cycle rank
 trivially passes (it is nearly preserved by rewiring), while H1
 features provide a meaningful test.
@@ -1347,42 +1533,54 @@ D3 normalized spectral gap fails both the partial correlation test (sign
 reversal, $p = 0.49$) and the null model ($z = -0.38$). Its apparent
 real-data correlation was confounded by domain size.
 
-\subsection{The D3 Correlation Is Between-Layer, Not Within-Layer}
+\subsection{What the Layer Confound Means for Structural Governance
+Measurement}
 
-The D3 algebraic connectivity--documentation association ($\rho =
--0.71$, FDR $p = 0.043$) is a between-layer architectural pattern,
-not a within-layer governance signal. Source-dominant domains all have
-D3 = 0 (no internal edges) and varying documentation; silver/intermediate
-domains all have D3 algebraic connectivity = 1.0 (all are star-structured
-subgraphs $K_{1,k}$, for which $\lambda_2 = 1$ regardless of $k$) and zero
-documentation; the gold/mart domain has intermediate D3 and high
-documentation. D3 is constant within each layer stratum, which means
-layer-stratified permutation of governance labels cannot change the
-observed correlation: every permutation yields the same rho (empirical
-$p = 1.0$).
+Section~\ref{sec:degeneracy} establishes the mechanism. Here we take the
+consequence, which reaches past this estate and past this descriptor.
 
-The correlation survives the full-sample permutation test (Subset A)
-because it captures real variation in architectural layer, not because
-it carries within-layer governance signal. Restricting to the six
-domains with internal edges (Subset B, $n = 6$) destroys power and the
-association fails FDR correction ($p = 0.19$). This is an honest
-negative result. D3 identifies layer boundaries in lineage graphs (a
-real structural signal), but the specific doc\_rate correlation in
-this case study is confounded by layer composition rather than
-reflecting a direct governance-to-topology relationship.
+We did not simply pick a bad descriptor. The problem is that the
+partition which governance metadata attaches to, the domain, sits nested
+inside the partition which architecture imposes, the layer. Domain
+membership and layer membership are close to collinear in a medallion
+estate, because a domain of raw sources and a domain of staging models
+are different kinds of object rather than two samples of one kind. Any
+descriptor computed on domain subgraphs will therefore separate layers
+before it separates anything else, and any governance attribute that
+also varies by layer, as documentation and test coverage both do, will
+correlate with that separation. D3 is where the effect is easiest to
+see, since $\lambda_2$ is pinned to closed-form values on edgeless
+graphs and on stars, but D3 is not the only descriptor exposed to it.
+
+That reframes what a structural governance measurement would have to
+demonstrate. Reporting a correlation is not enough, and neither is
+controlling for domain size, which we also did and which leaves the D3
+association standing (partial $\rho = -0.55$, $p = 0.021$) because size
+is not the confound. The requirement is a design in which governance
+quality varies within an architectural stratum, so that the stratified
+test has something to detect. Our estate supplies no such stratum. Its
+five staging domains have documentation rate zero without exception and
+its mart layer has one member.
+
+D3 does identify layer boundaries reliably, and that is a real if modest
+structural finding. It is simply not the finding the hypothesis needed.
 
 \subsection{Limitations}
 
 \textbf{Rank-degenerate D3 in the dbt sample.} D3 algebraic connectivity
-takes only three distinct values across the 18 analyzable dbt domains.
-The headline $\rho = -0.71$ correlation is therefore a 3-tier ordering
-test rather than a continuous correlation. Bootstrap CIs and the
-permutation test confirm the rank ordering is statistically real, but
-the relationship cannot resolve continuous within-tier variation. This
-is not a flaw in the descriptor itself; it is a feature of how production
-dbt domains decompose into source clusters, silver stars, and a small
-number of complex mart domains. Larger lineage graphs with more
-intermediate-complexity domains would address this.
+takes only three distinct values across the 18 analyzable dbt domains,
+so the $\rho = -0.71$ correlation is a three-tier ordering test and
+cannot resolve within-tier variation. The descriptor is not at fault.
+The values are pinned by how production dbt domains decompose into
+edgeless source clusters, staging stars, and a handful of reticulated
+mart domains. We want to be careful about the remedy, because the
+obvious one does not work. Collecting a larger estate of the same
+architecture yields more observations at $\lambda_2 \in \{0, 1\}$ rather
+than more distinct values, so sample size is not the binding
+constraint. What would relax it is an estate whose domains cut across
+layers rather than sitting inside them, or per-asset governance metadata
+that permits a unit of analysis other than the domain. Both are
+availability problems rather than statistical ones.
 
 \textbf{Effect size at detection threshold.} Power analysis under the
 observed rank degeneracy shows minimum detectable $|\rho|$ at 80\% power
@@ -1428,43 +1626,51 @@ richer metadata would enable testing D1's hypothesised association
 with ownership structure.
 
 \textbf{Causal direction.} Correlations between descriptors and
-governance metadata could reflect either direction: governance practices
-producing cleaner structure, or cleaner structure enabling easier
-governance. We measure association, not causation.
+governance metadata could reflect either direction, governance practices
+producing cleaner structure, or cleaner structure making governance
+easier. We measure association, not causation.
 
-\subsection{Future Work: Partnership-Required Validation}
+\subsection{Future Work: What Would Make the Question Answerable}
+\label{sec:futurework}
 
-The methodological limitations above are not addressable from publicly
-available dbt projects, because public dbt projects rarely carry curated
-domain-level metadata. We outline what cross-organisation validation
-would require:
+The limitations above are not addressable from publicly available dbt
+projects, and they are only partly addressable by collecting more data
+of any kind. The binding requirement is a design in which the descriptor
+is free to vary inside an architectural stratum. We set out what such a
+study needs, in order of how hard each item is to obtain.
 
 \begin{itemize}
-  \item \textbf{3--5 organisations} willing to share lineage manifests
-        and per-asset (or per-domain) governance metadata, ideally under
-        an NDA arrangement that preserves anonymisation while enabling
-        topology--metadata correlation analysis.
+  \item \textbf{Within-layer governance variation, first and without
+        substitute.} The study needs domains where governance practice
+        differs while architecture does not, for instance several mart
+        domains in one organisation, some well tested and some not. Our
+        estate has one mart and five staging domains whose documentation
+        rate is uniformly zero, so there is no stratum in which a
+        stratified test could detect anything. No amount of additional
+        data with the same layer structure repairs this.
 
-  \item \textbf{Curated domain-level metadata}: explicit \texttt{meta.domain}
-        or \texttt{meta.owner} assignments declared by data engineering
-        teams, not inferred from folder structure. Without this, the
-        unit-of-analysis problem from Experiment 6 recurs.
+  \item \textbf{Curated domain-level metadata.} Explicit
+        \texttt{meta.domain} or \texttt{meta.owner} assignments declared
+        by data engineering teams rather than inferred from folder
+        structure. Without it the unit-of-analysis problem from
+        Experiment 6 recurs, and folder paths reintroduce exactly the
+        layer confound the design is trying to escape.
 
-  \item \textbf{Sample size per organisation}: at least 20--30 analyzable
-        domains with $N \geq 5$ to escape the rank-degeneracy and detection-
-        threshold issues observed in our 18-domain pilot. This rules out
-        small dbt projects.
+  \item \textbf{Three to five organisations} willing to share lineage
+        manifests and per-asset or per-domain governance metadata, under
+        an NDA arrangement that preserves anonymisation while permitting
+        topology--metadata analysis.
 
-  \item \textbf{Layer composition diversity}: domains where governance
-        practices vary within a layer (e.g., some well-tested mart
-        domains and some poorly-tested mart domains in the same
-        organisation), enabling within-layer governance signal to be
-        separated from between-layer architectural signal.
+  \item \textbf{Enough analyzable domains to have power once the first
+        item holds.} Twenty to thirty domains with $N \geq 5$ is a
+        reasonable target, but the ordering matters. Sample size buys
+        power only after within-layer variation exists, and buys nothing
+        before that.
 
-  \item \textbf{Versioned manifests over time} (6--12 months of weekly
-        snapshots) to support temporal change detection studies, which
-        would shift the contribution from cross-sectional correlation
-        to longitudinal governance drift detection.
+  \item \textbf{Versioned manifests over time}, six to twelve months of
+        weekly snapshots, to support temporal change-detection studies
+        that would shift the contribution from cross-sectional
+        correlation to longitudinal governance drift.
 \end{itemize}
 
 The DLG-DG-23 authors confirmed in correspondence that no additional
@@ -1473,8 +1679,8 @@ label ceiling. Remaining routes include the OpenMetadata and DataHub
 user communities, where some organisations publish anonymised catalogue
 exports, and direct enterprise partnerships under NDA.
 
-A separate preregistered successor study moves to a per-change unit:
-exact before/after dbt manifests, post-merge repairs adjudicated within
+A separate preregistered successor study moves to a per-change unit,
+with exact before/after dbt manifests, post-merge repairs adjudicated within
 a fixed 30-day window, and declared tests, contracts, ownership, and
 freshness as potential moderators. Its ordinary change statistics are
 compared with global graph deltas and a separately named change-centred
@@ -1489,7 +1695,8 @@ negative result.
 
 \subsection{Practical Implications}
 
-If validated on additional datasets, these descriptors could support:
+If validated on additional datasets, these descriptors could support
+three uses.
 
 \begin{enumerate}
   \item \textbf{Structural monitoring.} Computing D1 and D3 Fiedler
@@ -1506,25 +1713,41 @@ If validated on additional datasets, these descriptors could support:
 
 \section{Conclusion}
 
-We defined four multi-scale graph-theoretic descriptors for data lineage
-topology and assessed them across 32 graphs from four heterogeneous
-sources. The paper's primary contribution is empirical and descriptive:
-production data lineage graphs (from one dbt instance and 18 Huawei
-Cloud DLGs) occupy a distinct region of descriptor space, characterised
-by high community stability and small normalised spectral gaps, distinct
-from scientific workflow topologies. This structural characterization
-is reproducible and does not depend on governance metadata.
+Institutional theory implies that governance maturity should leave a
+structural signature in the artifacts governance produces. We tested
+that implication on data lineage graphs and it does not hold, at least
+not in a form a topological descriptor can recover from a domain-level
+partition.
 
-As a single-organisation governance pilot at graph-aggregate level, we
-found a 3-tier rank ordering between D3 algebraic connectivity and
-documentation rate in one dbt lineage ($\rho = -0.71$, bootstrap CI
-$[-0.92, -0.27]$). Layer-stratified permutation ($p = 1.0$) showed the
-relationship is captured entirely by between-layer architecture, not
-within-layer governance variation. A preliminary cross-organisation
-comparison at graph-aggregate level on two public dbt projects did not
-replicate the dbt finding, but construct mismatch between
+The apparent evidence looked strong and was spurious. D3
+algebraic connectivity correlates with documentation rate at $\rho =
+-0.71$ across 18 curated-metadata domains, with a bootstrap interval
+clear of zero. The descriptor takes three values across those eighteen
+domains and is constant inside each architectural layer, so
+layer-stratified permutation returns $p = 1.000$ with a null $\rho$
+standard deviation of exactly zero. Twelve source domains are edgeless
+and give $\lambda_2 = 0$. Five staging domains are stars and give
+$\lambda_2 = 1$ by the closed form. One mart sits between them. The
+correlation orders three layers, and it says nothing about governance
+within any of them.
+
+We stress the mechanism rather than the null because the mechanism
+travels and the null on its own does not. The three values are what a
+medallion build pattern produces, so the degeneracy should be expected
+in any estate organized that way, and a larger sample of such estates
+supplies more observations at the same three values. A preliminary
+cross-organisation comparison on two public dbt projects did not
+replicate the finding either, though construct mismatch between
 metadata-assigned and folder-derived domains prevents a clean
-conclusion about replicability.
+conclusion about replicability there.
+
+Separately, and independent of the governance question, the descriptors
+place production data lineage graphs from one dbt instance and 18 Huawei
+Cloud DLGs in a distinct region of descriptor space, marked by high
+community stability and small normalised spectral gaps and separable
+from scientific workflow topologies. That characterization reproduces
+and needs no governance metadata, which is why it stands while the
+governance claim does not.
 
 \textbf{At node granularity, a centrality-based prediction reproduces a
 published result.} Using the expert-annotated core-asset labels
@@ -1541,26 +1764,30 @@ available. The AUC therefore reproduces the node-centrality finding of
 We report it as such, not as a positive governance finding for the
 descriptors.
 
-The paper's contribution is therefore: (i) a validated structural
-characterization framework across 32 lineage graphs from four sources;
-(ii) an inference protocol for governance--topology studies
-(permutation inference, bootstrap CIs, null models, subset robustness,
-layer-stratified permutation, seed robustness, power analysis); (iii) a
-graph-aggregate governance pilot within one organisation, with an explicit
-between-layer-architecture caveat; (iv) a node-level core-asset
-prediction (AUC 0.90) that reproduces the centrality finding of
-\citet{chen2023centrality} on the Huawei Cloud DLGs, reported as a
-reproduction rather than a governance result for the descriptors. The
-Phase 5 model does not test D1--D4 incremental value. Governance maturity is better measured
-through process and curated metadata than through graph structure;
-where structure does carry node-importance signal, simple centrality
-already captures it.
+We offer four things and we would rather label each of them accurately
+than generously. The first is the bounded negative result above, with
+its mechanism named. The second is a structural characterization across
+32 lineage graphs from four sources, which needs no governance metadata
+and does not depend on the failed hypothesis. The third is the inference
+protocol. We transferred most of it from experimental design and network
+science, and one component is new, the rank-degeneracy diagnostic that
+would have flagged this design before anyone computed the correlation.
+The fourth is a node-level core-asset prediction at AUC 0.90 that
+reproduces the centrality finding of \citet{chen2023centrality} on the
+Huawei Cloud DLGs. We report it as a reproduction because that is what
+it is.
 
-The descriptors are computable from any lineage graph (dbt manifests,
-data catalog exports, code-derived dependency graphs) and require no
-access to the underlying data. The structural characterization
-component is immediately useful as a comparative tool. The governance
-prediction component requires further evidence before deployment.
+The practical reading is unglamorous and we think it is correct.
+Governance maturity is better measured through process and curated
+metadata than through graph structure, which is what the frameworks and
+the commercial tooling already do. Where structure does carry a signal
+about which assets matter, simple centrality recovers it. The
+descriptors are still computable from any lineage graph, whether a dbt
+manifest, a catalog export or a code-derived dependency graph, and they
+still need no access to the underlying data, so the comparative
+characterization remains useful. The governance prediction does not. We
+would rather say so plainly than leave the question open for the next
+group to rediscover at the same cost.
 
 \appendix
 
@@ -1569,22 +1796,22 @@ prediction component requires further evidence before deployment.
 All code, anonymized data, and experiment scripts are archived at
 Zenodo\footnote{Version DOI \href{https://doi.org/10.5281/zenodo.20209148}{10.5281/zenodo.20209148} for v2.1.0. The concept DOI \href{https://doi.org/10.5281/zenodo.20099999}{10.5281/zenodo.20099999} always resolves to the latest version.}
 and on GitHub.\footnote{\url{https://github.com/mhdk1602/multiscale-governance-descriptors}}
-The repository includes:
+The repository includes the following.
 
 \begin{itemize}
-  \item \texttt{src/governance\_descriptors/}: Python package implementing
+  \item \texttt{src/governance\_descriptors/} is the Python package implementing
         D1--D4 and statistical utilities (permutation Spearman,
         Benjamini--Hochberg FDR, partial Spearman correlation).
-  \item \texttt{experiments/}: Experiment scripts that reproduce all
-        tables in this paper.
-  \item \texttt{data/}: Anonymized dbt lineage data (HMAC-SHA256 hashed
-        node identifiers, domain labels, governance metadata).
+  \item \texttt{experiments/} holds the experiment scripts that reproduce
+        all tables in this paper.
+  \item \texttt{data/} holds the anonymized dbt lineage data (HMAC-SHA256
+        hashed node identifiers, domain labels, governance metadata).
 \end{itemize}
 
-\noindent Dependencies: Python 3.11+, NetworkX 3.x, NumPy, SciPy, pandas,
+\noindent\textbf{Dependencies.} Python 3.11+, NetworkX 3.x, NumPy, SciPy, pandas,
 GUDHI (for persistent homology), scikit-learn (for Experiment 4).
 
-\noindent Anonymization: All node identifiers, domain names, and schema
+\noindent\textbf{Anonymization.} All node identifiers, domain names, and schema
 names in the production dbt data were replaced with HMAC-SHA256 hashes
 prior to export. No organizational identifiers, table names, or column
 names are present in the released data.

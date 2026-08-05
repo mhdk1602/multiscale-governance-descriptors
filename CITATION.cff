@@ -23,7 +23,7 @@ authors:
   - family-names: "Malempati Hari"
     given-names: "Dineshkumar"
     orcid: "https://orcid.org/0009-0003-1036-9477"
-    affiliation: "Independent Researcher"
+    affiliation: "University of the Cumberlands"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.20099999"
@@ -62,7 +62,7 @@ preferred-citation:
     - family-names: "Malempati Hari"
       given-names: "Dineshkumar"
       orcid: "https://orcid.org/0009-0003-1036-9477"
-      affiliation: "Independent Researcher"
+      affiliation: "University of the Cumberlands"
   year: 2026
   status: "preprint"
   doi: "10.5281/zenodo.20209148"

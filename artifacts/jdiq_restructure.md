@@ -4,8 +4,12 @@ Drop-in material for converting the manuscript from "a multi-scale descriptor ba
 (unpublishable: the available real-data tests do not support D1-D4 as governance
 proxies, and the one strong result replicates Chen 2023) into "lineage topology
 under-determines governance maturity: a negative result and a reusable inference
-protocol." Target: **ACM JDIQ**, challenge/experience-paper track
-(provenance/lineage in scope, double-anonymous, no APC).
+protocol." Target: **ACM JDIQ, research-paper track** (provenance/lineage in
+scope, double-anonymous). Not a challenge paper, which JDIQ caps at 3 pages for
+vision pieces on unsolved problems. Not an experience paper either, which is
+capped at 10 pages with a mandatory `Experience:` title prefix. ACM charges a
+$1,450 APC as of 1 Jan 2026, waived for this author because University of the
+Cumberlands participates in ACM Open. See `artifacts/submission_strategy.md`.
 
 All numbers below are verified against the saved JSONs (`bootstrap_cis.json`,
 `exp6_summary.json`, `phase_5/...prediction_summary.json`), the test suite, and
@@ -122,5 +126,6 @@ The README must not contradict the methods. Leading with AUC 0.898 invites the e
 | Additional DLG-DG-23 core-asset labels | **Closed** — the authors confirmed that none are available |
 | arXiv/SSRN preprint before the defense | post after restructure |
 
-**Honest probability with the full reframe:** JDIQ challenge paper 45-60%; DOLAP/DEEM 2027
-workshop fallback 60-70%. Do not submit the descriptor-instrument framing anywhere.
+**Honest probability with the full reframe:** JDIQ research paper 45-60%;
+DOLAP/DEEM 2027 workshop fallback 60-70%. Do not submit the descriptor-instrument
+framing anywhere.
