@@ -40,6 +40,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.ticker import FixedLocator, FuncFormatter, NullFormatter
+from scipy.stats import spearmanr
 
 SEED = 42
 np.random.seed(SEED)
@@ -1096,6 +1097,7 @@ def fig_contraction_and_drift(frames, drift, tiers, fig_dir):
             "contraction": 100.0 * (1.0 - df["N"].iloc[-1] / df["N"].max()),
             "ends_below_start": df["N"].iloc[-1] < df["N"].iloc[0],
             "drift_per_snapshot": events / len(df),
+            "median_N": float(df["N"].median()),
         })
     stats = pd.DataFrame(rows)
     groups = ([("core", "#0072B2"), ("extended", "#D55E00")]
@@ -1130,9 +1132,16 @@ def fig_contraction_and_drift(frames, drift, tiers, fig_dir):
         ax.step(x, y, where="post", color=color,
                 label=f"{tier} ($n$={len(vals)})")
     zero = int((stats["drift_per_snapshot"] == 0).sum())
-    ax.text(0.02, 0.94, f"{zero} of {len(stats)} projects never drift",
-            transform=ax.transAxes, fontsize=6, color="#333333",
-            ha="left", va="top")
+    note = f"{zero} of {len(stats)} projects never drift"
+    # Drift is a relative-change threshold, so a larger graph has more chances to
+    # cross it. Report that rather than let a tier gap read as a governance effect.
+    if len(stats) >= 20:
+        rho, pval = spearmanr(stats["median_N"], stats["drift_per_snapshot"])
+        if np.isfinite(rho):
+            note += (f"\ndrift vs median $N$: Spearman "
+                     f"$\\rho$={rho:+.2f}, $p$={pval:.3f}")
+    ax.text(0.02, 0.94, note, transform=ax.transAxes, fontsize=6,
+            color="#333333", ha="left", va="top", linespacing=1.4)
     ax.set_xlabel("Drift events per snapshot")
     ax.set_ylabel("ECDF")
     ax.set_ylim(0, 1.0)
