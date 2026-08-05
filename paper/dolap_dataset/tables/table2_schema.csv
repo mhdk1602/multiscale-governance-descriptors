@@ -22,3 +22,12 @@ file,field,type,reproducible,description
 "longitudinal_<project>.csv, 154 files in longitudinal/",n_unclassified,integer,yes,"Undocumented field, present in the corpus."
 "longitudinal_<project>.csv, 154 files in longitudinal/",n_sql_files,integer,yes,Model .sql files found at the sampled commit.
 "longitudinal_<project>.csv, 154 files in longitudinal/",n_dbt_projects,integer,yes,dbt_project.yml files found at the sampled commit.
+"longitudinal_<project>.csv, 154 files in longitudinal/",M_strict,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",M_recovered_by_permissive,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",nodes_touched_by_recovered,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",edges_dropped_as_commented_out,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_documented,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_tested,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_yaml_files,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",doc_rate,float,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",test_rate,float,yes,"Undocumented field, present in the corpus."

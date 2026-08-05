@@ -13,7 +13,7 @@
     Snapshots & \multicolumn{5}{r}{3577} \\
     Cumulative years & \multicolumn{5}{r}{560.9} \\
     Observation window & \multicolumn{5}{r}{2016-07 -- 2026-08} \\
-    Drift events ($>$20\%) & \multicolumn{5}{r}{631} \\
+    Drift events ($>$20\%) & \multicolumn{5}{r}{621} \\
     Snapshot gap (d) & \multicolumn{5}{r}{33 median, 1686 max} \\
     \midrule
     \multicolumn{6}{l}{\textit{Per-snapshot fields}} \\
@@ -21,13 +21,22 @@
     Field & Min & Median & Mean & Max & SD \\
     \midrule
     \texttt{N} & 2 & 34 & 126.7 & 3673 & 294.6 \\
-    \texttt{M} & 0 & 26 & 129.7 & 2723 & 299.2 \\
-    \texttt{giant\_component\_frac} & 0.002 & 0.583 & 0.545 & 1.000 & 0.338 \\
-    \texttt{D2\_max\_gini} & 0.000 & 0.653 & 0.620 & 0.998 & 0.209 \\
-    \texttt{D3\_alg\_conn}$^{\dagger}$ & 0.000 & 0.143 & 0.257 & 2.000 & 0.316 \\
-    \texttt{D3\_fiedler\_bim}$^{\dagger}$ & 0.000 & 0.628 & 0.599 & 0.992 & 0.250 \\
-    \texttt{D3\_norm\_gap}$^{\dagger}$ & 0.000 & 0.012 & 0.042 & 1.000 & 0.093 \\
-    \texttt{D4\_cycle\_rank\_norm} & 0.000 & 0.103 & 0.220 & 1.417 & 0.263 \\
+    \texttt{M} & 0 & 26 & 140.9 & 4442 & 355.1 \\
+    \texttt{giant\_component\_frac} & 0.002 & 0.592 & 0.550 & 1.000 & 0.339 \\
+    \texttt{D2\_max\_gini} & 0.000 & 0.650 & 0.611 & 0.998 & 0.207 \\
+    \texttt{D3\_alg\_conn}$^{\dagger}$ & 0.000 & 0.143 & 0.251 & 2.000 & 0.309 \\
+    \texttt{D3\_fiedler\_bim}$^{\dagger}$ & 0.000 & 0.611 & 0.592 & 0.992 & 0.250 \\
+    \texttt{D3\_norm\_gap}$^{\dagger}$ & 0.000 & 0.012 & 0.041 & 1.000 & 0.092 \\
+    \texttt{D4\_cycle\_rank\_norm} & 0.000 & 0.111 & 0.227 & 1.417 & 0.268 \\
+    \texttt{M\_recovered\_by\_permissive} & 0.000 & 0.000 & 12.271 & 1944.000 & 97.705 \\
+    \texttt{M\_strict} & 0.000 & 26.000 & 128.608 & 2714.000 & 297.847 \\
+    \texttt{edges\_dropped\_as\_commented\_out} & 0.000 & 0.000 & 1.108 & 73.000 & 5.280 \\
+    \texttt{n\_documented} & 0.000 & 17.000 & 67.642 & 3063.000 & 204.367 \\
+    \texttt{n\_tested} & 0.000 & 11.000 & 47.068 & 2525.000 & 156.314 \\
+    \texttt{n\_yaml\_files} & 0.000 & 5.000 & 31.543 & 1309.000 & 98.378 \\
+    \texttt{nodes\_touched\_by\_recovered} & 0.000 & 0.000 & 13.776 & 2004.000 & 102.379 \\
+    \texttt{doc\_rate} & 0.000 & 0.502 & 0.536 & 1.000 & 0.328 \\
+    \texttt{test\_rate} & 0.000 & 0.386 & 0.402 & 1.000 & 0.310 \\
     \bottomrule
   \end{tabular}
   \par\vspace{3pt}
