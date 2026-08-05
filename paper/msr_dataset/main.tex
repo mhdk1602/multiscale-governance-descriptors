@@ -33,14 +33,13 @@ available route to a public longitudinal record of how transformation graphs
 change. I release 3{,}586 monthly lineage snapshots of 154 public dbt projects,
 453{,}108 nodes and 503{,}925 edges over 566 cumulative project-years and a
 decade of wall-clock time, recovered by parsing \texttt{ref()} declarations out
-of the git object database without executing dbt and without a warehouse
-connection. The corpus is a systematic sample of a documented frame of 3{,}718
-candidates rather than a census of public dbt, and the screen that produced it
-ships with the data. Every edge carries the parse mode that found it, so a
-stricter reader reconstructs a stricter graph exactly. Three findings that
-nothing public could previously test are reported, the strongest being that the
-staging, intermediate and mart taxonomy does not describe the median public dbt
-project at all.
+of the git object database without executing dbt and without a warehouse. The
+corpus is a systematic sample of a documented frame of 3{,}718 candidates rather
+than a census, and the screen that produced it ships with the data. Every edge
+carries the parse mode that found it, so a stricter reader reconstructs a
+stricter graph exactly. The strongest of three findings is that the staging,
+intermediate and mart taxonomy does not describe the median public dbt project
+at all.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -83,12 +82,11 @@ The extraction reads trees and blobs straight out of the object database instead
 of checking out each commit, which is what makes a 56-snapshot history cheap
 enough to run 631 times.
 
-My contributions are four. First, the corpus, 3{,}586 lineage snapshots of 154
-projects with a graph and 15 descriptors at each. Second, the extraction tool,
-unit tested and separately citable. Third, a characterization establishing that
-the canonical dbt layer taxonomy fails to describe the median public project.
-Fourth, the released artifact, its documented frame and its manifest of 626
-checksummed files.
+My contributions are the corpus of 3{,}586 snapshots with a graph and 15
+descriptors at each, the unit-tested extraction tool, a characterization
+establishing that the canonical dbt layer taxonomy fails to describe the median
+public project, and the documented frame with its manifest of 626 checksummed
+files.
 
 \section{The corpus}
 
@@ -99,12 +97,11 @@ The frame is a systematic sample of a documented population, not a census of
 public dbt, and the reason is a platform limit. GitHub code search reports
 5{,}340 hits for \texttt{filename:dbt\_project.yml} and paginates at 1{,}000, so
 I partitioned the query into twelve repository-size bands and recovered 2{,}207
-of those hits. Three strata were unioned and deduplicated. S1 is the 20 entries
-of a widely used curated list, which a reader reaches for first and which yields
-two projects. S2 is repository
-search over five dbt topics, each split into ten star bands for the same reason.
-S3 is the code search above. The union is 3{,}718 candidates and it is released
-in full.
+of those hits. Three strata were unioned and deduplicated. S1 is a widely used
+curated list of 20 entries, which a reader reaches for first and which yields
+two projects. S2 is repository search over five dbt topics, each split into ten
+star bands for the same reason. S3 is the code search above. The union is
+3{,}718 candidates, released in full.
 
 Screening removed only candidates for which no monthly series can exist. Fewer
 than 40 commits on the default branch removed 2{,}275, fewer than 12 months
@@ -154,8 +151,12 @@ Nothing is checked out. Trees come from \texttt{git ls-tree} and file contents
 from a single \texttt{git cat-file -{}-batch} process per snapshot, so the
 worktree is never mutated and one clone can be read concurrently. Cal-ITP's 53
 snapshots take under 30 seconds on one core, against minutes for the
-checkout-per-snapshot predecessor, and a regression test asserts that HEAD, the
-porcelain status and the checked-out branch are unchanged after a run.
+checkout-per-snapshot predecessor. Two tests hold the shortcut honest. One
+asserts that HEAD, the porcelain status and the branch are unchanged after a
+run. The other rebuilds every commit of a scripted history both ways and asserts
+that the object-database read and a real checkout give the same nodes and the
+same edges, over a macro-passed ref, a commented-out ref, a vendored tree and a
+stem collision.
 
 Comments are stripped before matching, \texttt{-{}-}, \texttt{/* */} and
 \texttt{\{\# \#\}} alike. Without that step a commented-out reference becomes an
@@ -200,13 +201,23 @@ carrying a SHA-256 in \texttt{MANIFEST.json}. Eight artifacts matter to a reader
 \texttt{snapshots.csv} holds all 3{,}586 rows and its schema is
 Table~\ref{tab:schema}. \texttt{corpus\_index.csv} is the yield table, one row
 per project with span, size range, growth, tier, composition, cadence and
-fidelity. \texttt{edges/<id>.csv.gz} holds every edge of
-every snapshot so a reader can rebuild any graph rather than trust the scalars.
-\texttt{drift\_events.csv} records the 989 consecutive-snapshot changes above
-20\,\% in a descriptor. \texttt{sampling\_frame.csv} and \texttt{excluded.csv}
-carry the 3{,}718 candidates and the 488 post-extraction rejections with a
-reason each. \texttt{schema.json} is the machine-readable dictionary and
+fidelity. \texttt{edges/<id>.csv.gz} holds every edge of every
+snapshot, so a reader can rebuild any graph rather than trust the scalars.
+\texttt{drift\_events.csv} records 989 consecutive-snapshot changes above
+20\,\%, and \texttt{sampling\_frame.csv} with \texttt{excluded.csv} carry the
+3{,}718 candidates and the 488 post-extraction rejections, each with a reason. \texttt{schema.json} is the machine-readable dictionary and
 \texttt{MANIFEST.json} the provenance.
+
+Two counts of this corpus circulate and I reconcile them here rather than let a
+reader find the gap. The release carries all 3{,}586 snapshots, 566 cumulative
+years and 989 drift events. The characterization script that drew Fig.~1 reports
+3{,}577, 560.9 and 621, because it drops the nine snapshots at
+$N \leq 1$ where density is undefined, excludes D1 as order-dependent, and gates
+the giant-component descriptors to projects whose median component clears half
+of $N$. Snapshot cadence divides the same way, 39 days being the median
+project's own median gap and 33 days the median pooled over every gap. Each
+number is right for its stated scope, the release being the complete record and
+the script the analyzable subset.
 
 Provenance is pinned rather than described. \texttt{MANIFEST.json} records the
 tool version, here 2.0.0, the repository URL, the default branch, the HEAD SHA at
@@ -262,7 +273,8 @@ rests on.
 \textbf{Growth is real but modest.} The median project ends at 4.09 times its
 first-snapshot node count, and at 2.41 times its first \emph{viable} snapshot,
 the latter being the honest figure because many histories start at two or three
-models. Fig.~\ref{fig:growth} normalizes every trajectory to its own origin.
+models. Growth is heterogeneous rather than uniform, and the released
+per-project trajectories carry the spread the medians hide.
 
 \textbf{The failures are a finding.} Of the 631 repositories cloned, 186
 produced no usable series. Two had gone unreachable between harvest and clone.
@@ -280,15 +292,6 @@ lose roughly a third of the hits this way.
 $x=0$ reads directly as the share of projects with no cycle in the undirected
 skeleton. Demo projects ($n=4$) are omitted as too few for an ECDF.}
 \label{fig:acyclic}
-\end{figure}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.86\columnwidth]{fig2_growth_normalized.pdf}
-\caption{Node and edge counts normalized to each project's own first snapshot,
-all 154 projects, with the corpus median and interquartile range in black. The
-log ordinate compresses a range that spans three orders of magnitude.}
-\label{fig:growth}
 \end{figure}
 
 \section{Related datasets}
@@ -319,27 +322,27 @@ are the whole of my contribution. The sentence I do claim is narrow. This is the
 first publicly available longitudinal corpus of data-transformation lineage.
 
 \textbf{Workflow execution traces.} WfCommons~\cite{coleman2022} publishes
-traces of workflow runs, which is a record of execution rather than of
-repository-derived topology. It also supplies the precedent that a
-workflow-structure corpus of roughly 180 units is publishable.
+traces of workflow runs, a record of execution rather than of repository-derived
+topology, and the precedent that a workflow-structure corpus of roughly 180
+units is publishable.
 
 \section{Use to date, and what to improve}
 
 An earlier two-project version of this pipeline supported a study of whether
 lineage topology proxies governance maturity. That study returned a negative
 result, its correlation being carried by architectural layer rather than by
-governance, and its release~\cite{hari2026} covers 106 snapshots of two estates.
-This corpus supersedes it by a factor of 34 in snapshots and 77 in projects,
-and it exists because two estates cannot separate a real effect from a
-coincidence of two organizations. No other use has been published.
+governance, and its release~\cite{hari2026} covers 106 snapshots of two estates. This corpus
+supersedes it by 34 times in snapshots and 77 in projects, and it exists because
+two estates cannot separate a real effect from a coincidence of two
+organizations. No other use has been published.
 
 Four improvements are worth naming. Resolving \texttt{source()} and seeds from
 the schema YAML beside the models would close most of the gap against a compiled
 manifest. Git similarity detection would let a rename read as a rename rather
 than as a birth and a death. A real \texttt{dbt compile} manifest for the subset
 of projects that still build would give a ground-truth calibration set instead
-of the single audited project I have. And a frame built from an event archive
-would escape the pagination cap that costs me 3{,}133 code-search hits.
+of my single audited project. And an event-archive frame would escape the
+pagination cap that costs me 3{,}133 code-search hits.
 
 \section{Research opportunities}
 
@@ -357,12 +360,36 @@ $\rho$ of $-0.152$ between documentation rate and size, a weak negative worth a
 proper treatment.
 
 Does layer composition converge as independently developed estates mature? The
-release makes the institutional-convergence question testable in a form that
-does not depend on interviewing anybody.
+institutional-convergence question becomes testable without interviewing
+anybody.
 
 And what does an abandoned dbt estate look like on the way down? Thirty-nine
 projects end below their own node peak, one of them 84.6\,\% below, so a growth
 multiple is not the range a graph traverses.
+
+\begin{table}[t]
+\centering
+\caption{Descriptor sensitivity to node insertion order, over 12 permutations
+of each of 40 corpus graphs. Range is max minus min across permutations of the
+same graph, so a reproducible descriptor sits at zero. D1 is the reason the
+characterization excludes it.}
+\label{tab:ordersens}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrc}
+\toprule
+Field & Median & Mean & Max & Released \\
+\midrule
+\texttt{D1\_csi} & 0.1429 & 0.1607 & 0.5714 & no \\
+\texttt{D1\_n\_comm} & 0 & 0.9250 & 5 & no \\
+\texttt{D2\_max\_gini} & 0 & 0 & 0 & yes \\
+\texttt{D3\_alg\_conn} & 2.2e--15 & 4.6e--15 & 2.5e--14 & yes \\
+\texttt{D3\_norm\_gap} & 1.9e--16 & 2.1e--16 & 8.4e--16 & yes \\
+\texttt{D3\_fiedler\_bim} & 2.1e--07 & 0.0061 & 0.2424 & yes \\
+\texttt{D4\_cycle\_rank\_norm} & 0 & 0 & 0 & yes \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Limitations}
 \label{sec:limits}
@@ -383,9 +410,10 @@ single gap in the corpus is 1{,}686 days.
 
 Two descriptors are unsafe and I say which. \texttt{D1\_csi} and
 \texttt{D1\_n\_comm} come from Louvain, whose result depends on node insertion
-order, and under twelve permutations of the same graph \texttt{D1\_csi} moves by
-as much as 0.5714 against a published standard deviation of 0.123. Both are
-excluded from every figure. \texttt{D3\_fiedler\_bim} is not unstable but
+order. Table~\ref{tab:ordersens} measures that, and \texttt{D1\_csi} moves by up
+to 0.5714 against a published standard deviation of 0.123 while five of the
+other descriptors do not move at all. Both D1 columns are excluded from every
+figure. \texttt{D3\_fiedler\_bim} is not unstable but
 undefined wherever the second Laplacian eigenvalue is degenerate, since the
 Fiedler vector is then not unique, and the corpus contains a 15-node component
 whose $\lambda_2$ through $\lambda_6$ are separated by $4.4\times10^{-16}$.
@@ -397,16 +425,15 @@ estates, and \texttt{ref()} records declared dependencies, not executed ones.
 
 Finally, path resolution can silently shrink a real estate.
 \texttt{catalyst-cooperative/pudl} has 11{,}147 commits and was excluded at a
-peak of 2 nodes, because the models the extractor could resolve were not the
-models the project runs. Nothing in the pipeline detects that case, and a reader
-comparing the corpus against a project they know should expect it.
+peak of 2 nodes, because the models the extractor resolved were not the models
+the project runs. Nothing detects that case.
 
 \section{Availability}
 
-Corpus, tool, frame and manifest are MIT licensed and archived under concept DOI
+Corpus, tool, frame and manifest are MIT licensed under concept DOI
 \href{https://doi.org/10.5281/zenodo.20099999}{10.5281/zenodo.20099999}, with a
-\texttt{requirements.txt} and a command line per pipeline stage. Data and code
-carry separate citable version DOIs.
+\texttt{requirements.txt} and a command line per stage. Data and code carry
+separate citable version DOIs.
 
 \balance
 
