@@ -73,10 +73,15 @@ STRUCTURAL_COLUMNS = (
 )
 REQUIRED_COLUMNS = ("date", "N", "M")
 
-# D1 and D3 are computed on the largest connected component only. Below this
-# fraction the descriptor describes a minority of the nodes the axis label
-# reports, so the project is excluded from those panels rather than annotated.
-MIN_GIANT_COMPONENT_FRAC = 0.5
+# D1 and D3 are computed on the largest connected component only, so the N on an
+# axis is not the N those descriptors saw. At 0.9 the two agree within 10%, which
+# is a discrepancy a caption can carry. At 0.5 the descriptor would be free to
+# ignore half the graph, which is the problem rather than a bound on it. The
+# floor is a CLI flag and every run prints the observed distribution, so it can
+# be retuned against the real corpus rather than left at a guess.
+MIN_GIANT_COMPONENT_FRAC = 0.9
+GIANT_COMPONENT_COLUMN = "giant_component_frac"
+GIANT_COMPONENT_PREFIXES = ("D1_", "D3_")
 
 DRIFT_THRESHOLD_PCT = 20.0
 SAMPLING_WINDOW_DAYS = 30
@@ -151,9 +156,7 @@ LAYER_PREFIX = "layer_"
 # A dbt source is declared in YAML and is not a model, so a count over model
 # files correctly has no source bucket. n_unclassified is the honest remainder
 # and dropping it renormalises the stack to a total that excludes real models.
-LAYER_COUNT_COLUMNS = (
-    "n_staging", "n_intermediate", "n_mart", "n_unclassified", "n_source",
-)
+LAYER_COUNT_COLUMNS = ("n_staging", "n_intermediate", "n_mart", "n_unclassified")
 COVERAGE_COLUMNS = {
     "doc_rate": ("doc_rate", "documentation_coverage", "documented_frac"),
     "test_rate": ("test_rate", "test_coverage", "tested_frac"),
@@ -237,12 +240,20 @@ def descriptor_fields(frames, also_exclude=()):
     return sorted(common or [])
 
 
-def compute_drift(frames, descriptors):
-    """Step changes above the threshold between consecutive snapshots."""
+def compute_drift(frames, descriptors, eligible=None):
+    """Step changes above the threshold between consecutive snapshots.
+
+    A step change in a giant-component descriptor is only meaningful where the
+    descriptor is, so projects outside `eligible` contribute no events for D1 or
+    D3. They still contribute events for whole-graph descriptors.
+    """
     rows = []
     for project, df in frames.items():
         for desc in descriptors:
             if desc not in df.columns:
+                continue
+            if (eligible is not None and is_component_gated(desc)
+                    and project not in eligible):
                 continue
             s = pd.to_numeric(df[desc], errors="coerce")
             pct = (s.diff().abs() / s.shift(1).abs()) * 100.0
@@ -278,32 +289,31 @@ def layer_columns(frames):
     """
     df = next(iter(frames.values()))
     prefixed = sorted(c for c in df.columns if c.startswith(LAYER_PREFIX))
-    if len(prefixed) >= 2:
-        return prefixed
-
     counts = [c for c in LAYER_COUNT_COLUMNS if c in df.columns]
-    if len(counts) < 2:
+    cols = prefixed if len(prefixed) >= 2 else counts
+    if len(cols) < 2:
         return []
 
-    # Every model must land in exactly one bucket. If the buckets do not
-    # account for N, a layer is missing from LAYER_COUNT_COLUMNS and the
-    # figure would silently redistribute the shortfall across the rest.
+    # Every model lands in exactly one bucket, so the buckets must account for N.
+    # If they do not, a layer is missing and stacking the rest would redistribute
+    # the shortfall across them, asserting that the missing layer is empty. Both
+    # the layer_ and the n_ contract are checked, not just one of them.
     for project, frame in frames.items():
-        if not set(counts) <= set(frame.columns):
-            print(f"  layer: skipped, {project} lacks {sorted(set(counts) - set(frame.columns))}")
+        absent = sorted(set(cols) - set(frame.columns))
+        if absent:
+            print(f"  layer: skipped, {project} lacks {absent}")
             return []
-        totals = frame[list(counts)].sum(axis=1)
-        shortfall = (frame["N"] - totals).abs()
+        shortfall = (frame["N"] - frame[list(cols)].sum(axis=1)).abs()
         worst = float(shortfall.max()) if len(shortfall) else 0.0
         if worst > 0:
             print(
-                f"  layer: skipped, buckets {counts} do not account for every model "
-                f"in {project}, worst snapshot is short by {worst:.0f} of "
-                f"{int(frame['N'].max())}. Add the missing layer column rather than "
-                f"renormalising over a subset."
+                f"  layer: skipped, buckets {cols} do not account for every model "
+                f"in {project}. Worst snapshot is off by {worst:.0f} against "
+                f"N={int(frame['N'].max())}. Add the missing layer column rather "
+                f"than renormalising over a subset."
             )
             return []
-    return counts
+    return cols
 
 
 def coverage_columns(frames):
@@ -808,39 +818,44 @@ def fig_density_evolution(frames, fig_dir):
     return save(fig, "figA_density_evolution", fig_dir)
 
 
-def component_gated_frames(frames, descriptors):
-    """Drop projects whose descriptors describe a minority of their nodes.
+def is_component_gated(descriptor):
+    """True for descriptors computed on the giant component rather than the graph."""
+    return descriptor.startswith(GIANT_COMPONENT_PREFIXES)
 
-    D1 and D3 are computed on the largest connected component. Where that
-    component holds less than MIN_GIANT_COMPONENT_FRAC of the graph, the N in
-    an axis label is not the N the descriptor saw, so the project is excluded
-    rather than annotated. Returns (kept, n_dropped).
+
+def component_eligible(frames, floor=MIN_GIANT_COMPONENT_FRAC):
+    """({project: DataFrame}, excluded_names) for giant-component descriptors.
+
+    A project qualifies when its median giant_component_frac clears the floor.
+    Corpora without the column are all eligible, which is the current two-project
+    case. Returns an empty mapping rather than falling back to everything when no
+    project qualifies, because silently un-gating would render exactly the figure
+    the gate exists to prevent.
     """
-    gated = [d for d in descriptors if d.startswith(("D1_", "D3_"))]
-    if not gated:
-        return frames, 0
-    kept, dropped = {}, 0
+    have = [df for df in frames.values() if GIANT_COMPONENT_COLUMN in df.columns]
+    if not have:
+        return frames, []
+    kept, excluded = {}, []
     for project, df in frames.items():
-        if "giant_component_frac" not in df.columns:
-            kept[project] = df
-            continue
-        if float(df["giant_component_frac"].median()) >= MIN_GIANT_COMPONENT_FRAC:
+        frac = df.get(GIANT_COMPONENT_COLUMN)
+        if frac is None or float(frac.median()) >= floor:
             kept[project] = df
         else:
-            dropped += 1
-    if dropped:
-        print(
-            f"  descriptors: excluded {dropped} project(s) with median "
-            f"giant_component_frac below {MIN_GIANT_COMPONENT_FRAC:g}"
-        )
-    return (kept or frames), dropped
+            excluded.append(project)
+    return kept, excluded
 
 
-def fig_descriptor_trajectories(frames, descriptors, fig_dir):
-    """One panel per deterministic descriptor, every project overlaid."""
+def fig_descriptor_trajectories(frames, descriptors, fig_dir, floor=MIN_GIANT_COMPONENT_FRAC):
+    """One panel per deterministic descriptor, every project overlaid.
+
+    Gating is per panel, not per figure. D2 and D4 are computed on the whole
+    graph and keep every project; only the D1 and D3 panels drop projects whose
+    giant component is too small for the descriptor to describe the graph the
+    axis reports.
+    """
     if not descriptors:
         return []
-    frames, n_gated = component_gated_frames(frames, descriptors)
+    eligible, excluded = component_eligible(frames, floor)
     n = len(frames)
     thin = n > LEGEND_MAX_PROJECTS
     k = len(descriptors)
@@ -851,25 +866,41 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir):
         sharex=True, squeeze=False,
     )
     flat = axes.ravel()
+    order = {p: i for i, p in enumerate(frames)}
 
     for ax, desc in zip(flat, descriptors):
+        gated = is_component_gated(desc)
+        shown = eligible if gated else frames
         curves = []
-        for i, (project, df) in enumerate(frames.items()):
+        for project, df in shown.items():
             years = relative_years(df)
             vals = df[desc].astype(float).values
             curves.append((years, vals))
             ax.plot(
                 years, vals,
-                color=MUTED if thin else SERIES_PALETTE[i % len(SERIES_PALETTE)],
+                color=MUTED if thin else SERIES_PALETTE[order[project] % len(SERIES_PALETTE)],
                 linewidth=0.6 if thin else 1.0,
                 alpha=0.45 if thin else 1.0,
                 label=None if thin else label_of(project),
             )
         median_band(ax, curves)
-        ax.set_title(desc.replace("_", " "), fontsize=7.5, pad=3)
+        title = desc.replace("_", " ")
+        if gated and excluded:
+            title += f" ($-${len(excluded)})"
+        ax.set_title(title, fontsize=7.5, pad=3)
+        if not shown:
+            ax.text(0.5, 0.5, "no eligible project", transform=ax.transAxes,
+                    ha="center", va="center", fontsize=6.5, color="#666666")
         ax.grid(axis="y")
         ax.tick_params(labelsize=6.5)
 
+    if excluded:
+        fig.supxlabel(
+            f"D1 and D3 panels exclude {len(excluded)} of {len(frames)} projects "
+            f"whose median giant component is below {floor:g} of nodes, marked "
+            f"$-${len(excluded)}. D2 and D4 use every project.",
+            fontsize=6.5, y=-0.03,
+        )
     blank_unused(flat, k)
     handles, labels = flat[0].get_legend_handles_labels()
     if handles and k < len(flat):
@@ -1285,16 +1316,20 @@ def table_schema(frames, corpus_dir, tab_dir):
     return write_table("table2_schema", frame, "\n".join(body), tab_dir)
 
 
-def table_summary_statistics(frames, drift, descriptors, tab_dir):
+def table_summary_statistics(frames, drift, descriptors, tab_dir, eligible=None):
     pooled = pd.concat(
         [df.assign(project=p) for p, df in frames.items()], ignore_index=True
     )
+    gated_pool = pooled if eligible is None else pooled[pooled["project"].isin(eligible)]
     fields = ["N", "M"] + descriptors
     counts = ("N", "M", "D1_n_comm")
 
     rows = []
     for col in fields:
-        s = pd.to_numeric(pooled[col], errors="coerce").dropna()
+        # A giant-component descriptor is summarised over eligible projects only,
+        # which is why its n differs from the corpus snapshot count.
+        source = gated_pool if is_component_gated(col) else pooled
+        s = pd.to_numeric(source[col], errors="coerce").dropna()
         if s.empty:
             continue
         rows.append(
@@ -1404,6 +1439,12 @@ def parse_args(argv):
         help=f"Descriptors monitored for step changes (default {DEFAULT_DRIFT_DESCRIPTORS}).",
     )
     p.add_argument(
+        "--giant-component-floor", type=float, default=MIN_GIANT_COMPONENT_FRAC,
+        help=f"Minimum median giant_component_frac for a project to appear in D1 "
+             f"and D3 panels (default {MIN_GIANT_COMPONENT_FRAC}). Every run prints "
+             f"the observed distribution so this can be retuned against real data.",
+    )
+    p.add_argument(
         "--max-panels", type=int, default=MAX_PANELS,
         help=f"Projects drawn as small multiples before the grid is capped "
              f"(default {MAX_PANELS}). Corpus-level figures always use all of them.",
@@ -1431,7 +1472,8 @@ def main(argv=None):
         d for d in (args.drift_descriptors or DEFAULT_DRIFT_DESCRIPTORS)
         if d in descriptors
     ]
-    drift = compute_drift(frames, drift_descs)
+    eligible, excluded = component_eligible(frames, args.giant_component_floor)
+    drift = compute_drift(frames, drift_descs, eligible)
 
     print(
         f"Corpus {args.corpus}: {len(frames)} projects, "
@@ -1441,6 +1483,21 @@ def main(argv=None):
     print(f"  Excluded: {', '.join(sorted(EXCLUDED_FIELDS)) or 'none'}")
     print(f"  Drift monitored on {', '.join(drift_descs) or 'nothing'}, "
           f"{len(drift)} events.")
+    # Print the distribution so the floor is a tunable choice backed by data
+    # rather than a number someone picked once and nobody revisited.
+    med = pd.Series({p: float(df[GIANT_COMPONENT_COLUMN].median())
+                     for p, df in frames.items()
+                     if GIANT_COMPONENT_COLUMN in df.columns})
+    if len(med):
+        q = med.quantile([0, .1, .25, .5, .75, 1]).round(3).to_dict()
+        print(f"  {GIANT_COMPONENT_COLUMN} per-project median, deciles "
+              f"min {q[0]}, p10 {q[0.1]}, p25 {q[0.25]}, p50 {q[0.5]}, "
+              f"p75 {q[0.75]}, max {q[1]}")
+        print(f"  D1/D3 floor {args.giant_component_floor:g} excludes "
+              f"{len(excluded)} of {len(frames)} projects"
+              + (f": {', '.join(sorted(excluded)[:8])}" if excluded else ""))
+    else:
+        print(f"  No {GIANT_COMPONENT_COLUMN} column, no D1/D3 gating applied.")
     for project, why in skipped:
         print(f"  SKIPPED project {project}: {why}")
 
@@ -1450,7 +1507,9 @@ def main(argv=None):
     written += fig_drift_characterization(drift, frames, drift_descs, fig_dir)
     written += fig_snapshot_cadence(frames, fig_dir, args.max_panels)
     written += fig_density_evolution(frames, fig_dir)
-    written += fig_descriptor_trajectories(frames, descriptors, fig_dir)
+    written += fig_descriptor_trajectories(
+        frames, descriptors, fig_dir, args.giant_component_floor
+    )
 
     if layers:
         written += fig_layer_composition(frames, layers, fig_dir, args.max_panels)
@@ -1491,7 +1550,7 @@ def main(argv=None):
     written += table_schema(frames, args.corpus, tab_dir)
     # Coverage has its own figure but still belongs in the summary statistics.
     written += table_summary_statistics(
-        frames, drift, descriptors + sorted(coverage.values()), tab_dir
+        frames, drift, descriptors + sorted(coverage.values()), tab_dir, eligible
     )
 
     print(f"\nWrote {len(written)} files under {args.out}:")
