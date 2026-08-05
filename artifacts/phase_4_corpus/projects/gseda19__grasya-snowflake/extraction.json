@@ -1,0 +1,77 @@
+{
+ "project_id": "gseda19__grasya-snowflake",
+ "repo_url": "https://github.com/gseda19/grasya-snowflake.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:43:09Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "bc1d3dfb3a16e6ca4eb1cfd6672826f6dd563d10",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "my_new_project",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 216,
+   "first_commit": "2024-04-23T02:26:15",
+   "last_commit": "2026-07-30T00:49:02"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 216,
+ "history_start": "2024-04-23T02:26:15",
+ "history_end": "2026-07-30T00:49:02",
+ "n_snapshots_planned": 22,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 22,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:44:26Z",
+ "snapshot_shas": [
+  "3aa21c87e258b6a5026bcdbd8832564e162be5f7",
+  "39d4873d56e8fc19c5e078cb287f3dd3c0555b05",
+  "5f8f9f95db6265abd10215497abf6443cfa98cc5",
+  "0bda758836f33022829dd925f3c94bf31c312124",
+  "aecc8e45a5ae554e87795838abbeb98adfa422ce",
+  "c1cd8631b38398c058c0d5665f5069b3fca98f6d",
+  "88a6cf6375266b027a1bc0e9068d20488568dc81",
+  "d8bcfb8e64f3496f2f56dd637b4fdc4f73d775ef",
+  "2b0b77a7822b60b66d7b50710d40455b17270be7",
+  "af50ecb8d3fecdffb1db893b43a11e8af56b1b18",
+  "de1b6971e062f695c53189aaee1c3198c28b2ca6",
+  "72752525345af826e5c68290633b9d80401ae7be",
+  "efd2b8d7acbcb3c343de054e42bf710e4d2c0ebb",
+  "1774471dd19f091b93e0292240a9359c299de440",
+  "2d3405de7429bb3c5cc80b11dc52247e754937bb",
+  "0b55854ddac05297d75c855b549021221cd13b4e",
+  "c6c072538330f7f5b7cf7451a465654de0e86fb4",
+  "da8d64506529cf9b3f5556cbadcf9d105a3d847d",
+  "5a1e43b5379bed58914b7e769f56b74dd2064f83",
+  "33295619ea5ce5750ae736123de7c250b9988f4f",
+  "ec5030b8437dd0e95e528d9aa71c84c0bddea380",
+  "d2bcecd1b314020c3014efe20d45e6adbf205359"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

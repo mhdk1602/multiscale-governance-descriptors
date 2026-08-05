@@ -1,0 +1,73 @@
+{
+ "project_id": "re-data__dbt-re-data",
+ "repo_url": "https://github.com/re-data/dbt-re-data.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:37:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "c93f125b3f4350fac914cfd82c0db37a30c81ad0",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "re_data",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "re_data",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 81,
+   "first_commit": "2021-05-09T18:39:02",
+   "last_commit": "2024-04-29T22:36:19"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 81,
+ "history_start": "2021-05-09T18:39:02",
+ "history_end": "2024-04-29T22:36:19",
+ "n_snapshots_planned": 18,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 18,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:38:30Z",
+ "snapshot_shas": [
+  "7010bbf49660a2a93ddbb5fdf293700e9938f230",
+  "fb83c7a492db6e721eb7ac43823fb4a5039c195c",
+  "5ec571bcae401354d89f8e57a083274e6fc4f120",
+  "6cd64bbcdd03de7fb3a12183b1350535b11f30ba",
+  "904e21fb09198cbad697f48a030bb3c13512579d",
+  "ffe832c175557b1af1ed0d127302d8e353ff9700",
+  "d3fa56d1982d5a371841d0cfb02f915d9e06d418",
+  "a66e9931457ae2ea4f9f9d36518e7b52c32b7068",
+  "cf39124e5d8bf3dcfaee5c586a11211cbc5216ac",
+  "8ec3e39f734d94bdde66d59cc6f4ee2a5976b51e",
+  "68ba8e3d0cac38aa6aed5350c527b2471aa49bc5",
+  "4232f0e109c6b23e4ce0539a2428c8a720550382",
+  "95e9a388f312507b5473b71993f371d411b8e91e",
+  "90935a9fc045c7df0ae575c380025bf949504f65",
+  "d843779082e94da14530a64162646cb5b5366388",
+  "b3db48bb97d710ab3d5f7b859dd43e6750f55c3a",
+  "1a4dcac16b3933ebd7c0eab342d0076118bdeb24",
+  "1951dfac1a395f3232d32a78148cce5c218f36e1"
+ ],
+ "stars": 102,
+ "license": "NOASSERTION",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

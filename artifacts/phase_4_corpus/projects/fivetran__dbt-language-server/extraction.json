@@ -1,0 +1,165 @@
+{
+ "project_id": "fivetran__dbt-language-server",
+ "repo_url": "https://github.com/fivetran/dbt-language-server.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:26:47Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "e055c2d361bcb1f4e3811c0c1620a4b533c6bb93",
+ "default_branch": "main",
+ "model_path_universe": [
+  "e2e/projects/test-fixture/models",
+  "e2e/projects/special-python-settings/models",
+  "e2e/projects/two-projects/subfolder/project2/transformations/test"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "e2e/projects/test-fixture/dbt_project.yml",
+  "name": "my_new_project",
+  "chained_configs": [
+   "e2e/projects/test-fixture/dbt_project.yml",
+   "e2e/projects/special-python-settings/dbt_project.yml",
+   "e2e/projects/two-projects/subfolder/project2/dbt_project.yml"
+  ],
+  "n_configs_chained": 3,
+  "model_paths": [
+   "e2e/projects/test-fixture/models",
+   "e2e/projects/special-python-settings/models",
+   "e2e/projects/two-projects/subfolder/project2/transformations/test"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "e2e/projects/test-fixture/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "e2e/projects/test-fixture/models"
+   ],
+   "commits_on_model_paths": 31,
+   "first_commit": "2021-12-16T17:50:15",
+   "last_commit": "2023-10-18T18:53:33"
+  },
+  {
+   "config": "e2e/projects/snowflake-npm-features/dbt_project.yml",
+   "name": "snowflake",
+   "model_paths": [
+    "e2e/projects/snowflake-npm-features/models"
+   ],
+   "commits_on_model_paths": 10,
+   "first_commit": "2023-04-21T16:42:24",
+   "last_commit": "2023-09-25T13:00:57"
+  },
+  {
+   "config": "e2e/projects/snowflake/dbt_project.yml",
+   "name": "snowflake",
+   "model_paths": [
+    "e2e/projects/snowflake/models"
+   ],
+   "commits_on_model_paths": 9,
+   "first_commit": "2023-02-09T15:39:02",
+   "last_commit": "2023-08-31T16:43:08"
+  },
+  {
+   "config": "e2e/projects/completion-jinja/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "e2e/projects/completion-jinja/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2022-01-05T00:46:43",
+   "last_commit": "2022-10-10T14:15:25"
+  },
+  {
+   "config": "e2e/projects/postgres/dbt_project.yml",
+   "name": "dbt_postgres_test",
+   "model_paths": [
+    "e2e/projects/postgres/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2022-03-28T23:09:50",
+   "last_commit": "2022-04-12T19:34:22"
+  },
+  {
+   "config": "e2e/projects/two-projects/project1/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "e2e/projects/two-projects/project1/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2021-12-16T17:50:15",
+   "last_commit": "2023-01-24T18:19:59"
+  },
+  {
+   "config": "e2e/projects/special-python-settings/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "e2e/projects/special-python-settings/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2021-12-21T15:40:02",
+   "last_commit": "2021-12-21T15:40:02"
+  },
+  {
+   "config": "e2e/projects/two-projects/subfolder/project2/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "e2e/projects/two-projects/subfolder/project2/transformations/test"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2021-12-16T17:50:15",
+   "last_commit": "2021-12-16T17:50:15"
+  },
+  {
+   "config": "e2e/projects/project-with-packages/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "e2e/projects/project-with-packages/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": "server/src/test/lsp_tests/project/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "server/src/test/lsp_tests/project/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 10,
+ "n_commits_touching_models": 33,
+ "history_start": "2021-12-16T17:50:15",
+ "history_end": "2023-10-18T18:53:33",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:29:21Z",
+ "snapshot_shas": [
+  "9a4310202449a24041711f68215b31f3af33c4db",
+  "b4bf4a9f160ac70a756158b697ff030f89a18275",
+  "c2c820e5da42975bdc3372b8a2329e35a1a8c6f1",
+  "b288414a27e5f79559c4717c3847dd599017acc4",
+  "6ff759111226b10eb93b378abe9c1f9d03f9ada5",
+  "f24f27fd2c78e2a7be128909d91560112194bf36",
+  "7ce0e9b1ddddd78ccf89dcb91725a1348951b3da",
+  "349bfffdfc2f18f5c071687f2de364dd70530085",
+  "5a4ea56278969a144e274c9c2595a9343bf4c1b2",
+  "531141468d52932b74a2fb10b7618cdb0862558c",
+  "64946166121cdc4ff954cd4242b8e55ea5290b01",
+  "c3f989db8301b89103dc3fe1ccb3c22e83f05d03",
+  "519674290d71a220f91b93948feac4b8f39bf5c2",
+  "757ab2fa0cdd59ab1062d2c3b4238aedafd3a075"
+ ],
+ "stars": 5,
+ "license": "MIT",
+ "strata": [
+  "S3_code"
+ ]
+}

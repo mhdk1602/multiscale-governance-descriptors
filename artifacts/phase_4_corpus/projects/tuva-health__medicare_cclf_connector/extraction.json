@@ -1,0 +1,83 @@
+{
+ "project_id": "tuva-health__medicare_cclf_connector",
+ "repo_url": "https://github.com/tuva-health/medicare_cclf_connector.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:39:00Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "603a258e3c649d6a4eb7d0835e8efc7d79371204",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "medicare_cclf_connector",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "medicare_cclf_connector",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 87,
+   "first_commit": "2022-04-20T12:58:45",
+   "last_commit": "2026-04-15T21:35:58"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 87,
+ "history_start": "2022-04-20T12:58:45",
+ "history_end": "2026-04-15T21:35:58",
+ "n_snapshots_planned": 27,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 27,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:40:46Z",
+ "snapshot_shas": [
+  "e854e6e936ebe177c1f73b1a3396bd78eda44877",
+  "9cd04a168396e9e1feaf27177d7c89d9f4aa835a",
+  "f34c658582a21e18a9c33e4c2da7662d40069538",
+  "62a7e09eced2f381a24b3a9480d7abf172aa6bc3",
+  "dfd302f9c5e4c1a0a506d05cb8cd53dba1e3db61",
+  "0baea7126e6995585c293d4661d52e9232dd2a6d",
+  "1d3d9c6c2ab2311401abe53aa21fb82710c866f0",
+  "7736e9c86b94a3ed1bea3e451aa666820b4f5c90",
+  "3896e508a513ec2b4761c07b95388889cbc4448e",
+  "2d4ad3ade07b57b362585d0b4d2c8e122f855b7b",
+  "9564516dbd263561736dc7e747e67f0bde39add4",
+  "594c9ca84853329bf21663e269ef77a6a3e4265f",
+  "419dbb7335d3cbc94c39f02bf7610a93e3f2e1d9",
+  "a822d8b263f4d2b29488b659cf607b2e97f14ac5",
+  "163ae8c04ab6a3fc4c4adbf847135917fe99b0f6",
+  "1caf09d6ce1d7f4a130f384afd8f156ae344ba51",
+  "ac37b7bda2aeb1f2b4593e7fa7c9d47025f33f8b",
+  "518133aa4cac0e442dee59b899c89ae286fafc5b",
+  "29111cacc0dcd7a14adc9e193ded0e4001670a81",
+  "b84bffb81ada2f361f0acb3b47cc15c22ebba74b",
+  "1a831d3a5b09bc95d7ff1641864f65c9941f911c",
+  "1ebfc28609dccad58243fa6ca492720ed04ac233",
+  "f686713f918dcb987a762081c35632afe25ae27c",
+  "7f6c17b90904257faa88c1840949e0f66f45b4e4",
+  "a80f2e75234ee519013ea2533b0481543d6c1bf6",
+  "1ac21bdfbe8ac4593733f4f274bd3976334bb32c",
+  "c24e124822eb145b79fc7ea8cb032044bb4fddec"
+ ],
+ "stars": 15,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_analytics-engineering",
+  "S2_topic_dbt"
+ ]
+}

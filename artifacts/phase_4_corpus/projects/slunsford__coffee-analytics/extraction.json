@@ -1,0 +1,68 @@
+{
+ "project_id": "slunsford__coffee-analytics",
+ "repo_url": "https://github.com/slunsford/coffee-analytics.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:15Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "47408ed64dfd4481e8ca20f5154e2f84ebecff56",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "coffee_analytics",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "coffee_analytics",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 58,
+   "first_commit": "2023-08-22T22:12:06",
+   "last_commit": "2026-07-15T17:08:25"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 58,
+ "history_start": "2023-08-22T22:12:06",
+ "history_end": "2026-07-15T17:08:25",
+ "n_snapshots_planned": 13,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 13,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:06Z",
+ "snapshot_shas": [
+  "ac5b96efd35c02b8966fa91421ac014bede3d026",
+  "f24fd30595b34a7151017b2bae21298963e430b9",
+  "3535d3069da77627becdc7a8b968e226346ac192",
+  "1f1a1011abcddc51b453fbf73295c631727761b6",
+  "9a11addc06e3721b5376f07a866fda02bc757876",
+  "8e62b5e87db085aa78c27feb240111a2bf44b12c",
+  "97aa847819fd62c749665bd3fe6d701c66453cf2",
+  "6da81bc7286abc7fabd58058e5c35f577d3e34d9",
+  "3adf25a6e05e1c7781c9c31af4d4931e83087396",
+  "a23fc90f45bbf1ac412dc26337f4da832b7f3649",
+  "1107e1b3409a184b5d7bd4bc384f4d16a5860266",
+  "f3d348a4202047fad019db1516778991f8fa5d5c",
+  "47408ed64dfd4481e8ca20f5154e2f84ebecff56"
+ ],
+ "stars": 1,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

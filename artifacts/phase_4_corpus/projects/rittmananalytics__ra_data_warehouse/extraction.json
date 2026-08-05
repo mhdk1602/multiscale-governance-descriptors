@@ -1,0 +1,72 @@
+{
+ "project_id": "rittmananalytics__ra_data_warehouse",
+ "repo_url": "https://github.com/rittmananalytics/ra_data_warehouse.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:37:50Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "d8dc7bd1c008ca79f9d09c909734e28a66ef6366",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "ra_data_warehouse",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "ra_data_warehouse",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 180,
+   "first_commit": "2020-05-16T16:24:31",
+   "last_commit": "2022-02-14T08:37:51"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 180,
+ "history_start": "2020-05-16T16:24:31",
+ "history_end": "2022-02-14T08:37:51",
+ "n_snapshots_planned": 17,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 17,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:09Z",
+ "snapshot_shas": [
+  "9b46ffe5018d414d4ff23229402fbb1afb04d069",
+  "9ddf84bf14a512a75dd3f1862a67faad62efb2d0",
+  "bf8788c083c9b317949f9d0ecbac30fde515d03f",
+  "93ee29cf53125348314cfa42e291b83628fb1aa9",
+  "e968931d501949c2aff9968732abd876b8162515",
+  "78a7ecfed8934241e58d3a741ee5458120e10868",
+  "55f4c14bdfc791a4ae26f322c463d529bf651941",
+  "d77e248c59c617452826f29f4164ec1cbd296007",
+  "b5964abfd79cb219889c0642b6a4f79fef046b85",
+  "d51967d07a98f938a8a346fdb2020054df5c2ec9",
+  "43d508684498c52921ec6f74271400cf9a571232",
+  "2aa42ce69caf8c1bcb79c4d2d0a8dc9ec919808d",
+  "d619fcd76ad103dbf1b8f01159427c10cd12a609",
+  "9b9c136348ec295571f8e131b535fda557d7d763",
+  "0fbacf3faae3752cb8d57c6049ea5b9ecc76e435",
+  "537ab2951abda0904cc514e5422905a5099ffd48",
+  "d8dc7bd1c008ca79f9d09c909734e28a66ef6366"
+ ],
+ "stars": 271,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

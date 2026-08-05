@@ -1,0 +1,85 @@
+{
+ "project_id": "dpguthrie__snowflake-dbt-demo-project",
+ "repo_url": "https://github.com/dpguthrie/snowflake-dbt-demo-project.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:25:25Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "8e626c5bf41dd281a1e52b10641bd6ec8b411001",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "tpch",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "tpch",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 243,
+   "first_commit": "2020-10-23T12:42:56",
+   "last_commit": "2023-08-12T06:17:06"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 243,
+ "history_start": "2020-10-23T12:42:56",
+ "history_end": "2023-08-12T06:17:06",
+ "n_snapshots_planned": 30,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 30,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:27:49Z",
+ "snapshot_shas": [
+  "ded26d188683623b00a8f6b8e29c628c650b2056",
+  "e08a0e8135fb11ba4e6e9dc1ec3c62306de8af32",
+  "41e9de412e4636b7195e1bd9cfaed6d393de3cc2",
+  "4e0d8d6df2b4776b3199917739990c71fe22630c",
+  "ed506cb1387a31926c7a3084cd4dc5c05b0ae42e",
+  "e36a286138bdf9147cedb81b3c1cd72760bcb1a4",
+  "b2533f624d7f4bf6ac825c9be0098e3deff91c4b",
+  "43fbf64cca8ab925434815e7ca283e00eefa538b",
+  "0977bdcae5e784b77c565c5c6e453d866e7b16d5",
+  "f791373440f31330864e1994f6432e527c9641c7",
+  "83b55474b84d208f69e9149b8e24a4371c6bde35",
+  "9d7f0f7878ae0966e7be627dd4fc471d082d6246",
+  "ec6296fffbc37ce546bbaa55a8f272b6507007d8",
+  "e139fb534a21df067e3a148ebbe2785631bd1a8f",
+  "55893de135515bbb2d4bd7c06ff8995a8928e061",
+  "34fd0d3442c2d532ef4473089e1f05d0427a22f1",
+  "da3fe459a65abd43a0e9692d2643ad4726fb7dcf",
+  "4103eb7b4d55c67dae76c3d1f71fcf9defdd57b9",
+  "3e0150770c6ddff3a3ec656da986dd814ae97255",
+  "98bc18c26e47dc704bcd18cc57034b6916f38626",
+  "d35e036f2d0de06fee73e8cfd09f90676cd01301",
+  "17fd90b75cadaaccf56a8a01a7734ee453394df7",
+  "357397c4551f2590f497cbc69edc52bf20096275",
+  "ae31ddfcf8b6137204424debdcdd3547f1255988",
+  "ceee1fefe81bcece851cc60051ba6cec9af42a1f",
+  "36d29fb7f6073b3cac839acae1a7f1bb9d037e50",
+  "df22e906eaf40d71b5af8aed3ca99c57680e6128",
+  "171661715b8b0b38db85ba50ada911574ca75204",
+  "f1dac884ff140fbeff3d937b1e88d8d181914ff4",
+  "8e626c5bf41dd281a1e52b10641bd6ec8b411001"
+ ],
+ "stars": 24,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

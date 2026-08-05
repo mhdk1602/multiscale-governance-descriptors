@@ -1,0 +1,70 @@
+{
+ "project_id": "fivetran__dbt_microsoft_ads",
+ "repo_url": "https://github.com/fivetran/dbt_microsoft_ads.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:30:33Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "dbb98f9a99c4e6aac0de1e87a61792c9a3de5f75",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "microsoft_ads",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "microsoft_ads",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 37,
+   "first_commit": "2020-08-17T11:22:06",
+   "last_commit": "2026-06-22T20:28:43"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 37,
+ "history_start": "2020-08-17T11:22:06",
+ "history_end": "2026-06-22T20:28:43",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:32:22Z",
+ "snapshot_shas": [
+  "521a1303ef6a834f13791b3900ff9540274e449e",
+  "6ece9e043636592550fce4774eceb3fb0b6e8fc9",
+  "b255b5913ce5e36a961e35bb13612dd7a28de793",
+  "c2013dd24ed18f867c6fe91bb35764b101637afc",
+  "007c596e5714c7cc38c74b14c4468b8c9e86d240",
+  "4739374b872df05d746d417be4984570e8585000",
+  "078687f5f0560ba3568cd192c581bd2eb035ab1b",
+  "7d5d04bd903824ddd0eaf2b340a1e95e49b77704",
+  "d9ac657d2ffbb881d706dcdb9cff08579c56534a",
+  "e64e8a9aa6d728e78b2bf4e03e8a3374c7ce1d20",
+  "227b4ff0f2cfa165ab8d7e9c60aa6a7b0941b2b5",
+  "cd7e58fad0a9419dc045527809f3e5d38034965b",
+  "07d3b84dfcb9c099ebaf31f1d5251c768365570a",
+  "dbb98f9a99c4e6aac0de1e87a61792c9a3de5f75"
+ ],
+ "stars": 4,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

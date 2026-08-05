@@ -1,0 +1,24 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_quickbooks_source,2021-02-05T15:37:11,ab2917e36148a0d402e4f280f4da1bddb84f9805,documenation fix and sales receipt var add,72,36,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,36,0.027778,0.0,72,0,0,0,72,1
+fivetran__dbt_quickbooks_source,2021-02-09T16:40:30,481cfa5181230beb90c87ce6adf3db911b483d1a,changed default to false for PO,78,39,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,39,0.025641,0.0,78,0,0,0,78,1
+fivetran__dbt_quickbooks_source,2021-03-12T13:09:41,ea3270e357f28bae6846a4dae9eb69d31fb46242,parent account casting fix,78,39,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,39,0.025641,0.0,78,0,0,0,78,1
+fivetran__dbt_quickbooks_source,2021-04-12T15:39:36,f1709c5e6171131857a3aa4035ac952310b110da,postgres compatibility updates,78,39,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,39,0.025641,0.0,78,0,0,0,78,1
+fivetran__dbt_quickbooks_source,2021-06-23T15:16:40,a3f3e6bf76027b1360dd1a9cc36773fa32b889d5,cast not needed for amount,78,39,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,39,0.025641,0.0,78,0,0,0,78,1
+fivetran__dbt_quickbooks_source,2022-03-25T10:56:49,ad1880c5fdf1da22cafaf25f2f8b1bb56c892845,invoice billing address id cast as string,78,39,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,39,0.025641,0.0,78,0,0,0,78,1
+fivetran__dbt_quickbooks_source,2022-09-26T15:50:15,fd1c3d28fae70c5fcace696a38191bcdc1994c2d,feature/credit-card-payments;,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2022-10-24T17:30:14,f193d1cc406070f1ca0e5ec465fdafbacf97677a,credit card payment fixes and docs regen,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2022-11-22T13:25:11,47ec3a2ca972615d84328260b27ff9250b47925a,Add class ids to source models,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2022-12-01T08:23:49,8a2af71b8c6bc559651b6f1b0142dea5fc29b656,Add index to unique combination tests,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2023-01-18T02:01:10,89825768502314eed69d5b8833a6d405d840dcac,Documentation updates,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2023-02-13T19:40:54,94841bbf8176bea8868fd7d70ebebfe19eaea860,Remove stg_quickbooks__bill_linked_txn not null test,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2023-04-19T12:57:53,1ed6f1a2d5462dbfab524b21e32760286d1c65a2,address merge conflicts,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2023-05-17T18:47:15,7297b1d50bb63030cb32bb72b49364912cc20909,MagicBot/databricks-compatibility updates,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2023-07-12T11:30:10,1276da15434a87b4cd8482c1775f58626439d9cb,update version,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2023-08-22T11:18:01,197796389d23951578f2cd483f69227596136596,updates,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2023-08-25T16:22:02,e671520ddde095738389e02ad40d1cfb2926391b,yml updates,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2024-07-17T15:41:10,5fb091807a2a877e0444c8d8c7936632d8cf0ad1,PR review changes,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2024-09-06T14:39:06,c82c1d7b420a4066e0df44ba4431a1ea23e01ba7,Filter deleted accounts from stg table,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2024-10-29T18:03:51,3473036f877454356e3d6c8cb14e123ffc9521e3,PR review,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2024-11-21T12:58:30,d6202c863241e594b851952fe036b7d9bd78f1b0,PR fixes,80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2025-06-26T12:12:09,590f376d79de4446c1d6d27d40e057f1908a958d,feature/freshness-updates (#64),80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1
+fivetran__dbt_quickbooks_source,2025-09-11T15:37:19,31c370cf4a5474c38cd596d963d57e242c4e2c0b,Bugfix/add credit card txn transfer exchange rates (#72),80,40,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,40,0.025,0.0,80,0,0,0,80,1

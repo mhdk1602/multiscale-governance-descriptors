@@ -1,0 +1,68 @@
+{
+ "project_id": "fivetran__dbt_github_source",
+ "repo_url": "https://github.com/fivetran/dbt_github_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:28:16Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "470e60c48f27775b81c33d37de2baf6256546b50",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "github_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "github_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 39,
+   "first_commit": "2020-05-13T22:48:30",
+   "last_commit": "2025-07-02T13:18:28"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 39,
+ "history_start": "2020-05-13T22:48:30",
+ "history_end": "2025-07-02T13:18:28",
+ "n_snapshots_planned": 13,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 13,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:30:10Z",
+ "snapshot_shas": [
+  "146e5d1008a11605b84ec2bb3cbc9af23c16fa9b",
+  "3b0f24a534307757d775d0324d2b40a2ddaa5a42",
+  "cd75ee100112ceacb736a4114e12c9cfa47168b9",
+  "db81131d7cf64130c8c40a827f7548a04375b55a",
+  "90f0f5ce74a9789cf8e205fa4802eb3b18743c39",
+  "d7d379af23171dae2b263bd8c6dd4e655bd821a4",
+  "f3f471d1acbdb1585ea586d0f17a6b83f2687224",
+  "9e554fa8c9c050df7a52953334e3f413c6d7f2a1",
+  "3c22bf740d174d96bdf039fb8f1db293575815ee",
+  "ea395888f50b2efdd932b4d3dd61653a6d4b4682",
+  "3f87abe3374f5851b89f65bfa7031c6b6e42fdef",
+  "e47cf5186002a979bd24b1d38c2f87ad06d85f5b",
+  "c5df0ad89d5ea28f2298ea9431650c7b8bd5e1e9"
+ ],
+ "stars": 9,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

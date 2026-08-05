@@ -2,6 +2,158 @@
 
 ## Unreleased: Governance-Mediated Change Risk
 
+### Longitudinal dbt lineage corpus, two projects to 154 (2026-08-04)
+
+The longitudinal study in `artifacts/phase_4/` rested on Cal-ITP and Mattermost,
+106 snapshots between them. `artifacts/phase_4_corpus/` adds a census of the
+public dbt population beside it. **154 projects, 3,586 monthly snapshots, 566
+cumulative project-years, 2016-07-27 to 2026-08-04.** Nothing in
+`artifacts/phase_4/` was changed.
+
+Sampling frame of 3,718 repositories, recorded per entry in
+`sampling_frame.csv`, from three strata.
+
+- The 20 entries in `InfuseAI/awesome-public-dbt-projects`.
+- GitHub repository search over five dbt topics, each split into ten star bands.
+  The search API serves at most 1,000 results per query and `topic:dbt` alone
+  reports 3,944. 1,951 repositories.
+- GitHub code search for `filename:dbt_project.yml`, split into twelve
+  repository-size bands for the same reason. GitHub reports 5,340 hits, of which
+  the partitioning recovers 2,207.
+
+Only conditions under which no monthly series can exist were allowed to exclude,
+so 631 repositories were screened in and cloned rather than filtered on how they
+look at HEAD.
+
+| stage | n |
+|---|---|
+| candidate population | 3,718 |
+| excluded, under 40 commits on the default branch | 2,275 |
+| excluded, under 12 months between creation and last push | 811 |
+| excluded, metadata unavailable | 1 |
+| screened in and cloned | 631, plus 13 curated entries the screen could not reach |
+| extracted successfully | 419 |
+| extracted with gaps | 39 |
+| extraction failed | 186 |
+| in corpus | **154**, of which 33 `core` and 121 `extended` |
+
+Failures are a finding, not attrition to hide. 81 repositories carry no
+`dbt_project.yml` anywhere in their history, which means the code-search index
+saw one that has since been deleted. 78 declare a `dbt_project.yml` whose model
+directory was never committed, almost all adapters, macro libraries and dbt
+tooling. 25 resolve model paths that hold no SQL at any sampled commit. 2 could
+not be cloned. Every one is in `excluded.csv` with its reason.
+
+#### The curated list does not contain twenty usable projects
+
+Run end to end, `gitlab-data/analytics` returns 401 and
+`FlipsideCrypto/sql_models` returns 404, both dead since the list was written.
+`dagster-io/dagster-open-platform` publishes `dbt_project.yml` in a mirror whose
+`models/` directory was deleted, so it extracts to zero snapshots. Eight more are
+demonstration repositories yielding one or two monthly snapshots. On a
+12-snapshot floor the curated list contributes five projects.
+
+#### D1 was never reproducible
+
+`extract_lineage_at_commit` in `exp_longitudinal_dbt.py` built each graph with
+`g.add_nodes_from(model_names)` where `model_names` is a Python set. String set
+iteration order depends on `PYTHONHASHSEED`, which CPython randomises per
+process, and NetworkX's Louvain is an order-sensitive greedy pass. `D1_csi` and
+`D1_n_comm` therefore differ between runs of identical code on an identical
+repository.
+
+Re-running the shipped script on a fresh Cal-ITP clone reproduces N, M,
+`D2_max_gini` and `D4_cycle_rank_norm` exactly on all 50 shared commits, and
+`D3_alg_conn` to 9e-15. `D1_csi` differs by up to 0.286 and `D1_n_comm` by four
+communities. Holding one commit's graph fixed at N=360 and M=421, three hash
+seeds give CSI of 0.6429, 0.7857 and 0.5000.
+
+Measured across the corpus in
+`artifacts/phase_4_corpus/d1_order_sensitivity.json`, 40 real snapshots under 12
+node-order permutations each:
+
+| descriptor | median range | max range |
+|---|---|---|
+| `D1_csi` | 0.0714 | 0.5714 |
+| `D1_n_comm` | 0 | 5 |
+| `D2_max_gini` | 0 | 0 |
+| `D4_cycle_rank_norm` | 0 | 0 |
+| `D3_alg_conn` | 2.2e-15 | 1.6e-14 |
+
+**This changes a claim.** `table3_summary_statistics.csv` reports `D1_csi` with
+sd 0.123 over n=106. The order-induced range reaches 0.571 on a single graph.
+`D1_csi` is also one of three descriptors monitored in
+`drift_events_refined.csv`, so an unknown share of the 44 reported drift events
+are hash-seed artifacts rather than lineage changes. The corpus inserts nodes in
+sorted order under `PYTHONHASHSEED=0`, which removes the dependence, but D1 in
+the corpus is not comparable to D1 in the two-project artifacts.
+
+#### The growth claim does not survive
+
+The two-project release reports node growth of 8.53x and 14.69x, which reads as
+"dbt lineage graphs grow steeply". Over 154 projects the median is 4.09x, and
+Cal-ITP and Mattermost sit at the 71st and 78th percentiles. Measured instead
+from the first snapshot at or above the N>=10 inclusion floor, which removes the
+multiple a project earns merely for starting from an empty repository, the
+median is **2.41x** and 12 percent of projects end smaller than they started.
+`corpus_index.csv` carries both as `node_growth_multiple` and
+`node_growth_from_first_viable`.
+
+Contraction behaves the same way. 74 percent of projects never fall below their
+peak at all, so Mattermost's 21.9 percent net contraction is the tail rather
+than the pattern. The drift rate drops from 0.415 to 0.279 events per snapshot,
+and 36 of 154 projects show no drift event at any threshold.
+
+#### Three further defects, each of which moved a measurement
+
+- **Vendored packages counted as project models.** Mattermost's
+  `transform/snowflake-dbt/dbt_modules/dbt_utils/models` belongs to dbt_utils.
+  `dbt_modules/`, `dbt_packages/`, `target/` and `integration_tests/` are now
+  excluded.
+- **Several dbt projects in one repository were unioned.** Models in separate
+  dbt projects cannot `ref()` each other, so the union is disconnected, and
+  `_to_undirected_connected` in both `spectral.py` and `community_stability.py`
+  reduces a disconnected graph to its giant component. The smaller project was
+  counted in N and M and dropped from D1 and D3. One dbt project is now tracked
+  per repository, the one whose model paths carry the most commits.
+- **A relocated project was split in two.** Datadex moved from `models/` to
+  `dbt/models/` on 2023-04-11, and treating the two configs as rivals discarded
+  40 percent of its history. Configs whose model-path commit intervals overlap
+  by less than 20 percent of the shorter interval are chained into one series.
+  Mattermost's two concurrent projects overlap for two years and stay separate.
+
+#### The descriptors do not always describe the whole graph
+
+Because D1 and D3 run on the giant component, a sparse lineage graph reports a
+large N while the descriptors see a fraction of it. `Health-Union/dbt-xdb` has
+51 nodes and 5 edges, `EqualExperts/dbt-unit-testing` 55 and 3. Both are dbt
+packages rather than analytics projects. Every snapshot now carries
+`n_components`, `giant_component_frac` and `isolated_frac`. The corpus median
+giant component is 0.794 of N in the `core` tier and 0.370 in `extended`, so on
+a typical extended project the descriptors describe barely a third of the models
+they are reported against.
+
+#### Reproduction gate
+
+Both reference projects reproduce under fully automatic model-path detection,
+with no hand-supplied paths. Mattermost gives 55 snapshots, all 55 commits shared
+with the recorded artifact, and N, M and `D2_max_gini` identical to the last
+digit. Cal-ITP gives 53 against the recorded 51, because the repository gained
+three months of history, and every one of the 50 shared commits is identical.
+
+#### Tool and tests
+
+- `src/governance_descriptors/dbt_lineage.py` replaces the two-project script.
+  Snapshots are read with `git ls-tree` and `git cat-file --batch` instead of
+  `git checkout`, so nothing is written to the worktree and repositories can be
+  read concurrently. Cal-ITP's 53 snapshots take under 30 seconds.
+- `tests/test_dbt_lineage.py` adds 37 unit tests including a regression for each
+  defect above. The suite goes from 48 to 85.
+- `experiments/phase_4/dbt_corpus/` holds the pipeline and a README with the
+  exact commands.
+- `MANIFEST.json` pins every sampled commit SHA and carries a SHA-256 for every
+  other file in the release.
+
 ### New study
 
 - Added a preregistered PR-level successor study with post-merge adverse events

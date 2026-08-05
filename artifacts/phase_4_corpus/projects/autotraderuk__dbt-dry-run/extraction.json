@@ -1,0 +1,176 @@
+{
+ "project_id": "autotraderuk__dbt-dry-run",
+ "repo_url": "https://github.com/autotraderuk/dbt-dry-run.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:21:48Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "a8589e721f4b391732ec7507d4923236010d863b",
+ "default_branch": "main",
+ "model_path_universe": [
+  "integration/projects/test_incremental/models",
+  "integration/projects/test_project_with_external_tables/models",
+  "integration/projects/test_large_projects_complete_quickly/models",
+  "integration/projects/test_models_with_invalid_sql/models",
+  "integration/projects/test_partially_compiled_project/models",
+  "integration/projects/test_project_with_snapshots/models",
+  "integration/projects/test_sql_headers/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "integration/projects/test_incremental/dbt_project.yml",
+  "name": "test_incremental",
+  "chained_configs": [
+   "integration/projects/test_incremental/dbt_project.yml",
+   "integration/projects/test_project_with_external_tables/dbt_project.yml",
+   "integration/projects/test_large_projects_complete_quickly/dbt_project.yml",
+   "integration/projects/test_models_with_invalid_sql/dbt_project.yml",
+   "integration/projects/test_partially_compiled_project/dbt_project.yml",
+   "integration/projects/test_project_with_snapshots/dbt_project.yml",
+   "integration/projects/test_sql_headers/dbt_project.yml"
+  ],
+  "n_configs_chained": 7,
+  "model_paths": [
+   "integration/projects/test_incremental/models",
+   "integration/projects/test_project_with_external_tables/models",
+   "integration/projects/test_large_projects_complete_quickly/models",
+   "integration/projects/test_models_with_invalid_sql/models",
+   "integration/projects/test_partially_compiled_project/models",
+   "integration/projects/test_project_with_snapshots/models",
+   "integration/projects/test_sql_headers/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "integration/projects/test_incremental/dbt_project.yml",
+   "name": "test_incremental",
+   "model_paths": [
+    "integration/projects/test_incremental/models"
+   ],
+   "commits_on_model_paths": 10,
+   "first_commit": "2023-03-10T16:59:37",
+   "last_commit": "2026-06-29T23:25:59"
+  },
+  {
+   "config": "integration/projects/test_models_are_executed/dbt_project.yml",
+   "name": "test_models_are_executed",
+   "model_paths": [
+    "integration/projects/test_models_are_executed/models"
+   ],
+   "commits_on_model_paths": 8,
+   "first_commit": "2022-06-08T13:28:57",
+   "last_commit": "2025-04-11T14:48:43"
+  },
+  {
+   "config": "integration/projects/test_column_linting/dbt_project.yml",
+   "name": "test_column_linting",
+   "model_paths": [
+    "integration/projects/test_column_linting/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2022-10-21T14:59:27",
+   "last_commit": "2026-07-08T16:59:35"
+  },
+  {
+   "config": "integration/projects/test_project_with_external_tables/dbt_project.yml",
+   "name": "test_project_with_external_tables",
+   "model_paths": [
+    "integration/projects/test_project_with_external_tables/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2022-11-23T11:15:43",
+   "last_commit": "2022-11-24T12:17:39"
+  },
+  {
+   "config": "integration/projects/test_tests_are_executed/dbt_project.yml",
+   "name": "test_tests_are_executed",
+   "model_paths": [
+    "integration/projects/test_tests_are_executed/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2022-11-23T11:25:57",
+   "last_commit": "2022-11-25T13:05:14"
+  },
+  {
+   "config": "integration/projects/test_large_projects_complete_quickly/dbt_project.yml",
+   "name": "test_large_projects_complete_quickly",
+   "model_paths": [
+    "integration/projects/test_large_projects_complete_quickly/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-08-09T17:00:59",
+   "last_commit": "2022-08-09T17:00:59"
+  },
+  {
+   "config": "integration/projects/test_models_with_invalid_sql/dbt_project.yml",
+   "name": "test_models_with_invalid_sql",
+   "model_paths": [
+    "integration/projects/test_models_with_invalid_sql/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-06-08T13:28:57",
+   "last_commit": "2022-06-08T13:28:57"
+  },
+  {
+   "config": "integration/projects/test_partially_compiled_project/dbt_project.yml",
+   "name": "test_partially_compiled_project",
+   "model_paths": [
+    "integration/projects/test_partially_compiled_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2023-02-09T09:27:32",
+   "last_commit": "2023-02-09T09:27:32"
+  },
+  {
+   "config": "integration/projects/test_project_with_snapshots/dbt_project.yml",
+   "name": "test_project_with_snapshots",
+   "model_paths": [
+    "integration/projects/test_project_with_snapshots/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-07-04T20:25:27",
+   "last_commit": "2022-07-04T20:25:27"
+  },
+  {
+   "config": "integration/projects/test_sql_headers/dbt_project.yml",
+   "name": "test_sql_headers",
+   "model_paths": [
+    "integration/projects/test_sql_headers/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-10-27T09:43:16",
+   "last_commit": "2022-10-27T09:43:16"
+  }
+ ],
+ "n_dbt_projects_seen": 10,
+ "n_commits_touching_models": 17,
+ "history_start": "2022-06-08T13:28:57",
+ "history_end": "2026-06-29T23:25:59",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:22:59Z",
+ "snapshot_shas": [
+  "b913c122d6b6b3e400943832e55153adeb48ab87",
+  "cf00c7177ba61911f79b0c047da6a6459a59886a",
+  "ebd88b1b41ed77d7302b3b5f8b003bb8912b0836",
+  "34874fe30233c52c46dfe8543d888fd07a0b7347",
+  "f8d3438c6f746925f00bdc69e663cb319fb3e1a1",
+  "13938eb1ec5f68742dfc7133e8d54c381f5b6ae7",
+  "9d308d7602272e4c958515200163a94807da477e",
+  "72fb22c0a6c64243a18462ebdbcec51f846d5319",
+  "f1e7e18f2784634f015a45d82aa53f2bb849cb4b",
+  "20189bc5a0c3103dadce189467d910fad2cfebae",
+  "1637382028b2c3fa81d35e530389ced45b9a3b82",
+  "071a027955d22add47890ab35666ca7f4045a19d"
+ ],
+ "stars": 102,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "project_id": "fivetran__dbt_microsoft_ads_source",
+ "repo_url": "https://github.com/fivetran/dbt_microsoft_ads_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:30:39Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "571c5aa71d746da310ac808069864bcffc1c58e2",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "microsoft_ads_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "microsoft_ads_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 48,
+   "first_commit": "2020-08-16T16:40:23",
+   "last_commit": "2025-06-25T14:32:16"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 48,
+ "history_start": "2020-08-16T16:40:23",
+ "history_end": "2025-06-25T14:32:16",
+ "n_snapshots_planned": 18,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 18,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:32:13Z",
+ "snapshot_shas": [
+  "ece642a675805e13c09a5fcf1a106f2690ccb539",
+  "e3db844de051d7eb91999249ccc4772e3d44fc2c",
+  "c829d945615592dd432dcc34e2af5cd54f2da774",
+  "dea9d1180e122899809a1c0ef73ed696155c846c",
+  "76ead1fe6c9a3d4384a95284e41ddbf38f6f806a",
+  "234f2c84e017279345b571037154e735cafe8739",
+  "844e830aa623fd58aa543c2909a13a43c8e490ba",
+  "f7cb5e27603004b0e680de3c493b181f56528db8",
+  "2927ce5876294f3a848fc70db64509236c58276f",
+  "029f362c5a1df567b736d563f45bad7d22c82edd",
+  "9f5fa3d865019fe17a3631c12e4c284cbe189172",
+  "5a8e19e7c1f678778d0b45644fc302f558864ea7",
+  "68ef8cf0b352f201641762d88eff24aec9cc0693",
+  "2a33d2498b9f543636d533793da72614315cf51a",
+  "4bea979ba92ef74b93fa07027166fb586f41a451",
+  "e2c7fcfc8541a9b78dcc902cb5e440b491ab0468",
+  "fcacfbb173afe836fd63ca53f6278bac2288ec43",
+  "dcc01c642686c4744a9ff7b8b68677b826fd58b9"
+ ],
+ "stars": 4,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

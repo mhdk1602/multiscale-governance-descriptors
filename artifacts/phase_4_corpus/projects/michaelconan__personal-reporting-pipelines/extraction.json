@@ -1,0 +1,82 @@
+{
+ "project_id": "michaelconan__personal-reporting-pipelines",
+ "repo_url": "https://github.com/michaelconan/personal-reporting-pipelines.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:36:03Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "0779ce66012234bcdccfba015310b2a9dbd032e0",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt/models",
+  "dbt/michael/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt/dbt_project.yml",
+  "name": "personal",
+  "chained_configs": [
+   "dbt/dbt_project.yml",
+   "dbt/michael/dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "dbt/models",
+   "dbt/michael/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt/dbt_project.yml",
+   "name": "personal",
+   "model_paths": [
+    "dbt/models"
+   ],
+   "commits_on_model_paths": 24,
+   "first_commit": "2025-08-11T20:41:36",
+   "last_commit": "2026-07-10T10:14:23"
+  },
+  {
+   "config": "dbt/michael/dbt_project.yml",
+   "name": "michael",
+   "model_paths": [
+    "dbt/michael/models"
+   ],
+   "commits_on_model_paths": 12,
+   "first_commit": "2025-01-21T22:43:24",
+   "last_commit": "2025-05-24T21:53:04"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 31,
+ "history_start": "2025-01-21T22:43:24",
+ "history_end": "2026-07-10T10:14:23",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:37:49Z",
+ "snapshot_shas": [
+  "299f9057decee73eb1bbb2419b8558cbf434a7c7",
+  "17427c9dc898fd8bc796d6e6de20cd00fc2effc7",
+  "0ffcce0dc68ba47b8b97b8134bd785d24fc593de",
+  "693b950b2327adffb36353ab3ef81177c21f8775",
+  "89dde3a70aa24e2de957f6c64bef5c540742c6ab",
+  "574c790eac3bd4492ae78e7d20f2a05758899717",
+  "05198519364416a4bf6db6ea10d01b73ea7756cc",
+  "931dd72d8c71f39969bcf09d5cd01e2189bbb219",
+  "f0cc280a4628ad06d8a4eda1744c58ef6927f355",
+  "98f34ecf0fb28049dd4a223b2954328e774476f4",
+  "fb3fdd4235a5387e9559b613394c4d181eb2c532",
+  "2f17d6ecc12cbc42f4d7585a97dcaf6207484ed3",
+  "fc9085dec87350e9ab9be523be102fb73d47f5df",
+  "9fa3526295a44b6e066bb84ad1189fae16eb6f08"
+ ],
+ "stars": 1,
+ "license": null,
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

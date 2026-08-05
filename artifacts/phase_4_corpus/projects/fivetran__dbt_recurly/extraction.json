@@ -1,0 +1,68 @@
+{
+ "project_id": "fivetran__dbt_recurly",
+ "repo_url": "https://github.com/fivetran/dbt_recurly.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:31:39Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "b8b545c7fe0e2078a6c946b20c0ed01d5905e332",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "recurly",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "recurly",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 57,
+   "first_commit": "2022-09-13T02:30:28",
+   "last_commit": "2026-06-22T19:55:03"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 57,
+ "history_start": "2022-09-13T02:30:28",
+ "history_end": "2026-06-22T19:55:03",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:33:05Z",
+ "snapshot_shas": [
+  "f803e3649609e4bc5fd28d5bde0cb74a5c0f7f5d",
+  "294cee0ed7f71a3b29d1facb79403da0e7fe8e25",
+  "f013aeb6a7d1b580f3dae18e2135d8398bd41684",
+  "298c74298cfee34a532be09cc3a044307a94eaf8",
+  "8efa48162ed2a20f8ba203f4ba88de3cd007b8c6",
+  "6d439ce6cf6cab9f9b2ce14e58b6da8c67ae6574",
+  "b1dbf91e87a193c7ab790a03bc66fe7cd242fc21",
+  "ebb30efa28c902db48b676bd7b18939a6c0aea8d",
+  "dd8415a0dbecfc3b1f886cc3c43cc1491118f8de",
+  "bd6195ff5b6ed5318fac2e6c81215ec63ee01a27",
+  "8e49f280be5090f2938a8d9ab4abf3ba508b9568",
+  "b8b545c7fe0e2078a6c946b20c0ed01d5905e332"
+ ],
+ "stars": 4,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

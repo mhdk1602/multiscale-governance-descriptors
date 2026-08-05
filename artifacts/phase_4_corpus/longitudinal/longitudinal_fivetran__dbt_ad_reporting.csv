@@ -1,0 +1,33 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_ad_reporting,2020-08-24T12:32:31,559a62934543b4814632ed1a9874f59df9a005a2,docs on docs on docs,4,0,True,,,,,,,,4,0.25,1.0,3,0,0,1,4,1
+fivetran__dbt_ad_reporting,2020-11-24T08:40:46,5ecbe4e2631083d4efb382d74e4192c6c4426045,"fixing data types, apparently",6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,5,0,0,1,6,1
+fivetran__dbt_ad_reporting,2021-01-08T16:52:25,a48b2e3f7c24b88f592eb0d12f0df385fd2534f5,some updates + facebook ads,7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,6,0,0,1,7,1
+fivetran__dbt_ad_reporting,2021-02-26T13:12:28,a6d4b372fdfbd1526b33f73348083413b8feb41d,review edits,7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,6,0,0,1,7,1
+fivetran__dbt_ad_reporting,2021-04-02T09:13:21,78c25754480fa89d2cc71a3ab4548679a011a715,adding snapchat ads,8,0,False,,,0.0,0.0,0.0,0.0,0.0,8,0.125,1.0,7,0,0,1,8,1
+fivetran__dbt_ad_reporting,2021-08-17T10:30:07,b3af8dbfe56a60443334675c9859a8920584677d,LinkedIn Ads hierarchy documenation,8,0,False,,,0.0,0.0,0.0,0.0,0.0,8,0.125,1.0,7,0,0,1,8,1
+fivetran__dbt_ad_reporting,2021-10-05T16:18:00,079765c3edc8f81444df5e0e5eedd814a9f1da48,resolve merge conflicts,8,0,False,,,0.0,0.0,0.0,0.0,0.0,8,0.125,1.0,7,0,0,1,8,1
+fivetran__dbt_ad_reporting,2021-11-29T12:53:57,5738776f07298d5fcb4445ecd883acde41de68a2,Fixed Data Type,8,0,False,,,0.0,0.0,0.0,0.0,0.0,8,0.125,1.0,7,0,0,1,8,1
+fivetran__dbt_ad_reporting,2022-01-05T16:32:56,7a567d250de75e156cd54677ed85f6c80bf37093,update tiktok,9,0,False,,,0.0,0.0,0.0,0.0,0.0,9,0.111111,1.0,8,0,0,1,9,1
+fivetran__dbt_ad_reporting,2022-06-15T10:54:22,3d729c4e842b5f038106d10845b35eef457b2564,feature/google-ads-api-default,9,0,False,,,0.0,0.0,0.0,0.0,0.0,9,0.111111,1.0,8,0,0,1,9,1
+fivetran__dbt_ad_reporting,2022-08-10T10:27:52,d12ddf88e2404e1ad9ae5d68746c2bdcbbbbff77,keyword vars,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2022-09-08T15:07:49,2ac8500c2c2435590a25b8d68a3c9a86937d8a4e,defining metrics to use in hex,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2022-09-27T14:01:04,3398f07c74091a41faef28d49e5959366ccdfae4,remove metrics dep,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2022-11-07T15:08:29,0d71146a929d94dbeb755556fc457ef66b3022e6,updating twitter keyword vars,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2022-11-30T16:02:37,d821b89fe3110ebe83e6dc4a8e481d420779b63f,copy joe PR,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2022-12-19T21:26:43,316dd1fc0d32ea932c340ba11d0e1499cca5c1a2,docs regen,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2023-01-12T17:31:52,57b39e63ae97d25772c8e41e366863e30d596471,final revisions,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2023-02-16T14:41:55,24920e6a99950dbf11bdc884b4cdf229d7d5008c,merging snapchat updates,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2023-04-06T17:59:42,785fe47e3dbf0b04c625eb8b7e77ed02e0c504c6,chore: use persist_pass_through_columns macro,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2023-05-24T09:41:59,213e378b5f6b4e6a80617980018f6ef04633e90c,feature/pinterest-keywords-variable-addition,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2023-06-08T14:23:50,f44f96f57d6493d9d7449258a0043af136afa4f0,Merge branch 'release/v1.4.0' into feature/pinterest-keywords-variable-addition,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2023-08-03T09:10:00,2e4d6476864a681075019e1bae773cac7ec8b040,update spec for 1.6,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,0,7,0,7,14,1
+fivetran__dbt_ad_reporting,2023-08-09T17:48:13,2a821d7c80be542704ad5fcc7a9b90e08788870a,Merge branch 'main' into js/update-metrics-spec,15,7,False,0.9285714285714286,1,0.5333333333333333,2.0,1.0,0.0,0.0,8,0.133333,0.066667,0,7,0,8,15,1
+fivetran__dbt_ad_reporting,2023-09-15T16:43:29,85ae14bff342e132b77db015ea50575346b1f62f,feature/add-union-schema),15,7,False,0.9285714285714286,1,0.5333333333333333,2.0,1.0,0.0,0.0,8,0.133333,0.066667,0,7,0,8,15,1
+fivetran__dbt_ad_reporting,2023-10-06T16:48:53,e6a0b58b5dffdb3394a940d1c929b8b0ad7fb6f0,semantic model name,15,7,False,0.9285714285714286,1,0.5333333333333333,2.0,1.0,0.0,0.0,8,0.133333,0.066667,0,7,0,8,15,1
+fivetran__dbt_ad_reporting,2024-04-30T13:07:23,f880560ab8ebe9440401f111569ef1d4cd1b290f,Fix/update ad account id test severity (#110),15,7,False,0.9285714285714286,1,0.5333333333333333,2.0,1.0,0.0,0.0,8,0.133333,0.066667,0,7,0,8,15,1
+fivetran__dbt_ad_reporting,2024-11-20T08:23:28,ab30c27c3995494d037d03c8479c82b8f1b940c9,Fold in conversion metrics from upstream releases (#122),15,7,False,0.9285714285714286,1,0.5333333333333333,2.0,1.0,0.0,0.0,8,0.133333,0.066667,0,7,0,8,15,1
+fivetran__dbt_ad_reporting,2025-02-20T09:37:42,7eff33d2a0fff3564e4a430c7f19d4c7211e2d0a,Update ad report with Snapchat ad squad & campaign details (#133),15,7,False,0.9285714285714286,1,0.5333333333333333,2.0,1.0,0.0,0.0,8,0.133333,0.066667,0,7,0,8,15,1
+fivetran__dbt_ad_reporting,2025-03-27T12:49:27,6d40324b2a6524902b9c965a17012318a256a1c2,Apple msft facebook updates (#137),15,7,False,0.9285714285714286,1,0.5333333333333333,2.0,1.0,0.0,0.0,8,0.133333,0.066667,0,7,0,8,15,1
+fivetran__dbt_ad_reporting,2025-05-22T11:34:20,79d724ee9434f5d7e929125723bc0a7bfba5646b,Add geo reports + fold in Google Ads search report (#144),20,10,False,0.8571428571428571,1,0.5,0.9999999999999997,0.3333333333333332,0.0,0.0,10,0.15,0.05,0,10,0,10,20,1
+fivetran__dbt_ad_reporting,2025-08-18T21:59:50,553ea92acb3707a87d29b409016af5e523fb49d8,Remove combo tests and move `loaded_at_field` (#161),20,10,False,0.8571428571428571,1,0.5,0.9999999999999997,0.3333333333333332,0.0,0.0,10,0.15,0.05,0,10,0,10,20,1
+fivetran__dbt_ad_reporting,2026-05-18T11:35:53,0e0beb891c4d1d7f8ee9471efbcfa9e331cd2b80,feature/update_tiktok_ads_version (#176),20,10,False,0.8571428571428571,1,0.5,0.9999999999999997,0.3333333333333332,0.0,0.0,10,0.15,0.05,0,10,0,10,20,1

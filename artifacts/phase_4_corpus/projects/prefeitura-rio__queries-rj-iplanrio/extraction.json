@@ -1,0 +1,72 @@
+{
+ "project_id": "prefeitura-rio__queries-rj-iplanrio",
+ "repo_url": "https://github.com/prefeitura-rio/queries-rj-iplanrio.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:37:08Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "874f335db068bb1b7cae8f7bec73c5164fe5ed5a",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "queries",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "queries",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 780,
+   "first_commit": "2025-03-25T15:58:09",
+   "last_commit": "2026-08-04T16:04:35"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 780,
+ "history_start": "2025-03-25T15:58:09",
+ "history_end": "2026-08-04T16:04:35",
+ "n_snapshots_planned": 17,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 17,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:38:03Z",
+ "snapshot_shas": [
+  "d95c0ddfdb3e513d3083d71b491f03d9cb7ee97c",
+  "9966dc7a793fbac2123881b8dd610e338e274540",
+  "0b1f5d8494d9b9be68a7d27f7616d3580fb6d605",
+  "5a9c73be4535c94c63f4d5420d133085af6f2fd5",
+  "92e6a76a27653cb26cf332b4c9d166b0c5264f49",
+  "8b768e029e79ac134030002e54d450561f119836",
+  "bd37bcf405a34a0212fe04ae1b02421679d47458",
+  "00f444de689814a3172e96703d42c2862edefcbf",
+  "6f54b40f5a3e3a6c80c9955b26f71b8dad3e1cf9",
+  "efa013a1cdb8265c5050990c2d1bad5300fbd830",
+  "f9817f649285fead85e7d9fbaf80fdfcaeaeb4e3",
+  "269e6428fb91915174a33a204b92f7fcb28039e4",
+  "5cfcd7d5b6de60442c7bfe9729e11283fc1e0ab6",
+  "e0db84237d5a05859c7d35b9b298c348e8cc13b2",
+  "29c98073454870d4e60aaaafa998b76efd5102ad",
+  "c1cd086cb1549094bfb133e329a26aa972605a7e",
+  "874f335db068bb1b7cae8f7bec73c5164fe5ed5a"
+ ],
+ "stars": 2,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

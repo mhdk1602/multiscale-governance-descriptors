@@ -1,0 +1,489 @@
+project_id,repo_url,snapshots_obtained,peak_nodes,extraction_status,exclusion_reason,strata
+1bk__simple-airports-analysis,https://github.com/1bk/simple-airports-analysis.git,3,5,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+3lvia__edna-dbt-library,https://github.com/3lvia/edna-dbt-library.git,0,0,failed,no commits touch any declared model path,S3_code
+AltimateAI__datapilot-cli,https://github.com/AltimateAI/datapilot-cli.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt;S2_topic_dbt-core
+AltimateAI__vscode-dbt-power-user,https://github.com/AltimateAI/vscode-dbt-power-user.git,2,16,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt;S2_topic_dbt-core
+AnveshJarabani__END-END-ETL-PIPELINES,https://github.com/AnveshJarabani/END-END-ETL-PIPELINES.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+Arturomtz8__de-zoomcamp-project,https://github.com/Arturomtz8/de-zoomcamp-project.git,1,3,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+AxelThevenot__dbt-assertions,https://github.com/AxelThevenot/dbt-assertions.git,0,0,failed,every sampled commit yielded zero models,S3_code
+Bilbottom__dbt-unit-test-coverage,https://github.com/Bilbottom/dbt-unit-test-coverage.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+Brucelee352__Kroger_API_Pipeline,https://github.com/Brucelee352/Kroger_API_Pipeline.git,3,9,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt-core
+C00ldudeNoonan__economic-data-project,https://github.com/C00ldudeNoonan/economic-data-project.git,3,150,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+ClickHouse__clickhouse-academy,https://github.com/ClickHouse/clickhouse-academy.git,1,10,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+ClickHouse__dbt-clickhouse,https://github.com/ClickHouse/dbt-clickhouse.git,2,21,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+Cocoon-Data-Transformation__cocoon,https://github.com/Cocoon-Data-Transformation/cocoon.git,2,53,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+CulleyHarrelson__RussiaUkraineWarEquipmentLosses,https://github.com/CulleyHarrelson/RussiaUkraineWarEquipmentLosses.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+DJLemkes__dbt-diagrams,https://github.com/DJLemkes/dbt-diagrams.git,2,5,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt
+DalgoT4D__dbt_cmhlp,https://github.com/DalgoT4D/dbt_cmhlp.git,8,39,success,"only 8 monthly snapshots, below the 12 minimum",S3_code
+DalgoT4D__dbt_lahi,https://github.com/DalgoT4D/dbt_lahi.git,8,91,success,"only 8 monthly snapshots, below the 12 minimum",S3_code
+Dandandan__dbt-athena,https://github.com/Dandandan/dbt-athena.git,0,0,failed,no commits touch any declared model path,S3_code
+DataEngineersNZ__dbt-snowflake-datops-materilizations,https://github.com/DataEngineersNZ/dbt-snowflake-datops-materilizations.git,0,0,failed,no commits touch any declared model path,S3_code
+DataRecce__recce,https://github.com/DataRecce/recce.git,0,0,failed,no commits touch any declared model path,S2_topic_analytics-engineering;S2_topic_dbt
+DataTalksClub__data-engineering-zoomcamp,https://github.com/DataTalksClub/data-engineering-zoomcamp.git,7,8,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt
+Datateer__datateer-dbt,https://github.com/Datateer/datateer-dbt.git,0,0,failed,every sampled commit yielded zero models,S3_code
+Datavault-UK__automate-dv,https://github.com/Datavault-UK/automate-dv.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+Datavault-UK__automate-dv-demo,https://github.com/Datavault-UK/automate-dv-demo.git,7,31,success,"only 7 monthly snapshots, below the 12 minimum",S3_code
+DelphinKdl__DelphinKdl,https://github.com/DelphinKdl/DelphinKdl.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+DevDizzle__gammarips-engine,https://github.com/DevDizzle/gammarips-engine.git,2,27,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+DiscoverTalent__Excel,https://github.com/DiscoverTalent/Excel.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering
+Divergent-Insights__dbt-dataquality,https://github.com/Divergent-Insights/dbt-dataquality.git,1,4,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+DominikGolebiewski__dbt-macro-polo,https://github.com/DominikGolebiewski/dbt-macro-polo.git,0,0,failed,no commits touch any declared model path,S3_code
+EJOOSTEROP__mimosa,https://github.com/EJOOSTEROP/mimosa.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt
+Embucket__embucket-labs,https://github.com/Embucket/embucket-labs.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S3_code
+FlorianWilhelm__wald-stack-demo,https://github.com/FlorianWilhelm/wald-stack-demo.git,4,15,success,"only 4 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+France-Data-Reseau__fdr-appuiscommuns,https://github.com/France-Data-Reseau/fdr-appuiscommuns.git,8,67,success,"only 8 monthly snapshots, below the 12 minimum",S3_code
+GClunies__reflekt,https://github.com/GClunies/reflekt.git,4,11,partial,"only 4 monthly snapshots, below the 12 minimum",S2_topic_dbt
+GeneralMills__gmi_common_dbt_utils,https://github.com/GeneralMills/gmi_common_dbt_utils.git,0,0,failed,no commits touch any declared model path,S3_code
+GinaGrg1__all_that_dbt,https://github.com/GinaGrg1/all_that_dbt.git,1,6,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+GoogleCloudPlatform__reg-reporting-blueprint,https://github.com/GoogleCloudPlatform/reg-reporting-blueprint.git,6,22,success,"only 6 monthly snapshots, below the 12 minimum",S3_code
+GoogleCloudPlatform__serverless-expeditions,https://github.com/GoogleCloudPlatform/serverless-expeditions.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+Hamagistral__de-zoomcamp-ui,https://github.com/Hamagistral/de-zoomcamp-ui.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+Hiflylabs__awesome-dbt,https://github.com/Hiflylabs/awesome-dbt.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering;S2_topic_dbt
+IBM__dbt-watsonx-spark,https://github.com/IBM/dbt-watsonx-spark.git,0,0,failed,no commits touch any declared model path,S3_code
+IIBenII__backstage-plugin-dbt,https://github.com/IIBenII/backstage-plugin-dbt.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+InfuseAI__piperider,https://github.com/InfuseAI/piperider.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+Insight-Services-APAC__APAC-Capability-DAI-DbtFabricSparkNb,https://github.com/Insight-Services-APAC/APAC-Capability-DAI-DbtFabricSparkNb.git,4,18,success,"only 4 monthly snapshots, below the 12 minimum",S3_code
+Instawork__dbterra,https://github.com/Instawork/dbterra.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+Inzhenerka__dbt-scooters,https://github.com/Inzhenerka/dbt-scooters.git,5,39,success,"only 5 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+Jetty2307__Chicago-BikeSharing,https://github.com/Jetty2307/Chicago-BikeSharing.git,3,5,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+JohnMiner3__community-work,https://github.com/JohnMiner3/community-work.git,2,47,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+KonstantinData__Bootcamp-Analytics,https://github.com/KonstantinData/Bootcamp-Analytics.git,1,2,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+LAVI-USP__DBT-Reconstruction,https://github.com/LAVI-USP/DBT-Reconstruction.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+Levers-Labs__SOMA-B2B-SaaS,https://github.com/Levers-Labs/SOMA-B2B-SaaS.git,2,115,success,"only 2 monthly snapshots, below the 12 minimum",S1_curated
+LewisDavies__upstream-prod,https://github.com/LewisDavies/upstream-prod.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+LienBosmans__stack-t,https://github.com/LienBosmans/stack-t.git,6,54,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+Luis20matias__Data_engineer_projects,https://github.com/Luis20matias/Data_engineer_projects.git,3,28,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+MTSWebServices__data-rentgen,https://github.com/MTSWebServices/data-rentgen.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+MarkPhamm__skytrax_reviews,https://github.com/MarkPhamm/skytrax_reviews.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+MarkPhamm__skytrax_reviews_transformation,https://github.com/MarkPhamm/skytrax_reviews_transformation.git,4,10,partial,"only 4 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+MaterializeInc__materialize-dbt-utils,https://github.com/MaterializeInc/materialize-dbt-utils.git,0,0,failed,no commits touch any declared model path,S3_code
+MatsMoll__aligned,https://github.com/MatsMoll/aligned.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+Matts52__dbt-ml-inline-preprocessing,https://github.com/Matts52/dbt-ml-inline-preprocessing.git,0,0,failed,every sampled commit yielded zero models,S3_code
+MeltanoLabs__dbt-kustomer,https://github.com/MeltanoLabs/dbt-kustomer.git,1,28,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+MeltanoLabs__tap-dbt,https://github.com/MeltanoLabs/tap-dbt.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+Minres__DBT-RISE-Core,https://github.com/Minres/DBT-RISE-Core.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+Minres__DBT-RISE-RISCV,https://github.com/Minres/DBT-RISE-RISCV.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+Minres__HIFIVE1-VP,https://github.com/Minres/HIFIVE1-VP.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+Montreal-Analytics__dbt-snowflake-utils,https://github.com/Montreal-Analytics/dbt-snowflake-utils.git,0,0,failed,every sampled commit yielded zero models,S3_code
+MrSuiChuan__bigdata_learning,https://github.com/MrSuiChuan/bigdata_learning.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+Multiwoven__multiwoven,https://github.com/Multiwoven/multiwoven.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+NYCPlanning__anex-summit-2024-demo,https://github.com/NYCPlanning/anex-summit-2024-demo.git,1,8,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+OpenLineage__compatibility-tests,https://github.com/OpenLineage/compatibility-tests.git,1,3,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+OpenSourcePolitics__dbt_decidim,https://github.com/OpenSourcePolitics/dbt_decidim.git,3,24,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+PRQL__dbt-prql,https://github.com/PRQL/dbt-prql.git,2,1,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt
+PicnicSupermarket__dbt-score,https://github.com/PicnicSupermarket/dbt-score.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt;S2_topic_dbt-core
+ProgrammingOperative__elt_with_scalable_data_warehouse,https://github.com/ProgrammingOperative/elt_with_scalable_data_warehouse.git,1,6,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+Ramonalyst__gz-dbt-repository,https://github.com/Ramonalyst/gz-dbt-repository.git,1,15,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+ScalefreeCOM__datavault4dbt,https://github.com/ScalefreeCOM/datavault4dbt.git,1,2,partial,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+Snehiths19__proj_Bigquery_Amp,https://github.com/Snehiths19/proj_Bigquery_Amp.git,2,13,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+Snowflake-Labs__dbt_constraints,https://github.com/Snowflake-Labs/dbt_constraints.git,0,0,failed,every sampled commit yielded zero models,S3_code
+Snowflake-Labs__sf-samples,https://github.com/Snowflake-Labs/sf-samples.git,1,72,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+SpotOnInc__dbt_object_mgmt,https://github.com/SpotOnInc/dbt_object_mgmt.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt;S3_code
+StarRocks__dbt-starrocks,https://github.com/StarRocks/dbt-starrocks.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+Stevedow99__dbt-cloud-cancel-running-ci-job-action,https://github.com/Stevedow99/dbt-cloud-cancel-running-ci-job-action.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+Stevedow99__dbt_databricks_demo_sandbox,https://github.com/Stevedow99/dbt_databricks_demo_sandbox.git,2,19,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+Stevedow99__sample-dbt-big-query-project,https://github.com/Stevedow99/sample-dbt-big-query-project.git,5,24,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+StructuredLabs__preswald,https://github.com/StructuredLabs/preswald.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering
+SulmanK__reddit_ai_pulse_cloud_public,https://github.com/SulmanK/reddit_ai_pulse_cloud_public.git,1,3,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+TasmanAnalytics__tasman-dbt-mta,https://github.com/TasmanAnalytics/tasman-dbt-mta.git,16,5,success,"peak lineage size 5 nodes, below the 10 minimum",S3_code
+TasmanAnalytics__tasman-dbt-revenuecat,https://github.com/TasmanAnalytics/tasman-dbt-revenuecat.git,8,13,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+TasmanAnalytics__tasman-dbt-utils,https://github.com/TasmanAnalytics/tasman-dbt-utils.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+Teradata__dbt-teradata,https://github.com/Teradata/dbt-teradata.git,3,19,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+Teradata__dbt-teradata-utils,https://github.com/Teradata/dbt-teradata-utils.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+Toloka__dbt-af,https://github.com/Toloka/dbt-af.git,3,12,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+Tomme__dbt-athena,https://github.com/Tomme/dbt-athena.git,0,0,failed,no commits touch any declared model path,S3_code
+YukiTechnologies__yuki-snowflake-dbt-tags,https://github.com/YukiTechnologies/yuki-snowflake-dbt-tags.git,0,0,failed,no commits touch any declared model path,S3_code
+aaronsime__cloud-warehouse-snowflake,https://github.com/aaronsime/cloud-warehouse-snowflake.git,3,13,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+abhisheks-prophecy__sql_snowflake_public_parent,https://github.com/abhisheks-prophecy/sql_snowflake_public_parent.git,3,1,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+achilala__dbt-atp-tour,https://github.com/achilala/dbt-atp-tour.git,8,10,success,"only 8 monthly snapshots, below the 12 minimum",S3_code
+adam-staros95__dbt-access-management,https://github.com/adam-staros95/dbt-access-management.git,0,0,failed,no commits touch any declared model path,S3_code
+addhen__kanalytics,https://github.com/addhen/kanalytics.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering
+af-ryb__dbt-bq-connector,https://github.com/af-ryb/dbt-bq-connector.git,0,0,failed,no commits touch any declared model path,S3_code
+airbytecontributors__airbyte-integrations,https://github.com/airbytecontributors/airbyte-integrations.git,0,0,failed,no commits touch any declared model path,S3_code
+airbytehq__quickstarts,https://github.com/airbytehq/quickstarts.git,5,86,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+aiven__aiven-examples,https://github.com/aiven/aiven-examples.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S3_code
+aiwithqasim__cloud-data-engineering,https://github.com/aiwithqasim/cloud-data-engineering.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+aliyun__dbt-maxcompute,https://github.com/aliyun/dbt-maxcompute.git,1,15,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+analyst-collective__analytics,https://github.com/analyst-collective/analytics.git,4,35,partial,"only 4 monthly snapshots, below the 12 minimum",S3_code
+anna-geller__dataflow-ops,https://github.com/anna-geller/dataflow-ops.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering
+apache__hudi,https://github.com/apache/hudi.git,3,8,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+apachehudi-ci__hudi-branch-ci,https://github.com/apachehudi-ci/hudi-branch-ci.git,2,8,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+apachehudi-ci__hudi-mirror,https://github.com/apachehudi-ci/hudi-mirror.git,3,8,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+aphp__IG-fhir-dm,https://github.com/aphp/IG-fhir-dm.git,1,22,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+arnoN7__dbt-incremental-stream,https://github.com/arnoN7/dbt-incremental-stream.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt;S3_code
+atlanhq__atlan-action,https://github.com/atlanhq/atlan-action.git,1,7,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+atlanhq__dbt-action,https://github.com/atlanhq/dbt-action.git,1,7,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+atommych__tf-athena-dbt-elementary,https://github.com/atommych/tf-athena-dbt-elementary.git,5,3,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+aws-samples__dbt-glue,https://github.com/aws-samples/dbt-glue.git,1,1,partial,"only 1 monthly snapshots, below the 12 minimum",S3_code
+aws-samples__emr-serverless-samples,https://github.com/aws-samples/emr-serverless-samples.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+bbrewington__software-data-and-ai-tools,https://github.com/bbrewington/software-data-and-ai-tools.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+bcg-x-engineering__bcg-x-DE-training,https://github.com/bcg-x-engineering/bcg-x-DE-training.git,3,6,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+bcodell__dbt-activity-schema,https://github.com/bcodell/dbt-activity-schema.git,0,0,failed,no commits touch any declared model path,S3_code
+beehive-lab__mambo,https://github.com/beehive-lab/mambo.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+benitomartin__de-ch-weather,https://github.com/benitomartin/de-ch-weather.git,1,4,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+beyond-all-reason__data-processing,https://github.com/beyond-all-reason/data-processing.git,5,14,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+bgarcevic__danish-democracy-data,https://github.com/bgarcevic/danish-democracy-data.git,5,26,success,"only 5 monthly snapshots, below the 12 minimum",S1_curated
+bigdatapassionpl__lakehouse-analytics,https://github.com/bigdatapassionpl/lakehouse-analytics.git,2,5,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+billwallis__dbt-py,https://github.com/billwallis/dbt-py.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+binste__dbt-ibis,https://github.com/binste/dbt-ibis.git,2,3,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt
+bitpicky__dbt-sugar,https://github.com/bitpicky/dbt-sugar.git,5,3,success,"only 5 monthly snapshots, below the 12 minimum",S2_topic_dbt
+boccileonardo__f1toolbox,https://github.com/boccileonardo/f1toolbox.git,2,25,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+brabster__pypi_vulnerabilities,https://github.com/brabster/pypi_vulnerabilities.git,5,33,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+brooklyn-data__dbtenv,https://github.com/brooklyn-data/dbtenv.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+buremba__universql,https://github.com/buremba/universql.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+cagov__caldata-infrastructure-template,https://github.com/cagov/caldata-infrastructure-template.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S3_code
+calbergs__spotify-api,https://github.com/calbergs/spotify-api.git,9,12,success,"only 9 monthly snapshots, below the 12 minimum",S2_topic_dbt
+calogica__dbt-expectations,https://github.com/calogica/dbt-expectations.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+caretdev__dbt-iris,https://github.com/caretdev/dbt-iris.git,0,0,failed,no commits touch any declared model path,S3_code
+catalyst-cooperative__pudl,https://github.com/catalyst-cooperative/pudl.git,18,2,success,"peak lineage size 2 nodes, below the 10 minimum",S3_code
+cdmaza__car_scrape_pipeline,https://github.com/cdmaza/car_scrape_pipeline.git,1,3,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+centrefornetzero__domestic-heating-data,https://github.com/centrefornetzero/domestic-heating-data.git,5,13,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+chayansraj__Data-Pipeline-with-dbt-using-Airflow-on-GCP,https://github.com/chayansraj/Data-Pipeline-with-dbt-using-Airflow-on-GCP.git,1,7,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+chop-analytics__dbt-netezza,https://github.com/chop-analytics/dbt-netezza.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+civisanalytics__platform-code-examples,https://github.com/civisanalytics/platform-code-examples.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+clausherther__nfl-dbt,https://github.com/clausherther/nfl-dbt.git,4,13,success,"only 4 monthly snapshots, below the 12 minimum",S3_code
+claydsoncoelho__dbt_citi_bike,https://github.com/claydsoncoelho/dbt_citi_bike.git,3,8,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+cloudera__dbt-hive,https://github.com/cloudera/dbt-hive.git,0,0,failed,no commits touch any declared model path,S3_code
+cloudquery__policies,https://github.com/cloudquery/policies.git,10,18,success,"only 10 monthly snapshots, below the 12 minimum",S3_code
+cnstlungu__portable-data-stack-dagster,https://github.com/cnstlungu/portable-data-stack-dagster.git,3,22,partial,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+cocopo-codes__dbtTestExamples,https://github.com/cocopo-codes/dbtTestExamples.git,5,5,success,"only 5 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+codeforkjeff__dbt-sqlite,https://github.com/codeforkjeff/dbt-sqlite.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+community-tech-alliance__dbt-cta,https://github.com/community-tech-alliance/dbt-cta.git,0,0,failed,every sampled commit yielded zero models,S3_code
+conveyordata__data-product-portal,https://github.com/conveyordata/data-product-portal.git,1,3,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+crate__dbt-cratedb2,https://github.com/crate/dbt-cratedb2.git,1,1,partial,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+dagster-io__dagster-open-platform,https://github.com/dagster-io/dagster-open-platform.git,0,0,failed,every sampled commit yielded zero models,S1_curated;S3_code
+dagster-io__fake-star-detector,https://github.com/dagster-io/fake-star-detector.git,1,7,success,"only 1 monthly snapshots, below the 12 minimum",S1_curated
+dagster-io__mdsfest-opensource-mds,https://github.com/dagster-io/mdsfest-opensource-mds.git,2,4,success,"only 2 monthly snapshots, below the 12 minimum",S1_curated
+danthelion__twitter-trending,https://github.com/danthelion/twitter-trending.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S1_curated;S3_code
+dashbook__airberg,https://github.com/dashbook/airberg.git,0,0,failed,no commits touch any declared model path,S3_code
+data-mie__dbt-course,https://github.com/data-mie/dbt-course.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt
+data-mie__dbt-profiler,https://github.com/data-mie/dbt-profiler.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+databendcloud__dbt-databend,https://github.com/databendcloud/dbt-databend.git,0,0,failed,no commits touch any declared model path,S3_code
+databricks__cli,https://github.com/databricks/cli.git,1,2,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+databricks__dbt-databricks,https://github.com/databricks/dbt-databricks.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+databrickslabs__lakebridge,https://github.com/databrickslabs/lakebridge.git,0,0,failed,no commits touch any declared model path,S3_code
+datacoves__dbt-coves,https://github.com/datacoves/dbt-coves.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+datafold__data-diff,https://github.com/datafold/data-diff.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+dataforgoodfr__quotaclimat,https://github.com/dataforgoodfr/quotaclimat.git,12,9,success,"peak lineage size 9 nodes, below the 10 minimum",S3_code
+datagourmet__gz-dbt-repository,https://github.com/datagourmet/gz-dbt-repository.git,2,15,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+datalakehouse__dlh-salesforce-analytics-dbt,https://github.com/datalakehouse/dlh-salesforce-analytics-dbt.git,4,25,success,"only 4 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt;S3_code
+datawaves-xyz__dbt_datawaves_wallet_labels,https://github.com/datawaves-xyz/dbt_datawaves_wallet_labels.git,1,18,success,"only 1 monthly snapshots, below the 12 minimum",S1_curated;S2_topic_dbt;S3_code
+datnguye__dbt-resto,https://github.com/datnguye/dbt-resto.git,7,10,partial,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt
+datnguye__dbterd,https://github.com/datnguye/dbterd.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt-core
+datonic__datadex,https://github.com/datonic/datadex.git,17,6,partial,"peak lineage size 6 nodes, below the 10 minimum",S1_curated
+davidgasquez__datadex,https://github.com/davidgasquez/datadex.git,17,6,partial,"peak lineage size 6 nodes, below the 10 minimum",
+davidgasquez__dbt-docker,https://github.com/davidgasquez/dbt-docker.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+davidkhala__ETL,https://github.com/davidkhala/ETL.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+dbeatty10__dbt-mysql,https://github.com/dbeatty10/dbt-mysql.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-athena__athena-utils,https://github.com/dbt-athena/athena-utils.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-checkpoint__dbt-checkpoint,https://github.com/dbt-checkpoint/dbt-checkpoint.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+dbt-labs__Semantic-Layer-Online-Course,https://github.com/dbt-labs/Semantic-Layer-Online-Course.git,10,10,success,"only 10 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__ade-bench,https://github.com/dbt-labs/ade-bench.git,6,42,partial,"only 6 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__adwords,https://github.com/dbt-labs/adwords.git,8,8,success,"only 8 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__dbt-Explorer-on-demand-course-platform,https://github.com/dbt-labs/dbt-Explorer-on-demand-course-platform.git,4,12,success,"only 4 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__dbt-adapters,https://github.com/dbt-labs/dbt-adapters.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-labs__dbt-athena,https://github.com/dbt-labs/dbt-athena.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+dbt-labs__dbt-audit-helper,https://github.com/dbt-labs/dbt-audit-helper.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-labs__dbt-autofix,https://github.com/dbt-labs/dbt-autofix.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-labs__dbt-cloud-job-action,https://github.com/dbt-labs/dbt-cloud-job-action.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+dbt-labs__dbt-codegen,https://github.com/dbt-labs/dbt-codegen.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-labs__dbt-completion.bash,https://github.com/dbt-labs/dbt-completion.bash.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+dbt-labs__dbt-core,https://github.com/dbt-labs/dbt-core.git,10,2003,success,"only 10 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__dbt-database-adapter-scaffold,https://github.com/dbt-labs/dbt-database-adapter-scaffold.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-labs__dbt-external-tables,https://github.com/dbt-labs/dbt-external-tables.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-labs__dbt-extractor,https://github.com/dbt-labs/dbt-extractor.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+dbt-labs__dbt-fusion,https://github.com/dbt-labs/dbt-fusion.git,5,27,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__dbt-jobs-as-code,https://github.com/dbt-labs/dbt-jobs-as-code.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+dbt-labs__dbt-jsonschema,https://github.com/dbt-labs/dbt-jsonschema.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-labs__dbt-mcp,https://github.com/dbt-labs/dbt-mcp.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+dbt-labs__dbt-meshify,https://github.com/dbt-labs/dbt-meshify.git,8,10,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt;S2_topic_dbt-core
+dbt-labs__dbt-server,https://github.com/dbt-labs/dbt-server.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+dbt-labs__dbtcloud-terraforming,https://github.com/dbt-labs/dbtcloud-terraforming.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+dbt-labs__docs.getdbt.com,https://github.com/dbt-labs/docs.getdbt.com.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S3_code
+dbt-labs__jaffle-shop,https://github.com/dbt-labs/jaffle-shop.git,10,13,success,"only 10 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt;S3_code
+dbt-labs__jaffle-shop-generator,https://github.com/dbt-labs/jaffle-shop-generator.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering
+dbt-labs__jaffle_shop,https://github.com/dbt-labs/jaffle_shop.git,4,5,success,"only 4 monthly snapshots, below the 12 minimum",
+dbt-labs__jaffle_shop_duckdb,https://github.com/dbt-labs/jaffle_shop_duckdb.git,6,5,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt
+dbt-labs__metricflow,https://github.com/dbt-labs/metricflow.git,4,3,partial,"only 4 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__redshift,https://github.com/dbt-labs/redshift.git,7,24,success,"only 7 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__semantic-layer-llm-benchmarking,https://github.com/dbt-labs/semantic-layer-llm-benchmarking.git,2,30,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__snowflake-tpcds-core,https://github.com/dbt-labs/snowflake-tpcds-core.git,5,14,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+dbt-labs__spark-utils,https://github.com/dbt-labs/spark-utils.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+dbt-labs__stitch-utils,https://github.com/dbt-labs/stitch-utils.git,0,0,failed,no commits touch any declared model path,S3_code
+dbt-labs__terraform-provider-dbtcloud,https://github.com/dbt-labs/terraform-provider-dbtcloud.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+dbt-msft__dbt-sqlserver,https://github.com/dbt-msft/dbt-sqlserver.git,1,1,partial,"only 1 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt;S3_code
+dbt-msft__tsql-utils,https://github.com/dbt-msft/tsql-utils.git,0,0,failed,no commits touch any declared model path,S3_code
+dhodge250__beacon,https://github.com/dhodge250/beacon.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+diegoquintanav__pinochet-analyze-50,https://github.com/diegoquintanav/pinochet-analyze-50.git,6,13,success,"only 6 monthly snapshots, below the 12 minimum",S3_code
+dinhphuc-dan__airbyte-custom,https://github.com/dinhphuc-dan/airbyte-custom.git,0,0,failed,no commits touch any declared model path,S3_code
+djmikeale__quack,https://github.com/djmikeale/quack.git,5,10,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+dlt-hub__rasa_semantic_schema,https://github.com/dlt-hub/rasa_semantic_schema.git,4,19,success,"only 4 monthly snapshots, below the 12 minimum",S3_code
+dribia__dbt2pdf,https://github.com/dribia/dbt2pdf.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+duckdb__dbt-duckdb,https://github.com/duckdb/dbt-duckdb.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+dwreeves__dbt_linreg,https://github.com/dwreeves/dbt_linreg.git,0,0,failed,no commits touch any declared model path,S3_code
+edanalytics__dbt_synth_data,https://github.com/edanalytics/dbt_synth_data.git,3,27,partial,"only 3 monthly snapshots, below the 12 minimum",S3_code
+edanalytics__edu_project_template,https://github.com/edanalytics/edu_project_template.git,0,0,failed,every sampled commit yielded zero models,S3_code
+edgarrmondragon__meltano-dogfood,https://github.com/edgarrmondragon/meltano-dogfood.git,8,4,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt
+elementary-data__elementary-tutorial,https://github.com/elementary-data/elementary-tutorial.git,5,7,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+emilyriederer__dbtplyr,https://github.com/emilyriederer/dbtplyr.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt;S3_code
+emtinanseo__Traffic-Data-Warehousing,https://github.com/emtinanseo/Traffic-Data-Warehousing.git,1,4,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+engelanna__airflow_demon_summoning,https://github.com/engelanna/airflow_demon_summoning.git,1,8,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+entechlog__dbt-examples,https://github.com/entechlog/dbt-examples.git,11,58,success,"only 11 monthly snapshots, below the 12 minimum",S3_code
+entechlog__dbt-snow-mask,https://github.com/entechlog/dbt-snow-mask.git,0,0,failed,no commits touch any declared model path,S3_code
+evans-nyang__healthcare-facilities,https://github.com/evans-nyang/healthcare-facilities.git,1,11,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+evidence-dev__evidence,https://github.com/evidence-dev/evidence.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+exasol__dbt-exasol,https://github.com/exasol/dbt-exasol.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+fabiofachini__receita-federal,https://github.com/fabiofachini/receita-federal.git,7,47,success,"only 7 monthly snapshots, below the 12 minimum",S3_code
+fabrice-etanchaud__dbt-dremio,https://github.com/fabrice-etanchaud/dbt-dremio.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+fal-ai__dbt-cloud-action,https://github.com/fal-ai/dbt-cloud-action.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+fal-ai__dbt-fal,https://github.com/fal-ai/dbt-fal.git,6,50,partial,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt
+feldera__feldera,https://github.com/feldera/feldera.git,0,0,failed,no commits touch any declared model path,S3_code
+fgarofalo56__csa-inabox,https://github.com/fgarofalo56/csa-inabox.git,1,54,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+firebolt-db__dbt-firebolt,https://github.com/firebolt-db/dbt-firebolt.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+fivetran__dbt_amazon_ads,https://github.com/fivetran/dbt_amazon_ads.git,6,30,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_amazon_ads_source,https://github.com/fivetran/dbt_amazon_ads_source.git,6,22,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_amplitude,https://github.com/fivetran/dbt_amplitude.git,12,9,success,"peak lineage size 9 nodes, below the 10 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_amplitude_source,https://github.com/fivetran/dbt_amplitude_source.git,7,4,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_app_reporting,https://github.com/fivetran/dbt_app_reporting.git,4,18,success,"only 4 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_apple_search_ads,https://github.com/fivetran/dbt_apple_search_ads.git,10,26,success,"only 10 monthly snapshots, below the 12 minimum",S3_code
+fivetran__dbt_aws_cloud_cost,https://github.com/fivetran/dbt_aws_cloud_cost.git,4,6,success,"only 4 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_facebook_ads_creative_history,https://github.com/fivetran/dbt_facebook_ads_creative_history.git,3,8,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_facebook_pages,https://github.com/fivetran/dbt_facebook_pages.git,8,11,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_facebook_pages_source,https://github.com/fivetran/dbt_facebook_pages_source.git,7,8,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_fivetran_utils,https://github.com/fivetran/dbt_fivetran_utils.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+fivetran__dbt_google_play,https://github.com/fivetran/dbt_google_play.git,7,43,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_google_play_source,https://github.com/fivetran/dbt_google_play_source.git,9,34,success,"only 9 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_greenhouse,https://github.com/fivetran/dbt_greenhouse.git,8,79,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_instagram_business,https://github.com/fivetran/dbt_instagram_business.git,8,7,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_instagram_business_source,https://github.com/fivetran/dbt_instagram_business_source.git,9,6,success,"only 9 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_klaviyo_source,https://github.com/fivetran/dbt_klaviyo_source.git,8,12,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_lever,https://github.com/fivetran/dbt_lever.git,6,64,partial,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_lever_source,https://github.com/fivetran/dbt_lever_source.git,10,48,partial,"only 10 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_linkedin_pages,https://github.com/fivetran/dbt_linkedin_pages.git,10,23,success,"only 10 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_linkedin_pages_source,https://github.com/fivetran/dbt_linkedin_pages_source.git,6,12,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_mailchimp_source,https://github.com/fivetran/dbt_mailchimp_source.git,11,24,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_mixpanel,https://github.com/fivetran/dbt_mixpanel.git,21,8,success,"peak lineage size 8 nodes, below the 10 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_pardot,https://github.com/fivetran/dbt_pardot.git,7,24,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_pardot_source,https://github.com/fivetran/dbt_pardot_source.git,6,16,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_pendo,https://github.com/fivetran/dbt_pendo.git,10,68,success,"only 10 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_pendo_source,https://github.com/fivetran/dbt_pendo_source.git,9,34,success,"only 9 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_qualtrics,https://github.com/fivetran/dbt_qualtrics.git,8,49,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_qualtrics_source,https://github.com/fivetran/dbt_qualtrics_source.git,8,38,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_recharge_source,https://github.com/fivetran/dbt_recharge_source.git,8,34,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_recurly_source,https://github.com/fivetran/dbt_recurly_source.git,9,36,success,"only 9 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_reddit_ads,https://github.com/fivetran/dbt_reddit_ads.git,10,34,success,"only 10 monthly snapshots, below the 12 minimum",S3_code
+fivetran__dbt_salesforce_formula_utils,https://github.com/fivetran/dbt_salesforce_formula_utils.git,0,0,failed,no commits touch any declared model path,S3_code
+fivetran__dbt_salesforce_marketing_cloud,https://github.com/fivetran/dbt_salesforce_marketing_cloud.git,6,25,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_sap,https://github.com/fivetran/dbt_sap.git,11,182,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_servicenow,https://github.com/fivetran/dbt_servicenow.git,11,39,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_shopify_holistic_reporting,https://github.com/fivetran/dbt_shopify_holistic_reporting.git,11,7,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_social_media_reporting,https://github.com/fivetran/dbt_social_media_reporting.git,12,6,success,"peak lineage size 6 nodes, below the 10 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_starter_project,https://github.com/fivetran/dbt_starter_project.git,3,44,partial,"only 3 monthly snapshots, below the 12 minimum",S3_code
+fivetran__dbt_twilio,https://github.com/fivetran/dbt_twilio.git,7,20,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_twilio_source,https://github.com/fivetran/dbt_twilio_source.git,6,16,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_twitter_organic,https://github.com/fivetran/dbt_twitter_organic.git,5,11,success,"only 5 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_twitter_organic_source,https://github.com/fivetran/dbt_twitter_organic_source.git,6,8,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_unified_rag,https://github.com/fivetran/dbt_unified_rag.git,9,49,success,"only 9 monthly snapshots, below the 12 minimum",S3_code
+fivetran__dbt_workday,https://github.com/fivetran/dbt_workday.git,11,62,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_xero_source,https://github.com/fivetran/dbt_xero_source.git,11,28,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_youtube_analytics,https://github.com/fivetran/dbt_youtube_analytics.git,7,13,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_youtube_analytics_source,https://github.com/fivetran/dbt_youtube_analytics_source.git,3,6,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+fivetran__dbt_zuora,https://github.com/fivetran/dbt_zuora.git,11,53,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+fivetran__dbt_zuora_source,https://github.com/fivetran/dbt_zuora_source.git,4,46,success,"only 4 monthly snapshots, below the 12 minimum",S2_topic_dbt
+flext-sh__flext-dbt-ldif,https://github.com/flext-sh/flext-dbt-ldif.git,0,0,failed,every sampled commit yielded zero models,S3_code
+flext-sh__flext-dbt-oracle-wms,https://github.com/flext-sh/flext-dbt-oracle-wms.git,1,7,partial,"only 1 monthly snapshots, below the 12 minimum",S3_code
+flext-sh__flext-meltano,https://github.com/flext-sh/flext-meltano.git,0,0,failed,no commits touch any declared model path,S3_code
+flyanakin__CountMoney,https://github.com/flyanakin/CountMoney.git,3,23,success,"only 3 monthly snapshots, below the 12 minimum",S1_curated;S2_topic_dbt
+g0v__tw_campaign_finance,https://github.com/g0v/tw_campaign_finance.git,2,4,success,"only 2 monthly snapshots, below the 12 minimum",S1_curated;S3_code
+gabriellegall__dbt_netsuite,https://github.com/gabriellegall/dbt_netsuite.git,6,21,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt-core
+getindata__data-pipelines-template-example,https://github.com/getindata/data-pipelines-template-example.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S3_code
+getindata__dbt-flink-adapter,https://github.com/getindata/dbt-flink-adapter.git,2,2,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+getsynq__synq-dbt,https://github.com/getsynq/synq-dbt.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+gitlabhq__snowflake_spend,https://github.com/gitlabhq/snowflake_spend.git,6,4,success,"only 6 monthly snapshots, below the 12 minimum",S3_code
+gmyrianthous__dbt-airflow,https://github.com/gmyrianthous/dbt-airflow.git,3,9,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt
+gocardless__airflow-dbt,https://github.com/gocardless/airflow-dbt.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+godatadriven__dbt-excel,https://github.com/godatadriven/dbt-excel.git,4,5,success,"only 4 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+godatadriven__github-contributions,https://github.com/godatadriven/github-contributions.git,6,8,success,"only 6 monthly snapshots, below the 12 minimum",S3_code
+godatadriven__pytest-dbt-core,https://github.com/godatadriven/pytest-dbt-core.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+googleapis__google-cloud-python,https://github.com/googleapis/google-cloud-python.git,0,0,failed,every sampled commit yielded zero models,S3_code
+gouline__dbt-metabase,https://github.com/gouline/dbt-metabase.git,11,6,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt
+grafana__dbt_leaner_query,https://github.com/grafana/dbt_leaner_query.git,7,18,success,"only 7 monthly snapshots, below the 12 minimum",S3_code
+grai-io__grai-core,https://github.com/grai-io/grai-core.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+guidok91__aviation-analytics,https://github.com/guidok91/aviation-analytics.git,8,6,partial,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt
+gwenwindflower__octocatalog,https://github.com/gwenwindflower/octocatalog.git,3,6,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+harrydevforlife__building-lakehouse,https://github.com/harrydevforlife/building-lakehouse.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+henriblancke__dbt-formatter,https://github.com/henriblancke/dbt-formatter.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+himewel__covid19retail,https://github.com/himewel/covid19retail.git,1,11,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+ilichDataEngineer__DigitalMarketingAnalysis-DataEngineerIO-CapstoneProject-DE-BTC2024,https://github.com/ilichDataEngineer/DigitalMarketingAnalysis-DataEngineerIO-CapstoneProject-DE-BTC2024.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt
+infinitelambda__dbt-audit-helper-ext,https://github.com/infinitelambda/dbt-audit-helper-ext.git,8,2,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+infinitelambda__dbt-data-diff,https://github.com/infinitelambda/dbt-data-diff.git,2,7,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+infinitelambda__dbt-tags,https://github.com/infinitelambda/dbt-tags.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+infinitelambda__dq-tools,https://github.com/infinitelambda/dq-tools.git,11,5,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+inrem-foundation__dbt_inrem,https://github.com/inrem-foundation/dbt_inrem.git,7,30,success,"only 7 monthly snapshots, below the 12 minimum",S3_code
+iomete__dbt-iomete,https://github.com/iomete/dbt-iomete.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+iomete__iomete-integrations,https://github.com/iomete/iomete-integrations.git,0,0,failed,no commits touch any declared model path,S3_code
+jaehyeon-kim__general-demos,https://github.com/jaehyeon-kim/general-demos.git,4,50,success,"only 4 monthly snapshots, below the 12 minimum",S2_topic_dbt
+jairus-m__dagster-sdlc,https://github.com/jairus-m/dagster-sdlc.git,2,7,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt
+jeremyyeo__dbt-sandcastles,https://github.com/jeremyyeo/dbt-sandcastles.git,19,3,success,"peak lineage size 3 nodes, below the 10 minimum",S3_code
+jeremyyeo__the-hitchhikers-guide-to-dbt,https://github.com/jeremyyeo/the-hitchhikers-guide-to-dbt.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+jgooly__segment,https://github.com/jgooly/segment.git,6,13,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+joeysnclr__propengine,https://github.com/joeysnclr/propengine.git,6,34,success,"only 6 monthly snapshots, below the 12 minimum",S3_code
+josecsotomorales__dbt,https://github.com/josecsotomorales/dbt.git,1,27,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+josephmachado__simple_dbt_project,https://github.com/josephmachado/simple_dbt_project.git,2,7,partial,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt
+jsal13__mlops_toys,https://github.com/jsal13/mlops_toys.git,4,20,partial,"only 4 monthly snapshots, below the 12 minimum",S3_code
+kamalendubiswas-db__dbt-dss-demo,https://github.com/kamalendubiswas-db/dbt-dss-demo.git,4,18,success,"only 4 monthly snapshots, below the 12 minimum",S3_code
+keboola__dbt-transformation,https://github.com/keboola/dbt-transformation.git,0,0,failed,every sampled commit yielded zero models,S3_code
+keboola__keboola-as-code,https://github.com/keboola/keboola-as-code.git,0,0,failed,every sampled commit yielded zero models,S3_code
+kelvingakuo__Largeish-Data,https://github.com/kelvingakuo/Largeish-Data.git,0,0,failed,no commits touch any declared model path,S3_code
+kentarokamiyajp__crypto-prediction-etl,https://github.com/kentarokamiyajp/crypto-prediction-etl.git,2,3,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+kentarokamiyajp__crypto-prediction-infra,https://github.com/kentarokamiyajp/crypto-prediction-infra.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+kestra-io__examples,https://github.com/kestra-io/examples.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering
+kestra-io__plugin-dbt,https://github.com/kestra-io/plugin-dbt.git,4,2,success,"only 4 monthly snapshots, below the 12 minimum",S2_topic_dbt
+kevinsunny1996__E2E-Data-Science-Pipelines,https://github.com/kevinsunny1996/E2E-Data-Science-Pipelines.git,5,13,success,"only 5 monthly snapshots, below the 12 minimum",S2_topic_dbt
+kevruppy__analytics,https://github.com/kevruppy/analytics.git,3,22,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+kiranskmr__workflows_automation,https://github.com/kiranskmr/workflows_automation.git,2,24,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+kitta65__dbt-mermaid,https://github.com/kitta65/dbt-mermaid.git,1,6,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+kokorin__dbt-pumpkin,https://github.com/kokorin/dbt-pumpkin.git,1,1,partial,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt;S2_topic_dbt-core
+koksang__social-media-analysis,https://github.com/koksang/social-media-analysis.git,1,24,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+kristeligt-dagblad__dbt_ml,https://github.com/kristeligt-dagblad/dbt_ml.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+kristina-sql__cycling-analytics-platform,https://github.com/kristina-sql/cycling-analytics-platform.git,2,9,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt
+kuwala-io__kuwala,https://github.com/kuwala-io/kuwala.git,1,14,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+kzzzr__dbtvault_greenplum_demo,https://github.com/kzzzr/dbtvault_greenplum_demo.git,9,31,success,"only 9 monthly snapshots, below the 12 minimum",S3_code
+lightdash__dbt2looker,https://github.com/lightdash/dbt2looker.git,3,1,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+lindsaymurphy4__course_advanced_dbt,https://github.com/lindsaymurphy4/course_advanced_dbt.git,2,13,partial,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+linkedin__coral,https://github.com/linkedin/coral.git,0,0,failed,no commits touch any declared model path,S3_code
+logicalclocks__hopsworks-tutorials,https://github.com/logicalclocks/hopsworks-tutorials.git,2,1,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+lsc-sde__neurology_informatics,https://github.com/lsc-sde/neurology_informatics.git,10,62,success,"only 10 monthly snapshots, below the 12 minimum",S3_code
+luabase__cube,https://github.com/luabase/cube.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+mage-ai__mage-ai,https://github.com/mage-ai/mage-ai.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt
+make-open-data__make-open-data,https://github.com/make-open-data/make-open-data.git,11,31,success,"only 11 monthly snapshots, below the 12 minimum",S3_code
+marcon-droid__dw_AdventureWorks,https://github.com/marcon-droid/dw_AdventureWorks.git,1,18,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+matsonj__stocks,https://github.com/matsonj/stocks.git,2,8,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+mattarderne__snowflake-starter,https://github.com/mattarderne/snowflake-starter.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+medic__cht-sync,https://github.com/medic/cht-sync.git,2,3,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+meltano__dbt-ext,https://github.com/meltano/dbt-ext.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt
+memiiso__opendbt,https://github.com/memiiso/opendbt.git,7,5,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt;S2_topic_dbt-core
+memsql__dbt-singlestore,https://github.com/memsql/dbt-singlestore.git,2,11,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+metriql__metriql,https://github.com/metriql/metriql.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+michaelconan__budget-dbt,https://github.com/michaelconan/budget-dbt.git,8,7,success,"only 8 monthly snapshots, below the 12 minimum",S3_code
+microsoft__dbt-fabric,https://github.com/microsoft/dbt-fabric.git,1,1,partial,"only 1 monthly snapshots, below the 12 minimum",S3_code
+microsoft__dbt-fabricspark,https://github.com/microsoft/dbt-fabricspark.git,3,9,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+microsoft__dbt-synapse,https://github.com/microsoft/dbt-synapse.git,0,0,failed,no commits touch any declared model path,S3_code
+mindsdb__dbt-mindsdb,https://github.com/mindsdb/dbt-mindsdb.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+ministryofjustice__data-and-analytics-engineering,https://github.com/ministryofjustice/data-and-analytics-engineering.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering
+minyeamer__linkmerce,https://github.com/minyeamer/linkmerce.git,2,61,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt
+mjirv__dbt-datamocktool,https://github.com/mjirv/dbt-datamocktool.git,0,0,failed,no commits touch any declared model path,S3_code
+mmdt-data-engineering__myanmar-weather,https://github.com/mmdt-data-engineering/myanmar-weather.git,1,8,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+mohidmakhdoomi__DataPipe,https://github.com/mohidmakhdoomi/DataPipe.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt
+move-coop__dbt-ngpvan,https://github.com/move-coop/dbt-ngpvan.git,4,41,success,"only 4 monthly snapshots, below the 12 minimum",S3_code
+mrzzy__providence,https://github.com/mrzzy/providence.git,5,30,success,"only 5 monthly snapshots, below the 12 minimum",S2_topic_dbt
+mta-tech__seeknal,https://github.com/mta-tech/seeknal.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering
+mwojtyczka__databricks-dbt-factory,https://github.com/mwojtyczka/databricks-dbt-factory.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt;S2_topic_dbt-core
+netspective-labs__sql-aide,https://github.com/netspective-labs/sql-aide.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+nicholasyager__dbt-loom,https://github.com/nicholasyager/dbt-loom.git,7,9,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt;S2_topic_dbt-core
+nordquant__complete-dbt-bootcamp-zero-to-hero,https://github.com/nordquant/complete-dbt-bootcamp-zero-to-hero.git,11,9,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt
+oliver-norton__aether_energy_analytics,https://github.com/oliver-norton/aether_energy_analytics.git,1,6,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+oliverxchen__sqlean,https://github.com/oliverxchen/sqlean.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+omnata-labs__dbt-ml-preprocessing,https://github.com/omnata-labs/dbt-ml-preprocessing.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+open-metadata__openmetadata-site,https://github.com/open-metadata/openmetadata-site.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+opensource-together__ost-linker,https://github.com/opensource-together/ost-linker.git,6,17,partial,"only 6 monthly snapshots, below the 12 minimum",S3_code
+overbasellc__overbase-analytics-via-firebase-dbt,https://github.com/overbasellc/overbase-analytics-via-firebase-dbt.git,10,16,success,"only 10 monthly snapshots, below the 12 minimum",S3_code
+ozkary__data-engineering-mta-turnstile,https://github.com/ozkary/data-engineering-mta-turnstile.git,7,10,success,"only 7 monthly snapshots, below the 12 minimum",S2_topic_dbt
+pageuppeople-opensource__pageup-dbt-utils,https://github.com/pageuppeople-opensource/pageup-dbt-utils.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt;S3_code
+paty-oliveira__dbt-playground,https://github.com/paty-oliveira/dbt-playground.git,5,43,success,"only 5 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt
+paulf-999__dbt_projects,https://github.com/paulf-999/dbt_projects.git,3,25,partial,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+pbarnes-dbt-projects__penny_snowflake_demo,https://github.com/pbarnes-dbt-projects/penny_snowflake_demo.git,7,43,success,"only 7 monthly snapshots, below the 12 minimum",S3_code
+pgoslatara__dbt-beyond-the-basics,https://github.com/pgoslatara/dbt-beyond-the-basics.git,11,9,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt
+pingcap__dbt-tidb,https://github.com/pingcap/dbt-tidb.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+pjsharpe07__kicking_and_screaming,https://github.com/pjsharpe07/kicking_and_screaming.git,4,18,success,"only 4 monthly snapshots, below the 12 minimum",S3_code
+portovep__dbt-testing-examples,https://github.com/portovep/dbt-testing-examples.git,3,4,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt
+pragmatic-data__sf-admin,https://github.com/pragmatic-data/sf-admin.git,0,0,failed,every sampled commit yielded zero models,S3_code
+pragunbhutani__dbt-llm-agent,https://github.com/pragunbhutani/dbt-llm-agent.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt
+prefect-archive__prefect-dbt,https://github.com/prefect-archive/prefect-dbt.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+project-tech4dev__dbt-tech4dev,https://github.com/project-tech4dev/dbt-tech4dev.git,10,45,success,"only 10 monthly snapshots, below the 12 minimum",S3_code
+psychoanalyze__psychoanalyze,https://github.com/psychoanalyze/psychoanalyze.git,4,8,partial,"only 4 monthly snapshots, below the 12 minimum",S3_code
+rainhead__beeatlas,https://github.com/rainhead/beeatlas.git,3,46,success,"only 3 monthly snapshots, below the 12 minimum",S3_code
+ramonvermeulen__dbt-toolkit,https://github.com/ramonvermeulen/dbt-toolkit.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt;S2_topic_dbt-core
+randypitcherii__shareables,https://github.com/randypitcherii/shareables.git,5,21,success,"only 5 monthly snapshots, below the 12 minimum",S3_code
+rasgointelligence__PyRasgo,https://github.com/rasgointelligence/PyRasgo.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+rasridho06__Python,https://github.com/rasridho06/Python.git,1,18,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+raw-labs__mxcp,https://github.com/raw-labs/mxcp.git,2,5,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+raystack__optimus,https://github.com/raystack/optimus.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering
+re-data__re-data,https://github.com/re-data/re-data.git,8,5,success,"only 8 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+richban__opendata-stack-platform,https://github.com/richban/opendata-stack-platform.git,5,12,success,"only 5 monthly snapshots, below the 12 minimum",S2_topic_dbt
+riju18__Dashing-Datawarehouse-dbt,https://github.com/riju18/Dashing-Datawarehouse-dbt.git,3,24,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+risingwavelabs__awesome-stream-processing,https://github.com/risingwavelabs/awesome-stream-processing.git,1,4,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+risingwavelabs__dbt-risingwave,https://github.com/risingwavelabs/dbt-risingwave.git,3,20,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+rittmananalytics__ra_attribution,https://github.com/rittmananalytics/ra_attribution.git,4,90,success,"only 4 monthly snapshots, below the 12 minimum",S3_code
+rockset__dbt-rockset,https://github.com/rockset/dbt-rockset.git,0,0,failed,no commits touch any declared model path,S3_code
+rocs-org__data-pipelines,https://github.com/rocs-org/data-pipelines.git,3,10,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+rodrigovimieiro__OpenCodes,https://github.com/rodrigovimieiro/OpenCodes.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+rsanjabi__short-term-rentals-warehouse,https://github.com/rsanjabi/short-term-rentals-warehouse.git,2,9,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+rudderlabs__airbyte,https://github.com/rudderlabs/airbyte.git,0,0,failed,no commits touch any declared model path,S3_code
+runprism__prism,https://github.com/runprism/prism.git,0,0,failed,every sampled commit yielded zero models,S2_topic_dbt
+salimt__Transfermarkt-ETL-and-LIVE-Scores,https://github.com/salimt/Transfermarkt-ETL-and-LIVE-Scores.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+saras-daton__AmazonAds,https://github.com/saras-daton/AmazonAds.git,8,25,success,"only 8 monthly snapshots, below the 12 minimum",S3_code
+saras-daton__AmazonSellerCentral,https://github.com/saras-daton/AmazonSellerCentral.git,9,22,success,"only 9 monthly snapshots, below the 12 minimum",S3_code
+sarathchandrikak__Data-Projects,https://github.com/sarathchandrikak/Data-Projects.git,1,5,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+scottleedavis__dbt-flashcards,https://github.com/scottleedavis/dbt-flashcards.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+sdebruyn__dbt-timescaledb,https://github.com/sdebruyn/dbt-timescaledb.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+sdebruyn__inzight,https://github.com/sdebruyn/inzight.git,1,7,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+seacevedo__texas_claims_billing,https://github.com/seacevedo/texas_claims_billing.git,1,17,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+sfeir-open-source__sfeir-school-dbt,https://github.com/sfeir-open-source/sfeir-school-dbt.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+shankararul__dbt_eda_tools,https://github.com/shankararul/dbt_eda_tools.git,2,20,partial,"only 2 monthly snapshots, below the 12 minimum",S3_code
+shannon-barrow__databricks-tpc-di,https://github.com/shannon-barrow/databricks-tpc-di.git,2,37,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+sinhasagar507__taxi-fare-prediction,https://github.com/sinhasagar507/taxi-fare-prediction.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+sivchari__snowflake-emulator,https://github.com/sivchari/snowflake-emulator.git,1,4,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+slidoapp__dbt-coverage,https://github.com/slidoapp/dbt-coverage.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+slidoapp__dbt-superset-lineage,https://github.com/slidoapp/dbt-superset-lineage.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+snowplow__dbt-snowplow-attribution,https://github.com/snowplow/dbt-snowplow-attribution.git,9,7,success,"only 9 monthly snapshots, below the 12 minimum",S3_code
+snowplow__dbt-snowplow-normalize,https://github.com/snowplow/dbt-snowplow-normalize.git,6,3,success,"only 6 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+snowplow__dbt-snowplow-utils,https://github.com/snowplow/dbt-snowplow-utils.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+sodadata__soda-core,https://github.com/sodadata/soda-core.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+stackabletech__demos,https://github.com/stackabletech/demos.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+star3am__hashiqube,https://github.com/star3am/hashiqube.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+starburstdata__dbt-trino,https://github.com/starburstdata/dbt-trino.git,8,12,partial,"only 8 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt;S3_code
+starburstdata__dbt-trino-utils,https://github.com/starburstdata/dbt-trino-utils.git,0,0,failed,no commits touch any declared model path,S3_code
+storm-software__reaper,https://github.com/storm-software/reaper.git,0,0,failed,no commits touch any declared model path,S3_code
+sungchun12__airflow-toolkit,https://github.com/sungchun12/airflow-toolkit.git,2,8,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt
+svvsaga__dbt-public,https://github.com/svvsaga/dbt-public.git,0,0,failed,no commits touch any declared model path,S3_code
+swapnil-tambade__ST_PROJECTS,https://github.com/swapnil-tambade/ST_PROJECTS.git,2,13,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt;S2_topic_dbt-core
+syou6162__dbt-source-importer,https://github.com/syou6162/dbt-source-importer.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+tconbeer__sqlfmt,https://github.com/tconbeer/sqlfmt.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+techindicium__elementary-dbt-monitoring,https://github.com/techindicium/elementary-dbt-monitoring.git,8,17,success,"only 8 monthly snapshots, below the 12 minimum",S3_code
+techvaquero__lakehouse_utils,https://github.com/techvaquero/lakehouse_utils.git,14,4,success,"peak lineage size 4 nodes, below the 10 minimum",S3_code
+tellery__tellery,https://github.com/tellery/tellery.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+theclue__gabrielebaldassarre.com,https://github.com/theclue/gabrielebaldassarre.com.git,1,8,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+tjwaterman99__boxofficemojo-scraper,https://github.com/tjwaterman99/boxofficemojo-scraper.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+tomasfarias__airflow-dbt-python,https://github.com/tomasfarias/airflow-dbt-python.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+tosh2230__stairlight,https://github.com/tosh2230/stairlight.git,2,4,success,"only 2 monthly snapshots, below the 12 minimum",S2_topic_dbt
+trinityBI-HQ__dbt_ammodepot,https://github.com/trinityBI-HQ/dbt_ammodepot.git,7,106,success,"only 7 monthly snapshots, below the 12 minimum",S3_code
+tuva-health__demo,https://github.com/tuva-health/demo.git,11,8,partial,"only 11 monthly snapshots, below the 12 minimum",S2_topic_analytics-engineering;S2_topic_dbt;S3_code
+tuva-health__readmissions,https://github.com/tuva-health/readmissions.git,11,24,success,"only 11 monthly snapshots, below the 12 minimum",S3_code
+ubie-oss__dbt-data-privacy,https://github.com/ubie-oss/dbt-data-privacy.git,0,0,failed,no commits touch any declared model path,S3_code
+unb-mds__DFemObras,https://github.com/unb-mds/DFemObras.git,1,4,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+unytics__catalog_builder,https://github.com/unytics/catalog_builder.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+vbalalian__roman_coins_data_pipeline,https://github.com/vbalalian/roman_coins_data_pipeline.git,1,4,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+vdn-tools__dbt-athena2,https://github.com/vdn-tools/dbt-athena2.git,0,0,failed,no commits touch any declared model path,S3_code
+venkata-suren__dbt,https://github.com/venkata-suren/dbt.git,1,1,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+vertica__dbt-vertica,https://github.com/vertica/dbt-vertica.git,1,8,success,"only 1 monthly snapshots, below the 12 minimum",S3_code
+vladimir-vvalov__tbmacro,https://github.com/vladimir-vvalov/tbmacro.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt
+waseemkhalifa__portfolio,https://github.com/waseemkhalifa/portfolio.git,1,7,success,"only 1 monthly snapshots, below the 12 minimum",S2_topic_dbt
+wherobots__apache-sedona-book,https://github.com/wherobots/apache-sedona-book.git,2,5,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+winwin-inc__dbt-odps,https://github.com/winwin-inc/dbt-odps.git,0,0,failed,no commits touch any declared model path,S3_code
+wjsutton__pkmn_yellow_legacy_dbt,https://github.com/wjsutton/pkmn_yellow_legacy_dbt.git,9,61,success,"only 9 monthly snapshots, below the 12 minimum",S3_code
+wvlet__wvlet,https://github.com/wvlet/wvlet.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+xiangivyli__data-science-portfolio,https://github.com/xiangivyli/data-science-portfolio.git,0,0,failed,every sampled commit yielded zero models,S3_code
+xlang-ai__Spider2,https://github.com/xlang-ai/Spider2.git,2,752,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+yamotech__activerecord-dbt,https://github.com/yamotech/activerecord-dbt.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+ydb-platform__dbt-ydb,https://github.com/ydb-platform/dbt-ydb.git,2,5,success,"only 2 monthly snapshots, below the 12 minimum",S3_code
+yu-iskw__action-sqlfluff,https://github.com/yu-iskw/action-sqlfluff.git,17,4,success,"peak lineage size 4 nodes, below the 10 minimum",S2_topic_dbt
+yu-iskw__dbt-artifacts-loader,https://github.com/yu-iskw/dbt-artifacts-loader.git,11,87,success,"only 11 monthly snapshots, below the 12 minimum",S2_topic_dbt
+yu-iskw__dbt-artifacts-parser,https://github.com/yu-iskw/dbt-artifacts-parser.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_dbt
+yu-iskw__dbt-unittest,https://github.com/yu-iskw/dbt-unittest.git,0,0,failed,no commits touch any declared model path,S2_topic_dbt;S3_code
+z3z1ma__dbt-core-interface,https://github.com/z3z1ma/dbt-core-interface.git,3,24,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+z3z1ma__dbt-osmosis,https://github.com/z3z1ma/dbt-osmosis.git,9,7,success,"only 9 monthly snapshots, below the 12 minimum",S2_topic_dbt;S3_code
+zkan__getting-started-with-analytics-engineering,https://github.com/zkan/getting-started-with-analytics-engineering.git,0,0,failed,no dbt_project.yml found anywhere on the first-parent history,S2_topic_analytics-engineering;S2_topic_dbt
+zkan__hello-dbt,https://github.com/zkan/hello-dbt.git,3,8,success,"only 3 monthly snapshots, below the 12 minimum",S2_topic_dbt
+zng489__docker_dockercompose_terraform_infra,https://github.com/zng489/docker_dockercompose_terraform_infra.git,0,0,failed,no commits touch any declared model path,S3_code
+zsvoboda__ngods-stocks,https://github.com/zsvoboda/ngods-stocks.git,2,5,success,"only 2 monthly snapshots, below the 12 minimum",S1_curated;S2_topic_dbt

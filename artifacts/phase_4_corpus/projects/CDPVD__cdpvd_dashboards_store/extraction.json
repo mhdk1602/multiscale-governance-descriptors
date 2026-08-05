@@ -1,0 +1,137 @@
+{
+ "project_id": "CDPVD__cdpvd_dashboards_store",
+ "repo_url": "https://github.com/CDPVD/cdpvd_dashboards_store.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:17:37Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "f5f367157839a28e1f191b35e0ade440fc0b341d",
+ "default_branch": "develop",
+ "model_path_universe": [
+  "models",
+  "template/{{ cookiecutter.project_slug }}/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "cdpvd_dashboards_store",
+  "chained_configs": [
+   "dbt_project.yml",
+   "template/{{ cookiecutter.project_slug }}/dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "models",
+   "template/{{ cookiecutter.project_slug }}/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "cdpvd_dashboards_store",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 260,
+   "first_commit": "2022-08-29T08:52:41",
+   "last_commit": "2026-07-16T14:25:42"
+  },
+  {
+   "config": "tooling/template/{{ cookiecutter.project_slug }}/dbt_project.yml",
+   "name": null,
+   "model_paths": [
+    "tooling/template/{{ cookiecutter.project_slug }}/models"
+   ],
+   "commits_on_model_paths": 8,
+   "first_commit": "2023-10-23T10:22:34",
+   "last_commit": "2024-01-11T14:13:42"
+  },
+  {
+   "config": "tooling/nightly/dbt/dbt_project.yml",
+   "name": "nightly_store",
+   "model_paths": [
+    "tooling/nightly/dbt/models"
+   ],
+   "commits_on_model_paths": 6,
+   "first_commit": "2023-10-20T14:51:22",
+   "last_commit": "2024-10-18T15:44:51"
+  },
+  {
+   "config": "tooling/template/{{ cookiecutter.css_short_name + '.dashboards_store' }}/dbt_project.yml",
+   "name": null,
+   "model_paths": [
+    "tooling/template/{{ cookiecutter.css_short_name + '.dashboards_store' }}/models"
+   ],
+   "commits_on_model_paths": 6,
+   "first_commit": "2024-01-17T11:14:07",
+   "last_commit": "2024-10-21T10:07:43"
+  },
+  {
+   "config": "template/{{ cookiecutter.project_slug }}/dbt_project.yml",
+   "name": null,
+   "model_paths": [
+    "template/{{ cookiecutter.project_slug }}/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2023-08-23T12:55:37",
+   "last_commit": "2023-08-23T12:55:37"
+  }
+ ],
+ "n_dbt_projects_seen": 5,
+ "n_commits_touching_models": 240,
+ "history_start": "2022-08-29T08:52:41",
+ "history_end": "2026-07-16T14:25:42",
+ "n_snapshots_planned": 39,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 39,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:21:21Z",
+ "snapshot_shas": [
+  "819cf5ad3ce05b628d5522e363fc874b05a6d608",
+  "5a1b94e9cf8cc5544ca7ffc2fb570330b03d2881",
+  "bbddb4025edb4ee6054bbfab58fd5ab96bc2d320",
+  "277ad07a2ea2c4ffabba54dc1b5eede52a1c4791",
+  "c1b08bfa7fe5ad58d4fb02fcc390141989c3ba6c",
+  "4626f2406c66b6f92119e6fc25a0a27f32b448b1",
+  "4bd515a35096c016986603c750cba59245c27553",
+  "bd5dd72839324d3e6fb22745504c9659c15824c0",
+  "b69e865c2afab0d52ea7ee410f4815e480ca33ea",
+  "de87bc13bb3b79917d77760f0249b9362358b24d",
+  "fb94ef9c6b6e0a0f2a959aac3816bb4a12de410a",
+  "6d823bd13476eb46c9bf6874bcce0f09f283d695",
+  "37f403b93cdeacf9a7316e7020176b480a0adc0f",
+  "a6c4b9971d3b2b0764bfc32fb4d4fc484bb8cfd3",
+  "d1c252b071dacae2060c8e2a223e175995879ec4",
+  "e8ca4227caa02a57a504d9c60ad65340283fd7fc",
+  "9a3ed3ed4b6fbac8e8ad282524abc9cbbc2ac20b",
+  "ba62f9304dbc38dc5d29d384d62b277733b13ae1",
+  "0e7f4879c139f465a58e30d40879aeec9460ec92",
+  "5773e8254e7bec7e4969862460a14ebcda0e73c2",
+  "3de681edddb80ec4e2f1141694764174fef0c755",
+  "cf0367471a78fa851da80a6fb6e183bf5bed2fb2",
+  "d40781e4eb2f102178862836bb8e174c65302b3a",
+  "74ff8ee24f8ad784bcf29c4e1f0aac8923b3245b",
+  "8b9cbe678b7e7b85d841f7a0325a452b7187ed3e",
+  "76f34d18f8cd765ca8b931501f2a0f9554499958",
+  "6d0be14966f1dda65ac13e82c9cdde2894d3d597",
+  "6109d1e1c85710314568a0c925a77b8018264e08",
+  "4d1be35ada9b73bf9927e13eba158d4fcbfb296f",
+  "3661af76af6677b3befa54e0b073bffe4c47bf1a",
+  "6297bcfc656aaae8133cb44d988cf183ef76d71b",
+  "80a3b5dcf48f1ccc88129150da82dc80b09167d9",
+  "7de691a73d3bff7cd6217fc94371526f4126b618",
+  "5f3b002e90f504becdda16ae45ba2ad70d504e1a",
+  "0428c08a3cc02931d07bf3957ede6886c80c692c",
+  "944b248bc8d2d66ba0ca93df58c631d9e1c49c8e",
+  "850189b1b75bf939dbd8355619f1fb0e6794fd6c",
+  "3a03883349e17796f1c4d18820002388d917059a",
+  "f5f367157839a28e1f191b35e0ade440fc0b341d"
+ ],
+ "stars": 0,
+ "license": "AGPL-3.0",
+ "strata": [
+  "S3_code"
+ ]
+}

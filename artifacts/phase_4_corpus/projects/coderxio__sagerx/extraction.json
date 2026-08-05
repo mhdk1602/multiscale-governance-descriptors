@@ -1,0 +1,88 @@
+{
+ "project_id": "coderxio__sagerx",
+ "repo_url": "https://github.com/coderxio/sagerx.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "753dcfcc91b4d972709eebe3da058eea9617d20e",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt/sagerx/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt/sagerx/dbt_project.yml",
+  "name": "sagerx",
+  "chained_configs": [
+   "dbt/sagerx/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "dbt/sagerx/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt/sagerx/dbt_project.yml",
+   "name": "sagerx",
+   "model_paths": [
+    "dbt/sagerx/models"
+   ],
+   "commits_on_model_paths": 196,
+   "first_commit": "2023-01-31T18:13:04",
+   "last_commit": "2026-04-16T16:24:46"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 196,
+ "history_start": "2023-01-31T18:13:04",
+ "history_end": "2026-04-16T16:24:46",
+ "n_snapshots_planned": 33,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 33,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:27:03Z",
+ "snapshot_shas": [
+  "9a0abad11a4aac8686aa101ad830116f4e97b9a9",
+  "970e41d63bfeecdc8a22383374fc7f78cc39132d",
+  "ce1ff6aac0f4746952aee77ca157e2c88d6331eb",
+  "0c663627168c515a6b0869cee631e5457bde2707",
+  "c5ad41148b26db6aacd65a514bc746c4ed348ff7",
+  "722de0ae6ec30450e52bf3ef3de50158f311ad49",
+  "9382ef30ea2b2506bf118eaec66ce0b4b92a7d10",
+  "dafbd7052efd47b18e4121155e934bfbe195f3c7",
+  "047c037fe97ee45f8189c6f02a93caf6744e73f8",
+  "1d7dc3fe12dd57ac9fbe2d966ae53f64ced74181",
+  "5edc12a3210b5a03e90168529d1d79eaf6532f6e",
+  "0ef208fc2590762f4957496e8a87b1ed9e28bfd1",
+  "da7459ed2754e12a150d1116d548806d78172c55",
+  "dfb24889729117066ddaf1a8a8e6f2cf60992bcd",
+  "4b3173e4e98722b8c10039743f4b8f3c6d339a50",
+  "f16b9665271b8663ff2a2824dcc8a58c9f747929",
+  "54cc08c720207c478f459ef6e3b3b36086a339d6",
+  "4eb70a5dd534043dde220275c8cad5ab52de47a1",
+  "a5d3c5b87a660f588c870a7a94af9f5c9a1e891d",
+  "9feb666d3bf7faf3169b37ba11bba4d1ac629c67",
+  "9ebb13c315c1a3663861f7edb983c03c93f2c0fc",
+  "2b4a8354c4ebd47be64eae1a50ce0192b37dac00",
+  "ab84c1a6e6438bb8eaa2768510246c778606ffa9",
+  "7a75e2175fcde4593b8b63b544a96e26da67a53d",
+  "d983767865ac71caf535ebc6bbd044aeb01f2a1a",
+  "a5f49d53a7f3e0217267dad60c83a96be84d311d",
+  "41ddad9f9055e31b146733d83103b9d5cd843991",
+  "c66a41e9508e5a149419da301e243002636613ae",
+  "39e8c3fdad42a2855d5f0e315b00dbaa9d130ce2",
+  "9b48960b77bf4a649904db7f635466190ae52c38",
+  "134d03bfa3afa20ee51ac4d37ed74c87cb5b32aa",
+  "bcf4976c8f30437a767323df6697c23ecba50a0d",
+  "753dcfcc91b4d972709eebe3da058eea9617d20e"
+ ],
+ "stars": 78,
+ "license": "NOASSERTION",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "project_id": "snowplow__dbt-snowplow-media-player",
+ "repo_url": "https://github.com/snowplow/dbt-snowplow-media-player.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:24Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "941a77f7c4792d1397e40370c4c40553d7a123ab",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "snowplow_media_player",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "snowplow_media_player",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 36,
+   "first_commit": "2022-02-09T11:03:40",
+   "last_commit": "2026-05-22T15:18:54"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 36,
+ "history_start": "2022-02-09T11:03:40",
+ "history_end": "2026-05-22T15:18:54",
+ "n_snapshots_planned": 18,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 18,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:19Z",
+ "snapshot_shas": [
+  "84db154d1c251bdf02866e587c799982f95cddc3",
+  "285cec07e48f42c64813e65b1dafa53287311df4",
+  "4013cebc5b5a939090927d93d0163f8cd71a32f7",
+  "da545e9812cc45a359200882d319c813c7b80950",
+  "b0e86859863d69200367a53d5acc8a701a25ea6e",
+  "d813718c1e07a0571d67d37da3b2a052e89098c0",
+  "3b2d8db5dc9524d078f7e601b0284c9b5763ddb2",
+  "5fcb437eec74b6b6e603c8e894b8c49f17e2c0ca",
+  "e02bbaa0df29ef2c3718fd469af633fff55bddba",
+  "09305cb6900bc9ae660e25e9f3df9732387895e1",
+  "aa034358a6e032835729650251895921844404c7",
+  "9cc84846c647e603f12a633449bf80969a002f83",
+  "1be01b202c82c14f861799b5a0c4e0b93e6f7603",
+  "a77519cc5e6c0800ad8bd013adc98f06ee4b7025",
+  "900c09bf0be951d21ae06965e5e65d8cbb18d2d6",
+  "78a469bcd4c39a02016fc5a20970bc0478549327",
+  "ce4e5424fa64147018d4b846cee87a9e91bd7166",
+  "3c8314b75fc0a22a0fe0d38cdf607ea27ca962f7"
+ ],
+ "stars": 9,
+ "license": "NOASSERTION",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

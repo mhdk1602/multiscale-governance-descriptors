@@ -1,0 +1,70 @@
+{
+ "project_id": "OHDSI__dbt-synthea",
+ "repo_url": "https://github.com/OHDSI/dbt-synthea.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:19:12Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "33fdbfa9b354f00def5ee6e45525cb2da80e0ddf",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "synthea_omop_etl",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "synthea_omop_etl",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 107,
+   "first_commit": "2024-02-17T10:52:16",
+   "last_commit": "2026-01-08T14:58:28"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 107,
+ "history_start": "2024-02-17T10:52:16",
+ "history_end": "2026-01-08T14:58:28",
+ "n_snapshots_planned": 15,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 15,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:20:08Z",
+ "snapshot_shas": [
+  "a650d9e0184707ea74efe5c6c00bb0df05ce101f",
+  "3533163b3eff925f7df4c3fa92d4ee181cab23c7",
+  "76c6f972652ce876a185902edee9316273e6eb91",
+  "e498ac81983c351ef5707a8ff06f59ad55cf7450",
+  "4b958b2669f0976f383d3c1a670b37abb1b399fe",
+  "f2d7623f3d84b1e1c39703903597e3617c2c8ee8",
+  "48e261a9cddead23e129369ab9195307d6e899c4",
+  "e65d1f4f9139f7086c99e42d7c6c0eb706d68277",
+  "5fdf5d35b251846fcaf8ba409112046db6abc910",
+  "12bda01f6030dda0e6e7724d81d386b5c701456c",
+  "296bc14c008a84d1fe275be30b08efc2a06402c6",
+  "d2a21bc7c8e476a9a588703763645f3475dbc1e1",
+  "e119df64bb3f99394b8d124e2f72a3798b343820",
+  "89188d139638a3c6fdffe02d5d178300d92b8671",
+  "b9486865d6c2f95e6bda34187391244131243585"
+ ],
+ "stars": 40,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

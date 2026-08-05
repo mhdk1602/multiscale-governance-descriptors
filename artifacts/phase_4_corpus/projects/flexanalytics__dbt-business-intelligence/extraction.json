@@ -1,0 +1,74 @@
+{
+ "project_id": "flexanalytics__dbt-business-intelligence",
+ "repo_url": "https://github.com/flexanalytics/dbt-business-intelligence.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:33:59Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "413f2ca4b48a3894f190493f0f9a986eeb2dcd63",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "dbt_business_intelligence",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "dbt_business_intelligence",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 92,
+   "first_commit": "2022-04-08T17:17:33",
+   "last_commit": "2025-07-16T15:11:21"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 92,
+ "history_start": "2022-04-08T17:17:33",
+ "history_end": "2025-07-16T15:11:21",
+ "n_snapshots_planned": 19,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 19,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:35:32Z",
+ "snapshot_shas": [
+  "2a84b762d863e87a17acc8b616996d4df9e7d861",
+  "a9343c27e3a4ffbf5cf28e8add7aad752214e8a4",
+  "d8c12158b4ba4e5e2e0913013341a6fb3e482012",
+  "280844d0de3e96645579e1855597280075afffa1",
+  "9bcb137710843f8d7b6f120df78a49c283d5c9b8",
+  "de838ea95f33bb3b83d1180d5285efcef28eda99",
+  "0ceb02cdde860e9ec63ac14885f36e0ee6cf30bf",
+  "8c84320b2155228a565af2ffa20021e36ccb4ce5",
+  "d83b79af050b75d302be71448332ca611fb73e01",
+  "1c6950b6de82536671824737906720fcd57c94c3",
+  "9612ad5539ebb953b8bff83e1b38c1ee8d1fed47",
+  "0e2d1e2491f3e7bdb98cce26a60e20c6a2a5e9d1",
+  "6d2aea1079b018bba89b650d08fa0acd76f68122",
+  "61bf6d36143347432da112e7fe78b37e71304b40",
+  "5e96cf8010a0d4613e9e56e81b0257e2cc2a58ea",
+  "03b1e1dab3456fee8e98c8e7e39d37f8aa7dfca8",
+  "47166c7a4da3352ba5f3056be40b1eb604b47d14",
+  "e7a7108a2a26560a62aa5fd8622ceffd7b35c9cf",
+  "719770c7a56bd547835e4afc6a9795325d970780"
+ ],
+ "stars": 160,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

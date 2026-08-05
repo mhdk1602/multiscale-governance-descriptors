@@ -1,0 +1,292 @@
+{
+ "project_id": "NYCPlanning__data-engineering",
+ "repo_url": "https://github.com/NYCPlanning/data-engineering.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:19:07Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "64313123f098363d32820212b0eabc5ec7778503",
+ "default_branch": "main",
+ "model_path_universe": [
+  "products/green_fast_track/models",
+  "experimental/dm/airflow_dbt/dbt/jaffle_shop/models",
+  "experimental/dm/airflow_dbt/dbt/jaffle_shoppe/models",
+  "experimental/dm/dagster_dbt/dbt_jaffle_shop/models",
+  "experimental/dm/dagster_dbt/dbt_jaffle_shoppe/models",
+  "experimental/entities/models",
+  "products/factfinder/factfinder_dbt_qa/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "products/green_fast_track/dbt_project.yml",
+  "name": "green_fast_track",
+  "chained_configs": [
+   "products/green_fast_track/dbt_project.yml",
+   "experimental/dm/airflow_dbt/dbt/jaffle_shop/dbt_project.yml",
+   "experimental/dm/airflow_dbt/dbt/jaffle_shoppe/dbt_project.yml",
+   "experimental/dm/dagster_dbt/dbt_jaffle_shop/dbt_project.yml",
+   "experimental/dm/dagster_dbt/dbt_jaffle_shoppe/dbt_project.yml",
+   "experimental/entities/dbt_project.yml",
+   "products/factfinder/factfinder_dbt_qa/dbt_project.yml"
+  ],
+  "n_configs_chained": 7,
+  "model_paths": [
+   "products/green_fast_track/models",
+   "experimental/dm/airflow_dbt/dbt/jaffle_shop/models",
+   "experimental/dm/airflow_dbt/dbt/jaffle_shoppe/models",
+   "experimental/dm/dagster_dbt/dbt_jaffle_shop/models",
+   "experimental/dm/dagster_dbt/dbt_jaffle_shoppe/models",
+   "experimental/entities/models",
+   "products/factfinder/factfinder_dbt_qa/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "products/green_fast_track/dbt_project.yml",
+   "name": "green_fast_track",
+   "model_paths": [
+    "products/green_fast_track/models"
+   ],
+   "commits_on_model_paths": 121,
+   "first_commit": "2024-02-28T21:27:23",
+   "last_commit": "2026-07-27T15:01:10"
+  },
+  {
+   "config": "products/cdbg/dbt_project.yml",
+   "name": "cdbg",
+   "model_paths": [
+    "products/cdbg/models"
+   ],
+   "commits_on_model_paths": 47,
+   "first_commit": "2024-12-31T15:55:10",
+   "last_commit": "2026-01-20T15:52:42"
+  },
+  {
+   "config": "products/knownprojects/dbt_project.yml",
+   "name": "dbt_knownprojects",
+   "model_paths": [
+    "products/knownprojects/sql"
+   ],
+   "commits_on_model_paths": 42,
+   "first_commit": "2023-08-23T16:44:02",
+   "last_commit": "2026-06-07T21:12:44"
+  },
+  {
+   "config": "products/cscl/dbt_project.yml",
+   "name": "cscl",
+   "model_paths": [
+    "products/cscl/models"
+   ],
+   "commits_on_model_paths": 41,
+   "first_commit": "2025-11-12T16:11:46",
+   "last_commit": "2026-07-22T11:07:51"
+  },
+  {
+   "config": "products/lion/dbt_project.yml",
+   "name": "lion",
+   "model_paths": [
+    "products/lion/models"
+   ],
+   "commits_on_model_paths": 37,
+   "first_commit": "2025-04-08T17:02:25",
+   "last_commit": "2025-11-12T15:46:33"
+  },
+  {
+   "config": "products/template/dbt_project.yml",
+   "name": "dbt_template",
+   "model_paths": [
+    "products/template/models",
+    "products/template/sql"
+   ],
+   "commits_on_model_paths": 33,
+   "first_commit": "2023-08-23T16:48:54",
+   "last_commit": "2026-07-01T14:18:25"
+  },
+  {
+   "config": "products/zoningtaxlots/dbt_project.yml",
+   "name": "zoning_tax_lots",
+   "model_paths": [
+    "products/zoningtaxlots/models"
+   ],
+   "commits_on_model_paths": 15,
+   "first_commit": "2024-06-17T16:34:33",
+   "last_commit": "2025-11-12T15:46:33"
+  },
+  {
+   "config": "products/pluto/dbt_project.yml",
+   "name": "pluto",
+   "model_paths": [
+    "products/pluto/models"
+   ],
+   "commits_on_model_paths": 11,
+   "first_commit": "2024-10-08T10:25:12",
+   "last_commit": "2026-05-11T13:02:35"
+  },
+  {
+   "config": "products/ceqr/dbt_project.yml",
+   "name": "ceqr",
+   "model_paths": [
+    "products/ceqr/models"
+   ],
+   "commits_on_model_paths": 7,
+   "first_commit": "2025-03-07T13:06:31",
+   "last_commit": "2026-06-28T21:42:49"
+  },
+  {
+   "config": "products/cpdb/dbt_project.yml",
+   "name": "cpdb",
+   "model_paths": [
+    "products/cpdb/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2025-07-23T13:57:03",
+   "last_commit": "2026-07-20T10:53:02"
+  },
+  {
+   "config": "products/facilities/dbt_project.yml",
+   "name": "facilities",
+   "model_paths": [
+    "products/facilities/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2026-05-08T12:18:00",
+   "last_commit": "2026-05-21T13:39:44"
+  },
+  {
+   "config": "products/cbbr/dbt_project.yml",
+   "name": "cbbr",
+   "model_paths": [
+    "products/cbbr/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2026-04-03T12:29:10",
+   "last_commit": "2026-04-16T16:51:20"
+  },
+  {
+   "config": "products/developments/dbt_project.yml",
+   "name": "developments",
+   "model_paths": [
+    "products/developments/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2026-01-31T23:19:27",
+   "last_commit": "2026-06-14T23:16:44"
+  },
+  {
+   "config": "products/zap-opendata/dbt_project.yml",
+   "name": "dbt_mapzap",
+   "model_paths": [
+    "products/zap-opendata/mapzap/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2023-08-23T16:50:26",
+   "last_commit": "2025-11-12T15:46:33"
+  },
+  {
+   "config": "experimental/dm/airflow_dbt/dbt/jaffle_shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "experimental/dm/airflow_dbt/dbt/jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-12-23T15:22:09",
+   "last_commit": "2025-12-23T15:22:09"
+  },
+  {
+   "config": "experimental/dm/airflow_dbt/dbt/jaffle_shoppe/dbt_project.yml",
+   "name": "jaffle_shoppe",
+   "model_paths": [
+    "experimental/dm/airflow_dbt/dbt/jaffle_shoppe/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-12-23T15:22:09",
+   "last_commit": "2025-12-23T15:22:09"
+  },
+  {
+   "config": "experimental/dm/dagster_dbt/dbt_jaffle_shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "experimental/dm/dagster_dbt/dbt_jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-01-08T11:29:15",
+   "last_commit": "2026-01-08T11:29:15"
+  },
+  {
+   "config": "experimental/dm/dagster_dbt/dbt_jaffle_shoppe/dbt_project.yml",
+   "name": "jaffle_shoppe",
+   "model_paths": [
+    "experimental/dm/dagster_dbt/dbt_jaffle_shoppe/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-01-08T11:29:15",
+   "last_commit": "2026-01-08T11:29:15"
+  },
+  {
+   "config": "experimental/entities/dbt_project.yml",
+   "name": "entities",
+   "model_paths": [
+    "experimental/entities/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-10-31T16:56:04",
+   "last_commit": "2025-10-31T16:56:04"
+  },
+  {
+   "config": "products/factfinder/factfinder_dbt_qa/dbt_project.yml",
+   "name": "factfinder",
+   "model_paths": [
+    "products/factfinder/factfinder_dbt_qa/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-03-25T18:24:54",
+   "last_commit": "2025-03-25T18:24:54"
+  },
+  {
+   "config": "products/colp/dbt_project.yml",
+   "name": "colp",
+   "model_paths": [
+    "products/colp/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 21,
+ "n_commits_touching_models": 125,
+ "history_start": "2024-02-28T21:27:23",
+ "history_end": "2026-07-27T15:01:10",
+ "n_snapshots_planned": 18,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 18,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:21:23Z",
+ "snapshot_shas": [
+  "303a9edc5b45a71bcba80d24de836563d3d01a46",
+  "d12476ddd7346681e43b984c3c70678f6bff1803",
+  "1e99fc69871532ae59ec96fb75005513bf32caf4",
+  "bf02bd6926a3b2644a80295bee8a65dee8cde038",
+  "3eec74dcb94143f84097f89a2d480d69c07e2b04",
+  "550d1e09b883f839ce3d82dc2b970403bafd5cc3",
+  "43c2e7393ce92600ed150bceb9a22a9c64151774",
+  "a041b06bf69d44ed11e288a1a1ab7de273395c66",
+  "13366ee456cd4c49196d11dc76b81dff81392de9",
+  "29863a6ab4a04b7361937cb7959fe15414c27e81",
+  "9de9f889f442856a4421b542ff3da10a58da5032",
+  "2a48ab21ffdea9a8a41138eeedb9ea51dd5b9146",
+  "41809c182f9851141ed5290510ed2cd66ce0ff2c",
+  "4b7f1450eab2ee0c40126ed3a66a32dc93bdbc7f",
+  "2a0be98a7238ca6b99316ba08341c0d7b56da6b1",
+  "2518989f23eb0801f33b8eaefb3f134953284214",
+  "b82f40db44be13fd6f702852a06f6e38b56e977c",
+  "61c52a088ed10b3cb71688fc54873136759d8473"
+ ],
+ "stars": 43,
+ "license": "MIT",
+ "strata": [
+  "S3_code"
+ ]
+}

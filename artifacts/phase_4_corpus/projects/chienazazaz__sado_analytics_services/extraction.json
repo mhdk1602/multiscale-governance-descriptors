@@ -1,0 +1,72 @@
+{
+ "project_id": "chienazazaz__sado_analytics_services",
+ "repo_url": "https://github.com/chienazazaz/sado_analytics_services.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:22:55Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "2c754e571a0e755850358fc1a918b9a962b117f3",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "sado_analytics_services",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "sado_analytics_services",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 497,
+   "first_commit": "2023-11-09T09:17:54",
+   "last_commit": "2025-02-17T11:55:02"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 497,
+ "history_start": "2023-11-09T09:17:54",
+ "history_end": "2025-02-17T11:55:02",
+ "n_snapshots_planned": 16,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 16,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:24:11Z",
+ "snapshot_shas": [
+  "7e81a01e6fad39adf92c85e8d6281afda1cbd0e7",
+  "b9691d9ff1679fbe59fa97cdca4732471f92729b",
+  "715c075be3d2becd5821184cd60af343f913e45f",
+  "81163e2848eb1431c709424a11f5b8457ba632d7",
+  "cee5cf3cb3eb2f3b9eaa74092f5ac10b4e6b1eb5",
+  "42379cf1ec1e825581fb2186ce28c98908d89deb",
+  "a0d59a3624b5f050a41d7362d80a0c954eb71a54",
+  "893fda201559cafc3f9853f374a586c97c0d8b24",
+  "27c4b74f5153f1aba1aa6adb6d6e9e8440dd280e",
+  "436fa552535303b9608170c63f3f3ecceb0a543d",
+  "a4eb213ae7cdb1af84f3aed20c8b056a9367d1e3",
+  "6ec35872fe04256c337e07fa18eaf1984c4cd88b",
+  "32c6f7ba1919c97104cddde290a492214c124019",
+  "7c05944a5558ce5533b05f86f530f8ca4571d73b",
+  "c5296bce5b6b94a2ab5782230a5d6d22e6a1be0f",
+  "8e17920931ab6d43f22a4b7f75d282aa45fcbb47"
+ ],
+ "stars": 1,
+ "license": null,
+ "strata": [
+  "S2_topic_dbt-core",
+  "S3_code"
+ ]
+}

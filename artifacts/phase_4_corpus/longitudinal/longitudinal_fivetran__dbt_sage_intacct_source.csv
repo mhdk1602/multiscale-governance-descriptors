@@ -1,0 +1,13 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_sage_intacct_source,2022-03-01T17:15:13,6954e23e9d1e4a6c65915017f733460714f154df,add package modules,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_sage_intacct_source,2022-03-31T22:53:03,26b073bb583a036c6508357e9ea33cc0c70a3ece,feat(sage_intacct__using_invoices): new var,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_sage_intacct_source,2022-04-19T15:23:34,d3e4a89dcd9a507c635db3c92a5c046c902b678d,update fivetran_deleted filter,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_sage_intacct_source,2022-05-12T09:51:01,598ee6e4707f4565f994ea15a8af1482add572f1,soft deletes removal for accounts,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_sage_intacct_source,2022-10-27T16:26:01,51f63b6668aeb8c2168f7346539af23882298810,updates,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_sage_intacct_source,2022-10-31T17:03:38,9943031a9c0adfb12e4969f25db4a60669dd30cc,identifier add,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_sage_intacct_source,2023-10-10T11:40:18,6ddec524cfe6baf7834bf0c153b58925e6521290,start fix,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_sage_intacct_source,2023-10-31T13:09:31,92248a3c218a09076bfe543dcc801ed0a8a1df01,carry out updates,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_sage_intacct_source,2023-12-04T09:22:58,2543c8bca1d124908850225e3b49385a7e5cb5bc,review updates;,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,14,0,0,0,14,1
+fivetran__dbt_sage_intacct_source,2024-02-27T10:27:11,2034a32c55467720e09f36d5b987600860a22ec9,bugfix/using-bills-variable,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,14,0,0,0,14,1
+fivetran__dbt_sage_intacct_source,2025-02-05T12:09:11,a38eff1c8e151443d5d3f9a683e334fd674af08c,PR changes,14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,14,0,0,0,14,1
+fivetran__dbt_sage_intacct_source,2025-06-26T11:21:34,717e0ce69f8ba158f87e5bca7f8f365f676231bd,feature/freshness-updates (#23),14,7,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,7,0.142857,0.0,14,0,0,0,14,1

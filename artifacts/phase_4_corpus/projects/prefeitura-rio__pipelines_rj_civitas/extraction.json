@@ -1,0 +1,71 @@
+{
+ "project_id": "prefeitura-rio__pipelines_rj_civitas",
+ "repo_url": "https://github.com/prefeitura-rio/pipelines_rj_civitas.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:36:54Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "02799bd41f5e1919de1728ede4ddfe8f10ba0445",
+ "default_branch": "main",
+ "model_path_universe": [
+  "queries/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "queries/dbt_project.yml",
+  "name": "queries",
+  "chained_configs": [
+   "queries/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "queries/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "queries/dbt_project.yml",
+   "name": "queries",
+   "model_paths": [
+    "queries/models"
+   ],
+   "commits_on_model_paths": 185,
+   "first_commit": "2024-06-25T18:00:24",
+   "last_commit": "2026-07-27T10:16:02"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 185,
+ "history_start": "2024-06-25T18:00:24",
+ "history_end": "2026-07-27T10:16:02",
+ "n_snapshots_planned": 16,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 16,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:37:49Z",
+ "snapshot_shas": [
+  "2c5471ed80226295685bf138c4edb59db5bc35b3",
+  "5579200d76219eb4a087c4363378ffb9046ff8bd",
+  "9f84aa1c595d734a300c93c4746a8276da931cca",
+  "5069ab3ac0ef1d45323e7867e58b7c5d3e055309",
+  "24fd7c4f7af335b27bedabc7e932de2c0a1baedd",
+  "919d53b62381422145bd8e6c4e92843e26753c3b",
+  "7c37350c2a5db55e5220cd81018c53bcd2b82170",
+  "d390633cd2930579dcc14c52b66ef1bc5f42a2fb",
+  "6731345742f5879e96e1acd5bd48a0ddc046fdf8",
+  "a7251341202a4d24e6af7fe72c3bb1da86bbfd84",
+  "eca2aeedbe1c329a0ab8ce72a17c1c32b929bdf7",
+  "d1aad7297eb1f82e71c28f913189d002aa9c660e",
+  "e92998e0cbfef66ec338b25517fe2622da3b66cc",
+  "879c8578d361c59eda49e504060f985610d0c2a1",
+  "b438f1eb49ae03d9402c45576ef9597bf33d0328",
+  "8139166c917d2f97d91f536d3e21acfa2960531c"
+ ],
+ "stars": 3,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

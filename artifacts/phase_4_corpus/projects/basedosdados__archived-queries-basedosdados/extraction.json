@@ -1,0 +1,67 @@
+{
+ "project_id": "basedosdados__archived-queries-basedosdados",
+ "repo_url": "https://github.com/basedosdados/archived-queries-basedosdados.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:21:49Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "303de1e33b9397c2ca1461f0fcf0e5b73b0b3876",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "basedosdados",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "basedosdados",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 152,
+   "first_commit": "2022-04-13T15:18:18",
+   "last_commit": "2023-07-11T21:11:05"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 152,
+ "history_start": "2022-04-13T15:18:18",
+ "history_end": "2023-07-11T21:11:05",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:22:54Z",
+ "snapshot_shas": [
+  "2e86da42e82a74a55824cfbcdd2e587ce1c172f5",
+  "5f640e07b01a4703214c29fbdedeaf99d5aa9507",
+  "57a1e819c4cda7ce0ed1b543725634e09fd519fa",
+  "1895ed8dab15cc6b3e1826b9c53d8dc278e9a976",
+  "42302f4ffb81877ea230fc63b9dece0930f64f42",
+  "12e74819c0de804c70f01676ca44b8d2703525f4",
+  "829ea45381dd626f36c9ab333ea87ca26c18d1a8",
+  "d8d71e18143c7fb09f6cff7852e89217cb2265d3",
+  "e1ec93e5304108234e14692feecfdfdecac65c9b",
+  "e05b744e98d4033da774529af08d4251a51f9410",
+  "e4fd409c18c65b578a8294a55db5d09a07641d5b",
+  "303de1e33b9397c2ca1461f0fcf0e5b73b0b3876"
+ ],
+ "stars": 7,
+ "license": null,
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "project_id": "ImpulsoGov__saude-mental-indicadores",
+ "repo_url": "https://github.com/ImpulsoGov/saude-mental-indicadores.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:18:25Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "partial",
+ "error": "1 of 19 snapshots failed",
+ "head_sha": "c26a69af770d190534bb1f719b6ca41a7c2be8df",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models",
+  "sources"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "impulso_saude_mental",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models",
+   "sources"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "impulso_saude_mental",
+   "model_paths": [
+    "models",
+    "sources"
+   ],
+   "commits_on_model_paths": 53,
+   "first_commit": "2022-05-30T13:01:55",
+   "last_commit": "2024-11-14T13:18:45"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 53,
+ "history_start": "2022-05-30T13:01:55",
+ "history_end": "2024-11-14T13:18:45",
+ "n_snapshots_planned": 19,
+ "model_paths_stable": false,
+ "snapshot_errors": [
+  {
+   "sha": "1453e512c2980c928363530285b51461a3c17253",
+   "date": "2022-05-31T18:43:14",
+   "reason": "no model SQL at this commit"
+  }
+ ],
+ "n_snapshots": 18,
+ "snapshot_coverage": 0.9474,
+ "extraction_finished_utc": "2026-08-05T02:20:30Z",
+ "snapshot_shas": [
+  "1a946ae85ba23410fff037ad001251b50f020b77",
+  "76ffecbaa002a57692a6ab45d8d9fc1c07d7146d",
+  "48f59f21475c92618d532fd438e5679233f3be98",
+  "0ef79b54a6381faf5a77bbf00f2e670e3c597191",
+  "1bb5f09e07fd075a3fa821f6f06be3a5eec2a216",
+  "33e4ab20253c1d4481cd5a773858d369fbc25fc9",
+  "95adc046ca1da508a5fd9fe3993747f212a041aa",
+  "e0cbb22f80743d6d7a63da0dd0ded98d6450b151",
+  "692502b015e404543aec2d51d61c0b7220859fd1",
+  "206338160e783095023bb2ac0ece860bca2f78f4",
+  "c2582104fb2e52489c64beac8df5b09993666873",
+  "ce12da95d26687c056e0ad16eedb48b9d2c34fc8",
+  "ede2ee679214540e8cb52ff26929da4e66c149b7",
+  "0df77ada2922afdeb3b3a2cc4ff7a25b30ba9cc9",
+  "7d8eb572e5b7d4a300e8445939eb34a9be2597fa",
+  "4bd0f4c37914e58988c8c56b573d57c420a73f7f",
+  "892954f75a6093795f0b28c7854bb656812f43a7",
+  "c26a69af770d190534bb1f719b6ca41a7c2be8df"
+ ],
+ "stars": 5,
+ "license": null,
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "project_id": "dbt-labs__dbt-onboarding-exemplar",
+ "repo_url": "https://github.com/dbt-labs/dbt-onboarding-exemplar.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "a1c3a12938e2130505e87cf9073e21a3cdc1f1f6",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "rapid_onboarding_exemplar",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "rapid_onboarding_exemplar",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 100,
+   "first_commit": "2021-09-29T14:09:54",
+   "last_commit": "2024-11-08T20:02:37"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 100,
+ "history_start": "2021-09-29T14:09:54",
+ "history_end": "2024-11-08T20:02:37",
+ "n_snapshots_planned": 17,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 17,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:26:00Z",
+ "snapshot_shas": [
+  "bf21dcbf20732f6553d505d176d37bc0b3896344",
+  "ef6e8c111d8672039874f58ddf7e842e17d3eb4d",
+  "0f648ba0eb242e9f5f93869ddaa700cb85ea5924",
+  "cd4db1e583339f5fb190d2c7c08c95e59192741d",
+  "fcb1e534690474afc6461c1e7af7f0e19dd41b14",
+  "bd584aaf7b47745ea91e27c8c7ce31e406ecceb7",
+  "f1dcc29573df9381ea5ef47ad8421183e1adf6e2",
+  "23a97c7c26ea937311890894474dc78b0210b6dd",
+  "8fefbb23e289cf05b969f1ffe3e4a57105aef7fb",
+  "c0b85a3239b8023053f33139b2b0e1084d61b0f6",
+  "fa870bd9bd6665dd8c4cbd85cf7031a365efdcb6",
+  "1da64c57ad3a1b60390d6930098dda6a43206e84",
+  "221908bb07b9794042d63f0b391943859722bb90",
+  "1b0998dc0a67aebe0aa967994a3aa5cf3562d3fb",
+  "fe7ccd8fcd2dbe9edd41088a6d7b13cd0d0d52bf",
+  "b15d482b6cdd55c2444831bd39699f90a09f0855",
+  "2c8532a0cd1f96a045b2df26035aaed1346885b3"
+ ],
+ "stars": 26,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

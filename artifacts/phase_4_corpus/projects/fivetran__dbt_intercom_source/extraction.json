@@ -1,0 +1,67 @@
+{
+ "project_id": "fivetran__dbt_intercom_source",
+ "repo_url": "https://github.com/fivetran/dbt_intercom_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:29:01Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "2bce6ab597c37644357a95794c6280c003746623",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "intercom_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "intercom_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 54,
+   "first_commit": "2020-11-17T10:43:19",
+   "last_commit": "2025-06-26T10:17:07"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 54,
+ "history_start": "2020-11-17T10:43:19",
+ "history_end": "2025-06-26T10:17:07",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:30:38Z",
+ "snapshot_shas": [
+  "af18f4ad7945edc67df3a831c11f92647bf2d421",
+  "f30ca908c3c7e0512768c98c1b23c137b3a1260e",
+  "d20fbc682f0282496bd37b04044a6bb0aee18905",
+  "eb2abec69da79644c6f4013df3fe016a8ddc3aab",
+  "ddf617190aba1d5dd6de16cb31fe17e6ea351a14",
+  "c5f69e939a804b8e3a042d0613ff6eb108cc2066",
+  "0a6f72f8d36cf3a9416bd1881a163ace67f00d99",
+  "936f5a13bb8c32aa93377c22ab161a3b9f289ba5",
+  "386379b41d631e6b70e2b3fd9f52b0b8254588d3",
+  "9d486a6dd5d0acea1e614b5fbb51147cfdd33e9a",
+  "49a936974f148008e878f05b6a879fb8d460332c",
+  "aedbfe295b85fd508b3f2d89a9f3b0886981a064"
+ ],
+ "stars": 3,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

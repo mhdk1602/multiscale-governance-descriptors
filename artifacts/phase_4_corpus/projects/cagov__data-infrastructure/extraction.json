@@ -1,0 +1,91 @@
+{
+ "project_id": "cagov__data-infrastructure",
+ "repo_url": "https://github.com/cagov/data-infrastructure.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:22:23Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "partial",
+ "error": "1 of 20 snapshots failed",
+ "head_sha": "bc3e154fc3f8384d865a8dbcdbbbb960fae04c28",
+ "default_branch": "main",
+ "model_path_universe": [
+  "transform/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "transform/dbt_project.yml",
+  "name": "dse_analytics",
+  "chained_configs": [
+   "transform/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "transform/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "transform/dbt_project.yml",
+   "name": "dse_analytics",
+   "model_paths": [
+    "transform/models"
+   ],
+   "commits_on_model_paths": 83,
+   "first_commit": "2022-10-12T18:36:14",
+   "last_commit": "2026-02-25T08:44:18"
+  },
+  {
+   "config": "transform-bigquery/dbt_project.yml",
+   "name": "dse_analytics",
+   "model_paths": [
+    "transform-bigquery/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2023-04-26T14:14:07",
+   "last_commit": "2023-10-30T12:44:51"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 85,
+ "history_start": "2022-10-12T18:36:14",
+ "history_end": "2026-02-25T08:44:18",
+ "n_snapshots_planned": 20,
+ "model_paths_stable": true,
+ "snapshot_errors": [
+  {
+   "sha": "709c882f2b2b04ee8b62e34a0290463155f041bb",
+   "date": "2022-12-09T01:34:31",
+   "reason": "no model SQL at this commit"
+  }
+ ],
+ "n_snapshots": 19,
+ "snapshot_coverage": 0.95,
+ "extraction_finished_utc": "2026-08-05T02:23:25Z",
+ "snapshot_shas": [
+  "98ad153fc45d8eb282ce166b5b88117b73d71702",
+  "a884ac8cfa8cc51471f0eb417849ed421d5f9f6e",
+  "c15272209a598ee19f99047f2a796ff80c274694",
+  "0a44d27efa90ae0c7900fd37e4c4b6575b3d1469",
+  "125e9f3a50103d32d0b9e170591ba3b468b04d3a",
+  "9e369b23f54bad55a0bcb89bee76cbbe22d9c54f",
+  "21c63e89aa6e5722e640964fff3d1d3abd47e087",
+  "d982dd258688fb36f98bc3a8957fb5915283b8e6",
+  "73a897282e2ea792e2c6bc27744c4d3d3037e117",
+  "b4f488b0fe9749b8b39de369c9d7801ecbe19354",
+  "11c4357278fb6d65684783c66e08ce1fce83d82f",
+  "e65fe7d8e731029a5d4288f76aee822c24a12b9b",
+  "f54c4f15fcf5b9185c1215ec32ead0869ccc5962",
+  "026be8599b7aaa13a573828a891f30e16c73f46e",
+  "981bbe0f27a4f2f37262ca78a43796ad1a30a27c",
+  "1448ec58d2f6c16381b2ef05851b18f0bfa30bb6",
+  "e9363822a79d2f4781fefa522fd3cc3995b32d15",
+  "219d676599f243392d5fda9801db0bed87023491",
+  "7cbf02512e6dad42b1dd8196c95f9ca1248e7844"
+ ],
+ "stars": 25,
+ "license": "MIT",
+ "strata": [
+  "S1_curated",
+  "S3_code"
+ ]
+}

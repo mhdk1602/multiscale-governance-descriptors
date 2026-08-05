@@ -1,0 +1,264 @@
+{
+ "project_id": "TEAMSchools__teamster",
+ "repo_url": "https://github.com/TEAMSchools/teamster.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:20:57Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "15e75b68520a4e3873281ecce4fc098441a38e35",
+ "default_branch": "main",
+ "model_path_universe": [
+  "src/dbt/kipptaf/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "src/dbt/kipptaf/dbt_project.yml",
+  "name": "kipptaf",
+  "chained_configs": [
+   "src/dbt/kipptaf/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "src/dbt/kipptaf/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "src/dbt/kipptaf/dbt_project.yml",
+   "name": "kipptaf",
+   "model_paths": [
+    "src/dbt/kipptaf/models"
+   ],
+   "commits_on_model_paths": 14602,
+   "first_commit": "2023-07-14T14:34:14",
+   "last_commit": "2026-08-04T21:09:12"
+  },
+  {
+   "config": "src/dbt/powerschool/dbt_project.yml",
+   "name": "powerschool",
+   "model_paths": [
+    "src/dbt/powerschool/models"
+   ],
+   "commits_on_model_paths": 580,
+   "first_commit": "2023-07-14T14:34:14",
+   "last_commit": "2026-07-28T19:42:19"
+  },
+  {
+   "config": "src/dbt/kippmiami/dbt_project.yml",
+   "name": "kippmiami",
+   "model_paths": [
+    "src/dbt/kippmiami/models"
+   ],
+   "commits_on_model_paths": 233,
+   "first_commit": "2023-07-14T14:34:14",
+   "last_commit": "2026-07-31T23:29:30"
+  },
+  {
+   "config": "src/dbt/iready/dbt_project.yml",
+   "name": "iready",
+   "model_paths": [
+    "src/dbt/iready/models"
+   ],
+   "commits_on_model_paths": 153,
+   "first_commit": "2023-08-11T21:11:39",
+   "last_commit": "2026-07-20T15:35:39"
+  },
+  {
+   "config": "src/dbt/deanslist/dbt_project.yml",
+   "name": "deanslist",
+   "model_paths": [
+    "src/dbt/deanslist/models"
+   ],
+   "commits_on_model_paths": 149,
+   "first_commit": "2023-07-14T14:34:14",
+   "last_commit": "2026-04-16T22:01:13"
+  },
+  {
+   "config": "src/dbt/finalsite/dbt_project.yml",
+   "name": "finalsite",
+   "model_paths": [
+    "src/dbt/finalsite/models"
+   ],
+   "commits_on_model_paths": 128,
+   "first_commit": "2025-12-09T20:03:32",
+   "last_commit": "2026-08-01T03:40:10"
+  },
+  {
+   "config": "src/dbt/pearson/dbt_project.yml",
+   "name": "pearson",
+   "model_paths": [
+    "src/dbt/pearson/models"
+   ],
+   "commits_on_model_paths": 127,
+   "first_commit": "2023-08-15T15:45:33",
+   "last_commit": "2026-06-11T21:01:42"
+  },
+  {
+   "config": "src/dbt/focus/dbt_project.yml",
+   "name": "focus",
+   "model_paths": [
+    "src/dbt/focus/models"
+   ],
+   "commits_on_model_paths": 111,
+   "first_commit": "2026-04-06T19:58:03",
+   "last_commit": "2026-08-04T20:47:22"
+  },
+  {
+   "config": "src/dbt/edplan/dbt_project.yml",
+   "name": "edplan",
+   "model_paths": [
+    "src/dbt/edplan/models"
+   ],
+   "commits_on_model_paths": 89,
+   "first_commit": "2023-07-14T14:34:14",
+   "last_commit": "2026-05-21T23:20:21"
+  },
+  {
+   "config": "src/dbt/overgrad/dbt_project.yml",
+   "name": "overgrad",
+   "model_paths": [
+    "src/dbt/overgrad/models"
+   ],
+   "commits_on_model_paths": 77,
+   "first_commit": "2024-08-23T19:42:43",
+   "last_commit": "2026-07-29T15:21:11"
+  },
+  {
+   "config": "src/dbt/renlearn/dbt_project.yml",
+   "name": "renlearn",
+   "model_paths": [
+    "src/dbt/renlearn/models"
+   ],
+   "commits_on_model_paths": 75,
+   "first_commit": "2023-09-18T22:39:15",
+   "last_commit": "2026-08-03T14:33:44"
+  },
+  {
+   "config": "src/dbt/titan/dbt_project.yml",
+   "name": "titan",
+   "model_paths": [
+    "src/dbt/titan/models"
+   ],
+   "commits_on_model_paths": 71,
+   "first_commit": "2023-07-14T14:34:14",
+   "last_commit": "2026-04-03T16:51:58"
+  },
+  {
+   "config": "src/dbt/kippcamden/dbt_project.yml",
+   "name": "kippcamden",
+   "model_paths": [
+    "src/dbt/kippcamden/models"
+   ],
+   "commits_on_model_paths": 63,
+   "first_commit": "2023-07-14T14:34:14",
+   "last_commit": "2026-07-17T20:50:17"
+  },
+  {
+   "config": "src/dbt/kippnewark/dbt_project.yml",
+   "name": "kippnewark",
+   "model_paths": [
+    "src/dbt/kippnewark/models"
+   ],
+   "commits_on_model_paths": 63,
+   "first_commit": "2023-07-14T14:34:14",
+   "last_commit": "2026-07-17T07:53:20"
+  },
+  {
+   "config": "src/dbt/amplify/dbt_project.yml",
+   "name": "amplify",
+   "model_paths": [
+    "src/dbt/amplify/models"
+   ],
+   "commits_on_model_paths": 28,
+   "first_commit": "2025-10-29T17:32:51",
+   "last_commit": "2026-06-29T14:59:02"
+  },
+  {
+   "config": "src/dbt/staging/dbt_project.yml",
+   "name": "staging",
+   "model_paths": [
+    "src/dbt/staging/models"
+   ],
+   "commits_on_model_paths": 20,
+   "first_commit": "2023-08-03T19:44:44",
+   "last_commit": "2024-05-07T19:38:50"
+  },
+  {
+   "config": "src/dbt/kipppaterson/dbt_project.yml",
+   "name": "kipppaterson",
+   "model_paths": [
+    "src/dbt/kipppaterson/models"
+   ],
+   "commits_on_model_paths": 18,
+   "first_commit": "2026-03-02T19:42:45",
+   "last_commit": "2026-07-17T18:16:56"
+  },
+  {
+   "config": "src/dbt/teamster_utils/dbt_project.yml",
+   "name": "teamster_utils",
+   "model_paths": [
+    "src/dbt/teamster_utils/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 18,
+ "n_commits_touching_models": 18066,
+ "history_start": "2023-07-14T14:34:14",
+ "history_end": "2026-08-04T21:09:12",
+ "n_snapshots_planned": 38,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 38,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:23:04Z",
+ "snapshot_shas": [
+  "f07d44fe40341f17970d8006cef1894312f75c3c",
+  "c2f2e23c05773db00e25a58390239b9167f2eb71",
+  "40c775205f5519d911113ec2fd3462b00b430c45",
+  "5c704fdcc478c6557622064dd9e95db8c48cef8b",
+  "d863f65b9306750ccf19eaef03ec2be64e369bd3",
+  "6875d3bff8760bfa0611d602f2b8a463d5f8c817",
+  "968d7b7f2d52a5695fa5c5b9a282dd28b356bcc3",
+  "ff612d0a28e418036036ea80c9fe8fd601b79a06",
+  "82b5ae5a0953a3770f09f38a08191dd988bcfb65",
+  "77feece8de79ce1d398d98a6887de205010369be",
+  "41321830b8accbc08774867474c20d16a4632007",
+  "14fcff108a287432f8cba0038bc47facdb69bb1d",
+  "501e7e0db2935299be5eaea5bd74bd9c37ce72f0",
+  "c3903aba7acf11e8c599b66c75d92ed152e03bfc",
+  "0fde135b2af682ca768e9c364008194b3ab95a1d",
+  "cb1d289cb8e10c671c011d9d2a81d663bfe20011",
+  "fdd690c90fd06073f15ce97d9a01289207f00fb7",
+  "11539e89f158e606fc4a22db40574766fb3b1d5f",
+  "7b3d5b494726d449d60bf0dac58570619e02188d",
+  "cac11dd92473c965c953d18541e0001ac7c34cd1",
+  "b57936fb35d84f7156bcbb1afa4faec252a36060",
+  "c5cfe78eaf558227a5c683d4ad364563845f91c2",
+  "0271e67e742651c533f3d63d0d7e820723acdca4",
+  "7228b323474094f2bb8f3e4713ab417166e0b01d",
+  "0cb897876033c2cfc1b2f589e53600ae2e9f4362",
+  "89bd75f4d1285eee0abec4434a53bd0edfc94ccc",
+  "673ca887e20f32f7cf786dfc919e3705638442e5",
+  "68e026132f4490df96b064f537f8e7343b266151",
+  "f4f0f4e67af282d68a206807603314574dfc8a6a",
+  "a25c83f16d5d7a809a0eabaf762d223e732dbac6",
+  "dacd955423f0ae97fff88a2854384c64a1dfcedc",
+  "53e16e5a012f7e692b9df18243cab033dcf4c571",
+  "bf8087a9736f18848a1693d51779e3c1eb905076",
+  "f0f2ef6561c8bc4c2ddffb8088e21b15df6b9369",
+  "cbebc84b95ee28767e87499fae7064648b907229",
+  "7ee37700714ec852d98be4368b178a363464e637",
+  "02f29205ce93b7fe27e9180f182c8925f1a574de",
+  "6d984fadd5731cb59ff3004779d1f4d7e2164d35"
+ ],
+ "stars": 14,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "project_id": "elementary-data__dbt-data-reliability",
+ "repo_url": "https://github.com/elementary-data/dbt-data-reliability.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:25:58Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "6283bb85e909c856d93488d28620c835ea767bd7",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "elementary",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "elementary",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 438,
+   "first_commit": "2022-01-09T15:21:42",
+   "last_commit": "2026-06-17T17:09:40"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 438,
+ "history_start": "2022-01-09T15:21:42",
+ "history_end": "2026-06-17T17:09:40",
+ "n_snapshots_planned": 39,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 39,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:29:01Z",
+ "snapshot_shas": [
+  "458d8c1b1129420e52eab84d0e4a4bad7181c5a9",
+  "17ad5ff919dfb8403bdca9ae0cf179827ed0476a",
+  "697e71b8b56f6cb77d856b782b053a1d7cbedd41",
+  "4bac17eef0fa51915b790aeec640d2167f9e112e",
+  "19e4e3f9900d49b365c602eec57fda569c6d93b3",
+  "785cbb7e36a7d363c9e877b0fedf208ab5d775be",
+  "fc7a249fa567d8f894aa74e51252181cd92cb066",
+  "40501c1d34dffaec8db2bcf2d1f5a596f35eb0e8",
+  "96c203f8f94a44be2942ffef440f743f29b25750",
+  "1a53cabf285949f1319b69de88a1ccbd7027a5f8",
+  "4d345bc8bd236bca459ba23caef2072488c58845",
+  "0efa57bdd89aa149c9576a552283551f39b49000",
+  "66c137eba5006ac1e2aa581e24e7bd2eb90f4711",
+  "1b05c1dd36afd1e1fa292ed424591143b3852f52",
+  "4a467821455dfb0c7e3c43f416ccc2a7f351bfd1",
+  "e9e4726b7b2d7b10caad71df04d5a414ed56e164",
+  "1cc70f65798c0ca95c92086d3dbe83802faba932",
+  "ce0368c60fd4e38f8290546035e6e6a0bb5bc960",
+  "6f68bd49df97d7a4d1fcaa72c42a6a3ad9bd8cdf",
+  "4aa9c4aa30f0e8071d19fc974ca3387551b9c7bf",
+  "9ce379efe4954903dd1db053a8268dc6c2be8295",
+  "12e1a9e56e9b735b2a0fd8f780113ae6ef0a7078",
+  "f45b9cd2cd933b3b48587abe6a28f74041485302",
+  "3e6a21687e98549719d9caed92f47dacefe84f16",
+  "25bd3e03c881a8c86541134b3a9f7b701fb4d344",
+  "449da8f16976889ebb8dcce441bfb461b924f008",
+  "fc8a563e67b12efb0a11a8483ea3466a8807b3f8",
+  "584e3a814bca3c4751e12c2792b4eb80fcbb9762",
+  "5d2ad9b248e1e045bd959ed751a9d7cafaaa96b9",
+  "59270ed6a84ed6d4e9d449bc2725643771389cae",
+  "2560124fe7067a41523e4471d4459e93f0f57915",
+  "3c1061cc19b95fc883f04105735e827643feb353",
+  "6551383e8a37e5814bd2bb9fd74330be8265a3c9",
+  "f5c062d8ec0f12796ec36685d4d514126aa9c3c9",
+  "ab21363935c42490a60a779557ba99bed96b754c",
+  "7a2b542732b97303db48e797d4c1927686993389",
+  "d80f30ac22ee21c2006320e7065a385429593634",
+  "3dc104a13cda8dd4a0fbcec41a97706acb110643",
+  "4d4c5d531744c716c7a30a80aa74ec768ffa71dd"
+ ],
+ "stars": 520,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_analytics-engineering",
+  "S2_topic_dbt"
+ ]
+}

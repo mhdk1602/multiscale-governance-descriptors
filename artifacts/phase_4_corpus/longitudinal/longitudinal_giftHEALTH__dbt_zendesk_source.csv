@@ -1,0 +1,18 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+giftHEALTH__dbt_zendesk_source,2020-08-16T19:26:52,cc4aa6a967345bf35c04d3656bdd98243f873942,progress,12,0,False,,,0.0,0.0,0.0,0.0,0.0,12,0.083333,1.0,12,0,0,0,12,1
+giftHEALTH__dbt_zendesk_source,2020-09-14T16:46:58,2502f04af4f7c03f1d540491f9a5019f37ad90a9,cross db compatibility,9,0,False,,,0.0,0.0,0.0,0.0,0.0,9,0.111111,1.0,9,0,0,0,9,1
+giftHEALTH__dbt_zendesk_source,2020-09-29T12:39:34,d3314a875c60af51fccdd7f513f2dff881366fd7,group keyword fix,9,0,False,,,0.0,0.0,0.0,0.0,0.0,9,0.111111,1.0,9,0,0,0,9,1
+giftHEALTH__dbt_zendesk_source,2021-01-19T14:58:14,010b1398a278eac952db68f21604eb6b1eb2cd1e,update erd link and dbt version requirement,9,0,False,,,0.0,0.0,0.0,0.0,0.0,9,0.111111,1.0,9,0,0,0,9,1
+giftHEALTH__dbt_zendesk_source,2021-02-22T18:07:24,459ca1f68994a672385c7590660fa2d39ccbd959,add fivetran deleted removal,30,15,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,15,0.066667,0.0,30,0,0,0,30,1
+giftHEALTH__dbt_zendesk_source,2021-02-25T16:07:13,095b5baeeb8fbc4b9bad8664ca2f0fc5bc07fd8d,satisfaction removal commit,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+giftHEALTH__dbt_zendesk_source,2021-05-19T12:21:53,8dc4b82d0e509f06d420d4799dc347abca79cea9,Remove order by from `stg_zendesk__ticket_field_history`,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+giftHEALTH__dbt_zendesk_source,2021-08-06T11:31:40,e27fa0132ac34615eb73f604c64197747ff0543b,organization tags,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+giftHEALTH__dbt_zendesk_source,2021-12-20T12:16:20,56835a00bfdc63adb33a9893ca9c1cb3e5c2ee5f,update order of columns,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+giftHEALTH__dbt_zendesk_source,2022-01-19T11:14:02,156d2a0a2a01d7ea388af579ae08ee5116cf01d0,offset calculations,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+giftHEALTH__dbt_zendesk_source,2022-02-11T14:05:00,9da11cf08d3248ac663682b9d8cefb509cbf29b7,docs and tests,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+giftHEALTH__dbt_zendesk_source,2022-04-19T12:18:47,14b42045d195d127708adf497145ebf01043dc20,explicit jinja templating,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+giftHEALTH__dbt_zendesk_source,2022-06-27T09:17:33,4b5aff8945695e12e0ab11f1c0776dfbee603ec5,update .yml,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+giftHEALTH__dbt_zendesk_source,2022-12-29T09:19:34,2d1f4049ce9ac8ff5c5d2fe605866b2c57f0e5d9,update dbt_utils to v1.0.0,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+giftHEALTH__dbt_zendesk_source,2023-01-30T11:23:31,cdcf80a508b633df3eaefed4ecf989ebbc03db03,update with call leg table,36,18,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,18,0.055556,0.0,36,0,0,0,36,1
+giftHEALTH__dbt_zendesk_source,2023-03-27T14:27:54,64d9fb14e939ae6c0c9d2002a9d5591ab68f2508,update call metrics,36,18,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,18,0.055556,0.0,36,0,0,0,36,1
+giftHEALTH__dbt_zendesk_source,2025-03-03T11:09:21,7c4470e40b4330e5e3796462e5368a6dfcc289ff,add ticket custom field table (#4),38,19,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,19,0.052632,0.0,38,0,0,0,38,1

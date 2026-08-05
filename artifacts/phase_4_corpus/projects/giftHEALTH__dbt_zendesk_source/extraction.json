@@ -1,0 +1,72 @@
+{
+ "project_id": "giftHEALTH__dbt_zendesk_source",
+ "repo_url": "https://github.com/giftHEALTH/dbt_zendesk_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:34:11Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "7c4470e40b4330e5e3796462e5368a6dfcc289ff",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "zendesk_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "zendesk_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 48,
+   "first_commit": "2020-07-28T12:21:56",
+   "last_commit": "2025-03-03T11:09:21"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 48,
+ "history_start": "2020-07-28T12:21:56",
+ "history_end": "2025-03-03T11:09:21",
+ "n_snapshots_planned": 17,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 17,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:35:55Z",
+ "snapshot_shas": [
+  "cc4aa6a967345bf35c04d3656bdd98243f873942",
+  "2502f04af4f7c03f1d540491f9a5019f37ad90a9",
+  "d3314a875c60af51fccdd7f513f2dff881366fd7",
+  "010b1398a278eac952db68f21604eb6b1eb2cd1e",
+  "459ca1f68994a672385c7590660fa2d39ccbd959",
+  "095b5baeeb8fbc4b9bad8664ca2f0fc5bc07fd8d",
+  "8dc4b82d0e509f06d420d4799dc347abca79cea9",
+  "e27fa0132ac34615eb73f604c64197747ff0543b",
+  "56835a00bfdc63adb33a9893ca9c1cb3e5c2ee5f",
+  "156d2a0a2a01d7ea388af579ae08ee5116cf01d0",
+  "9da11cf08d3248ac663682b9d8cefb509cbf29b7",
+  "14b42045d195d127708adf497145ebf01043dc20",
+  "4b5aff8945695e12e0ab11f1c0776dfbee603ec5",
+  "2d1f4049ce9ac8ff5c5d2fe605866b2c57f0e5d9",
+  "cdcf80a508b633df3eaefed4ecf989ebbc03db03",
+  "64d9fb14e939ae6c0c9d2002a9d5591ab68f2508",
+  "7c4470e40b4330e5e3796462e5368a6dfcc289ff"
+ ],
+ "stars": 0,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

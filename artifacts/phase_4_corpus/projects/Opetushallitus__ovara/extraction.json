@@ -1,0 +1,85 @@
+{
+ "project_id": "Opetushallitus__ovara",
+ "repo_url": "https://github.com/Opetushallitus/ovara.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:19:20Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "6ce5af8f83ba59e4a115dada31c41cd8493b53de",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt/dbt_project.yml",
+  "name": "ovara",
+  "chained_configs": [
+   "dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt/dbt_project.yml",
+   "name": "ovara",
+   "model_paths": [
+    "dbt/models"
+   ],
+   "commits_on_model_paths": 496,
+   "first_commit": "2024-03-05T14:33:26",
+   "last_commit": "2026-08-03T12:46:18"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 496,
+ "history_start": "2024-03-05T14:33:26",
+ "history_end": "2026-08-03T12:46:18",
+ "n_snapshots_planned": 30,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 30,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:21:08Z",
+ "snapshot_shas": [
+  "e2114bc457ec605052b2f56aa476f53d5c20ed0a",
+  "8e8015cf55ccefee04db55e76323862663fbbb48",
+  "d12506add20da14ccc7f3f2747d7b90af3833a52",
+  "5a596b6a6215929db072495b9af53e3705baa19b",
+  "4119ea5396e873977b41e58a928066ef08732a2a",
+  "169eff6e06cde2541cd97c2417fafabf5a71a864",
+  "89399166b68bc6b60cf2b5f85ad67d8cba6172d9",
+  "f239ce0062775b357249a151f03d37e0a394e688",
+  "1ad4e74f46d1fe9ce8c1cf54d455a5e608e5b551",
+  "15542b21573c110a639719fc5dd5cdd4549926c2",
+  "5352236f74b793c5ebcea9cac00f7aa74ef87421",
+  "3b5f8d52c9344ad731b043973ed38f0032e1a1a1",
+  "b207aa653f0b753218837448b546a2d416f19a8a",
+  "1aeb998fb68d5f10648eae9f78313c286a19e41d",
+  "3d94e7d8669ad6938d7eeed7a4396e5d49ab7984",
+  "08ac5802de8eef80246cd15861d18dde86c5ad54",
+  "7f5beec80e06622141a2e248be27400bfc1989d7",
+  "d6a9cac4e821de156cef47f13b65dece8ca206d8",
+  "e3a88b49f1ba947c3fccb11de903a59bde888be9",
+  "0ce435022a87fe9b891591f44d58704212b6d021",
+  "65ab6a471a4e289eb8c7717ce9532c7f22e25321",
+  "88a29d9f10b296c579bd03342c3f42d122a223b8",
+  "29e1e99d4ab1a577fb0d1f9f4a4fa06e7d1569e9",
+  "a396e3c8ae84c762f56b47c487d15d050f2724ad",
+  "1cbe4cccb9c87fb76cc6f17f653492d5113f3d69",
+  "b6d50a7c359bfd7758d3575f7fb12a87a7c0a095",
+  "9269811731877aa1fcb4322e700cb9aa2e6595b4",
+  "99695defc879f2990c1725d173c0f14bc52987d4",
+  "85604ee6fe078f38f3ff75d02aa66c1f2b8c29f9",
+  "a65474b46de48bd75c2b77d81ee59a6f22d67690"
+ ],
+ "stars": 0,
+ "license": "NOASSERTION",
+ "strata": [
+  "S3_code"
+ ]
+}

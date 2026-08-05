@@ -1,0 +1,82 @@
+{
+ "project_id": "fivetran__dbt_xero",
+ "repo_url": "https://github.com/fivetran/dbt_xero.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:33:25Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "partial",
+ "error": "1 of 22 snapshots failed",
+ "head_sha": "51d236fe63baa3804923b791fae5302f81889517",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "xero",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "xero",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 51,
+   "first_commit": "2021-01-31T14:28:00",
+   "last_commit": "2026-07-27T17:51:35"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 51,
+ "history_start": "2021-01-31T14:28:00",
+ "history_end": "2026-07-27T17:51:35",
+ "n_snapshots_planned": 22,
+ "model_paths_stable": true,
+ "snapshot_errors": [
+  {
+   "sha": "ccf0e8c04df8b707d02d1be1d277b6409d9bb04d",
+   "date": "2021-01-31T14:28:00",
+   "reason": "no model SQL at this commit"
+  }
+ ],
+ "n_snapshots": 21,
+ "snapshot_coverage": 0.9545,
+ "extraction_finished_utc": "2026-08-05T02:35:43Z",
+ "snapshot_shas": [
+  "40750d0fb7be8d2bba1e8e5831a438320d1dd6de",
+  "1c9c33b16f675172f44682ca81a06e88204aebde",
+  "4c16ec112b8262290651f16b96f96ce83937def8",
+  "6aff368f9caae2eea7bb12ce857ac5d2fd664e3c",
+  "9690d23e9fbbaa275084843940600a4f687545ea",
+  "f3af509d95a75e444f7e6e15385e54483e16342f",
+  "dfa403b272a96ffadd8deef1594ed16bccfc5004",
+  "c3b3de5b575998158b989b71650d6d83cfcf56ae",
+  "a233af0abb33840c8851dbb7f7561aaf5a568d04",
+  "2f373b8ac21a8038e7623e89daa99dff02b38290",
+  "57b51af1e39691d4e7206418c816eb0aa86c5441",
+  "b2a7e6085821e749b188109236b60fdbfce2b92c",
+  "36ab6496cecd8dc1aee606f70ace9133c228840a",
+  "06eaf8520fa195067844d06e1b08f228eb77e1ad",
+  "3da15245f4cf405148602e3a3a3e56b9eb7fa6e9",
+  "f48dc77a039a70cdd798360c64ff46a2a0f7044d",
+  "01741c725ac3ed48d38e99dd2131608cc94267eb",
+  "a4e4bf833765f352c5520954b84ad23063307107",
+  "cbefe516ff6ba9348aa1ee9732095e256f689d6b",
+  "bb28ec2dfa25b8b40f8e027b02f01a9888c7eaf0",
+  "51d236fe63baa3804923b791fae5302f81889517"
+ ],
+ "stars": 12,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

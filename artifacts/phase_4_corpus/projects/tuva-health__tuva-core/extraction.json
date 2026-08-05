@@ -1,0 +1,122 @@
+{
+ "project_id": "tuva-health__tuva-core",
+ "repo_url": "https://github.com/tuva-health/tuva-core.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:39:06Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "partial",
+ "error": "2 of 46 snapshots failed",
+ "head_sha": "10b9eb73894a00547221fb19ef614542c188f4ba",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "the_tuva_project",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "the_tuva_project",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 652,
+   "first_commit": "2021-11-12T08:46:37",
+   "last_commit": "2026-07-21T09:31:36"
+  },
+  {
+   "config": "ci_testing/dbt_project.yml",
+   "name": "ci_testing",
+   "model_paths": [
+    "ci_testing/models"
+   ],
+   "commits_on_model_paths": 14,
+   "first_commit": "2024-05-20T12:10:59",
+   "last_commit": "2026-02-03T23:46:24"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 692,
+ "history_start": "2021-11-12T08:46:37",
+ "history_end": "2026-07-21T09:31:36",
+ "n_snapshots_planned": 46,
+ "model_paths_stable": true,
+ "snapshot_errors": [
+  {
+   "sha": "1a75d58ec14869b68429c8aae3911abba728adc4",
+   "date": "2022-11-17T12:37:26",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "d93c3ac6353234115b3259fe4d72e5c9067cdc42",
+   "date": "2023-01-11T12:41:52",
+   "reason": "no model SQL at this commit"
+  }
+ ],
+ "n_snapshots": 44,
+ "snapshot_coverage": 0.9565,
+ "extraction_finished_utc": "2026-08-05T02:41:27Z",
+ "snapshot_shas": [
+  "fcc6274dd508f01b242b422148ca1120b08877e4",
+  "cb9a587b8abfeb044915a744cb0b3a04b7a84a86",
+  "060c4aa7b7f63205e82119ff7a1875ae47785b28",
+  "eaf9b2a6cff6ff5bf574219aba37df8bca4be26d",
+  "b66ad6a9ee5dcba2a2952b6fd58ff857a5f0adf8",
+  "33de6bdbaf85cc06b76fc32df1c73c6d706b6347",
+  "03cf2a291265bf651deb31d9762a062d540de747",
+  "b3d878ac3cc55b2c01646585897c4a3a93fc5cac",
+  "3676a26861b403fa6bfa1c69e01cc87c458d92de",
+  "2b1e1be0fd458070c93bc3363d03d144bea45abc",
+  "579b314d2b60fd367a7faa933dd07872a1e63728",
+  "d9114731027124a12c8be972abe944b4313017b4",
+  "04fd65ed54f738127fc16465cb3a9d42903ba047",
+  "4a68dd741ed64bfa9bc4b1deb0ed898cbd60cacc",
+  "402071e920535ca42d6831fc19473f7433fd6e17",
+  "30944bfd29502089f0e841b22246620aad014fbb",
+  "e3bc58a859384600255720f9e5007638362e578d",
+  "ec12783b3d1a5ebbe48fc7dc4df37adc572a977a",
+  "221aad121127141ad463af75d44ca0d94be7c6f1",
+  "1a239177fc8727ea11c968c8d767b01997910edc",
+  "0f855aa4888e5f023f90252c063c7403551a3d14",
+  "af81e97dd24ecee770049af357816dd5a104cabf",
+  "f27e632a0cd789e7ab398574adb4eefa23236f66",
+  "a2dd6ea4adda6017003b56a9ac458a68dca2c268",
+  "8e576200b19eae506727094d0d194593230188d7",
+  "e450f761d450d169be92acee0e50d521efb91eea",
+  "1a5b7b0aec7224af82df802e9fbaab2e90f3cb81",
+  "28fb2e28361a35e14f4df17d345cdcffb4ab0d91",
+  "ebfbf176e32c25410584ab075f37aa5ed910bec7",
+  "4ca37e4be0291dc1fc91b8af4276f33bdd113f8c",
+  "d07e82a21a01c10e2eb17b1653c32408592b1634",
+  "bd4e960d231f53e715f52cece7bb0240010c396b",
+  "bec9f056d42f5eff52514a0ed7840dd64e8be52e",
+  "09e15a34a03ce50a7feb679e958f49e85417754a",
+  "cc3df24bfa979168f1536735b44d41b99dcfc704",
+  "c20ba04d3f315e7a671c79ec75f38cf806f8ec9a",
+  "c68b6d5d3e31ee3877e740933a1045a61ef80bf1",
+  "5afad69e09b24a7f7522672072e6a7239db2639e",
+  "46c5b24c6db04f835a40790b2536488a61941649",
+  "1029da6223a0c33ab2f93b52150213497daad3b6",
+  "16b0ad0be3c73f5063d068ac10fd0303bf28fcc8",
+  "cf32ede42efa0340d9f96a4ebf23a6208dbf19e6",
+  "8a730acb3a12ffd764c2741b504d20c4f8bc2908",
+  "10b9eb73894a00547221fb19ef614542c188f4ba"
+ ],
+ "stars": 321,
+ "license": null,
+ "strata": [
+  "S2_topic_analytics-engineering",
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

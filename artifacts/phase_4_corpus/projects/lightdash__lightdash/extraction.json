@@ -1,0 +1,104 @@
+{
+ "project_id": "lightdash__lightdash",
+ "repo_url": "https://github.com/lightdash/lightdash.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:35:44Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "ad7fb929a074e6a2a50b35425774c524ed3782f3",
+ "default_branch": "main",
+ "model_path_universe": [
+  "examples/full-jaffle-shop-demo/dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "examples/full-jaffle-shop-demo/dbt/dbt_project.yml",
+  "name": "jaffle_shop",
+  "chained_configs": [
+   "examples/full-jaffle-shop-demo/dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "examples/full-jaffle-shop-demo/dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "examples/full-jaffle-shop-demo/dbt/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "examples/full-jaffle-shop-demo/dbt/models"
+   ],
+   "commits_on_model_paths": 154,
+   "first_commit": "2023-09-25T10:29:16",
+   "last_commit": "2026-07-24T10:15:19"
+  },
+  {
+   "config": "examples/metricflow-demo/latest-spec/dbt_project.yml",
+   "name": "metricflow_latest_demo",
+   "model_paths": [
+    "examples/metricflow-demo/latest-spec/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2026-07-14T16:17:31",
+   "last_commit": "2026-07-15T19:03:15"
+  },
+  {
+   "config": "examples/metricflow-demo/legacy-spec/dbt_project.yml",
+   "name": "metricflow_legacy_demo",
+   "model_paths": [
+    "examples/metricflow-demo/legacy-spec/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2026-07-14T16:17:31",
+   "last_commit": "2026-07-15T19:03:15"
+  }
+ ],
+ "n_dbt_projects_seen": 3,
+ "n_commits_touching_models": 154,
+ "history_start": "2023-09-25T10:29:16",
+ "history_end": "2026-07-24T10:15:19",
+ "n_snapshots_planned": 29,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 29,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:37:14Z",
+ "snapshot_shas": [
+  "87ed0e6942bd2a745e543f44c9cae359c8fe14bf",
+  "cecb734bef26183c4909f8557006ae61ee5c4181",
+  "5380438c120b5260f1fb5d25a44d94ea8272bb4b",
+  "9d7e67ecfe47b71e387681db0490317edf7e6ab3",
+  "9e5dfb96acbc334938b508047a8a731fe2f88802",
+  "c07d4bde58e26479b1df77ba70b67e9726167175",
+  "0ea915baffc909579e3e07ef4e7460bed66ea343",
+  "e5395efce8ddc853fdec5ecc434cfb30e4540708",
+  "a53237e08560102975c5e6ce1f06960ea054623e",
+  "fda9f9addc102e1a970167eb4cff5b3eadf7a19d",
+  "eac02de343343823dbde42ce632abad48deb0693",
+  "eb295d783acbf949917ce4d7a4e2b5fbe0492873",
+  "91c26e8a4fb95af29ac7f6a337bf3561781b5c35",
+  "36a503d3a365f36ec2d9508a9cbe26521068697f",
+  "183cfb0e3da7020d33de20f031453841c46bd056",
+  "adf7eae303d2f3d986186d1ac1753eb17b096291",
+  "b0c1f937856a6a67e566b17df39f1b5cbab59dd2",
+  "6cb3445b3cc87bada90cfacf7a084b9d1de3b130",
+  "94e8fca716335ddd2779d687f8c40a9fb50120e8",
+  "bee7b34f500881b2d45d23ab7552bcfeef528ad1",
+  "f6b0dda1fb0d27c77276c1bd50497421233c971b",
+  "013ed84070492859c11191c9881b80581555692a",
+  "60d362dcfeda8a60dad75b5249973feaa4ac9866",
+  "e9a3c88fb7d1e6c576920c10c93c0e9a625030cd",
+  "ef69d2ed108e624a17c27bead9b6fdcdb550e3f8",
+  "1c467d8d5da47ab8a62929758cd2d78b668d9ffa",
+  "81868b3fd9e1da092a9348548fe4a9efe2fc29d1",
+  "0154d3a6724e329de59796ec6b3a2bffa11e941d",
+  "126cc36c50dd7c37d8ddc25877841fa25d39deeb"
+ ],
+ "stars": 6010,
+ "license": "NOASSERTION",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

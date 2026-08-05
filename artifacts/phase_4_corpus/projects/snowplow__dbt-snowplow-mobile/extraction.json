@@ -1,0 +1,82 @@
+{
+ "project_id": "snowplow__dbt-snowplow-mobile",
+ "repo_url": "https://github.com/snowplow/dbt-snowplow-mobile.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:26Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "fe0b4872a64214e2e3e9ef6349d022a1abff44c5",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "snowplow_mobile",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "snowplow_mobile",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 27,
+   "first_commit": "2021-12-06T22:49:53",
+   "last_commit": "2023-11-22T11:04:37"
+  },
+  {
+   "config": "custom_example/dbt_project.yml",
+   "name": "snowplow_mobile_custom_example",
+   "model_paths": [
+    "custom_example/models"
+   ],
+   "commits_on_model_paths": 4,
+   "first_commit": "2021-12-06T22:49:53",
+   "last_commit": "2023-11-22T11:04:37"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 27,
+ "history_start": "2021-12-06T22:49:53",
+ "history_end": "2023-11-22T11:04:37",
+ "n_snapshots_planned": 16,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 16,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:28Z",
+ "snapshot_shas": [
+  "2a5729b65e33e4a4065710ba49e9e4231eb50fee",
+  "b244247a82660862cd4e6faf0ad269b91e489873",
+  "474b0b1bb0dd86147e6beb34fa656f62915eefb4",
+  "e23fd757471f3930f5ffbcf267b103471689e214",
+  "bc607dc3367d921bb9ea3b9f6ca8be37835e9005",
+  "0b38a130aadeb47bc0567236ec3a65a7b769fc50",
+  "e1b2a331538c255bfbe3056c2e3e2eeac6e9c6e8",
+  "3e945b25f219da8fdf1729c474a87e7077546501",
+  "81061d8555389c7a7a1301cd80cefbfc150c73dc",
+  "229886c6244a184aea0d51078718717abb004949",
+  "dc7f933ccaaafdb89c8d9a22850fd6c743e85faa",
+  "eb28d2076fb1e9fa6b58bfef27483d4f2a47c073",
+  "3d52d145db909b635d284efec1fbaeb19061e9d1",
+  "1f68ec3ed2ba3ae536bad7e47635ca75feb41e8f",
+  "e316c8757aeb1a1c2bb9afd81f11475904a52b01",
+  "1cfc4f3f6a20dfdb239bed1ed8b278ae654be04f"
+ ],
+ "stars": 15,
+ "license": "NOASSERTION",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

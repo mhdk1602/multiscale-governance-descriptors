@@ -1,0 +1,72 @@
+{
+ "project_id": "fivetran__dbt_snapchat_ads",
+ "repo_url": "https://github.com/fivetran/dbt_snapchat_ads.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:32:35Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "011fde6a92be66e5e05737187d9fa9ba206b1b9d",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "snapchat_ads",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "snapchat_ads",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 48,
+   "first_commit": "2021-03-31T13:27:54",
+   "last_commit": "2026-06-22T20:34:54"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 48,
+ "history_start": "2021-03-31T13:27:54",
+ "history_end": "2026-06-22T20:34:54",
+ "n_snapshots_planned": 17,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 17,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:33:55Z",
+ "snapshot_shas": [
+  "79273f570905e5692a367be9add6cecce137a8f2",
+  "93caea0a1bf53392d12c00dfa53e6e82a5616f47",
+  "1c44fda150081fa251a199e7baae3a7a3329c726",
+  "31ac0c768a3574d79465f25c20208c742bf395e4",
+  "cf89242079470d3ad02550c993ae279afab85d85",
+  "2a96bddd93a64a98d0b4fc9cdd4d5753cf749b76",
+  "47d6aaca8755a44e2dcd69cb4405e7c1e031b510",
+  "561c820f1912bc7daf79a4c32adc701cc781f00d",
+  "d74423019415cc42338347ef625eae2f17f2de6f",
+  "0386d851df093e91e0f3828d52048cfe4725a428",
+  "2afd16d9ebf40e9f9b0598a4c18e0f0dba882c8a",
+  "17f2db759f9944b8100d96a485217cbd661954fe",
+  "f7f955816e8db2e5241e37ce3001ce8dafb54df7",
+  "2bcce6856b72d9ee963010b90aad6f4f0483c58b",
+  "2928c01c27d850afb461f59f18b04321c2477aee",
+  "36ed72e27dd898f54ad4e97f0364fd02e40f98f4",
+  "011fde6a92be66e5e05737187d9fa9ba206b1b9d"
+ ],
+ "stars": 2,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

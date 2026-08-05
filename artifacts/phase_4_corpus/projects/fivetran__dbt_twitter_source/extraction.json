@@ -1,0 +1,70 @@
+{
+ "project_id": "fivetran__dbt_twitter_source",
+ "repo_url": "https://github.com/fivetran/dbt_twitter_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:33:10Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "177aa846dddadc6e284ff66cacce45adee1b0927",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "twitter_ads_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "twitter_ads_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 46,
+   "first_commit": "2020-09-20T14:47:32",
+   "last_commit": "2025-07-31T13:32:54"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 46,
+ "history_start": "2020-09-20T14:47:32",
+ "history_end": "2025-07-31T13:32:54",
+ "n_snapshots_planned": 15,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 15,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:34:24Z",
+ "snapshot_shas": [
+  "0b71c9fdbb12af57280aee1a06c3dc0ce5bafe72",
+  "b654ca8e26d4e6248a2b414e379abfdba6c10086",
+  "6d4d809dafb3a601200b53d362836e8e13ebb5cf",
+  "c895160faf0dea6febce65429f8ab0c90b16c01e",
+  "d6961ce9cbe03feb3d08c74177f7a652e9088d8b",
+  "d24a2f635a3e6b709618b74636e0fc062e227798",
+  "fd9821f786cf7e7fc5b00da0e9eb5a9bcade4cd8",
+  "91741e82be1f932a2169ac9a6f576c484e8de697",
+  "d3caa45156997efd38a692cd7064d318ef35caa8",
+  "af08e2701ad5b820725b8a21959b8ae0413fbef1",
+  "395aba0e64752124a640629799bb0142c95819d3",
+  "af0969316016ef0f04e94ba20031f5509194e0bf",
+  "6a56312bc205d07989f7a135069961d1a642969f",
+  "73087b6fc9e45b5a34d1d5f8b00c84a246199370",
+  "082992a5daec032e9aabb26f7a86800445948433"
+ ],
+ "stars": 2,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

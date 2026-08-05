@@ -1,0 +1,73 @@
+{
+ "project_id": "Stevedow99__dbt_snowflake_demo_sandbox",
+ "repo_url": "https://github.com/Stevedow99/dbt_snowflake_demo_sandbox.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:20:44Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "790cfb31e6103250efbf65750eff33daca71743a",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "dbt_snowflake_demo_sandbox",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "dbt_snowflake_demo_sandbox",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 102,
+   "first_commit": "2022-09-13T20:45:11",
+   "last_commit": "2026-02-19T03:13:43"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 102,
+ "history_start": "2022-09-13T20:45:11",
+ "history_end": "2026-02-19T03:13:43",
+ "n_snapshots_planned": 18,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 18,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:21:52Z",
+ "snapshot_shas": [
+  "a28485e8883f97912e74d6eaa7ed4a1e061013ee",
+  "0f356e61ea3194588460c641c2359877fc0c8214",
+  "2c96ce0c160d38043a265e70cbfc0c1d40c69b53",
+  "d3cdf668b548b0bcca53578f7cff48d09d53bb5b",
+  "0f8cfb4a700a9c353aeeae91a2f690e86c90992f",
+  "fba73ead64bffa016aa42a0a6924d80e527b0f56",
+  "094bfa6d1ddf5f703fdef141420acee335c3cc2b",
+  "f76eaeb9c895a924043e798d12acce17fc746201",
+  "7385770c6b49b42812c6724fe01ee92e366aaefb",
+  "1461503c1cced89e195593ba42f936727b07dabb",
+  "8b1f599c5dd6157c7e6d834802566dba4228cf80",
+  "3a7b31134c9550a92ce2bf2b4ae727cdf6e2ee15",
+  "a47fbc0cd69553571f9548e9069cc123dfd83b38",
+  "b7edd80d098a3b7186e9dcb7029c4c349a8fc734",
+  "698415bd70f3aeca2c1d942ddbb32a1e0315acd8",
+  "5dc582044e88d419b95bbe61f8cd648cc87e7d2d",
+  "f25311bdb79b1b8f1694c8cb0dccaf20d99a8f69",
+  "8ddb38b2145c4dda32fcb1695a8cd034f89ae91a"
+ ],
+ "stars": 1,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

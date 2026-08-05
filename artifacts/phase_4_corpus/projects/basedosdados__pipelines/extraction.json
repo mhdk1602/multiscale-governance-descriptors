@@ -1,0 +1,69 @@
+{
+ "project_id": "basedosdados__pipelines",
+ "repo_url": "https://github.com/basedosdados/pipelines.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:21:53Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "0438b497fcb05823beb7b00d5e8e4a19119cf71d",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "basedosdados",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "basedosdados",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 255,
+   "first_commit": "2025-05-14T16:02:21",
+   "last_commit": "2026-08-04T16:28:10"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 255,
+ "history_start": "2025-05-14T16:02:21",
+ "history_end": "2026-08-04T16:28:10",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:22:43Z",
+ "snapshot_shas": [
+  "5fa8c51a7afa412f69f5837227e3ed391c9092cf",
+  "b2bfdabac32b32adda5a69e131db4913d4e82d14",
+  "3fd8b1b92167d02db39bc511344fd4e22675b268",
+  "1d13b492a3772348df7d1974ee8cb7d96f735ea4",
+  "f8d0b6eb0bd8cb9f71449d14cafa476e17026345",
+  "e61eafe5a67d6f31435cc00cbf9d1ba079f0f860",
+  "88869b501e6ed5dea3ddb7277abe923d08ba58f5",
+  "e19e52544ca1ce06ac1104343e79ade9cee1dc1b",
+  "71ffc5e24e09869d429ec63424c509c67e77af86",
+  "4c17f4b90cb9e9bc1768d73f48919c3e6277dabe",
+  "653feaaf34f0e0e53ab69d6f2d3fd26f767e432a",
+  "2b5003cd91dff49c74d4fbdb935815e97d94c475",
+  "5591fb34938e462e3f5d518a9bb6919a88957519",
+  "0438b497fcb05823beb7b00d5e8e4a19119cf71d"
+ ],
+ "stars": 48,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

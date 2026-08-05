@@ -1,0 +1,201 @@
+{
+ "project_id": "patkearns10__dbt_workspace",
+ "repo_url": "https://github.com/patkearns10/dbt_workspace.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:36:32Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "af0833dd2eac885b9b47bf300e7469acf6972936",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt_snowflake/models",
+  "dbt/models",
+  "dbt_postgres/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_snowflake/dbt_project.yml",
+  "name": "secret",
+  "chained_configs": [
+   "dbt_snowflake/dbt_project.yml",
+   "dbt/dbt_project.yml",
+   "dbt_postgres/dbt_project.yml"
+  ],
+  "n_configs_chained": 3,
+  "model_paths": [
+   "dbt_snowflake/models",
+   "dbt/models",
+   "dbt_postgres/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_snowflake/dbt_project.yml",
+   "name": "secret",
+   "model_paths": [
+    "dbt_snowflake/models"
+   ],
+   "commits_on_model_paths": 207,
+   "first_commit": "2022-04-06T09:17:38",
+   "last_commit": "2026-06-22T01:45:32"
+  },
+  {
+   "config": "dbt/dbt_project.yml",
+   "name": "secret",
+   "model_paths": [
+    "dbt/models"
+   ],
+   "commits_on_model_paths": 41,
+   "first_commit": "2021-01-08T07:42:38",
+   "last_commit": "2021-12-22T08:24:33"
+  },
+  {
+   "config": "dbt_bigquery/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "dbt_bigquery/models"
+   ],
+   "commits_on_model_paths": 23,
+   "first_commit": "2022-04-06T00:12:52",
+   "last_commit": "2025-08-28T07:42:21"
+  },
+  {
+   "config": "dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 12,
+   "first_commit": "2020-12-13T09:57:21",
+   "last_commit": "2023-08-16T06:41:20"
+  },
+  {
+   "config": "dbt_databricks/dbt_project.yml",
+   "name": "secret",
+   "model_paths": [
+    "dbt_databricks/models"
+   ],
+   "commits_on_model_paths": 9,
+   "first_commit": "2023-03-29T23:42:36",
+   "last_commit": "2024-04-22T11:32:29"
+  },
+  {
+   "config": "dbt_redshift/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "dbt_redshift/models"
+   ],
+   "commits_on_model_paths": 5,
+   "first_commit": "2023-07-06T05:27:11",
+   "last_commit": "2023-12-19T04:22:50"
+  },
+  {
+   "config": "dbt_snowflake_downstream/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "dbt_snowflake_downstream/models"
+   ],
+   "commits_on_model_paths": 5,
+   "first_commit": "2023-12-08T05:50:00",
+   "last_commit": "2025-10-17T03:07:14"
+  },
+  {
+   "config": "dbt_semantic_layer/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "dbt_semantic_layer/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-12-12T23:38:42",
+   "last_commit": "2024-12-13T00:47:41"
+  },
+  {
+   "config": "dbt_trino/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "dbt_trino/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2023-03-15T23:17:57",
+   "last_commit": "2023-03-30T23:19:48"
+  },
+  {
+   "config": "dbt_postgres/dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "dbt_postgres/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2023-09-12T11:04:34",
+   "last_commit": "2023-09-12T11:04:34"
+  }
+ ],
+ "n_dbt_projects_seen": 10,
+ "n_commits_touching_models": 255,
+ "history_start": "2021-01-08T07:42:38",
+ "history_end": "2026-06-22T01:45:32",
+ "n_snapshots_planned": 50,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 50,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:40:44Z",
+ "snapshot_shas": [
+  "bf1548de569e765cafd7123570d9da5f97c2de00",
+  "ace7da36cfd657409e947e16b58681db30239a1d",
+  "532571256d11c121c86d64e7b6994a70a49c463c",
+  "681db1fd14b9510ff43742d7c1166564d369690d",
+  "c9777833c387e8ec4287123aee1e41ea7c384ae1",
+  "f207ebac42347c7b4497d2c572282c22b0983fa6",
+  "1c87aa89bdc48e421e0f376505b0d42ad89e3129",
+  "d13d59b5fab1812d8e980cbf8a257b0465258de7",
+  "58eecdd1c2541d8f1d43c817c0c1685fa65456bd",
+  "e491bd23bf9efd41375f9155d2bf92ffeb589f94",
+  "e30a767d3c3cfa5574216019fbbf01db85bdf9d2",
+  "77e74b603a2a6191343483ee0511062a111637de",
+  "2555c4b32a494c8188cf7de14f2670576e7aa276",
+  "ee7c9f5471a4ab0c1a1511cd06b96a22243d1043",
+  "a50affba9f8b57dea2de8c2cbae5809c0383f008",
+  "352d63778f3d28304f6c09bc780690879590bfbf",
+  "aec3a43b20b442c2f3b04afa85d24ec0b2ab2946",
+  "5a8a61de4aab258ecc13ef6a9f9f66a6628c73df",
+  "9dcc2b0a927e9d994c7001b191a0ad1e887a13d8",
+  "2c0429ec09108a1ad01192f44cac50a48b4964e2",
+  "f22e55c8a5a4192895121c41173256fd83db787e",
+  "3f4976a067307e3eb1bfac80d300bcf711d0f639",
+  "3df15d943e01c0140221fa696534fa5abaf224ae",
+  "b8fc4fa03170f9368c6737c8a01309320d64cb01",
+  "b1655a093bc62d4b3cef7498d1f4f6aae9b6deaf",
+  "b56881d511cf6c5efec9839ac2fbbb6ad378cb55",
+  "0aa3d86c8541458a3263b3f1ff17bcff92330ec4",
+  "49728519052f8baeb4ee5e260165e71a59bfc153",
+  "e5a293aec788869e74cbe0f3a4012390a519c881",
+  "b41d6451beda4eeeeb18ecd20a63b15e13d076b3",
+  "b99c35ad0d211af447e15a24f56934b7a71e5a2c",
+  "96a76d47b6077a7ed439eb6f7201adb0310856f6",
+  "e76d29ac71793f1e9c5f42bd62f5a04ab779254a",
+  "3dcc86b4848a328ca9ed0c47b04c21e79e4bcb3d",
+  "10adc30ac1e82ee82cefca270d76f20431375cee",
+  "079f483257e98afa8ceca52defb728ded029f02f",
+  "54825831f7411730e89f9caced6f1f93fda53c40",
+  "19a12d5f480cd07c7cb8d9c7ceaa71affc0d21a7",
+  "304b4c1f1c8ff5de85d2e0db778968b6c1f4f603",
+  "65d67d44bb7868d27ab92085abb529e9afd740fe",
+  "f6f6c94a520ee370e46e9e9d2707bdf6b2a25fea",
+  "ca4e98088ff5c4d2f92f859219ac4a3e3b92106a",
+  "6f577f3c9b838bdaec485c47ac83e233a4abab03",
+  "e9d985f4b64cbcdca9f43be9e5b6405cbbe37ee6",
+  "dea956b4c26f4c921fe6ce0ecde2109b0bc3f493",
+  "5ac3796a32d65f4e94d3e2dd3f33dadb125d7d13",
+  "b6da5c00a31a1cbd3c514cb843c14a975a3ba079",
+  "ac560b56c05a647cea374c6d4f3a14d97fbdcce0",
+  "6b828bbbfb05ff39aa4c3dce9caa2590fa819300",
+  "d6d3517c5b8f134d23b159eed7205f058dbaa396"
+ ],
+ "stars": 8,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "project_id": "Health-Union__dbt-xdb",
+ "repo_url": "https://github.com/Health-Union/dbt-xdb.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:18:24Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "46c23c1272eef98538e014675b9d394be3e137fe",
+ "default_branch": "master",
+ "model_path_universe": [
+  "test_xdb/models",
+  "xdb/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "test_xdb/dbt_project.yml",
+  "name": "test_xdb",
+  "chained_configs": [
+   "test_xdb/dbt_project.yml",
+   "xdb/dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "test_xdb/models",
+   "xdb/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "test_xdb/dbt_project.yml",
+   "name": "test_xdb",
+   "model_paths": [
+    "test_xdb/models"
+   ],
+   "commits_on_model_paths": 132,
+   "first_commit": "2020-02-19T14:38:54",
+   "last_commit": "2025-05-26T16:06:41"
+  },
+  {
+   "config": "xdb/dbt_project.yml",
+   "name": "xdb",
+   "model_paths": [
+    "xdb/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2020-02-19T09:57:54",
+   "last_commit": "2020-02-19T09:59:15"
+  },
+  {
+   "config": "dbt_project.yml",
+   "name": "xdb",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 3,
+ "n_commits_touching_models": 147,
+ "history_start": "2020-02-19T09:57:54",
+ "history_end": "2025-05-26T16:06:41",
+ "n_snapshots_planned": 28,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 28,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:21:12Z",
+ "snapshot_shas": [
+  "d0be302a76d88573a9cad529410e054f036a1213",
+  "f6fb16957fd3d47085be67ae843ef6bf3b596323",
+  "da50c4548e5d0be5c2c09c8ae8b8d071799d398d",
+  "8572f48bbeef93bd10ceffc2b35e0c6853029db8",
+  "87b609a81c2a5ec374c1a9597e36af4161ea15d7",
+  "9ad77f824631b40d8d67325951135bacac2210a7",
+  "a03581ea0cb98295807bbecd70214940871afb1c",
+  "ebf79fa6ff25bcae5f9de874b6179421555f78c1",
+  "414da4eefa54b1d67bd2456f402540eab40a897d",
+  "4c5e11f95b9655c3761bfc15c85f56e0fde3ee4e",
+  "cf14e56193dca0739d55f6b595b4e895cdc78eaa",
+  "1f36e23736d7772240f75330d34429b2b23f4e89",
+  "abd8be37fc9ba6ff00d2a8bbaec2128141793ec8",
+  "76a9b211a6028c7c761bed79f380956f620343bd",
+  "5277a84a5c56f5e6d33da21cb67a9ce0ba65bd9b",
+  "649e5fbfae6e9d3db20e5a77f7ced87737780ae5",
+  "17dc61843fffc47b30f26867205e3c8ae80cbcfc",
+  "3f9e0372181e2921b0759c79be76b15dff8ee1c4",
+  "f1b8595ee744843da360cee2c0b38b75e55ced9d",
+  "43d24a4ae07295021d85177faaef2646ceef69d1",
+  "a7b8f5921aa92bb3576ea76bc108619a19338d59",
+  "7f7d3f03cee5fb23b33d5a4e3f0ddc523c217c4e",
+  "61a1d1054039130453761b7a16e490fba1b41303",
+  "f9bccb49baf633a71a7449c2b0ef9ef9de1be76d",
+  "b68452a543cae94da30386d1681e9d0cdb599f71",
+  "56f9daeb9fa2ccd6601711dc1adc71737950b794",
+  "ace1be88ae26821e50a6122f35501590b932a2ff",
+  "81711eb0caef69b23352e082ef7aa524346123e6"
+ ],
+ "stars": 9,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

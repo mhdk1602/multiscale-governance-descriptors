@@ -1,0 +1,73 @@
+{
+ "project_id": "dbt-labs__jaffle-sl-template",
+ "repo_url": "https://github.com/dbt-labs/jaffle-sl-template.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "c54c8fb8bea86c0c4d3d5c588d55f8de9de57ade",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "jaffle_shop",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 156,
+   "first_commit": "2023-05-24T18:45:59",
+   "last_commit": "2025-08-20T01:04:03"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 156,
+ "history_start": "2023-05-24T18:45:59",
+ "history_end": "2025-08-19T18:05:00",
+ "n_snapshots_planned": 18,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 18,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:26:09Z",
+ "snapshot_shas": [
+  "a8e4f80ab9a8e7a3c1f53eba94ac73ac9ef197f1",
+  "bde083e3594ab916b57d772533a50645f54387c5",
+  "c54a69163b9d1c4ef8b28061de8763e56ddbb36e",
+  "df12550e0858ed4f90af28329c6865b061674a69",
+  "a29b17d8fe2edc339357b035ed452c2feca95ddf",
+  "610c41f1eeb5a78db098b6241ad7c12e86918f83",
+  "d42855c330cd69b1c7ecce528a587d5adf813efd",
+  "76d136eab1f15021271dd35e8dd8220e6d5e6047",
+  "60e46902505096e8d5635ae41f7e73b8adee59e4",
+  "67b941070dc2f999a65142729c309470aaef922c",
+  "791b9e6f495984b72d05e15aaa3218c2ceaf0e71",
+  "3e28c59bdfa2479bd072da403afc3ba48418cbbb",
+  "6739bac72dd6e5fe49dea790df348b4a6408424f",
+  "9de089e85ccbf910313baf436ef264d1bdfc7e5c",
+  "2fa7dfba2493ba9b172590de55b61b2e9e26bde3",
+  "8b4a61160d2367b002442ab648d499d723ae8856",
+  "63cb752ae3690afb8806db0f33f14a9aa53af760",
+  "44731c9dd9ccdefb550fd2ea9c94712166e36d99"
+ ],
+ "stars": 32,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

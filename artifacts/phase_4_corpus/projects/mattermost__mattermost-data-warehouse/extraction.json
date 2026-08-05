@@ -1,0 +1,121 @@
+{
+ "project_id": "mattermost__mattermost-data-warehouse",
+ "repo_url": "https://github.com/mattermost/mattermost-data-warehouse.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:35:57Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "61af2424d790a8f83267f2b9ee12589fd32bcfa9",
+ "default_branch": "master",
+ "model_path_universe": [
+  "transform/snowflake-dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "transform/snowflake-dbt/dbt_project.yml",
+  "name": "mm_snowflake",
+  "chained_configs": [
+   "transform/snowflake-dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "transform/snowflake-dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "transform/snowflake-dbt/dbt_project.yml",
+   "name": "mm_snowflake",
+   "model_paths": [
+    "transform/snowflake-dbt/models"
+   ],
+   "commits_on_model_paths": 1311,
+   "first_commit": "2019-12-17T11:17:03",
+   "last_commit": "2025-01-17T11:09:03"
+  },
+  {
+   "config": "transform/mattermost-analytics/dbt_project.yml",
+   "name": "mattermost_analytics",
+   "model_paths": [
+    "transform/mattermost-analytics/models"
+   ],
+   "commits_on_model_paths": 236,
+   "first_commit": "2023-02-13T09:52:00",
+   "last_commit": "2025-02-14T19:18:57"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 1335,
+ "history_start": "2019-12-17T11:17:03",
+ "history_end": "2025-01-17T11:09:03",
+ "n_snapshots_planned": 55,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 55,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:38:40Z",
+ "snapshot_shas": [
+  "d83f673b32aec7cccce399b8c50a750adc463365",
+  "778a4f7db1e6ee257cb3a0d69d90f3eb49f36cd2",
+  "92c733c41fba2dd0b09d64f4a1f21b94a44b0643",
+  "c45ce28bf79c1c8d2a4985544635617090a3c653",
+  "828ace32e8bcb1b9a523828c180d3f36dffb4377",
+  "fece2dc13495bc77f48ff4a271f13eb92cd5638c",
+  "4ca1480aad0c23693453d21658d276bcda6216b3",
+  "8c4a48ad81a169e237a2a47255b66e3bc201fe8a",
+  "054c8cd6386426075a0f776bab8872e372dac04d",
+  "a0edc1797463183990cacfd7b4c88e9d30a7487c",
+  "170d6e1a5b06321b7f8ac5167d53382e25ff6562",
+  "271236f5102b0755a1690a9f6eb865d75eea0017",
+  "da929275ec937b7295e2c2091d6d180ec49dc0c9",
+  "796317ebc8662b7a3e8e3ec1ced0f02a16f789ef",
+  "71bdb9cef7f973b0edf71aaae40ea875e4fb923f",
+  "b1d7192a758bf19f14bbb4364fe85641e8e440ec",
+  "d08ab512719fec858cf3a23a26e14bcd8dd4c5ca",
+  "49e38aebe7c48ca04a96116ae2c9041077fe80cd",
+  "ee0357a3af5902def5777ae7e1b7a6c539cd4ca4",
+  "69164ed78d9eb985f791b2986ee4a3b05f3c7868",
+  "47d103287e1d2b3dff7b65513a311a2a1040e80f",
+  "6ab8d8a524f1cefcd12c61dae70279d53930da3b",
+  "9ed25ba4b06cbaf37b94a682d7faac906040ca1c",
+  "c7ea4f3fddae9bd0f974031d96907d02630eceb4",
+  "3645ce09e28d091d9023384b7c50ac43f3e344c9",
+  "f0507ff8cfd07c7caa60f4347f43b17fdefa84db",
+  "77c6713de8428d98023d67be0af58fdf658bd76e",
+  "96249f6e78bca1bd21cb3a37b0eefa1a29df90fd",
+  "83567feb78b18a9fe24162833af91f3aaed2b807",
+  "0dbf551eeb32c7984512941eb5f00ce13642bb0c",
+  "c6e78b70206a04d86a3e59c58eebb0a1baad5083",
+  "2703f9b9a4faa6b29052f876b48d68c9e4ed4f24",
+  "af2796945521b063dc6acd82a5f3f440c8e331cc",
+  "d303442c09057ba386c04f01dd4e9b822cbe677d",
+  "95213fcf742704f0876b1dd36a283cd19a695a33",
+  "95e5057235f7d93f1f00ab21633929b9a8a087bc",
+  "422552c4a4ce98cbb580b8eb4fac37d9ac96b4ca",
+  "d87a4b4a604a8cfbfe526e67fd023cfbb1e5f235",
+  "006cd45911d4112e336e1e07217d4b32cf87eb47",
+  "6c23dfbcb3653e14056790d9b8e89c8c93a5bb98",
+  "241d919d74e0bbc7210b29569fd1dd02859052eb",
+  "1ce72d817c2e000e9a88c80377a8afb176558f6b",
+  "44a4fe4b8ccd6068e2c55c63fa94c9299f20d6ef",
+  "fbaa3a6615a8e55b59494b7c35191ff35789e60e",
+  "f9dda043080ef327c295113b8c24ca7c75180542",
+  "02acfa5900cb396e8e748c94ca29d5d88376ba0c",
+  "5d626abbd7ad21576924c5fa0dc31ddc7a57fd07",
+  "131939a7b2256967296ab590e6f378b4c7178c8d",
+  "57f43b588005cbde353b6d8d0132ffc90ac39e3b",
+  "e02f3390350e3151510fc0ca053cd5a963a0fdab",
+  "36b21d02f950f0f31c7779c1bf984461d26de0ee",
+  "5f51a47756bfca7572646cb180587cf91d8f844b",
+  "f61e630f09a0bbb109fb53ae2638673eb85f6c47",
+  "e3dc485a2919059e3fff761593555d5bbdaaa626",
+  "b8c2ff95540b4eb548e5339bf2de97b26654b696"
+ ],
+ "stars": 86,
+ "license": null,
+ "strata": [
+  "S1_curated",
+  "S3_code"
+ ]
+}

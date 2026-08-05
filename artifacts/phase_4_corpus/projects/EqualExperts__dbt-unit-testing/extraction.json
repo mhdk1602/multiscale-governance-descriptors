@@ -1,0 +1,116 @@
+{
+ "project_id": "EqualExperts__dbt-unit-testing",
+ "repo_url": "https://github.com/EqualExperts/dbt-unit-testing.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:17:37Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "fbfd8967ddd9b6c919e2ba487e9f37f75950c4e0",
+ "default_branch": "master",
+ "model_path_universe": [
+  "integration-tests/models",
+  "data-models/models",
+  "jaffle-shop/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "integration-tests/dbt_project.yml",
+  "name": "dbt_unit_testing_integration_tests",
+  "chained_configs": [
+   "integration-tests/dbt_project.yml",
+   "data-models/dbt_project.yml",
+   "jaffle-shop/dbt_project.yml"
+  ],
+  "n_configs_chained": 3,
+  "model_paths": [
+   "integration-tests/models",
+   "data-models/models",
+   "jaffle-shop/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "integration-tests/dbt_project.yml",
+   "name": "dbt_unit_testing_integration_tests",
+   "model_paths": [
+    "integration-tests/models"
+   ],
+   "commits_on_model_paths": 40,
+   "first_commit": "2022-02-13T17:21:24",
+   "last_commit": "2024-04-19T10:32:33"
+  },
+  {
+   "config": "data-models/dbt_project.yml",
+   "name": "covid19_uk",
+   "model_paths": [
+    "data-models/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2021-10-20T15:35:31",
+   "last_commit": "2022-02-17T11:17:21"
+  },
+  {
+   "config": "integration-tests-sub-package/dbt_project.yml",
+   "name": "dbt_unit_testing_sub_package",
+   "model_paths": [
+    "integration-tests-sub-package/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2022-04-18T11:53:34",
+   "last_commit": "2024-01-10T19:23:49"
+  },
+  {
+   "config": "jaffle-shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "jaffle-shop/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-05-23T14:56:39",
+   "last_commit": "2022-05-23T14:56:39"
+  },
+  {
+   "config": "dbt_project.yml",
+   "name": "dbt_unit_testing",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 5,
+ "n_commits_touching_models": 44,
+ "history_start": "2021-10-20T15:35:31",
+ "history_end": "2024-04-19T10:32:33",
+ "n_snapshots_planned": 15,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 15,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:19:40Z",
+ "snapshot_shas": [
+  "002ec26814fb9e554996f2bd1cd3fc8466fcebc2",
+  "5f9722cae31e0065a1c42c3746da02fd0a818984",
+  "e207cc58b781973ca1a6b055325d283e18a3b181",
+  "a1bb13530b9d47e4324d7c9beba7fdb548e6d84e",
+  "d9c46363ad4a1087af04d9e9f86f5e923fa1e47e",
+  "d6cafeaaf1d7b0a7c730f032e702cc5ab319f9eb",
+  "72cb939f23ebda7836077d0785e8b557d59bbfe4",
+  "bbc395988096e53f00c8522eb8efecf33ba2c629",
+  "7594c1d79fda35b4e6ee2975f5eb55245ec3d7f3",
+  "2f99d0fdf1c8b91f302bdfa6aa4084db7c200cd7",
+  "78c6db5fa30f3a677faba293ae64b819a1619630",
+  "c997099c3c747115e8ec6a2a8d658b2d33e7cb85",
+  "c7fe019424202c57ef07cd0e4c5b28fe9147d164",
+  "d4bfa655c7e7e2259459a6cd43631266e14158fc",
+  "1c0acee7b9975ad5c32df1a763ab0dc19a088f4b"
+ ],
+ "stars": 448,
+ "license": "MIT",
+ "strata": [
+  "S3_code"
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "project_id": "fivetran__dbt_greenhouse_source",
+ "repo_url": "https://github.com/fivetran/dbt_greenhouse_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:28:49Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "e5d7f275881df8e66ee170ba05e02688ef65fbc1",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "greenhouse_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "greenhouse_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 39,
+   "first_commit": "2021-02-03T16:54:27",
+   "last_commit": "2025-07-14T12:06:48"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 39,
+ "history_start": "2021-02-03T16:54:27",
+ "history_end": "2025-07-14T12:06:48",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:30:32Z",
+ "snapshot_shas": [
+  "15507d3c1fd269942c898c90b4dd0c04070104a0",
+  "5d71d98d7f5888ea9fe24dd679d82f4f7ac6dccc",
+  "e0e7965fdc4fe30a743167570096adfc070b8b55",
+  "ce54bc7a7e57b51fd921aade96ab783e573ec24f",
+  "c8d5a87a668cfb03edb0c8e76aedfe3272c2d288",
+  "bf30c48ee267276373a3ff500f493458f8abfceb",
+  "61dc09baba2471e5ce4a2adfa3f0575693a3ad99",
+  "62b7a6c413d4ff59e10c2a2d4bd5115a759ebba6",
+  "97935d4c439422a35cc850720dcd373e4798d42b",
+  "c76fce20d868a4792ededdc430dd50067678ce20",
+  "7a5b48a884223f055512fc2568a8747681ca2d33",
+  "1a7582956147ccf2a8b91d2b408a74d8c836fb2b"
+ ],
+ "stars": 2,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

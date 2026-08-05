@@ -1,0 +1,68 @@
+{
+ "project_id": "techindicium__dbt-dag-monitoring",
+ "repo_url": "https://github.com/techindicium/dbt-dag-monitoring.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:40Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "3fba34b2ddc19b6586126988974c8946d24f2f0a",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "dbt_dag_monitoring",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "dbt_dag_monitoring",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 52,
+   "first_commit": "2023-03-08T11:07:26",
+   "last_commit": "2024-12-02T13:05:54"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 52,
+ "history_start": "2023-03-08T11:07:26",
+ "history_end": "2024-12-02T13:05:54",
+ "n_snapshots_planned": 13,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 13,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:33Z",
+ "snapshot_shas": [
+  "c477314925e3833643596c28226afcd0dd4785ee",
+  "d0182a6bc0642d874bfebb2473b12c80a47d0999",
+  "10aa4bcf4a114ff87ea2f9aa34c3fcecf7a7c3ac",
+  "ce097b9915d3dbb1099237b0de9c4efefc14f1d4",
+  "3768be25120ff590bedf1d4a91822bc63d1d0af5",
+  "8a969b824f2475a4d280a6275f738c24188105e5",
+  "77817baf46fb97d900a507f4d2aff4d6802f4966",
+  "8a087045b0622252b6f0b8695304a479a23693cf",
+  "40669e95840ea4e79a54ed02395b5ed88a35f1c3",
+  "8684b05b88bdd97d15789b078cb92262ec643582",
+  "67f0075e2a1a2ae344acc601141da2b104c38cb6",
+  "29408ee9eef5d77f58b288f5d6f6fda85e6f46ff",
+  "3b2de49da95b1327bffb02ab9710606f1329085d"
+ ],
+ "stars": 30,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

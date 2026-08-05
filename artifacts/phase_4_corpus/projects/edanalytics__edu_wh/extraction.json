@@ -1,0 +1,87 @@
+{
+ "project_id": "edanalytics__edu_wh",
+ "repo_url": "https://github.com/edanalytics/edu_wh.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:25:58Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "1aef0af15cbc32565e7c905085d07106d173655b",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "edu_wh",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "edu_wh",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 172,
+   "first_commit": "2022-11-03T20:13:43",
+   "last_commit": "2026-08-04T12:27:02"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 172,
+ "history_start": "2022-11-03T20:13:43",
+ "history_end": "2026-08-04T12:27:02",
+ "n_snapshots_planned": 32,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 32,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:29:05Z",
+ "snapshot_shas": [
+  "d567f6df0aea0d2e3f1f1bb7b385912d0c9860fa",
+  "55bd9a463ace97f3166dd610f1afcd57a385bbbc",
+  "0d864e331c488c4f93d2e03b08aa9331f93b4187",
+  "cb2fe00b40c4c7554d2e93266191d266ca3458bb",
+  "8821247958f61325f31591474c1f4a1a743910ab",
+  "f92ae9d1fed8c8c72a1e128bbe28f63d196c0217",
+  "2bf297e517b07c40e98d06d9e8a292cd7cec0309",
+  "e0b12dd1acd50a0edec7e47eac7ff81427e8dfd4",
+  "c3e60038b16ddb421ce5b89e6c2e654b8ca6f427",
+  "322e27db246a9278047aa43198037635fe7c263b",
+  "a870f6f44ae2c716492b51134fa56fd247362ab7",
+  "9e28bec0b95c09e56aa69b23202a6fead89245d2",
+  "0d7ea0e3233a46ce82680379fdec584bcd19ec85",
+  "4a2fb8cc06681524c3f57218d64f1bbbb4f038d1",
+  "3a389408bf346c81681d537245a41a2177ee03b4",
+  "e1a9b6585945a873b4706e7301bafd483558cc6d",
+  "b9acae349ff814d7f265f414c329a60d64b668cc",
+  "e996ec2f16d4be1bde926bfbdb5e3351be82ea76",
+  "f44276f7785395356333d0e20a9aab2a91c387fb",
+  "a77f0a010579b7763dbe885039a4fd8625b9e0ce",
+  "8df631c707aa1343a49fb6ca4e717a95101fb01f",
+  "6e7e836cf9526684e0f46c4dcf5020f858bb8700",
+  "26dd2f0a6ccecddb4cc667953104cd6027cffe28",
+  "25c6afa0b2b97d15361b248c7069d90c2a00dc22",
+  "3b184d64e77d4eb2a9ca4bb87f53b646258c097d",
+  "4dbd3038305e9ba4e9351910e2376b8dbb35b330",
+  "27d76b97e29123ed209e6851dfb06774837278a6",
+  "a718bfd19ab5161bec01b95533d95c39d8f18edf",
+  "fb257ef0b20d957f5d8adee24ed4d386158992c1",
+  "0e45608cc4376b06cdedf7f40c31d52df23894dc",
+  "a0102b58cd7be606b55eebb27c4f51d98fac7ef0",
+  "1aef0af15cbc32565e7c905085d07106d173655b"
+ ],
+ "stars": 18,
+ "license": "NOASSERTION",
+ "strata": [
+  "S3_code"
+ ]
+}

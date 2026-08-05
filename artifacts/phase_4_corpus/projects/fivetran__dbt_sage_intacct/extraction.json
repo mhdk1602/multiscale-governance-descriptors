@@ -1,0 +1,69 @@
+{
+ "project_id": "fivetran__dbt_sage_intacct",
+ "repo_url": "https://github.com/fivetran/dbt_sage_intacct.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:31:55Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "b3aa7165e419065a75820b248fd46954bb20973c",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "sage_intacct",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "sage_intacct",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 94,
+   "first_commit": "2022-02-04T16:32:39",
+   "last_commit": "2026-06-22T19:55:57"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 94,
+ "history_start": "2022-02-04T16:32:39",
+ "history_end": "2026-06-22T19:55:57",
+ "n_snapshots_planned": 13,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 13,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:33:24Z",
+ "snapshot_shas": [
+  "bee915f354839d8261c8f30cd8745c716f367851",
+  "c05d28163d1a157692b61ecf17bddcbf9fe02dd9",
+  "daba9951032f0388def2a3ba481b0f5e2d088ad3",
+  "c94f571e5eaeb65a153c58778f3e21d63a871eb5",
+  "d64516bce63e34e56e6bb2525e2211449614f309",
+  "a9265b1b4df27d424fd30ba58527aa6539a6ac23",
+  "26852e05043ff34ae73a8b6640410249d097d23d",
+  "241050f77b95f5dd49d2d4fa1b8e98718e745458",
+  "7b73bf9e57df54f1ce420b46951cfbdb913a6468",
+  "b323600405319e93807b2d33c576b636985965ce",
+  "c8a91afd085dfb9ffb29f47db81a0bf82676cbfd",
+  "8baf748af96776afec8ce311ebc45fbeb0c8fdd2",
+  "b3aa7165e419065a75820b248fd46954bb20973c"
+ ],
+ "stars": 8,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

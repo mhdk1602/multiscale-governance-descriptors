@@ -1,0 +1,285 @@
+{
+ "project_id": "duneanalytics__spellbook",
+ "repo_url": "https://github.com/duneanalytics/spellbook.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:25:43Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "partial",
+ "error": "25 of 48 snapshots failed",
+ "head_sha": "d5f9581ed45a3b715e32b4057e963b51edfb84d8",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models",
+  "sources"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "spellbook",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models",
+   "sources"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "spellbook",
+   "model_paths": [
+    "models",
+    "sources"
+   ],
+   "commits_on_model_paths": 3927,
+   "first_commit": "2022-08-24T15:14:40",
+   "last_commit": "2026-07-30T13:15:51"
+  },
+  {
+   "config": "dbt_subprojects/tokens/dbt_project.yml",
+   "name": "tokens",
+   "model_paths": [
+    "dbt_subprojects/tokens/models",
+    "dbt_subprojects/tokens/../../sources"
+   ],
+   "commits_on_model_paths": 658,
+   "first_commit": "2024-07-26T15:11:29",
+   "last_commit": "2026-08-04T02:13:25"
+  },
+  {
+   "config": "dbt_subprojects/dex/dbt_project.yml",
+   "name": "dex",
+   "model_paths": [
+    "dbt_subprojects/dex/models",
+    "dbt_subprojects/dex/../../sources"
+   ],
+   "commits_on_model_paths": 513,
+   "first_commit": "2024-07-26T09:26:40",
+   "last_commit": "2026-08-04T00:35:31"
+  },
+  {
+   "config": "dbt_subprojects/hourly_spellbook/dbt_project.yml",
+   "name": "hourly_spellbook",
+   "model_paths": [
+    "dbt_subprojects/hourly_spellbook/models",
+    "dbt_subprojects/hourly_spellbook/../../sources"
+   ],
+   "commits_on_model_paths": 481,
+   "first_commit": "2024-07-26T15:11:29",
+   "last_commit": "2026-08-04T02:13:25"
+  },
+  {
+   "config": "dbt_subprojects/daily_spellbook/dbt_project.yml",
+   "name": "daily_spellbook",
+   "model_paths": [
+    "dbt_subprojects/daily_spellbook/models",
+    "dbt_subprojects/daily_spellbook/../../sources"
+   ],
+   "commits_on_model_paths": 468,
+   "first_commit": "2024-07-26T09:26:40",
+   "last_commit": "2026-07-30T13:15:51"
+  },
+  {
+   "config": "dbt_subprojects/solana/dbt_project.yml",
+   "name": "solana",
+   "model_paths": [
+    "dbt_subprojects/solana/models",
+    "dbt_subprojects/solana/../../sources"
+   ],
+   "commits_on_model_paths": 239,
+   "first_commit": "2024-07-26T15:11:29",
+   "last_commit": "2026-08-04T00:35:31"
+  },
+  {
+   "config": "tokens/dbt_project.yml",
+   "name": "tokens",
+   "model_paths": [
+    "tokens/models",
+    "tokens/../sources"
+   ],
+   "commits_on_model_paths": 91,
+   "first_commit": "2024-01-30T10:15:08",
+   "last_commit": "2024-07-25T17:58:40"
+  },
+  {
+   "config": "dbt_subprojects/nft/dbt_project.yml",
+   "name": "nft",
+   "model_paths": [
+    "dbt_subprojects/nft/models",
+    "dbt_subprojects/nft/../../sources"
+   ],
+   "commits_on_model_paths": 50,
+   "first_commit": "2024-07-26T15:11:29",
+   "last_commit": "2026-03-11T14:42:13"
+  }
+ ],
+ "n_dbt_projects_seen": 8,
+ "n_commits_touching_models": 3932,
+ "history_start": "2022-08-24T15:48:28",
+ "history_end": "2026-07-30T13:15:51",
+ "n_snapshots_planned": 48,
+ "model_paths_stable": false,
+ "snapshot_errors": [
+  {
+   "sha": "f3cfd2057a52adf113e20c3cad6f06b35ba31bc4",
+   "date": "2024-08-13T09:45:43",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "8023be60998de1f6892aff107a77235546251788",
+   "date": "2024-09-11T13:31:10",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "95c5c4ff97e42dc1d1b70a91ae83623836c30f9e",
+   "date": "2024-10-11T17:38:58",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "d0bbcc6e82fb9c6f5c276c5ed1eb5a33e25d31ae",
+   "date": "2024-11-07T17:15:33",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "4bf03f7f2bfafa07e9770f789296c66ebda47dbd",
+   "date": "2024-12-10T20:59:03",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "7691620896d5025eb8ae9437a934868ee6ca9d7d",
+   "date": "2025-01-09T14:26:57",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "3725c086774cf1fcb1d3459e1341761a75aa6a34",
+   "date": "2025-02-03T20:33:17",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "b9ef1c10b42acd127c53919d2c84f4ebf0b128eb",
+   "date": "2025-03-11T03:18:00",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "6e986ddd58080e72aa7526c3e86727fe212e2f5e",
+   "date": "2025-04-08T14:20:12",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "226952f344d46803d17921e1a82556242695a892",
+   "date": "2025-05-09T15:55:37",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "d73dedd5888e9ea4e7758c96280fc51d67158a5d",
+   "date": "2025-06-06T12:51:15",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "a35d7dd3c472240a8930c69d0a5c8083f5af9161",
+   "date": "2025-07-08T17:56:32",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "12a26b9a8d7ab40493ef539aadf802d1c93ec16a",
+   "date": "2025-07-30T17:34:02",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "25bb5e31a55f99a2fbc5b07b6ae901ed7fcacd7c",
+   "date": "2025-09-03T18:52:23",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "6a0bc201e86cc5c46d2155e68648c993a5e037b6",
+   "date": "2025-10-05T11:32:43",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "c709e3676a69af50370a77ce06f5013f67ad8a36",
+   "date": "2025-11-05T11:51:59",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "a73f9b6d4764d7a7904fa31be0115987de13f271",
+   "date": "2025-12-04T14:02:17",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "bf12c0ce68818f6a5f79cd671dc95da069aa2354",
+   "date": "2026-01-05T15:34:20",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "8511414be4a6dc2bdd48acb0262c0737150f8c90",
+   "date": "2026-02-03T11:41:11",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "f0a6d20d7b998b4e31709da76ccbc29d86a0d20e",
+   "date": "2026-03-05T16:35:15",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "cd03bde67625d7493509da423bdcb5cd60f37b75",
+   "date": "2026-04-03T18:50:38",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "f7bcd5acb40f52ac644814a6262593e7f0995a2d",
+   "date": "2026-05-05T10:58:17",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "ceff02cc59e7608386c905753d54b7c35dcfe0a4",
+   "date": "2026-06-04T13:25:21",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "69ddd154cc1b9445ea3e77085e6cf288347d57ce",
+   "date": "2026-07-03T13:35:31",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "a68f516a338c4ffe13fb21fbc084649b3b67a87a",
+   "date": "2026-07-30T13:15:51",
+   "reason": "no model SQL at this commit"
+  }
+ ],
+ "n_snapshots": 23,
+ "snapshot_coverage": 0.4792,
+ "extraction_finished_utc": "2026-08-05T02:31:01Z",
+ "snapshot_shas": [
+  "88b845dba0c0f58b11ca4a55aded904c1e7da589",
+  "4e870b552e4f19467b67ce0b3f744190b8859599",
+  "30b766c4fc6fa25b09658476ec8f697d5c7e65d4",
+  "04393b131da281729f2d86a4ee760bf2245e5f3b",
+  "05c73083ccc052bd34c565a97187c59d1f8be7ea",
+  "8f1bf80bc6f3627296959c109720d4d429e61b4b",
+  "b63642c74b580095eb7632c3ea6280ccfcc8c5b1",
+  "300a4570970077eeeda2d46d724fbac3b1afdc0f",
+  "7846dca0981664f0d40384827ddf76cec9e2ae35",
+  "45d544cebbf76b2295e8951cbec55c3ce1ac9ef0",
+  "68e1eabcfcff76af0b8e0e06191a3514e213456e",
+  "5f58228423549b8ea0b05d90219e708c30eabfcb",
+  "a392688c342ab6d077a0624ea9c1d9010da40c16",
+  "d3fdbd607e774e6d81c16af87956c5f546ec5f26",
+  "e1640788e965effc0cb307c0019fa18d7ecf41f4",
+  "4e882dc93395d6752c8962e3f6c883622fea0485",
+  "996d3349d6e2dadb745799b7c3b1385906d204f3",
+  "4b9d7c6aded4afb9cd9ebdfa5310e64534efbf4e",
+  "2fb3103d04f88d34002389fb05413d792390a5b4",
+  "36ecbc09ffb7923896dd99eaa863ff98314d7999",
+  "cf3ab5076b11f7a0ef634016985e62ca454a9734",
+  "6b28783da50e6ce9b54e3b3d91da303127776207",
+  "84b8eb4e7a06048f548694a2a703a453fe31f682"
+ ],
+ "stars": 1511,
+ "license": "NOASSERTION",
+ "strata": [
+  "S1_curated",
+  "S3_code"
+ ]
+}

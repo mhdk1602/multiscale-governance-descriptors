@@ -1,0 +1,111 @@
+{
+ "project_id": "tconbeer__gitlab-analytics-sqlfmt",
+ "repo_url": "https://github.com/tconbeer/gitlab-analytics-sqlfmt.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:35Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "f859b7942620548ea7ccfc7eaa25d3e5620c307b",
+ "default_branch": "main",
+ "model_path_universe": [
+  "transform/snowflake-dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "transform/snowflake-dbt/dbt_project.yml",
+  "name": "gitlab_snowflake",
+  "chained_configs": [
+   "transform/snowflake-dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "transform/snowflake-dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "transform/snowflake-dbt/dbt_project.yml",
+   "name": "gitlab_snowflake",
+   "model_paths": [
+    "transform/snowflake-dbt/models"
+   ],
+   "commits_on_model_paths": 13346,
+   "first_commit": "2018-09-17T20:20:25",
+   "last_commit": "2025-10-17T11:53:08"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 13346,
+ "history_start": "2018-09-17T20:20:25",
+ "history_end": "2025-10-17T11:53:08",
+ "n_snapshots_planned": 56,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 56,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:41:30Z",
+ "snapshot_shas": [
+  "335dee6834d249a4f3291155f8c0f5aa471ba54f",
+  "64e7d71ad508f4e6bd766b6069af307b8078cc31",
+  "19047f9bc37f0df4b7f9add8aa2ddc693f07024f",
+  "6645f97e604e5752139592d530502dc9c343c8c7",
+  "00c408c702006b52e695664ae611888342b382f6",
+  "8b0e3c4ca914afae9eaaee269648c276365926d2",
+  "0a9e7c658f3cad7f1421714ee799c63e8bd38dce",
+  "d1ca87af29965b4c9aa2475ae150c98109351186",
+  "7467d9772fbc96874412230fbc94110103e1c85b",
+  "f5c88a7f8932d391e91612468a3a3db5009d9c14",
+  "7b75349e76bcddc3c6dedbd6d19e6c7828305fc8",
+  "5aa040fa1e39a3022e1ccb3f1e3489baa5dffda8",
+  "685c43e15f085e3559d46d3e95a5631ed22d2cde",
+  "bf297661baa15c7035d9dbb73a7e53380600d0d8",
+  "2c0ae805cbe1adac1112d0ab25ad0ea790843964",
+  "0f3dcaddac363ca297bfaab7b8da09806714ba8e",
+  "f1178ba1ab1b85cee84805f50c444358deacece7",
+  "b6d99eeea456a82a0e65b7a6271aeec43e5a3bc4",
+  "e8f4b2233f274afcedb0b0d522fa4ec56efe2549",
+  "2e2d8c05208cc8a9fb68cbb04dbd5a1c88c4b700",
+  "5f26ac945f3700cdf985b72ac7e672f273f748d7",
+  "82f1e218f4f9c932184bb351a87e7e7ea720984f",
+  "8c6d311519b5dc8df556d253b6027d8081d8d910",
+  "b908f0bcb917a59239e0260ff6c7787df883c244",
+  "b64f5794c04bb715a81e49de1fa03d138616a8d4",
+  "ec4ce1e45f54f86ec5cb42b1466ad6fb589fead2",
+  "d57db9a9587c1e3ccfd2103ea4f096f445cc0e3f",
+  "60084a7351f2cad93d13e4447863be909b2094c3",
+  "c5e89427f0b0707b47b36896daccf9c734e3dcd8",
+  "7db96ac47081876786c3953ed8756b5035f811a9",
+  "4c46355ea0eb26b5a84fad9b5dfc5306145d6247",
+  "ef2b7221ae888030d5dbb6e3755996180fd32b2b",
+  "acd78a3b4200931d8d45817083e5906550058647",
+  "e2a0cdd1d2802f37ecdfbf6ec0cf09ae85504da5",
+  "4d847507ff35e58810f2d20bc808a22301cc654f",
+  "0eea0223991b7a2880cf144f041ef9124cb411b5",
+  "eeaa7d1c193f9058f8ea67b20a1c15647cc7a5bb",
+  "c44921e0fd1b1a6c01f4b9aee846df52a6c8e509",
+  "10d0623cef16507572a7f6b2317302508d485924",
+  "c703018d60311f7bd1184a661e94b9eef64c412f",
+  "06b4775432f98adbb6dc6adbbf071a476c8cdb88",
+  "756cf2125fdb1c3a467034c98616e7ff486e4e7e",
+  "9e931e1d6d267eb6c7cbc3deb0319bf915b159a2",
+  "8e8739823a7914b63b8603afe3ab302054c5b435",
+  "28526934a3e9215449b4ae33bb9b23a5a6f4f759",
+  "9360d2f1986c37615926b0416e8d0fb23cae3e6e",
+  "4d75449eeb2d7a97dbb63fae4458de19dd2a382a",
+  "11d30d3bc82d98c99e4223319487ce26ebb17689",
+  "1bd9940468387e3535af6102594b6dd65ac1ea67",
+  "52dc37d28b885658bd233ed1cb1688425ac48816",
+  "90ffb234d9e0eb67ecede0dc683b39d6d75ab619",
+  "c786f5c5a78f1b7459ab947a7356f208830b1013",
+  "7b0001e2bc0bc6a23a9a444d2784bfa40de4a643",
+  "b1935f42a9c2b50bc35ca61664d377a3967b4bb7",
+  "5cd49f611eb73e536fa0b686b8143e275544d91c",
+  "f859b7942620548ea7ccfc7eaa25d3e5620c307b"
+ ],
+ "stars": 1,
+ "license": "NOASSERTION",
+ "strata": [
+  "S3_code"
+ ]
+}

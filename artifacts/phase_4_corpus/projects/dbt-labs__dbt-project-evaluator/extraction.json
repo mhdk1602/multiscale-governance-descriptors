@@ -1,0 +1,125 @@
+{
+ "project_id": "dbt-labs__dbt-project-evaluator",
+ "repo_url": "https://github.com/dbt-labs/dbt-project-evaluator.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "95cca3ef924d82ffd44dbbe34132771ab307e218",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models",
+  "integration_tests_sl/exclude_package/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "dbt_project_evaluator",
+  "chained_configs": [
+   "dbt_project.yml",
+   "integration_tests_sl/exclude_package/dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "models",
+   "integration_tests_sl/exclude_package/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "dbt_project_evaluator",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 352,
+   "first_commit": "2022-01-07T11:05:54",
+   "last_commit": "2026-06-12T11:35:28"
+  },
+  {
+   "config": "integration_tests_2/dbt_project.yml",
+   "name": "dbt_project_evaluator_integration_tests_2",
+   "model_paths": [
+    "integration_tests_2/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2022-08-18T14:35:15",
+   "last_commit": "2022-09-19T08:14:14"
+  },
+  {
+   "config": "integration_tests_sl/dbt_project.yml",
+   "name": "dbt_project_evaluator_integration_tests",
+   "model_paths": [
+    "integration_tests_sl/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2026-04-09T19:47:22",
+   "last_commit": "2026-06-24T09:14:48"
+  },
+  {
+   "config": "integration_tests_sl/exclude_package/dbt_project.yml",
+   "name": "exclude_package",
+   "model_paths": [
+    "integration_tests_sl/exclude_package/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-04-09T19:47:22",
+   "last_commit": "2026-04-09T19:47:22"
+  }
+ ],
+ "n_dbt_projects_seen": 4,
+ "n_commits_touching_models": 441,
+ "history_start": "2022-01-07T11:05:54",
+ "history_end": "2026-06-12T11:35:28",
+ "n_snapshots_planned": 37,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 37,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:29:51Z",
+ "snapshot_shas": [
+  "c57b9dc0c0cd1b0b6e9e9c9b6289e1bcc2e06aec",
+  "10c417412c20798c1a0455e7f4982ed552adcb1b",
+  "1f845ef2618ca5b205d93862423d62056ebe742f",
+  "f176f717c150acc4a3f5c6af5d0280174c999c65",
+  "a7cd3cabc51ed02818c8360d8957837e9b78f29a",
+  "f801942682ca93d22a4f08acd76c6cce0a850558",
+  "e6c2ff9423d37a3f04c6e0ff20df55edb16f7a8a",
+  "3ff7f50b7ac69a84ec2cef737cb00016e6aac208",
+  "1801aff13dc70ec5b966826cd8e8d24d8ed05558",
+  "68bef71b1fdead97837fb609e568703d0d0b2fd4",
+  "7a8069148ab6fffcbee25bd7ed72d089efdc23c3",
+  "d9e94efd26f3840556df7d6352aa4fcff1d8ad54",
+  "e27e659c400ddb7c2d4a8a272906d3b263aa8ea3",
+  "1299dbf1d8f7e5d61423fe28f223fd872f4e49cc",
+  "9f03a02ed5f0d09d7d5bad3cf64f84d624468cbb",
+  "13ce0c2c95c59ef4ee2120c2b6efbe252c9a3e10",
+  "8f8d1cf9373e8745413f2ff581e582445278d5c6",
+  "d6c881716af78adb7623af7425ad14902f07f0dc",
+  "907c5204108defdf5358257c533a10fc32145eac",
+  "56c2035c58674daacb3adf378b958c3a582c8a63",
+  "c199a63eb7cb1ef56c38b9128ad86d5f0d1e39f0",
+  "0bfa709d93c9d7366b8506d001adcf978c26bc35",
+  "b99fab8a8158199cf3e7a18325c32b99c011a300",
+  "e882b3e88a2ada20c2b6785eb8c3bf460486d5a1",
+  "52689ea3e4cccc98676a7283120782c0225d3bde",
+  "2f6314288ee8049e9eb715ad069132e94d3e8853",
+  "e66a238e625c91aae8f10e75fb9809b16401b06e",
+  "ac8f2088f46b996c479d659990a593a2a03d9fe4",
+  "9bb90312ffdcfb1801873ab90c82140ddf9bbdd9",
+  "66939ff38f8bda092f2556f919a782aef11d0132",
+  "f066a8d5962b9033d6540868e1c86338301fdaa5",
+  "d74a2acdd11cf8b6eb385ca4ea64f706cf166b2a",
+  "f944fd63bc6a4ac2983976924c9782b6ecf24d6e",
+  "7ede3e74167340fcf9b02a1d270b0cdaeb4890fa",
+  "bd6cd1b6eb8ed3fe64400e1dc259de8a28767bd6",
+  "66f7664a0eda6c4f0945f2318c86ce94ff9ae39a",
+  "98d4e9eec3585a940c796220909c00144a6f77b1"
+ ],
+ "stars": 571,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

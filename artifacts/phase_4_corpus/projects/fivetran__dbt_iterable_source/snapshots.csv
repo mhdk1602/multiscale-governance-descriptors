@@ -1,0 +1,15 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_iterable_source,2021-04-20T17:35:46,0e0070b4c8aa2202222eb5def1b8a4b97b827892,additional updates,26,13,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,13,0.076923,0.0,26,0,0,0,26,1
+fivetran__dbt_iterable_source,2021-06-25T10:28:36,d2e62ae5f341417465c87db1ee06aff8f411054c,use new spelling of suppression,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_iterable_source,2021-09-10T15:56:19,964ee88a91aac2ba3d2bcb1ec3572bc564117e27,rename var,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_iterable_source,2022-10-13T15:54:09,438897883b93e8c39ba5cdf79d4196035f020a7e,Updates for dbt-utils to dbt-core cross-db macro migration,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_iterable_source,2022-11-10T13:54:59,7d8775bb81c6623762af43791935b0eb048fdeec,docs and fixes,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_iterable_source,2022-12-15T14:38:47,8d111ecad506bc5617e3b4d6dd46e5ad747978a2,Merge branch 'main' into MagicBot/dbt-utils-cross-db-migration,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_iterable_source,2023-01-24T16:20:26,794a10642cde7dc8162ca04021214e246c9b5ac9,regen docs,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_iterable_source,2023-05-17T18:16:37,66486f174a4abac117f7e380c93d7e3db85e8d42,update src yml,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_iterable_source,2023-11-20T15:57:54,6b8f9de0c200fc78e8a7a94145ae9cfaeab9a826,change test back,26,13,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,13,0.076923,0.0,26,0,0,0,26,1
+fivetran__dbt_iterable_source,2024-05-20T19:39:31,79c6b170771e7735e6ff539a99bd9f6cfad643dd,Catch all recent unsubscribes by updating partitions,26,13,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,13,0.076923,0.0,26,0,0,0,26,1
+fivetran__dbt_iterable_source,2024-07-17T18:03:30,313b3ca392c3633ca5cb449390ec04456c078200,add event_extension var,26,13,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,13,0.076923,0.0,26,0,0,0,26,1
+fivetran__dbt_iterable_source,2024-07-25T11:28:54,0d8f8c388b9213c22a0a5b10787ca22eb9e7b315,add enable config,26,13,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,13,0.076923,0.0,26,0,0,0,26,1
+fivetran__dbt_iterable_source,2024-10-31T11:40:04,4bdc8f7aed661eb7fdf22740e9fd63b83267df03,rm unique test on created_at in event  and update docs and seed,26,13,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,13,0.076923,0.0,26,0,0,0,26,1
+fivetran__dbt_iterable_source,2025-07-08T13:30:52,e20b657869003ec2b1221e2a94a3d32cb16925c0,patch/json-bigquery-compatibility (#43),26,13,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,13,0.076923,0.0,26,0,0,0,26,1

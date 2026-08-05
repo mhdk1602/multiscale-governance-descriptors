@@ -1,0 +1,75 @@
+{
+ "project_id": "cagov__caldata-mdsa-caltrans-pems",
+ "repo_url": "https://github.com/cagov/caldata-mdsa-caltrans-pems.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:22:20Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "0bfbd03906c4f7263b2012f6b16613f463ac0cfa",
+ "default_branch": "main",
+ "model_path_universe": [
+  "transform/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "transform/dbt_project.yml",
+  "name": "caldata_mdsa_caltrans_pems",
+  "chained_configs": [
+   "transform/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "transform/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "transform/dbt_project.yml",
+   "name": "caldata_mdsa_caltrans_pems",
+   "model_paths": [
+    "transform/models"
+   ],
+   "commits_on_model_paths": 1006,
+   "first_commit": "2023-10-12T15:57:04",
+   "last_commit": "2025-08-13T13:33:43"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 1006,
+ "history_start": "2023-10-12T15:57:04",
+ "history_end": "2025-08-13T13:33:43",
+ "n_snapshots_planned": 20,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 20,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:23:36Z",
+ "snapshot_shas": [
+  "11a8c12479f5d3c60331e6aac740c28a29de8ba8",
+  "0bc35853301c19ea648fef623700ef2611195f37",
+  "b3bece534fe1da0fa30d9220cecf13d5d4f2c7e5",
+  "cc992738a426d9cc2a83fb529e7d017713a8b5ac",
+  "d4b22c584dd3877f2ce308857d103ea0bc358b17",
+  "5be0ee4f9a01d3d61071ad4a3fbe1f5168a513a5",
+  "3785d83192665660658bbb7c87e5c22a8ba3cfa3",
+  "0dadafb5ee49c82158d70677272da2a5abeee27f",
+  "ffeacf13d3514ec41a965902d4651f084994966a",
+  "e94c6dd984b2a8f5973f8894a99ee28ccdcdba1e",
+  "a70e7f5d2745ce7ed0161cb04f84eafa3de8aa90",
+  "66cf3516d007bdc7955fc5ea1b0a4856d73369dd",
+  "ea1b09386b2a7c1566cbdf279cd4173a5f1d54a3",
+  "754b32536bd418ca45fce6e00bd7e6548d96fce4",
+  "9713969fdb217798fef06eeb8ffb2d2290e05aaa",
+  "e78cccfcee68d2c4a7597a254545266549d05285",
+  "5cf67293dbc63822c9e3a64cb62e5bee9653e243",
+  "50c417fb6b3ee5571eee841519fb6eeff946240f",
+  "4fba72fce96e53bb8ec99eb27895321972fb0827",
+  "3fedb168068a8a8d9baab9d9eba670e373f610d1"
+ ],
+ "stars": 13,
+ "license": "MIT",
+ "strata": [
+  "S3_code"
+ ]
+}

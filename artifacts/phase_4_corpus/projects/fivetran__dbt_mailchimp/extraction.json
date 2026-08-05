@@ -1,0 +1,67 @@
+{
+ "project_id": "fivetran__dbt_mailchimp",
+ "repo_url": "https://github.com/fivetran/dbt_mailchimp.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:30:14Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "64c110c9715022c5b5af06335edef31a1990ba82",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "mailchimp",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "mailchimp",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 55,
+   "first_commit": "2020-04-15T09:33:26",
+   "last_commit": "2026-06-22T19:49:27"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 55,
+ "history_start": "2020-04-15T09:33:26",
+ "history_end": "2026-06-22T19:49:27",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:31:11Z",
+ "snapshot_shas": [
+  "41053836e454a80d6f72350d16793893b4afff27",
+  "c7868eeb25b0ad0372d72a1572149ecadacf3fa3",
+  "d9793e05f5b7a42d8e8daf8f73cd713b3804a0da",
+  "e724a0572eb25f08eed71a0e4cd0ed8dd0db4bdb",
+  "63f6930cc10449889fe638daa7b0b70cbde21bb6",
+  "4aae6687b29b43df8e8bb12697aa3a18715cf226",
+  "09665db049346af5b95858d5698ffd18c185914c",
+  "d1edef222abeee8de1aa51680f290c1665ab97e0",
+  "4624d00dd4f9839a8041f99c9569bfcec3d074a7",
+  "4d814357257cefd7436e74231d6c6da745f88819",
+  "6ec73c9df551535c05eee3037da6156cebf59d8c",
+  "64c110c9715022c5b5af06335edef31a1990ba82"
+ ],
+ "stars": 3,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

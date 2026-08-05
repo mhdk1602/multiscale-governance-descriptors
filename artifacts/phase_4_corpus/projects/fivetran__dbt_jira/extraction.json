@@ -1,0 +1,97 @@
+{
+ "project_id": "fivetran__dbt_jira",
+ "repo_url": "https://github.com/fivetran/dbt_jira.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:29:20Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "6b7d33392a306ae41a54b9a111c5d9f14a83dcb5",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "jira",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "jira",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 230,
+   "first_commit": "2020-11-23T15:31:14",
+   "last_commit": "2026-06-24T11:24:32"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 230,
+ "history_start": "2020-11-23T15:31:14",
+ "history_end": "2026-06-24T11:24:32",
+ "n_snapshots_planned": 41,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 41,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:32:30Z",
+ "snapshot_shas": [
+  "a2d5c99714aeb447a6a1232868c59227cc40ac98",
+  "ce40a6cc5cf122a054f3e9a5d08010ac479354b0",
+  "a4c42caedba5bf556ae2fe3bb2f04eeb760e5c56",
+  "3affe1a40843b41959ffd3e3b347a051491b7bb1",
+  "4ac1fc022eb4c45aeaa82a4f1bef206da9aab31b",
+  "9cf4eb908b31804448a019ba71a94ab9610dbc79",
+  "27042e5c139c9c76874926b4d971636b0da00d96",
+  "bbee907d07064c888530727bee7f31737c2685ec",
+  "e9af7b221f216333f7600be69c9e5c6dee222fa9",
+  "27b8c7e9c139627eeadbd13c6150000af56c4eda",
+  "35c063616be2737248206e937020282863666f3f",
+  "51881da427fb759422162c4e58204b2d33904ed3",
+  "f3d53ae43faada05a6cb904faf1dcb50b6c53496",
+  "51cb9bd2bc2958eadb04834534e29d5a8ecb6e1c",
+  "d0ebe4d8aa9632c399207221b168365ab2116d8e",
+  "3a3eb56848acea65cae0a460e5768e5d7fbb5b13",
+  "1489a54e325c44f96fb8cdc42b48e6008752fc74",
+  "a6ea6c475a2d90b764de070f60b077f2982968a6",
+  "7735f3ad489aa5f35e2f23f459f0cb43d9b7b012",
+  "cc2ba88970a8a9adf42e2dbd2de6655cc32e136c",
+  "df6f64552f9cc9ef9a9807c9a40b90a18004ded3",
+  "0f2dafaff756f616d3428a2cf1a6b8a126eae137",
+  "957b922904ec9f380405f73662f5078cbcc38c0c",
+  "51f5a410c7e36ca5746ff22877abf93908ff6b59",
+  "217282575fec231edbe97cb6939ad79957973d9a",
+  "c1e6fc845a1c838372d7c0487ea2b212db2948b7",
+  "251785a20bc59c587d956b74d9538f43f4fc9754",
+  "947433271b71f12992f197125e6faa2454242b03",
+  "9ece92fc1f30f79a0a3ef11a813c4a30a8d08cfb",
+  "14923fdb3062cc468fe969c5c04e752873a114b4",
+  "301e706c5171f4407508fdefb8c5df8e3318574b",
+  "b5aa419bfa469d6376d942891921d550de7b1585",
+  "aacdc9b344e13e7e34c8d4b4386737a9cf2da60d",
+  "2077805a1ec22857ea65c4874d568eee12a2ca6e",
+  "496a987a37675cdb2799d5d305721f8e76bc7e4d",
+  "f04da67e3786cd89950b85bb56ac502d10127baa",
+  "14ed96b7ceb9a34cdee6f91bb1cee90e2052b189",
+  "c0bb30357a32919ec9f9643d1eaee35a8618ce47",
+  "d2e28d19e6527855e181e62fb721c5a0555e2c9f",
+  "fc481bc951c6b873ca9a82e9c634443b03279ed8",
+  "6b7d33392a306ae41a54b9a111c5d9f14a83dcb5"
+ ],
+ "stars": 13,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

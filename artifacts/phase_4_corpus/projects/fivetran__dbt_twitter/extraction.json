@@ -1,0 +1,71 @@
+{
+ "project_id": "fivetran__dbt_twitter",
+ "repo_url": "https://github.com/fivetran/dbt_twitter.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:33:06Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "48f695b9704ee0ee13a26ed50b09f805d0ae4bc3",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "twitter_ads",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "twitter_ads",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 31,
+   "first_commit": "2020-09-20T14:47:05",
+   "last_commit": "2026-06-22T20:38:15"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 31,
+ "history_start": "2020-09-20T14:47:05",
+ "history_end": "2026-06-22T20:38:15",
+ "n_snapshots_planned": 15,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 15,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:34:41Z",
+ "snapshot_shas": [
+  "9c337eb7f2a1447592e71899740cdba0ec8353d8",
+  "b5ad09b35aff23961cf11d9dbe176b4b1ea11651",
+  "ee7cd6642416400077edca0a909f7c0425fc83ae",
+  "829b673e31c511ecba500fdd70bcef47085e87bc",
+  "1470dd34fc302a5218599966b2af30bbc66f3c4c",
+  "64e822e1a5d05c5f323eb6e285d7f9f870f924d7",
+  "324dcaf69a0a4f0ee86033ff3fb263027614a0a5",
+  "ae20f1f05f1da0e29a2253bd86ffe86f39c96c67",
+  "55b3ffdf9ea8412dd5c2178ab61acf872da75e6a",
+  "afd49748d9d2b0adfb6b1a95c31444b6d2f182d5",
+  "11d1d738c763508cb9b159c801da376318994fd4",
+  "d6418c9bff9a87a7b37816cfa03267ee35d41f8d",
+  "30d3739b756c3b1319b93f6b683f4c85158a568a",
+  "747b23ab2fbd56639e3a3ecad1ab8d3901d73695",
+  "48f695b9704ee0ee13a26ed50b09f805d0ae4bc3"
+ ],
+ "stars": 2,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

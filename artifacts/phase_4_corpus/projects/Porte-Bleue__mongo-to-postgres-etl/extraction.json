@@ -1,0 +1,70 @@
+{
+ "project_id": "Porte-Bleue__mongo-to-postgres-etl",
+ "repo_url": "https://github.com/Porte-Bleue/mongo-to-postgres-etl.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:19:46Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "2c0713eeba8d2638fa698e7f41f2d3c80da9bd8b",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt-models/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt-models/dbt_project.yml",
+  "name": "la_porte_bleue",
+  "chained_configs": [
+   "dbt-models/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "dbt-models/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt-models/dbt_project.yml",
+   "name": "la_porte_bleue",
+   "model_paths": [
+    "dbt-models/models"
+   ],
+   "commits_on_model_paths": 55,
+   "first_commit": "2022-02-16T19:43:03",
+   "last_commit": "2025-03-26T11:44:11"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 55,
+ "history_start": "2022-02-16T19:43:03",
+ "history_end": "2025-03-26T11:44:11",
+ "n_snapshots_planned": 15,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 15,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:20:54Z",
+ "snapshot_shas": [
+  "0baaf9467aceb55ae91d77052f3b3e98ec4eb303",
+  "88acbcb379249f6386a8a18b9a7318a76b73e4eb",
+  "873a7db255143a7226896b0e9b8703135d6cfd5f",
+  "93cbb66fb276eabf460761d27552d122014b35d2",
+  "905da9514f9d48d5b2e3bab45cc27983d02d1b8d",
+  "eea789b647735cc2bdf45c8e7ac4363b32443eb5",
+  "853f71ab0388377f7963bdcf1ee81cba2d9d7603",
+  "7dfea00f0944282ff24e18433d0920770a0788b1",
+  "fbfa307f604cec13b2a67bb76f48ea81165c47c4",
+  "849b94c622d0216adf87ae794432f29ea8d89b0e",
+  "ad551b03d488a08b09486ff4798eb3c71d3ffbf3",
+  "a33426a29a495301371fcb9f45a5636044f75a09",
+  "42f1833efa44b58bb25d544dae775f3ce006b756",
+  "b56febff72f135c6cdacddcf6d1d6e94062d7089",
+  "25d9374ae396a119e5d1acf403dfb30b01e4a2bc"
+ ],
+ "stars": 19,
+ "license": null,
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

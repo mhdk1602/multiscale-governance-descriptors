@@ -1,0 +1,70 @@
+{
+ "project_id": "datafold__demo",
+ "repo_url": "https://github.com/datafold/demo.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "4f344e2cd1fb25555a9d3fad1e64673d7914c628",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models",
+  "sources"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "demo",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models",
+   "sources"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "demo",
+   "model_paths": [
+    "models",
+    "sources"
+   ],
+   "commits_on_model_paths": 49,
+   "first_commit": "2022-10-17T18:13:33",
+   "last_commit": "2025-03-18T22:09:48"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 49,
+ "history_start": "2022-10-17T18:13:33",
+ "history_end": "2025-03-18T22:09:48",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:25:57Z",
+ "snapshot_shas": [
+  "571e2bad676e4b3d8eb2d8a4407ed68664ae0ff3",
+  "cb18a3bdaa2ffbb387aeb4c4b243b30e3bef241c",
+  "13264571850f1cf2df660c08e4f1b5b8d44630e9",
+  "ffa9168896c85b86811d6ff893a4a8c6d55159f5",
+  "a57b871bc57703ab8ab390f94da469718a9df7c4",
+  "610afc663193c8caf5be8fae0bd63ecd4fd6ea58",
+  "4545620b480fa71ef4ced90207997aca8c6cabef",
+  "97ee3ace356bb61f94b7894764f991a57ba1cc49",
+  "e0f207656595ea86b67b4c9d49cdbe81a26521a7",
+  "286a9514b98aee9177c4a71209d1032c41d84ce6",
+  "3f20bed7b63a810bab47b4bb15adceefcc75c0be",
+  "986d7527733c6397798eef51c01e52f936ab8e28"
+ ],
+ "stars": 8,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

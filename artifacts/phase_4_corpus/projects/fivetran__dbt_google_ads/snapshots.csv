@@ -1,0 +1,23 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_google_ads,2020-11-04T09:09:02,140daf17de3e4f3d1e56a20df5435435cbdccf69,convert refs to variables,3,0,True,,,,,,,,3,0.333333,1.0,0,0,0,3,3,1
+fivetran__dbt_google_ads,2021-03-23T09:29:48,d0fb22eb334a9b70e2eb56878af3591885263578,custom schema and docs update,3,0,True,,,,,,,,3,0.333333,1.0,0,0,0,3,3,1
+fivetran__dbt_google_ads,2021-10-01T14:15:21,e7c9e9c195e70fa3bc941a6d7d36e960caf54ae0,api_source default set,3,0,True,,,,,,,,3,0.333333,1.0,0,0,0,3,4,1
+fivetran__dbt_google_ads,2022-02-04T09:45:17,0535876bb1a92f98661321f17fd90a0a14d109be,New Google Ads API Support,3,0,True,,,,,,,,3,0.333333,1.0,0,0,0,3,4,1
+fivetran__dbt_google_ads,2022-06-24T16:21:27,b847a62f6d03ae2fef718c23aa78138b4df86abd,decision log and minor adjustments,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2022-06-29T16:34:00,3c3ee0e09784d093060a341e423ec9b8061e328d,utm to url renaming and documentation/docs updates,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2022-08-19T16:40:52,022467ae7b06cd8f5e82a82051bcac6d58b30cf6,final before merge updates,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2022-08-31T14:43:05,a3878d57520c4b37fc219e54a34258dcf9638b40,seed and tests,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2022-11-09T14:13:21,ef44f6260bda48885f8dee33058da28302fb6f78,updating ad report model,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2022-12-19T20:50:56,7d21ca2867c56db1af8efd1086469571bd9f1ef5,Merge branch 'main' into MagicBot/dbt-utils-cross-db-migration,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2023-01-17T21:34:36,552da512750aa0fc63e81a88502907f96f5cd15e,Adjust join key on key word report,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2023-06-06T10:50:12,f2f795a31ddb7e6b0b5bf584c787ac12ffc948ec,yml,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2023-09-01T14:23:03,4e1a73ec1412d11b488b53f61b63bc0cdae3235e,update model,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2023-12-11T10:47:33,a24070e56fab404acf770549d43f1aa05dd88a25,Update package to use the package extract_url_parameter macro,6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2024-07-30T12:33:25,681ada7c194ce92e44f85fb8af7f9519cc1aaa31,Add conversion metrics! (#66),6,0,False,,,0.0,0.0,0.0,0.0,0.0,6,0.166667,1.0,0,0,0,6,6,1
+fivetran__dbt_google_ads,2025-04-24T09:30:17,4c6ccd7ecea45d5557c4fa91b392c74e16b8aeb9,Create search_term_report (#76),7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_google_ads,2025-05-15T11:36:06,4698bb3891a09f9bd1cf5171a1773431761ec593,Add `criterion_id` to search term report (#77),7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_google_ads,2025-08-15T04:38:25,315bf5c5548f412d83acdea898c8cacf5f8931dc,Consolidate source + remove tests (#82),29,39,False,0.6428571428571429,6,0.5311374163664436,0.1943243977008914,0.0186723264170118,0.8738125055119536,0.3793103448275862,1,1.0,0.0,22,0,0,7,29,1
+fivetran__dbt_google_ads,2025-11-24T10:21:02,706b0290212d19c5748ea915a5c8328177f371b2,Bugfix/constant expressions (#89),29,39,False,0.6428571428571429,6,0.5311374163664436,0.1943243977008914,0.0186723264170118,0.8738124927631912,0.3793103448275862,1,1.0,0.0,22,0,0,7,29,1
+fivetran__dbt_google_ads,2026-04-01T12:24:22,fc0740304534e288922c9b24a34fd3150f9aa878,Feature/bid budget reports (#95),40,48,False,0.8571428571428571,6,0.538425925925926,0.11088617081284279,0.010537694966076037,0.47858192733667865,0.225,1,1.0,0.0,30,1,0,9,40,1
+fivetran__dbt_google_ads,2026-05-11T09:41:10,ca35c090879824e1a3de80f981cee9810992968d,bug/campaign-history-date-time (#98),40,48,False,0.8571428571428571,6,0.538425925925926,0.11088617081284279,0.010537694966076037,0.47858187557709453,0.225,1,1.0,0.0,30,1,0,9,40,1
+fivetran__dbt_google_ads,2026-06-22T20:26:41,5f90a793a56a4d734d5365d35032de0a7969a767,Standardize unioning macros to use fivetran_utils versions (#101),40,48,False,0.8571428571428571,6,0.538425925925926,0.11088617081284279,0.010537694966076037,0.4785818338945008,0.225,1,1.0,0.0,30,1,0,9,40,1

@@ -1,0 +1,15 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_microsoft_ads,2020-09-03T12:49:47,521a1303ef6a834f13791b3900ff9540274e449e,bing-> microsoft,4,3,True,,,,,,,,1,1.0,0.0,0,0,0,4,4,1
+fivetran__dbt_microsoft_ads,2020-11-24T13:48:07,6ece9e043636592550fce4774eceb3fb0b6e8fc9,Adding variables functionality,4,3,True,,,,,,,,1,1.0,0.0,0,0,0,4,4,1
+fivetran__dbt_microsoft_ads,2022-07-07T15:23:33,b255b5913ce5e36a961e35bb13612dd7a28de793,changelog,7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_microsoft_ads,2022-07-21T08:02:51,c2013dd24ed18f867c6fe91bb35764b101637afc,filtering url report,7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_microsoft_ads,2022-08-30T20:53:31,007c596e5714c7cc38c74b14c4468b8c9e86d240,not null testing,7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_microsoft_ads,2022-10-28T11:45:20,4739374b872df05d746d417be4984570e8585000,fixes,7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_microsoft_ads,2022-12-14T12:17:21,078687f5f0560ba3568cd192c581bd2eb035ab1b,pr updates,7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_microsoft_ads,2023-09-01T17:11:23,7d5d04bd903824ddd0eaf2b340a1e95e49b77704,magicbot revisions,7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_microsoft_ads,2023-12-11T11:15:14,d9ac657d2ffbb881d706dcdb9cff08579c56534a,Update package to use the package extract_url_parameter macro,7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_microsoft_ads,2024-10-21T15:38:46,e64e8a9aa6d728e78b2bf4e03e8a3374c7ce1d20,Add conversions (#34),7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_microsoft_ads,2025-04-28T02:05:00,227b4ff0f2cfa165ab8d7e9c60aa6a7b0941b2b5,PR review,9,0,False,,,0.0,0.0,0.0,0.0,0.0,9,0.111111,1.0,0,0,0,9,9,1
+fivetran__dbt_microsoft_ads,2025-08-14T21:15:06,cd7e58fad0a9419dc045527809f3e5d38034965b,Consolidate source + remove tests (#48),33,49,False,0.7142857142857143,6,0.5800865800865801,0.19715230405064163,0.016083610823333882,0.9013925781747455,0.5151515151515151,1,1.0,0.0,24,0,0,9,33,1
+fivetran__dbt_microsoft_ads,2026-01-20T10:20:14,07d3b84dfcb9c099ebaf31f1d5251c768365570a,Update `.quickstart.yml` and `README` (#52),33,49,False,0.7142857142857143,6,0.5800865800865801,0.19715230405064163,0.016083610823333882,0.9013926533514155,0.5151515151515151,1,1.0,0.0,24,0,0,9,33,1
+fivetran__dbt_microsoft_ads,2026-06-22T20:28:43,dbb98f9a99c4e6aac0de1e87a61792c9a3de5f75,Standardize unioning macros to use fivetran_utils versions (#58),33,49,False,0.7142857142857143,6,0.5800865800865801,0.19715230405064163,0.016083610823333882,0.9013926550138732,0.5151515151515151,1,1.0,0.0,24,0,0,9,33,1

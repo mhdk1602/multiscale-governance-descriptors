@@ -1,0 +1,106 @@
+{
+ "project_id": "datacoves__balboa",
+ "repo_url": "https://github.com/datacoves/balboa.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "1b88c9babb572ea9f802fd2c742feac31a9f9127",
+ "default_branch": "main",
+ "model_path_universe": [
+  "transform/models",
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "transform/dbt_project.yml",
+  "name": "balboa",
+  "chained_configs": [
+   "transform/dbt_project.yml",
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "transform/models",
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "transform/dbt_project.yml",
+   "name": "balboa",
+   "model_paths": [
+    "transform/models"
+   ],
+   "commits_on_model_paths": 145,
+   "first_commit": "2021-12-02T18:06:24",
+   "last_commit": "2026-03-20T16:36:55"
+  },
+  {
+   "config": "dbt_project.yml",
+   "name": "balboa",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 17,
+   "first_commit": "2021-07-28T07:57:26",
+   "last_commit": "2021-11-30T07:07:30"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 164,
+ "history_start": "2021-07-28T07:57:26",
+ "history_end": "2026-03-20T16:36:55",
+ "n_snapshots_planned": 38,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 38,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:30:13Z",
+ "snapshot_shas": [
+  "5c177e8567c4388ce23ac0147a1a483f2665445b",
+  "da311657e319fae94a0659af6de2558cf4fb8645",
+  "6a91ca4166bd0c4c415ba9a6819d0ef5187a6d85",
+  "d50f9b00cc92a53262e00033045b6b85af0a1632",
+  "9b195994709b114916cb84ad4c4d175b20a988b3",
+  "37c63155e1e4e176969693c753fe2dce94a3174c",
+  "27b88cf30e42331e9f919a411e135b999711da48",
+  "de8fdce728479e627daf718178859f68981bb6b9",
+  "7bd5b56084997ea6ffe5dd31735900a6067ebc4b",
+  "b2ddfc47409f68baf9ed7ef2320bc81be0da0677",
+  "68a87cacdf54ce7cb0aaf07f9ce944af9c3ee447",
+  "21febb96e9bc8350a6c724f1d8de4e845a37af4a",
+  "e81ad839a16450ed7deba5922e244c57d4056409",
+  "b7bd9c6a88999a045b4870ecbd6ed2e8c0662d3d",
+  "0a821b630923bb566693a3c99629d4e2cb6ac88c",
+  "2523a9a5e96f7a387039a828f2843d74cccf3eb0",
+  "14f5d7ddb07afc55e9e2bb44d106416d4efc384e",
+  "6b7ddc62f40f515f117aed5a34c7f3eaa54ccf42",
+  "3dd9fb3bdbb7a340a433585b43b84e3de33051e7",
+  "b4e8ae2bb522b770a211daf4a2acb9b2c5476153",
+  "59d263061e5b4f81ba72610a70b33d50c2cdbbee",
+  "bb62326c574861373df0953bb6e4841a747bb462",
+  "768aa8c7679ebad3b82736301ca85289a9d2bcb5",
+  "5362f88b2fe194e414b12aa35ce4462ccc594c9d",
+  "3519d2309e0844cee4712330603b220a9aa2020e",
+  "dafe3214c25bc216284c0b509ccdc8315d671cce",
+  "20d983f118f475165d69d93287f5a85e2c6eab1e",
+  "c994cf4f46fcfd6ed19df7d9679e2f46082cda95",
+  "3b6b02a8409536512ea9282c7c97eab3f31cf4aa",
+  "e46fd8fee959374789520dd30c1bab5f51ad5978",
+  "7acde54270fe3a988c385e28afd24fd80132c640",
+  "c91f968adb074f970605e31cde004edf917c1a8c",
+  "9ada1036bfe610bb445895b926f7f3ec772fdf2f",
+  "8b324383f5d99fbe7342896896762289cbdbf9d2",
+  "14d08df6df63d7a1d9917beb854d8ed7dd8af7af",
+  "7581da29d644450cffdcf1d38d81a84884a72754",
+  "e56992aad14854c5537ea0e47ccb53df0604f01f",
+  "c06ff28242b218037dd87d1343b1e35deed2f06b"
+ ],
+ "stars": 30,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

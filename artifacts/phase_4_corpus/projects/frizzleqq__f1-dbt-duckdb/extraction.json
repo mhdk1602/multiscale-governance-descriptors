@@ -1,0 +1,73 @@
+{
+ "project_id": "frizzleqq__f1-dbt-duckdb",
+ "repo_url": "https://github.com/frizzleqq/f1-dbt-duckdb.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:34:01Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "70edd0528690378fe48853cf51c2a09a41b13bca",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt/dbt_project.yml",
+  "name": "f1warehouse",
+  "chained_configs": [
+   "dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt/dbt_project.yml",
+   "name": "f1warehouse",
+   "model_paths": [
+    "dbt/models"
+   ],
+   "commits_on_model_paths": 39,
+   "first_commit": "2022-08-21T15:58:21",
+   "last_commit": "2025-04-11T17:41:48"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 39,
+ "history_start": "2022-08-21T15:58:21",
+ "history_end": "2025-04-11T17:41:48",
+ "n_snapshots_planned": 18,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 18,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:35:44Z",
+ "snapshot_shas": [
+  "05ac0413e0822cc8df1ae581ca4828faa5fb4302",
+  "1fa04605e1bb7deadf65e7226f3d24c07fd8e753",
+  "0120b7c32e6ceb2674833b5983dafdc2bec6a45f",
+  "2c515b167098830294571ffef64ff25feed94eab",
+  "8306f7cba0f4f14d0ad282a27411afd6ffb39d41",
+  "f0af508f4583fb1e8bf308f28a7eccab2f52a38d",
+  "e329183b1f2c907ff9ea4b0507a3f8ed7139264b",
+  "2e794e12262e6ab740832595a66ae769f62a4325",
+  "da57d2eb6957e557bc6591e6e11e9aa05cd559db",
+  "2cb6a5823490952d18cf4bbf0f44bc2d6a7785d4",
+  "c9e11fc136f3c3086b08802480aa6d8fa178ca9e",
+  "b25a92f355ee24280e50f0f0332aa0709f3340c7",
+  "4a9d8f152531d4d04d6a78bb74ae7f65d6f72af5",
+  "b08d1f82c86f0b43b2ac669887ec1c3b07d81de2",
+  "eabe7e13dc421c2e9d4ca2aff448284590b9052b",
+  "2162da3e76ea550adab0c4100b6ce14b200603eb",
+  "9bb45e99a589d3f3f2b31abb121bd033f27a91a7",
+  "ed9a7553527ce44e9bc38c3f2268a9648bd6d062"
+ ],
+ "stars": 2,
+ "license": null,
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "project_id": "mitodl__ol-data-platform",
+ "repo_url": "https://github.com/mitodl/ol-data-platform.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:36:12Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "a20a7286540afa8e99f0dde8174a91304a8a88eb",
+ "default_branch": "main",
+ "model_path_universe": [
+  "src/ol_dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "src/ol_dbt/dbt_project.yml",
+  "name": "open_learning",
+  "chained_configs": [
+   "src/ol_dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "src/ol_dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "src/ol_dbt/dbt_project.yml",
+   "name": "open_learning",
+   "model_paths": [
+    "src/ol_dbt/models"
+   ],
+   "commits_on_model_paths": 700,
+   "first_commit": "2022-06-08T16:03:40",
+   "last_commit": "2026-08-04T17:22:45"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 700,
+ "history_start": "2022-06-08T16:03:40",
+ "history_end": "2026-08-04T17:22:45",
+ "n_snapshots_planned": 51,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 51,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:16Z",
+ "snapshot_shas": [
+  "8273c7ae97a6d0eda9526a0256219603cace8d32",
+  "e78fceea8669a2bff3f7420e68d3216f2835c1b2",
+  "203786e1c951bdd82e0f3ea1004fd23b37b4613b",
+  "03131d092f2f472d46f02348aa72658e3f505b01",
+  "ab627462af7cd5e8b1051f545f077de6f4fc2fec",
+  "951d1965fd73559cff4fd919827ebd7e62712e90",
+  "dc56788732009792828687bc6225ca49e75b3768",
+  "79fed4ae676eefe4a4c2f9721a30f92a1e74e6b4",
+  "1623ba8bafd42dd12cf5c6b7bb551e3e8518e79d",
+  "2a78ec10749a8de757e4486c7593ef15ee6b1121",
+  "3df71a28f6ef8140fcaf5c56e721fd2ea66f46a8",
+  "0d408263070037a2dc71846c5e74c59880fac763",
+  "e39c39c9f163fe7a06eb5fceff07b2d0d16f0a5c",
+  "9029bb740b69d82e29f32543904e0369ba574033",
+  "0121ce246fa839cd154716733c31c0d7d9064108",
+  "02648119a3c66071626cb810f66bc82066582b6a",
+  "79b42f1fb40293c160a54fd271c840c4fd77a210",
+  "7935f454cea3ad0268f826d5c5a1a31708fdb0da",
+  "04affee30e97e2d4033895c25113381bc5127ef4",
+  "5547e0fb53b407c1fcb34f256e9c2d47b778f318",
+  "47756fcb2a4bfa272b03b28ad56a20c1ab234a70",
+  "8274bfc02a2154156f8ff83a4540faaced5eaa15",
+  "bc8613759d77bbc9abaef92a06ceafd93df6b0d1",
+  "e0401d244902da191c7165db8e627ae3927b17ff",
+  "9e528cd4c2bd61c03bc01e35a369864f5fdc82f9",
+  "0b4ef2879c47287733a856e5ffd7ffcc1010712b",
+  "7aff85ce914aad42fc361f8683a1e738ceca8efe",
+  "0500973abd95094c7e1d61237723624553d92549",
+  "c213b4458cdbb959386fb24e6b6d1fd5637629e3",
+  "aaea8e63a1309d77420a43365b9a6ec74969728f",
+  "239e476d01811a3ba36a41368e4cabd489092879",
+  "9f8f8f1dd577ca94b0c39f0ae12e613434232455",
+  "8b8972ff0ebb6a764a25d672fbeb82da334c5763",
+  "5f3e6651f394b6366f811430dc17f294a1d848fe",
+  "76db88527aaa63d16047f3cb29db1aa096f64e3e",
+  "86c67768f8ef163187ba56e5219ac194cb3dc47a",
+  "19600539bed1278698c9c49a8119a184e663e599",
+  "af921beca1f3c473e5f4ad123867eb6a128cad4a",
+  "a4c24c215bc4805bcb219abe8be9f931cadc6ca6",
+  "59a11467df47a364c00160eb7f7115df19ff5b1b",
+  "e947f9d5375fcebccb8e23689ad5feaf82883a3d",
+  "0b984cdf20ccec1fd6c71d5caaa9cdd4a5ca8b24",
+  "8fad5e3e3521ad5c631dcfc17f42ac8d8a31a60f",
+  "75d63836a91c2d397c71e87b8dfeb81c13b9a498",
+  "d874d23eeff3022151c8bf164b15a92d326444e9",
+  "685eafccd450db05d6eda316a4360a21e76b1bba",
+  "5623a86649b933fce2e732cbd68e113203600399",
+  "cb1c6dcfde69a2c2a8d77e855fbea13683d3461c",
+  "197e6f97d6e07b9ae8f45a5cc0470251116840f1",
+  "0f6d211acdf8f25b570a5c7e2ae829286267560f",
+  "a20a7286540afa8e99f0dde8174a91304a8a88eb"
+ ],
+ "stars": 48,
+ "license": "BSD-3-Clause",
+ "strata": [
+  "S3_code"
+ ]
+}

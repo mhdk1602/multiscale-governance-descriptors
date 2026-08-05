@@ -1,0 +1,72 @@
+{
+ "project_id": "fivetran__dbt_klaviyo",
+ "repo_url": "https://github.com/fivetran/dbt_klaviyo.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:29:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "9b5a32ecefb393dfb6ce84abc16de6ae3d65eb47",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "klaviyo",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "klaviyo",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 98,
+   "first_commit": "2021-04-21T15:37:30",
+   "last_commit": "2026-06-22T20:43:25"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 98,
+ "history_start": "2021-04-21T15:37:30",
+ "history_end": "2026-06-22T20:43:25",
+ "n_snapshots_planned": 17,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 17,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:31:32Z",
+ "snapshot_shas": [
+  "8339ef55a79177d8e7e5399d24d7c582dd73a538",
+  "2066695ad8f7bea0ebb3baab9a43ddfacd0fe982",
+  "e1cb9c503c5df3ace2d0121244d8d378627b9e1c",
+  "6ade524b1fb82ddac13725962fe0b2deb8963699",
+  "7ea4bbfdb257f4673542128e4d8cb87ccdfd1522",
+  "864732b7e427aaf3431c415140054200aa97d303",
+  "dd8ae1ae223807733608e2f5db3d2664de26e6b5",
+  "c14d05578ddf7ac11bbb6664693399f6169a6d90",
+  "4a3dfcdf44991986f505515d8bc1aaf0f7d4fcc8",
+  "2a75537fb9f41d4e4dec700f6ad323d0a218ee4c",
+  "db28cd76da639b3158c87985158854d674032e77",
+  "dda50fe800eb2ec1ee7737018538cff567cd70a9",
+  "e0d58beeb2b03b76d51a3be7a4ff059b96f41e29",
+  "c4e95ffdde9fc7965706b3969ea11946a77a2558",
+  "b7fbd123d0e6c5f5eca2fdf34a1d7d37bf6bff98",
+  "6b46a8e378a70097ce7ccc82e57d2109a2c772e3",
+  "9b5a32ecefb393dfb6ce84abc16de6ae3d65eb47"
+ ],
+ "stars": 7,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

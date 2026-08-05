@@ -1,0 +1,67 @@
+{
+ "project_id": "DamienAzzopardi__databird-ae",
+ "repo_url": "https://github.com/DamienAzzopardi/databird-ae.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:17:37Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "03ce7b3954dfad2ec50fccb6079fd7a0dd1e1733",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "databird_ae",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "databird_ae",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 61,
+   "first_commit": "2024-11-17T16:19:31",
+   "last_commit": "2026-02-12T09:02:18"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 61,
+ "history_start": "2024-11-17T16:19:31",
+ "history_end": "2026-02-12T09:02:18",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:18:34Z",
+ "snapshot_shas": [
+  "c65a9636a8bf9675865ad3b34f67d47d584a44d0",
+  "b9cf24dc9c0143a5d5d93e46da21b8292743e4e2",
+  "d2c5aa1931b625f9af5541d8fd96caf3b7d154ad",
+  "e9d8f15b6b91c6136c7e54609746ffb2d42af409",
+  "5b7d88cb02896244e1237ab765f9790103213f2d",
+  "da75bb6146a90dc3190a83fbbcf91d395bbb3b47",
+  "0d835278ad4e46344712b59fc1896d0bde0070cf",
+  "b69377f0d6f57e4c1006317a2a6722b457b158b9",
+  "b1096ee2d275bc741109e0def71f4722a332c4c8",
+  "c37cb39067a1689440130e7d107e12585ea8ca97",
+  "b4cabf198c9e6e225773d1a4143d4c1808261b8b",
+  "8c4bd99d4554931a9d89108f5566c8637a85edab"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

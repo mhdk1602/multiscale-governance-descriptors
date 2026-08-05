@@ -1,0 +1,22 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_facebook_ads_source,2020-07-29T09:21:20,15823f78da6f8485c78632c4a649a48c4e35fe41,initial commit,1,0,True,,,,,,,,1,1.0,1.0,1,0,0,0,1,1
+fivetran__dbt_facebook_ads_source,2020-12-17T11:42:26,c539e74ab520b6b9f1625b7505f95fc26d118937,tests,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2021-01-08T14:43:59,aba8cb1229e3508f4118808517218b7f220230b5,docs on docs on docs,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2021-02-21T11:00:29,9cb8a65a142e60f7b16d09dad81458ce47256ef8,update seed files,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2021-03-25T14:33:38,0185accc7f7e5784cb07eab82fb8f7658870ed95,docs and yml updates,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2021-03-29T09:11:53,7907e7bbe52c9d53062fa5570807e6ef8af91130,page link dup remove,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2021-04-30T11:21:06,ca44ce39859112e48f6fefbbef518e8671f171e3,spark compatibility,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2021-07-06T09:01:25,c33251de507367b931d28a71f4a47c5203712be7,removal of fields in yml not in final staging models,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2022-07-06T10:12:46,2f2596740e4e3972e8946b08c0fab13ebbe6fb45,updating passthrough column names,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2022-08-11T11:22:31,95076f03b67a860db0b6e4577b4c88242dbe11f1,rename,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2022-08-26T16:01:19,07737a736b22551589d4c024d2c58e46507a4fb4,additional before merge updates,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2022-10-13T15:46:50,38e8855b916a22b83a2f1b1a15f1beadd5cec696,Updates for dbt-utils to dbt-core cross-db macro migration,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2022-10-24T15:54:44,55f48e4da2b7d9a38567c6e9f41c5ac34668c8cf,updates,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2023-09-05T21:52:19,febd5de409a726c13bb203148584eedab8b51d4f,updates,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2024-02-06T13:54:52,eb799a818a96284daa6e4f6e76ce3399167b079c,Update Creative History Unique test,12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2024-05-06T11:10:31,e8d43da26daba86121a92baa6b19d96c645cd0c1,reach + frequency metrics (#35),12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2024-05-28T09:06:31,bb99b05240fb4a96064d2b83099d9ea20423a196,Bugfix/qdm (#37),12,6,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,6,0.166667,0.0,12,0,0,0,12,1
+fivetran__dbt_facebook_ads_source,2024-11-13T12:28:22,15def11dc233c5d1211db2b5f8c3195ed47301a7,Feature/add conversions (#36),16,8,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,8,0.125,0.0,16,0,0,0,16,1
+fivetran__dbt_facebook_ads_source,2025-03-13T11:25:10,a7726534658ef994c475e83f82a2e522a84e2904,Dynamically handle `creative_history.url_tags` as a json or string in BQ  (#43),16,8,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,8,0.125,0.0,16,0,0,0,16,1
+fivetran__dbt_facebook_ads_source,2025-04-29T15:15:50,69ecea0bef8224d45f11abf0c59b046859b1f993,Add geo reports (#44),24,12,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,12,0.083333,0.0,24,0,0,0,24,1
+fivetran__dbt_facebook_ads_source,2025-06-25T14:30:12,e424ce24f2a36f53d3039f5439cdc751029780eb,Update freshness config (#45),24,12,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,12,0.083333,0.0,24,0,0,0,24,1

@@ -1,0 +1,86 @@
+{
+ "project_id": "MTES-MCT__trackdechets-meltano-workspace",
+ "repo_url": "https://github.com/MTES-MCT/trackdechets-meltano-workspace.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:18:52Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "f6869369467a5e6a0e73355db510d6fd607a05cd",
+ "default_branch": "main",
+ "model_path_universe": [
+  "transform/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "transform/dbt_project.yml",
+  "name": "trackdechets_data_platform",
+  "chained_configs": [
+   "transform/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "transform/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "transform/dbt_project.yml",
+   "name": "trackdechets_data_platform",
+   "model_paths": [
+    "transform/models"
+   ],
+   "commits_on_model_paths": 305,
+   "first_commit": "2022-09-08T18:03:46",
+   "last_commit": "2025-03-13T18:02:13"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 305,
+ "history_start": "2022-09-08T18:03:46",
+ "history_end": "2025-03-13T18:02:13",
+ "n_snapshots_planned": 31,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 31,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:20:44Z",
+ "snapshot_shas": [
+  "b971ad1121a1de79514a538e503b9554cece94fd",
+  "43454f394275e5988aa72199ce9473781d3d8eea",
+  "6f089b41e0bc3e3fd215eeefa9a88a27cf0f0afa",
+  "f40a1ce2d5dd2631a5e925a1993a3c07d2810ebe",
+  "10a7c80b95625db1cc6c9519d057f918db2df2b3",
+  "1e9a1c25fb5622cb99aabfe6aad192b195a41fa3",
+  "8217102f1174778f4acd498908aafaec2a35762b",
+  "8aa67a6179687f42f1224c80c934bf33ff575daf",
+  "b0fb578fe0399b62d08668d0bfa65067a486e358",
+  "cc6be0e724b52299d1427fbef0a5170f4797088d",
+  "a3e000c7f9a0154911dfea4b0cdf6784e74b4d1b",
+  "f33b26401d34d9739d7843a593e7e53499443e3d",
+  "17edcbaedcf44bf84b723f0af1d6d72a8e91da16",
+  "432681f9405e194f41947db4dbb50d959aa6b6bf",
+  "be87067af8e16c5be52d1068eee2ce3dac93e711",
+  "028d9c8851f291a289da975e5b8da9881fe08041",
+  "67426817ed34e88b0da3ecbcb34699b6863ff26d",
+  "3bc15ae4cd153f53cf0040bcc985a70e8d25cfbf",
+  "f761aab85d257539d92afddbafdc35de778e7a25",
+  "4d11c0c2deb3ecbac38ba100b407ebaeb0db27d2",
+  "1529352ba66dce2a0f21eff89dab80f40babb6ee",
+  "cc59c8de5d81344699b6ffd29844df0813b5880f",
+  "06d183d3d92fb349b35d9c7f4bb54f22b9b7d6e2",
+  "c4cc85ce4c0c1165fb5f2fc103d2cf01f47dca4c",
+  "045a33f0740d2ef4fd662e65e1c9f088c16bfb05",
+  "03bd852fad06c476a4ae80c08fd0fb945e53792f",
+  "2bb62d5f74438ee959529ca04e8cc4f60943d58a",
+  "a9a8cca78319f591981e97c3add1dd2c0b9cca10",
+  "c9f3a761a124928c618d866207dd92fda037ecb6",
+  "50bebf84f82025c28a9486033dc1e8dc1ec134f6",
+  "f6869369467a5e6a0e73355db510d6fd607a05cd"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

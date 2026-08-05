@@ -1,0 +1,88 @@
+{
+ "project_id": "davidgasquez__filecoin-data-portal",
+ "repo_url": "https://github.com/davidgasquez/filecoin-data-portal.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:41:48Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "partial",
+ "error": "1 of 28 snapshots failed",
+ "head_sha": "42d78922ebdf5143d6aad939788a4454cf3f9992",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt/dbt_project.yml",
+  "name": "fdp",
+  "chained_configs": [
+   "dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt/dbt_project.yml",
+   "name": "fdp",
+   "model_paths": [
+    "dbt/models"
+   ],
+   "commits_on_model_paths": 125,
+   "first_commit": "2023-06-21T11:13:02",
+   "last_commit": "2026-04-15T18:49:41"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 125,
+ "history_start": "2023-06-21T11:13:02",
+ "history_end": "2026-04-15T18:49:41",
+ "n_snapshots_planned": 28,
+ "model_paths_stable": true,
+ "snapshot_errors": [
+  {
+   "sha": "e94d08c9a75c6992607aa358dfce6717f87557ba",
+   "date": "2026-04-15T18:49:41",
+   "reason": "no model SQL at this commit"
+  }
+ ],
+ "n_snapshots": 27,
+ "snapshot_coverage": 0.9643,
+ "extraction_finished_utc": "2026-08-05T02:43:17Z",
+ "snapshot_shas": [
+  "660468446cc4730eb875c30ee2067fc8c271f042",
+  "5b65552cbe5f49205429a875ec161361886bd74b",
+  "ae2d5e0c82acd7360f76dc5ad2ec1e569b7e2c74",
+  "e02df1bca53df0a36d5b63465df58b7f7dd7557e",
+  "1eca638d853d9812284a204229aa037dc46342bb",
+  "90b78713fc8de45fed6e898e4594551fe591a050",
+  "e2dba6c3b22c5035afa4ce3c2835f939fbc48b5c",
+  "9143fe83523f1afa3a8e66f363dad79283e8a5ec",
+  "2b4e46305380cf2d58e1fe40ccb187792a753cef",
+  "ccf7e50d742538d1811d3bd74f51305290264f4a",
+  "82efc51cc8dedcf2b7382c6ce4a26a387d976235",
+  "a01bf39618481146c746fce8fec8fa96e111da9f",
+  "10d7976e937e1c640e07be68cb0b1c1a98a16c28",
+  "8e470a2b6467e55f151aa7a6caeec67fa94c91b1",
+  "60e8fa17a35c735ff4573b94caee039d276097e9",
+  "fe46d4b1d6adce3cf541ed475cb1e827606a9f90",
+  "96405ff212eeb7718ef566a100e411e9bfac6e46",
+  "04d0fa32f9f9dbf60ebead334c85a12a5d560069",
+  "28ef24255a64d547711e9860da4c09626de2cb07",
+  "d68ca3ad5a630f978eee32ce2554b8430ae38f66",
+  "a84c77abc0b3d96c0e0b424f85eae1030b293a1b",
+  "f7982563a5ff6123d8b20d94ce59b627afecd60d",
+  "1b8e669ec076e7794df7afc866f763454d03796d",
+  "9e35b0dd26ec2077829d648d7b566ce84704b432",
+  "38566c64235cb6a8cdc9effeef3c328f14b29578",
+  "aa60bc1e02ac81b79618b055dbf4ab1c64979721",
+  "3c529a12185c9bf6b99fb40cedc27311787ee840"
+ ],
+ "stars": 35,
+ "license": "MIT",
+ "strata": [
+  "S1_curated"
+ ]
+}

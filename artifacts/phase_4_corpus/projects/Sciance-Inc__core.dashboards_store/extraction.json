@@ -1,0 +1,124 @@
+{
+ "project_id": "Sciance-Inc__core.dashboards_store",
+ "repo_url": "https://github.com/Sciance-Inc/core.dashboards_store.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:20:09Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "2204900b268236771fbef82dfac812654c1c10cc",
+ "default_branch": "develop",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "core_dashboards_store",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "core_dashboards_store",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 327,
+   "first_commit": "2022-08-29T08:52:41",
+   "last_commit": "2026-08-04T12:22:51"
+  },
+  {
+   "config": "tooling/template/{{ cookiecutter.css_short_name + '.dashboards_store' }}/dbt_project.yml",
+   "name": null,
+   "model_paths": [
+    "tooling/template/{{ cookiecutter.css_short_name + '.dashboards_store' }}/models"
+   ],
+   "commits_on_model_paths": 9,
+   "first_commit": "2024-01-17T11:14:07",
+   "last_commit": "2026-07-09T11:51:40"
+  },
+  {
+   "config": "tooling/template/{{ cookiecutter.project_slug }}/dbt_project.yml",
+   "name": null,
+   "model_paths": [
+    "tooling/template/{{ cookiecutter.project_slug }}/models"
+   ],
+   "commits_on_model_paths": 8,
+   "first_commit": "2023-10-23T10:22:34",
+   "last_commit": "2024-01-11T14:13:42"
+  },
+  {
+   "config": "tooling/nightly/dbt/dbt_project.yml",
+   "name": "nightly_store",
+   "model_paths": [
+    "tooling/nightly/dbt/models"
+   ],
+   "commits_on_model_paths": 6,
+   "first_commit": "2023-10-20T14:51:22",
+   "last_commit": "2025-04-02T11:15:34"
+  }
+ ],
+ "n_dbt_projects_seen": 4,
+ "n_commits_touching_models": 288,
+ "history_start": "2022-08-29T08:52:41",
+ "history_end": "2026-08-04T12:22:51",
+ "n_snapshots_planned": 39,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 39,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:22:24Z",
+ "snapshot_shas": [
+  "819cf5ad3ce05b628d5522e363fc874b05a6d608",
+  "5a1b94e9cf8cc5544ca7ffc2fb570330b03d2881",
+  "bbddb4025edb4ee6054bbfab58fd5ab96bc2d320",
+  "277ad07a2ea2c4ffabba54dc1b5eede52a1c4791",
+  "c1b08bfa7fe5ad58d4fb02fcc390141989c3ba6c",
+  "4626f2406c66b6f92119e6fc25a0a27f32b448b1",
+  "4bd515a35096c016986603c750cba59245c27553",
+  "bd5dd72839324d3e6fb22745504c9659c15824c0",
+  "b69e865c2afab0d52ea7ee410f4815e480ca33ea",
+  "de87bc13bb3b79917d77760f0249b9362358b24d",
+  "fb94ef9c6b6e0a0f2a959aac3816bb4a12de410a",
+  "07a4d25e2b07a76422123407f27c0b96f10989da",
+  "37f403b93cdeacf9a7316e7020176b480a0adc0f",
+  "a6c4b9971d3b2b0764bfc32fb4d4fc484bb8cfd3",
+  "d1c252b071dacae2060c8e2a223e175995879ec4",
+  "e8ca4227caa02a57a504d9c60ad65340283fd7fc",
+  "9a3ed3ed4b6fbac8e8ad282524abc9cbbc2ac20b",
+  "ba62f9304dbc38dc5d29d384d62b277733b13ae1",
+  "a6b450675768d70ef8811d0fdedc9ffba95fb76c",
+  "42df0afb299ff302b8c75ed586021b96de0f122b",
+  "682fead8417b2dc8e249536868ccb2f35015acea",
+  "d628f340394b92ec3720f2255f97727a584d4a4a",
+  "ae3cab956a8c0411a4e00e071d506ba907df36f2",
+  "beced70a728526d3386eb8a461b630a944f3b473",
+  "25cb01fc2ba55aa942e1034d686a761363a22722",
+  "96de830bf078e29f79841c45030187e1ad9b3df1",
+  "9f3a5ce9cfe36f0cb54801032c5272eba7fba0c8",
+  "1e0b57a0d0edf32efb5294445d8eedfcd43e34f3",
+  "48c7568f2636bb93610f6ac5535e85ad0c1b2b9f",
+  "24e2ff17cb809691f2d513d6de64dbb860b5c996",
+  "41b484f5f1b9a1631e6caa9f6f0bf5c4fe49a57a",
+  "b33fc6a3f5b17de65591e2d3cce47f8f9b3970d7",
+  "d16d5769a38c44972b3526e684652121e41f82dc",
+  "261d08aafa14616c72cba53c3df7dc1d9ec96da1",
+  "0cee32bec665544f7a2725a8869bf4a019d18204",
+  "cf0344b42fe416efeafbf67041f3d99cf6e626db",
+  "783d23927b13cd43346343b9f13b18b019aa31a3",
+  "1df0f55410557aa3094e55c17cac7c43b4cb6627",
+  "2204900b268236771fbef82dfac812654c1c10cc"
+ ],
+ "stars": 2,
+ "license": "AGPL-3.0",
+ "strata": [
+  "S3_code"
+ ]
+}

@@ -1,0 +1,17 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_linkedin,2020-08-10T17:51:32,ff1075073326d99c35aaa5549689559ee9727eae,cross db compatibility,4,3,True,,,,,,,,1,1.0,0.0,0,0,0,4,4,1
+fivetran__dbt_linkedin,2020-11-06T15:06:55,356ef8adb3bf3757222a86bb44673c73c9b6dc11,fixing tests,4,3,True,,,,,,,,1,1.0,0.0,0,0,0,4,4,1
+fivetran__dbt_linkedin,2021-03-23T15:26:33,0c34e152caa8ff402182631562b24a758533062c,remove default [] values,4,3,True,,,,,,,,1,1.0,0.0,0,0,0,4,4,1
+fivetran__dbt_linkedin,2022-08-02T14:40:38,69e78c3a1479407936814a35319c1d2e08809045,merging with main:,5,0,False,,,0.0,0.0,0.0,0.0,0.0,5,0.2,1.0,0,0,0,5,5,1
+fivetran__dbt_linkedin,2022-08-23T16:24:24,6ca33f37b0d0dba5bf7cb8468284e9c4451a909d,before merge updates,5,0,False,,,0.0,0.0,0.0,0.0,0.0,5,0.2,1.0,0,0,0,5,5,1
+fivetran__dbt_linkedin,2022-12-14T12:13:19,2900f82658db3d60835c2bd41b6973c8989df60f,pr updates,5,0,False,,,0.0,0.0,0.0,0.0,0.0,5,0.2,1.0,0,0,0,5,5,1
+fivetran__dbt_linkedin,2023-02-03T15:37:42,9079e619f3dc92b442d4a47d4d8bf25af28e9518,creative report test failures,5,0,False,,,0.0,0.0,0.0,0.0,0.0,5,0.2,1.0,0,0,0,5,5,1
+fivetran__dbt_linkedin,2023-02-08T13:21:39,e89e6e4f1cbd296fa2420796f387c8873f1d9b59,updating creative model,5,0,False,,,0.0,0.0,0.0,0.0,0.0,5,0.2,1.0,0,0,0,5,5,1
+fivetran__dbt_linkedin,2023-09-01T14:26:22,68abd189d3a0628fc5f4b4694cc19108acce5a9e,magicbot revisions,5,0,False,,,0.0,0.0,0.0,0.0,0.0,5,0.2,1.0,0,0,0,5,5,1
+fivetran__dbt_linkedin,2024-07-30T12:34:18,51d8b744838c6ddd5a1b867d7cdecf4d0227c3b3,Add conversions to Linkedin Ads Transform package (#36),5,0,False,,,0.0,0.0,0.0,0.0,0.0,5,0.2,1.0,0,0,0,5,5,1
+fivetran__dbt_linkedin,2024-11-04T12:01:46,42acae1684b7177e1dfec8e7e43bdf9673902cee,Bugfix/backwards compatible conversion value (#41),5,0,False,,,0.0,0.0,0.0,0.0,0.0,5,0.2,1.0,0,0,0,5,5,1
+fivetran__dbt_linkedin,2024-12-16T12:19:35,15e32ce3a745e54a8cffe037486d97dcf95e13f4,feature/click-uri-updates (#38),5,0,False,,,0.0,0.0,0.0,0.0,0.0,5,0.2,1.0,0,0,0,5,5,1
+fivetran__dbt_linkedin,2025-04-29T16:41:35,ae12d5988b76e62e8baa8daf0406d45a77f54a8e,feature/country-region-reports (#44),7,0,False,,,0.0,0.0,0.0,0.0,0.0,7,0.142857,1.0,0,0,0,7,7,1
+fivetran__dbt_linkedin,2025-08-14T20:08:26,c7ccd70a1770b8a4b63c1d8b066b3e7c7308ab2b,Consolidate source + remove tests (#51),25,40,False,0.7142857142857143,5,0.58,0.31866935639502375,0.02878622332496298,0.13691596019003238,0.64,1,1.0,0.0,18,0,0,7,25,1
+fivetran__dbt_linkedin,2026-01-20T10:21:33,c8954466e092be5a89cf275069c06d8cf8f69769,Update `.quickstart.yml` and `README` (#58),25,40,False,0.7142857142857143,5,0.58,0.31866935639502375,0.02878622332496298,0.13691596018964095,0.64,1,1.0,0.0,18,0,0,7,25,1
+fivetran__dbt_linkedin,2026-06-22T20:27:45,32ae9638e669435dd56efb9e564a73880d7b2a47,Standardize unioning macros to use fivetran_utils versions (#63),25,40,False,0.7142857142857143,5,0.58,0.31866935639502375,0.02878622332496298,0.13691596019175273,0.64,1,1.0,0.0,18,0,0,7,25,1

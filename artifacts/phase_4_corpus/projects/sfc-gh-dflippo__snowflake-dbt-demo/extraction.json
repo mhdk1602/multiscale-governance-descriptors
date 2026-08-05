@@ -1,0 +1,78 @@
+{
+ "project_id": "sfc-gh-dflippo__snowflake-dbt-demo",
+ "repo_url": "https://github.com/sfc-gh-dflippo/snowflake-dbt-demo.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:04Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "49e0db05fd4f542c4ce34e24da5d537ceae9b3e0",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "snowflake_demo",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "snowflake_demo",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 65,
+   "first_commit": "2022-02-01T09:26:32",
+   "last_commit": "2026-01-29T11:12:45"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 65,
+ "history_start": "2022-02-01T09:26:32",
+ "history_end": "2026-01-29T11:12:45",
+ "n_snapshots_planned": 23,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 23,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:36Z",
+ "snapshot_shas": [
+  "1a96d410c68f31edfa3da87f70673a5a9d23921b",
+  "c38571be6d0ba067a35f8b94df8f382d4bfae81c",
+  "b8a7565c2969b737009c5307e8d48bb82008c25a",
+  "b69c7e84ac648c351d98a6fe3900ab36220849de",
+  "c23ab0361d9ba50da423f30e9ab3504d492a8081",
+  "d8aae7db16afc5c3edce929eda15ede015d3fe70",
+  "52055f8665deb899b540eb06124386d13b2d2064",
+  "bf24a15b912d5f10bb8999cbe92030afc763ceb5",
+  "ddc7da0471e96776dea331cc21c1c95f208efb46",
+  "9ba8e50ac06e4b69979a030c35137a3b502a3758",
+  "8a2d8d72a6e6e7ff1d9bfb1e023ff15ff77968b5",
+  "9fd421d9c5b8c61b2eb67d1f46653ced0cacf39e",
+  "1c4c9249e9c80f8c1d2f02416c4afe889a0470c4",
+  "fa410f2f8fb23354c82667fa8f041cedb84d4665",
+  "8c7297f12a5625408b5e65015aebc842ab83b59b",
+  "2caf3dae58b5ee36a4b2c53b9344d25d276fd6ff",
+  "080f29f6ef232715bbf1f793efdf3d152760eee7",
+  "0ba7278d072a71aa0e4b46dbe209c1799976b6f4",
+  "86a820ae6c014f90f7c870422cf53e706fb01b5d",
+  "5082185daaa79377820da3185e3b86885c298c51",
+  "06dfbd19f9e499c61bf94be86a72b456cfbc7d3f",
+  "545a3a297574d0cd4fc4c251fb72cb25777ada0e",
+  "3728537e8ba463920116d16a965551f95644f022"
+ ],
+ "stars": 34,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

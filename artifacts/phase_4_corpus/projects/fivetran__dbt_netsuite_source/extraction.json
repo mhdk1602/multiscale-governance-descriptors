@@ -1,0 +1,80 @@
+{
+ "project_id": "fivetran__dbt_netsuite_source",
+ "repo_url": "https://github.com/fivetran/dbt_netsuite_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:30:50Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "b233689af981c4d45219753b1606037ea63c0994",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "netsuite_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "netsuite_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 101,
+   "first_commit": "2020-12-17T07:26:38",
+   "last_commit": "2025-07-07T13:14:37"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 101,
+ "history_start": "2020-12-17T07:26:38",
+ "history_end": "2025-07-07T13:14:37",
+ "n_snapshots_planned": 25,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 25,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:32:46Z",
+ "snapshot_shas": [
+  "167d57e97d19fb67ec91caa0b6ae6f4689c4d6ea",
+  "6f85874c74d5b41b22e78911a7831504728be2d3",
+  "48bf826fd911bf9e45119edee45557bcb5895d48",
+  "52a7b2a93b0065a42edcec4dd60b212cc5dc7653",
+  "f46239125ef4080a04c9a9cebbb9178e3ae22e9c",
+  "05439e081a29a0d4fe705ff7f91d081a690d2cc1",
+  "051019fcb072cc74a8c24a91134954447c4a1363",
+  "d101fbbf5ea24beaf793d3c5aa3064c1c905c0a3",
+  "b9354809399758b81047185f8eaf3e9845ec3fcc",
+  "853bcc06c8fa0be6ceb30134d3f3ea93c319d243",
+  "643ba3ca4000506dbe360e243578127660f575f3",
+  "8de364bfed0200b8ebe2d297fa8884ee1b7aa44e",
+  "516a5cc792bb9b5057751847fbaa2da945b30741",
+  "fccbace268c75f19b65859dce8d742e0b64c7215",
+  "667a8958b679b0f489ef2d4d72024a441832a461",
+  "363b7e864640ccbf797d6eff356a7aa7e986e254",
+  "1434ba24d9a9cc2a99a734e779efcfdef0ce0469",
+  "6c900faa67723ee969335c3afc1785136d2520f1",
+  "a03310f07402a613b80c51d6ad5b28ba647627fe",
+  "bee344c3b02ee43ca1a99373c99fc05ad1066d84",
+  "57529feb6bee8bf83455fdd452a5d2f1a171ac9e",
+  "c609675a0fc816370135a1103ae143d7d6bca4f6",
+  "40846a9051a9fda267c423ce7374c3178c17f49c",
+  "a126283e52650c09798e2e83e8d459c7a2f89375",
+  "8b666e7393dfeb7b9ba601432b7b0e2a9ff39092"
+ ],
+ "stars": 16,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

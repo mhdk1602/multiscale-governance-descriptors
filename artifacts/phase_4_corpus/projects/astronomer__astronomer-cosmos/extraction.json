@@ -1,0 +1,292 @@
+{
+ "project_id": "astronomer__astronomer-cosmos",
+ "repo_url": "https://github.com/astronomer/astronomer-cosmos.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:21:46Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "0b4ea05fb6b149eed5b0a12b3d19be7dda175d65",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dev/dags/dbt/jaffle_shop/models",
+  "dev/dags/dbt/cross_project/downstream/models",
+  "dev/dags/dbt/cross_project/project_a_bidirectional/models",
+  "dev/dags/dbt/cross_project/project_b_bidirectional/models",
+  "dev/dags/dbt/cross_project/upstream/models",
+  "dev/dags/dbt/jaffle_shop_python/models",
+  "dev/dags/dbt/multi_folder/models",
+  "dev/dags/dbt/multi_folder_failing/models",
+  "dev/dags/dbt/multiple_parents_test/models",
+  "dev/dags/dbt/watcher_downstream_not_skipped/models",
+  "dev/dags/dbt/watcher_failing_tests/models",
+  "dev/dags/dbt/watcher_upstream_failure_recovery/models",
+  "tests/sample/models",
+  "tests/sample/dbt_project_with_empty_model/models",
+  "tests/sample/mini/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dev/dags/dbt/jaffle_shop/dbt_project.yml",
+  "name": "jaffle_shop",
+  "chained_configs": [
+   "dev/dags/dbt/jaffle_shop/dbt_project.yml",
+   "dev/dags/dbt/cross_project/downstream/dbt_project.yml",
+   "dev/dags/dbt/cross_project/project_a_bidirectional/dbt_project.yml",
+   "dev/dags/dbt/cross_project/project_b_bidirectional/dbt_project.yml",
+   "dev/dags/dbt/cross_project/upstream/dbt_project.yml",
+   "dev/dags/dbt/jaffle_shop_python/dbt_project.yml",
+   "dev/dags/dbt/multi_folder/dbt_project.yml",
+   "dev/dags/dbt/multi_folder_failing/dbt_project.yml",
+   "dev/dags/dbt/multiple_parents_test/dbt_project.yml",
+   "dev/dags/dbt/watcher_downstream_not_skipped/dbt_project.yml",
+   "dev/dags/dbt/watcher_failing_tests/dbt_project.yml",
+   "dev/dags/dbt/watcher_upstream_failure_recovery/dbt_project.yml",
+   "tests/sample/dbt_project.yml",
+   "tests/sample/dbt_project_with_empty_model/dbt_project.yml",
+   "tests/sample/mini/dbt_project.yml"
+  ],
+  "n_configs_chained": 15,
+  "model_paths": [
+   "dev/dags/dbt/jaffle_shop/models",
+   "dev/dags/dbt/cross_project/downstream/models",
+   "dev/dags/dbt/cross_project/project_a_bidirectional/models",
+   "dev/dags/dbt/cross_project/project_b_bidirectional/models",
+   "dev/dags/dbt/cross_project/upstream/models",
+   "dev/dags/dbt/jaffle_shop_python/models",
+   "dev/dags/dbt/multi_folder/models",
+   "dev/dags/dbt/multi_folder_failing/models",
+   "dev/dags/dbt/multiple_parents_test/models",
+   "dev/dags/dbt/watcher_downstream_not_skipped/models",
+   "dev/dags/dbt/watcher_failing_tests/models",
+   "dev/dags/dbt/watcher_upstream_failure_recovery/models",
+   "tests/sample/models",
+   "tests/sample/dbt_project_with_empty_model/models",
+   "tests/sample/mini/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dev/dags/dbt/jaffle_shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "dev/dags/dbt/jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 8,
+   "first_commit": "2023-04-13T09:48:22",
+   "last_commit": "2025-10-22T09:30:57"
+  },
+  {
+   "config": "dev/dags/dbt/altered_jaffle_shop/dbt_project.yml",
+   "name": "altered_jaffle_shop",
+   "model_paths": [
+    "dev/dags/dbt/altered_jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 6,
+   "first_commit": "2024-12-12T10:24:25",
+   "last_commit": "2026-06-04T20:49:05"
+  },
+  {
+   "config": "dev/dags/dbt/simple/dbt_project.yml",
+   "name": "my_dbt_project",
+   "model_paths": [
+    "dev/dags/dbt/simple/models"
+   ],
+   "commits_on_model_paths": 5,
+   "first_commit": "2023-10-13T11:56:45",
+   "last_commit": "2025-03-13T16:45:26"
+  },
+  {
+   "config": "dev/dags/dbt/model_version/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "dev/dags/dbt/model_version/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2023-10-06T19:30:02",
+   "last_commit": "2023-11-17T07:08:27"
+  },
+  {
+   "config": "dev/dags/dbt/cross_project/downstream/dbt_project.yml",
+   "name": "downstream",
+   "model_paths": [
+    "dev/dags/dbt/cross_project/downstream/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-01-29T16:39:34",
+   "last_commit": "2026-01-29T16:39:34"
+  },
+  {
+   "config": "dev/dags/dbt/cross_project/project_a_bidirectional/dbt_project.yml",
+   "name": "project_a",
+   "model_paths": [
+    "dev/dags/dbt/cross_project/project_a_bidirectional/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-07-15T19:37:37",
+   "last_commit": "2026-07-15T19:37:37"
+  },
+  {
+   "config": "dev/dags/dbt/cross_project/project_b_bidirectional/dbt_project.yml",
+   "name": "project_b",
+   "model_paths": [
+    "dev/dags/dbt/cross_project/project_b_bidirectional/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-07-15T19:37:37",
+   "last_commit": "2026-07-15T19:37:37"
+  },
+  {
+   "config": "dev/dags/dbt/cross_project/upstream/dbt_project.yml",
+   "name": "upstream",
+   "model_paths": [
+    "dev/dags/dbt/cross_project/upstream/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-01-29T16:39:34",
+   "last_commit": "2026-01-29T16:39:34"
+  },
+  {
+   "config": "dev/dags/dbt/jaffle_shop_python/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "dev/dags/dbt/jaffle_shop_python/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2023-07-24T00:06:09",
+   "last_commit": "2023-07-24T00:06:09"
+  },
+  {
+   "config": "dev/dags/dbt/multi_folder/dbt_project.yml",
+   "name": "multi_folder",
+   "model_paths": [
+    "dev/dags/dbt/multi_folder/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-03-19T11:30:12",
+   "last_commit": "2026-03-19T11:30:12"
+  },
+  {
+   "config": "dev/dags/dbt/multi_folder_failing/dbt_project.yml",
+   "name": "multi_folder_failing",
+   "model_paths": [
+    "dev/dags/dbt/multi_folder_failing/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-04-21T13:59:59",
+   "last_commit": "2026-04-21T13:59:59"
+  },
+  {
+   "config": "dev/dags/dbt/multiple_parents_test/dbt_project.yml",
+   "name": "my_dbt_project",
+   "model_paths": [
+    "dev/dags/dbt/multiple_parents_test/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-12-30T13:59:05",
+   "last_commit": "2024-12-30T13:59:05"
+  },
+  {
+   "config": "dev/dags/dbt/watcher_downstream_not_skipped/dbt_project.yml",
+   "name": "watcher_downstream_not_skipped",
+   "model_paths": [
+    "dev/dags/dbt/watcher_downstream_not_skipped/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-04-23T11:35:41",
+   "last_commit": "2026-04-23T11:35:41"
+  },
+  {
+   "config": "dev/dags/dbt/watcher_failing_tests/dbt_project.yml",
+   "name": "watcher_failing_tests",
+   "model_paths": [
+    "dev/dags/dbt/watcher_failing_tests/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-04-21T13:59:59",
+   "last_commit": "2026-04-21T13:59:59"
+  },
+  {
+   "config": "dev/dags/dbt/watcher_upstream_failure_recovery/dbt_project.yml",
+   "name": "watcher_upstream_failure_recovery",
+   "model_paths": [
+    "dev/dags/dbt/watcher_upstream_failure_recovery/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-05-19T13:16:32",
+   "last_commit": "2026-05-19T13:16:32"
+  },
+  {
+   "config": "tests/sample/dbt_project.yml",
+   "name": null,
+   "model_paths": [
+    "tests/sample/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2023-07-25T15:53:53",
+   "last_commit": "2023-07-25T15:53:53"
+  },
+  {
+   "config": "tests/sample/dbt_project_with_empty_model/dbt_project.yml",
+   "name": "micro_dbt_project",
+   "model_paths": [
+    "tests/sample/dbt_project_with_empty_model/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-01-26T14:06:18",
+   "last_commit": "2026-01-26T14:06:18"
+  },
+  {
+   "config": "tests/sample/mini/dbt_project.yml",
+   "name": "mini",
+   "model_paths": [
+    "tests/sample/mini/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2023-09-27T14:45:02",
+   "last_commit": "2023-09-27T14:45:02"
+  },
+  {
+   "config": "dev/dags/dbt/perf/dbt_project.yml",
+   "name": "perf",
+   "model_paths": [
+    "dev/dags/dbt/perf/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 19,
+ "n_commits_touching_models": 18,
+ "history_start": "2023-04-13T09:48:22",
+ "history_end": "2026-07-15T19:37:37",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:23:11Z",
+ "snapshot_shas": [
+  "ed5c79b28d585b9f8f97c48c70cffbb30616ecd3",
+  "e1ff9629a784ead2a7e4f5ef86d7a84e4f5abdf7",
+  "4c8d6b04590db112a904cea0260a4997b36542c4",
+  "b25d5ea23806daa94a0ae45592ab488d4107f0f6",
+  "a89389de32fd3fc140722ca925d5a28526fd8172",
+  "7dc9411701bdbbdc580a34f59a7ea77a5b03668a",
+  "f63cba6307bc5592e6598f5eda506bd40c8dbd21",
+  "a9fca6a74d287d4e62f6146ed55ab371d6189d08",
+  "4134018f4a5deeed82f9a74e01828e4daed1d82a",
+  "0ce99549691716d1dbf9a03aa1ce7e21b4ad0bdd",
+  "1d33b5512c55c6cf6cadd031f99662569fcf0824",
+  "3a138fde92e6c4422b6b64b70ad2e09d4495477a",
+  "9029fb0f607360cb7792a647705332fa2973a100",
+  "8ce76e5e43cb90ff0c0e3e625f9adf41bbdb4ccd"
+ ],
+ "stars": 1236,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

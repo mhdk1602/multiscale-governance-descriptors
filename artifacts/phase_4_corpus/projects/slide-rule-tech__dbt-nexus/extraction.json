@@ -1,0 +1,69 @@
+{
+ "project_id": "slide-rule-tech__dbt-nexus",
+ "repo_url": "https://github.com/slide-rule-tech/dbt-nexus.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:12Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "d7beb83213a0fe810b88c51ab7285a468ba45cb0",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "nexus",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "nexus",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 82,
+   "first_commit": "2025-05-14T11:23:02",
+   "last_commit": "2026-07-28T12:43:54"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 82,
+ "history_start": "2025-05-14T11:23:02",
+ "history_end": "2026-07-28T12:43:54",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:01Z",
+ "snapshot_shas": [
+  "e55099b1111bfa89cd4c6e85b7ab2f24965df02a",
+  "2f51278be7b7f9a03b73ed6c3d72bc6de158b45a",
+  "c918759bc35f3622c71ffaef78c65b67d6706eaf",
+  "1245851baf58c0135cc7abb1e5c34ba63d13da41",
+  "4389a9934b16e2bdfe230677293f7ae31f2687b9",
+  "e76f782f78c8fae5be46afe9286dc140121eea8a",
+  "12dc9bf385d541ac12c83b8c758a12eba9ecbd57",
+  "376c041fce24356b29b326a0b618c58afc1be586",
+  "92524180470898477794e1927e3a8c0e7ad26b65",
+  "9391acf07ca0f082af70e232ecb296f3ee9ea334",
+  "0a98426274bb359c2a2d7509f4482d8de540ba9e",
+  "eb08171894d4711ca410e39cca391e518a34a359",
+  "91b50f899939fb063c6f7afdc0ee7cf4d0235435",
+  "d7beb83213a0fe810b88c51ab7285a468ba45cb0"
+ ],
+ "stars": 3,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

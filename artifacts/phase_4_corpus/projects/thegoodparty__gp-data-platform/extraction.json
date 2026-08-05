@@ -1,0 +1,73 @@
+{
+ "project_id": "thegoodparty__gp-data-platform",
+ "repo_url": "https://github.com/thegoodparty/gp-data-platform.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:42Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "216eba7b811c84922741c7faafda5625857d51a3",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt/project/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt/project/dbt_project.yml",
+  "name": "goodparty_data_catalog",
+  "chained_configs": [
+   "dbt/project/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "dbt/project/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt/project/dbt_project.yml",
+   "name": "goodparty_data_catalog",
+   "model_paths": [
+    "dbt/project/models"
+   ],
+   "commits_on_model_paths": 366,
+   "first_commit": "2025-02-27T18:08:38",
+   "last_commit": "2026-08-04T17:03:33"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 366,
+ "history_start": "2025-02-27T18:08:38",
+ "history_end": "2026-08-04T17:03:33",
+ "n_snapshots_planned": 18,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 18,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:51Z",
+ "snapshot_shas": [
+  "554ec51020a7c312c6d867bcfa6eb838aec50629",
+  "f8c9050770f9020fcca4cf48d88e27a07f5e76a0",
+  "87cccd23f3bb8a8508f7704e14b71475a71969bf",
+  "a9c9049278b47851a0e2fc193029a323e900ecde",
+  "1c2481e03e7dd082e820ad85f1b57340ad80d119",
+  "b78890b0267b2157c5e4ce65a6b98fead020e14f",
+  "edbcce18d72302d6887b4022e4e0d58ba604ed22",
+  "b95a89d13986d0a688903b4a738c607ec04dfee3",
+  "439b08ab06be315ba54a2a899e841211629447e8",
+  "79b4c0e36609c7e3dde4d6991049c14d7d3e9d58",
+  "90474f5789f7d3410b9f7660a86ecb95050f0ce0",
+  "6eaad43ef6a3e9a66b9733fcf3a7edb1306c9db2",
+  "cadee12bc453d9a110285661eddc373a9a74e374",
+  "cc63dbe08bcbc8f3d9fe2b875ca81d7908119de4",
+  "2d8f0daafd004301ad1c98afbf0629dda98ea5fb",
+  "ece7f69f55dc733f8584b3422d2f4fbd4543aea2",
+  "a355ba9a879f93b23bde3ad991648348c8186d8b",
+  "4cf74213808559d3fff4fde0e410193393951749"
+ ],
+ "stars": 3,
+ "license": "NOASSERTION",
+ "strata": [
+  "S3_code"
+ ]
+}

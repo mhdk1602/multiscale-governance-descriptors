@@ -1,0 +1,71 @@
+{
+ "project_id": "snowplow__dbt-snowplow-ecommerce",
+ "repo_url": "https://github.com/snowplow/dbt-snowplow-ecommerce.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:20Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "2571d1512244335ee8823c42590314eece60ee7d",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "snowplow_ecommerce",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "snowplow_ecommerce",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 30,
+   "first_commit": "2022-11-15T12:11:04",
+   "last_commit": "2026-06-12T10:21:30"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 30,
+ "history_start": "2022-11-15T12:11:04",
+ "history_end": "2026-06-12T10:21:30",
+ "n_snapshots_planned": 16,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 16,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:15Z",
+ "snapshot_shas": [
+  "2e554a2615f5da965075ccad4a4aa2e31e872564",
+  "aaa88343be2eb6029dc589a0bdf5ef1f0b52e77b",
+  "267b357898e09d61ae5fce39cdd8e67cae5efee3",
+  "1e0aad3155b799ed0205471134a4c3409c1f6907",
+  "6fcfb64dfc1830f701c0cc255298d32ee1c6b4e3",
+  "a0449dab8c5c9e031653c0147412047beef811d2",
+  "2230f36a994fd2c3208a44e3e7160d1d013a6e96",
+  "49db51a4b11f55c36726c4bc9fd9af77f82a19b9",
+  "c31d6438f6f49ccb794c18f6a5b5cbfc9539a3ab",
+  "222e656328a2e33852c333a73430655a553961d1",
+  "e38083fb6b71a26e6037df357b6b1f7d5dc1ecbb",
+  "6055c207923eda415c405608653c67f87fdf5349",
+  "68ac482543143bbd62c1a078fe03e83fcf8d22e5",
+  "754e331feb393f9a0600e4e35623cbd94f753b2f",
+  "26fad68cbd3ffb864785b99e8811691a96e4c6b7",
+  "f928928d9e8c222cf0cdcae042991c3b9a35c6ca"
+ ],
+ "stars": 8,
+ "license": "NOASSERTION",
+ "strata": [
+  "S3_code"
+ ]
+}

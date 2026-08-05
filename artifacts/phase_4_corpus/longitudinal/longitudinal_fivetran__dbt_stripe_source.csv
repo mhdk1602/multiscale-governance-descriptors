@@ -1,0 +1,37 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_stripe_source,2020-06-10T11:37:38,6505aa1fa483a07432e76cea5830a196601be12a,invoice changes,13,0,False,,,0.0,0.0,0.0,0.0,0.0,13,0.076923,1.0,13,0,0,0,13,1
+fivetran__dbt_stripe_source,2020-07-30T17:13:18,08fe6654593ffe4c32c7efde64f2eabb4437f1ce,bigquery syntax,14,0,False,,,0.0,0.0,0.0,0.0,0.0,14,0.071429,1.0,14,0,0,0,14,1
+fivetran__dbt_stripe_source,2020-10-22T14:17:50,8ebb0a5306449388eac6851f3e5b030922486eb9,remove is_deleted reference and upgrade dbt utils,14,0,False,,,0.0,0.0,0.0,0.0,0.0,14,0.071429,1.0,14,0,0,0,14,1
+fivetran__dbt_stripe_source,2021-02-26T15:28:35,2775d0a6381f550ce3f9ff4adc0c7388e1ed020a,correct quoted instead of backticked column name,14,0,False,,,0.0,0.0,0.0,0.0,0.0,14,0.071429,1.0,14,0,0,0,14,1
+fivetran__dbt_stripe_source,2021-04-08T09:53:25,d64c6b7858f604ca3bbddc9bae53a15ea91e689d,backtick-fix,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_stripe_source,2021-04-29T19:18:18,65181de318e336802ab455fb466d62af886bbc09,Adjust true / false evaluations to be warehouse agnostic,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_stripe_source,2021-07-08T16:40:08,8c9786ad03b5f7a7b3b1b62df7e87487f5d970f1,add var,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_stripe_source,2021-07-12T16:41:09,c0c37a175ac1ad79e63c3df376ed2547a14f7526,reformulate variable,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_stripe_source,2021-08-30T15:00:40,d4e0a48a8180d6be76593cc27c0b185e4a93fa51,pivot utils and documentation for metadata,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2021-11-01T10:12:08,01030cb711749fc1b240e962c516114adf7e280f,add metadata column,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2021-11-15T13:14:18,0c6ffe222e17f7a4d861d43f07abb89e987fb465,created at cast,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2021-12-08T11:06:07,86562212c9a0c8408c1c20afe34d918b1e8f95df,timestamp without time zone,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2022-02-09T15:00:30,321da3e58eb417fa9236a90823cad91650598640,t up PR for dbt_utils release,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2022-04-13T16:42:40,78b9f38d4adada87c84b2a3ba1e9bcbe49dfe8f6,updated variable to be more accurate with current connector state,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2022-05-27T13:16:25,c527dd5f41ee4cd2a00cabcbd42123a6fd66e8f3,adding subscription_id in invoice table for use in the main stripe package,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2022-06-17T13:26:38,4c8d92f8fdcf1e96a44933d7ffc83a9d477dc4fc,Merge branch 'pr/41' into timezone_description,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2022-09-13T10:52:26,f5d94dc37aafc95fc69add3ddb06dbbfdcda93d1,docs regen,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2022-10-25T22:35:27,81a5dbd9a67fe18dc803a899eedd7cd35d65d47b,versioning and replace sparks,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2022-11-30T18:43:30,aa9001b710cb80e6ab6e160b0119b80ea0217283,finish ymls,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2022-12-15T14:15:54,2b9f389b3048c4dd8008c411bba3047f19fed2b0,merge conflict adjustments,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_stripe_source,2023-01-30T11:43:25,cf1620bd95d152a1b9790bb65703aa4d97b63cbb,Merge branch 'main' into stripe_updates,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_stripe_source,2023-03-17T12:46:26,ea95d61fb79ff8836f070c19a78d60e59a77c052,Add metadata extraction pivot,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_stripe_source,2023-04-12T14:57:40,ad909e8a090487dc148557668052d42598a02a9c,#63,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_stripe_source,2023-05-11T00:17:13,3a78298e4d77761185d40a5800d5056fb0fda88e,updates,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_stripe_source,2023-08-25T15:15:11,6a8d410787bb4580ec4731629750e6d699c402e5,add new models and fields,38,19,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,19,0.052632,0.0,38,0,0,0,38,1
+fivetran__dbt_stripe_source,2023-09-21T13:30:28,e4a39ecb5b009fcf856fd5e5e4b06db2f40af035,updates,38,19,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,19,0.052632,0.0,38,0,0,0,38,1
+fivetran__dbt_stripe_source,2023-10-18T14:08:24,6c8ffcec6cf8151bb011cf7d9fdba613a54e0fc0,updates,38,19,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,19,0.052632,0.0,38,0,0,0,38,1
+fivetran__dbt_stripe_source,2024-03-06T10:04:35,1f5823dc6499dbf9172cf6153f021e2ea90d0fe3,customer360 updates -- add customer.phone and remove filter on is_deleted (#72),38,19,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,19,0.052632,0.0,38,0,0,0,38,1
+fivetran__dbt_stripe_source,2024-04-17T10:45:33,b147150697a27e72861c4cdf29724fcb84b7f36e,src yml updates,38,19,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,19,0.052632,0.0,38,0,0,0,38,1
+fivetran__dbt_stripe_source,2024-06-15T01:16:39,e9455345ad3aa77c2c480682088396f188514677,fix unique key,42,21,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,21,0.047619,0.0,42,0,0,0,42,1
+fivetran__dbt_stripe_source,2024-10-02T15:59:29,4657edc90aed2af967f1f5cbcd3786720c19f9a6,Releases/v0.12.latest (#83),42,21,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,21,0.047619,0.0,42,0,0,0,42,1
+fivetran__dbt_stripe_source,2025-01-22T17:11:23,d41ea2cbdd5ac2e491c22c7c3250c7fa2d0fe90e,convert cent based fields to major currency unit based (#87),42,21,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,21,0.047619,0.0,42,0,0,0,42,1
+fivetran__dbt_stripe_source,2025-03-13T16:20:23,67c4d1b502379817d4f0f92f42cb30a207d6de12,Feature/payout balance transaction (#89),44,22,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,22,0.045455,0.0,44,0,0,0,44,1
+fivetran__dbt_stripe_source,2025-04-02T15:11:31,c9986af6232585af1644fe79d97fb56049f82dc7,Update does_table_exist.sql (#91),44,22,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,22,0.045455,0.0,44,0,0,0,44,1
+fivetran__dbt_stripe_source,2025-06-26T10:45:30,6c2cc21465d1af712389f9e43eb8d8c497a7a568,feature/freshness-updates (#96),44,22,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,22,0.045455,0.0,44,0,0,0,44,1
+fivetran__dbt_stripe_source,2025-07-30T08:45:46,adc41770ab8aee29133880e7eaf4258fb9c1d58a,bugfix/trailing-spaces (#98),44,22,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,22,0.045455,0.0,44,0,0,0,44,1

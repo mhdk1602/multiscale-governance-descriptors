@@ -1,0 +1,109 @@
+{
+ "project_id": "cal-itp__data-infra",
+ "repo_url": "https://github.com/cal-itp/data-infra.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "60000cd94917a6fe10b9339e2c606fc1b2f1fcdd",
+ "default_branch": "main",
+ "model_path_universe": [
+  "warehouse/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "warehouse/dbt_project.yml",
+  "name": "calitp_warehouse",
+  "chained_configs": [
+   "warehouse/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "warehouse/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "warehouse/dbt_project.yml",
+   "name": "calitp_warehouse",
+   "model_paths": [
+    "warehouse/models"
+   ],
+   "commits_on_model_paths": 1049,
+   "first_commit": "2022-03-28T14:36:53",
+   "last_commit": "2026-07-27T16:27:02"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 1049,
+ "history_start": "2022-03-28T14:36:53",
+ "history_end": "2026-07-27T16:27:02",
+ "n_snapshots_planned": 53,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 53,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:28:35Z",
+ "snapshot_shas": [
+  "78551080c61bd8807616f368e41342f4fb9d4425",
+  "189a54d7974046183dec2308e5b8e3c0b925be13",
+  "a4959bfe68fecc7298f692fc9f0fdc74ca50cfb9",
+  "2e2458a74a7b3551c3359c9f35ceb680b701b3f0",
+  "c5d95b8b2cb99c90fc65ebd5a8e6790dd79442fd",
+  "8b7b24ca280ceae9216d76277a13326ea53f7b61",
+  "080c27b978ad8500479fdf2c3f3bda3ebf2e556e",
+  "f7c3471710e3f02a3e5381d5f7de8b84789a9983",
+  "c2cd3736030179f1769538677ebab54f6c663503",
+  "134063c710e0d1d3e8c03eb3e9d591167bc808ea",
+  "7493b239b6bbe0be9ec650a7f9e27a8f02240f58",
+  "2da1571a74a4959511cd96f25e06b2e51b242a25",
+  "ee575f8807e1e76cd1b0181ff4893f5f31ae96e4",
+  "0fd78e66c0cbfa40d684b803b7bd47bcf91d4234",
+  "27071adcf57ad9c4ed807d19f2bfaedf487f4639",
+  "2795018a75f91823b23dd4271b5b521470ed3d61",
+  "28adb79feb81d04db14338711c8db923db6e6a9e",
+  "c0e8c294006fc82a52d61fe2dc65294ae93ac6ed",
+  "d67905c4b317a17e9526f9dc28835a923668ddb4",
+  "9cf54de0cdc08be61b9e4cf8bff8754bc404b4cc",
+  "ed76474ec9f69ad5e22ede04b06d092b1980b202",
+  "de8125e0f4a4fd4ff1f86f18b42f54578464c854",
+  "4aac8ef522f82523e9551240e798d4df0ffcc011",
+  "0e047a80d7ea1e2afdf8524e3549552911cbfd6a",
+  "5cb84b990afa12a40e53d0ab88dc6ec1059c8908",
+  "9cd7828fd30c6f67d27ee487e89254aaad49d9db",
+  "329b92614fbe6a8df6002db5cbd3e740caf89396",
+  "e4852c1f783c121e0f7cf8fcf989f12d385190b1",
+  "fd71594f3a59cc7fa44e2a128a45b034cfd090a7",
+  "a469beefc83c161442900bdc6e65e05e6e0fb79e",
+  "609693433b5e6bb73907058f83f2abdcab570543",
+  "abdedec9a8390e80b875d0d5c763499b6b155759",
+  "c5ec441e29c45f98752625d99f57f90691a0fbad",
+  "b70cfb520e14c97ebf29bff38d66a4937adc81d3",
+  "c053a4e2f7e82fe81adb2c4179b8bb51768c119f",
+  "fc91786319b84979b2e25294a9ce210a5fb1466f",
+  "a32700563fcb4d2f71501d5742c2a2dc00a81ac1",
+  "84967cebf82d63c6f5ffc7a7156579dd4f08ed1e",
+  "5537dcae9797405218a4d47c43c74b3f69c0b8bf",
+  "f01dace35859a024d2e98e0c534a6cffedafc7cc",
+  "054525ec810ac450a78c8f3d7087ef92197a2df9",
+  "5009acdb013375bc3be8fed70c4eb7760506cb09",
+  "8abc49c05e03e0dbaabba416d98164b05d2e18aa",
+  "b7e20f4932e7c70675bbaa84862c068c1af94178",
+  "28cb3f27bdacc08ae079c67c74d4875b97a8b79f",
+  "b111f6f57016282d0e334012d932160f50846baa",
+  "77567553a13f1930019c92f798466cb8545fd8d2",
+  "a0b89bf67732ea5d138d1ee2544ed006b6705cb1",
+  "84b701885a815188e682d2de3e94ee4472c7ca75",
+  "d40bdf16c56695956f1f30c4166caa88f53c5ea7",
+  "8d30bc269c695113caeedeaa8034c08c28ad098b",
+  "ecfb7977e78fc4d95afc7feb04de6323f2504b6f",
+  "e636f6e2491797c773753b1999e32ddb9687349c"
+ ],
+ "stars": 70,
+ "license": "AGPL-3.0",
+ "strata": [
+  "S1_curated",
+  "S3_code"
+ ]
+}

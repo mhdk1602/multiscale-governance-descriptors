@@ -1,0 +1,74 @@
+{
+ "project_id": "MTES-MCT__dossierfacile-data",
+ "repo_url": "https://github.com/MTES-MCT/dossierfacile-data.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:18:52Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "d4aeeb6ec1af9b9044fe650f0a8994f27f42e29b",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "dossierfacile",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "dossierfacile",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 70,
+   "first_commit": "2024-12-17T16:06:18",
+   "last_commit": "2026-07-15T14:00:06"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 70,
+ "history_start": "2024-12-17T16:06:18",
+ "history_end": "2026-07-15T14:00:06",
+ "n_snapshots_planned": 19,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 19,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:20:01Z",
+ "snapshot_shas": [
+  "c5e19d396b46810126c9d19573cd1174b7bbb395",
+  "9a9e386f4e9243ff444db16ae9b5aed3b9061bad",
+  "542e3ef8027015030c7645c669e6759de3a25c56",
+  "93993e9a0561894f39db242f22d357b623afb855",
+  "c9eab949c76c2ef710d1ddb9536120ecf8bae119",
+  "dc46e80f0a5a84e0d22592aaf164cb42e51aeea6",
+  "e1c36247b3470f58b789ab4daba948cb2d903f05",
+  "20676c66c494e2ae232b4fcf8f170c376c05a995",
+  "ef422415dded067366e771eeaca99eeca6310cae",
+  "c41ab0fc2621042a6b1cac73ed615a9acb15ab8c",
+  "12a39eb67bdcf2c2a78127ac1e3ca36480f11b4d",
+  "bc4730e365e7e77fe86d62f0bd68b2e198cda53d",
+  "c3287537871c4f12974be7b4dec1e209712ad4b1",
+  "592fb1595224ead154311f823dadc180f827d599",
+  "c7ed448d7996b9a9cf2039e1dcf459eb6b8f5fcc",
+  "3d763a9f675b05c59604c26ae0b24678dde948a1",
+  "f28e02e0098c338a54ae42488129409954012365",
+  "62c4051ec3ff4a2a68b5fae0e21d369fa57a9409",
+  "d4aeeb6ec1af9b9044fe650f0a8994f27f42e29b"
+ ],
+ "stars": 0,
+ "license": "MIT",
+ "strata": [
+  "S3_code"
+ ]
+}

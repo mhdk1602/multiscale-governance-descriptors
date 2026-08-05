@@ -1,0 +1,27 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+prefeitura-rio__queries-datario,2021-12-06T09:30:03,59278b7ba71eefe8a6aa732cb84aa3953d1da3e3,initial commit - template + changes,2,1,True,,,,,,,,1,1.0,0.0,0,0,0,2,2,1
+prefeitura-rio__queries-datario,2022-01-26T13:39:37,e4a3bf5ec6bdea7123668c8f7e42521dc5d321a1,fix sql,3,1,True,,,,,,,,2,0.666667,0.333333,0,0,0,3,3,1
+prefeitura-rio__queries-datario,2022-02-23T15:07:42,b2c6b0fca260ece286b79d1d2c72715e81a217e7,Alterando query de chamado_tratada_estruturada,29,1,False,0.9285714285714286,1,0.9655172413793104,2.0,1.0,0.0,0.0,28,0.068966,0.931034,0,0,0,29,29,1
+prefeitura-rio__queries-datario,2022-03-24T19:20:13,e229bfba054f4a07078b0fb79bc55f513fb98b20,move SME queries to the correct repo,24,1,False,0.9285714285714286,1,0.9583333333333334,2.0,1.0,0.0,0.0,23,0.083333,0.916667,0,0,0,24,24,1
+prefeitura-rio__queries-datario,2022-04-28T16:46:11,a1d0fa5454faf4a77906b057461e99b8312ca3a0,adição queries precupitação e meteorologia,5,1,False,0.9285714285714286,1,0.8,2.0,1.0,0.0,0.0,4,0.4,0.6,0,0,0,5,5,1
+prefeitura-rio__queries-datario,2022-06-03T21:51:41,0e4d9b7287e6787a385773a0a5665c86e0a06985,alterações queries para salvarem a data da última partição,19,0,False,,,0.0,0.0,0.0,0.0,0.0,19,0.052632,1.0,0,0,0,19,19,1
+prefeitura-rio__queries-datario,2022-06-24T14:55:40,6bb353cef64a7a43070370c8c67a393d86e2f413,Update metadata,21,0,False,,,0.0,0.0,0.0,0.0,0.0,21,0.047619,1.0,0,0,0,21,21,1
+prefeitura-rio__queries-datario,2022-07-28T23:07:31,3da40797428f52a46821b061c8eca5db3b53d466,Merge branch 'master' of https://github.com/prefeitura-rio/queries,25,0,False,,,0.0,0.0,0.0,0.0,0.0,25,0.04,1.0,0,0,0,25,25,1
+prefeitura-rio__queries-datario,2022-08-15T20:04:58,c9c42a849f7572ab07c4cb8a04fcc11862f99aef,Update metadata,26,0,False,,,0.0,0.0,0.0,0.0,0.0,26,0.038462,1.0,0,0,0,26,26,1
+prefeitura-rio__queries-datario,2022-09-26T18:58:52,abb767cbc92be160d31aa08c506b5ea7c5405b32,Update metadata,27,0,False,,,0.0,0.0,0.0,0.0,0.0,27,0.037037,1.0,0,0,0,27,27,1
+prefeitura-rio__queries-datario,2022-10-05T17:09:42,1c1c59d824a7e432670568ea0558a9a874ca17c3,Update metadata,27,0,False,,,0.0,0.0,0.0,0.0,0.0,27,0.037037,1.0,0,0,0,27,27,1
+prefeitura-rio__queries-datario,2022-11-22T14:32:37,68b157578e4e2c8b8c2f1e3628c3d42df8424d1b,Update metadata,30,0,False,,,0.0,0.0,0.0,0.0,0.0,30,0.033333,1.0,0,0,0,30,30,1
+prefeitura-rio__queries-datario,2022-12-16T17:47:28,73b87d9efe9d3d37af04922e2de15b148888062e,Merge pull request #49 from prefeitura-rio/feat/add-dates-param-viagem-onibus,30,0,False,,,0.0,0.0,0.0,0.0,0.0,30,0.033333,1.0,0,0,0,30,30,1
+prefeitura-rio__queries-datario,2023-01-12T17:12:12,207b1ecd60ed1add20cc27ed116a8c781b63140b,adição do schema,40,0,False,,,0.0,0.0,0.0,0.0,0.0,40,0.025,1.0,0,0,0,40,40,1
+prefeitura-rio__queries-datario,2023-02-23T19:16:29,de49144ec28803208258dad4d1b9c60ddba4be13,alterando dataset inmet,40,0,False,,,0.0,0.0,0.0,0.0,0.0,40,0.025,1.0,0,0,0,40,42,1
+prefeitura-rio__queries-datario,2023-03-14T12:24:59,6ee99716a8ce195e0bb5d6b79d1d6148c3140b18,Update metadata,40,0,False,,,0.0,0.0,0.0,0.0,0.0,40,0.025,1.0,0,0,0,40,40,1
+prefeitura-rio__queries-datario,2023-05-03T22:27:51,16ce7665afbdf2cc2417169677aa0108da52c50a,hotfix: viagem_onibus.sql update date param,40,0,False,,,0.0,0.0,0.0,0.0,0.0,40,0.025,1.0,0,0,0,40,40,1
+prefeitura-rio__queries-datario,2023-06-16T13:31:55,dc14ea0d9d87d0ec3ffe3faa3f0f40bfe8274c66,Update metadata,42,0,False,,,0.0,0.0,0.0,0.0,0.0,42,0.02381,1.0,0,0,0,42,42,1
+prefeitura-rio__queries-datario,2023-06-30T00:09:02,3318389c861694b981a8311409602391801ee578,Update metadata,42,0,False,,,0.0,0.0,0.0,0.0,0.0,42,0.02381,1.0,0,0,0,42,42,1
+prefeitura-rio__queries-datario,2023-10-26T20:03:33,ebbcdad14be70ef5395970e94100b9ab1c683b4c,Update metadata,42,0,False,,,0.0,0.0,0.0,0.0,0.0,42,0.02381,1.0,0,0,0,42,42,1
+prefeitura-rio__queries-datario,2023-11-22T18:38:22,a7717d07446b85ed6c012be418e2d58399ab4848,Update metadata,43,0,False,,,0.0,0.0,0.0,0.0,0.0,43,0.023256,1.0,0,0,0,43,43,1
+prefeitura-rio__queries-datario,2023-12-15T14:12:00,b1cf22d4877456aac56cebc968024a218aa05d24,Update metadata,45,0,False,,,0.0,0.0,0.0,0.0,0.0,45,0.022222,1.0,0,0,0,45,45,1
+prefeitura-rio__queries-datario,2024-01-24T21:13:30,b6723a1201e83ab17f7ee91034d853afb2c30925,Update metadata,46,0,False,,,0.0,0.0,0.0,0.0,0.0,46,0.021739,1.0,0,0,0,46,46,1
+prefeitura-rio__queries-datario,2024-02-06T17:23:19,f309f595a53e3ae85ee6c563bac2ada064f6d674,add: turismo_fluxo_visitantes table to datario since it is already public,47,0,False,,,0.0,0.0,0.0,0.0,0.0,47,0.021277,1.0,0,0,0,47,47,1
+prefeitura-rio__queries-datario,2024-03-15T13:38:20,e388ab52fc6c0a1cf33d9964b398aea640da1f1a,adding inea materialization,55,0,False,,,0.0,0.0,0.0,0.0,0.0,55,0.018182,1.0,0,0,0,55,55,1
+prefeitura-rio__queries-datario,2024-08-26T18:38:02,f1d5964df1965690542332175d98a6b13c7e84dc,adding new zonaemento,53,0,False,,,0.0,0.0,0.0,0.0,0.0,53,0.018868,1.0,0,0,0,53,53,1

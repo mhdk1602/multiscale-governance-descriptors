@@ -1,0 +1,83 @@
+{
+ "project_id": "covoiturage-gouv-fr__mono",
+ "repo_url": "https://github.com/covoiturage-gouv-fr/mono.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "4c124217a5c5b352e711d19bc58f5868a2fe322c",
+ "default_branch": "main",
+ "model_path_universe": [
+  "datalake/models",
+  "dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "datalake/dbt_project.yml",
+  "name": "covoiturage",
+  "chained_configs": [
+   "datalake/dbt_project.yml",
+   "dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "datalake/models",
+   "dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "datalake/dbt_project.yml",
+   "name": "covoiturage",
+   "model_paths": [
+    "datalake/models"
+   ],
+   "commits_on_model_paths": 36,
+   "first_commit": "2026-05-12T14:44:08",
+   "last_commit": "2026-07-30T16:47:07"
+  },
+  {
+   "config": "dbt/dbt_project.yml",
+   "name": "covoiturage",
+   "model_paths": [
+    "dbt/models"
+   ],
+   "commits_on_model_paths": 35,
+   "first_commit": "2024-05-14T16:26:27",
+   "last_commit": "2026-04-09T13:35:50"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 71,
+ "history_start": "2024-05-14T16:26:27",
+ "history_end": "2026-07-30T16:47:07",
+ "n_snapshots_planned": 15,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 15,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:27:02Z",
+ "snapshot_shas": [
+  "e175c001fe8283ef15d09cad276eb7a4aff4abcb",
+  "4adb100cc565ac1df31e30b47dad3ce685f6a32d",
+  "6964c45a4402dd07178daf4d621e385dcd640063",
+  "c0c631b7daa3fb31866399990138763fd9ede5e4",
+  "8444d79cd5c0cce8ac592a5138b22e8f00967584",
+  "ac1756a97d162b1198c494d8c3f64af8633af75e",
+  "f3a5654148d0da0c9f2b21db14b28a720cac4919",
+  "1fd279a7b985135fa4a24e044723a99d397f499e",
+  "68467b5c67deed79b9922e4bc65a2ebee842aa25",
+  "942f9768075b48d00e3949c1832c931e1dc957e7",
+  "6d1b49270294bba24bd30090f92544f110baa27e",
+  "1232c268eaabed731482cdf4abe2929c1d6e7f46",
+  "1ac82e03d7677949a64dd7eaef36c2c3f96fdfba",
+  "229b6ee772e05bfc666b72400e9e4debecb05b6b",
+  "4c124217a5c5b352e711d19bc58f5868a2fe322c"
+ ],
+ "stars": 36,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

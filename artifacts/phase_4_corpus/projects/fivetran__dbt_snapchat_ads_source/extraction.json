@@ -1,0 +1,69 @@
+{
+ "project_id": "fivetran__dbt_snapchat_ads_source",
+ "repo_url": "https://github.com/fivetran/dbt_snapchat_ads_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:32:38Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "a30b92b21ca03f7fe676c572b6b466251f334cba",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "snapchat_ads_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "snapchat_ads_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 73,
+   "first_commit": "2021-03-31T13:03:58",
+   "last_commit": "2025-06-25T14:36:42"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 73,
+ "history_start": "2021-03-31T13:03:58",
+ "history_end": "2025-06-25T14:36:42",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:34:01Z",
+ "snapshot_shas": [
+  "8cc8336d3f6d412e191783df130d25a2b18e036b",
+  "fedc81dac3e41750875e96867ba92af6e2733e16",
+  "b61f9abb4add6c549ba863d693cf8d0b6eef689b",
+  "4808ad7f95879c9783f5756fb779280b5e505ef2",
+  "3eaff4f595f38d4fb2acbe9cc782f03906d7f20c",
+  "f112c5fa8b71131dfb15a5f5a7afd19df8344dcf",
+  "79e22631ba1a30c3546f7c8e77019fc5d2b76a49",
+  "c8ca77e3af4b3006888d3da94b6305b4c8ed353d",
+  "337a1122195ec9341a5b37320541b59416b91cd5",
+  "28ebbbdd2d355e343f380fb28c94e84e46cd4373",
+  "9dcadf976967a25781c764db25e060b6c538c9dc",
+  "1341fe6569bb99994ee2dd965ccb904cd82b9a09",
+  "4483225505409b1106d09aef765bd1b942876194",
+  "91b2eeab782fe4922f9fc4c792074e69c28cff36"
+ ],
+ "stars": 2,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

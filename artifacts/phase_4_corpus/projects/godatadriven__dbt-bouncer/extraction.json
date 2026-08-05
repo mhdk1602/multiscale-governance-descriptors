@@ -1,0 +1,82 @@
+{
+ "project_id": "godatadriven__dbt-bouncer",
+ "repo_url": "https://github.com/godatadriven/dbt-bouncer.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:34:27Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "447b9e3db4dcda1b1eb92bc3f461a4520b6bd157",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt_project/models",
+  "dbt_project/internal_package/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project/dbt_project.yml",
+  "name": "dbt_bouncer_test_project",
+  "chained_configs": [
+   "dbt_project/dbt_project.yml",
+   "dbt_project/internal_package/dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "dbt_project/models",
+   "dbt_project/internal_package/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project/dbt_project.yml",
+   "name": "dbt_bouncer_test_project",
+   "model_paths": [
+    "dbt_project/models"
+   ],
+   "commits_on_model_paths": 54,
+   "first_commit": "2024-06-28T10:22:00",
+   "last_commit": "2026-07-20T13:22:39"
+  },
+  {
+   "config": "dbt_project/internal_package/dbt_project.yml",
+   "name": "internal_package",
+   "model_paths": [
+    "dbt_project/internal_package/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-11-30T14:08:13",
+   "last_commit": "2025-11-30T14:08:13"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 56,
+ "history_start": "2024-06-28T10:22:00",
+ "history_end": "2026-07-20T13:22:39",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:36:14Z",
+ "snapshot_shas": [
+  "17f839f6d5677fdc772deabcaf0bf25bf1c76c7e",
+  "c892df218600f81ba7d49dcfa0a9352672cd092f",
+  "3bbdbc6d2b9cc33903a7c8280bab8de98c0c93e5",
+  "24de45d665301fdf01b639900f85c872fa8e74c9",
+  "76a7afec9fa122d057ccb06433694fd1898df719",
+  "4d7549df5dc58731494353eea4e5509bc04d05a0",
+  "c4912fc6f088e6a93750e73d5410008c1c55d92d",
+  "c55081fbe7e1d988a8637f5d60f0d6bb5355495e",
+  "a837959935bd52d770bd42d0b064bc5b46015de5",
+  "f5b6f07b08a2f29bc47bf3b25fdc82bbd60e8089",
+  "6e472b314f9e4a980f9d1b5eceebb67db58f5cf5",
+  "5b0f34b819bc6c54655ded765259257b2ebb2628",
+  "b50601c29404c8be56f1f08f54259cf0f37f2565",
+  "522bafcd0fb94bc4924bab0b8965ed8425339147"
+ ],
+ "stars": 123,
+ "license": "MIT",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

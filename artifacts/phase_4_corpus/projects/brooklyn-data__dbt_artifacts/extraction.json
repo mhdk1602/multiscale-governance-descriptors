@@ -1,0 +1,90 @@
+{
+ "project_id": "brooklyn-data__dbt_artifacts",
+ "repo_url": "https://github.com/brooklyn-data/dbt_artifacts.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:22:15Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "3d27645ae3d664b405498ebfd025432396b5568f",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "dbt_artifacts",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "dbt_artifacts",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 126,
+   "first_commit": "2021-02-03T15:58:59",
+   "last_commit": "2026-07-31T15:16:22"
+  },
+  {
+   "config": "integration_test_project/dbt_project.yml",
+   "name": "artifacts_integration_tests",
+   "model_paths": [
+    "integration_test_project/models"
+   ],
+   "commits_on_model_paths": 31,
+   "first_commit": "2022-02-15T11:24:39",
+   "last_commit": "2026-05-12T18:47:48"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 135,
+ "history_start": "2021-02-03T15:58:59",
+ "history_end": "2026-07-31T15:16:22",
+ "n_snapshots_planned": 25,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 25,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:23:40Z",
+ "snapshot_shas": [
+  "63550bd00a7558a451e86e2e9ac573efa11b5c85",
+  "51ad2094db15db7c5e21951b4b09f300668a318b",
+  "c39c7d64ea059b17120b1ab765302840f6548815",
+  "ef3ca66dbc34b6444ac08a75f5587c031e1d3061",
+  "928ae0faca191d5348d1fc4c2f88c6cee6284983",
+  "3b24316bea07f8986439ca43d47a443f03a052b5",
+  "85c61120ceceab23640a5ac1ec8129fea45c55c1",
+  "dd5e64fe28270fbb1634ca85e41a922a8c37c742",
+  "f4351142ae73c98ce690816b462adba37c382d2c",
+  "a664b114fabf22e4bc343dc440cf89754b7046fa",
+  "c0cf6879d837f0c247704a646df5a0d92f4274f1",
+  "62cb8143092410297fda1a6499ec289bbd3c9f1a",
+  "4caf69bc57d0e9c924d5aabca1a0b9cc041a8370",
+  "f9fe8ecfa1a1de6946e3197cf0b8acade17f8af1",
+  "2e9b1628a942e9206410511a9facf7bc0aac783c",
+  "20eab4bed6ef84d7273a6f5c34d4d25a0ab1da9c",
+  "25f8555cc7ace6c8a0dfc6f5dddeae22014c50c9",
+  "9d510ad1389dc67061062d90efcf3ed0de3f52c4",
+  "3bde04677b9bf8d41b1c9c63bf05d670fc2130b4",
+  "bf46483302f3d069f799aef17e5f88913dc2f64c",
+  "e94b400541daa48a1656ea88f0bf7c1eb1427cd9",
+  "d189c98b20508a230c2d2c0bcf8adce688f1ee1e",
+  "c0582557b7e4af8d2240b36fdcf7b6028dd7c63e",
+  "e6cedee37199a1327630fdff07b442831eeade86",
+  "469bd697858e2baac70c2dbb65f912dafed37769"
+ ],
+ "stars": 400,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

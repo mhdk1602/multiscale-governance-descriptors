@@ -1,0 +1,96 @@
+{
+ "project_id": "matsonj__nba-monte-carlo",
+ "repo_url": "https://github.com/matsonj/nba-monte-carlo.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:35:56Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "6363a857bc1ba0ebaa31d6a68160949581c99169",
+ "default_branch": "master",
+ "model_path_universe": [
+  "transform/models",
+  "nmc_transformer/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "transform/dbt_project.yml",
+  "name": "sports_sims",
+  "chained_configs": [
+   "transform/dbt_project.yml",
+   "nmc_transformer/dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "transform/models",
+   "nmc_transformer/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "transform/dbt_project.yml",
+   "name": "sports_sims",
+   "model_paths": [
+    "transform/models"
+   ],
+   "commits_on_model_paths": 177,
+   "first_commit": "2022-09-28T22:55:13",
+   "last_commit": "2026-07-27T14:24:04"
+  },
+  {
+   "config": "nmc_transformer/dbt_project.yml",
+   "name": "nmc_transformer",
+   "model_paths": [
+    "nmc_transformer/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2022-09-28T22:25:37",
+   "last_commit": "2022-09-28T22:52:09"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 181,
+ "history_start": "2022-09-28T22:25:37",
+ "history_end": "2026-07-27T14:24:04",
+ "n_snapshots_planned": 28,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 28,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:38:59Z",
+ "snapshot_shas": [
+  "ae353165d22443504d65b8e79b180f4c121da96c",
+  "64d6ffa671439df1522b0ebe29b5eb7524e6fa8f",
+  "8480032af395c713431f891bcb9aaf535cc7f88c",
+  "5c8d4080b594f2be327dc4b70925704db2958390",
+  "7a3cbf6d608a260974660fd439091c9e62576eb0",
+  "2a98d557e53549c07e59a2fa288a3d2623425b29",
+  "0edca91054d66f47f8eb472e4e3bdfe88255857e",
+  "5306a71e30b1cefdc7d9eb6d727529d91b67ef07",
+  "6312d65e2e1f4c11553d6e47b58ec47451dc5fb7",
+  "cf30c3a285f709bcdfe711e876f03aea3f57009b",
+  "f9c67894e79cdd78ba8e54126fe6fdf40207c372",
+  "cd9a46c42ab429458a6d56dae369c1fbdb9ed81d",
+  "1bebda869e96fc784f27355087f4fee3b80df22c",
+  "0875518a6da00397b2d5d18d298d46d26a49f2d5",
+  "4bfbf7a3dc1bc3e6c5a15f69d7bae1e2e40c0f51",
+  "ffb8e01fc409c6b4fa7524a74826b62472ea7282",
+  "50f616ada0a938b88cbc9628ff55f23dd2705dbd",
+  "1fed87d0d97a50a0b6ad52e2b3ec5b7c62eb4515",
+  "a0ec96ff4ed285bda5953a925bbfa713672b1579",
+  "104e575b3a8143f39d8708d483e9da7216db0d34",
+  "38cc2c5ce399461d91ce0a57ee03d8dcfda338dc",
+  "38fe69754acaf98e3f6c4b37fbb09adef8d8a200",
+  "f9a503fe840407ae0fcc33fc4926c9f077333975",
+  "7bae841143a4221e45e04e7f4f1bc254ef17894f",
+  "274bc0d83bee3b6b12a5a27d4015d0271e360151",
+  "054d213e7c71c51f4b31acebf036dd91986d74a4",
+  "7fa41c1f2bfcb284053667f32655f500bc0735be",
+  "e50e88e0d9f5542f048f770edf2888c2f18c384b"
+ ],
+ "stars": 605,
+ "license": "MIT",
+ "strata": [
+  "S1_curated"
+ ]
+}

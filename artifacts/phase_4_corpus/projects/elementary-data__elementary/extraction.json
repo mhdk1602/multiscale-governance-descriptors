@@ -1,0 +1,117 @@
+{
+ "project_id": "elementary-data__elementary",
+ "repo_url": "https://github.com/elementary-data/elementary.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:26:01Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "594b89d1098fd23838fa93554110bec98152cb4e",
+ "default_branch": "master",
+ "model_path_universe": [
+  "elementary/monitor/dbt_project/models",
+  "monitor/dbt_project/models",
+  "tests/tests_with_db/dbt_project/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "elementary/monitor/dbt_project/dbt_project.yml",
+  "name": "elementary_cli",
+  "chained_configs": [
+   "elementary/monitor/dbt_project/dbt_project.yml",
+   "monitor/dbt_project/dbt_project.yml",
+   "tests/tests_with_db/dbt_project/dbt_project.yml"
+  ],
+  "n_configs_chained": 3,
+  "model_paths": [
+   "elementary/monitor/dbt_project/models",
+   "monitor/dbt_project/models",
+   "tests/tests_with_db/dbt_project/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "elementary/monitor/dbt_project/dbt_project.yml",
+   "name": "elementary_cli",
+   "model_paths": [
+    "elementary/monitor/dbt_project/models"
+   ],
+   "commits_on_model_paths": 69,
+   "first_commit": "2022-08-23T12:01:22",
+   "last_commit": "2026-03-04T00:33:34"
+  },
+  {
+   "config": "monitor/dbt_project/dbt_project.yml",
+   "name": "elementary_internal",
+   "model_paths": [
+    "monitor/dbt_project/models"
+   ],
+   "commits_on_model_paths": 24,
+   "first_commit": "2022-03-15T14:41:28",
+   "last_commit": "2022-08-14T18:36:22"
+  },
+  {
+   "config": "tests/e2e_dbt_project/dbt_project.yml",
+   "name": "elementary_integration_tests",
+   "model_paths": [
+    "tests/e2e_dbt_project/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2025-10-09T12:29:49",
+   "last_commit": "2026-03-08T23:56:25"
+  },
+  {
+   "config": "tests/tests_with_db/dbt_project/dbt_project.yml",
+   "name": "elementary_tests",
+   "model_paths": [
+    "tests/tests_with_db/dbt_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-07-04T15:02:38",
+   "last_commit": "2024-07-04T15:02:38"
+  }
+ ],
+ "n_dbt_projects_seen": 4,
+ "n_commits_touching_models": 92,
+ "history_start": "2022-03-15T14:41:28",
+ "history_end": "2026-03-04T00:33:34",
+ "n_snapshots_planned": 26,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 26,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:29:48Z",
+ "snapshot_shas": [
+  "c971b5ddddba88660b590fcb94c860df46ea44ce",
+  "e7ce6ecc38e299766b7253a7ee59097a592a092a",
+  "6ae7685d08e169a7109457c7af454b89421d6857",
+  "d70fe2fdab10e29c7329b1e413476fec0653af47",
+  "06e3a0f9f5160290bf1557318f7c0d43451a7525",
+  "cc99e473da60415ea1e23e6e8359d2d8e9ebfa37",
+  "851f342c98a6c33192ffc9b6b31566a9a6e4d3c7",
+  "be4b683e337bb498e24b457e4de79585fe9b471d",
+  "6ccf0af2f3f7a5b47026bc2ce0750e830e35f739",
+  "6e360e00fdd6484bebf0cabe01c423623ab087e3",
+  "7671eae7bbb656a742bd81902ba3160b1d810d77",
+  "914ec0fc4806992359a8b2f380ee58714b2472b5",
+  "0d59b20859116bf776efdb052a82afe4d2d7a037",
+  "bcf88179423cc70a0c12f952fa719b52795158df",
+  "ca87722d6fa89ca6cceb1e6df2edf4f44fafca56",
+  "ef452228d9d6c910dc8a60e17fd1c9da0e1bb4b0",
+  "7d3deefb5e690822a2e791c7310aaf5072983ffb",
+  "03ce3e837800c3426242d6461442f01849bcfc3c",
+  "39588ff6f2ee19d6a5bd04cecec53fbc9437273c",
+  "e3d767aa78bb32cef8f83719e4a93b46633af468",
+  "e1f2138746d701d3f9ea578e155aaf7c9a3b660f",
+  "309c54135c7eb25c4b2526ebccb28d61ddb4b375",
+  "9ef15abaac663170be2dbd5cf69ad40a014a2560",
+  "a03dc6400d84f297566e06870ea375190f586878",
+  "f721a5745d0a0307b11bcaab1f6f17e212111ccf",
+  "e8dabbfb0c923c24915541f85d0d6f74a9e5dbc3"
+ ],
+ "stars": 2383,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

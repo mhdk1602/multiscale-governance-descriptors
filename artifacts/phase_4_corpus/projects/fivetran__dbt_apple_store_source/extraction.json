@@ -1,0 +1,67 @@
+{
+ "project_id": "fivetran__dbt_apple_store_source",
+ "repo_url": "https://github.com/fivetran/dbt_apple_store_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:27:25Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "d92c07e2fda09c18e138bcc57c772af7f3f6457b",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "apple_store_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "apple_store_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 62,
+   "first_commit": "2022-03-18T16:02:25",
+   "last_commit": "2025-06-26T09:06:05"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 62,
+ "history_start": "2022-03-18T16:02:25",
+ "history_end": "2025-06-26T09:06:05",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:28:55Z",
+ "snapshot_shas": [
+  "2cf866f997d4c4b8b0e4c2939964ee9bae5543b1",
+  "023cbb3933a381065c7d6331afd63910de33f4c2",
+  "e81a79db09a4a1bae7a1b4be408dd90e2bc7d85c",
+  "fdbb93db22c1997b75d78ad6d6d4ac85b7cf864a",
+  "9913bdbc708ddcc4e020e8cf8d088ea138e468fc",
+  "32e2140146f796817003d5d24eeb4873da50a1ab",
+  "4a63f319c0f5459180a161b6659a73cad20177cf",
+  "949d026a4fdfe064da8243f69ed0230eed97cd57",
+  "fce24ad03381974bad566f015d4b401e9cf85881",
+  "a62a206023345eb3537e14bd77efbe3baf642370",
+  "713789c72b1623417eaea2908ddc262d4200d663",
+  "2e7b4b93e1d54b0e775afa0c5adb9c219a71f4c2"
+ ],
+ "stars": 2,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

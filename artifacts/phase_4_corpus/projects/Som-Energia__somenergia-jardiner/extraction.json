@@ -1,0 +1,73 @@
+{
+ "project_id": "Som-Energia__somenergia-jardiner",
+ "repo_url": "https://github.com/Som-Energia/somenergia-jardiner.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:20:31Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "a1bf32b3c066bf882bc83ebeee784edc3ea984a9",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt_jardiner/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_jardiner/dbt_project.yml",
+  "name": "dbt_jardiner",
+  "chained_configs": [
+   "dbt_jardiner/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "dbt_jardiner/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_jardiner/dbt_project.yml",
+   "name": "dbt_jardiner",
+   "model_paths": [
+    "dbt_jardiner/models"
+   ],
+   "commits_on_model_paths": 198,
+   "first_commit": "2022-10-11T11:00:45",
+   "last_commit": "2024-10-24T22:24:50"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 198,
+ "history_start": "2022-10-11T11:00:45",
+ "history_end": "2024-10-24T22:24:50",
+ "n_snapshots_planned": 18,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 18,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:21:46Z",
+ "snapshot_shas": [
+  "14ed87cd992c86e71537d4739f97ab75f09a1f57",
+  "38da6507ee4040ccbcccc594d15ab10049b465c5",
+  "58abb596f8362f2281f4ee5b2152448878ad7b10",
+  "1e1ce755f7f4190acab81ff1f0d4b0cebae9f9d2",
+  "1d280e7aa603f1c5a6ec9857a803ff84ca01175a",
+  "a7d702fde9829b201835e4ed3eaaf36e84a18829",
+  "608fd7be18581010a3feaf6fb8ab9a20e0f8cb4a",
+  "b2be3b8b97e1e770f4eb863162eb95585d343a2c",
+  "7491a1bb6c9ef2ee5b819cb862e45adfdd3aa89f",
+  "2fbb4575984eaa24ef755c261486906a30c59303",
+  "a9f801e28c3458374c77e7e067b4a624a8f9b976",
+  "53028e87784f5bc7eb7ad681201dde146826a419",
+  "158c0691b0a9f03769f59fd602aa553e06eb74f9",
+  "578eb9ffa3a8ce2031685af819f249f6ce6bc60f",
+  "4b99a3a501d1221f1708b47157a6aa5a88c3dfac",
+  "33177d6c523ba4c583710cb0368501f6dd56ab44",
+  "dfab8b8c156c8b82d0d6d34f49bcf7640e9b5d61",
+  "0364c13c43983bdc0bd931f8cd33100ebfb3eee3"
+ ],
+ "stars": 4,
+ "license": "GPL-3.0",
+ "strata": [
+  "S3_code"
+ ]
+}

@@ -1,0 +1,13 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_apple_store_source,2022-04-04T10:22:46,2cf866f997d4c4b8b0e4c2939964ee9bae5543b1,updating yml,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_apple_store_source,2022-05-11T16:11:41,023cbb3933a381065c7d6331afd63910de33f4c2,ymls,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_apple_store_source,2022-05-27T09:20:36,e81a79db09a4a1bae7a1b4be408dd90e2bc7d85c,pr fixes,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_apple_store_source,2022-10-13T15:41:21,fdbb93db22c1997b75d78ad6d6d4ac85b7cf864a,Updates for dbt-utils to dbt-core cross-db macro migration,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_apple_store_source,2022-10-25T15:25:55,9913bdbc708ddcc4e020e8cf8d088ea138e468fc,jm review updates,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_apple_store_source,2023-02-08T17:44:02,32e2140146f796817003d5d24eeb4873da50a1ab,fix: add missing type-casting on event_date field,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_apple_store_source,2023-05-02T12:06:27,4a63f319c0f5459180a161b6659a73cad20177cf,stuff,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_apple_store_source,2023-07-25T22:17:34,949d026a4fdfe064da8243f69ed0230eed97cd57,add territory long,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_apple_store_source,2024-07-23T17:09:19,fce24ad03381974bad566f015d4b401e9cf85881,Feature: Union schema compatibility (#14),32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_apple_store_source,2025-01-31T13:06:12,a62a206023345eb3537e14bd77efbe3baf642370,shorten model names and new schema,16,8,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,8,0.125,0.0,16,0,0,0,16,1
+fivetran__dbt_apple_store_source,2025-02-19T14:27:43,713789c72b1623417eaea2908ddc262d4200d663,try without default schema change,16,8,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,8,0.125,0.0,16,0,0,0,16,1
+fivetran__dbt_apple_store_source,2025-06-26T09:06:05,2e7b4b93e1d54b0e775afa0c5adb9c219a71f4c2,feature/freshness-updates (#21),16,8,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,8,0.125,0.0,16,0,0,0,16,1

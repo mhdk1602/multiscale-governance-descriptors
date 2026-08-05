@@ -1,0 +1,92 @@
+{
+ "project_id": "edanalytics__edu_edfi_source",
+ "repo_url": "https://github.com/edanalytics/edu_edfi_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:25:53Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "a79be439bdbaf66453c3115390ece1836d263445",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "edu_edfi_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "edu_edfi_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 130,
+   "first_commit": "2022-11-03T18:19:37",
+   "last_commit": "2026-08-03T06:41:19"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 130,
+ "history_start": "2022-11-03T18:19:37",
+ "history_end": "2026-08-03T06:41:19",
+ "n_snapshots_planned": 37,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 37,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:28:34Z",
+ "snapshot_shas": [
+  "d130f32e4e13c0c1622e49ab9a4d2234cb332775",
+  "4dfd6136e334924eeb6fe5ac9e9fac0edb289e03",
+  "00bf4a018a9e9a4eb065476ddaca517322293435",
+  "497211fdf4b4fc5c06a2def9c12829d317473237",
+  "281828785da665931786ffe292acb5b30b5c53f5",
+  "b57ca046f880986c085193af0e65e2e4b70117ed",
+  "0b6bda5b43e773583fd06ff9ffd8badd62e3dfd6",
+  "a2e2554b929c332784e93f055cc83dc188b09027",
+  "928ff2e11c2ccb4329f393b0fd1e805d51f9a8a4",
+  "ce27edc669ce270c5f316405494b10d2124b658f",
+  "3f99ad0c104f14c4250d649c3684e0510c764228",
+  "97a66c7fb77c27a3c1d62d7119eeb60578fd728b",
+  "e177ebca92ae4710deb50493a7c4e2ba464164f0",
+  "0de85c42ce23423910222672f681ef09b49c6046",
+  "6817dc99d9cfdb6533cf20d636e2719d9509cd15",
+  "74095dda2151839e5c62a84b647e79fdabf14fe8",
+  "b99c957f9e8c60790a1930a6bd36049fbc6a2a4a",
+  "c17fc0407de89fd0e6d4e6ca938bc84999e0dcef",
+  "2bbd17bafe86c2777e927c75e2df11ea1e41fd66",
+  "6424d47439d8dd6fdde9890191664e9f87e4a310",
+  "82bd15e25bea5f174a27688f4639eacdc66df54b",
+  "a905734f1ed41945901f8e70a6c132943a716ea8",
+  "1f1737877d330d5da00dc2c4def2991e29f91508",
+  "60ae1ac703ee7d67037b5be09657a7bf919227f0",
+  "d7657003a9f0a5a06a36e6d9f881927f4c09fcce",
+  "579f066fc917d46dc781996ccb5a6badb61dcd71",
+  "e1e89a9bc9c03422c1159c91788ac99f26611d40",
+  "aac6dc0eccc2755af2ac9bbceb6aee22205bb822",
+  "d6224a574746d73dffd2174a678d9b8b92f47149",
+  "0bd87d8698e53f0c16440d98710cd2d2f16ae167",
+  "8862690ed257ad07b4857485dfe93ef450041146",
+  "7e89167901eb902be32c9c795d3a1f8e3e42de72",
+  "1dabd5f59f691c425705fd79768c529d1af9da9f",
+  "bc5ec6f2782d601737de839b2127e46c5a0b4538",
+  "b8b4a6309fe00383b6a28a932b27cee2b62be3e6",
+  "e5cf5358c6e9d1a1b1408bf0bcfacdd103913225",
+  "a79be439bdbaf66453c3115390ece1836d263445"
+ ],
+ "stars": 10,
+ "license": "NOASSERTION",
+ "strata": [
+  "S3_code"
+ ]
+}

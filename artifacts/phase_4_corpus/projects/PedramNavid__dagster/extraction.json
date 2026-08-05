@@ -1,0 +1,667 @@
+{
+ "project_id": "PedramNavid__dagster",
+ "repo_url": "https://github.com/PedramNavid/dagster.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:19:41Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "539722819071aa7d07c8f670e161a3134591b4d1",
+ "default_branch": "master",
+ "model_path_universe": [
+  "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_metadata/models",
+  "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dagster_dbt_python_test_project/models",
+  "examples/hacker_news/hacker_news_dbt/models",
+  "examples/docs_projects/project_atproto_dashboard/dbt_project/models",
+  "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/fusion_compatible/jaffle_shop/models",
+  "examples/airlift-migration-tutorial/tutorial_example/shared/dbt/models",
+  "examples/assets_dbt_python/dbt_project/models",
+  "examples/assets_modern_data_stack/dbt_project/models",
+  "examples/assets_smoke_test/dbt_project/models",
+  "examples/docs_beta_snippets/docs_beta_snippets/guides/etl/transform-dbt/basic-dbt-project/models",
+  "examples/docs_projects/project_dbt/src/project_dbt/analytics/models",
+  "examples/docs_projects/project_etl_tutorial/transform/jdbt/models",
+  "examples/docs_snippets/docs_snippets/guides/etl/transform-dbt/basic-dbt-project/models",
+  "examples/experimental/dagster-airlift/dagster_airlift_tests/unit_tests/dbt_tests/dbt_project/models",
+  "examples/experimental/dagster-airlift/examples/tutorial-example/tutorial_example/shared/dbt/models",
+  "examples/hacker_news_assets/hacker_news_assets/activity_analytics/hacker_news_dbt/models",
+  "examples/project_analytics/dagster_pypi/dbt_project/models",
+  "examples/project_databricks_and_snowflake/projects/snowflake-medallion/src/snowflake_medallion/dbt_project/models",
+  "examples/project_fully_featured/dbt_project/models",
+  "examples/starlift-demo/dbt_example/shared/dbt/models",
+  "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/models",
+  "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dependency_on_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/models",
+  "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/templated_custom_keys_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/models",
+  "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/pre_packaged_jaffle_shop/models",
+  "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_dependencies/models",
+  "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_jaffle_with_profile_vars/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_metadata/dbt_project.yml",
+  "name": "test_dagster_metadata",
+  "chained_configs": [
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_metadata/dbt_project.yml",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dagster_dbt_python_test_project/dbt_project.yml",
+   "examples/hacker_news/hacker_news_dbt/dbt_project.yml",
+   "examples/docs_projects/project_atproto_dashboard/dbt_project/dbt_project.yml",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/fusion_compatible/jaffle_shop/dbt_project.yml",
+   "examples/airlift-migration-tutorial/tutorial_example/shared/dbt/dbt_project.yml",
+   "examples/assets_dbt_python/dbt_project/dbt_project.yml",
+   "examples/assets_modern_data_stack/dbt_project/dbt_project.yml",
+   "examples/assets_smoke_test/dbt_project/dbt_project.yml",
+   "examples/docs_beta_snippets/docs_beta_snippets/guides/etl/transform-dbt/basic-dbt-project/dbt_project.yml",
+   "examples/docs_projects/project_dbt/src/project_dbt/analytics/dbt_project.yml",
+   "examples/docs_projects/project_etl_tutorial/transform/jdbt/dbt_project.yml",
+   "examples/docs_snippets/docs_snippets/guides/etl/transform-dbt/basic-dbt-project/dbt_project.yml",
+   "examples/experimental/dagster-airlift/dagster_airlift_tests/unit_tests/dbt_tests/dbt_project/dbt_project.yml",
+   "examples/experimental/dagster-airlift/examples/tutorial-example/tutorial_example/shared/dbt/dbt_project.yml",
+   "examples/hacker_news_assets/hacker_news_assets/activity_analytics/hacker_news_dbt/dbt_project.yml",
+   "examples/project_analytics/dagster_pypi/dbt_project/dbt_project.yml",
+   "examples/project_databricks_and_snowflake/projects/snowflake-medallion/src/snowflake_medallion/dbt_project/dbt_project.yml",
+   "examples/project_fully_featured/dbt_project/dbt_project.yml",
+   "examples/starlift-demo/dbt_example/shared/dbt/dbt_project.yml",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/dbt_project.yml",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dependency_on_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/dbt_project.yml",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/templated_custom_keys_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/dbt_project.yml",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/pre_packaged_jaffle_shop/dbt_project.yml",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_dependencies/dbt_project.yml",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_jaffle_with_profile_vars/dbt_project.yml"
+  ],
+  "n_configs_chained": 26,
+  "model_paths": [
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_metadata/models",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dagster_dbt_python_test_project/models",
+   "examples/hacker_news/hacker_news_dbt/models",
+   "examples/docs_projects/project_atproto_dashboard/dbt_project/models",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/fusion_compatible/jaffle_shop/models",
+   "examples/airlift-migration-tutorial/tutorial_example/shared/dbt/models",
+   "examples/assets_dbt_python/dbt_project/models",
+   "examples/assets_modern_data_stack/dbt_project/models",
+   "examples/assets_smoke_test/dbt_project/models",
+   "examples/docs_beta_snippets/docs_beta_snippets/guides/etl/transform-dbt/basic-dbt-project/models",
+   "examples/docs_projects/project_dbt/src/project_dbt/analytics/models",
+   "examples/docs_projects/project_etl_tutorial/transform/jdbt/models",
+   "examples/docs_snippets/docs_snippets/guides/etl/transform-dbt/basic-dbt-project/models",
+   "examples/experimental/dagster-airlift/dagster_airlift_tests/unit_tests/dbt_tests/dbt_project/models",
+   "examples/experimental/dagster-airlift/examples/tutorial-example/tutorial_example/shared/dbt/models",
+   "examples/hacker_news_assets/hacker_news_assets/activity_analytics/hacker_news_dbt/models",
+   "examples/project_analytics/dagster_pypi/dbt_project/models",
+   "examples/project_databricks_and_snowflake/projects/snowflake-medallion/src/snowflake_medallion/dbt_project/models",
+   "examples/project_fully_featured/dbt_project/models",
+   "examples/starlift-demo/dbt_example/shared/dbt/models",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/models",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dependency_on_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/models",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/templated_custom_keys_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/models",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/pre_packaged_jaffle_shop/models",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_dependencies/models",
+   "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_jaffle_with_profile_vars/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_metadata/dbt_project.yml",
+   "name": "test_dagster_metadata",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_metadata/models"
+   ],
+   "commits_on_model_paths": 20,
+   "first_commit": "2023-06-13T16:51:33",
+   "last_commit": "2024-10-01T09:37:05"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_asset_checks/dbt_project.yml",
+   "name": "test_dagster_asset_checks",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_asset_checks/models"
+   ],
+   "commits_on_model_paths": 13,
+   "first_commit": "2023-09-06T16:12:45",
+   "last_commit": "2025-05-02T16:58:15"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dagster_dbt_test_project/dbt_project.yml",
+   "name": "dagster_dbt_test_project",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dagster_dbt_test_project/models"
+   ],
+   "commits_on_model_paths": 10,
+   "first_commit": "2020-08-18T18:11:46",
+   "last_commit": "2023-11-16T16:51:30"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_semantic_models/dbt_project.yml",
+   "name": "test_dagster_dbt_semantic_models",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_semantic_models/models"
+   ],
+   "commits_on_model_paths": 6,
+   "first_commit": "2024-02-16T17:32:02",
+   "last_commit": "2025-05-20T18:14:35"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_python_interleaving/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_python_interleaving/models"
+   ],
+   "commits_on_model_paths": 5,
+   "first_commit": "2023-10-31T13:57:32",
+   "last_commit": "2024-02-20T13:07:59"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dagster_dbt_python_test_project/dbt_project.yml",
+   "name": "dagster_dbt_python_test_project",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dagster_dbt_python_test_project/models"
+   ],
+   "commits_on_model_paths": 4,
+   "first_commit": "2022-06-07T12:54:29",
+   "last_commit": "2023-07-11T17:03:22"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_meta_config/dbt_project.yml",
+   "name": "test_dagster_meta_config",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_meta_config/models"
+   ],
+   "commits_on_model_paths": 4,
+   "first_commit": "2024-02-12T11:47:37",
+   "last_commit": "2024-04-03T12:36:45"
+  },
+  {
+   "config": "examples/experimental/dagster-airlift/examples/dbt-example/dbt_example/shared/dbt/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "examples/experimental/dagster-airlift/examples/dbt-example/dbt_example/shared/dbt/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2024-08-13T15:11:26",
+   "last_commit": "2024-08-23T17:10:54"
+  },
+  {
+   "config": "examples/hacker_news/hacker_news_dbt/dbt_project.yml",
+   "name": "hacker_news_dbt",
+   "model_paths": [
+    "examples/hacker_news/hacker_news_dbt/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2021-07-29T15:20:05",
+   "last_commit": "2022-07-16T08:28:50"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_duplicate_source_asset_key/dbt_project.yml",
+   "name": "test_dagster_duplicate_source_asset_key",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_duplicate_source_asset_key/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2024-03-06T11:57:14",
+   "last_commit": "2024-03-06T12:32:06"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_exceptions/dbt_project.yml",
+   "name": "test_dagster_exceptions",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_exceptions/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2023-10-13T17:21:13",
+   "last_commit": "2023-11-29T21:15:21"
+  },
+  {
+   "config": "examples/dbt_example/dbt_example_project/dbt_project.yml",
+   "name": "dbt_example_project",
+   "model_paths": [
+    "examples/dbt_example/dbt_example_project/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2020-10-23T12:48:20",
+   "last_commit": "2022-07-27T11:21:52"
+  },
+  {
+   "config": "examples/docs_projects/project_atproto_dashboard/dbt_project/dbt_project.yml",
+   "name": "dbt_project",
+   "model_paths": [
+    "examples/docs_projects/project_atproto_dashboard/dbt_project/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2025-02-19T14:25:11",
+   "last_commit": "2025-02-20T15:26:53"
+  },
+  {
+   "config": "examples/modern_data_stack_assets/mds_dbt/dbt_project.yml",
+   "name": "mds_dbt",
+   "model_paths": [
+    "examples/modern_data_stack_assets/mds_dbt/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2022-03-01T16:08:51",
+   "last_commit": "2022-03-04T10:02:59"
+  },
+  {
+   "config": "examples/project_du_dbt_starter/analytics/dbt_project.yml",
+   "name": "analytics",
+   "model_paths": [
+    "examples/project_du_dbt_starter/analytics/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-03-06T16:59:12",
+   "last_commit": "2025-09-24T07:51:27"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/fusion_compatible/jaffle_shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/fusion_compatible/jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2025-08-04T10:09:33",
+   "last_commit": "2025-09-03T08:08:37"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/jaffle_shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-02-13T14:46:07",
+   "last_commit": "2024-07-19T10:29:06"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_asset_key_exceptions/dbt_project.yml",
+   "name": "test_dagster_asset_key_exceptions",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_asset_key_exceptions/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-02-05T18:31:57",
+   "last_commit": "2024-02-05T18:32:31"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_alias/dbt_project.yml",
+   "name": "test_dagster_dbt_alias",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_alias/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-02-13T14:46:54",
+   "last_commit": "2024-02-14T10:59:05"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_mixed_freshness/dbt_project.yml",
+   "name": "test_dagster_dbt_mixed_freshness",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_mixed_freshness/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-06-10T15:36:16",
+   "last_commit": "2024-06-11T13:17:29"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_model_versions/dbt_project.yml",
+   "name": "test_dagster_dbt_model_versions",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_model_versions/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-02-14T16:52:53",
+   "last_commit": "2024-02-14T16:54:16"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_source_freshness/dbt_project.yml",
+   "name": "test_dagster_dbt_source_freshness",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_source_freshness/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-03-06T17:49:49",
+   "last_commit": "2024-03-06T17:50:16"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_unit_tests/dbt_project.yml",
+   "name": "test_dagster_dbt_unit_tests",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_unit_tests/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-06-03T14:47:52",
+   "last_commit": "2024-06-03T14:49:57"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_last_update_freshness/dbt_project.yml",
+   "name": "test_dagster_last_update_freshness",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_last_update_freshness/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-06-10T15:36:16",
+   "last_commit": "2024-06-11T13:17:29"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_last_update_freshness_multiple_assets_defs/dbt_project.yml",
+   "name": "test_dagster_last_update_freshness_multiple_assets_defs",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_last_update_freshness_multiple_assets_defs/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-06-10T15:36:16",
+   "last_commit": "2024-06-11T13:17:29"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_time_partition_freshness/dbt_project.yml",
+   "name": "test_dagster_time_partition_freshness",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_time_partition_freshness/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-06-10T15:36:16",
+   "last_commit": "2024-06-11T13:17:29"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_time_partition_freshness_multiple_assets_defs/dbt_project.yml",
+   "name": "test_dagster_time_partition_freshness_multiple_assets_defs",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_time_partition_freshness_multiple_assets_defs/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2024-06-10T15:36:16",
+   "last_commit": "2024-06-11T13:17:29"
+  },
+  {
+   "config": "examples/airlift-migration-tutorial/tutorial_example/shared/dbt/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "examples/airlift-migration-tutorial/tutorial_example/shared/dbt/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-11-13T15:44:33",
+   "last_commit": "2024-11-13T15:44:33"
+  },
+  {
+   "config": "examples/assets_dbt_python/dbt_project/dbt_project.yml",
+   "name": "dbt_project",
+   "model_paths": [
+    "examples/assets_dbt_python/dbt_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-08-02T17:17:27",
+   "last_commit": "2022-08-02T17:17:27"
+  },
+  {
+   "config": "examples/assets_modern_data_stack/dbt_project/dbt_project.yml",
+   "name": "mds_dbt",
+   "model_paths": [
+    "examples/assets_modern_data_stack/dbt_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-08-03T14:15:24",
+   "last_commit": "2022-08-03T14:15:24"
+  },
+  {
+   "config": "examples/assets_smoke_test/dbt_project/dbt_project.yml",
+   "name": "dbt_project",
+   "model_paths": [
+    "examples/assets_smoke_test/dbt_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-10-10T15:11:25",
+   "last_commit": "2022-10-10T15:11:25"
+  },
+  {
+   "config": "examples/docs_beta_snippets/docs_beta_snippets/guides/etl/transform-dbt/basic-dbt-project/dbt_project.yml",
+   "name": "basic_dbt_project",
+   "model_paths": [
+    "examples/docs_beta_snippets/docs_beta_snippets/guides/etl/transform-dbt/basic-dbt-project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-08-30T16:29:05",
+   "last_commit": "2024-08-30T16:29:05"
+  },
+  {
+   "config": "examples/docs_projects/project_dbt/src/project_dbt/analytics/dbt_project.yml",
+   "name": "analytics",
+   "model_paths": [
+    "examples/docs_projects/project_dbt/src/project_dbt/analytics/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-09-03T08:59:48",
+   "last_commit": "2025-09-03T08:59:48"
+  },
+  {
+   "config": "examples/docs_projects/project_etl_tutorial/transform/jdbt/dbt_project.yml",
+   "name": "jdbt",
+   "model_paths": [
+    "examples/docs_projects/project_etl_tutorial/transform/jdbt/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-09-02T08:56:28",
+   "last_commit": "2025-09-02T08:56:28"
+  },
+  {
+   "config": "examples/docs_snippets/docs_snippets/guides/etl/transform-dbt/basic-dbt-project/dbt_project.yml",
+   "name": "basic_dbt_project",
+   "model_paths": [
+    "examples/docs_snippets/docs_snippets/guides/etl/transform-dbt/basic-dbt-project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-03-27T14:08:45",
+   "last_commit": "2025-03-27T14:08:45"
+  },
+  {
+   "config": "examples/experimental/dagster-airlift/dagster_airlift_tests/unit_tests/dbt_tests/dbt_project/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "examples/experimental/dagster-airlift/dagster_airlift_tests/unit_tests/dbt_tests/dbt_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-09-04T15:13:47",
+   "last_commit": "2024-09-04T15:13:47"
+  },
+  {
+   "config": "examples/experimental/dagster-airlift/examples/tutorial-example/tutorial_example/shared/dbt/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "examples/experimental/dagster-airlift/examples/tutorial-example/tutorial_example/shared/dbt/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-08-22T14:11:02",
+   "last_commit": "2024-08-22T14:11:02"
+  },
+  {
+   "config": "examples/hacker_news_assets/hacker_news_assets/activity_analytics/hacker_news_dbt/dbt_project.yml",
+   "name": "hacker_news_dbt",
+   "model_paths": [
+    "examples/hacker_news_assets/hacker_news_assets/activity_analytics/hacker_news_dbt/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-05-09T13:11:01",
+   "last_commit": "2022-05-09T13:11:01"
+  },
+  {
+   "config": "examples/project_analytics/dagster_pypi/dbt_project/dbt_project.yml",
+   "name": "dbt_project",
+   "model_paths": [
+    "examples/project_analytics/dagster_pypi/dbt_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2023-05-09T09:45:53",
+   "last_commit": "2023-05-09T09:45:53"
+  },
+  {
+   "config": "examples/project_databricks_and_snowflake/projects/snowflake-medallion/src/snowflake_medallion/dbt_project/dbt_project.yml",
+   "name": "snowflake_medallion",
+   "model_paths": [
+    "examples/project_databricks_and_snowflake/projects/snowflake-medallion/src/snowflake_medallion/dbt_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-12-19T16:16:51",
+   "last_commit": "2025-12-19T16:16:51"
+  },
+  {
+   "config": "examples/project_fully_featured/dbt_project/dbt_project.yml",
+   "name": "hacker_news_dbt",
+   "model_paths": [
+    "examples/project_fully_featured/dbt_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-08-03T20:58:26",
+   "last_commit": "2022-08-03T20:58:26"
+  },
+  {
+   "config": "examples/starlift-demo/dbt_example/shared/dbt/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "examples/starlift-demo/dbt_example/shared/dbt/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-11-13T15:44:33",
+   "last_commit": "2024-11-13T15:44:33"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-04-02T15:52:49",
+   "last_commit": "2025-04-02T15:52:49"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dependency_on_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/dependency_on_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-04-02T15:52:49",
+   "last_commit": "2025-04-02T15:52:49"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/templated_custom_keys_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/components/code_locations/templated_custom_keys_dbt_project_location/defs/jaffle_shop_dbt/jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-04-02T15:52:49",
+   "last_commit": "2025-04-02T15:52:49"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/pre_packaged_jaffle_shop/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/pre_packaged_jaffle_shop/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-02-21T12:01:54",
+   "last_commit": "2025-02-21T12:01:54"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_dependencies/dbt_project.yml",
+   "name": "test_dagster_dbt_dependencies",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_dagster_dbt_dependencies/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-10-10T10:37:08",
+   "last_commit": "2024-10-10T10:37:08"
+  },
+  {
+   "config": "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_jaffle_with_profile_vars/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "python_modules/libraries/dagster-dbt/dagster_dbt_tests/dbt_projects/test_jaffle_with_profile_vars/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-06-13T13:59:06",
+   "last_commit": "2024-06-13T13:59:06"
+  },
+  {
+   "config": "examples/docs_beta_snippets/docs_beta_snippets/dagster-plus/insights/google-bigquery/dbt_project.yml",
+   "name": "dbt_project",
+   "model_paths": [
+    "examples/docs_beta_snippets/docs_beta_snippets/dagster-plus/insights/google-bigquery/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": "examples/docs_beta_snippets/docs_beta_snippets/dagster-plus/insights/snowflake/dbt_project.yml",
+   "name": "dbt_project",
+   "model_paths": [
+    "examples/docs_beta_snippets/docs_beta_snippets/dagster-plus/insights/snowflake/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": "examples/docs_snippets/docs_snippets/dagster-plus/insights/google-bigquery/dbt_project.yml",
+   "name": "dbt_project",
+   "model_paths": [
+    "examples/docs_snippets/docs_snippets/dagster-plus/insights/google-bigquery/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": "examples/docs_snippets/docs_snippets/dagster-plus/insights/snowflake/dbt_project.yml",
+   "name": "dbt_project",
+   "model_paths": [
+    "examples/docs_snippets/docs_snippets/dagster-plus/insights/snowflake/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 52,
+ "n_commits_touching_models": 53,
+ "history_start": "2021-07-29T15:20:05",
+ "history_end": "2025-12-19T16:16:51",
+ "n_snapshots_planned": 27,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 27,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:22:23Z",
+ "snapshot_shas": [
+  "08918daf3375e0af98d52c68af23f531db2a1069",
+  "333a96fb020074d50b459f2b56f62b53983f173b",
+  "8cfa136964e87bd0cf0f967b1c59a9c365c11a57",
+  "b34f04d32614361b04379769307d366e5facc164",
+  "e15ecd89b9cece49d8435b91c4d15a8852a365ea",
+  "2c821b4fa77f03b419af4552d73c6645e0d4d55b",
+  "0035ebc50e1c19db3c16b0a9c81c32f507625763",
+  "3bb815935f5dfa0ed5dd3dc734f55047a6be1af4",
+  "91b12934e6a767d955e5b481b9deb971119df3fe",
+  "30b497cb1dc58de86fa415d1764fcbe2edd73a6e",
+  "fa5641583e4f2598049ae8ad10e44e7d34d54260",
+  "6fb1e8be26751fa22b7a65446be60b68531f690a",
+  "d24a9ecb92a850fcc406899a6a3da9ca84d68f87",
+  "dcab639618ea5d76bf84b4b3930af8c99f043d31",
+  "a118f1ab14fc7131955b62c425aad35f6453bfd9",
+  "9ba265b3db07d29a0fc87306c46716b6db8fbe49",
+  "70ac5e333c1bd70f280acf55832b30334dd219a9",
+  "58ad7b0ffb7640c02a09b77067b3eb9acd9a0436",
+  "c76651baad2f24a8f7ba2bcdbfa465bab59af8a2",
+  "ead286321c3a41ac2bdc7419d618f8819f88e1c5",
+  "0fc8dbb7830ed0730956b34af22deb77764a47f6",
+  "ca745c6d1f1a5342bb9096c2888663afa3a5b646",
+  "3a4ecbeb7c0f86387d0e6c2ca3b601147cd060cc",
+  "6d8a6b39f81221be360f9d5ca0ff5899892d1e42",
+  "2ad3839d0031d06fd86b2825e9135f7e87c80f3e",
+  "01d93e3ba16687a07e27b8f9c8e822afe16d84a0",
+  "bef14f2e3c8c4f1b50703bc79977b828ad29b585"
+ ],
+ "stars": 0,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

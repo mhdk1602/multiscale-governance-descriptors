@@ -1,0 +1,71 @@
+{
+ "project_id": "google__fhir-dbt-analytics",
+ "repo_url": "https://github.com/google/fhir-dbt-analytics.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:34:27Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "80414cad9779ebe483f5feb4171fdc3b2464767b",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "fhir_dbt_analytics",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "fhir_dbt_analytics",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 62,
+   "first_commit": "2022-10-18T16:25:46",
+   "last_commit": "2024-12-10T09:17:49"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 62,
+ "history_start": "2022-10-18T16:25:46",
+ "history_end": "2024-12-10T09:17:49",
+ "n_snapshots_planned": 16,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 16,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:35:59Z",
+ "snapshot_shas": [
+  "2e9d2d34898d954be6480e1af11538eba9109156",
+  "73af566cadcbf5890db19d997ff51ec772cd9289",
+  "7a3b7706f6c86b7d862856760aff96a1adc83f62",
+  "4703b0cfa37c6620db1a84fdccc9c6f99338d43d",
+  "509f4d61e0a4fec62beec3920d3e38040e1eeb0a",
+  "88f9fc8f8f22982eed7dd18a4dfc4f99ffd32e46",
+  "a6af886d13c45eec733f583aa261f6686a327da9",
+  "6b762e03bd8ccd2b52038035fbf7130dcdcad5b2",
+  "d315865d30925a268d90e2dd06796fbbc2cb53eb",
+  "e0d3c5a7e9f0fd9a87ab082a87b9e21cd01e9650",
+  "c2a08610a5d6c3759e1e5e6ade2b09290f2bb240",
+  "f432b12963bb336f412638aa4c92cda0f5bb64d6",
+  "b7e604495c4aead55555a17fda87ae8d9f80f6cb",
+  "148a3d82d8891ef6daa8445bdd498c646e18bef0",
+  "5959606f911af83157f77ee1774dfbb1bdd2ea85",
+  "80414cad9779ebe483f5feb4171fdc3b2464767b"
+ ],
+ "stars": 60,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

@@ -1,0 +1,189 @@
+{
+ "project_id": "SQLMesh__sqlmesh",
+ "repo_url": "https://github.com/SQLMesh/sqlmesh.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:20:02Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "40a24dd6350866b11a37363aeab0fbf4eaaf1e1d",
+ "default_branch": "main",
+ "model_path_universe": [
+  "tests/fixtures/dbt/sushi_test/models",
+  "examples/sushi_dbt/packages/customers/models",
+  "examples/multi_dbt/bronze/models",
+  "examples/multi_dbt/silver/models",
+  "examples/multi_hybrid/dbt_repo/models",
+  "tests/fixtures/dbt/jaffle_shop_duckdb/models",
+  "tests/fixtures/dbt/sushi_test/packages/my_package/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "tests/fixtures/dbt/sushi_test/dbt_project.yml",
+  "name": "sushi",
+  "chained_configs": [
+   "tests/fixtures/dbt/sushi_test/dbt_project.yml",
+   "examples/sushi_dbt/packages/customers/dbt_project.yml",
+   "examples/multi_dbt/bronze/dbt_project.yml",
+   "examples/multi_dbt/silver/dbt_project.yml",
+   "examples/multi_hybrid/dbt_repo/dbt_project.yml",
+   "tests/fixtures/dbt/jaffle_shop_duckdb/dbt_project.yml",
+   "tests/fixtures/dbt/sushi_test/packages/my_package/dbt_project.yml"
+  ],
+  "n_configs_chained": 7,
+  "model_paths": [
+   "tests/fixtures/dbt/sushi_test/models",
+   "examples/sushi_dbt/packages/customers/models",
+   "examples/multi_dbt/bronze/models",
+   "examples/multi_dbt/silver/models",
+   "examples/multi_hybrid/dbt_repo/models",
+   "tests/fixtures/dbt/jaffle_shop_duckdb/models",
+   "tests/fixtures/dbt/sushi_test/packages/my_package/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "tests/fixtures/dbt/sushi_test/dbt_project.yml",
+   "name": "sushi",
+   "model_paths": [
+    "tests/fixtures/dbt/sushi_test/models"
+   ],
+   "commits_on_model_paths": 30,
+   "first_commit": "2023-04-03T20:11:40",
+   "last_commit": "2025-11-17T12:24:34"
+  },
+  {
+   "config": "examples/sushi_dbt/dbt_project.yml",
+   "name": "sushi",
+   "model_paths": [
+    "examples/sushi_dbt/models"
+   ],
+   "commits_on_model_paths": 20,
+   "first_commit": "2023-01-19T13:52:41",
+   "last_commit": "2025-12-03T22:24:52"
+  },
+  {
+   "config": "tests/fixtures/dbt/sushi_test/packages/customers/dbt_project.yml",
+   "name": "customers",
+   "model_paths": [
+    "tests/fixtures/dbt/sushi_test/packages/customers/models"
+   ],
+   "commits_on_model_paths": 3,
+   "first_commit": "2023-04-03T20:11:40",
+   "last_commit": "2024-06-28T15:47:05"
+  },
+  {
+   "config": "examples/sushi_dbt/packages/customers/dbt_project.yml",
+   "name": "customers",
+   "model_paths": [
+    "examples/sushi_dbt/packages/customers/models"
+   ],
+   "commits_on_model_paths": 2,
+   "first_commit": "2023-03-09T13:26:35",
+   "last_commit": "2023-04-03T20:11:40"
+  },
+  {
+   "config": "examples/multi_dbt/bronze/dbt_project.yml",
+   "name": "bronze",
+   "model_paths": [
+    "examples/multi_dbt/bronze/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-02-29T08:43:42",
+   "last_commit": "2024-02-29T08:43:42"
+  },
+  {
+   "config": "examples/multi_dbt/silver/dbt_project.yml",
+   "name": "silver",
+   "model_paths": [
+    "examples/multi_dbt/silver/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-02-29T08:43:42",
+   "last_commit": "2024-02-29T08:43:42"
+  },
+  {
+   "config": "examples/multi_hybrid/dbt_repo/dbt_project.yml",
+   "name": "dbt_repo",
+   "model_paths": [
+    "examples/multi_hybrid/dbt_repo/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-09-17T19:22:42",
+   "last_commit": "2024-09-17T19:22:42"
+  },
+  {
+   "config": "tests/fixtures/dbt/jaffle_shop_duckdb/dbt_project.yml",
+   "name": "jaffle_shop",
+   "model_paths": [
+    "tests/fixtures/dbt/jaffle_shop_duckdb/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2025-09-23T15:23:13",
+   "last_commit": "2025-09-23T15:23:13"
+  },
+  {
+   "config": "tests/fixtures/dbt/sushi_test/packages/my_package/dbt_project.yml",
+   "name": "my_project",
+   "model_paths": [
+    "tests/fixtures/dbt/sushi_test/packages/my_package/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-07-22T20:30:23",
+   "last_commit": "2026-07-22T20:30:23"
+  },
+  {
+   "config": "tests/fixtures/dbt/empty_project/dbt_project.yml",
+   "name": "empty_project",
+   "model_paths": [
+    "tests/fixtures/dbt/empty_project/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": "tests/fixtures/dbt/sushi_test/packages/my_macros/dbt_project.yml",
+   "name": "my_macros",
+   "model_paths": [
+    "tests/fixtures/dbt/sushi_test/packages/my_macros/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 11,
+ "n_commits_touching_models": 35,
+ "history_start": "2023-03-09T13:26:35",
+ "history_end": "2026-07-22T20:30:23",
+ "n_snapshots_planned": 16,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 16,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:21:54Z",
+ "snapshot_shas": [
+  "ecded9d991486e7aa4044beb24c8217c8bf46b32",
+  "e15dceee46b2505fcc8a48afebae43c5051ca10c",
+  "412a9f201ef73052cef16eee5ecef860e2aa1902",
+  "3a03c51776dd517be22918627c9bafb296cb0132",
+  "6c0bfbc1441be2a957e518340bc32ac3f281ce10",
+  "8803c776c8481a20d12c3773e5324752aca34024",
+  "e0f5dcc9f530f327be892ff5b1d5d9afdc45ad74",
+  "b206c2d9b2a3c1e0a5dc94320d97a0bdf4577450",
+  "aa7f7e42005c7f3a699c9647c99422b99a92a033",
+  "df0ec3cca2cfba01e316527d3eedf00df208d334",
+  "7877b064a488f168924a316f702b788f5dc1bc2d",
+  "46f20d7a68355851ff0ab5564cf499e66100c02d",
+  "34dc9fde5214b20f22a0dd6dbeab1a693293aeee",
+  "5ffed107fca598816073d4f916da67db78cf7aae",
+  "b9d0f9147c161897878d13d4d849aa3e442a4507",
+  "d3559f98018bbecf1711bb97134ecabf0d1fcfce"
+ ],
+ "stars": 3233,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

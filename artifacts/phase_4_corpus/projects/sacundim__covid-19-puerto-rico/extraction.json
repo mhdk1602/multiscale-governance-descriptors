@@ -1,0 +1,95 @@
+{
+ "project_id": "sacundim__covid-19-puerto-rico",
+ "repo_url": "https://github.com/sacundim/covid-19-puerto-rico.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:37:53Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "dbb0878d5e424b20ea8342f6e4f230fc922621f1",
+ "default_branch": "master",
+ "model_path_universe": [
+  "aws/athena-dbt/models",
+  "athena-dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "aws/athena-dbt/dbt_project.yml",
+  "name": "covid_19_puerto_rico_etl",
+  "chained_configs": [
+   "aws/athena-dbt/dbt_project.yml",
+   "athena-dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "aws/athena-dbt/models",
+   "athena-dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "aws/athena-dbt/dbt_project.yml",
+   "name": "covid_19_puerto_rico_etl",
+   "model_paths": [
+    "aws/athena-dbt/models"
+   ],
+   "commits_on_model_paths": 156,
+   "first_commit": "2021-10-30T16:32:12",
+   "last_commit": "2023-07-14T11:18:18"
+  },
+  {
+   "config": "athena-dbt/dbt_project.yml",
+   "name": "covid_19_puerto_rico_etl",
+   "model_paths": [
+    "athena-dbt/models"
+   ],
+   "commits_on_model_paths": 26,
+   "first_commit": "2023-07-15T22:15:11",
+   "last_commit": "2024-09-03T10:27:45"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 195,
+ "history_start": "2021-10-30T16:32:12",
+ "history_end": "2024-09-03T10:27:45",
+ "n_snapshots_planned": 27,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 27,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:40:27Z",
+ "snapshot_shas": [
+  "f93a449c947c3217e8953dd1b6787602eb219f97",
+  "ff7ba4676b175a4f5b40fe9e3fbc629e92d4cc99",
+  "3de624e0d426f8e5a7c8d28bf47ac3b6a2090adb",
+  "890339a22efbea448f8dc37cf1adc02b6033fafd",
+  "4d0057f9273c651323595f55c5241c829adbb840",
+  "29f86c85fe663af6feb01936a96836e57a7db62a",
+  "a215b6ed53fd60a570c3d157f713cfaf4a165ddb",
+  "72cb5be44346e8e3fcdafa064b6436ed1a2ec8dd",
+  "2cbcba636a8d94702278a7a164de8f86bf37db2b",
+  "c5eb30bea41597ababad181b3c127407e6d24564",
+  "2aa686a00f61727c8c47ced0d07abb0418fde4d4",
+  "6021790ab859797278c5f90a2a516dee436a6813",
+  "5dd5b9e02ec60fefb9b5d0267346ba1201199035",
+  "c370ad7c4eac64b195c25d0f4218ff6bdeda49ef",
+  "4931d3f5c8214deb0b885650685aafd9521a9982",
+  "3558f41da9841f662dccdbfee8078c706ff09aaa",
+  "83c438c5c0686a737b7ffd7e08f4d234bdd948f8",
+  "97e992f91e75afb21d8dbfb4fb6c2ed1c06dbe8a",
+  "61a1a7bfac37d97446866acb2df7cafc04d02e3d",
+  "b8c35120ade14dbcc269b70356a9426385c85da5",
+  "6902149104a535fd04ab33b88d1f03ab53672f18",
+  "3969dbad0af9dea0bebd6510dc4922a8ce00bb67",
+  "43edd4870a8c8f2ad96886f671ccca414655a54f",
+  "d3ea383e788ab2aab4df7813f1634e6a7ec0002a",
+  "ec53c2c1301875bc8cbfc876046f4c2bc5ac78e1",
+  "573de46236b10f6490a80dae4d27b394fca22258",
+  "dbb0878d5e424b20ea8342f6e4f230fc922621f1"
+ ],
+ "stars": 13,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

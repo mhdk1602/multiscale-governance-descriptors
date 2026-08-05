@@ -1,0 +1,121 @@
+{
+ "project_id": "DITP-pilotage__pilote-2",
+ "repo_url": "https://github.com/DITP-pilotage/pilote-2.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:17:37Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "37852643075338e0e76599a6d81af09c2b7836cc",
+ "default_branch": "dev",
+ "model_path_universe": [
+  "data_management/data_factory/models",
+  "data_management/models",
+  "apps/pilote-ppg-data-management/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "data_management/data_factory/dbt_project.yml",
+  "name": "ditp_ppg_dbt",
+  "chained_configs": [
+   "data_management/data_factory/dbt_project.yml",
+   "data_management/dbt_project.yml",
+   "apps/pilote-ppg-data-management/dbt_project.yml"
+  ],
+  "n_configs_chained": 3,
+  "model_paths": [
+   "data_management/data_factory/models",
+   "data_management/models",
+   "apps/pilote-ppg-data-management/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "data_management/data_factory/dbt_project.yml",
+   "name": "ditp_ppg_dbt",
+   "model_paths": [
+    "data_management/data_factory/models"
+   ],
+   "commits_on_model_paths": 375,
+   "first_commit": "2023-03-24T11:02:27",
+   "last_commit": "2024-10-29T11:13:16"
+  },
+  {
+   "config": "data_management/dbt_project.yml",
+   "name": "ditp_ppg_dbt",
+   "model_paths": [
+    "data_management/models"
+   ],
+   "commits_on_model_paths": 118,
+   "first_commit": "2024-10-31T14:36:27",
+   "last_commit": "2026-04-16T12:45:42"
+  },
+  {
+   "config": "apps/pilote-ppg-data-management/dbt_project.yml",
+   "name": "ditp_ppg_dbt",
+   "model_paths": [
+    "apps/pilote-ppg-data-management/models"
+   ],
+   "commits_on_model_paths": 6,
+   "first_commit": "2026-04-20T19:04:40",
+   "last_commit": "2026-07-29T15:27:46"
+  }
+ ],
+ "n_dbt_projects_seen": 3,
+ "n_commits_touching_models": 486,
+ "history_start": "2023-03-24T11:02:27",
+ "history_end": "2026-07-29T15:27:46",
+ "n_snapshots_planned": 40,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 40,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:21:35Z",
+ "snapshot_shas": [
+  "45a282b07542e81eee214269ac80068a71e34df6",
+  "2f966ff1be68d405332b3a52a26a657892051656",
+  "9db1d98578485dfd6215c2cb8e438cb34f939bbb",
+  "11fd9089436efc1b076cc6b46a7d9faa7c3b6c00",
+  "fb0bdfcd35785ce9455aa5e0e456d9e85a29118a",
+  "44d2ad79dd05c4751c123796c1f1de835deb8057",
+  "a3fe7f9b038aed247aeaec14a033429187601528",
+  "090ee4dc6223dfded6b6bbcd120394a5d118156a",
+  "d2308bcca2a3c7e5f0d6ee768c4bdcef61a4447b",
+  "9bc693c0f8aba6ece82f70856db4df41635bcb7d",
+  "a8e87daabb79cbc0e7e78c281adff910595a635c",
+  "ea45950fb56968274ca3b0dd388150366831d980",
+  "ee93a5fe6cb047a866b8e2b5aade39c7ff4f9cfb",
+  "37cadcf2d12409842e858d3420086c30de3becec",
+  "5cb6986253019c33bca9bbe82287786e31555bc0",
+  "6328e64d4640b45f5ca9098f5ef9ce4ca3903d09",
+  "dce3bb289ee36520e9a23f1fa4820a7a111f75e9",
+  "e0194b07a68830736cc28971174e7764e8823adb",
+  "e9315a9f666f5c5fb534962c8c897f2df761fc42",
+  "a4a2cbcbc8b9e7fcb413613daa131b1eca827919",
+  "e24dbf6adc6c290763933a845f60fd66af5029f2",
+  "34b022f4191d316fa3c6171678c3e582191b6a50",
+  "270b1bc1de2cdcb6903f49b0800f4f19d92523d3",
+  "eb5ad5ee65b554b37fa4340f894b5dcdc85ba930",
+  "f4eeddafc251edf3dbb34619529302dfcfa7b34d",
+  "1393f6b2f124840e2d8444a06a792be954658ca5",
+  "c457ca205ce0ebbd6ebd9b61c020d8e49baf74d9",
+  "c95d4e261c840c8bb088c78705f303007aae20fc",
+  "e2949a224b5c9546f2aa9e40608df0b4095799ae",
+  "999e6b7cfe81ade4bd9df53997413fc2a75b1dc1",
+  "019be8ef8a08933af28e737b41671ee37aef6d0e",
+  "d23d05d05473e21f790ab0a8d2e6d30ab8b76c70",
+  "98bf2656fe9df542ac0d0b190b83025e18950929",
+  "59679dc516ca991b6be4948af7c14bf936b98f4f",
+  "3f2b8f6c9c114ab82aa13f2fc901f62be3bee803",
+  "ccd3e2f0a91971b5a9f20bbd43184311015d1b54",
+  "f777098bb14b339f8cb5c296dc7deec204acaeb6",
+  "0e1c9874c2ba57f8a57aa486329fda13a7dc92d9",
+  "9c8b72f7dfea8821be0c32fef1b1a7a0862562f7",
+  "cf6553bd2480b7e791c7167ec8bb6121d072da2e"
+ ],
+ "stars": 8,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

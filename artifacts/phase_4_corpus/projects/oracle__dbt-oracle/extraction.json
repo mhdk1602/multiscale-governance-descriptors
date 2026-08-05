@@ -1,0 +1,89 @@
+{
+ "project_id": "oracle__dbt-oracle",
+ "repo_url": "https://github.com/oracle/dbt-oracle.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:36:16Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "bfacc38f17291253650c4bb1dbff7472fe342c7a",
+ "default_branch": "main",
+ "model_path_universe": [
+  "dbt_adbs_test_project/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_adbs_test_project/dbt_project.yml",
+  "name": "dbt_adbs_test_project",
+  "chained_configs": [
+   "dbt_adbs_test_project/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "dbt_adbs_test_project/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_adbs_test_project/dbt_project.yml",
+   "name": "dbt_adbs_test_project",
+   "model_paths": [
+    "dbt_adbs_test_project/models"
+   ],
+   "commits_on_model_paths": 36,
+   "first_commit": "2022-04-14T06:46:40",
+   "last_commit": "2026-08-03T17:44:52"
+  },
+  {
+   "config": "dbt/include/oracle/dbt_project.yml",
+   "name": "dbt_oracle",
+   "model_paths": [
+    "dbt/include/oracle/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 36,
+ "history_start": "2022-04-14T06:46:40",
+ "history_end": "2026-08-03T17:44:52",
+ "n_snapshots_planned": 23,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 23,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:37:47Z",
+ "snapshot_shas": [
+  "7348c2b21883c156583adc8282876c7a993eb13d",
+  "8f68568f9edf1f2bafd7b6e593eeb33644fff97a",
+  "cf6aab0561e61346f46a8559c1141eaff68ca3f1",
+  "cbba6d338ed2b8eca4dce96cdf8de7ba0519a6de",
+  "63701c788548856f41a6f1593e2aad21d40b4e34",
+  "8612b4a0352305cd9355e4824b8df838824bd7b5",
+  "c58329d348c9a0ccfc7cf78318cd631fa9cb4ac1",
+  "4684a66739b7c935f1a6c0ccd52eed7d83b867db",
+  "d4ab58f1003fa3131dacbd2c67532a60e3a4a6ae",
+  "6c6d66dff78c51558f0e5dbbcbcbf6eb2a750fbb",
+  "a2856e74b8c92062b03b1fb197166b7acae530c8",
+  "7f85e711bf9ef34d1217589dccafb142b4a372f3",
+  "f7569d4d31e32396e178af340c059f990245d35b",
+  "12397ea7daefae2ddd5b9bfb8f0c0e041dd79165",
+  "42687955cf692a4b8477f305b99d5cb9a0ab7176",
+  "55830eb94e57fd6c5b751d1808f3068fcc9fd40b",
+  "72e970bcce5f9d8787a46c8929bdb5c9e18c8245",
+  "03f260ebbfc61beecd41328fcecf2f355a3d82de",
+  "a4bb867aa6c46bf04d0c201cf080b8b625a6949d",
+  "9db39a3c9575454cf9ea51449f671ccf1eaafc35",
+  "0b77a8ab0e59e075e8b1cac01853289dfa25e566",
+  "c80af1286ce4bc9fbbdfd1e779d03538f9b6a984",
+  "5de72fbddce98a7ed389f8c47e7d41162e10eeff"
+ ],
+ "stars": 66,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

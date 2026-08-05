@@ -1,0 +1,103 @@
+{
+ "project_id": "jyablonski__nba_elt_dbt",
+ "repo_url": "https://github.com/jyablonski/nba_elt_dbt.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:35:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "0ccfaed4d647640aec095ab06ec2160a03e77468",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "nba_elt_project",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "nba_elt_project",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 240,
+   "first_commit": "2021-09-21T22:31:52",
+   "last_commit": "2026-07-25T06:35:46"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 240,
+ "history_start": "2021-09-21T22:31:52",
+ "history_end": "2026-07-25T06:35:46",
+ "n_snapshots_planned": 48,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 48,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:38:32Z",
+ "snapshot_shas": [
+  "b8ef87de5b0023f0e5e3995b050bc8c5c4a39fa3",
+  "f777e357da1fd8f4bd1fcaf215b942bd002de6c9",
+  "12fd7f2a7b36852196e5adb58e431ec0d772a5db",
+  "079ab769e5feaad9f6867a4263c16a8c5e79e3e3",
+  "96e958dbd4a5bc3c17e636b837ad59b839a27c63",
+  "45b4786d26a6a4173cee665a37ca787a7efa2671",
+  "3f114657913be54ee2d88b912aa56aa6614612af",
+  "67b7e0138c361167988cf9c110c6dee055dd8642",
+  "08cecd61b0a43247c0126d0663a75a3fe2069b95",
+  "1f91499d07491af838e4f6117f174264f526d626",
+  "7c62f5dbb28137d887971db871e99e4a7a99d352",
+  "0b0d2f72568cd12aef6b5f7cf6f3668449d88267",
+  "88406443116832aaaf3184789815b45ca66b7d55",
+  "10e915634ec1980573746fc6dc96bb2ce691a4a7",
+  "8eda9c02da2e5805ad1deca046ebfe24470405f6",
+  "ed3c3f0b17aef729b725b83e36178489fab97d46",
+  "e29eba05276cfcb0e25be2ef6b2e3ed987783570",
+  "e58c138e813dc957c10d3954efc0d08cc850ac20",
+  "c53d858933bc6c026e8f503e64428e73a3ce07c6",
+  "93451b0571cabcf3203345993609d6b906e79a69",
+  "e177379c8e2762912e77e489956b0b007d990ee5",
+  "38aacfad5f53a62f61c9f62a56466c3d3dc13ab6",
+  "a6516938792242ad6fab62bb39dafabf65474a9e",
+  "21956cfd4d2690322d48771295c512e73b4c615f",
+  "8c60162c8fac6eb1754943b909e5d4053f9d6c69",
+  "454d9d5f4b3eba2e1a2c656d250b81928221e0aa",
+  "c64e42f2a2640cbb01fb37aaa38556025cdc12ce",
+  "66f77b17ec10a5a32dadf2e2204889a4a0e7c338",
+  "6a69d5c56e9a43f1aecc88b9f621088a4975994f",
+  "98225cee2798243afd97b495e079fd09b13250bc",
+  "b0f37572b2121e27152dc3b190471abd2b9decde",
+  "9e49eed552b09f9ee3c989aa85cc7fd3b96d97d8",
+  "27832bec7a4b52335c01f818b26440fe7159539a",
+  "f5670324f228bdd21025c4854b3d102939d0c295",
+  "71995903d801891d145a693b5c695ca543f7c1a3",
+  "8e356b56692857ea28615e26c5e929d9654e9be9",
+  "db84701086b36d63ddf66f983ab6702f9723ddbc",
+  "631bb88928d28f2c8cd3f345beb854f4081eaf90",
+  "7ba7c2b874f185d300213a5ece2e28af7be23a3c",
+  "9e8fb89ac883ad5f6866d0333e8f65c8e7019555",
+  "da74176e3d278fce2e9b2fd580b416ec1019ee5f",
+  "5a82de4a63f0abf9a1a774d1448d502f8dc18025",
+  "ffa0529e682076f306e85ac784187d33d8073c6a",
+  "2c2a6b73e80242425d155ead30de810b82384542",
+  "911c7591429710efb1618301d00b590541b36cc3",
+  "a3cfb1e2c7a5096219d246d36f447e89618b1539",
+  "43098798bc6c2832bb87fcb937e8d26c9e11cfa1",
+  "0ccfaed4d647640aec095ab06ec2160a03e77468"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

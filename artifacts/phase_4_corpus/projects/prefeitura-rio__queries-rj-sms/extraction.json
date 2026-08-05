@@ -1,0 +1,95 @@
+{
+ "project_id": "prefeitura-rio__queries-rj-sms",
+ "repo_url": "https://github.com/prefeitura-rio/queries-rj-sms.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:37:11Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "381203cfabd2d642978f3e09fef3c9ab1fd5fb03",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "rj_sms",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "rj_sms",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 3050,
+   "first_commit": "2022-10-18T16:32:24",
+   "last_commit": "2026-08-03T10:52:57"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 3050,
+ "history_start": "2022-10-18T16:32:24",
+ "history_end": "2026-08-03T10:52:57",
+ "n_snapshots_planned": 39,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 39,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:20Z",
+ "snapshot_shas": [
+  "d9e23d694a88142439427a22918f07389b3ddc85",
+  "ca386af9ab8a1d35fb2fb53dd2ced49c1e2d0bb0",
+  "a5d78ecc471a7218ba9770f54c8d8d9bff6ef3a5",
+  "769a40a86625ea1d005fa5e6567020bf5a283d79",
+  "d70ce8d6e8ddfbca9aaabd9a51a19f01f573fda9",
+  "98d020efbc7a302d338b44154a8521290caed502",
+  "55889bc6225a90ad40b3b70c7fe5068c5a346537",
+  "99a2d0f1bfd0c589c749c7b8343e5e431432dcbd",
+  "e5c6e9b7482a681f03a437c1f337e31777aee1f2",
+  "755c85ba53dfe5dacf3ae423f918076e66f45af9",
+  "30d445d23f0e8a7a2df645a87882bdf979b21adf",
+  "15f7b41289cbbaadcacf82b25862bd3422078a6d",
+  "4370a69e75fd13163e204f9d5c9fdaf4da8e0ca6",
+  "1ab9cb7f60adb2c65772cee056c965866090b109",
+  "7503c02b1d05b1ecfdd997626d82ee330c0d5470",
+  "9b5ad7404ed34e689075748964da852c3f3754e7",
+  "97b34e5bf895e58c4b038804ebab8ce5167de54f",
+  "793f16b0b6196cf87fcf6d17ca63a2287bf0c15e",
+  "ead7a631da148160e9fce848add5950955302031",
+  "f5ef0df3134bf7885d932c6099a809984ba1e6b8",
+  "7602af2f9eed69b8f5914b7a664fdb0ee4c7bbe0",
+  "2c4739bb4014a939b38295e15038b58dab558669",
+  "982d5132ba5cda5d41d7f37c5871364569b8f610",
+  "43e5dbfcfd6c07b86eccde4be4a2d28a89edf8d7",
+  "e4cf733836d4e535b554532c69c35fa9fcaeff86",
+  "7eea51dfe3e06203912a996eb8eded5e8e8656fb",
+  "f83576146dfe493e3e063b2f1111a58075557e2a",
+  "44aa14ce10b8d5fbfb9e9ee400a10bcda9749bfa",
+  "946437bb9c1807a0c2293a1a60e3e20bb99d8b41",
+  "b3082601fdc264b630a776449c90f832a5289e09",
+  "f8e1418e6326f04aed680ed593fc1ae894fa349e",
+  "224e966c4e125a3c6c9e03986dcb2e5563b362ea",
+  "7c17632e5740c25e59a8b6a10779274038ab15ea",
+  "e4e623af308f90f7a58dcc5fd0440074b1c9bb80",
+  "08d9f0976081dd5cd25f0f87d0f59bd6b89d797e",
+  "b93dad6e71b03864ef3c93e79cd0b93076d30aea",
+  "764544e72282ae9ae87564ec32ac66c5e6258c8c",
+  "501f5664f55dde458fcd4af068d32597884f2704",
+  "241ef134b3a8ae5aff5e560b7324910f159b6d83"
+ ],
+ "stars": 8,
+ "license": null,
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

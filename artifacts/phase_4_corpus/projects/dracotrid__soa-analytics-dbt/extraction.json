@@ -1,0 +1,71 @@
+{
+ "project_id": "dracotrid__soa-analytics-dbt",
+ "repo_url": "https://github.com/dracotrid/soa-analytics-dbt.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:25:42Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "e59c0c965da5316c18cdc7153c59343b1aa01bcc",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "soa",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "soa",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 97,
+   "first_commit": "2025-04-22T10:16:34",
+   "last_commit": "2026-08-03T18:11:53"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 97,
+ "history_start": "2025-04-22T10:16:34",
+ "history_end": "2026-08-03T18:11:53",
+ "n_snapshots_planned": 16,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 16,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:27:23Z",
+ "snapshot_shas": [
+  "18d50f3c97f7c02665e10329a2af841da8134e94",
+  "28afd79d23ac4b00e7243ceda7351a0aa37a8103",
+  "6aaba4bff9401178849e40aa6095e47d6050d22b",
+  "ab9516284582fda32b4b8b36e09875d467770915",
+  "ee8b6ab7f4e684b9879a5d058263bc6ea8d1156b",
+  "6a7c431f8d6ceb295c4110d079b5bf4bf0d7bd24",
+  "e18852851ff3addc59429a53de57b38207c942b6",
+  "0892e85f1a6bd0603c8a1da87a09064821ed47f9",
+  "feec13656ccdba85106ee1c73e4b40e11cd1876c",
+  "e96966bc6a70921df6007d9e7b2a65d007299e11",
+  "a8e46d0bc6eafdfcaade4ac70ccbfc0af9e3c197",
+  "a747abfc9b98c60b01f45e25c7c08d07730646ab",
+  "20eb80ffa7965456db05fe93198a13e61865e764",
+  "62897c74b214dce6849498b9f8b3dd021c747273",
+  "a0a03e4b42f458ab2007bd6ba75ca5ef65d9a729",
+  "e59c0c965da5316c18cdc7153c59343b1aa01bcc"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

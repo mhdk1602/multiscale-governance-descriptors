@@ -1,0 +1,89 @@
+{
+ "project_id": "pass-culture__data-gcp",
+ "repo_url": "https://github.com/pass-culture/data-gcp.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:36:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "98e88a9d4700857b5652ed17a498e0c8d7215233",
+ "default_branch": "master",
+ "model_path_universe": [
+  "orchestration/dags/data_gcp_dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "orchestration/dags/data_gcp_dbt/dbt_project.yml",
+  "name": "data_gcp_dbt",
+  "chained_configs": [
+   "orchestration/dags/data_gcp_dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "orchestration/dags/data_gcp_dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "orchestration/dags/data_gcp_dbt/dbt_project.yml",
+   "name": "data_gcp_dbt",
+   "model_paths": [
+    "orchestration/dags/data_gcp_dbt/models"
+   ],
+   "commits_on_model_paths": 1054,
+   "first_commit": "2023-11-15T11:49:42",
+   "last_commit": "2026-08-03T10:56:26"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 1054,
+ "history_start": "2023-11-15T11:49:42",
+ "history_end": "2026-08-03T10:56:26",
+ "n_snapshots_planned": 34,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 34,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:38:34Z",
+ "snapshot_shas": [
+  "456302f603835870dec4a51366551fdb1fd43a0f",
+  "a31dfdb0a83ce59cab2eda2523fe3592ac21c286",
+  "c8cf14e6021984380e0f139725f7671a460b22e7",
+  "9839646310dbb698ac8eb46d1f5cdf455e9150f0",
+  "ae68fc67e3ccaed65853f6c0ecf01416aec72b0b",
+  "2095d00d7760fc406330de338d6a39b8bd1f4eeb",
+  "97db91b23a24ec62ec966e7d7177e9dd7eb9c560",
+  "61fd2c741d3abb032c2db46ea3414b010211d23f",
+  "eb6afcacebf837d30a236bf57676f3a073ba8866",
+  "d7a2e44d3a8602e0367f7f1f0ce41413dcd7afe0",
+  "0b18eee0edc0826aa0ece71fbe52b53614cc9ee8",
+  "c29bb169cda367ea9a2959f6809ab9c185f4351b",
+  "f55e88ee8cb149bbf7a813144bb1b25b445ebc50",
+  "2e1f48c5941c430005ae7ca9b7c29788c2aa9cb3",
+  "6a03b5d418364b97271103aec013e859812f2c90",
+  "20c53e9cf1c9d0742897505e507709414c05b429",
+  "212135658fa748ffe4f9f4a0d8ebba7b8b2dc1c6",
+  "a2fd5f7c4bc459d00a7a2514dbe6574ad9fabba2",
+  "5296fa148bbb123ebe65d1f070b6fc3fb86a4318",
+  "a6bddc2a942dc28e91fcbfd12fe6343b4ff916ee",
+  "e7cbccded3c6fe7507359cb597f248eed0fee7aa",
+  "a46ee525f82e6daf61987abe6543cfc08e13e84b",
+  "684f0d67e1fe5013dbbd885156388fc37f9f8ea5",
+  "7c3a93f7ce72cb5cd4885b9705b31401718d1f80",
+  "b82332fd202d12293ff781e1d629e527d9001cb1",
+  "84b12bef14021561045a74cbdb19944a46ab8234",
+  "f89321aed9badeee8f0f79d49f9c12a415d766e1",
+  "d61824570285312746e2585a2a4377bf6bc03afb",
+  "a48388ae10d6c4fc34645825b81d05242f395501",
+  "07637c18304d3225d81ed63a4846f04cd170a020",
+  "036d44f034ea152524473e36fe753130fe8428cf",
+  "404693423b421aa8e5f802a3dd1e361f2a5327c7",
+  "6331b9456ef4c161fba4c568d3b6c059258bd4b9",
+  "7b19cad7a7623d4ba61ca472f084141eaacec869"
+ ],
+ "stars": 7,
+ "license": "MPL-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "project_id": "fivetran__dbt_apple_search_ads_source",
+ "repo_url": "https://github.com/fivetran/dbt_apple_search_ads_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:27:22Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "23cc16cb77661800704ab1265b3856395a57c096",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "apple_search_ads_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "apple_search_ads_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 49,
+   "first_commit": "2021-12-22T15:16:12",
+   "last_commit": "2025-06-25T14:33:31"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 49,
+ "history_start": "2021-12-22T15:16:12",
+ "history_end": "2025-06-25T14:33:31",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:28:56Z",
+ "snapshot_shas": [
+  "83e4dda028aaca4e95f8041cd71205e964c6aff9",
+  "16f55ae3d9dd585c6a5dad70b5ccb57108c82903",
+  "704d2d97f0375183cce70978cfd4a4c2c206c402",
+  "16adb70700ad9578c1d6f1dbf96870db6ca5c0ac",
+  "101025ba95b1fc8751f0de2840e70f60095e5f30",
+  "8e2d3506357a11beb1d66f50f307bffae4a06d1a",
+  "0d0cfb56c3afa9349a3e44d6e9e4489fd8c8b8c1",
+  "5d943ec624c02b042115c4ef0aef6603dd486c16",
+  "d7bdd1a4259281eaa29474ed6f42d7929169f341",
+  "a62eaf84338a172d2304919f1ce81036eaa93f82",
+  "dd08a563bbbe6b727bc927a87586e75fce9123ae",
+  "3f726ac122111bb887497320f352f359880a2244"
+ ],
+ "stars": 3,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

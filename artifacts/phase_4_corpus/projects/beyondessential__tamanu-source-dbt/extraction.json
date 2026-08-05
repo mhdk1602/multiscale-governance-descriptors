@@ -1,0 +1,97 @@
+{
+ "project_id": "beyondessential__tamanu-source-dbt",
+ "repo_url": "https://github.com/beyondessential/tamanu-source-dbt.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:21:59Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "partial",
+ "error": "4 of 25 snapshots failed",
+ "head_sha": "256986f3f259c2dafe151c67c5ffc8ff838bdbe5",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "tamanu_source_dbt",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "tamanu_source_dbt",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 254,
+   "first_commit": "2023-07-28T10:18:24",
+   "last_commit": "2026-08-02T07:47:50"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 254,
+ "history_start": "2023-07-28T10:18:24",
+ "history_end": "2026-08-02T07:47:50",
+ "n_snapshots_planned": 25,
+ "model_paths_stable": true,
+ "snapshot_errors": [
+  {
+   "sha": "2b67b5ece8c69ac5ec917b4c309f2164eefe1e02",
+   "date": "2023-08-24T17:06:06",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "39f9a64fa14ecda81ada8be37d4dabcfdc877c18",
+   "date": "2023-11-21T14:56:01",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "bdb65817c47aaecab3abc0bc330c366189cb6620",
+   "date": "2023-12-12T12:27:53",
+   "reason": "no model SQL at this commit"
+  },
+  {
+   "sha": "3a547eb75cc510eab35a87e46c1b1a63243d711f",
+   "date": "2024-06-14T10:46:23",
+   "reason": "no model SQL at this commit"
+  }
+ ],
+ "n_snapshots": 21,
+ "snapshot_coverage": 0.84,
+ "extraction_finished_utc": "2026-08-05T02:23:15Z",
+ "snapshot_shas": [
+  "61fe899ac24aa4e0952a9d9f528b20d1f297dc08",
+  "ee2d717e9bc1ce848d1528b5056be66ed46aaf9e",
+  "e216105575cbf8840000251f0f0941fb82d7a9d8",
+  "f0a119539620b3fb67cac2ef29af77fecbb8d7e7",
+  "10878b01255c84bb6502d2f50309fefc682dc609",
+  "57339215e70bf0eb0564e07eff29a6d2e517ec4b",
+  "1ef3099467eeca259baae9b2b2672b185817cb50",
+  "c4f19b674ce9a680be89bc22cedd9f82b1d2482b",
+  "d3db747ed127fa46185ba23186349768b1c0cd7d",
+  "fbad13b31a6c57b1ab36a30267133f19ec67a759",
+  "0e1cf7482e778e31455deb070c8b0aa7af5a3c77",
+  "6d7cf011dfb7afe34d50ac8d8f4c4b60efbc0f37",
+  "96c3962aaf5f197525a14f64593e6b1e55e2a9be",
+  "7a10ebe2ec31b546484ad070791931955d2cdd4d",
+  "8723875ba0a50257e2049db0fd2c50d39cc72a6d",
+  "8ddea408ba406f6e0e3a9d16a5aea5079dd34e6c",
+  "53b4de2b853f1f40dd9d54dc60328335077d7e62",
+  "28de0d7b054142fce2b431fe07c5d236475eae01",
+  "ae4618f78c6accf3fc1e2c20535bd70c33049419",
+  "c6d4facab9834f2652461a16e2fd0c5dbc3af83c",
+  "d873d31daa492e424f65a91ea3c240c3b6029b63"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

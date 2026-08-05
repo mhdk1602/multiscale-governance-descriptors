@@ -1,0 +1,69 @@
+{
+ "project_id": "snowplow__dbt-snowplow-unified",
+ "repo_url": "https://github.com/snowplow/dbt-snowplow-unified.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "6df7562dbc963d13d58f75d39ca2e3ab2de7d41b",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "snowplow_unified",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "snowplow_unified",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 36,
+   "first_commit": "2023-09-12T11:29:34",
+   "last_commit": "2026-01-19T15:54:21"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 36,
+ "history_start": "2023-09-12T11:29:34",
+ "history_end": "2026-01-19T15:54:21",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:15Z",
+ "snapshot_shas": [
+  "a30bf3547a78cbfa2d50c3bfffc739b333b1d172",
+  "5a3ad14e331f76306bed91a7736ccaf265c99412",
+  "36bbde78aaa41cf1018ec62fbd135ea7425b0d2d",
+  "451ed1fd5650d6865d63c702451b951cf9deb95a",
+  "716e095497a84788a5c36d2dda267c42a08ddb67",
+  "fd7fee9491f04bfb64f2eeefda8fbdc4ed0b88ac",
+  "aaa0edb6c9302d7c1de5c586a89066a5fbe3fdee",
+  "391c615799e995e7c92076c9ca1a1951bc8a7dcd",
+  "dbce4f1bfe6da8ccb1b1b1934c367eff558da0db",
+  "dd539fcc54640092d333994141b13ac582e8391b",
+  "32c292c2657a73bea4b8e5dd9e0c037aa1b1d9b1",
+  "c8760f7dc9cd3cca6fd666f67c80c844e1e06dea",
+  "1ddaa98aa26d04f341305bbea8d19ea7d2d67eeb",
+  "d55fb7923cc0d70b84b9d93225e2709a80ca340f"
+ ],
+ "stars": 23,
+ "license": "NOASSERTION",
+ "strata": [
+  "S3_code"
+ ]
+}

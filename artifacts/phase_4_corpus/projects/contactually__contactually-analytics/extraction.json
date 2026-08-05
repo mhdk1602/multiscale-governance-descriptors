@@ -1,0 +1,75 @@
+{
+ "project_id": "contactually__contactually-analytics",
+ "repo_url": "https://github.com/contactually/contactually-analytics.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "73912f9e91c1bfec4fc2aef04794daf7b2729ce5",
+ "default_branch": "develop",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "Contactually",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "Contactually",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 154,
+   "first_commit": "2016-07-27T18:36:59",
+   "last_commit": "2019-01-29T14:24:23"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 154,
+ "history_start": "2016-07-27T18:36:59",
+ "history_end": "2019-01-29T14:24:23",
+ "n_snapshots_planned": 20,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 20,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:26:14Z",
+ "snapshot_shas": [
+  "ac376f26f054e74375aa2094b9dcd124361e22dc",
+  "d9cb3badd28ca3d053862669004bb7640a3c64ae",
+  "15053bed7bc46ad4c84adb27c22a0c9c9c888c4e",
+  "c5a62bdd2e421ff7e3b16107b1545734f7f72671",
+  "4ba2b0959970a1404f58c9c728fd64be0babce29",
+  "605223dbc22f65b07e7faa8be18687f144fd136e",
+  "7fdbac9857f78dbe113509ffac864fa3b543b65a",
+  "51224a20910b8929a0a849250c052467661fd6c2",
+  "76bf2c9640e2fc6689aacc394328564394ec0533",
+  "834021e701b99155b7fc14dcf5c3992a1928cca3",
+  "dea0659098f7d813ece256bb2274651db3d43dc3",
+  "1ce83c6757d113513b0a6572c00e072181aa9e34",
+  "92713fef3361495d8c0b3fd167339103e3aa86f9",
+  "45b1bdc0c4feb4976010c4b462a7dbbdec10b27a",
+  "ae2be165896f512494eee5076a015bd63df62486",
+  "79328750d95761e5f027b74cf33c6654017086c2",
+  "ece5cf2f9839acf828428ee0b895951a1c4d29b6",
+  "2ca2d853d0db6e95e08ab3ca284e044c35200736",
+  "f6ddf3e2db769a0866be95bc939171b9ab9f4f7d",
+  "ee42a5e98e93b64e35050c39e5d68f593f774e13"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

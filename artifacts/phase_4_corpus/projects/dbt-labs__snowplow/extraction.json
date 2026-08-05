@@ -1,0 +1,86 @@
+{
+ "project_id": "dbt-labs__snowplow",
+ "repo_url": "https://github.com/dbt-labs/snowplow.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:24:28Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "82d63829766e4c2ef0dfa64f0a4acda563241441",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "snowplow",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "snowplow",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 103,
+   "first_commit": "2016-07-27T11:40:57",
+   "last_commit": "2022-12-01T22:27:07"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 103,
+ "history_start": "2016-07-27T11:40:57",
+ "history_end": "2022-12-01T22:27:07",
+ "n_snapshots_planned": 31,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 31,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:27:14Z",
+ "snapshot_shas": [
+  "9d98d096193679574bb92623b40bef5194ee14fe",
+  "bf685a8d70fee1614a77a988065b6e84b22d4f83",
+  "3b366ceab727252306b3260351b535a20c4ea14f",
+  "161c4e2b21a9cf7d131a93aaffde5637f27d8c52",
+  "5c5de490da077b049002fa7d511c3479a66cdedf",
+  "88b6488d913ac2c2d7953f8c89977e3254ecbdaa",
+  "4bf117503e7d5a6558fa87e1d9c07540b774331a",
+  "37f1805440f5a88e7e7cbd7fcddf617dcf0c187f",
+  "1e3331bf90a281823b73fc0c9605b34fc3df71cf",
+  "50bb2ddd3d666bfb52517960ed215b39b7eb43a6",
+  "2f53fa39135d86613921b412b0e23326863965d8",
+  "93d303f8f07f9d07e6a409af86a7370daf23ae74",
+  "241bcacb55dc16b7b8e82da09d256363c8fb247f",
+  "5000d564ad450dc55c21232c6fb36f9d935316b3",
+  "f77428b270d28c31c776ecd41b5825c96b1521e0",
+  "c26753bffeefbea37ed9483fdc3699ebef021682",
+  "5c922261eed9ca5ab19b65ecbea9ecf00eafe79d",
+  "ced0cc78507dadb67fbabeb7665c6a9ae0b7fbda",
+  "a68efcbb23c7214cb60645023eaa2f84af2bc037",
+  "b0a92b9487644b9e880ba9aa758966959fa40db7",
+  "c05b4d17da77ab515e5daa6ec9256c5d41011a13",
+  "70b748314b472cc07eb61575ee6d73950139ca82",
+  "6b1a93aa52a871e3529f0437c7325d0d771cb04c",
+  "a78e1fc9b549c2446f241f136546615614bb1c04",
+  "d814562921ed7af2e31939dd2b54a6feebf79920",
+  "ba8a6629bb3f2dafe5df12219787809dd219bdaf",
+  "ec0e95c1ef756f9904ef6e019bcbed403eb7c33c",
+  "3795d06f365213ca4930d2447bd1580cb7031557",
+  "7604394034ba0f6268915d815b8676a4ded3db29",
+  "b63a562fb0fd89138f00e5959333bc4e150254e0",
+  "7f231633bc79df9f79cc2696e8014a56357d9902"
+ ],
+ "stars": 131,
+ "license": "Apache-2.0",
+ "strata": [
+  "S3_code"
+ ]
+}

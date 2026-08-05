@@ -1,0 +1,318 @@
+{
+ "schema_version": "1.0.0",
+ "files": {
+  "snapshots.csv": {
+   "description": "Every snapshot of every included project, one row per project per sampled commit. Identical columns to the per-project projects/<id>/snapshots.csv files.",
+   "primary_key": [
+    "project_id",
+    "sha"
+   ],
+   "fields": [
+    {
+     "name": "project_id",
+     "type": "string",
+     "description": "Stable corpus identifier, GitHub owner and repository joined by a double underscore."
+    },
+    {
+     "name": "date",
+     "type": "ISO-8601 datetime",
+     "description": "Author timestamp of the sampled commit."
+    },
+    {
+     "name": "sha",
+     "type": "string (40 hex)",
+     "description": "Full git commit SHA the snapshot was extracted at."
+    },
+    {
+     "name": "commit_msg",
+     "type": "string",
+     "description": "Commit subject line, truncated to 120 characters."
+    },
+    {
+     "name": "N",
+     "type": "integer",
+     "description": "Nodes in the lineage DAG, one per resolved dbt model."
+    },
+    {
+     "name": "M",
+     "type": "integer",
+     "description": "Directed edges, one per ref() call between two resolved models."
+    },
+    {
+     "name": "too_small",
+     "type": "boolean",
+     "description": "True when N < 5 and the D1-D4 descriptors were skipped."
+    },
+    {
+     "name": "D1_csi",
+     "type": "float [0,1]",
+     "description": "Community stability index. Fraction of consecutive steps in a 15-point Louvain resolution sweep whose partitions differ by NVI < 0.1."
+    },
+    {
+     "name": "D1_n_comm",
+     "type": "integer",
+     "description": "Communities found at Louvain resolution gamma = 1."
+    },
+    {
+     "name": "D2_max_gini",
+     "type": "float [0,1]",
+     "description": "Maximum over depth of the Gini coefficient of the blast-radius distribution."
+    },
+    {
+     "name": "D3_alg_conn",
+     "type": "float >= 0",
+     "description": "Algebraic connectivity, the second-smallest Laplacian eigenvalue of the undirected connected skeleton."
+    },
+    {
+     "name": "D3_norm_gap",
+     "type": "float [0,1]",
+     "description": "Algebraic connectivity divided by the largest Laplacian eigenvalue."
+    },
+    {
+     "name": "D3_fiedler_bim",
+     "type": "float [0,1]",
+     "description": "Bimodality coefficient of the Fiedler vector."
+    },
+    {
+     "name": "D4_cycle_rank_norm",
+     "type": "float >= 0",
+     "description": "Cycle rank (M - N + C) of the undirected skeleton, divided by N."
+    },
+    {
+     "name": "n_components",
+     "type": "integer",
+     "description": "Connected components of the undirected skeleton."
+    },
+    {
+     "name": "giant_component_frac",
+     "type": "float (0,1]",
+     "description": "Largest connected component divided by N. D1 and D3 are computed on the giant component alone, so this says how much of the reported N they describe."
+    },
+    {
+     "name": "isolated_frac",
+     "type": "float [0,1]",
+     "description": "Models with no ref() in either direction, divided by N."
+    },
+    {
+     "name": "n_staging",
+     "type": "integer",
+     "description": "Models classified as staging by name prefix or directory."
+    },
+    {
+     "name": "n_intermediate",
+     "type": "integer",
+     "description": "Models classified as intermediate."
+    },
+    {
+     "name": "n_mart",
+     "type": "integer",
+     "description": "Models classified as mart, fact, dimension or reporting."
+    },
+    {
+     "name": "n_unclassified",
+     "type": "integer",
+     "description": "Models matching no layer rule."
+    },
+    {
+     "name": "n_sql_files",
+     "type": "integer",
+     "description": "Model SQL files read at this commit, before stem collision collapsing. Equals N unless two files in different directories share a filename."
+    },
+    {
+     "name": "n_dbt_projects",
+     "type": "integer",
+     "description": "dbt_project.yml files visible at this commit, vendored packages excluded."
+    }
+   ]
+  },
+  "drift_events.csv": {
+   "description": "Consecutive-snapshot relative changes above 20 percent in D1_csi, D3_alg_conn or D4_cycle_rank_norm.",
+   "primary_key": [
+    "project_id",
+    "sha",
+    "descriptor"
+   ],
+   "fields": [
+    {
+     "name": "project_id",
+     "type": "string",
+     "description": "Stable corpus identifier, GitHub owner and repository joined by a double underscore."
+    },
+    {
+     "name": "date",
+     "type": "ISO-8601 datetime",
+     "description": "Author timestamp of the sampled commit."
+    },
+    {
+     "name": "sha",
+     "type": "string (40 hex)",
+     "description": "Full git commit SHA the snapshot was extracted at."
+    },
+    {
+     "name": "descriptor",
+     "type": "string",
+     "description": "Which descriptor drifted."
+    },
+    {
+     "name": "prev",
+     "type": "float",
+     "description": "Descriptor value at the preceding snapshot."
+    },
+    {
+     "name": "curr",
+     "type": "float",
+     "description": "Descriptor value at this snapshot."
+    },
+    {
+     "name": "pct_change",
+     "type": "float > 20",
+     "description": "100 * |curr - prev| / |prev|. Emitted only above 20."
+    },
+    {
+     "name": "commit_msg",
+     "type": "string",
+     "description": "Commit subject line, truncated to 120 characters."
+    }
+   ]
+  },
+  "corpus_index.csv": {
+   "description": "One row per included project, the yield table.",
+   "primary_key": [
+    "project_id"
+   ],
+   "fields": [
+    {
+     "name": "project_id"
+    },
+    {
+     "name": "repo_url"
+    },
+    {
+     "name": "status"
+    },
+    {
+     "name": "snapshots"
+    },
+    {
+     "name": "date_start"
+    },
+    {
+     "name": "date_end"
+    },
+    {
+     "name": "span_days"
+    },
+    {
+     "name": "span_years"
+    },
+    {
+     "name": "nodes_first"
+    },
+    {
+     "name": "nodes_last"
+    },
+    {
+     "name": "nodes_min"
+    },
+    {
+     "name": "nodes_max"
+    },
+    {
+     "name": "edges_first"
+    },
+    {
+     "name": "edges_last"
+    },
+    {
+     "name": "edges_min"
+    },
+    {
+     "name": "edges_max"
+    },
+    {
+     "name": "node_growth_multiple"
+    },
+    {
+     "name": "edge_growth_multiple"
+    },
+    {
+     "name": "nodes_first_viable"
+    },
+    {
+     "name": "date_first_viable"
+    },
+    {
+     "name": "node_growth_from_first_viable"
+    },
+    {
+     "name": "tier"
+    },
+    {
+     "name": "net_contraction_from_peak_pct"
+    },
+    {
+     "name": "median_giant_component_frac"
+    },
+    {
+     "name": "median_edges_per_node"
+    },
+    {
+     "name": "median_snapshot_gap_days"
+    },
+    {
+     "name": "max_snapshot_gap_days"
+    },
+    {
+     "name": "drift_events"
+    },
+    {
+     "name": "n_dbt_projects_at_head"
+    },
+    {
+     "name": "model_paths"
+    },
+    {
+     "name": "head_sha"
+    },
+    {
+     "name": "stars"
+    },
+    {
+     "name": "license"
+    },
+    {
+     "name": "strata"
+    },
+    {
+     "name": "error"
+    }
+   ]
+  },
+  "excluded.csv": {
+   "description": "Every repository that was cloned and extracted but did not meet the inclusion criteria, with the reason.",
+   "primary_key": [
+    "project_id"
+   ]
+  },
+  "longitudinal/longitudinal_<id>.csv": {
+   "description": "The per-project snapshot rows again, under the flat name the phase_4 scripts glob for. Byte-identical content to projects/<id>/snapshots.csv.",
+   "primary_key": [
+    "sha"
+   ]
+  },
+  "sampling_frame.csv": {
+   "description": "The full candidate population and the screening outcome for each entry, including repositories never cloned.",
+   "primary_key": [
+    "full_name"
+   ]
+  },
+  "MANIFEST.json": {
+   "description": "Dataset provenance. Repository URL, default branch, HEAD SHA, resolved model paths, first and last snapshot SHA and date, extraction timestamps, and a SHA-256 for every other file in the release."
+  }
+ },
+ "conventions": {
+  "missing": "Empty string in CSV, null in JSON.",
+  "timestamps": "Snapshot dates are git author timestamps, local to the commit. Extraction timestamps are UTC with a Z suffix.",
+  "encoding": "UTF-8, RFC 4180 quoting, LF line endings."
+ }
+}

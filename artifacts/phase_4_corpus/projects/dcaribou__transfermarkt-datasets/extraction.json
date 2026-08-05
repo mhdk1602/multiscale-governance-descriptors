@@ -1,0 +1,79 @@
+{
+ "project_id": "dcaribou__transfermarkt-datasets",
+ "repo_url": "https://github.com/dcaribou/transfermarkt-datasets.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:25:09Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "af8c44a0f9faf8de9f0ab08818cc0b51e36240e4",
+ "default_branch": "master",
+ "model_path_universe": [
+  "dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt/dbt_project.yml",
+  "name": "transfermarkt_datasets",
+  "chained_configs": [
+   "dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt/dbt_project.yml",
+   "name": "transfermarkt_datasets",
+   "model_paths": [
+    "dbt/models"
+   ],
+   "commits_on_model_paths": 64,
+   "first_commit": "2023-05-19T18:15:25",
+   "last_commit": "2026-08-03T09:46:08"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 64,
+ "history_start": "2023-05-19T18:15:25",
+ "history_end": "2026-08-03T09:46:08",
+ "n_snapshots_planned": 23,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 23,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:26:54Z",
+ "snapshot_shas": [
+  "84d7fd1e95df000fa566a72f919aca37079d62df",
+  "de5f5719f29e2e35613bd69638447179ccca903d",
+  "02c7ab70ba5630507d0fdff53aefcf82879c5e6d",
+  "8fd956ba5133cabd8f1b4f9b0e18287a0ef5b5a7",
+  "67447091809acab39c27c6ad42cd7da2c955c573",
+  "5ae85d4cfac87efb13af89816371d6d8452636ec",
+  "768b2c74989b8bb0bc30b51e0274c1582de581c7",
+  "537a3b165e8a41cd475e98bbd3e19fad2fa06f69",
+  "58122c54f6f8df4e87937de3c2de795426cbbd29",
+  "8e686f1a97ff320aa8ef2ad7f638c74475634eff",
+  "74e99d1e79c0b980e61a53e360f28ec6d5806c1c",
+  "748428f1d36fb42bb17fa548f7861f7c67a5aee3",
+  "dc43c1b7528be14ed210dbccdf2c53e01faae1d4",
+  "61601bbb7c41c85515aefe18b4448f92f69e06ae",
+  "139d5126b15c2ec4b8a7fb2d770077cb49f67f24",
+  "28efecb96de83638b7f292654240fa9042fee4c2",
+  "474b6e99dfac05c07f5feafa7a4fb0a2570f1810",
+  "dcf5bdc57f6a59a05c97335711cc4316c2452e86",
+  "58a3ddb99aec27a515ccb8e634240740852c7c85",
+  "b6253b6b6442a7a3388fec381185ff4bcd862cee",
+  "e425ef27977c4071cef1a87aa9292a304454ffcf",
+  "238f73b8fe06484d66d1cea8e1ab14e222106133",
+  "af8c44a0f9faf8de9f0ab08818cc0b51e36240e4"
+ ],
+ "stars": 464,
+ "license": "CC0-1.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

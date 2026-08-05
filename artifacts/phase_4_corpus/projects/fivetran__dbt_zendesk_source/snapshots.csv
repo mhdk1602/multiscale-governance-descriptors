@@ -1,0 +1,37 @@
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
+fivetran__dbt_zendesk_source,2020-08-16T19:26:52,cc4aa6a967345bf35c04d3656bdd98243f873942,progress,12,0,False,,,0.0,0.0,0.0,0.0,0.0,12,0.083333,1.0,12,0,0,0,12,1
+fivetran__dbt_zendesk_source,2020-09-14T16:46:58,2502f04af4f7c03f1d540491f9a5019f37ad90a9,cross db compatibility,9,0,False,,,0.0,0.0,0.0,0.0,0.0,9,0.111111,1.0,9,0,0,0,9,1
+fivetran__dbt_zendesk_source,2020-09-29T12:39:34,d3314a875c60af51fccdd7f513f2dff881366fd7,group keyword fix,9,0,False,,,0.0,0.0,0.0,0.0,0.0,9,0.111111,1.0,9,0,0,0,9,1
+fivetran__dbt_zendesk_source,2021-01-19T14:58:14,010b1398a278eac952db68f21604eb6b1eb2cd1e,update erd link and dbt version requirement,9,0,False,,,0.0,0.0,0.0,0.0,0.0,9,0.111111,1.0,9,0,0,0,9,1
+fivetran__dbt_zendesk_source,2021-02-22T18:07:24,459ca1f68994a672385c7590660fa2d39ccbd959,add fivetran deleted removal,30,15,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,15,0.066667,0.0,30,0,0,0,30,1
+fivetran__dbt_zendesk_source,2021-02-25T16:07:13,095b5baeeb8fbc4b9bad8664ca2f0fc5bc07fd8d,satisfaction removal commit,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_zendesk_source,2021-05-19T12:21:53,8dc4b82d0e509f06d420d4799dc347abca79cea9,Remove order by from `stg_zendesk__ticket_field_history`,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_zendesk_source,2021-08-06T11:31:40,e27fa0132ac34615eb73f604c64197747ff0543b,organization tags,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_zendesk_source,2021-12-20T12:16:20,56835a00bfdc63adb33a9893ca9c1cb3e5c2ee5f,update order of columns,28,14,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,14,0.071429,0.0,28,0,0,0,28,1
+fivetran__dbt_zendesk_source,2022-01-19T11:14:02,156d2a0a2a01d7ea388af579ae08ee5116cf01d0,offset calculations,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_zendesk_source,2022-02-11T14:05:00,9da11cf08d3248ac663682b9d8cefb509cbf29b7,docs and tests,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_zendesk_source,2022-04-19T12:18:47,14b42045d195d127708adf497145ebf01043dc20,explicit jinja templating,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_zendesk_source,2022-05-12T15:11:37,ac6a09c65e0deef41bb0b908951ce131e8520776,feature/package-updates,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_zendesk_source,2022-08-26T14:14:36,b50b89b19c7ccf2c79e4d550a0fc2c44d6dd945f,spark,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_zendesk_source,2022-10-13T16:12:04,f04a1af13e5ee24efca3bd11346eadf58e9a432d,Updates for dbt-utils to dbt-core cross-db macro migration,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_zendesk_source,2022-10-27T09:54:42,01c53689a06344f996a803fbfc7bda6e764a4a69,pr updates,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_zendesk_source,2023-01-05T17:56:09,84ccb5b431e1261ae2af0f3b7231f10314db8555,Fix namespace of cross-db macros from dbt_utils to dbt,32,16,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,16,0.0625,0.0,32,0,0,0,32,1
+fivetran__dbt_zendesk_source,2023-04-13T16:23:51,1b9f0b09d511aaecfadc918416a253fd44ce7076,cast,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2023-04-16T18:18:57,60b71866b6e39ef940771b78579a7050d8cef6c7,cast,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2023-06-05T15:44:32,fe3ee378a91913732431d722b1b47afddbb359bc,source and staging adjustments,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2023-06-27T15:30:59,9922f9cadc388f399b86233d2002451021e3d854,revert timestamp conversion for boolean,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2023-07-18T14:25:57,c0fcf040c4125ef718d2dc62556372ffbdba27af,added config for source,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2023-11-08T18:01:21,11591c611a4860d5fb47bccb1ff08a20ee1ba7bd,fix temp files for BigQuery behavior,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2023-12-05T13:43:21,56a68df0b3946ada9f86726b94894d8dafc395a7,fix formatting,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2024-01-08T13:46:00,0ddf561e65653c3b134005a5e8e0b7ab928e8feb,remove prefix from new var,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2024-02-07T16:00:27,7699ef19ea9e88510c9456dedc1d867004c6f49f,bugfix/sla-datatype-updates,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2024-02-29T14:53:27,73174a06ced5fbdd5727cb73c22e7a8dc2c08099,more docs and revert change,34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2024-04-15T09:46:17,92b09230c5b4528c3d2d1b36bb24d653f57b6670,Add passthrough columns for USER + ORG and add support for updated passthrough format for TICKET (#49),34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2024-09-04T14:27:20,fd7ffca469b7660e64e21ece0ddba7d757b18a24,Feature/unstructured data (#53),34,17,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,17,0.058824,0.0,34,0,0,0,34,1
+fivetran__dbt_zendesk_source,2024-10-10T14:49:22,8b9ca188482639e7413a8fe4d1c06466a13ae99e,Feature/historical schedules (#55),36,18,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,18,0.055556,0.0,36,0,0,0,36,1
+fivetran__dbt_zendesk_source,2024-12-02T10:30:23,94c1b56d57fdc7d6e52f963f30110573754d45bb,Feature/add union data (#44),36,18,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,18,0.055556,0.0,36,0,0,0,36,1
+fivetran__dbt_zendesk_source,2024-12-11T00:14:56,de7cdbf08609e626942a693ca01d55fcc7d05b69,Add enable/disable configuration for organization and brand,36,18,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,18,0.055556,0.0,36,0,0,0,36,1
+fivetran__dbt_zendesk_source,2025-05-01T11:59:49,65b4711b955348320320cd13f0f39d57dd6f8fc4,Update/handle chat slas (#63),40,20,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,20,0.05,0.0,40,0,0,0,40,1
+fivetran__dbt_zendesk_source,2025-06-02T12:00:27,9150b616db7cac9452e5bb47de3caefa6ce1a40d,update/user-role-history (#68),40,20,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,20,0.05,0.0,40,0,0,0,40,1
+fivetran__dbt_zendesk_source,2025-06-26T09:51:50,43d7d8f87d450ef96514ff8998994a8505f86f9b,feature/freshness-updates (#71),40,20,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,20,0.05,0.0,40,0,0,0,40,1
+fivetran__dbt_zendesk_source,2025-07-24T14:32:19,c2d0a39c34f14d0ddc635a9fc6d64c7ca213c5be,bugfix/empty-actor-id (#76),40,20,False,0.9285714285714286,1,0.5,2.0,1.0,0.0,0.0,20,0.05,0.0,40,0,0,0,40,1

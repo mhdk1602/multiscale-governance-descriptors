@@ -1,0 +1,89 @@
+{
+ "project_id": "prefeitura-rio__pipelines_rj_smtr",
+ "repo_url": "https://github.com/prefeitura-rio/pipelines_rj_smtr.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:37:01Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "partial",
+ "error": "1 of 28 snapshots failed",
+ "head_sha": "0c465bcd57993a34212361129e849494ff3669a1",
+ "default_branch": "main",
+ "model_path_universe": [
+  "queries/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "queries/dbt_project.yml",
+  "name": "rj_smtr",
+  "chained_configs": [
+   "queries/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "queries/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "queries/dbt_project.yml",
+   "name": "rj_smtr",
+   "model_paths": [
+    "queries/models"
+   ],
+   "commits_on_model_paths": 575,
+   "first_commit": "2023-11-23T10:17:40",
+   "last_commit": "2026-05-15T15:19:01"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 575,
+ "history_start": "2023-11-23T10:17:40",
+ "history_end": "2026-05-15T15:19:01",
+ "n_snapshots_planned": 28,
+ "model_paths_stable": true,
+ "snapshot_errors": [
+  {
+   "sha": "df34c52abb6e5468f5f116d92685189955836909",
+   "date": "2024-01-05T15:36:44",
+   "reason": "no model SQL at this commit"
+  }
+ ],
+ "n_snapshots": 27,
+ "snapshot_coverage": 0.9643,
+ "extraction_finished_utc": "2026-08-05T02:38:25Z",
+ "snapshot_shas": [
+  "d48614dc80267cf288a295f42026a377c01c4821",
+  "f79d4a578c17288200e8497e023d9d75860f0697",
+  "fe6f8b3b4244b532af1cf069669f5d8b9fc5d4f4",
+  "0358a8610e8364c87a8710cbf08dfae86ba01d68",
+  "fea62255916394d9b4ea35f3a814a38418ccccf9",
+  "e0cfb90b56a5af2fdf409151bc2d77cafd0c72b1",
+  "9dc7041c74a8cc525a59da872a48d2691c79b764",
+  "e433d0b7f8ac611f8c694309550b666c17258be5",
+  "bfdc2497ddb37406d67ca96fa97cb2c90148696e",
+  "e7fed7b013fced26a435914fc66cc25360123e44",
+  "f64c2a768eaf602cff9d4c29b12b6fac7090fb4a",
+  "8df1c1ed90ca455f583843a2c76b8f41983a677a",
+  "43b43fa561a2ae17398e297665179228b77f64aa",
+  "d349769b0baa95c568e15e5e7172f14bf2a1aeeb",
+  "70ea3e327bf97de86d1ca8ee6dcea82672b36d17",
+  "fbb32ca623bf21a157f4ec65f418c508fe7ace94",
+  "04706f3205491289d31517752f74f66c1dadb9dc",
+  "69c392570d024f9c46cd1cf532674a12e515b54e",
+  "82f574d063f6fbbe8b5c40356efd5da684c9bcb2",
+  "7189b68e2887cf5ab82462462dc719cfdb552d4f",
+  "560b1ac31c756fd23f4af60de8dfa157c6f6fa02",
+  "2d89e11b2f3b196da3a20ccec3c6fb8627cd3103",
+  "8df7635a5781e2e43ecc1920667b18f29516caa0",
+  "5d6ba3193f5d93ba8aa3bb4277ef03ccaac50665",
+  "0ad85cce2b442021820e180837e6193531862435",
+  "32bc833f08056459b5a236e36daa28b040fd435d",
+  "34a620c77fc74d27f6fd44500669041df0fc1856"
+ ],
+ "stars": 6,
+ "license": null,
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "project_id": "DalgoT4D__dbt_shofco",
+ "repo_url": "https://github.com/DalgoT4D/dbt_shofco.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:17:37Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "5e65bb24c9a7256f2bc99a2856c7c34f92f8e031",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "shofco_dbt",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "shofco_dbt",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 190,
+   "first_commit": "2017-05-20T15:43:47",
+   "last_commit": "2026-07-15T04:01:02"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 190,
+ "history_start": "2017-05-20T15:43:47",
+ "history_end": "2026-07-15T04:01:02",
+ "n_snapshots_planned": 22,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 22,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:18:57Z",
+ "snapshot_shas": [
+  "858ce39fa9de6a5a9c95cccdde65fa6b29ee03fe",
+  "7147813f96a837e409287358c15c4374a766250a",
+  "6dd7fbadaf78842e691b48e2f07bb49c45863462",
+  "9a887d9511f3a01f9e79529e9d9ad4cde8f18035",
+  "40573c5a26fd092ac6595031c73890ee1d78fcb9",
+  "7e20c0e9a01bfea712cfd20928a4c74f70d3b7d4",
+  "71a875cd2988dfadb10803e0c0a84c10177c69e9",
+  "b92ea2d5cecbef7029003523509ac399e8a557b4",
+  "cd79c7f68ed4640b0347d9979b6a3100f33f012a",
+  "4e1705d8fb32d8e030c4f1b52141a0bc11cbd257",
+  "f99f9019b584b0ea34902fc741e82811e48cea76",
+  "bf381531f92b5a1340f8021f1447722b372a6e15",
+  "0bf647c3010af6c14ddcf39e002bf1ba6e4cd05e",
+  "3362a444462ece4edd1b104f64dbd00e41bf4262",
+  "01d73f17828ef605dccb33e42359cf3b2180ee44",
+  "158a5a4da99e6beff8cf555cdf75849c51dfc8fc",
+  "6c1355b07e1ea46b28a06c1a9cfba19a65a8748e",
+  "c9d414ec10fc48528be25874e043df4cfe7176d6",
+  "1d718973558f2f6daf14f97d9399e8769e314fde",
+  "932a3178b524fa637d991340b76f922022e0e0cd",
+  "1dfd3224de8e1c5c51dbb0fd41f11b4ca0261ebe",
+  "1a200945a7f6885263fe31bc0e5abd12be05df06"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

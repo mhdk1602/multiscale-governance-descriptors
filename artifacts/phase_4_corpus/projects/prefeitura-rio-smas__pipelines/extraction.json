@@ -1,0 +1,68 @@
+{
+ "project_id": "prefeitura-rio-smas__pipelines",
+ "repo_url": "https://github.com/prefeitura-rio-smas/pipelines.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:36:54Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "c12ff82460ab61d99ecc939ffa1de14edb868592",
+ "default_branch": "main",
+ "model_path_universe": [
+  "queries/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "queries/dbt_project.yml",
+  "name": "queries",
+  "chained_configs": [
+   "queries/dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "queries/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "queries/dbt_project.yml",
+   "name": "queries",
+   "model_paths": [
+    "queries/models"
+   ],
+   "commits_on_model_paths": 257,
+   "first_commit": "2025-05-30T23:26:52",
+   "last_commit": "2026-07-31T16:03:30"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 257,
+ "history_start": "2025-05-30T23:26:52",
+ "history_end": "2026-07-31T16:03:30",
+ "n_snapshots_planned": 13,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 13,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:38:00Z",
+ "snapshot_shas": [
+  "f92705637f4842df56b49abfa488f53d4f4382e5",
+  "d485c9f5867bb71298204240774718f01d3e1669",
+  "d2222e74c39f50817ae862079d6a8d77ac6be639",
+  "f1fadc71c1745fcef9896e3c4366854be4fbe389",
+  "5d5cb1878ad64199e2bef34bdd2648b551514c2a",
+  "9bea625d4bc1a123093ccbfbdd50c8a79ee95c31",
+  "fbb992f507578feaa34cf66eb674d504b6e9f5df",
+  "dfe877de9c581f636226eaea22acbf27f3db54a5",
+  "49d6479d0596539e8738bd1dcf5b646f88a6b06a",
+  "2520cf7bf5e6ae56524827014fc30790b185f2c3",
+  "c2f20f6fa4336b0aea42e5a5b46a9e990252e181",
+  "8f56d3efe40768cb546ffcc11eafbc5b23990e34",
+  "c12ff82460ab61d99ecc939ffa1de14edb868592"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

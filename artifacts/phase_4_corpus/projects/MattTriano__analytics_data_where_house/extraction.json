@@ -1,0 +1,82 @@
+{
+ "project_id": "MattTriano__analytics_data_where_house",
+ "repo_url": "https://github.com/MattTriano/analytics_data_where_house.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:18:58Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "a17de60c91787d37006b4754920357d8e5372fc3",
+ "default_branch": "main",
+ "model_path_universe": [
+  "airflow/dbt/models",
+  "re_dbt/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "airflow/dbt/dbt_project.yml",
+  "name": "re_dbt",
+  "chained_configs": [
+   "airflow/dbt/dbt_project.yml",
+   "re_dbt/dbt_project.yml"
+  ],
+  "n_configs_chained": 2,
+  "model_paths": [
+   "airflow/dbt/models",
+   "re_dbt/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "airflow/dbt/dbt_project.yml",
+   "name": "re_dbt",
+   "model_paths": [
+    "airflow/dbt/models"
+   ],
+   "commits_on_model_paths": 135,
+   "first_commit": "2022-11-30T23:52:37",
+   "last_commit": "2025-03-19T19:08:26"
+  },
+  {
+   "config": "re_dbt/dbt_project.yml",
+   "name": "re_dbt",
+   "model_paths": [
+    "re_dbt/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2022-11-09T23:18:01",
+   "last_commit": "2022-11-09T23:18:01"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 136,
+ "history_start": "2022-11-09T23:18:01",
+ "history_end": "2025-03-19T19:08:26",
+ "n_snapshots_planned": 14,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 14,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:20:34Z",
+ "snapshot_shas": [
+  "2250d9e137a9681478560f92042157c363de742b",
+  "8382f760bae442d4d6666ab2e0ec0d27630ed426",
+  "34e3d724da3ccfca7d2dad78c81630c180e7191c",
+  "f003cb4bf254b1c016fca963d69ab4e2a391ad67",
+  "31aa4168c1edb7b4edde843be169afe641af0673",
+  "49e8ecab57a6f014d9f4e261855a950419b9a7dd",
+  "0419ba9469ec9bea3ec9a7bb17b81369bc3d279f",
+  "b54b43d574e27a66dbb63efa954b4c939b9fdacf",
+  "1c97025874de25bc2c9f7e861fe7d629d31c1485",
+  "48c24b5177f73ae7b2449e5834ab61fc5338219f",
+  "b9b1cbcf755dd2c9467696191282b19a01bd94ef",
+  "3b622d3b5972e709e966955c1ce582af484a9bf4",
+  "ba0722aafd1dd4d45e86e58297506fb909fdf78f",
+  "82468d1edeb8698cc5b1dc6c025ac8dfaf158583"
+ ],
+ "stars": 11,
+ "license": "AGPL-3.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

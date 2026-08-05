@@ -1,0 +1,166 @@
+{
+ "project_id": "intelmercbernoulli__dbt",
+ "repo_url": "https://github.com/intelmercbernoulli/dbt.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:34:42Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "43d62135b5ed7df48ec96314a59f36e855120291",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models",
+  ".venv-dbt/Lib/site-packages/dbt/include/starter_project/models",
+  ".venv-dbt/Lib/site-packages/dbt_metricflow/cli/mf_tutorial_project/models",
+  ".venv/Lib/site-packages/dbt/include/starter_project/models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "my_dbt_project",
+  "chained_configs": [
+   "dbt_project.yml",
+   ".venv-dbt/Lib/site-packages/dbt/include/starter_project/dbt_project.yml",
+   ".venv-dbt/Lib/site-packages/dbt_metricflow/cli/mf_tutorial_project/dbt_project.yml",
+   ".venv/Lib/site-packages/dbt/include/starter_project/dbt_project.yml"
+  ],
+  "n_configs_chained": 4,
+  "model_paths": [
+   "models",
+   ".venv-dbt/Lib/site-packages/dbt/include/starter_project/models",
+   ".venv-dbt/Lib/site-packages/dbt_metricflow/cli/mf_tutorial_project/models",
+   ".venv/Lib/site-packages/dbt/include/starter_project/models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "my_dbt_project",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 54,
+   "first_commit": "2024-11-14T18:27:33",
+   "last_commit": "2026-03-25T14:37:01"
+  },
+  {
+   "config": ".venv-dbt/Lib/site-packages/dbt/include/starter_project/dbt_project.yml",
+   "name": null,
+   "model_paths": [
+    ".venv-dbt/Lib/site-packages/dbt/include/starter_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-03-25T14:37:01",
+   "last_commit": "2026-03-25T14:37:01"
+  },
+  {
+   "config": ".venv-dbt/Lib/site-packages/dbt_metricflow/cli/mf_tutorial_project/dbt_project.yml",
+   "name": "mf_tutorial_project",
+   "model_paths": [
+    ".venv-dbt/Lib/site-packages/dbt_metricflow/cli/mf_tutorial_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2026-03-25T14:37:01",
+   "last_commit": "2026-03-25T14:37:01"
+  },
+  {
+   "config": ".venv/Lib/site-packages/dbt/include/starter_project/dbt_project.yml",
+   "name": null,
+   "model_paths": [
+    ".venv/Lib/site-packages/dbt/include/starter_project/models"
+   ],
+   "commits_on_model_paths": 1,
+   "first_commit": "2024-11-14T18:27:33",
+   "last_commit": "2024-11-14T18:27:33"
+  },
+  {
+   "config": ".venv-dbt/Lib/site-packages/dbt/include/fabric/dbt_project.yml",
+   "name": "dbt_fabric",
+   "model_paths": [
+    ".venv-dbt/Lib/site-packages/dbt/include/fabric/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": ".venv-dbt/Lib/site-packages/dbt/include/global_project/dbt_project.yml",
+   "name": "dbt",
+   "model_paths": [
+    ".venv-dbt/Lib/site-packages/dbt/include/global_project/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": ".venv-dbt/Lib/site-packages/dbt/include/sqlserver/dbt_project.yml",
+   "name": "dbt_sqlserver",
+   "model_paths": [
+    ".venv-dbt/Lib/site-packages/dbt/include/sqlserver/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": ".venv/Lib/site-packages/dbt/include/fabric/dbt_project.yml",
+   "name": "dbt_fabric",
+   "model_paths": [
+    ".venv/Lib/site-packages/dbt/include/fabric/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": ".venv/Lib/site-packages/dbt/include/global_project/dbt_project.yml",
+   "name": "dbt",
+   "model_paths": [
+    ".venv/Lib/site-packages/dbt/include/global_project/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  },
+  {
+   "config": ".venv/Lib/site-packages/dbt/include/sqlserver/dbt_project.yml",
+   "name": "dbt_sqlserver",
+   "model_paths": [
+    ".venv/Lib/site-packages/dbt/include/sqlserver/models"
+   ],
+   "commits_on_model_paths": 0,
+   "first_commit": null,
+   "last_commit": null
+  }
+ ],
+ "n_dbt_projects_seen": 10,
+ "n_commits_touching_models": 54,
+ "history_start": "2024-11-14T18:27:33",
+ "history_end": "2026-03-25T14:37:01",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": false,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:36:43Z",
+ "snapshot_shas": [
+  "5a59ea4c784013483c3a2cdff976e022510692ba",
+  "c9b3b36fc8bed96b7c3764453214785a0aa88fd3",
+  "1097b59567270c485cf8a2f655e0bb4d127e7623",
+  "f6aeac7fd46e0d25f12c41f31fa03e6a4408e116",
+  "0a8cb293bdc8b34c48e90ba0437038986909e0e3",
+  "f97a1e4749b154733844e7e97bf918ce81aad3ba",
+  "54b0fccac1a31868d47489d7379c7de2b69140d8",
+  "a89caf42486b795734e7fde69cf8fda8160d7648",
+  "dc5062d3170be59e4ce9c17441b22580b62fdd21",
+  "f1b674cb40d5af23fa7c52ee9034851ff90ba322",
+  "e1e24d397961faeed0879ed76a7e6791d1f63151",
+  "43d62135b5ed7df48ec96314a59f36e855120291"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

@@ -1,0 +1,2245 @@
+{
+ "n_snapshots_tested": 40,
+ "n_permutations_each": 12,
+ "min_nodes": 20,
+ "seed": 20260804,
+ "note": "Permutation zero is the sorted order the corpus extractor uses. The remaining permutations stand in for the arbitrary orders the predecessor produced under a randomised process hash seed.",
+ "range_across_permutations": {
+  "D1_csi": {
+   "n": 40,
+   "median": 0.07142857142857145,
+   "max": 0.5714285714285714,
+   "mean": 0.15892857142857145
+  },
+  "D1_n_comm": {
+   "n": 40,
+   "median": 0.0,
+   "max": 5,
+   "mean": 0.725
+  },
+  "D2_max_gini": {
+   "n": 40,
+   "median": 0.0,
+   "max": 0.0,
+   "mean": 0.0
+  },
+  "D3_alg_conn": {
+   "n": 40,
+   "median": 2.1874863032067537e-15,
+   "max": 1.585363784695204e-14,
+   "mean": 4.046893029019394e-15
+  },
+  "D3_norm_gap": {
+   "n": 40,
+   "median": 1.7477339020466331e-16,
+   "max": 1.2646134139870924e-15,
+   "mean": 2.1653414738337373e-16
+  },
+  "D4_cycle_rank_norm": {
+   "n": 40,
+   "median": 0.0,
+   "max": 0.0,
+   "mean": 0.0
+  }
+ },
+ "distinct_values_across_permutations": {
+  "D1_csi": {
+   "n": 40,
+   "median": 2.0,
+   "max": 7,
+   "mean": 3.0
+  },
+  "D1_n_comm": {
+   "n": 40,
+   "median": 1.0,
+   "max": 6,
+   "mean": 1.725
+  },
+  "D2_max_gini": {
+   "n": 40,
+   "median": 1.0,
+   "max": 1,
+   "mean": 1.0
+  },
+  "D3_alg_conn": {
+   "n": 40,
+   "median": 1.0,
+   "max": 1,
+   "mean": 1.0
+  },
+  "D3_norm_gap": {
+   "n": 40,
+   "median": 1.0,
+   "max": 1,
+   "mean": 1.0
+  },
+  "D4_cycle_rank_norm": {
+   "n": 40,
+   "median": 1.0,
+   "max": 1,
+   "mean": 1.0
+  }
+ },
+ "per_snapshot": [
+  {
+   "project_id": "frizzleqq__f1-dbt-duckdb",
+   "sha": "9bb45e99a589d3f3f2b31abb121bd033f27a91a7",
+   "N": 21,
+   "M": 24,
+   "D1_csi": {
+    "min": 0.5714285714285714,
+    "max": 0.6428571428571429,
+    "range": 0.07142857142857151,
+    "mean": 0.6130952380952381,
+    "sd": 0.03521476061368823,
+    "distinct_values": 2
+   },
+   "D1_n_comm": {
+    "min": 3,
+    "max": 3,
+    "range": 0,
+    "mean": 3.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.47883597883597884,
+    "max": 0.47883597883597884,
+    "range": 0.0,
+    "mean": 0.47883597883597884,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.33188562217383455,
+    "max": 0.33188562217383666,
+    "range": 2.1094237467877974e-15,
+    "mean": 0.3318856221738357,
+    "sd": 5.359693562286545e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.029645045292643016,
+    "max": 0.029645045292643203,
+    "range": 1.8735013540549517e-16,
+    "mean": 0.029645045292643123,
+    "sd": 5.30053519313666e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.23809523809523808,
+    "max": 0.23809523809523808,
+    "range": 0.0,
+    "mean": 0.23809523809523805,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "fivetran__dbt_zendesk",
+   "sha": "862c9d528807479cf2c4d92082f323e3bbeb22ed",
+   "N": 45,
+   "M": 80,
+   "D1_csi": {
+    "min": 0.2857142857142857,
+    "max": 0.7142857142857143,
+    "range": 0.4285714285714286,
+    "mean": 0.5357142857142857,
+    "sd": 0.12198750911856666,
+    "distinct_values": 7
+   },
+   "D1_n_comm": {
+    "min": 4,
+    "max": 6,
+    "range": 2,
+    "mean": 4.583333333333333,
+    "sd": 0.6400954789890507,
+    "distinct_values": 3
+   },
+   "D2_max_gini": {
+    "min": 0.5176996091568956,
+    "max": 0.5176996091568956,
+    "range": 0.0,
+    "mean": 0.5176996091568956,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.0989921503239013,
+    "max": 0.09899215032391114,
+    "range": 9.83935155574045e-15,
+    "mean": 0.09899215032390592,
+    "sd": 2.5986451035152583e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.008508923356511131,
+    "max": 0.00850892335651197,
+    "range": 8.396061623727746e-16,
+    "mean": 0.008508923356511528,
+    "sd": 2.2128133989266965e-16,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.8,
+    "max": 0.8,
+    "range": 0.0,
+    "mean": 0.8000000000000002,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "autotraderuk__dbt-dry-run",
+   "sha": "72fb22c0a6c64243a18462ebdbcec51f846d5319",
+   "N": 118,
+   "M": 3,
+   "D1_csi": {
+    "min": 0.9285714285714286,
+    "max": 0.9285714285714286,
+    "range": 0.0,
+    "mean": 0.9285714285714285,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 1,
+    "max": 1,
+    "range": 0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.9745762711864406,
+    "max": 0.9745762711864406,
+    "range": 0.0,
+    "mean": 0.9745762711864406,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 2.0,
+    "max": 2.0,
+    "range": 0.0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 1.0,
+    "max": 1.0,
+    "range": 0.0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.0,
+    "max": 0.0,
+    "range": 0.0,
+    "mean": 0.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "prefeitura-rio__queries-rj-sms",
+   "sha": "99a2d0f1bfd0c589c749c7b8343e5e431432dcbd",
+   "N": 50,
+   "M": 79,
+   "D1_csi": {
+    "min": 0.5,
+    "max": 0.8571428571428571,
+    "range": 0.3571428571428571,
+    "mean": 0.6964285714285715,
+    "sd": 0.09278843611976126,
+    "distinct_values": 4
+   },
+   "D1_n_comm": {
+    "min": 5,
+    "max": 5,
+    "range": 0,
+    "mean": 5.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.6053164556962025,
+    "max": 0.6053164556962025,
+    "range": 0.0,
+    "mean": 0.6053164556962025,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.4157772063142196,
+    "max": 0.4157772063142233,
+    "range": 3.7192471324942744e-15,
+    "mean": 0.4157772063142216,
+    "sd": 1.059893172607254e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.025218383438746942,
+    "max": 0.02521838343874716,
+    "range": 2.185751579730777e-16,
+    "mean": 0.025218383438747036,
+    "sd": 5.937610427864779e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.74,
+    "max": 0.74,
+    "range": 0.0,
+    "mean": 0.7399999999999999,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "tconbeer__gitlab-analytics-sqlfmt",
+   "sha": "8c6d311519b5dc8df556d253b6027d8081d8d910",
+   "N": 732,
+   "M": 705,
+   "D1_csi": {
+    "min": 0.5714285714285714,
+    "max": 0.9285714285714286,
+    "range": 0.3571428571428572,
+    "mean": 0.7678571428571428,
+    "sd": 0.10564428184106457,
+    "distinct_values": 6
+   },
+   "D1_n_comm": {
+    "min": 15,
+    "max": 17,
+    "range": 2,
+    "mean": 15.916666666666666,
+    "sd": 0.4930066485916347,
+    "distinct_values": 3
+   },
+   "D2_max_gini": {
+    "min": 0.8242837244187292,
+    "max": 0.8242837244187292,
+    "range": 0.0,
+    "mean": 0.8242837244187292,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.010816026340848994,
+    "max": 0.01081602634086159,
+    "range": 1.2595827159067596e-14,
+    "mean": 0.010816026340855036,
+    "sd": 3.953974976205418e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.00041257222662712364,
+    "max": 0.00041257222662760426,
+    "range": 4.806268230628241e-16,
+    "mean": 0.0004125722266273539,
+    "sd": 1.50928035130082e-16,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.3319672131147541,
+    "max": 0.3319672131147541,
+    "range": 0.0,
+    "mean": 0.3319672131147541,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "basedosdados__archived-queries-basedosdados",
+   "sha": "303de1e33b9397c2ca1461f0fcf0e5b73b0b3876",
+   "N": 69,
+   "M": 1,
+   "D1_csi": {
+    "min": 0.9285714285714286,
+    "max": 0.9285714285714286,
+    "range": 0.0,
+    "mean": 0.9285714285714285,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 1,
+    "max": 1,
+    "range": 0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.9855072463768116,
+    "max": 0.9855072463768116,
+    "range": 0.0,
+    "mean": 0.9855072463768116,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 2.0,
+    "max": 2.0,
+    "range": 0.0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 1.0,
+    "max": 1.0,
+    "range": 0.0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.0,
+    "max": 0.0,
+    "range": 0.0,
+    "mean": 0.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "gnosischain__dbt-cerebro",
+   "sha": "f2c01eaf78536025844c5c98aab6e870854c8452",
+   "N": 41,
+   "M": 19,
+   "D1_csi": {
+    "min": 0.7857142857142857,
+    "max": 0.7857142857142857,
+    "range": 0.0,
+    "mean": 0.7857142857142857,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 2,
+    "max": 2,
+    "range": 0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.7907573812580231,
+    "max": 0.7907573812580231,
+    "range": 0.0,
+    "mean": 0.7907573812580231,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.14943000726744216,
+    "max": 0.14943000726744216,
+    "range": 0.0,
+    "mean": 0.14943000726744216,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.01860635724328287,
+    "max": 0.01860635724328287,
+    "range": 0.0,
+    "mean": 0.01860635724328287,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.0,
+    "max": 0.0,
+    "range": 0.0,
+    "mean": 0.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "mitodl__ol-data-platform",
+   "sha": "5547e0fb53b407c1fcb34f256e9c2d47b778f318",
+   "N": 296,
+   "M": 435,
+   "D1_csi": {
+    "min": 0.21428571428571427,
+    "max": 0.7857142857142857,
+    "range": 0.5714285714285714,
+    "mean": 0.4702380952380952,
+    "sd": 0.15280354348801709,
+    "distinct_values": 6
+   },
+   "D1_n_comm": {
+    "min": 8,
+    "max": 10,
+    "range": 2,
+    "mean": 8.916666666666666,
+    "sd": 0.6400954789890507,
+    "distinct_values": 3
+   },
+   "D2_max_gini": {
+    "min": 0.704032696489593,
+    "max": 0.704032696489593,
+    "range": 0.0,
+    "mean": 0.704032696489593,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.05041517081430646,
+    "max": 0.050415170814315416,
+    "range": 8.958112029944232e-15,
+    "mean": 0.050415170814312016,
+    "sd": 2.4813240404393497e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.0017901629905338649,
+    "max": 0.0017901629905341843,
+    "range": 3.194059600142296e-16,
+    "mean": 0.0017901629905340622,
+    "sd": 8.80824614669654e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.5844594594594594,
+    "max": 0.5844594594594594,
+    "range": 0.0,
+    "mean": 0.5844594594594594,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "pass-culture__data-gcp",
+   "sha": "f89321aed9badeee8f0f79d49f9c12a415d766e1",
+   "N": 365,
+   "M": 536,
+   "D1_csi": {
+    "min": 0.2857142857142857,
+    "max": 0.7142857142857143,
+    "range": 0.4285714285714286,
+    "mean": 0.49404761904761907,
+    "sd": 0.12863204038675186,
+    "distinct_values": 7
+   },
+   "D1_n_comm": {
+    "min": 10,
+    "max": 12,
+    "range": 2,
+    "mean": 10.666666666666666,
+    "sd": 0.6236095644623235,
+    "distinct_values": 3
+   },
+   "D2_max_gini": {
+    "min": 0.8528152576018333,
+    "max": 0.8528152576018333,
+    "range": 0.0,
+    "mean": 0.8528152576018333,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.05834394372817303,
+    "max": 0.05834394372818453,
+    "range": 1.1497747198774277e-14,
+    "mean": 0.058343943728179526,
+    "sd": 3.847788686967446e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.0018152951415627374,
+    "max": 0.0018152951415630993,
+    "range": 3.619066851756614e-16,
+    "mean": 0.001815295141562942,
+    "sd": 1.1944972839139741e-16,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.6328767123287671,
+    "max": 0.6328767123287671,
+    "range": 0.0,
+    "mean": 0.6328767123287671,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "fivetran__dbt_fivetran_log",
+   "sha": "09161908d4fe6ffec4c4d8b48339399a1b65736d",
+   "N": 20,
+   "M": 20,
+   "D1_csi": {
+    "min": 0.6428571428571429,
+    "max": 0.6428571428571429,
+    "range": 0.0,
+    "mean": 0.6428571428571429,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 4,
+    "max": 4,
+    "range": 0,
+    "mean": 4.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.6757142857142857,
+    "max": 0.6757142857142857,
+    "range": 0.0,
+    "mean": 0.6757142857142857,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.19929057517674506,
+    "max": 0.1992905751767464,
+    "range": 1.3322676295501878e-15,
+    "mean": 0.19929057517674573,
+    "sd": 4.0673336772074955e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.027122841732603733,
+    "max": 0.02712284173260394,
+    "range": 2.0816681711721685e-16,
+    "mean": 0.027122841732603844,
+    "sd": 5.925984553016662e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.25,
+    "max": 0.25,
+    "range": 0.0,
+    "mean": 0.25,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "re-data__dbt-re-data",
+   "sha": "904e21fb09198cbad697f48a030bb3c13512579d",
+   "N": 32,
+   "M": 22,
+   "D1_csi": {
+    "min": 0.7857142857142857,
+    "max": 0.7857142857142857,
+    "range": 0.0,
+    "mean": 0.7857142857142857,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 3,
+    "max": 3,
+    "range": 0,
+    "mean": 3.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.5969551282051282,
+    "max": 0.5969551282051282,
+    "range": 0.0,
+    "mean": 0.5969551282051282,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.6284991385129781,
+    "max": 0.6284991385129791,
+    "range": 9.992007221626409e-16,
+    "mean": 0.6284991385129787,
+    "sd": 3.155141500839793e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.04482685270939217,
+    "max": 0.044826852709392274,
+    "range": 1.0408340855860843e-16,
+    "mean": 0.04482685270939222,
+    "sd": 2.694256335908766e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.125,
+    "max": 0.125,
+    "range": 0.0,
+    "mean": 0.125,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "patkearns10__dbt_workspace",
+   "sha": "2555c4b32a494c8188cf7de14f2670576e7aa276",
+   "N": 46,
+   "M": 18,
+   "D1_csi": {
+    "min": 0.5714285714285714,
+    "max": 0.5714285714285714,
+    "range": 0.0,
+    "mean": 0.5714285714285714,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 2,
+    "max": 2,
+    "range": 0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.7844202898550725,
+    "max": 0.7844202898550725,
+    "range": 0.0,
+    "mean": 0.7844202898550726,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.43304903380028587,
+    "max": 0.43304903380028664,
+    "range": 7.771561172376096e-16,
+    "mean": 0.433049033800286,
+    "sd": 1.8938082112191614e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.08169734561666792,
+    "max": 0.08169734561666807,
+    "range": 1.5265566588595902e-16,
+    "mean": 0.08169734561666793,
+    "sd": 4.219179715546523e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.043478260869565216,
+    "max": 0.043478260869565216,
+    "range": 0.0,
+    "mean": 0.043478260869565216,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "fivetran__dbt_asana",
+   "sha": "6b872e970492d218510657f0277457f86fa28b6c",
+   "N": 40,
+   "M": 59,
+   "D1_csi": {
+    "min": 0.5714285714285714,
+    "max": 0.8571428571428571,
+    "range": 0.2857142857142857,
+    "mean": 0.7559523809523809,
+    "sd": 0.06812811394202141,
+    "distinct_values": 4
+   },
+   "D1_n_comm": {
+    "min": 5,
+    "max": 5,
+    "range": 0,
+    "mean": 5.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.36483050847457626,
+    "max": 0.36483050847457626,
+    "range": 0.0,
+    "mean": 0.36483050847457626,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.20902333526957428,
+    "max": 0.20902333526957667,
+    "range": 2.3869795029440866e-15,
+    "mean": 0.20902333526957526,
+    "sd": 6.385625792903828e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.014762263785765206,
+    "max": 0.01476226378576538,
+    "range": 1.734723475976807e-16,
+    "mean": 0.014762263785765275,
+    "sd": 4.588257968287435e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.5,
+    "max": 0.5,
+    "range": 0.0,
+    "mean": 0.5,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "Opetushallitus__ovara",
+   "sha": "99695defc879f2990c1725d173c0f14bc52987d4",
+   "N": 300,
+   "M": 262,
+   "D1_csi": {
+    "min": 0.7142857142857143,
+    "max": 0.9285714285714286,
+    "range": 0.2142857142857143,
+    "mean": 0.8333333333333334,
+    "sd": 0.053239713749994984,
+    "distinct_values": 4
+   },
+   "D1_n_comm": {
+    "min": 13,
+    "max": 14,
+    "range": 1,
+    "mean": 13.083333333333334,
+    "sd": 0.2763853991962833,
+    "distinct_values": 2
+   },
+   "D2_max_gini": {
+    "min": 0.7241911764705883,
+    "max": 0.7241911764705883,
+    "range": 0.0,
+    "mean": 0.7241911764705883,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.029697000628047473,
+    "max": 0.02969700062804974,
+    "range": 2.26554885962571e-15,
+    "mean": 0.029697000628048656,
+    "sd": 6.500940357055945e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.0015460566934960753,
+    "max": 0.001546056693496194,
+    "range": 1.1861171766991419e-16,
+    "mean": 0.0015460566934961378,
+    "sd": 3.370357255191063e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.22666666666666666,
+    "max": 0.22666666666666666,
+    "range": 0.0,
+    "mean": 0.22666666666666666,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "fivetran__dbt_ad_reporting",
+   "sha": "79d724ee9434f5d7e929125723bc0a7bfba5646b",
+   "N": 20,
+   "M": 10,
+   "D1_csi": {
+    "min": 0.8571428571428571,
+    "max": 0.8571428571428571,
+    "range": 0.0,
+    "mean": 0.8571428571428571,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 1,
+    "max": 1,
+    "range": 0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.5,
+    "max": 0.5,
+    "range": 0.0,
+    "mean": 0.5,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.9999999999999997,
+    "max": 0.9999999999999997,
+    "range": 0.0,
+    "mean": 0.9999999999999997,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.3333333333333332,
+    "max": 0.3333333333333332,
+    "range": 0.0,
+    "mean": 0.3333333333333332,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.0,
+    "max": 0.0,
+    "range": 0.0,
+    "mean": 0.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "coding-is-for-losers__seo-audit",
+   "sha": "a4ad213a6e2ce7cd948185c6fb9bc7482c9dfab2",
+   "N": 25,
+   "M": 37,
+   "D1_csi": {
+    "min": 0.42857142857142855,
+    "max": 0.6428571428571429,
+    "range": 0.21428571428571436,
+    "mean": 0.5238095238095238,
+    "sd": 0.06070261325705697,
+    "distinct_values": 4
+   },
+   "D1_n_comm": {
+    "min": 4,
+    "max": 5,
+    "range": 1,
+    "mean": 4.5,
+    "sd": 0.5,
+    "distinct_values": 2
+   },
+   "D2_max_gini": {
+    "min": 0.43576470588235294,
+    "max": 0.43576470588235294,
+    "range": 0.0,
+    "mean": 0.435764705882353,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.08420675241031662,
+    "max": 0.08420675241032215,
+    "range": 5.523359547510154e-15,
+    "mean": 0.08420675241031877,
+    "sd": 1.4617474439631715e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.009940530214368554,
+    "max": 0.009940530214369202,
+    "range": 6.487865800153259e-16,
+    "mean": 0.009940530214368807,
+    "sd": 1.7282205301971455e-16,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.52,
+    "max": 0.52,
+    "range": 0.0,
+    "mean": 0.52,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "rittmananalytics__ra_data_warehouse",
+   "sha": "bf8788c083c9b317949f9d0ecbac30fde515d03f",
+   "N": 146,
+   "M": 129,
+   "D1_csi": {
+    "min": 0.7857142857142857,
+    "max": 0.8571428571428571,
+    "range": 0.0714285714285714,
+    "mean": 0.7916666666666666,
+    "sd": 0.019741814228305943,
+    "distinct_values": 2
+   },
+   "D1_n_comm": {
+    "min": 7,
+    "max": 8,
+    "range": 1,
+    "mean": 7.083333333333333,
+    "sd": 0.27638539919628335,
+    "distinct_values": 2
+   },
+   "D2_max_gini": {
+    "min": 0.5914603493779063,
+    "max": 0.5914603493779063,
+    "range": 0.0,
+    "mean": 0.5914603493779063,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.044385277248104475,
+    "max": 0.04438527724810508,
+    "range": 6.036837696399289e-16,
+    "mean": 0.04438527724810484,
+    "sd": 2.1901222620220161e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.006331352376849877,
+    "max": 0.006331352376849967,
+    "range": 9.020562075079397e-17,
+    "mean": 0.006331352376849934,
+    "sd": 3.19805132398795e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.1095890410958904,
+    "max": 0.1095890410958904,
+    "range": 0.0,
+    "mean": 0.1095890410958904,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "fivetran__dbt_pinterest_source",
+   "sha": "b44b6c883074a701ceadf80931443ef29c7d7c25",
+   "N": 20,
+   "M": 10,
+   "D1_csi": {
+    "min": 0.9285714285714286,
+    "max": 0.9285714285714286,
+    "range": 0.0,
+    "mean": 0.9285714285714285,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 1,
+    "max": 1,
+    "range": 0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.5,
+    "max": 0.5,
+    "range": 0.0,
+    "mean": 0.5,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 2.0,
+    "max": 2.0,
+    "range": 0.0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 1.0,
+    "max": 1.0,
+    "range": 0.0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.0,
+    "max": 0.0,
+    "range": 0.0,
+    "mean": 0.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "sfc-gh-dflippo__snowflake-dbt-demo",
+   "sha": "5082185daaa79377820da3185e3b86885c298c51",
+   "N": 21,
+   "M": 14,
+   "D1_csi": {
+    "min": 0.7142857142857143,
+    "max": 0.7857142857142857,
+    "range": 0.0714285714285714,
+    "mean": 0.7321428571428572,
+    "sd": 0.03092947870658708,
+    "distinct_values": 2
+   },
+   "D1_n_comm": {
+    "min": 3,
+    "max": 3,
+    "range": 0,
+    "mean": 3.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.7792207792207793,
+    "max": 0.7792207792207793,
+    "range": 0.0,
+    "mean": 0.7792207792207794,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.18826341319998982,
+    "max": 0.18826341319999104,
+    "range": 1.2212453270876722e-15,
+    "mean": 0.18826341319999038,
+    "sd": 3.3161008733015057e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.0318926433376666,
+    "max": 0.031892643337666796,
+    "range": 1.942890293094024e-16,
+    "mean": 0.0318926433376667,
+    "sd": 5.2854531573690007e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.047619047619047616,
+    "max": 0.047619047619047616,
+    "range": 0.0,
+    "mean": 0.047619047619047616,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "cagov__caldata-mdsa-caltrans-pems",
+   "sha": "e78cccfcee68d2c4a7597a254545266549d05285",
+   "N": 104,
+   "M": 129,
+   "D1_csi": {
+    "min": 0.7857142857142857,
+    "max": 1.0,
+    "range": 0.2142857142857143,
+    "mean": 0.8809523809523809,
+    "sd": 0.07338588098772593,
+    "distinct_values": 4
+   },
+   "D1_n_comm": {
+    "min": 9,
+    "max": 10,
+    "range": 1,
+    "mean": 9.666666666666666,
+    "sd": 0.4714045207910317,
+    "distinct_values": 2
+   },
+   "D2_max_gini": {
+    "min": 0.7578264758497316,
+    "max": 0.7578264758497316,
+    "range": 0.0,
+    "mean": 0.7578264758497316,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.018236951405515657,
+    "max": 0.01823695140552274,
+    "range": 7.08461067588928e-15,
+    "mean": 0.018236951405520032,
+    "sd": 1.909776986600447e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.001191863933474406,
+    "max": 0.00119186393347487,
+    "range": 4.638216893892988e-16,
+    "mean": 0.0011918639334746921,
+    "sd": 1.2473953576938575e-16,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.3076923076923077,
+    "max": 0.3076923076923077,
+    "range": 0.0,
+    "mean": 0.3076923076923077,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "giftHEALTH__dbt_zendesk_source",
+   "sha": "64d9fb14e939ae6c0c9d2002a9d5591ab68f2508",
+   "N": 36,
+   "M": 18,
+   "D1_csi": {
+    "min": 0.9285714285714286,
+    "max": 0.9285714285714286,
+    "range": 0.0,
+    "mean": 0.9285714285714285,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 1,
+    "max": 1,
+    "range": 0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.5,
+    "max": 0.5,
+    "range": 0.0,
+    "mean": 0.5,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 2.0,
+    "max": 2.0,
+    "range": 0.0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 1.0,
+    "max": 1.0,
+    "range": 0.0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.0,
+    "max": 0.0,
+    "range": 0.0,
+    "mean": 0.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "duneanalytics__spellbook",
+   "sha": "36ecbc09ffb7923896dd99eaa863ff98314d7999",
+   "N": 3150,
+   "M": 1474,
+   "D1_csi": {
+    "min": 0.9285714285714286,
+    "max": 1.0,
+    "range": 0.0714285714285714,
+    "mean": 0.9940476190476191,
+    "sd": 0.019741814228305943,
+    "distinct_values": 2
+   },
+   "D1_n_comm": {
+    "min": 14,
+    "max": 14,
+    "range": 0,
+    "mean": 14.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.872057769602834,
+    "max": 0.872057769602834,
+    "range": 0.0,
+    "mean": 0.8720577696028341,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.013583950447729922,
+    "max": 0.01358395044773617,
+    "range": 6.248473960468459e-15,
+    "mean": 0.01358395044773406,
+    "sd": 2.2570927342593358e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.00033125242117674347,
+    "max": 0.0003312524211768958,
+    "range": 1.5233040523421337e-16,
+    "mean": 0.0003312524211768443,
+    "sd": 5.5006611196093004e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.09396825396825396,
+    "max": 0.09396825396825396,
+    "range": 0.0,
+    "mean": 0.09396825396825396,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "tconbeer__gitlab-analytics-sqlfmt",
+   "sha": "82f1e218f4f9c932184bb351a87e7e7ea720984f",
+   "N": 635,
+   "M": 582,
+   "D1_csi": {
+    "min": 0.6428571428571429,
+    "max": 0.9285714285714286,
+    "range": 0.2857142857142857,
+    "mean": 0.7738095238095238,
+    "sd": 0.09597925890831606,
+    "distinct_values": 5
+   },
+   "D1_n_comm": {
+    "min": 13,
+    "max": 14,
+    "range": 1,
+    "mean": 13.416666666666666,
+    "sd": 0.4930066485916347,
+    "distinct_values": 2
+   },
+   "D2_max_gini": {
+    "min": 0.8310637079455977,
+    "max": 0.8310637079455977,
+    "range": 0.0,
+    "mean": 0.8310637079455977,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.016002663787790302,
+    "max": 0.016002663787796422,
+    "range": 6.1201044232461754e-15,
+    "mean": 0.016002663787793445,
+    "sd": 1.5351401071735527e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.0008250317719488553,
+    "max": 0.000825031771949172,
+    "range": 3.1669545458301585e-16,
+    "mean": 0.0008250317719490173,
+    "sd": 7.918401772397321e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.3228346456692913,
+    "max": 0.3228346456692913,
+    "range": 0.0,
+    "mean": 0.3228346456692913,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "cal-itp__data-infra",
+   "sha": "054525ec810ac450a78c8f3d7087ef92197a2df9",
+   "N": 611,
+   "M": 651,
+   "D1_csi": {
+    "min": 0.6428571428571429,
+    "max": 0.9285714285714286,
+    "range": 0.2857142857142857,
+    "mean": 0.7619047619047619,
+    "sd": 0.07896725691322379,
+    "distinct_values": 5
+   },
+   "D1_n_comm": {
+    "min": 12,
+    "max": 17,
+    "range": 5,
+    "mean": 14.666666666666666,
+    "sd": 1.4337208778404378,
+    "distinct_values": 6
+   },
+   "D2_max_gini": {
+    "min": 0.8749833196163476,
+    "max": 0.8749833196163476,
+    "range": 0.0,
+    "mean": 0.8749833196163476,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.009110864711463593,
+    "max": 0.009110864711477986,
+    "range": 1.439300068017957e-14,
+    "mean": 0.009110864711468615,
+    "sd": 3.935667845656909e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.00012145144683282846,
+    "max": 0.0001214514468330205,
+    "range": 1.9203930980149497e-16,
+    "mean": 0.00012145144683289545,
+    "sd": 5.250045426918308e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.27168576104746317,
+    "max": 0.27168576104746317,
+    "range": 0.0,
+    "mean": 0.27168576104746317,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "fivetran__dbt_netsuite",
+   "sha": "c3837975d445bddcddbd6a8bf46c2e5c8538e1f3",
+   "N": 20,
+   "M": 30,
+   "D1_csi": {
+    "min": 0.5714285714285714,
+    "max": 0.7142857142857143,
+    "range": 0.1428571428571429,
+    "mean": 0.6726190476190476,
+    "sd": 0.04572110564207505,
+    "distinct_values": 3
+   },
+   "D1_n_comm": {
+    "min": 4,
+    "max": 4,
+    "range": 0,
+    "mean": 4.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.49333333333333335,
+    "max": 0.49333333333333335,
+    "range": 0.0,
+    "mean": 0.49333333333333335,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.8671903098173016,
+    "max": 0.8671903098173049,
+    "range": 3.3306690738754696e-15,
+    "mean": 0.8671903098173036,
+    "sd": 8.101585801848734e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.09354930979841054,
+    "max": 0.0935493097984109,
+    "range": 3.608224830031759e-16,
+    "mean": 0.09354930979841075,
+    "sd": 8.837825459676411e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.65,
+    "max": 0.65,
+    "range": 0.0,
+    "mean": 0.65,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "elementary-data__dbt-data-reliability",
+   "sha": "96c203f8f94a44be2942ffef440f743f29b25750",
+   "N": 23,
+   "M": 14,
+   "D1_csi": {
+    "min": 0.7142857142857143,
+    "max": 0.7142857142857143,
+    "range": 0.0,
+    "mean": 0.7142857142857143,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 2,
+    "max": 2,
+    "range": 0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.6763285024154589,
+    "max": 0.6763285024154589,
+    "range": 0.0,
+    "mean": 0.6763285024154589,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.585786437626905,
+    "max": 0.585786437626905,
+    "range": 0.0,
+    "mean": 0.585786437626905,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.12379124008768974,
+    "max": 0.12379124008768974,
+    "range": 0.0,
+    "mean": 0.12379124008768976,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.043478260869565216,
+    "max": 0.043478260869565216,
+    "range": 0.0,
+    "mean": 0.043478260869565216,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "fivetran__dbt_shopify_source",
+   "sha": "37f944fe4682cce6746201e75b24364bffe6eb21",
+   "N": 178,
+   "M": 89,
+   "D1_csi": {
+    "min": 0.9285714285714286,
+    "max": 0.9285714285714286,
+    "range": 0.0,
+    "mean": 0.9285714285714285,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 1,
+    "max": 1,
+    "range": 0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.5,
+    "max": 0.5,
+    "range": 0.0,
+    "mean": 0.5,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 2.0,
+    "max": 2.0,
+    "range": 0.0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 1.0,
+    "max": 1.0,
+    "range": 0.0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.0,
+    "max": 0.0,
+    "range": 0.0,
+    "mean": 0.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "tconbeer__gitlab-analytics-sqlfmt",
+   "sha": "4d847507ff35e58810f2d20bc808a22301cc654f",
+   "N": 1618,
+   "M": 1648,
+   "D1_csi": {
+    "min": 0.42857142857142855,
+    "max": 0.8571428571428571,
+    "range": 0.42857142857142855,
+    "mean": 0.6726190476190476,
+    "sd": 0.12528312607053088,
+    "distinct_values": 7
+   },
+   "D1_n_comm": {
+    "min": 21,
+    "max": 23,
+    "range": 2,
+    "mean": 22.333333333333332,
+    "sd": 0.6236095644623235,
+    "distinct_values": 3
+   },
+   "D2_max_gini": {
+    "min": 0.8363238850856205,
+    "max": 0.8363238850856205,
+    "range": 0.0,
+    "mean": 0.8363238850856205,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.00732087844959298,
+    "max": 0.007320878449608834,
+    "range": 1.585363784695204e-14,
+    "mean": 0.007320878449602453,
+    "sd": 3.969676094697092e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.0001818512880421202,
+    "max": 0.00018185128804251407,
+    "range": 3.938635442096716e-16,
+    "mean": 0.0001818512880423554,
+    "sd": 9.856904607949402e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.3374536464771323,
+    "max": 0.3374536464771323,
+    "range": 0.0,
+    "mean": 0.3374536464771323,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "jyablonski__nba_elt_dbt",
+   "sha": "631bb88928d28f2c8cd3f345beb854f4081eaf90",
+   "N": 105,
+   "M": 160,
+   "D1_csi": {
+    "min": 0.42857142857142855,
+    "max": 0.7142857142857143,
+    "range": 0.28571428571428575,
+    "mean": 0.5654761904761905,
+    "sd": 0.07410654522612342,
+    "distinct_values": 5
+   },
+   "D1_n_comm": {
+    "min": 8,
+    "max": 9,
+    "range": 1,
+    "mean": 8.25,
+    "sd": 0.4330127018922193,
+    "distinct_values": 2
+   },
+   "D2_max_gini": {
+    "min": 0.828377065111759,
+    "max": 0.828377065111759,
+    "range": 0.0,
+    "mean": 0.8283770651117589,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.14276701521372379,
+    "max": 0.14276701521372778,
+    "range": 3.9968028886505635e-15,
+    "mean": 0.1427670152137251,
+    "sd": 1.0098812567000427e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.006146180268919763,
+    "max": 0.0061461802689199395,
+    "range": 1.7607443281164592e-16,
+    "mean": 0.006146180268919828,
+    "sd": 4.305470440582207e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.5714285714285714,
+    "max": 0.5714285714285714,
+    "range": 0.0,
+    "mean": 0.5714285714285714,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "prefeitura-rio__queries-rj-sms",
+   "sha": "44aa14ce10b8d5fbfb9e9ee400a10bcda9749bfa",
+   "N": 476,
+   "M": 525,
+   "D1_csi": {
+    "min": 0.35714285714285715,
+    "max": 0.7142857142857143,
+    "range": 0.35714285714285715,
+    "mean": 0.6428571428571429,
+    "sd": 0.1091089451179962,
+    "distinct_values": 5
+   },
+   "D1_n_comm": {
+    "min": 9,
+    "max": 10,
+    "range": 1,
+    "mean": 9.416666666666666,
+    "sd": 0.4930066485916347,
+    "distinct_values": 2
+   },
+   "D2_max_gini": {
+    "min": 0.8281113244764928,
+    "max": 0.8281113244764928,
+    "range": 0.0,
+    "mean": 0.8281113244764929,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.11277988006064682,
+    "max": 0.11277988006065921,
+    "range": 1.239286451237831e-14,
+    "mean": 0.11277988006065388,
+    "sd": 3.088368868412678e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.002498013013196139,
+    "max": 0.0024980130131964135,
+    "range": 2.745199900733297e-16,
+    "mean": 0.0024980130131962938,
+    "sd": 6.819308943879626e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.4852941176470588,
+    "max": 0.4852941176470588,
+    "range": 0.0,
+    "mean": 0.4852941176470588,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "ImpulsoGov__saude-mental-indicadores",
+   "sha": "206338160e783095023bb2ac0ece860bca2f78f4",
+   "N": 98,
+   "M": 106,
+   "D1_csi": {
+    "min": 0.5714285714285714,
+    "max": 1.0,
+    "range": 0.4285714285714286,
+    "mean": 0.8035714285714285,
+    "sd": 0.09726270618076305,
+    "distinct_values": 5
+   },
+   "D1_n_comm": {
+    "min": 5,
+    "max": 7,
+    "range": 2,
+    "mean": 6.166666666666667,
+    "sd": 0.5527707983925667,
+    "distinct_values": 3
+   },
+   "D2_max_gini": {
+    "min": 0.7834059073500865,
+    "max": 0.7834059073500865,
+    "range": 0.0,
+    "mean": 0.7834059073500864,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.02092865410693049,
+    "max": 0.020928654106933012,
+    "range": 2.5222879340702775e-15,
+    "mean": 0.02092865410693148,
+    "sd": 7.947511911017957e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.002039205572315259,
+    "max": 0.002039205572315505,
+    "range": 2.458970527197124e-16,
+    "mean": 0.0020392055723153567,
+    "sd": 7.731005192221417e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.1836734693877551,
+    "max": 0.1836734693877551,
+    "range": 0.0,
+    "mean": 0.1836734693877551,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "dagster-io__dagster",
+   "sha": "0035ebc50e1c19db3c16b0a9c81c32f507625763",
+   "N": 22,
+   "M": 19,
+   "D1_csi": {
+    "min": 0.7857142857142857,
+    "max": 0.7857142857142857,
+    "range": 0.0,
+    "mean": 0.7857142857142857,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 3,
+    "max": 3,
+    "range": 0,
+    "mean": 3.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.6641414141414141,
+    "max": 0.6641414141414141,
+    "range": 0.0,
+    "mean": 0.6641414141414141,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.40237283802362434,
+    "max": 0.40237283802362434,
+    "range": 0.0,
+    "mean": 0.4023728380236243,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.05611607592944401,
+    "max": 0.05611607592944401,
+    "range": 0.0,
+    "mean": 0.05611607592944401,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.09090909090909091,
+    "max": 0.09090909090909091,
+    "range": 0.0,
+    "mean": 0.0909090909090909,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "prefeitura-rio-smas__pipelines",
+   "sha": "49d6479d0596539e8738bd1dcf5b646f88a6b06a",
+   "N": 99,
+   "M": 79,
+   "D1_csi": {
+    "min": 0.6428571428571429,
+    "max": 0.7142857142857143,
+    "range": 0.0714285714285714,
+    "mean": 0.6666666666666666,
+    "sd": 0.033671751485073675,
+    "distinct_values": 2
+   },
+   "D1_n_comm": {
+    "min": 6,
+    "max": 7,
+    "range": 1,
+    "mean": 6.333333333333333,
+    "sd": 0.4714045207910317,
+    "distinct_values": 2
+   },
+   "D2_max_gini": {
+    "min": 0.6436292752082226,
+    "max": 0.6436292752082226,
+    "range": 0.0,
+    "mean": 0.6436292752082226,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.15717980586619298,
+    "max": 0.15717980586619362,
+    "range": 6.38378239159465e-16,
+    "mean": 0.1571798058661932,
+    "sd": 3.009343879143902e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.017440806124889973,
+    "max": 0.017440806124890046,
+    "range": 7.28583859910259e-17,
+    "mean": 0.017440806124889997,
+    "sd": 3.434577253370758e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.16161616161616163,
+    "max": 0.16161616161616163,
+    "range": 0.0,
+    "mean": 0.16161616161616163,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "DalgoT4D__dbt_shofco",
+   "sha": "1a200945a7f6885263fe31bc0e5abd12be05df06",
+   "N": 87,
+   "M": 62,
+   "D1_csi": {
+    "min": 0.7857142857142857,
+    "max": 0.7857142857142857,
+    "range": 0.0,
+    "mean": 0.7857142857142857,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 2,
+    "max": 2,
+    "range": 0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.7241379310344828,
+    "max": 0.7241379310344828,
+    "range": 0.0,
+    "mean": 0.7241379310344828,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.9999999999999991,
+    "max": 0.9999999999999991,
+    "range": 0.0,
+    "mean": 0.9999999999999991,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.0666666666666666,
+    "max": 0.0666666666666666,
+    "range": 0.0,
+    "mean": 0.0666666666666666,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.04597701149425287,
+    "max": 0.04597701149425287,
+    "range": 0.0,
+    "mean": 0.04597701149425287,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "fivetran__dbt_netsuite_source",
+   "sha": "a03310f07402a613b80c51d6ad5b28ba647627fe",
+   "N": 80,
+   "M": 40,
+   "D1_csi": {
+    "min": 0.9285714285714286,
+    "max": 0.9285714285714286,
+    "range": 0.0,
+    "mean": 0.9285714285714285,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D1_n_comm": {
+    "min": 1,
+    "max": 1,
+    "range": 0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.5,
+    "max": 0.5,
+    "range": 0.0,
+    "mean": 0.5,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 2.0,
+    "max": 2.0,
+    "range": 0.0,
+    "mean": 2.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 1.0,
+    "max": 1.0,
+    "range": 0.0,
+    "mean": 1.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.0,
+    "max": 0.0,
+    "range": 0.0,
+    "mean": 0.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "CDPVD__cdpvd_dashboards_store",
+   "sha": "0428c08a3cc02931d07bf3957ede6886c80c692c",
+   "N": 70,
+   "M": 73,
+   "D1_csi": {
+    "min": 0.5,
+    "max": 0.5714285714285714,
+    "range": 0.0714285714285714,
+    "mean": 0.5535714285714285,
+    "sd": 0.03092947870658708,
+    "distinct_values": 2
+   },
+   "D1_n_comm": {
+    "min": 5,
+    "max": 5,
+    "range": 0,
+    "mean": 5.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.6090047393364929,
+    "max": 0.6090047393364929,
+    "range": 0.0,
+    "mean": 0.6090047393364929,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.043059784352687515,
+    "max": 0.04305978435268773,
+    "range": 2.1510571102112408e-16,
+    "mean": 0.043059784352687626,
+    "sd": 7.647662881381449e-17,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.0047122249944761075,
+    "max": 0.004712224994476129,
+    "range": 2.168404344971009e-17,
+    "mean": 0.00471222499447612,
+    "sd": 7.634371102025202e-18,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.17142857142857143,
+    "max": 0.17142857142857143,
+    "range": 0.0,
+    "mean": 0.1714285714285714,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "prefeitura-rio__queries-rj-sms",
+   "sha": "982d5132ba5cda5d41d7f37c5871364569b8f610",
+   "N": 240,
+   "M": 339,
+   "D1_csi": {
+    "min": 0.7142857142857143,
+    "max": 0.9285714285714286,
+    "range": 0.2142857142857143,
+    "mean": 0.8214285714285715,
+    "sd": 0.07434521426664759,
+    "distinct_values": 4
+   },
+   "D1_n_comm": {
+    "min": 6,
+    "max": 9,
+    "range": 3,
+    "mean": 7.666666666666667,
+    "sd": 1.1055415967851332,
+    "distinct_values": 4
+   },
+   "D2_max_gini": {
+    "min": 0.7364917269906929,
+    "max": 0.7364917269906929,
+    "range": 0.0,
+    "mean": 0.7364917269906929,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.09611055405824849,
+    "max": 0.09611055405825483,
+    "range": 6.342149028171207e-15,
+    "mean": 0.09611055405825271,
+    "sd": 1.988464991818163e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.0028087930611776692,
+    "max": 0.0028087930611778557,
+    "range": 1.8648277366750676e-16,
+    "mean": 0.002808793061177793,
+    "sd": 5.778528613199884e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.625,
+    "max": 0.625,
+    "range": 0.0,
+    "mean": 0.625,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "tconbeer__gitlab-analytics-sqlfmt",
+   "sha": "5aa040fa1e39a3022e1ccb3f1e3489baa5dffda8",
+   "N": 278,
+   "M": 217,
+   "D1_csi": {
+    "min": 0.7857142857142857,
+    "max": 0.9285714285714286,
+    "range": 0.1428571428571429,
+    "mean": 0.8809523809523809,
+    "sd": 0.06070261325705698,
+    "distinct_values": 3
+   },
+   "D1_n_comm": {
+    "min": 7,
+    "max": 8,
+    "range": 1,
+    "mean": 7.583333333333333,
+    "sd": 0.4930066485916347,
+    "distinct_values": 2
+   },
+   "D2_max_gini": {
+    "min": 0.8154288876591035,
+    "max": 0.8154288876591035,
+    "range": 0.0,
+    "mean": 0.8154288876591035,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.047723299654523675,
+    "max": 0.04772329965452909,
+    "range": 5.412337245047638e-15,
+    "mean": 0.04772329965452669,
+    "sd": 1.6214000664920112e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.002950560655741142,
+    "max": 0.002950560655741478,
+    "range": 3.3610267347050637e-16,
+    "mean": 0.0029505606557413285,
+    "sd": 1.0068083875649822e-16,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.25539568345323743,
+    "max": 0.25539568345323743,
+    "range": 0.0,
+    "mean": 0.25539568345323743,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "fivetran__dbt_quickbooks",
+   "sha": "fa90d3bf0ef3e555ef1edd2c8b07b03be0fe2b9c",
+   "N": 38,
+   "M": 26,
+   "D1_csi": {
+    "min": 0.6428571428571429,
+    "max": 0.7142857142857143,
+    "range": 0.0714285714285714,
+    "mean": 0.6964285714285715,
+    "sd": 0.03092947870658708,
+    "distinct_values": 2
+   },
+   "D1_n_comm": {
+    "min": 4,
+    "max": 4,
+    "range": 0,
+    "mean": 4.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.6751767478397486,
+    "max": 0.6751767478397486,
+    "range": 0.0,
+    "mean": 0.6751767478397485,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.07112292348249347,
+    "max": 0.07112292348249438,
+    "range": 9.159339953157541e-16,
+    "mean": 0.0711229234824939,
+    "sd": 2.5520292112884413e-16,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.008707971295316908,
+    "max": 0.008707971295317014,
+    "range": 1.0581813203458523e-16,
+    "mean": 0.008707971295316955,
+    "sd": 3.155920313321269e-17,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.07894736842105263,
+    "max": 0.07894736842105263,
+    "range": 0.0,
+    "mean": 0.07894736842105263,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  },
+  {
+   "project_id": "matsonj__nba-monte-carlo",
+   "sha": "38fe69754acaf98e3f6c4b37fbb09adef8d8a200",
+   "N": 54,
+   "M": 94,
+   "D1_csi": {
+    "min": 0.6428571428571429,
+    "max": 0.8571428571428571,
+    "range": 0.2142857142857142,
+    "mean": 0.75,
+    "sd": 0.06838765055402411,
+    "distinct_values": 4
+   },
+   "D1_n_comm": {
+    "min": 6,
+    "max": 6,
+    "range": 0,
+    "mean": 6.0,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D2_max_gini": {
+    "min": 0.6329557713052859,
+    "max": 0.6329557713052859,
+    "range": 0.0,
+    "mean": 0.6329557713052859,
+    "sd": 0.0,
+    "distinct_values": 1
+   },
+   "D3_alg_conn": {
+    "min": 0.05336170747514467,
+    "max": 0.05336170747515725,
+    "range": 1.2580214647783805e-14,
+    "mean": 0.053361707475150504,
+    "sd": 3.0281806005001498e-15,
+    "distinct_values": 1
+   },
+   "D3_norm_gap": {
+    "min": 0.00534710281448125,
+    "max": 0.005347102814482515,
+    "range": 1.2646134139870924e-15,
+    "mean": 0.00534710281448184,
+    "sd": 3.0364794213890256e-16,
+    "distinct_values": 1
+   },
+   "D4_cycle_rank_norm": {
+    "min": 0.7777777777777778,
+    "max": 0.7777777777777778,
+    "range": 0.0,
+    "mean": 0.7777777777777778,
+    "sd": 0.0,
+    "distinct_values": 1
+   }
+  }
+ ]
+}

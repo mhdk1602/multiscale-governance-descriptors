@@ -1,0 +1,103 @@
+{
+ "project_id": "fivetran__dbt_quickbooks",
+ "repo_url": "https://github.com/fivetran/dbt_quickbooks.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:31:29Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "cf1867c4bd77d88931ff624d5e8cbd2f75c9843d",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "quickbooks",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "quickbooks",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 188,
+   "first_commit": "2021-01-21T00:14:33",
+   "last_commit": "2026-07-13T14:32:33"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 188,
+ "history_start": "2021-01-21T00:14:33",
+ "history_end": "2026-07-13T14:32:33",
+ "n_snapshots_planned": 47,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 47,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:35:28Z",
+ "snapshot_shas": [
+  "1d5083cdb697a5d59fd78f542f708d051509d550",
+  "b9bccfa8586370cfe9d0b9a653ed6c55082abef8",
+  "2009e2255e87095923bed752b3d7992ce5bb1300",
+  "075079143db2d9e60b068892e4039f162ad605a9",
+  "e339d0d38ebc2442d1a93e61a8f985bc5100085c",
+  "05f1408f94fef7fb9dfa027801af98c9c8d0b176",
+  "a9913268443d87f56f270edc6486f8d3fd70edf8",
+  "9ac90525f8e85a96a056a9d129b1d1ca1e73e6e8",
+  "4f3bc13977775290d3aa381aab6ac4d25ed6eec4",
+  "164f82b6079f2fb12483c8445391fde8f08adb6b",
+  "3d3eefd96b3c1de4de22b8876ef8bea7606f7ad2",
+  "c429a81c0270f338522d7966bc9ade0334be69c1",
+  "1f445da791c2ca5d4e6dbb016f76fd9550742527",
+  "4c193c0f9c672d893ed90d3eb1c2dd786625290b",
+  "bca8d74dcdd75087e47baac0adf08523a1a6216f",
+  "fa90d3bf0ef3e555ef1edd2c8b07b03be0fe2b9c",
+  "bb5941a2798cc71e3a226fe288dcfaa785a1b3a8",
+  "2f1850462451fba97d946dfeaa5fc7e29fcfdf55",
+  "fbddba28b80f77d85735c3392a5ae752a9247ddf",
+  "01f166812c2b4f76c067c0bc33ae402883a285fb",
+  "15ebccef1d88971bb0eaa5bfbff1f000e49c6e7c",
+  "b10353f76d143d230d264dd11fa96daf4c492966",
+  "d3aa087e2c8f130c07d67ab7b3f8362e4037c4e6",
+  "84a8782b48942d7230c3069f1050184d59a776ba",
+  "505a2f48c0f07f10d6ef0ef516b84e1a7800c48f",
+  "eddfffef9f647e2faec80814807529da097b2687",
+  "e604697a51880e2f57bc89606517bb499eb6a017",
+  "a39bf68e43937de5022eeffd5b76f2af6337f86d",
+  "258fdf808c5e67d55e3f163b6f509ad47d4c96cc",
+  "68e3541d0de02f8ff332b57d71e9d1e727e2d5fd",
+  "89242ebc239253c9ed6fe7d87642f7b1807ea37a",
+  "c65bad5cb96e004dfa9eaf9646bf077297fc0672",
+  "b5a5f3a8c50fc64ac663bf09eee3edf653042ae3",
+  "d6668e1256d37c2b77bbc4be5b5270946d67b2f6",
+  "dfc8f6836105e5ef55b4e961455eeee71bf5626c",
+  "48b9cdf8235b3cff84dbf95fec2ec18dfe7b02b7",
+  "a51213d507ffe0769e6c725e582097376f52e45c",
+  "f9c08cbe5e621dceb7282eb02f1eb5f02ae83286",
+  "e7b6059ae479db61f640c8938eeb627a460a589e",
+  "74ba053a2c70723311c0575d1351598d3ef7ec26",
+  "3ecb00fc59a78a0252f864b25f621aa145777270",
+  "5a4867301fd7cd6e90346c7bd126c7b89a535559",
+  "e2bdd8f3532a1699858f9c48bc5b66fa05596c4a",
+  "34619d40d34fffb309f8e631bc52ea596354b4d5",
+  "cb2231c8cf786481ca93e0b9f3e5290b8331bc09",
+  "57d0364fc9b9ec01fea6a9b773772c0ffed32d35",
+  "cf1867c4bd77d88931ff624d5e8cbd2f75c9843d"
+ ],
+ "stars": 40,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

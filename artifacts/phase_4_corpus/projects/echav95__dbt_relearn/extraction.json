@@ -1,0 +1,67 @@
+{
+ "project_id": "echav95__dbt_relearn",
+ "repo_url": "https://github.com/echav95/dbt_relearn.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:25:45Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "721c2e7aec3151a12bb6e0fa3743392051b0e8a2",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "my_new_project",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "my_new_project",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 115,
+   "first_commit": "2024-08-11T22:03:03",
+   "last_commit": "2026-03-10T15:38:02"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 115,
+ "history_start": "2024-08-11T22:03:03",
+ "history_end": "2026-03-10T15:38:02",
+ "n_snapshots_planned": 12,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 12,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:27:24Z",
+ "snapshot_shas": [
+  "a66a934bae91f6a0d65c14a076326921b0f23d62",
+  "2f724e524a978e729e2f3985ccc777d19a9e26c2",
+  "7f84da93668c7ff82b6a67e90dfc8a5302e81499",
+  "a93a25dd2a94e82b938d26405982bce62481a609",
+  "a8c1410187e8e4ece2bb189ebd3f22c5dfd13f28",
+  "3ebebee77aa80dbe36162111a1aa2bca2078f550",
+  "b34452b82684e4fd080f4984a11388de9f1ab250",
+  "99f63666162a8da49dcd4fab2eef7f445d46933d",
+  "5ca082205fbf0050cdef08d4246cf1bc9dba2e33",
+  "b3a2c095580043cff91f661593cbe0dcbf076952",
+  "9168e256a161a1f212489d68b521ee0193f59478",
+  "cdf642fd2baa80b25afaed0dad213aa962fd15ab"
+ ],
+ "stars": 0,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

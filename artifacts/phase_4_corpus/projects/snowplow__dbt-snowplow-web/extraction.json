@@ -1,0 +1,92 @@
+{
+ "project_id": "snowplow__dbt-snowplow-web",
+ "repo_url": "https://github.com/snowplow/dbt-snowplow-web.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:38:30Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "fe1fbc17e932d32cd9331b7f88827c23637ea674",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "snowplow_web",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "snowplow_web",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 82,
+   "first_commit": "2021-06-24T11:15:43",
+   "last_commit": "2023-11-27T11:00:21"
+  },
+  {
+   "config": "custom_example/dbt_project.yml",
+   "name": "snowplow_custom_example",
+   "model_paths": [
+    "custom_example/models"
+   ],
+   "commits_on_model_paths": 8,
+   "first_commit": "2021-06-24T11:15:43",
+   "last_commit": "2023-11-27T10:58:36"
+  }
+ ],
+ "n_dbt_projects_seen": 2,
+ "n_commits_touching_models": 82,
+ "history_start": "2021-06-24T11:15:43",
+ "history_end": "2023-11-27T11:00:21",
+ "n_snapshots_planned": 26,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 26,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:39:52Z",
+ "snapshot_shas": [
+  "9168ff237603b1fc2e7924719fa91922619ccf05",
+  "25803fd34f1227bfef3b595aad3d9ab89ee665fa",
+  "8bb3f38cb7727461fd16b55c1d87a4be39586189",
+  "02f2c34cc252f070f90e3de07491968a7c1f623b",
+  "f5f11884034e5f755a62bc9fefef7b9c29bc0181",
+  "1037f2e623a35ef95aece918faed3376ed69bcb9",
+  "d6929b3ce32ee0a8ba8f2aff5f8652ec3449f051",
+  "a25fa60399a0ffca100fe7d235c195b1ac137aa7",
+  "3a8b154997ba35998ae071329c91b47f9b2e6f7e",
+  "c9aa906f1f7f7081c5cd6ac02cca61b72af2b4a4",
+  "f0cc693d89061d64b49d16b591f9120953af2e1d",
+  "299add8540b3e9be3ba7f3878541e173e009ef64",
+  "07719ed22288d5e1cc2f30b4a0386db8659b72d5",
+  "ccc341c252d982b0c87adc1af561a815143bb134",
+  "25fc95c44fa3659019520a60a8bc762fe4a03e7a",
+  "63e6eb47a833b653a40cec5ad2d2778c141cf6c2",
+  "a106174ecf1d187a34cdbf32fdceb78e1727009f",
+  "697e53bc6fc04686ddaf310b20a4191fc4cb9273",
+  "ec854e66cdccc841e5a65f3d809e6de6f7474f5a",
+  "1ea22b3d92e73f945a704ee3a16faa7a6f698b62",
+  "7121a54e1705d521173f12fbb7b5ed9ca3ace632",
+  "dd55d8ddcb0e8bf3fd24940a3dd62059a40efadc",
+  "c933e64955cd924fcb0bccd153884ece59e4985e",
+  "20cca291f7773e508e668c853133b29e10f5b2cf",
+  "5576ddc8c392563f27c3e676e60f559409417917",
+  "f63f194c6536fe623e30d678aae4bf7679e1d4ac"
+ ],
+ "stars": 65,
+ "license": "NOASSERTION",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

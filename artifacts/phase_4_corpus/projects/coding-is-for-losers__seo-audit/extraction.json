@@ -1,0 +1,72 @@
+{
+ "project_id": "coding-is-for-losers__seo-audit",
+ "repo_url": "https://github.com/coding-is-for-losers/seo-audit.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:23:07Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "c7cea06992bdbfc5380be22496c08de6c06a2dc8",
+ "default_branch": "master",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "seo_audit",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "seo_audit",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 122,
+   "first_commit": "2018-04-20T09:54:30",
+   "last_commit": "2021-01-06T11:55:33"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 122,
+ "history_start": "2018-04-20T09:54:30",
+ "history_end": "2021-01-06T11:55:33",
+ "n_snapshots_planned": 17,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 17,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:23:58Z",
+ "snapshot_shas": [
+  "f7b2af574fabd20348dd3f334faff108e8e67bfd",
+  "63f3adfe3232733860331687550c77b09e4bd38d",
+  "79fb6c28b3cdec03e8731a1e2b2979babd2b2ce2",
+  "ec4bf88cce2ba693fa1bb1e3e6f026d56c9e19e5",
+  "1cca5e5f5ba54cd9e4a2600c85bc5093ac0ebcfb",
+  "b9268b74da2df66b268f80bb4c1db5f0836fc4d6",
+  "dbd938789baeb5ede41c27d11e2951f687696d5a",
+  "ff9cf7572fd0be615af8b8e9f5be08fbd279fe14",
+  "d2eb035cbb1644c0d62a1dac22329908681402f5",
+  "f1a1e2ac6736599284a70d6c37c40b90e6ca3aaf",
+  "2cbcb5e51b5266735596eb74a2b2678b14a6c820",
+  "ed46358e9bac3b2dcd03f688cfa496c0e1a27f9c",
+  "a4ad213a6e2ce7cd948185c6fb9bc7482c9dfab2",
+  "8b32f8b0e26581a88bcbd4a462b22ec650357b8f",
+  "44c10c7446a34b09ffb9fcdadc53dba0c19fd7de",
+  "4627460ebbfbbf365b2faeb5868f5fb3dd1e6ae6",
+  "825c2d62cac89bea988b6bd7e30fcc21bf02b40e"
+ ],
+ "stars": 4,
+ "license": null,
+ "strata": [
+  "S3_code"
+ ]
+}

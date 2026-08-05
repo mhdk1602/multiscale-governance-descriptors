@@ -189,6 +189,34 @@ python experiments/phase_4/exp_longitudinal_dbt.py
 
 The production dbt graph is anonymized with HMAC-SHA256. The repository does not expose SQL, column names, business identifiers, or private lineage semantics.
 
+## Longitudinal dbt Lineage Corpus
+
+`artifacts/phase_4_corpus/` holds monthly reconstructions of the model
+dependency graph of 154 public dbt projects, 3,586 snapshots covering 566
+cumulative project-years from 2016 to 2026. Each snapshot is a lineage DAG
+recovered from one git commit by parsing literal `{{ ref('...') }}` declarations
+out of the model SQL, with the D1-D4 descriptors computed on it. No dbt install,
+no warehouse, no credentials.
+
+The sampling frame is 3,718 repositories and the screening outcome for every one
+of them is in `sampling_frame.csv`, so the corpus states a frame rather than
+presenting a convenience sample. `excluded.csv` gives the reason for each of the
+488 repositories that were extracted and did not make it.
+
+| | |
+|---|---|
+| Dataset | `artifacts/phase_4_corpus/`, start at its `README.md` and `schema.json` |
+| Extractor | `src/governance_descriptors/dbt_lineage.py` |
+| Pipeline | `experiments/phase_4/dbt_corpus/`, see its `README.md` |
+| Tests | `tests/test_dbt_lineage.py` |
+
+The two-project predecessor in `artifacts/phase_4/` is unchanged and superseded.
+Its `D1_csi` and `D1_n_comm` columns are not reproducible, because that code
+built its node set from a Python set and Louvain saw a different node order
+under every process hash seed. `d1_order_sensitivity.json` measures the size of
+the effect. The CHANGELOG records which of its claims survive the expansion and
+which do not.
+
 ## Empirical Scope
 
 This is research code, not a governance scoring product. The project separates three claims:

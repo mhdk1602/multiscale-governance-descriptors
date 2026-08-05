@@ -1,0 +1,1002 @@
+project_id,date,sha,descriptor,prev,curr,pct_change,commit_msg
+CDPVD__cdpvd_dashboards_store,2022-12-20T19:39:02,277ad07a2ea2c4ffabba54dc1b5eede52a1c4791,D3_alg_conn,1.0,0.6277186767309857,37.2281,Merged PR 253: transport_scoler_geobus
+CDPVD__cdpvd_dashboards_store,2023-01-24T13:53:55,c1b08bfa7fe5ad58d4fb02fcc390141989c3ba6c,D3_alg_conn,0.6277186767309857,0.08494028178592213,86.4684,Changement pour Mohamed
+CDPVD__cdpvd_dashboards_store,2023-02-23T18:09:26,4626f2406c66b6f92119e6fc25a0a27f32b448b1,D3_alg_conn,0.08494028178592213,0.2506590851470478,195.1004,feat : add new table to schema
+CDPVD__cdpvd_dashboards_store,2023-03-24T12:17:22,4bd515a35096c016986603c750cba59245c27553,D3_alg_conn,0.2506590851470478,0.11265269277944734,55.0574,Merged PR 330: refactoring cout de roulement code
+CDPVD__cdpvd_dashboards_store,2023-03-24T12:17:22,4bd515a35096c016986603c750cba59245c27553,D4_cycle_rank_norm,0.125,0.23076923076923078,84.6154,Merged PR 330: refactoring cout de roulement code
+CDPVD__cdpvd_dashboards_store,2023-04-20T13:55:47,bd5dd72839324d3e6fb22745504c9659c15824c0,D4_cycle_rank_norm,0.23076923076923078,0.15625,32.2917,Merged PR 339: Tableau de bord emp_actif
+CDPVD__cdpvd_dashboards_store,2023-06-06T16:42:12,de87bc13bb3b79917d77760f0249b9362358b24d,D4_cycle_rank_norm,0.125,0.1791044776119403,43.2836,fix: remove blank results and correct subject evaluation code
+CDPVD__cdpvd_dashboards_store,2023-08-23T12:55:37,6d823bd13476eb46c9bf6874bcce0f09f283d695,D4_cycle_rank_norm,0.17391304347826086,0.358695652173913,106.25,feat: adding a cookiecutter template to help greenfield CSS bootstraping the cssXX.data.store
+CDPVD__cdpvd_dashboards_store,2023-10-21T12:58:18,a6c4b9971d3b2b0764bfc32fb4d4fc484bb8cfd3,D1_csi,0.7142857142857143,0.5,30.0,style: applying sqlfmt
+CDPVD__cdpvd_dashboards_store,2023-10-21T12:58:18,a6c4b9971d3b2b0764bfc32fb4d4fc484bb8cfd3,D4_cycle_rank_norm,0.358695652173913,0.44954128440366975,25.3267,style: applying sqlfmt
+CDPVD__cdpvd_dashboards_store,2023-12-20T17:06:04,e8ca4227caa02a57a504d9c60ad65340283fd7fc,D1_csi,0.5,0.6428571428571429,28.5714,style: applying sqlfmt
+CDPVD__cdpvd_dashboards_store,2023-12-20T17:06:04,e8ca4227caa02a57a504d9c60ad65340283fd7fc,D4_cycle_rank_norm,0.475,0.5957446808510638,25.4199,style: applying sqlfmt
+CDPVD__cdpvd_dashboards_store,2024-05-16T15:07:15,5773e8254e7bec7e4969862460a14ebcda0e73c2,D3_alg_conn,0.1216940997051926,0.03921101845672126,67.779,fix: correct column en cours (#11)
+CDPVD__cdpvd_dashboards_store,2024-07-09T15:28:46,cf0367471a78fa851da80a6fb6e183bf5bed2fb2,D3_alg_conn,0.03921101845672126,0.13362746376892431,240.7906,"feat: nouvelle version du tableau de bord des épreuves uniques, obligatoires et locales (#15)"
+CDPVD__cdpvd_dashboards_store,2024-10-07T15:22:15,74ff8ee24f8ad784bcf29c4e1f0aac8923b3245b,D3_alg_conn,0.13275973881447561,0.07043760692427783,46.9435,refactor: restrecturation du dissier dashboard
+CDPVD__cdpvd_dashboards_store,2024-10-23T15:08:19,8b9cbe678b7e7b85d841f7a0325a452b7187ed3e,D1_csi,0.5,0.6428571428571429,28.5714,fix(PEVR: add scope to test resolution
+CDPVD__cdpvd_dashboards_store,2024-10-23T15:08:19,8b9cbe678b7e7b85d841f7a0325a452b7187ed3e,D3_alg_conn,0.07043760692427783,0.3784886795596692,437.3389,fix(PEVR: add scope to test resolution
+CDPVD__cdpvd_dashboards_store,2024-10-23T15:08:19,8b9cbe678b7e7b85d841f7a0325a452b7187ed3e,D4_cycle_rank_norm,0.8047337278106509,0.4,50.2941,fix(PEVR: add scope to test resolution
+CDPVD__cdpvd_dashboards_store,2024-12-02T08:24:19,76f34d18f8cd765ca8b931501f2a0f9554499958,D4_cycle_rank_norm,0.4,0.27586206896551724,31.0345,feat(educ_serv_adultes) : identifier les frequentations en FP/FGA (#4)
+CDPVD__cdpvd_dashboards_store,2025-03-13T14:23:21,6d0be14966f1dda65ac13e82c9cdde2894d3d597,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,feat : personaliser le filtre annees dans la table fact_yearly_student
+CDPVD__cdpvd_dashboards_store,2025-03-13T14:23:21,6d0be14966f1dda65ac13e82c9cdde2894d3d597,D3_alg_conn,0.3784886795596692,0.084253635382743,77.7395,feat : personaliser le filtre annees dans la table fact_yearly_student
+CDPVD__cdpvd_dashboards_store,2025-03-13T14:23:21,6d0be14966f1dda65ac13e82c9cdde2894d3d597,D4_cycle_rank_norm,0.27586206896551724,0.3333333333333333,20.8333,feat : personaliser le filtre annees dans la table fact_yearly_student
+CDPVD__cdpvd_dashboards_store,2025-07-10T13:22:35,6297bcfc656aaae8133cb44d988cf183ef76d71b,D1_csi,0.9285714285714286,0.6428571428571429,30.7692,Fix(reussite) : Rendre dynamique la possibilité d'exclure des serv_ens et de preciser le motif formation en cours (#20)
+CDPVD__cdpvd_dashboards_store,2025-07-10T13:22:35,6297bcfc656aaae8133cb44d988cf183ef76d71b,D3_alg_conn,0.08425363538274053,0.18033503413538496,114.0383,Fix(reussite) : Rendre dynamique la possibilité d'exclure des serv_ens et de preciser le motif formation en cours (#20)
+CDPVD__cdpvd_dashboards_store,2025-07-10T13:22:35,6297bcfc656aaae8133cb44d988cf183ef76d71b,D4_cycle_rank_norm,0.3333333333333333,0.23076923076923078,30.7692,Fix(reussite) : Rendre dynamique la possibilité d'exclure des serv_ens et de preciser le motif formation en cours (#20)
+CDPVD__cdpvd_dashboards_store,2025-10-03T12:52:23,80a3b5dcf48f1ccc88129150da82dc80b09167d9,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,feat(suivi_effectif): Pipeline de calcul des heures rémunérées / ETC (DBT + reporting) (#22)
+CDPVD__cdpvd_dashboards_store,2025-10-03T12:52:23,80a3b5dcf48f1ccc88129150da82dc80b09167d9,D3_alg_conn,0.18033503413538496,0.06919815125013809,61.628,feat(suivi_effectif): Pipeline de calcul des heures rémunérées / ETC (DBT + reporting) (#22)
+CDPVD__cdpvd_dashboards_store,2026-01-29T09:10:26,0428c08a3cc02931d07bf3957ede6886c80c692c,D1_csi,0.7142857142857143,0.5714285714285714,20.0,Fix: Source corps emp changée dans fact plus ajout left join dans la table tb (#34)
+CDPVD__cdpvd_dashboards_store,2026-01-29T09:10:26,0428c08a3cc02931d07bf3957ede6886c80c692c,D3_alg_conn,0.05667600388435096,0.043059784352687605,24.0247,Fix: Source corps emp changée dans fact plus ajout left join dans la table tb (#34)
+CDPVD__cdpvd_dashboards_store,2026-02-13T08:43:24,944b248bc8d2d66ba0ca93df58c631d9e1c49c8e,D1_csi,0.5714285714285714,0.7857142857142857,37.5,Bugfix: des pourcentages des absences par étape  (#36)
+CDPVD__cdpvd_dashboards_store,2026-02-13T08:43:24,944b248bc8d2d66ba0ca93df58c631d9e1c49c8e,D3_alg_conn,0.043059784352687605,0.033365492717862454,22.5136,Bugfix: des pourcentages des absences par étape  (#36)
+CDPVD__cdpvd_dashboards_store,2026-07-16T14:25:42,f5f367157839a28e1f191b35e0ade440fc0b341d,D1_csi,0.7857142857142857,1.0,27.2727,feat(pevr): ajout du tableau de bord personnalisé (#40)
+CDPVD__cdpvd_dashboards_store,2026-07-16T14:25:42,f5f367157839a28e1f191b35e0ade440fc0b341d,D3_alg_conn,0.033365492717862454,0.006950600542317039,79.1683,feat(pevr): ajout du tableau de bord personnalisé (#40)
+CDPVD__cdpvd_dashboards_store,2026-07-16T14:25:42,f5f367157839a28e1f191b35e0ade440fc0b341d,D4_cycle_rank_norm,0.14102564102564102,0.2621359223300971,85.8782,feat(pevr): ajout du tableau de bord personnalisé (#40)
+DITP-pilotage__pilote-2,2023-05-17T17:05:18,2f966ff1be68d405332b3a52a26a657892051656,D3_alg_conn,0.10513862518228179,0.042708557304951905,59.3788,chore: ajout valeur actuelle comparable dans le pivot (340)
+DITP-pilotage__pilote-2,2023-05-17T17:05:18,2f966ff1be68d405332b3a52a26a657892051656,D4_cycle_rank_norm,0.18181818181818182,0.35294117647058826,94.1176,chore: ajout valeur actuelle comparable dans le pivot (340)
+DITP-pilotage__pilote-2,2023-06-20T10:34:20,9db1d98578485dfd6215c2cb8e438cb34f939bbb,D3_alg_conn,0.042708557304951905,0.015736786989140862,63.1531,feat: implémente le param from_month pour la vaca et la vacg (444)
+DITP-pilotage__pilote-2,2023-10-19T11:25:07,a3fe7f9b038aed247aeaec14a033429187601528,D3_alg_conn,0.014564182296140017,0.08683578506505453,496.2284,add pilote_edit_boxType + some fixes
+DITP-pilotage__pilote-2,2023-10-19T11:25:07,a3fe7f9b038aed247aeaec14a033429187601528,D4_cycle_rank_norm,0.3333333333333333,0.45588235294117646,36.7647,add pilote_edit_boxType + some fixes
+DITP-pilotage__pilote-2,2023-11-16T15:16:18,090ee4dc6223dfded6b6bbcd120394a5d118156a,D3_alg_conn,0.08683578506505453,0.047498204934601856,45.3011,feat: date maj indicateur (512)
+DITP-pilotage__pilote-2,2023-11-16T15:16:18,090ee4dc6223dfded6b6bbcd120394a5d118156a,D4_cycle_rank_norm,0.45588235294117646,0.36231884057971014,20.5236,feat: date maj indicateur (512)
+DITP-pilotage__pilote-2,2023-12-14T15:32:52,d2308bcca2a3c7e5f0d6ee768c4bdcef61a4447b,D3_alg_conn,0.047498204934601856,0.08763732105766876,84.5066,fix: ignore TA indic si pond=0 dans TA ch
+DITP-pilotage__pilote-2,2023-12-14T15:32:52,d2308bcca2a3c7e5f0d6ee768c4bdcef61a4447b,D4_cycle_rank_norm,0.36231884057971014,0.47368421052631576,30.7368,fix: ignore TA indic si pond=0 dans TA ch
+DITP-pilotage__pilote-2,2024-02-14T11:42:16,a8e87daabb79cbc0e7e78c281adff910595a635c,D1_csi,0.6428571428571429,0.42857142857142855,33.3333,Création TAA_a_date (PIL-90)
+DITP-pilotage__pilote-2,2024-02-14T11:42:16,a8e87daabb79cbc0e7e78c281adff910595a635c,D3_alg_conn,0.08763732105766876,0.15748052708992222,79.6957,Création TAA_a_date (PIL-90)
+DITP-pilotage__pilote-2,2024-02-14T11:42:16,a8e87daabb79cbc0e7e78c281adff910595a635c,D4_cycle_rank_norm,0.47368421052631576,0.5873015873015873,23.9859,Création TAA_a_date (PIL-90)
+DITP-pilotage__pilote-2,2024-03-15T16:24:04,ea45950fb56968274ca3b0dd388150366831d980,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,feat: gestion compte pour referents (PIL-134)
+DITP-pilotage__pilote-2,2024-03-19T14:06:28,ee93a5fe6cb047a866b8e2b5aade39c7ff4f9cfb,D1_csi,0.5714285714285714,0.7142857142857143,25.0,fix: metadata indicateur (PIL-190)
+DITP-pilotage__pilote-2,2024-03-19T14:06:28,ee93a5fe6cb047a866b8e2b5aade39c7ff4f9cfb,D3_alg_conn,0.15951893667007497,0.12382730409659572,22.3745,fix: metadata indicateur (PIL-190)
+DITP-pilotage__pilote-2,2024-09-11T11:34:18,e0194b07a68830736cc28971174e7764e8823adb,D1_csi,0.7142857142857143,0.42857142857142855,40.0,fix: correction valeur affichée Operation TA (PIL-370) (#1093)
+DITP-pilotage__pilote-2,2024-10-10T16:17:58,e9315a9f666f5c5fb534962c8c897f2df761fc42,D3_alg_conn,0.13223425643202838,0.19927211486776644,50.6963,Suppr nom_court DAC (PIL-459)
+DITP-pilotage__pilote-2,2024-11-08T10:51:50,a4a2cbcbc8b9e7fcb413613daa131b1eca827919,D3_alg_conn,0.19927211486776644,0.3878266068044679,94.6216,fix: stockage id auteur pour les saisies (PIL-351)
+DITP-pilotage__pilote-2,2025-02-06T15:37:44,270b1bc1de2cdcb6903f49b0800f4f19d92523d3,D1_csi,0.6428571428571429,0.42857142857142855,33.3333,fix: table intermediaire meteo (PIL-000)
+DITP-pilotage__pilote-2,2025-02-06T15:37:44,270b1bc1de2cdcb6903f49b0800f4f19d92523d3,D3_alg_conn,0.38423664464292606,0.2911114390697048,24.2364,fix: table intermediaire meteo (PIL-000)
+DITP-pilotage__pilote-2,2025-06-11T10:20:11,c457ca205ce0ebbd6ebd9b61c020d8e49baf74d9,D3_alg_conn,0.3065771089661653,0.18449852688255733,39.8199,fix: rapport pva suppression reg aggregee (PIL-000)
+DITP-pilotage__pilote-2,2025-08-06T10:44:44,e2949a224b5c9546f2aa9e40608df0b4095799ae,D1_csi,0.5,0.6428571428571429,28.5714,fix: retours recette des jalon (PIL-572)
+DalgoT4D__dbt_shofco,2024-11-08T14:03:46,9a887d9511f3a01f9e79529e9d9ad4cde8f18035,D3_alg_conn,0.3819660112501056,0.3030045753994611,20.6724,.
+DalgoT4D__dbt_shofco,2024-12-05T12:59:45,40573c5a26fd092ac6595031c73890ee1d78fcb9,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,education changes + some new models
+DalgoT4D__dbt_shofco,2024-12-05T12:59:45,40573c5a26fd092ac6595031c73890ee1d78fcb9,D3_alg_conn,0.3030045753994611,0.5047383364968151,66.5778,education changes + some new models
+DalgoT4D__dbt_shofco,2025-08-05T12:12:19,0bf647c3010af6c14ddcf39e002bf1ba6e4cd05e,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Merge pull request #135 from DalgoT4D/update_location_in_placement_followup
+DalgoT4D__dbt_shofco,2025-10-01T14:13:52,01d73f17828ef605dccb33e42359cf3b2180ee44,D3_alg_conn,0.5047383364968151,0.9999999999999986,98.1225,gender fixes + sl work
+DalgoT4D__dbt_shofco,2025-10-01T14:13:52,01d73f17828ef605dccb33e42359cf3b2180ee44,D4_cycle_rank_norm,0.03296703296703297,0.02564102564102564,22.2222,gender fixes + sl work
+DalgoT4D__dbt_shofco,2025-11-20T12:43:45,158a5a4da99e6beff8cf555cdf75849c51dfc8fc,D4_cycle_rank_norm,0.02564102564102564,0.03225806451612903,25.8065,added site to counselling data
+DalgoT4D__dbt_shofco,2026-03-27T20:44:28,1d718973558f2f6daf14f97d9399e8769e314fde,D4_cycle_rank_norm,0.037037037037037035,0.04938271604938271,33.3333,Complete fix for all the Apprenticeship and TVET Location
+ImpulsoGov__saude-mental-indicadores,2022-08-10T20:44:17,76ffecbaa002a57692a6ab45d8d9fc1c07d7146d,D4_cycle_rank_norm,0.1,0.16666666666666666,66.6667,feat(caps)!: :sparkles: Adicionar indicadores de usuários ativos (#5)
+ImpulsoGov__saude-mental-indicadores,2022-09-14T18:05:08,48f59f21475c92618d532fd438e5679233f3be98,D3_alg_conn,0.5857864376269047,0.41025566059633434,29.965,refactor: :recycle: Flexibiliza troca de colunas de códigos por nomes legíveis (#10)
+ImpulsoGov__saude-mental-indicadores,2022-12-16T18:58:31,33e4ab20253c1d4481cd5a773858d369fbc25fc9,D3_alg_conn,0.41025566059633434,0.05655732793584082,86.2141,feat(internacoes): :sparkles: Adicionar modelos de internação (#18)
+ImpulsoGov__saude-mental-indicadores,2022-12-16T18:58:31,33e4ab20253c1d4481cd5a773858d369fbc25fc9,D4_cycle_rank_norm,0.13043478260869565,0.07142857142857142,45.2381,feat(internacoes): :sparkles: Adicionar modelos de internação (#18)
+ImpulsoGov__saude-mental-indicadores,2023-02-16T11:11:04,e0cbb22f80743d6d7a63da0dd0ded98d6450b151,D4_cycle_rank_norm,0.06382978723404255,0.14492753623188406,127.0531,feat(adesao): :sparkles: Adicionar modelos de adesão em CAPS (#25)
+ImpulsoGov__saude-mental-indicadores,2023-04-19T07:04:25,206338160e783095023bb2ac0ece860bca2f78f4,D3_alg_conn,0.06619469979898188,0.020928654106930834,68.3832,fix: :bug: Remove agrupamento pela coluna usuario_idade
+ImpulsoGov__saude-mental-indicadores,2023-04-19T07:04:25,206338160e783095023bb2ac0ece860bca2f78f4,D4_cycle_rank_norm,0.14084507042253522,0.1836734693877551,30.4082,fix: :bug: Remove agrupamento pela coluna usuario_idade
+ImpulsoGov__saude-mental-indicadores,2023-05-09T13:28:59,c2582104fb2e52489c64beac8df5b09993666873,D3_alg_conn,0.020928654106930834,0.028708957767088452,37.1754,fix: :bug: Adiciona estabelecimento no id único
+ImpulsoGov__saude-mental-indicadores,2023-05-09T13:28:59,c2582104fb2e52489c64beac8df5b09993666873,D4_cycle_rank_norm,0.1836734693877551,0.24242424242424243,31.9865,fix: :bug: Adiciona estabelecimento no id único
+ImpulsoGov__saude-mental-indicadores,2023-08-30T13:30:35,ede2ee679214540e8cb52ff26929da4e66c149b7,D1_csi,0.7142857142857143,1.0,40.0,Acrescenta combinações implícitas para vários modelos e corrige bugs (#29)
+ImpulsoGov__saude-mental-indicadores,2023-08-30T13:30:35,ede2ee679214540e8cb52ff26929da4e66c149b7,D4_cycle_rank_norm,0.24242424242424243,0.1875,22.6563,Acrescenta combinações implícitas para vários modelos e corrige bugs (#29)
+ImpulsoGov__saude-mental-indicadores,2024-01-11T11:39:36,0df77ada2922afdeb3b3a2cc4ff7a25b30ba9cc9,D1_csi,1.0,0.7857142857142857,21.4286,Refatora páginas de outros serviços (#30)
+Jam516__BundleBear,2023-09-26T17:54:44,9b862f53069e756baad1a42e60b2dc9f8ae91272,D4_cycle_rank_norm,0.375,0.7368421052631579,96.4912,commit
+Jam516__BundleBear,2024-02-23T16:36:32,278a886941f323019fe31c47ef0b25b471188010,D4_cycle_rank_norm,0.7586206896551724,0.5641025641025641,25.641,commit
+Jam516__BundleBear,2024-10-15T11:58:12,f4659fb55682b625b466390a8dae1c87119534c7,D4_cycle_rank_norm,0.5238095238095238,0.7752808988764045,48.0082,commit
+Jam516__BundleBear,2025-06-16T08:05:55,328b31c29b00e0a3ea7998114362faf0664409c9,D3_alg_conn,0.44190075214096,0.04026601411634697,90.888,update labels
+Jam516__BundleBear,2025-06-16T08:05:55,328b31c29b00e0a3ea7998114362faf0664409c9,D4_cycle_rank_norm,0.7398373983739838,1.0705882352941176,44.7059,update labels
+Jam516__BundleBear,2025-07-18T11:04:26,68bdcd33485249e1d1f401bed70255bc46e66254,D3_alg_conn,0.04026601411634697,0.09663975726323065,140.0033,Fix Infinity
+Jam516__BundleBear,2025-09-17T07:58:23,114d48ad51e40a9f2f98cdbda761246529ee73c6,D4_cycle_rank_norm,1.09375,0.8333333333333334,23.8095,update-key
+Jam516__BundleBear,2026-04-09T09:08:52,15b1735d7faa0f855ae41f205aada08f3db2e709,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,optmise tables
+MTES-MCT__dossierfacile-data,2025-04-15T17:53:02,93993e9a0561894f39db242f22d357b623afb855,D3_alg_conn,0.13103510631058524,0.061117292869660285,53.3581,rework: rework core_document_denied_reasons (#24)
+MTES-MCT__dossierfacile-data,2025-05-14T16:04:20,c9eab949c76c2ef710d1ddb9536120ecf8bae119,D1_csi,0.7142857142857143,0.5714285714285714,20.0,"feat: ajout des modèles application, application_link et application_link_log pour le suivi du partage d'un dossier de c"
+MTES-MCT__dossierfacile-data,2025-05-14T16:04:20,c9eab949c76c2ef710d1ddb9536120ecf8bae119,D3_alg_conn,0.061117292869660285,0.10269398606897799,68.0277,"feat: ajout des modèles application, application_link et application_link_log pour le suivi du partage d'un dossier de c"
+MTES-MCT__dossierfacile-data,2026-01-06T17:11:32,bc4730e365e7e77fe86d62f0bd68b2e198cda53d,D1_csi,0.5714285714285714,0.7857142857142857,37.5,"feat: add tenant funnel, origin, and status to weekly-operations-per-validation (#54)"
+MTES-MCT__dossierfacile-data,2026-01-06T17:11:32,bc4730e365e7e77fe86d62f0bd68b2e198cda53d,D4_cycle_rank_norm,0.044444444444444446,0.06521739130434782,46.7391,"feat: add tenant funnel, origin, and status to weekly-operations-per-validation (#54)"
+MTES-MCT__dossierfacile-data,2026-02-09T19:10:59,c3287537871c4f12974be7b4dec1e209712ad4b1,D4_cycle_rank_norm,0.06521739130434782,0.044444444444444446,31.8519,feat: update application_link models to match the new database schema (#59)
+MTES-MCT__dossierfacile-data,2026-03-02T16:50:57,592fb1595224ead154311f823dadc180f827d599,D4_cycle_rank_norm,0.044444444444444446,0.06521739130434782,46.7391,feat: enhance operator comment model with operator details (#61)
+MTES-MCT__dossierfacile-data,2026-04-30T11:18:11,3d763a9f675b05c59604c26ae0b24678dde948a1,D3_alg_conn,0.10679756785024412,0.06419624175275794,39.8898,feat: rework documents model (#67)
+MTES-MCT__dossierfacile-data,2026-04-30T11:18:11,3d763a9f675b05c59604c26ae0b24678dde948a1,D4_cycle_rank_norm,0.06521739130434782,0.04081632653061224,37.415,feat: rework documents model (#67)
+MTES-MCT__dossierfacile-data,2026-06-26T18:45:48,62c4051ec3ff4a2a68b5fae0e21d369fa57a9409,D4_cycle_rank_norm,0.04081632653061224,0.02040816326530612,50.0,fix(operation): allow null tenant_id when action_type is APPLICATION_SEARCHED (#72)
+MTES-MCT__trackdechets-meltano-workspace,2022-11-30T14:37:15,6f089b41e0bc3e3fd215eeefa9a88a27cf0f0afa,D3_alg_conn,1.0,0.35132055654423305,64.8679,Updates meterialization of icpe_siretise model
+MTES-MCT__trackdechets-meltano-workspace,2023-02-05T17:30:38,10a7c80b95625db1cc6c9519d057f918db2df2b3,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,Fixes overlapping column names in company_enriched
+MTES-MCT__trackdechets-meltano-workspace,2023-02-05T17:30:38,10a7c80b95625db1cc6c9519d057f918db2df2b3,D4_cycle_rank_norm,0.037037037037037035,0.14285714285714285,285.7143,Fixes overlapping column names in company_enriched
+MTES-MCT__trackdechets-meltano-workspace,2023-03-06T15:52:44,1e9a1c25fb5622cb99aabfe6aad192b195a41fa3,D3_alg_conn,0.4058282994555342,0.09138191570012995,77.4826,Adds collectivites model
+MTES-MCT__trackdechets-meltano-workspace,2023-03-06T15:52:44,1e9a1c25fb5622cb99aabfe6aad192b195a41fa3,D4_cycle_rank_norm,0.14285714285714285,0.04918032786885246,65.5738,Adds collectivites model
+MTES-MCT__trackdechets-meltano-workspace,2023-04-05T11:55:46,8217102f1174778f4acd498908aafaec2a35762b,D3_alg_conn,0.09138191570012995,0.21028459619522283,130.1162,Linting
+MTES-MCT__trackdechets-meltano-workspace,2023-04-05T11:55:46,8217102f1174778f4acd498908aafaec2a35762b,D4_cycle_rank_norm,0.04918032786885246,0.1276595744680851,159.5745,Linting
+MTES-MCT__trackdechets-meltano-workspace,2023-05-03T08:14:25,8aa67a6179687f42f1224c80c934bf33ff575daf,D3_alg_conn,0.21028459619522283,0.1641023959841225,21.9618,Adds new columns to bordereaux_enriched
+MTES-MCT__trackdechets-meltano-workspace,2023-07-05T15:36:20,cc6be0e724b52299d1427fbef0a5170f4797088d,D3_alg_conn,0.1629728010135491,0.12446329392519441,23.6294,Updates ICPE models
+MTES-MCT__trackdechets-meltano-workspace,2023-07-05T15:36:20,cc6be0e724b52299d1427fbef0a5170f4797088d,D4_cycle_rank_norm,0.15463917525773196,0.07446808510638298,51.844,Updates ICPE models
+MTES-MCT__trackdechets-meltano-workspace,2023-07-21T09:44:43,a3e000c7f9a0154911dfea4b0cdf6784e74b4d1b,D3_alg_conn,0.12446329392519441,0.07693214604570148,38.1889,Updates quantity unit for bsdd revisions requests
+MTES-MCT__trackdechets-meltano-workspace,2023-07-21T09:44:43,a3e000c7f9a0154911dfea4b0cdf6784e74b4d1b,D4_cycle_rank_norm,0.07446808510638298,0.10101010101010101,35.6421,Updates quantity unit for bsdd revisions requests
+MTES-MCT__trackdechets-meltano-workspace,2023-09-01T13:37:42,f33b26401d34d9739d7843a593e7e53499443e3d,D4_cycle_rank_norm,0.10101010101010101,0.12745098039215685,26.1765,Fixes typo
+MTES-MCT__trackdechets-meltano-workspace,2023-10-31T15:59:28,432681f9405e194f41947db4dbb50d959aa6b6bf,D3_alg_conn,0.08874551990913115,0.05773683629663498,34.9411,Adds bsdd transporter model
+MTES-MCT__trackdechets-meltano-workspace,2023-12-01T10:38:15,be87067af8e16c5be52d1068eee2ce3dac93e711,D4_cycle_rank_norm,0.15384615384615385,0.25688073394495414,66.9725,Modifies bsdd to match transporters data model
+MTES-MCT__trackdechets-meltano-workspace,2024-01-31T11:38:02,67426817ed34e88b0da3ecbcb34699b6863ff26d,D1_csi,0.9285714285714286,0.5714285714285714,38.4615,Updates icpe model
+MTES-MCT__trackdechets-meltano-workspace,2024-03-29T16:26:28,f761aab85d257539d92afddbafdc35de778e7a25,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Converts RNDTS quantity to float
+MTES-MCT__trackdechets-meltano-workspace,2024-04-12T14:53:31,4d11c0c2deb3ecbac38ba100b407ebaeb0db27d2,D1_csi,0.7142857142857143,0.5714285714285714,20.0,Updates tra 14189 to add adresses
+MTES-MCT__trackdechets-meltano-workspace,2024-05-27T09:14:19,1529352ba66dce2a0f21eff89dab80f40babb6ee,D1_csi,0.5714285714285714,0.2857142857142857,50.0,Adds packagings weight to bsff_enriched
+MTES-MCT__trackdechets-meltano-workspace,2024-06-28T08:46:46,cc59c8de5d81344699b6ffd29844df0813b5880f,D1_csi,0.2857142857142857,0.42857142857142855,50.0,Adds GERICO pipeline
+MTES-MCT__trackdechets-meltano-workspace,2024-06-28T08:46:46,cc59c8de5d81344699b6ffd29844df0813b5880f,D3_alg_conn,0.06914335611806273,0.08673659966607258,25.4446,Adds GERICO pipeline
+MTES-MCT__trackdechets-meltano-workspace,2024-09-06T12:18:36,045a33f0740d2ef4fd662e65e1c9f088c16bfb05,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,Updates ICPE model
+MTES-MCT__trackdechets-meltano-workspace,2024-11-25T13:42:21,2bb62d5f74438ee959529ca04e8cc4f60943d58a,D3_alg_conn,0.09365896605010644,0.06588580200948149,29.6535,Fixes bad coordinates for cartographie model
+MTES-MCT__trackdechets-meltano-workspace,2024-12-17T10:50:22,a9a8cca78319f591981e97c3add1dd2c0b9cca10,D1_csi,0.5714285714285714,0.35714285714285715,37.5,Adds form_id index on bsdd_transporter_enriched
+MTES-MCT__trackdechets-meltano-workspace,2025-01-24T08:36:51,c9f3a761a124928c618d866207dd92fda037ecb6,D1_csi,0.35714285714285715,0.5,40.0,Fixes broken models sin installations_rubriuqes changes
+MTES-MCT__trackdechets-meltano-workspace,2025-02-20T17:47:11,50bebf84f82025c28a9486033dc1e8dc1ec134f6,D1_csi,0.5,0.2857142857142857,42.8571,Linting
+MattTriano__analytics_data_where_house,2023-02-07T08:30:36,34e3d724da3ccfca7d2dad78c81630c180e7191c,D4_cycle_rank_norm,0.038461538461538464,0.017857142857142856,53.5714,Adds intermediate models for another table and cleans up existing intermediate models.
+MattTriano__analytics_data_where_house,2023-02-18T15:20:45,f003cb4bf254b1c016fca963d69ab4e2a391ad67,D3_alg_conn,0.5188056959079843,0.15662619061642657,69.8102,Standardizes chicago_crimes data.
+MattTriano__analytics_data_where_house,2023-02-18T15:20:45,f003cb4bf254b1c016fca963d69ab4e2a391ad67,D4_cycle_rank_norm,0.017857142857142856,0.1511627906976744,746.5116,Standardizes chicago_crimes data.
+MattTriano__analytics_data_where_house,2023-05-05T19:21:32,49e8ecab57a6f014d9f4e261855a950419b9a7dd,D4_cycle_rank_norm,0.15463917525773196,0.056179775280898875,63.6704,Removes tasks that generate the report schema as well as report schema models.
+MattTriano__analytics_data_where_house,2024-12-28T22:11:49,3b622d3b5972e709e966955c1ce582af484a9bf4,D3_alg_conn,0.19410145938404025,0.5955443589381065,206.8212,Adds std and clean models for housing census variables.
+MattTriano__analytics_data_where_house,2025-01-04T23:25:43,ba0722aafd1dd4d45e86e58297506fb909fdf78f,D4_cycle_rank_norm,0.03816793893129771,0.028089887640449437,26.4045,Adds clean stage for chicago parks and improves some dtypes in parcel proximity.
+NYCPlanning__data-engineering,2024-04-26T13:57:58,d12476ddd7346681e43b984c3c70678f6bff1803,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,fix typo in `int__zoning_districts`
+NYCPlanning__data-engineering,2024-05-28T11:40:42,1e99fc69871532ae59ec96fb75005513bf32caf4,D4_cycle_rank_norm,0.03389830508474576,0.043010752688172046,26.8817,add GFT source models
+NYCPlanning__data-engineering,2024-06-07T15:01:56,bf02bd6926a3b2644a80295bee8a65dee8cde038,D1_csi,0.7142857142857143,0.9285714285714286,30.0,fix non-multi geoms in gft source exports (#892)
+NYCPlanning__data-engineering,2024-06-07T15:01:56,bf02bd6926a3b2644a80295bee8a65dee8cde038,D3_alg_conn,0.1533828795146681,0.07324311204145727,52.2482,fix non-multi geoms in gft source exports (#892)
+OHDSI__dbt-synthea,2024-06-14T18:24:49,76c6f972652ce876a185902edee9316273e6eb91,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,"put seeds in separate schema, materialize seed vocab"
+OHDSI__dbt-synthea,2024-07-04T17:52:21,e498ac81983c351ef5707a8ff06f59ad55cf7450,D3_alg_conn,0.2403762683873443,0.11956565935190079,50.259,add 3 missing tables
+OHDSI__dbt-synthea,2024-10-13T20:46:11,48e261a9cddead23e129369ab9195307d6e899c4,D4_cycle_rank_norm,0.15217391304347827,0.19767441860465115,29.9003,refactor: create and use a macro for safe hashing of columns
+OHDSI__dbt-synthea,2025-01-09T19:45:51,12bda01f6030dda0e6e7724d81d386b5c701456c,D1_csi,0.5714285714285714,0.7857142857142857,37.5,add new regex func
+OHDSI__dbt-synthea,2025-01-09T19:45:51,12bda01f6030dda0e6e7724d81d386b5c701456c,D4_cycle_rank_norm,0.2,0.11494252873563218,42.5287,add new regex func
+OHDSI__dbt-synthea,2025-02-01T07:11:36,296bc14c008a84d1fe275be30b08efc2a06402c6,D3_alg_conn,0.08990710324817297,0.12135032657025023,34.973,Merge pull request #117 from OHDSI/115-feat-utilise-imaging-studies
+OHDSI__dbt-synthea,2025-04-19T17:33:29,d2a21bc7c8e476a9a588703763645f3475dbc1e1,D3_alg_conn,0.12135032657025023,0.08239271712723895,32.1034,fix issue causing duplicate PKs in procedure_occurrence
+Opetushallitus__ovara,2024-05-31T15:00:01,d12506add20da14ccc7f3f2747d7b90af3833a52,D3_alg_conn,0.12886049672047786,0.047687519577112446,62.9929,sqlfluff'd mallit
+Opetushallitus__ovara,2024-05-31T15:00:01,d12506add20da14ccc7f3f2747d7b90af3833a52,D4_cycle_rank_norm,0.0547945205479452,0.07865168539325842,43.5393,sqlfluff'd mallit
+Opetushallitus__ovara,2024-06-27T12:36:20,5a596b6a6215929db072495b9af53e3705baa19b,D4_cycle_rank_norm,0.07865168539325842,0.058823529411764705,25.2101,Lisätty lataus valintarekisteri_valinnantulos
+Opetushallitus__ovara,2024-09-06T13:16:38,89399166b68bc6b60cf2b5f85ad67d8cba6172d9,D3_alg_conn,0.04581260458024903,0.02287866084736705,50.0603,LIsätty lataaminen asiasana ja ammattinimike
+Opetushallitus__ovara,2024-10-31T10:29:59,f239ce0062775b357249a151f03d37e0a394e688,D3_alg_conn,0.02287866084736705,0.01447663679195414,36.7243,LIsätty toteutukselle alkamiskausityyppi
+Opetushallitus__ovara,2025-01-29T13:13:37,5352236f74b793c5ebcea9cac00f7aa74ef87421,D4_cycle_rank_norm,0.05945945945945946,0.10837438423645321,82.266,Lisätty hakuun koulutuksen_alkamisajankohdat hakukohteilta
+Opetushallitus__ovara,2025-02-27T13:34:11,3b5f8d52c9344ad731b043973ed38f0032e1a1a1,D3_alg_conn,0.011442297989017575,0.02939908755668344,156.9334,OK-602 bugikorjaus int_sure_ensikertalainen
+Opetushallitus__ovara,2025-02-27T13:34:11,3b5f8d52c9344ad731b043973ed38f0032e1a1a1,D4_cycle_rank_norm,0.10837438423645321,0.17117117117117117,57.9443,OK-602 bugikorjaus int_sure_ensikertalainen
+Opetushallitus__ovara,2025-03-27T10:16:17,b207aa653f0b753218837448b546a2d416f19a8a,D4_cycle_rank_norm,0.17117117117117117,0.20689655172413793,20.8711,OK-602 Korjattu opintojen laajuusarvo
+Opetushallitus__ovara,2026-07-10T07:48:56,85604ee6fe078f38f3ff75d02aa66c1f2b8c29f9,D3_alg_conn,0.02969700062804949,0.05355562523387834,80.3402,lisätty pvm-logiikka hakukohde_yos
+Opetushallitus__ovara,2026-07-10T07:48:56,85604ee6fe078f38f3ff75d02aa66c1f2b8c29f9,D4_cycle_rank_norm,0.22666666666666666,0.28012048192771083,23.5826,lisätty pvm-logiikka hakukohde_yos
+PedramNavid__dagster,2022-08-03T20:58:26,2c821b4fa77f03b419af4552d73c6645e0d4d55b,D3_alg_conn,0.9999999999999997,0.4023728380236242,59.7627,3.14/n example overhaul: hacker_news_assets -> project_fully_featured  + recommended project layout (#9191)
+PedramNavid__dagster,2023-05-09T09:45:53,91b12934e6a767d955e5b481b9deb971119df3fe,D4_cycle_rank_norm,0.09523809523809523,0.07407407407407407,22.2222,example: rename project_pypi_github to project_analytics (#14170)
+PedramNavid__dagster,2023-06-15T12:16:26,30b497cb1dc58de86fa415d1764fcbe2edd73a6e,D4_cycle_rank_norm,0.07407407407407407,0.09375,26.5625,feat(dbt): parse asset key from `+meta` (#14794)
+Porte-Bleue__mongo-to-postgres-etl,2023-03-10T15:14:45,eea789b647735cc2bdf45c8e7ac4363b32443eb5,D3_alg_conn,0.42147317269885276,0.08900384676698393,78.8827,Track grocery shopping stock entries
+Porte-Bleue__mongo-to-postgres-etl,2023-04-23T15:05:15,7dfea00f0944282ff24e18433d0920770a0788b1,D3_alg_conn,0.08900384676698393,0.15485659856174433,73.9887,Add date_latest_distribution to viz_products__stocks_availability
+Porte-Bleue__mongo-to-postgres-etl,2023-04-23T15:05:15,7dfea00f0944282ff24e18433d0920770a0788b1,D4_cycle_rank_norm,0.21739130434782608,0.2916666666666667,34.1667,Add date_latest_distribution to viz_products__stocks_availability
+Porte-Bleue__mongo-to-postgres-etl,2023-10-02T11:22:13,ad551b03d488a08b09486ff4798eb3c71d3ffbf3,D3_alg_conn,0.1571907550311792,0.12250245482507316,22.0676,Docs
+Porte-Bleue__mongo-to-postgres-etl,2023-10-21T20:31:03,a33426a29a495301371fcb9f45a5636044f75a09,D3_alg_conn,0.12250245482507316,0.16453533649861715,34.3119,Fix join issue in new model
+SQLMesh__sqlmesh,2025-09-23T15:23:13,34dc9fde5214b20f22a0dd6dbeab1a693293aeee,D1_csi,0.9285714285714286,0.6428571428571429,30.7692,Feat!: bring dbt node information through to SQLMesh (#5412)
+SQLMesh__sqlmesh,2025-09-23T15:23:13,34dc9fde5214b20f22a0dd6dbeab1a693293aeee,D3_alg_conn,2.0,0.4330490338002851,78.3475,Feat!: bring dbt node information through to SQLMesh (#5412)
+Sciance-Inc__core.dashboards_store,2022-12-20T19:39:02,277ad07a2ea2c4ffabba54dc1b5eede52a1c4791,D3_alg_conn,1.0,0.6277186767309857,37.2281,Merged PR 253: transport_scoler_geobus
+Sciance-Inc__core.dashboards_store,2023-01-24T13:53:55,c1b08bfa7fe5ad58d4fb02fcc390141989c3ba6c,D3_alg_conn,0.6277186767309857,0.08494028178592213,86.4684,Changement pour Mohamed
+Sciance-Inc__core.dashboards_store,2023-02-23T18:09:26,4626f2406c66b6f92119e6fc25a0a27f32b448b1,D3_alg_conn,0.08494028178592213,0.2506590851470478,195.1004,feat : add new table to schema
+Sciance-Inc__core.dashboards_store,2023-03-24T12:17:22,4bd515a35096c016986603c750cba59245c27553,D3_alg_conn,0.2506590851470478,0.11265269277944734,55.0574,Merged PR 330: refactoring cout de roulement code
+Sciance-Inc__core.dashboards_store,2023-03-24T12:17:22,4bd515a35096c016986603c750cba59245c27553,D4_cycle_rank_norm,0.125,0.23076923076923078,84.6154,Merged PR 330: refactoring cout de roulement code
+Sciance-Inc__core.dashboards_store,2023-04-20T13:55:47,bd5dd72839324d3e6fb22745504c9659c15824c0,D4_cycle_rank_norm,0.23076923076923078,0.15625,32.2917,Merged PR 339: Tableau de bord emp_actif
+Sciance-Inc__core.dashboards_store,2023-06-06T16:42:12,de87bc13bb3b79917d77760f0249b9362358b24d,D4_cycle_rank_norm,0.125,0.1791044776119403,43.2836,fix: remove blank results and correct subject evaluation code
+Sciance-Inc__core.dashboards_store,2023-08-23T12:48:26,07a4d25e2b07a76422123407f27c0b96f10989da,D4_cycle_rank_norm,0.17391304347826086,0.358695652173913,106.25,Merged PR 423: Ajout des tags pour les tableaux de bord prospectif_cdp
+Sciance-Inc__core.dashboards_store,2023-10-21T12:58:18,a6c4b9971d3b2b0764bfc32fb4d4fc484bb8cfd3,D1_csi,0.7142857142857143,0.5,30.0,style: applying sqlfmt
+Sciance-Inc__core.dashboards_store,2023-10-21T12:58:18,a6c4b9971d3b2b0764bfc32fb4d4fc484bb8cfd3,D4_cycle_rank_norm,0.358695652173913,0.44954128440366975,25.3267,style: applying sqlfmt
+Sciance-Inc__core.dashboards_store,2023-12-20T17:06:04,e8ca4227caa02a57a504d9c60ad65340283fd7fc,D1_csi,0.5,0.6428571428571429,28.5714,style: applying sqlfmt
+Sciance-Inc__core.dashboards_store,2023-12-20T17:06:04,e8ca4227caa02a57a504d9c60ad65340283fd7fc,D4_cycle_rank_norm,0.475,0.5957446808510638,25.4199,style: applying sqlfmt
+Sciance-Inc__core.dashboards_store,2024-04-19T17:34:12,42df0afb299ff302b8c75ed586021b96de0f122b,D1_csi,0.5,0.35714285714285715,28.5714,chore: removing deprecated dashboards transport and prospectif
+Sciance-Inc__core.dashboards_store,2024-04-19T17:34:12,42df0afb299ff302b8c75ed586021b96de0f122b,D3_alg_conn,0.1216940997051926,0.19993681819292453,64.2946,chore: removing deprecated dashboards transport and prospectif
+Sciance-Inc__core.dashboards_store,2024-04-19T17:34:12,42df0afb299ff302b8c75ed586021b96de0f122b,D4_cycle_rank_norm,0.6824324324324325,0.8666666666666667,26.9967,chore: removing deprecated dashboards transport and prospectif
+Sciance-Inc__core.dashboards_store,2024-05-03T12:49:48,682fead8417b2dc8e249536868ccb2f35015acea,D1_csi,0.35714285714285715,0.21428571428571427,40.0,chore(educ_serv): moving grades related tables to a dedicated folder to avoid cluttering the mart
+Sciance-Inc__core.dashboards_store,2024-10-19T13:07:34,ae3cab956a8c0411a4e00e071d506ba907df36f2,D1_csi,0.21428571428571427,0.42857142857142855,100.0,refactor(mart_educ_serv): staging grades will now output results for all competencies (including null ones) as filtering
+Sciance-Inc__core.dashboards_store,2025-04-14T17:53:25,9f3a5ce9cfe36f0cb54801032c5272eba7fba0c8,D1_csi,0.5,0.2857142857142857,42.8571,feat(diplome): adding new course CCQ to diploma tracking (#81)
+Sciance-Inc__core.dashboards_store,2025-04-14T17:53:25,9f3a5ce9cfe36f0cb54801032c5272eba7fba0c8,D3_alg_conn,0.25793347169805253,0.18333790792724336,28.9205,feat(diplome): adding new course CCQ to diploma tracking (#81)
+Sciance-Inc__core.dashboards_store,2025-06-04T17:08:40,48c7568f2636bb93610f6ac5535e85ad0c1b2b9f,D1_csi,0.2857142857142857,0.42857142857142855,50.0,chore(res_epreuves): modification des schema.yml de tdb res_epreuves
+Sciance-Inc__core.dashboards_store,2025-10-01T13:29:00,41b484f5f1b9a1631e6caa9f6f0bf5c4fe49a57a,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,docs: improving comment
+Sciance-Inc__core.dashboards_store,2025-11-10T16:26:48,b33fc6a3f5b17de65591e2d3cce47f8f9b3970d7,D1_csi,0.5714285714285714,0.42857142857142855,25.0,feat: Changement du terme pour genre
+Sciance-Inc__core.dashboards_store,2025-12-05T11:16:30,d16d5769a38c44972b3526e684652121e41f82dc,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,refactor(pevr): renomer la seed pevr_indicateurs_css vers pevr_indicateurs_meq (#106)
+Sciance-Inc__core.dashboards_store,2026-02-10T10:32:36,cf0344b42fe416efeafbf67041f3d99cf6e626db,D1_csi,0.5,0.6428571428571429,28.5714,fix(absenteism): the css tablw was not properly refered
+Sciance-Inc__core.dashboards_store,2026-02-10T10:32:36,cf0344b42fe416efeafbf67041f3d99cf6e626db,D3_alg_conn,0.1800969547124698,0.029268063174045417,83.7487,fix(absenteism): the css tablw was not properly refered
+Sciance-Inc__core.dashboards_store,2026-05-08T14:30:53,783d23927b13cd43346343b9f13b18b019aa31a3,D1_csi,0.6428571428571429,0.5,22.2222,feat(résignation): ajout du tableau de bord démissions
+Som-Energia__somenergia-jardiner,2022-11-22T12:29:22,38da6507ee4040ccbcccc594d15ab10049b465c5,D1_csi,0.7142857142857143,0.5714285714285714,20.0,alert_meter_zero_energy only checks daylight readings
+Som-Energia__somenergia-jardiner,2022-11-22T12:29:22,38da6507ee4040ccbcccc594d15ab10049b465c5,D3_alg_conn,0.0695885198053765,0.10107100633827254,45.2409,alert_meter_zero_energy only checks daylight readings
+Som-Energia__somenergia-jardiner,2022-11-22T12:29:22,38da6507ee4040ccbcccc594d15ab10049b465c5,D4_cycle_rank_norm,0.1111111111111111,0.25806451612903225,132.2581,alert_meter_zero_energy only checks daylight readings
+Som-Energia__somenergia-jardiner,2023-02-03T12:12:50,58abb596f8362f2281f4ee5b2152448878ad7b10,D1_csi,0.5714285714285714,0.7857142857142857,37.5,Merge branch 'main' into novu_tecnics
+Som-Energia__somenergia-jardiner,2023-02-03T12:12:50,58abb596f8362f2281f4ee5b2152448878ad7b10,D3_alg_conn,0.10107100633827254,0.03269145335096956,67.655,Merge branch 'main' into novu_tecnics
+Som-Energia__somenergia-jardiner,2023-02-03T12:12:50,58abb596f8362f2281f4ee5b2152448878ad7b10,D4_cycle_rank_norm,0.25806451612903225,0.1935483870967742,25.0,Merge branch 'main' into novu_tecnics
+Som-Energia__somenergia-jardiner,2023-03-08T15:35:23,1e1ce755f7f4190acab81ff1f0d4b0cebae9f9d2,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,change inverter_intensity to stringregistry_multisource
+Som-Energia__somenergia-jardiner,2023-09-01T12:47:07,608fd7be18581010a3feaf6fb8ab9a20e0f8cb4a,D1_csi,0.5714285714285714,0.7142857142857143,25.0,add dset basics raw + signals receiver check (et/somenergia-jardiner!5)
+Som-Energia__somenergia-jardiner,2023-10-26T14:33:37,7491a1bb6c9ef2ee5b819cb862e45adfdd3aa89f,D1_csi,0.7857142857142857,0.5,36.3636,hotfix: fix latitut typo
+Som-Energia__somenergia-jardiner,2023-12-03T14:01:14,2fbb4575984eaa24ef755c261486906a30c59303,D1_csi,0.5,0.9285714285714286,85.7143,feature: add gap and missing uuids observation dbt tests (et/somenergia-jardiner!40)
+Som-Energia__somenergia-jardiner,2023-12-03T14:01:14,2fbb4575984eaa24ef755c261486906a30c59303,D3_alg_conn,0.02122803702394599,0.015803141877085477,25.5553,feature: add gap and missing uuids observation dbt tests (et/somenergia-jardiner!40)
+Som-Energia__somenergia-jardiner,2023-12-03T14:01:14,2fbb4575984eaa24ef755c261486906a30c59303,D4_cycle_rank_norm,0.16546762589928057,0.2,20.8696,feature: add gap and missing uuids observation dbt tests (et/somenergia-jardiner!40)
+Som-Energia__somenergia-jardiner,2023-12-22T12:17:07,a9f801e28c3458374c77e7e067b4a624a8f9b976,D1_csi,0.9285714285714286,0.5714285714285714,38.4615,fix: inverter monthly agg (et/somenergia-jardiner!60)
+Som-Energia__somenergia-jardiner,2024-02-02T17:08:35,53028e87784f5bc7eb7ad681201dde146826a419,D1_csi,0.5714285714285714,0.9285714285714286,62.5,"fix: delete old models, change dag cron (et/somenergia-jardiner!98)"
+Som-Energia__somenergia-jardiner,2024-03-04T10:59:56,158c0691b0a9f03769f59fd602aa553e06eb74f9,D1_csi,0.9285714285714286,0.7142857142857143,23.0769,fix: future plants failing tests (et/somenergia-jardiner!131)
+Som-Energia__somenergia-jardiner,2024-03-04T10:59:56,158c0691b0a9f03769f59fd602aa553e06eb74f9,D3_alg_conn,0.014534554850169508,0.03089280424152613,112.5473,fix: future plants failing tests (et/somenergia-jardiner!131)
+Stevedow99__dbt_snowflake_demo_sandbox,2023-01-11T03:02:36,2c96ce0c160d38043a265e70cbfc0c1d40c69b53,D4_cycle_rank_norm,0.13043478260869565,0.10344827586206896,20.6897,updates
+Stevedow99__dbt_snowflake_demo_sandbox,2023-12-19T21:49:38,8b1f599c5dd6157c7e6d834802566dba4228cf80,D4_cycle_rank_norm,0.061224489795918366,0.04838709677419355,20.9677,updates
+T-Dunlap__dbt_demo_project,2023-05-12T18:47:27,114ce2396de81ac6aa12deca8119d932ebee9569,D3_alg_conn,0.08236792205683224,0.18669198489341368,126.6562,Adding files for thoughtspot demo
+T-Dunlap__dbt_demo_project,2023-05-12T18:47:27,114ce2396de81ac6aa12deca8119d932ebee9569,D4_cycle_rank_norm,0.07692307692307693,0.1111111111111111,44.4444,Adding files for thoughtspot demo
+TEAMSchools__teamster,2023-10-11T19:31:59,40c775205f5519d911113ec2fd3462b00b430c45,D4_cycle_rank_norm,0.33876221498371334,0.21138211382113822,37.6016,assessment entry audit
+TEAMSchools__teamster,2023-11-09T22:12:48,5c704fdcc478c6557622064dd9e95db8c48cef8b,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,ran format
+TEAMSchools__teamster,2024-02-09T09:44:55,968d7b7f2d52a5695fa5c5b9a282dd28b356bcc3,D1_csi,0.7142857142857143,0.35714285714285715,50.0,Merge branch 'main' into adding_rn_tableau
+TEAMSchools__teamster,2024-03-08T22:45:11,ff612d0a28e418036036ea80c9fe8fd601b79a06,D1_csi,0.35714285714285715,0.5714285714285714,60.0,"add region, update column names"
+TEAMSchools__teamster,2024-05-08T19:49:43,77feece8de79ce1d398d98a6887de205010369be,D1_csi,0.6428571428571429,0.42857142857142855,33.3333,fluff trunk shit
+TEAMSchools__teamster,2024-07-07T18:05:07,14fcff108a287432f8cba0038bc47facdb69bb1d,D1_csi,0.35714285714285715,0.7142857142857143,100.0,trunk 1
+TEAMSchools__teamster,2024-07-07T18:05:07,14fcff108a287432f8cba0038bc47facdb69bb1d,D3_alg_conn,0.08538138789439807,0.10353485475901533,21.2616,trunk 1
+TEAMSchools__teamster,2024-08-07T13:49:00,501e7e0db2935299be5eaea5bd74bd9c37ce72f0,D1_csi,0.7142857142857143,0.2857142857142857,60.0,?
+TEAMSchools__teamster,2024-09-06T13:59:50,c3903aba7acf11e8c599b66c75d92ed152e03bfc,D1_csi,0.2857142857142857,0.5,75.0,more fixes
+TEAMSchools__teamster,2024-10-04T18:13:33,0fde135b2af682ca768e9c364008194b3ab95a1d,D1_csi,0.5,0.35714285714285715,28.5714,trunk
+TEAMSchools__teamster,2024-11-04T21:30:16,cb1d289cb8e10c671c011d9d2a81d663bfe20011,D1_csi,0.35714285714285715,0.5,40.0,trunkf fix
+TEAMSchools__teamster,2025-02-03T01:38:41,7b3d5b494726d449d60bf0dac58570619e02188d,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,neded to refactor last cte
+TEAMSchools__teamster,2025-02-03T01:38:41,7b3d5b494726d449d60bf0dac58570619e02188d,D3_alg_conn,0.09523739101368989,0.040232879043881946,57.7552,neded to refactor last cte
+TEAMSchools__teamster,2025-10-01T14:30:07,673ca887e20f32f7cf786dfc919e3705638442e5,D1_csi,0.6428571428571429,0.5,22.2222,Merge remote-tracking branch 'origin/main' into cb2-boy-adjustment
+TEAMSchools__teamster,2026-03-28T18:37:17,bf8087a9736f18848a1693d51779e3c1eb905076,D1_csi,0.5714285714285714,0.35714285714285715,37.5,fix: cast performance_bands bignumeric columns to numeric in staging SQL
+TEAMSchools__teamster,2026-04-29T14:11:13,f0f2ef6561c8bc4c2ddffb8088e21b15df6b9369,D1_csi,0.35714285714285715,0.5714285714285714,60.0,fix(dbt): restore location_region semantics in int_people__location_crosswalk
+TEAMSchools__teamster,2026-05-28T20:51:10,cbebc84b95ee28767e87499fae7064648b907229,D1_csi,0.5714285714285714,0.42857142857142855,25.0,refactor(scripts): live GET-then-PATCH externalIds backfill + rate-limit retry
+TEAMSchools__teamster,2026-05-28T20:51:10,cbebc84b95ee28767e87499fae7064648b907229,D3_alg_conn,0.05782360458706646,0.07006240882515245,21.1658,refactor(scripts): live GET-then-PATCH externalIds backfill + rate-limit retry
+TEAMSchools__teamster,2026-07-28T13:40:49,02f29205ce93b7fe27e9180f182c8925f1a574de,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,Merge remote-tracking branch 'origin/grangel/feat/claude-fresh-scaffold-swap' into grangel/feat/claude-fresh-scaffold-sw
+TEAMSchools__teamster,2026-07-28T13:40:49,02f29205ce93b7fe27e9180f182c8925f1a574de,D3_alg_conn,0.058160202386122316,0.07039615118155883,21.0384,Merge remote-tracking branch 'origin/grangel/feat/claude-fresh-scaffold-swap' into grangel/feat/claude-fresh-scaffold-sw
+TEAMSchools__teamster,2026-08-04T21:09:12,6d984fadd5731cb59ff3004779d1f4d7e2164d35,D1_csi,0.5714285714285714,0.2857142857142857,50.0,feat(dbt): identify Grow teachers by job_function and exclude Paterson
+Velir__dbt-ga4,2022-05-22T16:26:19,e1020f7aa6922db62a1c03faed4a2af1c1134c02,D1_csi,0.5714285714285714,0.7142857142857143,25.0,moved var defaults to project.yml to make them more obvious
+Velir__dbt-ga4,2022-05-22T16:26:19,e1020f7aa6922db62a1c03faed4a2af1c1134c02,D4_cycle_rank_norm,0.26666666666666666,0.14285714285714285,46.4286,moved var defaults to project.yml to make them more obvious
+Velir__dbt-ga4,2022-06-20T06:34:46,76180d7a0ef268b666ec9220cd05f3c051dc90f3,D3_alg_conn,0.4030312553647274,0.6107183240095061,51.5313,include google's source category mapping file
+Velir__dbt-ga4,2022-06-20T06:34:46,76180d7a0ef268b666ec9220cd05f3c051dc90f3,D4_cycle_rank_norm,0.14285714285714285,0.21739130434782608,52.1739,include google's source category mapping file
+Velir__dbt-ga4,2022-07-19T15:06:24,b520937812e2ff379819200e4e42827e05ad9e4b,D4_cycle_rank_norm,0.21739130434782608,0.15789473684210525,27.3684,Update static incremental load to use table suffix (#37)
+Velir__dbt-ga4,2022-08-17T09:42:52,0b69da4d3f0ae2e54fda58bb99b150b3613e48e1,D4_cycle_rank_norm,0.15789473684210525,0.1956521739130435,23.913,"login, sign_up, and search recommended events (#45)"
+Velir__dbt-ga4,2022-10-19T10:24:41,6a2fe15c7dab2e491f0e7a29c3d0f68d52442824,D3_alg_conn,0.5959906288133426,0.4001823136684552,32.8543,use the first session_start event to build dim_sessions
+Velir__dbt-ga4,2022-12-12T08:55:57,6607c046df8c22c52fe7c324dec79078fc123b2e,D3_alg_conn,0.47331039364810146,0.31343539370653734,33.778,user_id mapping table that enables distinct user_id and user_pseudo_id marts (#99)
+Velir__dbt-ga4,2023-04-15T15:08:35,9cd11d6671f639d5ae3866a9cab9b5d68bd7d551,D4_cycle_rank_norm,0.17647058823529413,0.21818181818181817,23.6364,Update user_pseudo_id to client_key (#181)
+astronomer__astronomer-cosmos,2024-12-30T13:59:05,7dc9411701bdbbdc580a34f59a7ea77a5b03668a,D4_cycle_rank_norm,0.2,0.125,37.5,Fix rendering dbt tests with multiple parents (#1433)
+astronomer__astronomer-cosmos,2026-01-29T16:39:34,0ce99549691716d1dbf9a03aa1ce7e21b4ad0bdd,D3_alg_conn,0.8299135133739665,0.550881168040632,33.6219,Support cross-referencing models across dbt projects using dbt-loom (#2271)
+astronomer__astronomer-cosmos,2026-05-19T13:16:32,9029fb0f607360cb7792a647705332fa2973a100,D3_alg_conn,0.550881168040632,0.2537868118726475,53.9308,Retry watcher downstream models on upstream-failure recovery (#2684)
+beyondessential__tamanu-source-dbt,2025-03-18T09:56:23,f0a119539620b3fb67cac2ef29af77fecbb8d7e7,D1_csi,0.7142857142857143,0.5714285714285714,20.0,Reporting Schema v2.25 (#21)
+beyondessential__tamanu-source-dbt,2025-05-16T11:33:07,57339215e70bf0eb0564e07eff29a6d2e517ec4b,D1_csi,0.5714285714285714,0.7857142857142857,37.5,Update to v2.31 (#79)
+beyondessential__tamanu-source-dbt,2025-05-16T11:33:07,57339215e70bf0eb0564e07eff29a6d2e517ec4b,D3_alg_conn,0.4212455285018389,0.3352023013626663,20.4259,Update to v2.31 (#79)
+beyondessential__tamanu-source-dbt,2025-07-15T16:22:33,c4f19b674ce9a680be89bc22cedd9f82b1d2482b,D4_cycle_rank_norm,1.017391304347826,1.2686567164179106,24.697,Update parameter in encounter summary (#172)
+beyondessential__tamanu-source-dbt,2026-04-10T23:10:35,53b4de2b853f1f40dd9d54dc60328335077d7e62,D4_cycle_rank_norm,0.7919463087248322,0.19473684210526315,75.4103,feature(reports): add user-selected timezone support (#408)
+beyondessential__tamanu-source-dbt,2026-06-10T06:39:57,ae4618f78c6accf3fc1e2c20535bd70c33049419,D3_alg_conn,0.3384371471821529,0.18615623394404854,44.9953,feat(reports): add user access audit report for government auditing (#457)
+beyondessential__tamanu-source-dbt,2026-07-12T07:56:55,c6d4facab9834f2652461a16e2fd0c5dbc3af83c,D3_alg_conn,0.18615623394404854,0.25185207212872185,35.2907,feat: Upgrade Tamanu version to 2.59.0 (#498)
+beyondessential__tamanu-source-dbt,2026-07-12T07:56:55,c6d4facab9834f2652461a16e2fd0c5dbc3af83c,D4_cycle_rank_norm,0.19402985074626866,0.23414634146341465,20.6754,feat: Upgrade Tamanu version to 2.59.0 (#498)
+beyondessential__tamanu-source-dbt,2026-08-02T07:47:50,d873d31daa492e424f65a91ea3c240c3b6029b63,D4_cycle_rank_norm,0.23414634146341465,0.33482142857142855,42.9967,"chore: remove msf_oca_dhis2 var, keep maps/msf_oca disabled (#645)"
+brooklyn-data__dbt_artifacts,2022-02-22T09:18:55,f4351142ae73c98ce690816b462adba37c382d2c,D3_alg_conn,0.2688193231424012,0.39063090579279103,45.3136,Flatten artifacts on load (#84)
+brooklyn-data__dbt_artifacts,2022-02-22T09:18:55,f4351142ae73c98ce690816b462adba37c382d2c,D4_cycle_rank_norm,0.21428571428571427,0.42857142857142855,100.0,Flatten artifacts on load (#84)
+brooklyn-data__dbt_artifacts,2022-07-28T10:26:39,62cb8143092410297fda1a6499ec289bbd3c9f1a,D1_csi,0.6428571428571429,0.9285714285714286,44.4444,documentation for variables and environment variables into fct_dbt__invocations
+brooklyn-data__dbt_artifacts,2022-07-28T10:26:39,62cb8143092410297fda1a6499ec289bbd3c9f1a,D3_alg_conn,0.39063090579279103,2.0,411.9923,documentation for variables and environment variables into fct_dbt__invocations
+brooklyn-data__dbt_artifacts,2022-07-28T10:26:39,62cb8143092410297fda1a6499ec289bbd3c9f1a,D4_cycle_rank_norm,0.42857142857142855,0.0,100.0,documentation for variables and environment variables into fct_dbt__invocations
+brooklyn-data__dbt_artifacts,2022-08-04T13:09:53,4caf69bc57d0e9c924d5aabca1a0b9cc041a8370,D3_alg_conn,2.0,0.3819660112501052,80.9017,"Fixing bug, updating current_models naming"
+brooklyn-data__dbt_artifacts,2022-09-13T13:02:47,f9fe8ecfa1a1de6946e3197cf0b8acade17f8af1,D3_alg_conn,0.3819660112501052,0.2679491924311228,29.85,Rework sources to be dbt models rather than manually created (#188)
+brooklyn-data__dbt_artifacts,2026-07-31T15:16:22,469bd697858e2baac70c2dbb65f912dafed37769,D3_alg_conn,0.2679491924311228,0.1391329747411072,48.0749,Remove internal planning references from code comments
+cagov__caldata-mdsa-caltrans-pems,2024-04-05T19:32:03,cc992738a426d9cc2a83fb529e7d017713a8b5ac,D3_alg_conn,0.3248691294333538,0.19806226419516185,39.0332,Updated code to eliminate an incorrect reference (thanks Ian!) and incorporate a new error type (district feed down) int
+cagov__caldata-mdsa-caltrans-pems,2024-05-09T09:20:02,d4b22c584dd3877f2ce308857d103ea0bc358b17,D4_cycle_rank_norm,0.09090909090909091,0.0,100.0,Update int_performance__max_capacity.sql
+cagov__caldata-mdsa-caltrans-pems,2024-06-07T23:04:40,5be0ee4f9a01d3d61071ad4a3fbe1f5168a513a5,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,Merge branch 'main' of https://github.com/cagov/caldata-mdsa-caltrans-pems into Spatial_and_temporal_aggregation
+cagov__caldata-mdsa-caltrans-pems,2024-06-07T23:04:40,5be0ee4f9a01d3d61071ad4a3fbe1f5168a513a5,D3_alg_conn,0.21368226527104775,0.050627114102385594,76.3073,Merge branch 'main' of https://github.com/cagov/caldata-mdsa-caltrans-pems into Spatial_and_temporal_aggregation
+cagov__caldata-mdsa-caltrans-pems,2024-07-06T01:13:10,3785d83192665660658bbb7c87e5c22a8ba3cfa3,D1_csi,0.8571428571428571,0.6428571428571429,25.0,Merge branch 'main' of https://github.com/cagov/caldata-mdsa-caltrans-pems into imputation_hard_code_replacement
+cagov__caldata-mdsa-caltrans-pems,2024-07-06T01:13:10,3785d83192665660658bbb7c87e5c22a8ba3cfa3,D3_alg_conn,0.050627114102385594,0.09631461335202812,90.2431,Merge branch 'main' of https://github.com/cagov/caldata-mdsa-caltrans-pems into imputation_hard_code_replacement
+cagov__caldata-mdsa-caltrans-pems,2024-07-06T01:13:10,3785d83192665660658bbb7c87e5c22a8ba3cfa3,D4_cycle_rank_norm,0.1111111111111111,0.2,80.0,Merge branch 'main' of https://github.com/cagov/caldata-mdsa-caltrans-pems into imputation_hard_code_replacement
+cagov__caldata-mdsa-caltrans-pems,2024-08-06T23:19:52,0dadafb5ee49c82158d70677272da2a5abeee27f,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,removed trailing whitespace
+cagov__caldata-mdsa-caltrans-pems,2024-08-06T23:19:52,0dadafb5ee49c82158d70677272da2a5abeee27f,D3_alg_conn,0.09631461335202812,0.06658993518551164,30.8621,removed trailing whitespace
+cagov__caldata-mdsa-caltrans-pems,2024-08-06T23:19:52,0dadafb5ee49c82158d70677272da2a5abeee27f,D4_cycle_rank_norm,0.2,0.24444444444444444,22.2222,removed trailing whitespace
+cagov__caldata-mdsa-caltrans-pems,2024-09-05T21:58:06,ffeacf13d3514ec41a965902d4651f084994966a,D3_alg_conn,0.06658993518551164,0.045565906306421496,31.5724,fix trailing space
+cagov__caldata-mdsa-caltrans-pems,2024-10-04T21:54:52,e94c6dd984b2a8f5973f8894a99ee28ccdcdba1e,D1_csi,0.9285714285714286,0.5714285714285714,38.4615,Merge pull request #402 from cagov/386-speeds-and-g-factors
+cagov__caldata-mdsa-caltrans-pems,2024-10-04T21:54:52,e94c6dd984b2a8f5973f8894a99ee28ccdcdba1e,D3_alg_conn,0.045565906306421496,0.06608449271081468,45.0306,Merge pull request #402 from cagov/386-speeds-and-g-factors
+cagov__caldata-mdsa-caltrans-pems,2024-11-04T16:10:14,a70e7f5d2745ce7ed0161cb04f84eafa3de8aa90,D4_cycle_rank_norm,0.3,0.373134328358209,24.3781,Merge pull request #461 from cagov/kg-station-level-martmodel
+cagov__caldata-mdsa-caltrans-pems,2025-02-02T03:13:30,754b32536bd418ca45fce6e00bd7e6548d96fce4,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,Fix the unpivot function for bottlenecks
+cagov__caldata-mdsa-caltrans-pems,2025-02-02T03:13:30,754b32536bd418ca45fce6e00bd7e6548d96fce4,D3_alg_conn,0.05944518506844457,0.018771078474280906,68.4229,Fix the unpivot function for bottlenecks
+cal-itp__data-infra,2022-05-27T12:09:07,189a54d7974046183dec2308e5b8e3c0b925be13,D1_csi,0.7142857142857143,0.5714285714285714,20.0,missing comma and updated code descriptions
+cal-itp__data-infra,2022-07-26T13:15:41,2e2458a74a7b3551c3359c9f35ceb680b701b3f0,D3_alg_conn,0.24233663576609132,0.05757518558655902,76.2417,Merge pull request #1418 from cal-itp/payments-dbt-migration
+cal-itp__data-infra,2022-07-26T13:15:41,2e2458a74a7b3551c3359c9f35ceb680b701b3f0,D4_cycle_rank_norm,0.3780487804878049,0.2582781456953642,31.6813,Merge pull request #1418 from cal-itp/payments-dbt-migration
+cal-itp__data-infra,2022-09-23T11:52:03,8b7b24ca280ceae9216d76277a13326ea53f7b61,D1_csi,0.5714285714285714,0.7857142857142857,37.5,temporarily add services.gtfs schedule quality column & add associated documentation (#1839)
+cal-itp__data-infra,2022-09-23T11:52:03,8b7b24ca280ceae9216d76277a13326ea53f7b61,D4_cycle_rank_norm,0.23684210526315788,0.423728813559322,78.9077,temporarily add services.gtfs schedule quality column & add associated documentation (#1839)
+cal-itp__data-infra,2022-10-14T15:02:37,080c27b978ad8500479fdf2c3f3bda3ebf2e556e,D4_cycle_rank_norm,0.423728813559322,0.33189655172413796,21.6724,Remaining base tables (#1902)
+cal-itp__data-infra,2022-11-23T12:06:39,f7c3471710e3f02a3e5381d5f7de8b84789a9983,D4_cycle_rank_norm,0.33189655172413796,0.4507042253521127,35.7966,Airtable schema updates (#2011)
+cal-itp__data-infra,2022-12-21T16:05:48,c2cd3736030179f1769538677ebab54f6c663503,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,Make fct_schedule_feed_files (#2097)
+cal-itp__data-infra,2023-01-20T16:03:43,134063c710e0d1d3e8c03eb3e9d591167bc808ea,D3_alg_conn,0.05611837736734577,0.023806733283236337,57.5777,switch rt feed presence check to new daily rt url index (#2195)
+cal-itp__data-infra,2023-03-22T17:12:00,2da1571a74a4959511cd96f25e06b2e51b242a25,D1_csi,0.7857142857142857,1.0,27.2727,Convert array/struct to JSON string in reports index (#2415)
+cal-itp__data-infra,2023-03-22T17:12:00,2da1571a74a4959511cd96f25e06b2e51b242a25,D3_alg_conn,0.02617084172544559,0.0381309527067821,45.7001,Convert array/struct to JSON string in reports index (#2415)
+cal-itp__data-infra,2023-04-16T14:48:48,ee575f8807e1e76cd1b0181ff4893f5f31ae96e4,D1_csi,1.0,0.7142857142857143,28.5714,added missing columns from Littlepay authorisations and settlements files to external and staging tables (#2480)
+cal-itp__data-infra,2023-07-20T07:54:36,2795018a75f91823b23dd4271b5b521470ed3d61,D3_alg_conn,0.04263781130404447,0.02886534464207217,32.3011,remove feature filter (#2809)
+cal-itp__data-infra,2024-10-10T18:13:38,609693433b5e6bb73907058f83f2abdcab570543,D1_csi,0.7142857142857143,0.5,30.0,"Add validation and move ROUND at the end of calculation to fix division by zero error on NTD Validation Service Check, a"
+cal-itp__data-infra,2024-10-31T13:50:37,abdedec9a8390e80b875d0d5c763499b6b155759,D1_csi,0.5,0.6428571428571429,28.5714,Remove annual_database_service models and manual scrape process.
+cal-itp__data-infra,2025-02-07T12:35:12,c053a4e2f7e82fe81adb2c4179b8bb51768c119f,D1_csi,0.6428571428571429,0.42857142857142855,33.3333,Fix NTD nonmajor_safety_and_security_events data type errors
+cal-itp__data-infra,2025-03-11T07:47:12,fc91786319b84979b2e25294a9ce210a5fb1466f,D1_csi,0.42857142857142855,0.8571428571428571,100.0,"Adding rtpa and mpo to stg, int, mart dim_organizations"
+cal-itp__data-infra,2025-05-06T19:50:00,84967cebf82d63c6f5ffc7a7156579dd4f08ed1e,D3_alg_conn,0.028681399354540647,0.018349725181679603,36.0222,Update warehouse/models/mart/transit_database/_mart_transit_database.yml
+cal-itp__data-infra,2025-06-02T18:35:59,5537dcae9797405218a4d47c43c74b3f69c0b8bf,D3_alg_conn,0.018349725181679603,0.009163220362533286,50.0634,NTD: mart table usability and testing (#3909)
+cal-itp__data-infra,2026-05-06T12:00:39,d40bdf16c56695956f1f30c4166caa88f53c5ea7,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,Resolve deprecated syntax warnings when running dbt commands (#5103)
+cal-itp__data-infra,2026-06-04T17:02:27,8d30bc269c695113caeedeaa8034c08c28ad098b,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Fix(Payments): Filter `DELETED` Littlepay Micropayments from Downstream Tables (#5344)
+cal-itp__data-infra,2026-07-27T16:27:02,e636f6e2491797c773753b1999e32ddb9687349c,D3_alg_conn,0.008727635294591425,0.011783056750803747,35.0086,fix(payments): all datetimes  in fct_payments_aggregations are typed as datetimes (#5582) (#5583)
+chienazazaz__sado_analytics_services,2024-02-06T08:57:01,715c075be3d2becd5821184cd60af343f913e45f,D4_cycle_rank_norm,0.07432432432432433,0.10666666666666667,43.5152,fix: null pic
+chienazazaz__sado_analytics_services,2024-04-05T15:31:54,cee5cf3cb3eb2f3b9eaa74092f5ac10b4e6b1eb5,D3_alg_conn,0.04783385494929898,0.10152036359939723,112.2354,feat: rfm_movement incremental strategy
+chienazazaz__sado_analytics_services,2024-04-05T15:31:54,cee5cf3cb3eb2f3b9eaa74092f5ac10b4e6b1eb5,D4_cycle_rank_norm,0.12244897959183673,0.1564625850340136,27.7778,feat: rfm_movement incremental strategy
+chienazazaz__sado_analytics_services,2024-06-05T17:11:18,a0d59a3624b5f050a41d7362d80a0c954eb71a54,D3_alg_conn,0.10268661597010573,0.05574178342295238,45.7166,feat: metrics
+chienazazaz__sado_analytics_services,2024-07-16T16:20:37,27c4b74f5153f1aba1aa6adb6d6e9e8440dd280e,D1_csi,0.8571428571428571,0.6428571428571429,25.0,feat: contents staging model
+chienazazaz__sado_analytics_services,2024-07-16T16:20:37,27c4b74f5153f1aba1aa6adb6d6e9e8440dd280e,D3_alg_conn,0.05639862586879932,0.08819877263467421,56.3846,feat: contents staging model
+chienazazaz__sado_analytics_services,2024-10-03T11:34:54,a4eb213ae7cdb1af84f3aed20c8b056a9367d1e3,D3_alg_conn,0.07614597020825113,0.053031229914793164,30.3558,feat: metrics & fields
+chienazazaz__sado_analytics_services,2024-11-01T16:32:58,6ec35872fe04256c337e07fa18eaf1984c4cd88b,D1_csi,0.7142857142857143,0.5714285714285714,20.0,feat: fix class_code
+chienazazaz__sado_analytics_services,2024-11-01T16:32:58,6ec35872fe04256c337e07fa18eaf1984c4cd88b,D3_alg_conn,0.053031229914793164,0.028344459588906898,46.5514,feat: fix class_code
+chienazazaz__sado_analytics_services,2024-12-02T18:05:02,32c6f7ba1919c97104cddde290a492214c124019,D1_csi,0.5714285714285714,0.7142857142857143,25.0,feat: revenue_items
+coderxio__sagerx,2023-03-10T03:00:53,970e41d63bfeecdc8a22383374fc7f78cc39132d,D3_alg_conn,0.12289002108944519,0.5141196196434115,318.3575,Update NADAC dbt.
+coderxio__sagerx,2023-05-02T20:24:53,0c663627168c515a6b0869cee631e5457bde2707,D3_alg_conn,0.4867464806461117,0.11809160956985694,75.7386,Merge pull request #188 from coderxio/jrlegrand/rxnorm-pin
+coderxio__sagerx,2023-12-03T14:48:49,9382ef30ea2b2506bf118eaec66ce0b4b92a7d10,D3_alg_conn,0.11809160956985694,0.0919214094101227,22.1609,Merge pull request #221 from coderxio/jrlegrand/atc_rxnorm
+coderxio__sagerx,2024-01-26T14:06:48,dafbd7052efd47b18e4121155e934bfbe195f3c7,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,Create better FDA description
+coderxio__sagerx,2024-01-26T14:06:48,dafbd7052efd47b18e4121155e934bfbe195f3c7,D3_alg_conn,0.0919214094101227,0.12137966966208037,32.0472,Create better FDA description
+coderxio__sagerx,2024-02-07T14:30:00,047c037fe97ee45f8189c6f02a93caf6744e73f8,D1_csi,0.8571428571428571,0.6428571428571429,25.0,Document classification model
+coderxio__sagerx,2024-05-15T14:51:16,0ef208fc2590762f4957496e8a87b1ed9e28bfd1,D1_csi,0.6428571428571429,0.5,22.2222,Inner outer regex
+coderxio__sagerx,2024-06-13T21:36:57,da7459ed2754e12a150d1116d548806d78172c55,D1_csi,0.5,0.7142857142857143,42.8571,UNII work
+coderxio__sagerx,2024-10-21T22:35:04,54cc08c720207c478f459ef6e3b3b36086a339d6,D1_csi,0.7142857142857143,0.5,30.0,NDC to 11 work
+coderxio__sagerx,2024-11-12T05:49:54,4eb70a5dd534043dde220275c8cad5ab52de47a1,D1_csi,0.5,0.7857142857142857,57.1429,Create mart
+coderxio__sagerx,2024-12-07T06:30:50,a5d3c5b87a660f588c870a7a94af9f5c9a1e891d,D1_csi,0.7857142857142857,0.5,36.3636,Create gtins mart
+coderxio__sagerx,2025-01-15T23:48:36,9feb666d3bf7faf3169b37ba11bba4d1ac629c67,D1_csi,0.5,0.6428571428571429,28.5714,Merge pull request #349 from coderxio/jrlegrand/gtin
+coderxio__sagerx,2025-02-05T21:59:43,9ebb13c315c1a3663861f7edb983c03c93f2c0fc,D4_cycle_rank_norm,0.43478260869565216,0.32786885245901637,24.5902,sagerx-325 Parse full description from ASHP shortage detail page
+coderxio__sagerx,2025-04-13T04:57:48,ab84c1a6e6438bb8eaa2768510246c778606ffa9,D4_cycle_rank_norm,0.32786885245901637,0.4519230769230769,37.8365,Create int models
+coderxio__sagerx,2025-07-07T01:31:14,a5f49d53a7f3e0217267dad60c83a96be84d311d,D3_alg_conn,0.09251861692508874,0.06419254873562345,30.6166,Add gluten and dye flags
+coderxio__sagerx,2025-09-12T13:01:23,41ddad9f9055e31b146733d83103b9d5cd843991,D3_alg_conn,0.06419254873562345,0.09311456177431834,45.0551,Pricing mart with pack size
+coderxio__sagerx,2025-09-19T20:06:35,c66a41e9508e5a149419da301e243002636613ae,D3_alg_conn,0.09311456177431834,0.06276194448357167,32.5971,Merge pull request #393 from coderxio/saywurdson/who_ddd
+coderxio__sagerx,2026-02-09T22:24:03,134d03bfa3afa20ee51ac4d37ed74c87cb5b32aa,D1_csi,0.8571428571428571,0.5714285714285714,33.3333,Create NCPDP terminology DAG
+coding-is-for-losers__seo-audit,2018-06-08T22:26:17,63f3adfe3232733860331687550c77b09e4bd38d,D3_alg_conn,0.2760142971191881,0.1651643503940413,40.1609,Parens
+coding-is-for-losers__seo-audit,2019-10-11T12:54:24,79fb6c28b3cdec03e8731a1e2b2979babd2b2ce2,D1_csi,0.5714285714285714,0.7857142857142857,37.5,Pure deduping using group by on Deepcrawl
+coding-is-for-losers__seo-audit,2019-10-11T12:54:24,79fb6c28b3cdec03e8731a1e2b2979babd2b2ce2,D3_alg_conn,0.1651643503940413,0.12824157252020388,22.3552,Pure deduping using group by on Deepcrawl
+coding-is-for-losers__seo-audit,2019-11-07T14:47:11,ec4bf88cce2ba693fa1bb1e3e6f026d56c9e19e5,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,Switching back to schema var
+coding-is-for-losers__seo-audit,2020-03-04T14:21:20,ff9cf7572fd0be615af8b8e9f5be08fbd279fe14,D3_alg_conn,0.12730059266880378,0.08574601837374296,32.6429,Adding fields for visualization
+contactually__contactually-analytics,2016-09-22T13:16:44,d9cb3badd28ca3d053862669004bb7640a3c64ae,D1_csi,0.5714285714285714,0.7857142857142857,37.5,roll up ads to more queryable format
+contactually__contactually-analytics,2016-09-22T13:16:44,d9cb3badd28ca3d053862669004bb7640a3c64ae,D3_alg_conn,0.10044605039860385,0.05127713573788698,48.9506,roll up ads to more queryable format
+contactually__contactually-analytics,2016-10-21T20:03:49,15053bed7bc46ad4c84adb27c22a0c9c9c888c4e,D4_cycle_rank_norm,0.17857142857142858,0.23076923076923078,29.2308,add account name
+contactually__contactually-analytics,2016-11-17T22:02:23,c5a62bdd2e421ff7e3b16107b1545734f7f72671,D4_cycle_rank_norm,0.23076923076923078,0.09375,59.375,add priority 3+4 fields to sf_user model
+contactually__contactually-analytics,2017-06-13T11:36:42,51224a20910b8929a0a849250c052467661fd6c2,D3_alg_conn,0.04781987878838995,0.1404118770311041,193.6266,Added counts to sessions join table query
+contactually__contactually-analytics,2017-08-17T15:31:45,834021e701b99155b7fc14dcf5c3992a1928cca3,D3_alg_conn,0.1404118770311041,0.3376036697878196,140.4381,Refactored code to include configuration in dbt_project.yml
+contactually__contactually-analytics,2017-08-17T15:31:45,834021e701b99155b7fc14dcf5c3992a1928cca3,D4_cycle_rank_norm,0.058823529411764705,0.030303030303030304,48.4848,Refactored code to include configuration in dbt_project.yml
+contactually__contactually-analytics,2018-02-16T17:09:48,ae2be165896f512494eee5076a015bd63df62486,D3_alg_conn,0.3376036697878196,0.9999999999999998,196.2053,Added quantity accepted
+contactually__contactually-analytics,2019-01-29T14:24:23,ee42a5e98e93b64e35050c39e5d68f593f774e13,D3_alg_conn,0.9999999999999998,0.2679491924311237,73.2051,Fixes references
+contactually__contactually-analytics,2019-01-29T14:24:23,ee42a5e98e93b64e35050c39e5d68f593f774e13,D4_cycle_rank_norm,0.029411764705882353,0.3170731707317073,978.0488,Fixes references
+covoiturage-gouv-fr__mono,2026-05-27T17:42:21,1ac82e03d7677949a64dd7eaef36c2c3f96fdfba,D4_cycle_rank_norm,0.12962962962962962,0.020637898686679174,84.0793,feat: add yml for dbt-osmosis (#3200)
+covoiturage-gouv-fr__mono,2026-06-22T22:31:35,229b6ee772e05bfc666b72400e9e4debecb05b6b,D3_alg_conn,0.07840608778487425,0.19459599735077454,148.1899,fix: remove epci code with more than 9 characters (#3234)
+dagster-io__dagster,2023-05-09T09:45:53,91b12934e6a767d955e5b481b9deb971119df3fe,D4_cycle_rank_norm,0.09090909090909091,0.07142857142857142,21.4286,example: rename project_pypi_github to project_analytics (#14170)
+dagster-io__dagster,2023-06-26T13:20:18,01b398277ddf9f799fa02d481fcae5bd4d56f767,D4_cycle_rank_norm,0.07142857142857142,0.09090909090909091,27.2727,Enable upstream/downstream dbt deps (#14932)
+dagster-io__dagster,2024-02-16T12:40:58,a118f1ab14fc7131955b62c425aad35f6453bfd9,D4_cycle_rank_norm,0.09090909090909091,0.1111111111111111,22.2222,test(dbt): move tests into `core/` and `legacy/` (#19849)
+dagster-io__dagster,2026-01-16T18:55:23,76e48e0d7444c19918e30144dfe531e9ac326454,D4_cycle_rank_norm,0.07317073170731707,0.1,36.6667,Add support for dbt (udf) functions (#33245)
+datacoves__balboa,2022-02-17T05:11:30,9b195994709b114916cb84ad4c4d175b20a988b3,D4_cycle_rank_norm,0.2,0.08,60.0,update schedule
+datacoves__balboa,2022-11-16T08:29:01,21febb96e9bc8350a6c724f1d8de4e845a37af4a,D3_alg_conn,0.9999999999999993,0.39062800996145297,60.9372,"Add exposures, node colors, and update model pros templates"
+datacoves__balboa,2022-12-01T16:44:57,e81ad839a16450ed7deba5922e244c57d4056409,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,update table and schema names to uppercase (#121)
+datacoves__balboa,2022-12-01T16:44:57,e81ad839a16450ed7deba5922e244c57d4056409,D4_cycle_rank_norm,0.07407407407407407,0.038461538461538464,48.0769,update table and schema names to uppercase (#121)
+datacoves__balboa,2023-03-09T10:36:17,0a821b630923bb566693a3c99629d4e2cb6ac88c,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Update pipe_usage_history.sql
+datacoves__balboa,2023-03-09T10:36:17,0a821b630923bb566693a3c99629d4e2cb6ac88c,D3_alg_conn,0.3588135238067075,0.6570769172228291,83.1249,Update pipe_usage_history.sql
+datacoves__balboa,2023-03-09T10:36:17,0a821b630923bb566693a3c99629d4e2cb6ac88c,D4_cycle_rank_norm,0.038461538461538464,0.07692307692307693,100.0,Update pipe_usage_history.sql
+datacoves__balboa,2023-12-29T11:36:19,768aa8c7679ebad3b82736301ca85289a9d2bcb5,D3_alg_conn,0.6570769172228291,0.9999999999999999,52.1892,Test orphan model removal (#190)
+davidgasquez__filecoin-data-portal,2024-01-10T16:43:21,90b78713fc8de45fed6e898e4594551fe591a050,D3_alg_conn,2.0,0.585786437626905,70.7107,feat: ✨ better IPFS integration
+davidgasquez__filecoin-data-portal,2024-04-16T11:06:38,2b4e46305380cf2d58e1fe40ccb187792a753cef,D3_alg_conn,0.5188056959079843,0.885092458523244,70.6019,chore: 🎨 create allocator models and metrics (#26)
+davidgasquez__filecoin-data-portal,2024-05-15T08:09:29,ccf7e50d742538d1811d3bd74f51305290264f4a,D4_cycle_rank_norm,0.3,0.4,33.3333,feat: 🚸 add user count daily metrics
+davidgasquez__filecoin-data-portal,2024-07-11T15:40:37,a01bf39618481146c746fce8fec8fa96e111da9f,D4_cycle_rank_norm,0.45454545454545453,0.08333333333333333,81.6667,feat: 🎨 add expired data metrics [skip ci]
+davidgasquez__filecoin-data-portal,2024-10-31T11:35:44,fe46d4b1d6adce3cf541ed475cb1e827606a9f90,D4_cycle_rank_norm,0.08333333333333333,0.15384615384615385,84.6154,refactor: 🔄 standardize retrievals data source and metrics calculation
+davidgasquez__filecoin-data-portal,2024-11-28T10:03:04,96405ff212eeb7718ef566a100e411e9bfac6e46,D3_alg_conn,0.6972243622680048,0.1662540058639986,76.1549,feat: :chart_with_upwards_trend: integrate gas fee metrics into Filecoin storage providers model
+davidgasquez__filecoin-data-portal,2025-04-07T09:36:45,d68ca3ad5a630f978eee32ce2554b8430ae38f66,D1_csi,0.7142857142857143,0.5714285714285714,20.0,🔧 Improve SQL query for datacap GitHub applications
+davidgasquez__filecoin-data-portal,2026-01-23T10:43:05,aa60bc1e02ac81b79618b055dbf4ab1c64979721,D4_cycle_rank_norm,0.11764705882352941,0.0625,46.875,♻️ Rename FOC asset and forward fill active payers
+dbt-labs__dbt-onboarding-exemplar,2021-11-08T19:42:50,ef6e8c111d8672039874f58ddf7e842e17d3eb4d,D3_alg_conn,0.07767280756229823,0.1923655565215581,147.6614,fix materialization on agg_regions_segments model
+dbt-labs__dbt-onboarding-exemplar,2021-11-08T19:42:50,ef6e8c111d8672039874f58ddf7e842e17d3eb4d,D4_cycle_rank_norm,0.1111111111111111,0.15789473684210525,42.1053,fix materialization on agg_regions_segments model
+dbt-labs__dbt-onboarding-exemplar,2022-03-19T03:59:24,0f648ba0eb242e9f5f93869ddaa700cb85ea5924,D4_cycle_rank_norm,0.15789473684210525,0.1,36.6667,Add int_ prefix to intermediate models & update .yml with new names
+dbt-labs__dbt-onboarding-exemplar,2022-07-05T21:25:35,fcb1e534690474afc6461c1e7af7f0e19dd41b14,D1_csi,0.8571428571428571,0.5714285714285714,33.3333,trash commits
+dbt-labs__dbt-onboarding-exemplar,2022-07-05T21:25:35,fcb1e534690474afc6461c1e7af7f0e19dd41b14,D4_cycle_rank_norm,0.1,0.17391304347826086,73.913,trash commits
+dbt-labs__dbt-onboarding-exemplar,2022-09-23T16:55:32,f1dcc29573df9381ea5ef47ad8421183e1adf6e2,D1_csi,0.5714285714285714,0.8571428571428571,50.0,rename staging models
+dbt-labs__dbt-onboarding-exemplar,2022-09-23T16:55:32,f1dcc29573df9381ea5ef47ad8421183e1adf6e2,D4_cycle_rank_norm,0.16666666666666666,0.1,40.0,rename staging models
+dbt-labs__dbt-onboarding-exemplar,2022-11-16T01:04:30,8fefbb23e289cf05b969f1ffe3e4a57105aef7fb,D1_csi,0.8571428571428571,0.6428571428571429,25.0,changes based on PR feedback
+dbt-labs__dbt-onboarding-exemplar,2022-11-16T01:04:30,8fefbb23e289cf05b969f1ffe3e4a57105aef7fb,D4_cycle_rank_norm,0.1,0.18181818181818182,81.8182,changes based on PR feedback
+dbt-labs__dbt-onboarding-exemplar,2023-06-21T13:18:39,1da64c57ad3a1b60390d6930098dda6a43206e84,D4_cycle_rank_norm,0.14814814814814814,0.07142857142857142,51.7857,wip incremental
+dbt-labs__dbt-onboarding-exemplar,2023-06-29T20:45:53,221908bb07b9794042d63f0b391943859722bb90,D4_cycle_rank_norm,0.07142857142857142,0.05128205128205128,28.2051,renamed examples to sample
+dbt-labs__dbt-project-evaluator,2022-03-07T17:59:24,10c417412c20798c1a0455e7f4982ed552adcb1b,D3_alg_conn,0.47907331775179335,0.9999999999999992,108.7363,Create new DAG tests and add examples
+dbt-labs__dbt-project-evaluator,2022-03-07T17:59:24,10c417412c20798c1a0455e7f4982ed552adcb1b,D4_cycle_rank_norm,0.08695652173913043,0.0,100.0,Create new DAG tests and add examples
+dbt-labs__dbt-project-evaluator,2022-04-04T17:47:12,1f845ef2618ca5b205d93862423d62056ebe742f,D1_csi,0.8571428571428571,0.6428571428571429,25.0,Merge pull request #64 from dbt-labs/fix/update-grain-of-multiple_sources_joined
+dbt-labs__dbt-project-evaluator,2022-04-04T17:47:12,1f845ef2618ca5b205d93862423d62056ebe742f,D3_alg_conn,0.9999999999999992,0.09050971404313962,90.949,Merge pull request #64 from dbt-labs/fix/update-grain-of-multiple_sources_joined
+dbt-labs__dbt-project-evaluator,2022-05-06T10:02:48,f176f717c150acc4a3f5c6af5d0280174c999c65,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Make the calculation work cross DW
+dbt-labs__dbt-project-evaluator,2022-05-31T16:19:34,a7cd3cabc51ed02818c8360d8957837e9b78f29a,D4_cycle_rank_norm,0.038461538461538464,0.10714285714285714,178.5714,Merge branch 'main' into fix/readme_table_of_contents
+dbt-labs__jaffle-sl-template,2023-08-18T13:32:26,c54a69163b9d1c4ef8b28061de8763e56ddbb36e,D3_alg_conn,0.45249338683502344,0.6175869341923078,36.4853,Update models to be compatible with duckdb
+dbt-labs__jaffle-sl-template,2024-02-22T16:52:07,76d136eab1f15021271dd35e8dd8220e6d5e6047,D4_cycle_rank_norm,0.2,0.10526315789473684,47.3684,Delete models/marts/customer360/test
+dbt-labs__jaffle-sl-template,2024-04-18T13:48:20,60e46902505096e8d5635ae41f7e73b8adee59e4,D4_cycle_rank_norm,0.10526315789473684,0.2,90.0,setup cache for weekly revenue
+dbt-labs__snowplow,2016-09-22T22:28:24,bf685a8d70fee1614a77a988065b6e84b22d4f83,D3_alg_conn,1.999999999999998,1.5857864376269024,20.7107,replicate snowplow incremental queries with dbt
+dbt-labs__snowplow,2016-09-22T22:28:24,bf685a8d70fee1614a77a988065b6e84b22d4f83,D4_cycle_rank_norm,0.5,1.0,100.0,replicate snowplow incremental queries with dbt
+dbt-labs__snowplow,2016-10-13T17:41:35,3b366ceab727252306b3260351b535a20c4ea14f,D3_alg_conn,1.5857864376269024,1.9138698023485055,20.689,add session id and reindex sessions
+dbt-labs__snowplow,2016-11-13T14:41:27,161c4e2b21a9cf7d131a93aaffde5637f27d8c52,D3_alg_conn,1.9138698023485055,1.0,47.7498,add session_id FK to events
+dbt-labs__snowplow,2016-11-13T14:41:27,161c4e2b21a9cf7d131a93aaffde5637f27d8c52,D4_cycle_rank_norm,1.0,0.0,100.0,add session_id FK to events
+dbt-labs__snowplow,2017-01-20T14:02:51,5c5de490da077b049002fa7d511c3479a66cdedf,D3_alg_conn,1.0,0.16740617265979532,83.2594,indentation
+dbt-labs__snowplow,2017-02-21T19:29:42,88b6488d913ac2c2d7953f8c89977e3254ecbdaa,D3_alg_conn,0.16740617265979532,0.1052224888565662,37.1454,re-add engagment fields
+dbt-labs__snowplow,2017-02-21T19:29:42,88b6488d913ac2c2d7953f8c89977e3254ecbdaa,D4_cycle_rank_norm,0.3076923076923077,0.06666666666666667,78.3333,re-add engagment fields
+dbt-labs__snowplow,2017-03-14T00:34:38,4bf117503e7d5a6558fa87e1d9c07540b774331a,D4_cycle_rank_norm,0.06666666666666667,0.125,87.5,pull utm params from parent session if orphaned
+dbt-labs__snowplow,2017-04-10T15:41:40,37f1805440f5a88e7e7cbd7fcddf617dcf0c187f,D3_alg_conn,0.11275941190831851,0.33844862997014735,200.1511,typos and postgres fixes
+dbt-labs__snowplow,2017-04-10T15:41:40,37f1805440f5a88e7e7cbd7fcddf617dcf0c187f,D4_cycle_rank_norm,0.125,0.5,300.0,typos and postgres fixes
+dbt-labs__snowplow,2018-05-10T13:37:04,c26753bffeefbea37ed9483fdc3699ebef021682,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Adds support for Snowflake and BigQuery. Adds test suite + CI
+dbt-labs__snowplow,2018-05-10T13:37:04,c26753bffeefbea37ed9483fdc3699ebef021682,D4_cycle_rank_norm,0.47058823529411764,0.0,100.0,Adds support for Snowflake and BigQuery. Adds test suite + CI
+dbt-labs__snowplow,2020-04-21T13:59:23,ba8a6629bb3f2dafe5df12219787809dd219bdaf,D3_alg_conn,0.3819660112501052,0.5857864376269049,53.3609,Release 0.9.0 (#86)
+dcaribou__transfermarkt-datasets,2023-12-10T12:16:22,5ae85d4cfac87efb13af89816371d6d8452636ec,D4_cycle_rank_norm,0.17647058823529413,0.23529411764705882,33.3333,Fix missing `date_of_birth` in `players` asset (#265)
+dcaribou__transfermarkt-datasets,2026-02-27T07:09:03,58a3ddb99aec27a515ccb8e634240740852c7c85,D3_alg_conn,0.1819176184002987,0.23524887528011648,29.3162,Bump player_valuations row count upper bound to 650000
+dcaribou__transfermarkt-datasets,2026-02-27T07:09:03,58a3ddb99aec27a515ccb8e634240740852c7c85,D4_cycle_rank_norm,0.21052631578947367,0.3157894736842105,50.0,Bump player_valuations row count upper bound to 650000
+dpguthrie__snowflake-dbt-demo-project,2020-12-17T23:33:35,e08a0e8135fb11ba4e6e9dc1ec3c62306de8af32,D3_alg_conn,0.1185553698735971,0.08916054322161326,24.7942,limits selected columns to avoid soft limit
+dpguthrie__snowflake-dbt-demo-project,2020-12-17T23:33:35,e08a0e8135fb11ba4e6e9dc1ec3c62306de8af32,D4_cycle_rank_norm,0.1,0.18181818181818182,81.8182,limits selected columns to avoid soft limit
+dpguthrie__snowflake-dbt-demo-project,2021-06-17T15:55:49,43fbf64cca8ab925434815e7ca283e00eefa538b,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,remove customer snapshot specific to my schema
+dpguthrie__snowflake-dbt-demo-project,2021-06-17T15:55:49,43fbf64cca8ab925434815e7ca283e00eefa538b,D4_cycle_rank_norm,0.17391304347826086,0.08333333333333333,52.0833,remove customer snapshot specific to my schema
+dpguthrie__snowflake-dbt-demo-project,2022-03-30T20:45:22,e139fb534a21df067e3a148ebbe2785631bd1a8f,D4_cycle_rank_norm,0.08333333333333333,0.04,52.0,fct_ordres pipelie is ready
+dpguthrie__snowflake-dbt-demo-project,2022-10-11T18:23:03,98bc18c26e47dc704bcd18cc57034b6916f38626,D4_cycle_rank_norm,0.041666666666666664,0.09523809523809523,128.5714,test
+dpguthrie__snowflake-dbt-demo-project,2023-01-04T17:14:53,357397c4551f2590f497cbc69edc52bf20096275,D4_cycle_rank_norm,0.09523809523809523,0.06666666666666667,30.0,Update URL for tableau exposure
+duneanalytics__spellbook,2022-10-21T22:45:59,4e870b552e4f19467b67ce0b3f744190b8859599,D1_csi,0.5714285714285714,0.9285714285714286,62.5,Defiswap ethereum integration (#1760)
+duneanalytics__spellbook,2022-10-21T22:45:59,4e870b552e4f19467b67ce0b3f744190b8859599,D3_alg_conn,0.0316195530308554,0.018755852612413776,40.6827,Defiswap ethereum integration (#1760)
+duneanalytics__spellbook,2023-01-20T11:51:14,05c73083ccc052bd34c565a97187c59d1f8be7ea,D3_alg_conn,0.02135932311673014,0.04581611497925343,114.5017,Add 0x zeroex Fantom (#2448)
+duneanalytics__spellbook,2023-04-21T03:03:12,300a4570970077eeeda2d46d724fbac3b1afdc0f,D3_alg_conn,0.041878936228621905,0.011498350742332665,72.5438,Add Sushiswap trades on BNB chain and Polygon (#2960)
+duneanalytics__spellbook,2023-06-19T21:36:14,45d544cebbf76b2295e8951cbec55c3ce1ac9ef0,D3_alg_conn,0.011067691266172665,0.01632137290932851,47.4686,remove unused models (#3568)
+duneanalytics__spellbook,2023-08-19T12:44:31,5f58228423549b8ea0b05d90219e708c30eabfcb,D3_alg_conn,0.015333542513627427,0.010609447023130719,30.8089,Dex trades block month partitioning 3 (#4124)
+duneanalytics__spellbook,2023-09-16T02:48:24,a392688c342ab6d077a0624ea9c1d9010da40c16,D3_alg_conn,0.010609447023130719,0.006364075372034182,40.015,Updating a RWA Jar Address (#4321)
+duneanalytics__spellbook,2023-12-15T17:49:25,4e882dc93395d6752c8962e3f6c883622fea0485,D3_alg_conn,0.005372719685391349,0.00919477385553852,71.1382,Adding velo price (#4997)
+duneanalytics__spellbook,2024-02-15T15:12:05,4b9d7c6aded4afb9cd9ebdfa5310e64534efbf4e,D3_alg_conn,0.008651153032139591,0.013850747296752498,60.1029,rabbithole > boost schema (#5351)
+duneanalytics__spellbook,2024-02-15T15:12:05,4b9d7c6aded4afb9cd9ebdfa5310e64534efbf4e,D4_cycle_rank_norm,0.13639760837070253,0.09993084370677732,26.7356,rabbithole > boost schema (#5351)
+duneanalytics__spellbook,2024-06-14T10:31:26,6b28783da50e6ce9b54e3b3d91da303127776207,D4_cycle_rank_norm,0.09129770992366412,0.05623365300784656,38.4063,failing on dupes (#6176)
+duneanalytics__spellbook,2024-07-12T09:33:16,84b8eb4e7a06048f548694a2a703a453fe31f682,D3_alg_conn,0.012872654569456979,0.11851021861561169,820.6354,fix downstream amount_usd for lending (#6364)
+echav95__dbt_relearn,2025-09-11T22:48:25,b3a2c095580043cff91f661593cbe0dcbf076952,D3_alg_conn,0.4384471871911693,0.321719649957808,26.6229,Fixed error
+edanalytics__edu_edfi_source,2023-07-25T17:15:47,928ff2e11c2ccb4329f393b0fd1e805d51f9a8a4,D1_csi,0.7142857142857143,0.5714285714285714,20.0,Hotfix/dropped behaviors bug (#39)
+edanalytics__edu_edfi_source,2025-01-30T15:43:47,82bd15e25bea5f174a27688f4639eacdc66df54b,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Bugfix/stu assess timestamp handling (#116)
+edanalytics__edu_edfi_source,2025-03-14T14:18:22,a905734f1ed41945901f8e70a6c132943a716ea8,D4_cycle_rank_norm,0.005434782608695652,0.004166666666666667,23.3333,TPDM models (#113)
+edanalytics__edu_wh,2022-12-20T14:35:08,55bd9a463ace97f3166dd610f1afcd57a385bbbc,D3_alg_conn,0.3243134352834128,0.1339674008504537,58.692,Bugfix/add tenant columns to assessment models (#20)
+edanalytics__edu_wh,2023-03-02T17:24:24,cb2fe00b40c4c7554d2e93266191d266ca3458bb,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Feature/optional program associations (#35)
+edanalytics__edu_wh,2023-11-28T18:59:26,a870f6f44ae2c716492b51134fa56fd247362ab7,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Feature/add warehouse models for cohorts (#78)
+edanalytics__edu_wh,2025-12-19T11:51:20,27d76b97e29123ed209e6851dfb06774837278a6,D3_alg_conn,0.13164170810360445,0.049591636201188866,62.3283,"update how args are delcared for tests, old way is deprecated (#203)"
+elementary-data__dbt-data-reliability,2022-03-08T21:00:46,17ad5ff919dfb8403bdca9ae0cf179827ed0476a,D3_alg_conn,0.2679491924311226,0.20583110592884132,23.1828,improved performance for data monitoring
+elementary-data__dbt-data-reliability,2022-03-20T14:05:51,697e71b8b56f6cb77d856b782b053a1d7cbedd41,D3_alg_conn,0.20583110592884132,0.13380173749097865,34.9944,replaced dbt_utils.dateadd with new timestamp_add to prevent casting issues
+elementary-data__dbt-data-reliability,2022-03-20T14:05:51,697e71b8b56f6cb77d856b782b053a1d7cbedd41,D4_cycle_rank_norm,0.8076923076923077,0.11764705882352941,85.4342,replaced dbt_utils.dateadd with new timestamp_add to prevent casting issues
+elementary-data__dbt-data-reliability,2022-05-08T15:16:10,4bac17eef0fa51915b790aeec640d2167f9e112e,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,"Added operational monitoring and enriched alerts, changed ID to be the test execution id"
+elementary-data__dbt-data-reliability,2022-05-08T15:16:10,4bac17eef0fa51915b790aeec640d2167f9e112e,D3_alg_conn,0.13380173749097865,0.5188056959079843,287.7421,"Added operational monitoring and enriched alerts, changed ID to be the test execution id"
+elementary-data__dbt-data-reliability,2022-07-07T18:37:09,785cbb7e36a7d363c9e877b0fedf208ab5d775be,D3_alg_conn,0.5188056959079843,0.829913513373966,59.9662,Created a new model - model_run_results.
+elementary-data__dbt-data-reliability,2022-07-07T18:37:09,785cbb7e36a7d363c9e877b0fedf208ab5d775be,D4_cycle_rank_norm,0.10526315789473684,0.08,24.0,Created a new model - model_run_results.
+elementary-data__dbt-data-reliability,2022-08-05T15:46:53,fc7a249fa567d8f894aa74e51252181cd92cb066,D3_alg_conn,0.829913513373966,1.0,20.4945,databricks support for artifacts
+elementary-data__dbt-data-reliability,2022-08-05T15:46:53,fc7a249fa567d8f894aa74e51252181cd92cb066,D4_cycle_rank_norm,0.08,0.0,100.0,databricks support for artifacts
+elementary-data__dbt-data-reliability,2022-08-30T15:04:35,40501c1d34dffaec8db2bcf2d1f5a596f35eb0e8,D3_alg_conn,1.0,0.585786437626905,41.4214,trying to make databricks run table anomalies
+elementary-data__dbt-data-reliability,2023-05-31T15:37:49,1cc70f65798c0ca95c92086d3dbe83802faba932,D3_alg_conn,0.585786437626905,0.20140113852717592,65.6187,Ele 826 orchestration integration (#363)
+elementary-data__dbt-data-reliability,2023-05-31T15:37:49,1cc70f65798c0ca95c92086d3dbe83802faba932,D4_cycle_rank_norm,0.034482758620689655,0.06666666666666667,93.3333,Ele 826 orchestration integration (#363)
+elementary-data__dbt-data-reliability,2023-08-02T12:51:47,6f68bd49df97d7a4d1fcaa72c42a6a3ad9bd8cdf,D3_alg_conn,0.20140113852717592,0.585786437626905,190.8556,Change dbt columns to be a table in bigquery
+elementary-data__dbt-data-reliability,2023-08-02T12:51:47,6f68bd49df97d7a4d1fcaa72c42a6a3ad9bd8cdf,D4_cycle_rank_norm,0.06896551724137931,0.034482758620689655,50.0,Change dbt columns to be a table in bigquery
+elementary-data__dbt-data-reliability,2024-08-08T07:48:10,fc8a563e67b12efb0a11a8483ea3466a8807b3f8,D3_alg_conn,0.585786437626905,0.36359506278950676,37.9304,Add seed_run_results model and tests
+elementary-data__elementary,2023-09-05T15:55:13,914ec0fc4806992359a8b2f380ee58714b2472b5,D4_cycle_rank_norm,0.4,0.25,37.5,Add 'inserted_at' as timestamp column.
+elementary-data__elementary,2024-01-17T16:02:10,7d3deefb5e690822a2e791c7310aaf5072983ffb,D3_alg_conn,1.999999999999999,0.9999999999999997,50.0,Keep old alerts tables for backwards
+elementary-data__elementary,2024-01-17T16:02:10,7d3deefb5e690822a2e791c7310aaf5072983ffb,D4_cycle_rank_norm,0.2,0.0,100.0,Keep old alerts tables for backwards
+fivetran__dbt-language-server,2023-02-28T14:42:46,5a4ea56278969a144e274c9c2595a9343bf4c1b2,D3_alg_conn,2.0,0.3819660112501052,80.9017,go to column definition by click (#765)
+fivetran__dbt_ad_reporting,2025-05-22T11:34:20,79d724ee9434f5d7e929125723bc0a7bfba5646b,D3_alg_conn,2.0,0.9999999999999997,50.0,Add geo reports + fold in Google Ads search report (#144)
+fivetran__dbt_apple_store,2025-02-10T19:16:24,1a1c0ea4ac5195652f1fdfc077409b2b7f967e57,D3_alg_conn,0.2940138222827801,0.9310559376076972,216.6708,"fix for overview report, remove prereporting logic since it's just app as grain"
+fivetran__dbt_apple_store,2025-02-10T19:16:24,1a1c0ea4ac5195652f1fdfc077409b2b7f967e57,D4_cycle_rank_norm,0.047619047619047616,1.4166666666666667,2875.0,"fix for overview report, remove prereporting logic since it's just app as grain"
+fivetran__dbt_apple_store,2025-02-14T17:17:34,8076c4678ff78cf3671402f5cf116efacd0986dd,D1_csi,0.7142857142857143,0.42857142857142855,40.0,"updates, add bit about detailed vs standard, update min date"
+fivetran__dbt_apple_store,2025-02-14T17:17:34,8076c4678ff78cf3671402f5cf116efacd0986dd,D3_alg_conn,0.9310559376076972,0.19631402185329042,78.9149,"updates, add bit about detailed vs standard, update min date"
+fivetran__dbt_apple_store,2025-02-14T17:17:34,8076c4678ff78cf3671402f5cf116efacd0986dd,D4_cycle_rank_norm,1.4166666666666667,0.9302325581395349,34.3365,"updates, add bit about detailed vs standard, update min date"
+fivetran__dbt_apple_store,2025-08-15T01:17:23,748533fa36a22d0e732e0d63382043d77b9471cd,D3_alg_conn,0.19631402185329042,0.2973665875094078,51.475,Consolidate source + remove tests (#41)
+fivetran__dbt_apple_store,2025-09-22T10:02:40,65d3d784ed9df81ccc61ca0fff4c6318049c8361,D1_csi,0.5,0.6428571428571429,28.5714,bug/date-spine-query (#42)
+fivetran__dbt_apple_store,2025-09-22T10:02:40,65d3d784ed9df81ccc61ca0fff4c6318049c8361,D3_alg_conn,0.2973665875094078,0.3860196567062408,29.8127,bug/date-spine-query (#42)
+fivetran__dbt_asana,2025-08-14T19:00:55,be5d6f189b348dc7588fdb8ec63fd56e82be1e05,D3_alg_conn,0.36988793769125466,0.20902333526957603,43.4901,Consolidate source + remove tests (#44)
+fivetran__dbt_asana,2025-08-14T19:00:55,be5d6f189b348dc7588fdb8ec63fd56e82be1e05,D4_cycle_rank_norm,0.2777777777777778,0.5,80.0,Consolidate source + remove tests (#44)
+fivetran__dbt_facebook_ads,2024-11-14T11:41:16,6c67bbae2c7e1fbfdd5fc3e86daa42256d85aa33,D3_alg_conn,0.9999999999999997,0.27740689567820503,72.2593,Feature/add conversions (#43)
+fivetran__dbt_facebook_ads,2025-08-27T15:25:58,4ec8b877b9518c66c0b307be20135b60d4f2780b,D3_alg_conn,0.27740689567820503,0.1327453524797258,52.1478,add index to staging models (#57)
+fivetran__dbt_fivetran_log,2020-08-19T14:47:45,1783784b48fab09749a8b4818729bc7d643509a2,D4_cycle_rank_norm,0.13333333333333333,0.1875,40.625,final tweaks
+fivetran__dbt_fivetran_log,2021-03-16T15:48:11,6fc4eff32c5dd0cb93f939aea81f31cdb291bbf5,D4_cycle_rank_norm,0.1875,0.2777777777777778,48.1481,connector status cleanup
+fivetran__dbt_fivetran_log,2022-05-12T11:27:49,83901da3be7b86b989a0c7b81ce26602719c8690,D3_alg_conn,0.2513281043585601,0.1992905751767455,20.705,Merge branch 'main' into feature/pricing-update-2
+fivetran__dbt_fivetran_log,2023-12-07T10:50:23,471412977bec0609670b5d697cd99ec475690475,D4_cycle_rank_norm,0.23529411764705882,0.3333333333333333,41.6667,Merge branch 'releases/v1.3.latest' into feature/sql-server-compatibility
+fivetran__dbt_fivetran_log,2024-12-20T22:15:27,9066d57a10ab9d8cb667040af3f7b18e0fb429f4,D3_alg_conn,0.19613297854728193,0.13785261997568327,29.7147,try new schema
+fivetran__dbt_fivetran_log,2025-01-22T15:59:26,9f095e8939740dfe8cab0e6084aef5cc1736cbbb,D3_alg_conn,0.13785261997568327,0.16796290311027676,21.8424,Update models/staging/src_fivetran_platform.yml
+fivetran__dbt_fivetran_log,2025-03-12T14:37:42,e47853f53cd201a9f14492ca9437844acae72402,D1_csi,0.6428571428571429,0.5,22.2222,feature/remove-dbtdate
+fivetran__dbt_github,2025-08-14T16:29:00,4de793be13b4e23028117104dd61ae56fb484dbc,D3_alg_conn,0.25673116897595866,0.0869881271236861,66.117,Consolidate source + remove tests (#67)
+fivetran__dbt_github,2025-08-14T16:29:00,4de793be13b4e23028117104dd61ae56fb484dbc,D4_cycle_rank_norm,0.06666666666666667,0.20930232558139536,213.9535,Consolidate source + remove tests (#67)
+fivetran__dbt_google_ads,2026-04-01T12:24:22,fc0740304534e288922c9b24a34fd3150f9aa878,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,Feature/bid budget reports (#95)
+fivetran__dbt_google_ads,2026-04-01T12:24:22,fc0740304534e288922c9b24a34fd3150f9aa878,D3_alg_conn,0.1943243977008914,0.11088617081284279,42.9376,Feature/bid budget reports (#95)
+fivetran__dbt_google_ads,2026-04-01T12:24:22,fc0740304534e288922c9b24a34fd3150f9aa878,D4_cycle_rank_norm,0.3793103448275862,0.225,40.6818,Feature/bid budget reports (#95)
+fivetran__dbt_hubspot,2021-04-09T14:29:31,314a47bb593b729be68dab95e3af9a675b8ad853,D3_alg_conn,0.12454412979246507,0.08184695356811279,34.2828,Merge branch 'master' into email-metric-vars
+fivetran__dbt_hubspot,2025-04-17T11:43:14,428e9c37aab4a3ca2419f3f89d99defb44c44479,D1_csi,0.7142857142857143,0.5714285714285714,20.0,Feature/model expansion apr2025 (#157)
+fivetran__dbt_hubspot,2025-08-18T19:48:13,c6d0bdaf6c7c93737b749bf4941afcc915262b53,D3_alg_conn,0.07210350213663398,0.028337964945685332,60.6982,Consolidate source + remove tests (#167)
+fivetran__dbt_hubspot,2025-08-18T19:48:13,c6d0bdaf6c7c93737b749bf4941afcc915262b53,D4_cycle_rank_norm,0.023809523809523808,0.07142857142857142,200.0,Consolidate source + remove tests (#167)
+fivetran__dbt_hubspot,2026-08-03T17:40:22,2ac3ea475a4abe6df7cf60e17aab3b47c0cc7baf,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Release/1.9.0 (#209)
+fivetran__dbt_hubspot,2026-08-03T17:40:22,2ac3ea475a4abe6df7cf60e17aab3b47c0cc7baf,D3_alg_conn,0.02834230727839988,0.03589336229403284,26.6423,Release/1.9.0 (#209)
+fivetran__dbt_hubspot,2026-08-03T17:40:22,2ac3ea475a4abe6df7cf60e17aab3b47c0cc7baf,D4_cycle_rank_norm,0.07792207792207792,0.13170731707317074,69.0244,Release/1.9.0 (#209)
+fivetran__dbt_intercom,2021-01-05T14:15:37,476b4b6415646db36d43594446aedfe35d93dd76,D4_cycle_rank_norm,0.1,0.18181818181818182,81.8182,yml name change
+fivetran__dbt_intercom,2021-02-08T14:06:46,7af2506858c4a6ca56bdb11bfa2d5da233d3683f,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,customer changes PR
+fivetran__dbt_intercom,2023-11-07T13:43:15,934f24ff5530b55a4244fc0b23cb4f344c3ee59f,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Update models/intermediate/int_intercom__conversation_part_aggregates.sql
+fivetran__dbt_intercom,2023-11-07T13:43:15,934f24ff5530b55a4244fc0b23cb4f344c3ee59f,D4_cycle_rank_norm,0.15384615384615385,0.1111111111111111,27.7778,Update models/intermediate/int_intercom__conversation_part_aggregates.sql
+fivetran__dbt_intercom,2025-08-12T18:50:24,12e529fb9057dd8706f270a009f59542ac520fb9,D3_alg_conn,0.49051649926416874,0.1532586366997672,68.7557,Consolidate dbt source into transform
+fivetran__dbt_intercom,2025-08-12T18:50:24,12e529fb9057dd8706f270a009f59542ac520fb9,D4_cycle_rank_norm,0.1111111111111111,0.2571428571428571,131.4286,Consolidate dbt source into transform
+fivetran__dbt_intercom,2025-12-15T13:24:40,074c27da0e03aa79e7abb4a55fcc712c5df775bd,D3_alg_conn,0.1532586366997672,0.05263753932578089,65.6544,"feat: add article, collection, and help_center models (#74)"
+fivetran__dbt_intercom,2026-01-14T09:09:50,1e2c824106b79ec46348f7692937d0284d5f27d1,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,bugfix/assignee_type_deprecation (#75)
+fivetran__dbt_intercom,2026-01-14T09:09:50,1e2c824106b79ec46348f7692937d0284d5f27d1,D3_alg_conn,0.05263753932578089,0.08243428876990765,56.6074,bugfix/assignee_type_deprecation (#75)
+fivetran__dbt_iterable,2021-06-30T22:41:02,0e89a1a43dc970ac12449bdd2670accf1ff6a817,D3_alg_conn,1.0,0.08758956474662719,91.241,Update models/intermediate/int_iterable__latest_user_device.sql
+fivetran__dbt_iterable,2025-08-14T15:44:38,c1057dc15733fb094a9fb90e52d51c8185e334f3,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Consolidate source + remove tests (#63)
+fivetran__dbt_iterable,2025-08-14T15:44:38,c1057dc15733fb094a9fb90e52d51c8185e334f3,D3_alg_conn,0.09570765216114786,0.07234557565433111,24.4098,Consolidate source + remove tests (#63)
+fivetran__dbt_iterable,2025-08-14T15:44:38,c1057dc15733fb094a9fb90e52d51c8185e334f3,D4_cycle_rank_norm,0.16666666666666666,0.09090909090909091,45.4545,Consolidate source + remove tests (#63)
+fivetran__dbt_jira,2021-02-12T12:42:58,a4c42caedba5bf556ae2fe3bb2f04eeb760e5c56,D3_alg_conn,0.09051492241470915,0.07079494295256324,21.7864,add comments
+fivetran__dbt_jira,2021-03-19T14:32:26,3affe1a40843b41959ffd3e3b347a051491b7bb1,D3_alg_conn,0.07079494295256324,0.20308423409654822,186.8626,disable component related models
+fivetran__dbt_jira,2021-03-19T14:32:26,3affe1a40843b41959ffd3e3b347a051491b7bb1,D4_cycle_rank_norm,0.19047619047619047,0.23809523809523808,25.0,disable component related models
+fivetran__dbt_jira,2021-07-15T13:28:20,27042e5c139c9c76874926b4d971636b0da00d96,D1_csi,0.5,0.7142857142857143,42.8571,fix for snowflake customers
+fivetran__dbt_jira,2023-06-08T15:04:13,957b922904ec9f380405f73662f5078cbcc38c0c,D1_csi,0.7142857142857143,0.5,30.0,bigquery fix for timestamp datatype
+fivetran__dbt_jira,2024-04-30T18:37:12,251785a20bc59c587d956b74d9538f43f4fc9754,D1_csi,0.5,0.7857142857142857,57.1429,Feature/performance enhancement (#127)
+fivetran__dbt_jira,2024-04-30T18:37:12,251785a20bc59c587d956b74d9538f43f4fc9754,D3_alg_conn,0.20838312164567319,0.2650561105082121,27.1965,Feature/performance enhancement (#127)
+fivetran__dbt_jira,2025-04-30T15:32:46,14923fdb3062cc468fe969c5c04e752873a114b4,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,[Feature] Sprint enhanced models & daily sprint-issue history (to build velocity report) (#136)
+fivetran__dbt_jira,2025-08-14T19:50:59,b5aa419bfa469d6376d942891921d550de7b1585,D3_alg_conn,0.3035567019950625,0.2116285876378911,30.2837,Consolidate source + remove tests (#145)
+fivetran__dbt_jira,2025-10-28T09:44:34,aacdc9b344e13e7e34c8d4b4386737a9cf2da60d,D4_cycle_rank_norm,0.34545454545454546,0.4918032786885246,42.3641,PR changes
+fivetran__dbt_jira,2025-11-11T09:10:04,2077805a1ec22857ea65c4874d568eee12a2ca6e,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Final PR review
+fivetran__dbt_klaviyo,2025-08-14T21:15:49,dda50fe800eb2ec1ee7737018538cff567cd70a9,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Consolidate source + remove tests (#51)
+fivetran__dbt_klaviyo,2025-08-14T21:15:49,dda50fe800eb2ec1ee7737018538cff567cd70a9,D3_alg_conn,0.30647479777212744,0.20743805817412128,32.3148,Consolidate source + remove tests (#51)
+fivetran__dbt_klaviyo,2025-09-17T13:12:30,e0d58beeb2b03b76d51a3be7a4ff059b96f41e29,D1_csi,0.7857142857142857,0.42857142857142855,45.4545,Bug/last touch attribution (#53)
+fivetran__dbt_klaviyo,2025-09-17T13:12:30,e0d58beeb2b03b76d51a3be7a4ff059b96f41e29,D3_alg_conn,0.20743805817412128,0.26794919243112125,29.1707,Bug/last touch attribution (#53)
+fivetran__dbt_klaviyo,2025-09-17T13:12:30,e0d58beeb2b03b76d51a3be7a4ff059b96f41e29,D4_cycle_rank_norm,0.16666666666666666,0.2222222222222222,33.3333,Bug/last touch attribution (#53)
+fivetran__dbt_mailchimp,2021-10-21T21:19:58,e724a0572eb25f08eed71a0e4cd0ed8dd0db4bdb,D1_csi,0.5,0.6428571428571429,28.5714,"clean/ add comments, int models to ephemeral"
+fivetran__dbt_mailchimp,2025-08-14T23:44:47,4d814357257cefd7436e74231d6c6da745f88819,D3_alg_conn,0.18563557229621383,0.12208077084184721,34.2363,Consolidate source + remove tests (#55)
+fivetran__dbt_marketo_source,2020-11-18T14:40:28,de39292c4a21e280d745e0f668a84810b98fc693,D3_alg_conn,0.5188056959079843,0.3819660112501048,26.3759,updates
+fivetran__dbt_marketo_source,2022-10-04T10:05:26,df816c248ce8aea42dbec00bdb44421890de9e19,D1_csi,0.7142857142857143,0.9285714285714286,30.0,update docs and regen
+fivetran__dbt_marketo_source,2022-10-04T10:05:26,df816c248ce8aea42dbec00bdb44421890de9e19,D3_alg_conn,0.3819660112501048,2.0,423.6068,update docs and regen
+fivetran__dbt_microsoft_ads_source,2022-03-03T14:03:45,234f2c84e017279345b571037154e735cafe8739,D3_alg_conn,0.9999999999999997,0.0,100.0,removing url fields from staging models
+fivetran__dbt_netsuite,2022-07-19T17:15:30,4e89a561cde74e40c5c6bc6bd4687716ba238dc6,D3_alg_conn,0.9999999999999999,0.5794317102969803,42.0568,final review notes updates
+fivetran__dbt_netsuite,2022-07-19T17:15:30,4e89a561cde74e40c5c6bc6bd4687716ba238dc6,D4_cycle_rank_norm,0.2857142857142857,0.65,127.5,final review notes updates
+fivetran__dbt_netsuite,2022-09-06T15:36:15,8d926b0ac6b16498d04a29c8271c0233e60dd355,D3_alg_conn,0.5794317102969803,0.8671903098173016,49.6622,working
+fivetran__dbt_netsuite,2025-08-14T18:11:35,4de52d5a453a733094d14f2ae4348f95422b3938,D3_alg_conn,0.8671903098173016,0.14207346806995896,83.6168,Consolidate source + remove tests (#168)
+fivetran__dbt_netsuite,2025-08-14T18:11:35,4de52d5a453a733094d14f2ae4348f95422b3938,D4_cycle_rank_norm,0.6842105263157895,0.4077669902912621,40.4033,Consolidate source + remove tests (#168)
+fivetran__dbt_netsuite,2025-10-15T19:44:41,533166d7c26e3da1a06ba1526326bc8cedd927b0,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,Release/v1.1.0 (#178)
+fivetran__dbt_netsuite,2025-10-15T19:44:41,533166d7c26e3da1a06ba1526326bc8cedd927b0,D3_alg_conn,0.14207346806995896,0.1942170333959275,36.7018,Release/v1.1.0 (#178)
+fivetran__dbt_pinterest,2022-07-05T11:03:03,c03b2cc39cb72fa9469274abeff09399717bed7d,D3_alg_conn,1.0,0.0,100.0,docs updates and generation
+fivetran__dbt_quickbooks,2025-10-02T00:15:20,f9c08cbe5e621dceb7282eb02f1eb5f02ae83286,D3_alg_conn,0.07112292348249367,0.04898107126062659,31.1318,Consolidate source + remove tests (#178)
+fivetran__dbt_quickbooks,2025-10-02T00:15:20,f9c08cbe5e621dceb7282eb02f1eb5f02ae83286,D4_cycle_rank_norm,0.07894736842105263,0.3712121212121212,370.202,Consolidate source + remove tests (#178)
+fivetran__dbt_quickbooks,2026-07-13T14:32:33,cf1867c4bd77d88931ff624d5e8cbd2f75c9843d,D4_cycle_rank_norm,0.3805970149253731,0.4861111111111111,27.7233,Release/1.9.0 (#213)
+fivetran__dbt_recharge,2023-04-26T15:03:31,2623b490f9ad66e78d7048a9eef4f863909ea5cd,D4_cycle_rank_norm,0.42857142857142855,0.2222222222222222,48.1481,regen docs
+fivetran__dbt_recharge,2025-08-14T17:22:35,a28ec5c9087f682998fe1a0474d0ff9c601b18e3,D3_alg_conn,0.6638136896666731,0.16771277464622367,74.735,Consolidate source + remove tests (#34)
+fivetran__dbt_recharge,2025-11-11T15:28:16,1d585e769fee49137e84fd80257d819654d94644,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,feature/union-data (#41)
+fivetran__dbt_recurly,2025-08-14T19:15:40,dd8415a0dbecfc3b1f886cc3c43cc1491118f8de,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Consolidate source + remove tests (#37)
+fivetran__dbt_recurly,2025-08-14T19:15:40,dd8415a0dbecfc3b1f886cc3c43cc1491118f8de,D4_cycle_rank_norm,0.38461538461538464,0.22448979591836735,41.6327,Consolidate source + remove tests (#37)
+fivetran__dbt_sage_intacct,2022-05-13T14:24:26,c94f571e5eaeb65a153c58778f3e21d63a871eb5,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,add retaiend earnings to yml
+fivetran__dbt_sage_intacct,2022-05-13T14:24:26,c94f571e5eaeb65a153c58778f3e21d63a871eb5,D4_cycle_rank_norm,0.125,0.2222222222222222,77.7778,add retaiend earnings to yml
+fivetran__dbt_sage_intacct,2025-08-14T19:08:17,c8a91afd085dfb9ffb29f47db81a0bf82676cbfd,D3_alg_conn,0.259912455922661,0.13362306146813563,48.5892,Consolidate source + remove tests (#37)
+fivetran__dbt_sage_intacct,2025-08-14T19:08:17,c8a91afd085dfb9ffb29f47db81a0bf82676cbfd,D4_cycle_rank_norm,0.2,0.08333333333333333,58.3333,Consolidate source + remove tests (#37)
+fivetran__dbt_salesforce,2020-10-23T11:50:55,53becf7b713f25e37de7118ae2907e2d91ac0295,D4_cycle_rank_norm,0.3333333333333333,0.0,100.0,upgrade dbt version and source package
+fivetran__dbt_salesforce,2025-08-19T00:14:52,5a68ce8b57096aa24157e23d0015bfa4d9ae4cdc,D3_alg_conn,0.5188056959079845,0.15566187008176685,69.9961,Consolidate source + remove tests (#67)
+fivetran__dbt_salesforce_source,2023-10-29T22:29:05,e4e3ba65427b2cab708f6aaaae608d2b406a751c,D3_alg_conn,2.0,0.0,100.0,review/jm-final-adjustments
+fivetran__dbt_shopify,2021-05-28T12:36:43,80c7655f452b61ddf3bb3c5bad781b8dd3969888,D3_alg_conn,0.2508824522534782,0.18144779549624135,27.6762,fixing tests + typo
+fivetran__dbt_shopify,2023-01-13T16:43:08,ff221c1515bd0bcaa91c9f6692efb84ba0787d99,D4_cycle_rank_norm,0.1,0.23809523809523808,138.0952,updates to discounts and adde dthe daily shop model
+fivetran__dbt_shopify,2025-05-28T08:29:26,7dcfcb97e171b7d3c24270ab2cb98c187cfe9424,D3_alg_conn,0.1888444211630518,0.14261753918437922,24.4788,"Add media discount models, deprecate product image and price rule (#104)"
+fivetran__dbt_shopify,2025-08-20T13:27:52,927fc4c0cc86cb18e624cb8b2cad8e918ede16c1,D3_alg_conn,0.14261753918437922,0.05403408468178977,62.1126,bugfix/inventory_levels_product_variant_media_join (#119)
+fivetran__dbt_shopify,2025-08-20T13:27:52,927fc4c0cc86cb18e624cb8b2cad8e918ede16c1,D4_cycle_rank_norm,0.20588235294117646,0.2631578947368421,27.8195,bugfix/inventory_levels_product_variant_media_join (#119)
+fivetran__dbt_shopify,2025-09-23T21:06:24,77748fc9edb2184a31e30f4bff490ce982af3ea8,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,Consolidate source (#123)
+fivetran__dbt_shopify,2025-09-23T21:06:24,77748fc9edb2184a31e30f4bff490ce982af3ea8,D3_alg_conn,0.05403408468178977,0.014516338538315365,73.1348,Consolidate source (#123)
+fivetran__dbt_shopify,2026-03-31T17:41:31,9bd631fdc8764e32bf71f39e9d91120c4d936490,D4_cycle_rank_norm,0.23622047244094488,0.32196969696969696,36.3005,"[Project] Refunds, returns, discounts daily metric updates (#147)"
+fivetran__dbt_snapchat_ads,2025-08-18T14:09:19,36ed72e27dd898f54ad4e97f0364fd02e40f98f4,D1_csi,0.8571428571428571,0.6428571428571429,25.0,Consolidate source + remove tests (#41)
+fivetran__dbt_snapchat_ads,2025-08-18T14:09:19,36ed72e27dd898f54ad4e97f0364fd02e40f98f4,D3_alg_conn,0.9999999999999997,0.19776543954051248,80.2235,Consolidate source + remove tests (#41)
+fivetran__dbt_stripe,2020-08-05T17:13:04,e81be8611ecc4c61fd475be7858dee4768739327,D3_alg_conn,0.9659581641965093,0.5448659874787005,43.5932,refund fix
+fivetran__dbt_stripe,2020-08-05T17:13:04,e81be8611ecc4c61fd475be7858dee4768739327,D4_cycle_rank_norm,0.4,0.09090909090909091,77.2727,refund fix
+fivetran__dbt_stripe,2021-03-16T18:19:38,f676db1c535f3229e514c79308ac510f61c9595b,D3_alg_conn,0.5448659874787005,0.7269271369323332,33.4139,update overhaul
+fivetran__dbt_stripe,2022-12-13T02:34:15,d50715935f6afe3a0e58000949e5b1bd6c60deb9,D3_alg_conn,0.7269271369323332,0.4741096902889227,34.7789,yml updates
+fivetran__dbt_stripe,2022-12-13T02:34:15,d50715935f6afe3a0e58000949e5b1bd6c60deb9,D4_cycle_rank_norm,0.1,0.3076923076923077,207.6923,yml updates
+fivetran__dbt_stripe,2022-12-19T14:56:18,86845581bfa09821302aa546c56160884dbf4b6e,D3_alg_conn,0.4741096902889227,0.7269271369323332,53.3247,merge conflicts
+fivetran__dbt_stripe,2022-12-19T14:56:18,86845581bfa09821302aa546c56160884dbf4b6e,D4_cycle_rank_norm,0.3076923076923077,0.1,67.5,merge conflicts
+fivetran__dbt_stripe,2023-01-30T22:00:07,0ffee1d7875aca1faabc72bee6f2eeebca293201,D3_alg_conn,0.7269271369323332,0.3485348644524608,52.0537,docs and updates
+fivetran__dbt_stripe,2023-01-30T22:00:07,0ffee1d7875aca1faabc72bee6f2eeebca293201,D4_cycle_rank_norm,0.1,0.2727272727272727,172.7273,docs and updates
+fivetran__dbt_stripe,2023-03-13T12:38:52,27ac68dbdc27c97bc60575aebf687958f24d4486,D3_alg_conn,0.3485348644524608,0.22270990375968,36.1011,add source relation
+fivetran__dbt_stripe,2023-03-19T16:40:09,482ac34300b2e65aaf75e3dd047e4698952cb879,D3_alg_conn,0.22270990375968,0.3485348644524608,56.4972,add test update
+fivetran__dbt_stripe,2023-09-08T15:59:46,51518ee834a70a511b29357689dabaad52f7f3df,D4_cycle_rank_norm,0.2727272727272727,0.21428571428571427,21.4286,fixes
+fivetran__dbt_stripe,2023-10-18T18:29:00,1778c682d28366e373197838197d2be0e8abaa2f,D3_alg_conn,0.34853486445246157,0.2768654361308987,20.5631,updates
+fivetran__dbt_stripe,2025-08-18T14:16:25,4ca1febef9c8a8ec6dadcfaf490c66b373598657,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Consolidate source + remove tests (#122)
+fivetran__dbt_stripe,2025-08-18T14:16:25,4ca1febef9c8a8ec6dadcfaf490c66b373598657,D3_alg_conn,0.2768654361308987,0.22017563557681144,20.4756,Consolidate source + remove tests (#122)
+fivetran__dbt_stripe,2025-08-18T14:16:25,4ca1febef9c8a8ec6dadcfaf490c66b373598657,D4_cycle_rank_norm,0.1875,0.43333333333333335,131.1111,Consolidate source + remove tests (#122)
+fivetran__dbt_stripe,2026-03-18T11:08:45,2951f5cd70c987bd9e8674aec10d29bea407715c,D3_alg_conn,0.184432562608633,0.10551491947921694,42.7894,feature/update_mrr_to_reference_subscription_discount (#141)
+fivetran__dbt_xero,2025-04-09T10:15:22,06eaf8520fa195067844d06e1b08f228eb77e1ad,D3_alg_conn,1.9999999999999987,1.3819660112501058,30.9017,variable configs
+fivetran__dbt_xero,2025-04-09T10:15:22,06eaf8520fa195067844d06e1b08f228eb77e1ad,D4_cycle_rank_norm,0.2,0.2857142857142857,42.8571,variable configs
+fivetran__dbt_xero,2025-04-16T17:23:32,3da15245f4cf405148602e3a3a3e56b9eb7fa6e9,D3_alg_conn,1.3819660112501058,0.24340174613993254,82.3873,quote false
+fivetran__dbt_xero,2025-08-18T14:20:56,f48dc77a039a70cdd798360c64ff46a2a0f7044d,D3_alg_conn,0.24340174613993254,0.13275536158464935,45.4583,Consolidate source + remove tests (#64)
+fivetran__dbt_xero,2025-08-18T14:20:56,f48dc77a039a70cdd798360c64ff46a2a0f7044d,D4_cycle_rank_norm,0.25,0.1388888888888889,44.4444,Consolidate source + remove tests (#64)
+fivetran__dbt_xero,2026-07-27T17:51:35,51d236fe63baa3804923b791fae5302f81889517,D4_cycle_rank_norm,0.1388888888888889,0.22727272727272727,63.6364,Feature/update retained earnings split (#82)
+fivetran__dbt_zendesk,2020-09-14T16:46:25,0b14330184d1995a9cffabf3927622f285ef6ece,D1_csi,0.6428571428571429,0.5,22.2222,initial package release
+fivetran__dbt_zendesk,2020-09-14T16:46:25,0b14330184d1995a9cffabf3927622f285ef6ece,D3_alg_conn,0.11283126988918055,0.263172102663518,133.2439,initial package release
+fivetran__dbt_zendesk,2020-09-14T16:46:25,0b14330184d1995a9cffabf3927622f285ef6ece,D4_cycle_rank_norm,0.3333333333333333,0.5,50.0,initial package release
+fivetran__dbt_zendesk,2021-02-23T11:20:50,303d14f48ffb07e71ca061da29124ed6b50870ca,D1_csi,0.5,0.8571428571428571,71.4286,Kristin review updates
+fivetran__dbt_zendesk,2021-02-23T11:20:50,303d14f48ffb07e71ca061da29124ed6b50870ca,D3_alg_conn,0.263172102663518,0.06367913184084678,75.8032,Kristin review updates
+fivetran__dbt_zendesk,2021-02-23T11:20:50,303d14f48ffb07e71ca061da29124ed6b50870ca,D4_cycle_rank_norm,0.5185185185185185,0.40540540540540543,21.8147,Kristin review updates
+fivetran__dbt_zendesk,2021-03-25T08:32:16,db8b1922ee7a7f0da8d9db9a5170e4eeb228e73f,D1_csi,0.8571428571428571,0.5714285714285714,33.3333,postgres conditional fix
+fivetran__dbt_zendesk,2021-03-25T08:32:16,db8b1922ee7a7f0da8d9db9a5170e4eeb228e73f,D3_alg_conn,0.06367913184084678,0.09960973119182147,56.4244,postgres conditional fix
+fivetran__dbt_zendesk,2021-03-25T08:32:16,db8b1922ee7a7f0da8d9db9a5170e4eeb228e73f,D4_cycle_rank_norm,0.40540540540540543,0.6818181818181818,68.1818,postgres conditional fix
+fivetran__dbt_zendesk,2022-02-16T14:08:09,5783be5a98490d19e485c03938fca1b82aa7b8a5,D4_cycle_rank_norm,0.6666666666666666,0.8,20.0,Merge pull request #64 from fivetran/timezone-tables
+fivetran__dbt_zendesk,2024-05-06T10:41:34,4e1a19048b4539ce34b4303df0366afabaf0579a,D1_csi,0.5,0.6428571428571429,28.5714,validation additions
+fivetran__dbt_zendesk,2024-05-06T10:41:34,4e1a19048b4539ce34b4303df0366afabaf0579a,D3_alg_conn,0.09899215032390354,0.2123537140060551,114.5157,validation additions
+fivetran__dbt_zendesk,2024-10-24T10:23:04,7fa81ffb0162b5372cb28efd26edbd1c169ce235,D3_alg_conn,0.2123537140060551,0.09864426101088629,53.5472,Give wiggle room for selecting SLA policy names if timestamps are off by milliseconds  (#174)
+fivetran__dbt_zendesk,2025-06-30T16:03:42,dc0dc8b1fd2d850e4299fbf6ed8317e23efd19f8,D1_csi,0.7142857142857143,0.42857142857142855,40.0,Bugfix/description yml key (#202)
+fivetran__dbt_zendesk,2025-08-18T12:57:37,3886553f93ef6ccb2d104bc4c430eaf693bb069f,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,Update src_zendesk.yml (#212)
+flexanalytics__dbt-business-intelligence,2022-05-19T10:04:43,a9343c27e3a4ffbf5cf28e8add7aad752214e8a4,D3_alg_conn,0.9620194120350635,0.38196601125010476,60.2954,Clean up fact_sales
+flexanalytics__dbt-business-intelligence,2022-05-19T10:04:43,a9343c27e3a4ffbf5cf28e8add7aad752214e8a4,D4_cycle_rank_norm,0.45454545454545453,0.09090909090909091,80.0,Clean up fact_sales
+flexanalytics__dbt-business-intelligence,2024-03-28T14:38:15,1c6950b6de82536671824737906720fcd57c94c3,D4_cycle_rank_norm,0.08333333333333333,0.0,100.0,add time_granularity to semantic_models date_day dimension
+flexanalytics__dbt-business-intelligence,2025-01-10T12:28:28,5e96cf8010a0d4613e9e56e81b0257e2cc2a58ea,D1_csi,0.7142857142857143,0.5714285714285714,20.0,Update metricflow_time_spine.sql
+flexanalytics__dbt-business-intelligence,2025-01-10T12:28:28,5e96cf8010a0d4613e9e56e81b0257e2cc2a58ea,D3_alg_conn,0.38196601125010493,0.296019130683671,22.5012,Update metricflow_time_spine.sql
+flexanalytics__dbt-business-intelligence,2025-01-31T06:50:46,03b1e1dab3456fee8e98c8e7e39d37f8aa7dfca8,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Upgrade project to dbt 1.9
+flexanalytics__dbt-business-intelligence,2025-01-31T06:50:46,03b1e1dab3456fee8e98c8e7e39d37f8aa7dfca8,D3_alg_conn,0.296019130683671,0.38196601125010493,29.0342,Upgrade project to dbt 1.9
+frizzleqq__f1-dbt-duckdb,2022-10-16T18:12:08,1fa04605e1bb7deadf65e7226f3d24c07fd8e753,D3_alg_conn,0.9999999999999997,2.0,100.0,add fact tables
+frizzleqq__f1-dbt-duckdb,2022-11-12T16:51:11,0120b7c32e6ceb2674833b5983dafdc2bec6a45f,D3_alg_conn,2.0,0.585786437626905,70.7107,"rework full load and staging cli, add f_qualifying"
+frizzleqq__f1-dbt-duckdb,2023-06-13T17:58:49,e329183b1f2c907ff9ea4b0507a3f8ed7139264b,D3_alg_conn,0.585786437626905,0.4384471871911697,25.1524,experiment with external materialization of dbt-duckdb
+frizzleqq__f1-dbt-duckdb,2023-06-25T17:46:44,2e794e12262e6ab740832595a66ae769f62a4325,D3_alg_conn,0.4384471871911697,0.3217196499578084,26.6229,add bridge table for drivers-constructors
+get-select__dbt-snowflake-monitoring,2022-12-06T16:36:57,f9523e85902bab7b267f22d33659b3a3f1dbb0a0,D3_alg_conn,0.18996086384539262,0.34600757070928556,82.1468,feature - Add serverless tasks and spend (#37)
+get-select__dbt-snowflake-monitoring,2022-12-06T16:36:57,f9523e85902bab7b267f22d33659b3a3f1dbb0a0,D4_cycle_rank_norm,0.09090909090909091,0.16666666666666666,83.3333,feature - Add serverless tasks and spend (#37)
+get-select__dbt-snowflake-monitoring,2023-01-12T10:53:32,0d042880552d55098fc55b5a1068086aef2ba87d,D3_alg_conn,0.34600757070928556,0.22673541023919455,34.471,Inner join daily_rates to avoid $0 entries in daily_spend for incompl… (#66)
+get-select__dbt-snowflake-monitoring,2023-01-12T10:53:32,0d042880552d55098fc55b5a1068086aef2ba87d,D4_cycle_rank_norm,0.16666666666666666,0.1111111111111111,33.3333,Inner join daily_rates to avoid $0 entries in daily_spend for incompl… (#66)
+get-select__dbt-snowflake-monitoring,2023-06-09T17:56:18,47b2b08f6f5c54aaf0469aafd04887f152145c62,D3_alg_conn,0.22673541023919455,0.1259309053293568,44.4591,Get test passing
+get-select__dbt-snowflake-monitoring,2023-06-09T17:56:18,47b2b08f6f5c54aaf0469aafd04887f152145c62,D4_cycle_rank_norm,0.08695652173913043,0.04,54.0,Get test passing
+get-select__dbt-snowflake-monitoring,2024-01-16T13:04:33,c0d38010d5febaf2c09ec77b53380990614202be,D3_alg_conn,0.11929262842503377,0.2077725488661782,74.1705,Update models/dbt_queries.yml
+get-select__dbt-snowflake-monitoring,2024-01-16T13:04:33,c0d38010d5febaf2c09ec77b53380990614202be,D4_cycle_rank_norm,0.038461538461538464,0.07692307692307693,100.0,Update models/dbt_queries.yml
+gnosischain__dbt-cerebro,2025-04-17T20:32:20,3182778241687bc6139500450c625aab879ff413,D3_alg_conn,1.0,0.14943000726744113,85.057,update: new models. fix incremental macro
+gnosischain__dbt-cerebro,2025-08-22T17:39:15,58bea6699306cf8e8ad9bffed36cb82050d2fdc6,D3_alg_conn,0.13648343079672726,0.02558928429550013,81.251,update models and decoding
+gnosischain__dbt-cerebro,2025-09-04T08:45:40,358247819ccb97522aca8f243d0e52d78cab4137,D1_csi,0.8571428571428571,0.6428571428571429,25.0,update esg model and ymls
+gnosischain__dbt-cerebro,2025-09-04T08:45:40,358247819ccb97522aca8f243d0e52d78cab4137,D4_cycle_rank_norm,0.08333333333333333,0.10112359550561797,21.3483,update esg model and ymls
+gnosischain__dbt-cerebro,2025-12-18T14:40:25,0371331238ab1a296dde0f9503838b8d7beb46ae,D3_alg_conn,0.031053299167857033,0.020032393210187235,35.4903,incremental fixed
+gnosischain__dbt-cerebro,2026-01-21T15:26:43,cfb95b12f4e2db093124e8da7638ece9ba35f8fd,D3_alg_conn,0.020032393210187235,0.03441630783803967,71.8033,enforce whitelist version windows
+gnosischain__dbt-cerebro,2026-02-13T15:09:13,5d56a12f4abc1405a883b664f95ee429939973b6,D3_alg_conn,0.03441630783803967,0.02113678971900977,38.585,prepare modelss for unit toggle
+gnosischain__dbt-cerebro,2026-02-13T15:09:13,5d56a12f4abc1405a883b664f95ee429939973b6,D4_cycle_rank_norm,0.0912280701754386,0.11538461538461539,26.4793,prepare modelss for unit toggle
+gnosischain__dbt-cerebro,2026-03-19T15:29:07,b30d166c6f15e4a88e80b3869bda18ae502771c9,D1_csi,0.7142857142857143,0.9285714285714286,30.0,LVR
+gnosischain__dbt-cerebro,2026-03-19T15:29:07,b30d166c6f15e4a88e80b3869bda18ae502771c9,D4_cycle_rank_norm,0.11538461538461539,0.15347721822541965,33.0136,LVR
+gnosischain__dbt-cerebro,2026-04-21T13:49:39,668539bb8f938a0a124e941aed7f911b34211313,D4_cycle_rank_norm,0.15347721822541965,0.23699421965317918,54.4165,add trades models
+gnosischain__dbt-cerebro,2026-05-21T14:47:43,eee63889313594ab16d3e070b0e229ee8ee6f7d5,D1_csi,0.9285714285714286,0.7142857142857143,23.0769,move old vs new eure mapping into ubo directly
+gnosischain__dbt-cerebro,2026-05-21T14:47:43,eee63889313594ab16d3e070b0e229ee8ee6f7d5,D3_alg_conn,0.017132555829480183,0.020748478451841766,21.1056,move old vs new eure mapping into ubo directly
+gnosischain__dbt-cerebro,2026-05-21T14:47:43,eee63889313594ab16d3e070b0e229ee8ee6f7d5,D4_cycle_rank_norm,0.23699421965317918,0.3071705426356589,29.611,move old vs new eure mapping into ubo directly
+gnosischain__dbt-cerebro,2026-06-19T02:30:08,267e04bf382d12af8dcbab5d503b399ac03f6c7f,D4_cycle_rank_norm,0.3071705426356589,0.4163568773234201,35.5458,fix: insert_overwrite
+godatadriven__dbt-bouncer,2025-08-12T21:21:16,76a7afec9fa122d057ccb06433694fd1898df719,D3_alg_conn,0.8299135133739665,1.4384471871911697,73.325,Adding versioned models
+godatadriven__dbt-bouncer,2025-08-12T21:21:16,76a7afec9fa122d057ccb06433694fd1898df719,D4_cycle_rank_norm,0.125,0.3333333333333333,166.6667,Adding versioned models
+godatadriven__dbt-bouncer,2026-03-18T11:27:58,f5b6f07b08a2f29bc47bf3b25fdc82bbd60e8089,D3_alg_conn,1.4384471871911697,1.7381977547400296,20.8385,feat: update dbt_project fixtures and dynamic test counting
+godatadriven__dbt-bouncer,2026-03-18T11:27:58,f5b6f07b08a2f29bc47bf3b25fdc82bbd60e8089,D4_cycle_rank_norm,0.25,0.38461538461538464,53.8462,feat: update dbt_project fixtures and dynamic test counting
+google__fhir-dbt-analytics,2022-12-16T08:20:28,73af566cadcbf5890db19d997ff51ec772cd9289,D3_alg_conn,0.26794919243112325,0.340489923127655,27.0726,Use `ref` in fhir_resource_table_expression
+google__fhir-dbt-analytics,2022-12-16T08:20:28,73af566cadcbf5890db19d997ff51ec772cd9289,D4_cycle_rank_norm,0.08860759493670886,0.3670886075949367,314.2857,Use `ref` in fhir_resource_table_expression
+google__fhir-dbt-analytics,2023-03-15T08:05:04,509f4d61e0a4fec62beec3920d3e38040e1eeb0a,D3_alg_conn,0.2860326418104172,0.09308621194598422,67.4561,Add 14 data completeness metrics
+google__fhir-dbt-analytics,2023-03-15T08:05:04,509f4d61e0a4fec62beec3920d3e38040e1eeb0a,D4_cycle_rank_norm,0.4266666666666667,0.18994413407821228,55.4818,Add 14 data completeness metrics
+google__fhir-dbt-analytics,2023-05-06T03:26:56,a6af886d13c45eec733f583aa261f6686a327da9,D3_alg_conn,0.08762685956779737,0.1366720283180401,55.9705,Modify patient_missing_mrn and patient_testpatient for Spark
+google__fhir-dbt-analytics,2023-05-06T03:26:56,a6af886d13c45eec733f583aa261f6686a327da9,D4_cycle_rank_norm,0.18134715025906736,0.2318181818181818,27.8312,Modify patient_missing_mrn and patient_testpatient for Spark
+google__fhir-dbt-analytics,2023-10-30T09:50:54,b7e604495c4aead55555a17fda87ae8d9f80f6cb,D3_alg_conn,0.1360851044843243,0.09594699877610496,29.4949,Various clean-ups and simplifications
+google__fhir-dbt-analytics,2023-10-30T09:50:54,b7e604495c4aead55555a17fda87ae8d9f80f6cb,D4_cycle_rank_norm,0.2575107296137339,0.1596244131455399,38.0125,Various clean-ups and simplifications
+google__fhir-dbt-analytics,2023-11-22T08:12:22,148a3d82d8891ef6daa8445bdd498c646e18bef0,D3_alg_conn,0.09594699877610496,0.23194834090005884,141.7463,Update fhir_dbt_analytics to read from fhir_dbt_utils package
+google__fhir-dbt-analytics,2023-11-22T08:12:22,148a3d82d8891ef6daa8445bdd498c646e18bef0,D4_cycle_rank_norm,0.1596244131455399,0.03208556149732621,79.8993,Update fhir_dbt_analytics to read from fhir_dbt_utils package
+gseda19__grasya-snowflake,2024-10-17T06:40:12,c1cd8631b38398c058c0d5665f5069b3fca98f6d,D3_alg_conn,1.0,2.0,100.0,commit
+gseda19__grasya-snowflake,2024-11-11T02:21:15,88a6cf6375266b027a1bc0e9068d20488568dc81,D3_alg_conn,2.0,1.0,50.0,select 4 as id
+gseda19__grasya-snowflake,2025-02-11T03:26:13,2b0b77a7822b60b66d7b50710d40455b17270be7,D3_alg_conn,1.0,0.0,100.0,sfs
+gseda19__grasya-snowflake,2026-02-04T00:03:56,c6c072538330f7f5b7cf7451a465654de0e86fb4,D3_alg_conn,0.5188056959079841,1.0,92.7504,dfsfd
+intelmercbernoulli__dbt,2025-03-14T12:11:24,c9b3b36fc8bed96b7c3764453214785a0aa88fd3,D1_csi,0.9285714285714286,0.7142857142857143,23.0769,Atualização do projeto
+intelmercbernoulli__dbt,2025-03-14T12:11:24,c9b3b36fc8bed96b7c3764453214785a0aa88fd3,D3_alg_conn,2.0,0.28743787818385647,85.6281,Atualização do projeto
+intelmercbernoulli__dbt,2025-06-09T23:02:16,1097b59567270c485cf8a2f655e0bb4d127e7623,D4_cycle_rank_norm,0.07142857142857142,0.09090909090909091,27.2727,Atualização
+intelmercbernoulli__dbt,2025-07-10T17:42:35,f6aeac7fd46e0d25f12c41f31fa03e6a4408e116,D4_cycle_rank_norm,0.09090909090909091,0.06976744186046512,23.2558,Atualização
+intelmercbernoulli__dbt,2025-10-30T17:55:32,a89caf42486b795734e7fde69cf8fda8160d7648,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Atualização
+intelmercbernoulli__dbt,2025-10-30T17:55:32,a89caf42486b795734e7fde69cf8fda8160d7648,D3_alg_conn,0.24603393361292794,0.19657013818535668,20.1045,Atualização
+intelmercbernoulli__dbt,2025-10-30T17:55:32,a89caf42486b795734e7fde69cf8fda8160d7648,D4_cycle_rank_norm,0.06,0.07407407407407407,23.4568,Atualização
+intelmercbernoulli__dbt,2025-11-26T10:08:16,dc5062d3170be59e4ce9c17441b22580b62fdd21,D3_alg_conn,0.19657013818535668,0.127230507823499,35.2748,Atualização
+intelmercbernoulli__dbt,2026-01-30T14:36:23,f1b674cb40d5af23fa7c52ee9034851ff90ba322,D3_alg_conn,0.127230507823499,0.04263859868138666,66.4871,Atualização da tabela do ranking do inep.
+intelmercbernoulli__dbt,2026-01-30T14:36:23,f1b674cb40d5af23fa7c52ee9034851ff90ba322,D4_cycle_rank_norm,0.06557377049180328,0.13333333333333333,103.3333,Atualização da tabela do ranking do inep.
+janaonline__dbt_cityfinance,2024-12-16T19:08:08,170cab5e1c37c2d35db2a483b5fac1aaf21c171e,D3_alg_conn,0.32171964995780833,0.13975110712669964,56.5612,fixed few issues
+jyablonski__nba_elt_dbt,2021-11-20T20:14:08,f777e357da1fd8f4bd1fcaf215b942bd002de6c9,D1_csi,0.8571428571428571,0.6428571428571429,25.0,adding more schema testing
+jyablonski__nba_elt_dbt,2021-11-20T20:14:08,f777e357da1fd8f4bd1fcaf215b942bd002de6c9,D3_alg_conn,0.09783627208458635,0.1543486267561496,57.7622,adding more schema testing
+jyablonski__nba_elt_dbt,2021-11-20T20:14:08,f777e357da1fd8f4bd1fcaf215b942bd002de6c9,D4_cycle_rank_norm,0.15151515151515152,0.2765957446808511,82.5532,adding more schema testing
+jyablonski__nba_elt_dbt,2021-12-19T18:13:32,12fd7f2a7b36852196e5adb58e431ec0d772a5db,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,fixing duplicate pbp rows
+jyablonski__nba_elt_dbt,2022-03-18T22:02:51,45b4786d26a6a4173cee665a37ca787a7efa2671,D3_alg_conn,0.15586288157499856,0.10886165228394053,30.1555,adding testing + documentation
+jyablonski__nba_elt_dbt,2022-03-18T22:02:51,45b4786d26a6a4173cee665a37ca787a7efa2671,D4_cycle_rank_norm,0.29850746268656714,0.4675324675324675,56.6234,adding testing + documentation
+jyablonski__nba_elt_dbt,2022-07-17T15:28:44,1f91499d07491af838e4f6117f174264f526d626,D3_alg_conn,0.0949908696608411,0.13599392075690978,43.1653,limit reddit + twitter
+jyablonski__nba_elt_dbt,2023-04-05T17:09:19,e29eba05276cfcb0e25be2ef6b2e3ed987783570,D1_csi,0.7142857142857143,0.5714285714285714,20.0,add odds table (#162)
+jyablonski__nba_elt_dbt,2024-01-05T18:42:55,8c60162c8fac6eb1754943b909e5d4053f9d6c69,D1_csi,0.5,0.6428571428571429,28.5714,dbt Prod Release v2.5.4 (#189)
+jyablonski__nba_elt_dbt,2024-05-07T12:10:42,6a69d5c56e9a43f1aecc88b9f621088a4975994f,D4_cycle_rank_norm,0.44,0.5714285714285714,29.8701,dbt v3.0.6 (#199)
+jyablonski__nba_elt_dbt,2025-06-16T16:38:56,db84701086b36d63ddf66f983ab6702f9723ddbc,D1_csi,0.5,0.6428571428571429,28.5714,dbt v3.2.8 (#218)
+jyablonski__nba_elt_dbt,2025-11-28T13:37:41,5a82de4a63f0abf9a1a774d1448d502f8dc18025,D1_csi,0.5714285714285714,0.7142857142857143,25.0,update ml features (#232)
+jyablonski__nba_elt_dbt,2026-05-26T16:49:21,a3cfb1e2c7a5096219d246d36f447e89618b1539,D1_csi,0.7142857142857143,0.42857142857142855,40.0,feat(quality): add pipeline health model (#242)
+jyablonski__nba_elt_dbt,2026-05-26T16:49:21,a3cfb1e2c7a5096219d246d36f447e89618b1539,D3_alg_conn,0.1348714178157208,0.18079747740460556,34.0517,feat(quality): add pipeline health model (#242)
+jyablonski__nba_elt_dbt,2026-05-26T16:49:21,a3cfb1e2c7a5096219d246d36f447e89618b1539,D4_cycle_rank_norm,0.6637168141592921,0.8869565217391304,33.6348,feat(quality): add pipeline health model (#242)
+jyablonski__nba_elt_dbt,2026-06-13T14:37:20,43098798bc6c2832bb87fcb937e8d26c9e11cfa1,D3_alg_conn,0.18079747740460556,0.09057654020074214,49.9017,feat: add new player value and payroll summary marts (#245)
+lightdash__lightdash,2025-07-15T13:56:29,adf7eae303d2f3d986186d1ac1753eb17b096291,D4_cycle_rank_norm,0.07692307692307693,0.045454545454545456,40.9091,feat: add AI metadata support for DBT Schema (#15830)
+lightdash__lightdash,2025-08-13T16:44:27,b0c1f937856a6a67e566b17df39f1b5cbab59dd2,D1_csi,0.5714285714285714,0.7142857142857143,25.0,feat: model level parameters (#16378)
+lightdash__lightdash,2025-08-13T16:44:27,b0c1f937856a6a67e566b17df39f1b5cbab59dd2,D4_cycle_rank_norm,0.045454545454545456,0.125,175.0,feat: model level parameters (#16378)
+lightdash__lightdash,2026-03-11T15:25:32,e9a3c88fb7d1e6c576920c10c93c0e9a625030cd,D4_cycle_rank_norm,0.10416666666666667,0.1320754716981132,26.7925,feat: add Liquid field introspection support for _in_query and _is_filtered (#21032)
+matsonj__nba-monte-carlo,2022-12-19T23:02:16,8480032af395c713431f891bcb9aaf535cc7f88c,D1_csi,0.5,0.6428571428571429,28.5714,Fixing rounding
+matsonj__nba-monte-carlo,2023-08-16T00:41:06,5306a71e30b1cefdc7d9eb6d727529d91b67ef07,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,adding nfl analytics
+matsonj__nba-monte-carlo,2023-08-16T00:41:06,5306a71e30b1cefdc7d9eb6d727529d91b67ef07,D3_alg_conn,0.31402846520819205,0.09507607463313635,69.7237,adding nfl analytics
+matsonj__nba-monte-carlo,2023-09-19T05:13:34,6312d65e2e1f4c11553d6e47b58ec47451dc5fb7,D3_alg_conn,0.09507607463313635,0.037907433654523,60.1294,adding nfl models
+matsonj__nba-monte-carlo,2023-10-22T00:55:34,cf30c3a285f709bcdfe711e876f03aea3f57009b,D3_alg_conn,0.037907433654523,0.05196882337816387,37.094,more nba cleanup
+matsonj__nba-monte-carlo,2023-10-22T00:55:34,cf30c3a285f709bcdfe711e876f03aea3f57009b,D4_cycle_rank_norm,0.5142857142857142,0.671875,30.6424,more nba cleanup
+matsonj__nba-monte-carlo,2024-10-27T17:36:40,a0ec96ff4ed285bda5953a925bbfa713672b1579,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,fix playoffs filter
+matsonj__nba-monte-carlo,2025-08-28T16:57:14,f9a503fe840407ae0fcc33fc4926c9f077333975,D4_cycle_rank_norm,0.7777777777777778,0.9838709677419355,26.4977,update models for 's.game_site_adjustment'
+mattermost__mattermost-data-warehouse,2020-02-15T08:59:29,778a4f7db1e6ee257cb3a0d69d90f3eb49f36cd2,D4_cycle_rank_norm,0.1875,0.05454545454545454,70.9091,Fixed syntax and naming errors.
+mattermost__mattermost-data-warehouse,2020-03-16T10:18:30,92c733c41fba2dd0b09d64f4a1f21b94a44b0643,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,Fixed server_licensee_details date range.
+mattermost__mattermost-data-warehouse,2020-03-16T10:18:30,92c733c41fba2dd0b09d64f4a1f21b94a44b0643,D3_alg_conn,0.42588894451621645,0.022893113675368424,94.6246,Fixed server_licensee_details date range.
+mattermost__mattermost-data-warehouse,2020-03-16T10:18:30,92c733c41fba2dd0b09d64f4a1f21b94a44b0643,D4_cycle_rank_norm,0.05454545454545454,0.13402061855670103,145.7045,Fixed server_licensee_details date range.
+mattermost__mattermost-data-warehouse,2020-04-14T16:20:02,c45ce28bf79c1c8d2a4985544635617090a3c653,D4_cycle_rank_norm,0.13402061855670103,0.1619047619047619,20.8059,updates to handle 15 digits
+mattermost__mattermost-data-warehouse,2020-05-14T07:25:52,828ace32e8bcb1b9a523828c180d3f36dffb4377,D4_cycle_rank_norm,0.1619047619047619,0.28,72.9412,Licensed servers (#242)
+mattermost__mattermost-data-warehouse,2021-03-11T09:56:56,71bdb9cef7f973b0edf71aaae40ea875e4fb923f,D3_alg_conn,0.017443751580741424,0.0579752132608762,232.3552,Adding daily_server_user_agent_events (#638)
+mattermost__mattermost-data-warehouse,2021-03-11T09:56:56,71bdb9cef7f973b0edf71aaae40ea875e4fb923f,D4_cycle_rank_norm,0.2802197802197802,0.4585635359116022,63.6442,Adding daily_server_user_agent_events (#638)
+mattermost__mattermost-data-warehouse,2021-05-07T11:39:20,d08ab512719fec858cf3a23a26e14bcd8dd4c5ca,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Ic fix (#712)
+mattermost__mattermost-data-warehouse,2021-07-07T16:28:59,ee0357a3af5902def5777ae7e1b7a6c539cd4ca4,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,Add stripe customer ID to cloud signup campaign.
+mattermost__mattermost-data-warehouse,2022-05-03T09:43:27,83567feb78b18a9fe24162833af91f3aaed2b807,D1_csi,0.7142857142857143,0.42857142857142855,40.0,Removing DLL function to avoid DBT error (#912)
+mattermost__mattermost-data-warehouse,2022-06-03T05:14:17,0dbf551eeb32c7984512941eb5f00ce13642bb0c,D1_csi,0.42857142857142855,0.7142857142857143,66.6667,Modifying Arr Roll Forward to Remove Opportunity Owner  and Add LTV Classifications (#933)
+mattermost__mattermost-data-warehouse,2022-06-28T04:45:27,c6e78b70206a04d86a3e59c58eebb0a1baad5083,D1_csi,0.7142857142857143,0.5,30.0,Update cs_signup_campaign.sql (#949)
+mattermost__mattermost-data-warehouse,2022-07-29T00:11:49,2703f9b9a4faa6b29052f876b48d68c9e4ed4f24,D1_csi,0.5,0.7142857142857143,42.8571,Update blapi_onprem_opportunity_renewal.sql (#971)
+mattermost__mattermost-data-warehouse,2022-10-26T19:39:05,95213fcf742704f0876b1dd36a283cd19a695a33,D1_csi,0.6428571428571429,0.5,22.2222,Creating Table for LTV Calculation (#1031)
+mattermost__mattermost-data-warehouse,2022-11-28T18:30:53,95e5057235f7d93f1f00ab21633929b9a8a087bc,D1_csi,0.5,0.7142857142857143,42.8571,remove performance from retention calcs (#1071)
+mattermost__mattermost-data-warehouse,2022-12-27T08:57:46,422552c4a4ce98cbb580b8eb4fac37d9ac96b4ca,D1_csi,0.7142857142857143,0.5714285714285714,20.0,MM-42949: Creating Scripts for LTV for EMEA APAC and ROW (#1124)
+mattermost__mattermost-data-warehouse,2024-01-13T13:20:45,57f43b588005cbde353b6d8d0132ffc90ac39e3b,D1_csi,0.5714285714285714,0.7142857142857143,25.0,deprecates user_28day_retention (#1424)
+medic__cht-pipeline,2024-07-04T13:16:36,8ceb55118ecfe2ae95ec05d9a070cf74359844ac,D3_alg_conn,0.4427980834572255,0.5857864376269052,32.292,base models (#97)
+medic__cht-pipeline,2024-08-01T12:15:07,b2c3ac57ec9e49e5a950daf41b89d6a28f4fbb4b,D1_csi,0.8571428571428571,0.6428571428571429,25.0,141 handle contact and data record deletes with root (#143)
+medic__cht-pipeline,2024-08-01T12:15:07,b2c3ac57ec9e49e5a950daf41b89d6a28f4fbb4b,D3_alg_conn,0.5857864376269052,0.3217196499578081,45.079,141 handle contact and data record deletes with root (#143)
+medic__cht-pipeline,2024-12-06T16:04:14,c5b82855c24cd85b90af2b910d456b04650c4f49,D3_alg_conn,0.3361135341817681,0.2309714618419918,31.2817,feat: add users meta base models (#181)
+medic__cht-pipeline,2024-12-06T16:04:14,c5b82855c24cd85b90af2b910d456b04650c4f49,D4_cycle_rank_norm,0.2222222222222222,0.16666666666666666,25.0,feat: add users meta base models (#181)
+michaelconan__personal-reporting-pipelines,2025-12-12T23:53:58,f0cc280a4628ad06d8a4eda1744c58ef6927f355,D3_alg_conn,1.0,0.5139605971027529,48.6039,Fix/make macro (#84)
+michaelconan__personal-reporting-pipelines,2026-03-17T21:23:57,2f17d6ecc12cbc42f4d7585a97dcaf6207484ed3,D3_alg_conn,0.5139605971027529,0.26573096169400084,48.2974,chore: Consolidate tool configs into pyproject.toml and fix pre-commit
+michaelconan__personal-reporting-pipelines,2026-03-17T21:23:57,2f17d6ecc12cbc42f4d7585a97dcaf6207484ed3,D4_cycle_rank_norm,0.07142857142857142,0.1111111111111111,55.5556,chore: Consolidate tool configs into pyproject.toml and fix pre-commit
+mitodl__ol-data-platform,2022-11-04T15:02:23,ab627462af7cd5e8b1051f545f077de6f4fc2fec,D3_alg_conn,0.19182561925720504,0.05165478708755818,73.072,mitxonline enrollments
+mitodl__ol-data-platform,2022-11-04T15:02:23,ab627462af7cd5e8b1051f545f077de6f4fc2fec,D4_cycle_rank_norm,0.15384615384615385,0.0,100.0,mitxonline enrollments
+mitodl__ol-data-platform,2022-11-30T13:18:49,951d1965fd73559cff4fd919827ebd7e62712e90,D3_alg_conn,0.05165478708755818,0.01965738468382289,61.9447,Merge pull request #472 from mitodl/intermediate-programrequirement
+mitodl__ol-data-platform,2022-12-20T17:42:04,dc56788732009792828687bc6225ca49e75b3768,D1_csi,0.7142857142857143,1.0,40.0,xpro ecommerce basket
+mitodl__ol-data-platform,2023-01-31T11:33:09,79fed4ae676eefe4a4c2f9721a30f92a1e74e6b4,D1_csi,1.0,0.7857142857142857,21.4286,add dedp to micromasters program certificates mart
+mitodl__ol-data-platform,2023-01-31T11:33:09,79fed4ae676eefe4a4c2f9721a30f92a1e74e6b4,D3_alg_conn,0.016108449939924656,0.03379753651383838,109.8125,add dedp to micromasters program certificates mart
+mitodl__ol-data-platform,2023-01-31T11:33:09,79fed4ae676eefe4a4c2f9721a30f92a1e74e6b4,D4_cycle_rank_norm,0.08148148148148149,0.1977401129943503,142.681,add dedp to micromasters program certificates mart
+mitodl__ol-data-platform,2023-03-27T12:22:09,2a78ec10749a8de757e4486c7593ef15ee6b1121,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,Add MITxOnline user profile model and related changes
+mitodl__ol-data-platform,2023-05-01T12:56:25,3df71a28f6ef8140fcaf5c56e721fd2ea66f46a8,D4_cycle_rank_norm,0.23923444976076555,0.4713656387665198,97.0308,mitx combined requirements
+mitodl__ol-data-platform,2023-05-25T15:22:52,0d408263070037a2dc71846c5e74c59880fac763,D1_csi,0.6428571428571429,0.8571428571428571,33.3333,Merge pull request #710 from mitodl/micromasters-additional-profile-tables
+mitodl__ol-data-platform,2023-06-30T11:55:36,e39c39c9f163fe7a06eb5fceff07b2d0d16f0a5c,D1_csi,0.8571428571428571,0.6428571428571429,25.0,fix dbt test failures for duplicate certificates and grades in MITx intermeidate (#748)
+mitodl__ol-data-platform,2023-07-31T19:53:55,9029bb740b69d82e29f32543904e0369ba574033,D1_csi,0.6428571428571429,0.2857142857142857,55.5556,stage openedx mitxonline users and add openedx_user_id to marts__mitxonline_course_certificates (#781)
+mitodl__ol-data-platform,2023-08-31T16:05:42,0121ce246fa839cd154716733c31c0d7d9064108,D1_csi,0.2857142857142857,0.7142857142857143,150.0,Fix for issue 1908 to populate parent run id's more consistently (#814)
+mitodl__ol-data-platform,2023-10-31T11:27:23,79b42f1fb40293c160a54fd271c840c4fd77a210,D3_alg_conn,0.018639659463838044,0.02517989599526291,35.0877,add new email optout table to staging (#899)
+mitodl__ol-data-platform,2023-11-29T14:28:34,7935f454cea3ad0268f826d5c5a1a31708fdb0da,D1_csi,0.6428571428571429,0.42857142857142855,33.3333,Add DBT Grant Configs for Trino Roles and Permissions (#931)
+mitodl__ol-data-platform,2023-11-29T14:28:34,7935f454cea3ad0268f826d5c5a1a31708fdb0da,D3_alg_conn,0.02517989599526291,0.0441940433767704,75.5132,Add DBT Grant Configs for Trino Roles and Permissions (#931)
+mitodl__ol-data-platform,2023-12-21T19:02:23,04affee30e97e2d4033895c25113381bc5127ef4,D3_alg_conn,0.0441940433767704,0.056060046896214966,26.8498,create mart for mitxonline video engagement (#952)
+mitodl__ol-data-platform,2024-02-27T12:10:05,47756fcb2a4bfa272b03b28ad56a20c1ab234a70,D1_csi,0.5,0.35714285714285715,28.5714,add user_is_active to intermediate and mart (#1016)
+mitodl__ol-data-platform,2024-02-27T12:10:05,47756fcb2a4bfa272b03b28ad56a20c1ab234a70,D4_cycle_rank_norm,0.5844594594594594,0.44254278728606355,24.2817,add user_is_active to intermediate and mart (#1016)
+mitodl__ol-data-platform,2024-03-28T16:41:54,8274bfc02a2154156f8ff83a4540faaced5eaa15,D1_csi,0.35714285714285715,0.5,40.0,add course readable id to combined enrollment mart and upstream models (#1057)
+mitodl__ol-data-platform,2024-05-28T09:12:01,e0401d244902da191c7165db8e627ae3927b17ff,D1_csi,0.42857142857142855,0.2857142857142857,33.3333,edX.org user activity related staging and intermediate models (#1139)
+mitodl__ol-data-platform,2024-06-25T11:03:45,9e528cd4c2bd61c03bc01e35a369864f5fdc82f9,D1_csi,0.2857142857142857,0.5714285714285714,100.0,update MITx Online verified enrollment mode to count for change_status (#1178)
+mitodl__ol-data-platform,2024-06-25T11:03:45,9e528cd4c2bd61c03bc01e35a369864f5fdc82f9,D3_alg_conn,0.06293289735272645,0.03985759735245194,36.6665,update MITx Online verified enrollment mode to count for change_status (#1178)
+mitodl__ol-data-platform,2024-07-27T08:32:11,0b4ef2879c47287733a856e5ffd7ffcc1010712b,D1_csi,0.5714285714285714,0.35714285714285715,37.5,Extract sitemetadata fields for OCW courses in staging
+mitodl__ol-data-platform,2024-09-25T13:27:32,0500973abd95094c7e1d61237723624553d92549,D1_csi,0.35714285714285715,0.5714285714285714,60.0,add combined users mart to finance permissions (#1306)
+mitodl__ol-data-platform,2024-09-25T13:27:32,0500973abd95094c7e1d61237723624553d92549,D3_alg_conn,0.04001408250927008,0.07501954991680404,87.4829,add combined users mart to finance permissions (#1306)
+mitodl__ol-data-platform,2024-09-25T13:27:32,0500973abd95094c7e1d61237723624553d92549,D4_cycle_rank_norm,0.4724576271186441,0.5685483870967742,20.3385,add combined users mart to finance permissions (#1306)
+mitodl__ol-data-platform,2024-10-16T14:36:08,c213b4458cdbb959386fb24e6b6d1fd5637629e3,D1_csi,0.5714285714285714,0.2857142857142857,50.0,Add courserunenrollment_upgraded_on to combined enrollment detail mart (#1332)
+mitodl__ol-data-platform,2024-11-14T09:12:23,aaea8e63a1309d77420a43365b9a6ec74969728f,D1_csi,0.2857142857142857,0.6428571428571429,125.0,Stage edxorg course video and add to intermediate combined video (#1375)
+mitodl__ol-data-platform,2024-12-10T16:52:55,239e476d01811a3ba36a41368e4cabd489092879,D1_csi,0.6428571428571429,0.21428571428571427,66.6667,Create program summary report (#1402)
+mitodl__ol-data-platform,2025-01-22T13:12:19,9f8f8f1dd577ca94b0c39f0ae12e613434232455,D1_csi,0.21428571428571427,0.7142857142857143,233.3333,add engagement totals mart table marts__combined_total_course_engagements (#1444)
+mitodl__ol-data-platform,2025-02-21T13:28:50,8b8972ff0ebb6a764a25d672fbeb82da334c5763,D1_csi,0.7142857142857143,0.2857142857142857,60.0,fix courserun_readable_id format for edxorg products (#1481)
+mitodl__ol-data-platform,2025-04-22T13:36:47,76db88527aaa63d16047f3cb29db1aa096f64e3e,D1_csi,0.2857142857142857,0.35714285714285715,25.0,add coupon code to enrollment detail mart (#1538)
+mitodl__ol-data-platform,2025-05-23T10:20:23,86c67768f8ef163187ba56e5219ac194cb3dc47a,D1_csi,0.35714285714285715,0.2857142857142857,20.0,add program completion days field to program enrollment mart (#1557)
+mitodl__ol-data-platform,2025-06-17T11:14:24,19600539bed1278698c9c49a8119a184e663e599,D1_csi,0.2857142857142857,0.42857142857142855,50.0,Create enrollment detail report (#1575)
+mitodl__ol-data-platform,2025-08-21T12:33:25,a4c24c215bc4805bcb219abe8be9f931cadc6ca6,D1_csi,0.5,0.2857142857142857,42.8571,Remove not_null check in int__learn_ai__tutorbot (#1651)
+mitodl__ol-data-platform,2025-09-19T12:04:01,59a11467df47a364c00160eb7f7115df19ff5b1b,D1_csi,0.2857142857142857,0.5,75.0,Update chatbot report to accommodate the recent changes in learn ai chatbot tables (#1690)
+mitodl__ol-data-platform,2025-11-19T13:50:09,0b984cdf20ccec1fd6c71d5caaa9cdd4a5ca8b24,D1_csi,0.42857142857142855,0.21428571428571427,50.0,add partitioning to organization_administration_report (#1778)
+mitodl__ol-data-platform,2025-12-18T15:01:23,8fad5e3e3521ad5c631dcfc17f42ac8d8a31a60f,D1_csi,0.21428571428571427,0.35714285714285715,66.6667,Added case-insensitive email comparison to prevent duplicates due to email capitalization differences (#1814)
+mitodl__ol-data-platform,2026-01-09T15:36:53,75d63836a91c2d397c71e87b8dfeb81c13b9a498,D1_csi,0.35714285714285715,0.21428571428571427,40.0,populate signatory_name when wagtailcore_revision_id is null (#1831)
+mitodl__ol-data-platform,2026-02-13T15:55:03,d874d23eeff3022151c8bf164b15a92d326444e9,D1_csi,0.21428571428571427,0.42857142857142855,100.0,remove certificate of retired users and migrated edx users from edxorg_to_mitxonline_enrollments (#1907)
+mitodl__ol-data-platform,2026-08-04T17:22:45,a20a7286540afa8e99f0dde8174a91304a8a88eb,D1_csi,0.35714285714285715,0.2857142857142857,20.0,fix(dim_user): derive user_pk from durable ids instead of email (#2497)
+pass-culture__data-gcp,2024-02-12T10:26:21,c8cf14e6021984380e0f139725f7671a460b22e7,D3_alg_conn,0.14192360255061945,0.10661963795274966,24.8753,MEP v277.1.0 (#2250)
+pass-culture__data-gcp,2024-02-12T10:26:21,c8cf14e6021984380e0f139725f7671a460b22e7,D4_cycle_rank_norm,0.7719298245614035,0.09859154929577464,87.2279,MEP v277.1.0 (#2250)
+pass-culture__data-gcp,2024-03-12T10:22:36,9839646310dbb698ac8eb46d1f5cdf455e9150f0,D4_cycle_rank_norm,0.09859154929577464,0.2564102564102564,160.0733,fix: remove wrong alias (#2314)
+pass-culture__data-gcp,2024-05-06T14:49:10,2095d00d7760fc406330de338d6a39b8bd1f4eeb,D3_alg_conn,0.13244794959637352,0.10361941986007295,21.7659,Fix join for favorites data in native_daily_user_home_module (#2495)
+pass-culture__data-gcp,2024-05-06T14:49:10,2095d00d7760fc406330de338d6a39b8bd1f4eeb,D4_cycle_rank_norm,0.2947976878612717,0.6199095022624435,110.283,Fix join for favorites data in native_daily_user_home_module (#2495)
+pass-culture__data-gcp,2024-05-27T16:53:45,97db91b23a24ec62ec966e7d7177e9dd7eb9c560,D1_csi,0.6428571428571429,0.35714285714285715,44.4444,change view configs  to dependencies
+pass-culture__data-gcp,2024-08-09T17:33:29,eb6afcacebf837d30a236bf57676f3a073ba8866,D1_csi,0.35714285714285715,0.5714285714285714,60.0,feat: Migrate enriched_institution_data (#2880)
+pass-culture__data-gcp,2024-09-10T10:49:20,d7a2e44d3a8602e0367f7f1f0ce41413dcd7afe0,D1_csi,0.5714285714285714,0.42857142857142855,25.0,(fix) Add sync_all_columns in int_firebase__native_consultation (#3120)
+pass-culture__data-gcp,2024-10-09T14:41:59,0b18eee0edc0826aa0ece71fbe52b53614cc9ee8,D3_alg_conn,0.10323330289906477,0.06808584780782807,34.0466,(BSR) fix(applicative): typo error (#3269)
+pass-culture__data-gcp,2024-11-08T16:03:47,c29bb169cda367ea9a2959f6809ab9c185f4351b,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,(DA-3785) feat(Analytics): Add int_pcapi__native_user_feedback model (#3367)
+pass-culture__data-gcp,2025-01-08T09:18:01,2e1f48c5941c430005ae7ca9b7c29788c2aa9cb3,D1_csi,0.5,0.35714285714285715,28.5714,(HF) feat(applicative): fix rayon and book_editor (#3682)
+pass-culture__data-gcp,2025-03-06T16:15:55,20c53e9cf1c9d0742897505e507709414c05b429,D1_csi,0.42857142857142855,0.6428571428571429,50.0,(DE-1280) feat(dbt): Import special event models (#3870)
+pass-culture__data-gcp,2025-04-08T11:32:37,212135658fa748ffe4f9f4a0d8ebba7b8b2dc1c6,D1_csi,0.6428571428571429,0.35714285714285715,44.4444,"Revert ""(DE-1269) feat(item linkage): create updated item column (#3962)"" (#4019)"
+pass-culture__data-gcp,2025-05-06T16:25:43,a2fd5f7c4bc459d00a7a2514dbe6574ad9fabba2,D1_csi,0.35714285714285715,0.6428571428571429,80.0,(BSR) feat(applicative_database): include original birth date + check date (#4087)
+pass-culture__data-gcp,2025-06-03T09:34:37,5296fa148bbb123ebe65d1f070b6fc3fb86a4318,D1_csi,0.6428571428571429,0.42857142857142855,33.3333,(BSR) feat(dbt): script to backfill events (#4190)
+pass-culture__data-gcp,2025-07-07T11:05:37,a6bddc2a942dc28e91fcbfd12fe6343b4ff916ee,D1_csi,0.42857142857142855,0.5714285714285714,33.3333,(DA-4283) feat(dbt): Add fields to offer model and delete future_offer (#4283)
+pass-culture__data-gcp,2025-09-05T09:26:55,a46ee525f82e6daf61987abe6543cfc08e13e84b,D1_csi,0.5714285714285714,0.21428571428571427,62.5,(DE) feat(dbt): Propilote - collective (#4389)
+pass-culture__data-gcp,2025-10-02T18:02:54,684f0d67e1fe5013dbbd885156388fc37f9f8ea5,D1_csi,0.21428571428571427,0.42857142857142855,100.0,(HF) dbt(ministry): inner join deposit on users (#4499)
+pass-culture__data-gcp,2025-11-04T11:44:17,7c3a93f7ce72cb5cd4885b9705b31401718d1f80,D1_csi,0.42857142857142855,0.6428571428571429,50.0,(DE) feat(dbt): Adapt cultural partner external model with venues (#4585)
+pass-culture__data-gcp,2025-12-03T17:15:28,b82332fd202d12293ff781e1d629e527d9001cb1,D1_csi,0.6428571428571429,0.35714285714285715,44.4444,(DE) fix(jinja): type aware json_operation casting for titelive (#4659)
+pass-culture__data-gcp,2025-12-31T12:06:43,84b12bef14021561045a74cbdb19944a46ab8234,D1_csi,0.35714285714285715,0.5,40.0,added location_type in collective_offer model (#4740)
+pass-culture__data-gcp,2026-03-03T16:21:42,d61824570285312746e2585a2a4377bf6bc03afb,D1_csi,0.5,0.6428571428571429,28.5714,(DE) fix(firebase): switch recommendation call_id to camelCase to match backend's pydantic migration (#4871)
+pass-culture__data-gcp,2026-04-30T14:49:59,07637c18304d3225d81ed63a4846f04cd170a020,D1_csi,0.7142857142857143,0.5,30.0,(DE) feat(dbt): filter out department anomalies in kpi models (#5175)
+patkearns10__dbt_workspace,2021-06-04T14:18:46,681db1fd14b9510ff43742d7c1166564d369690d,D3_alg_conn,2.0,0.9999999999999997,50.0,model and column naming conventions validation (#31)
+patkearns10__dbt_workspace,2022-07-26T00:10:28,77e74b603a2a6191343483ee0511062a111637de,D1_csi,0.8571428571428571,0.5714285714285714,33.3333,create incremental that autoincrements
+patkearns10__dbt_workspace,2022-07-26T00:10:28,77e74b603a2a6191343483ee0511062a111637de,D3_alg_conn,0.9999999999999997,0.43304903380028664,56.6951,create incremental that autoincrements
+patkearns10__dbt_workspace,2023-01-24T05:18:33,aec3a43b20b442c2f3b04afa85d24ec0b2ab2946,D1_csi,0.5714285714285714,0.7857142857142857,37.5,add get_columns_from_models
+patkearns10__dbt_workspace,2023-01-24T05:18:33,aec3a43b20b442c2f3b04afa85d24ec0b2ab2946,D3_alg_conn,0.43304903380028664,0.008515100370354108,98.0337,add get_columns_from_models
+patkearns10__dbt_workspace,2023-01-24T05:18:33,aec3a43b20b442c2f3b04afa85d24ec0b2ab2946,D4_cycle_rank_norm,0.04081632653061224,0.011363636363636364,72.1591,add get_columns_from_models
+patkearns10__dbt_workspace,2023-03-28T04:52:10,9dcc2b0a927e9d994c7001b191a0ad1e887a13d8,D3_alg_conn,0.008515100370354108,0.6103141041525827,7067.4329,add run query debug log
+patkearns10__dbt_workspace,2023-03-28T04:52:10,9dcc2b0a927e9d994c7001b191a0ad1e887a13d8,D4_cycle_rank_norm,0.0111731843575419,0.047619047619047616,326.1905,add run query debug log
+patkearns10__dbt_workspace,2023-04-12T06:23:32,2c0429ec09108a1ad01192f44cac50a48b4964e2,D1_csi,0.7142857142857143,0.5714285714285714,20.0,add models
+patkearns10__dbt_workspace,2023-04-12T06:23:32,2c0429ec09108a1ad01192f44cac50a48b4964e2,D3_alg_conn,0.6103141041525827,0.31658510457245026,48.1275,add models
+patkearns10__dbt_workspace,2023-04-12T06:23:32,2c0429ec09108a1ad01192f44cac50a48b4964e2,D4_cycle_rank_norm,0.047619047619047616,0.06060606060606061,27.2727,add models
+patkearns10__dbt_workspace,2023-08-11T08:02:45,b8fc4fa03170f9368c6737c8a01309320d64cb01,D4_cycle_rank_norm,0.05405405405405406,0.06493506493506493,20.1299,snapshots and incrementals
+patkearns10__dbt_workspace,2023-09-25T02:36:54,b1655a093bc62d4b3cef7498d1f4f6aae9b6deaf,D1_csi,0.6428571428571429,0.14285714285714285,77.7778,fix incrementals
+patkearns10__dbt_workspace,2023-09-25T02:36:54,b1655a093bc62d4b3cef7498d1f4f6aae9b6deaf,D3_alg_conn,0.33215764919440777,0.14602365923677946,56.0378,fix incrementals
+patkearns10__dbt_workspace,2023-09-25T02:36:54,b1655a093bc62d4b3cef7498d1f4f6aae9b6deaf,D4_cycle_rank_norm,0.06493506493506493,0.9754601226993865,1402.2086,fix incrementals
+prefeitura-rio-smas__pipelines,2025-10-16T12:42:53,d2222e74c39f50817ae862079d6a8d77ac6be639,D3_alg_conn,0.5857864376269045,1.0,70.7107,feat: Criação do model acolhimentos
+prefeitura-rio-smas__pipelines,2026-01-22T15:22:36,9bea625d4bc1a123093ccbfbdd50c8a79ee95c31,D3_alg_conn,1.0,0.24793483531262256,75.2065,Merge branch 'main' into refactor/rma
+prefeitura-rio-smas__pipelines,2026-02-11T20:22:33,fbb992f507578feaa34cf66eb674d504b6e9f5df,D1_csi,0.7142857142857143,0.5,30.0,Fix: format data_entrega_text to DD/MM/YYYY and update historico_feedback logic
+prefeitura-rio-smas__pipelines,2026-02-11T20:22:33,fbb992f507578feaa34cf66eb674d504b6e9f5df,D3_alg_conn,0.24793483531262256,0.11363826746563248,54.1661,Fix: format data_entrega_text to DD/MM/YYYY and update historico_feedback logic
+prefeitura-rio-smas__pipelines,2026-02-11T20:22:33,fbb992f507578feaa34cf66eb674d504b6e9f5df,D4_cycle_rank_norm,0.25,0.0,100.0,Fix: format data_entrega_text to DD/MM/YYYY and update historico_feedback logic
+prefeitura-rio-smas__pipelines,2026-04-22T20:26:25,49d6479d0596539e8738bd1dcf5b646f88a6b06a,D1_csi,0.5,0.7142857142857143,42.8571,refactor: implantação da arquitetura Medallion e migração da camada raw do Prontuário Carioca
+prefeitura-rio-smas__pipelines,2026-04-22T20:26:25,49d6479d0596539e8738bd1dcf5b646f88a6b06a,D3_alg_conn,0.11363826746563248,0.15717980586619362,38.3159,refactor: implantação da arquitetura Medallion e migração da camada raw do Prontuário Carioca
+prefeitura-rio-smas__pipelines,2026-05-20T18:45:59,2520cf7bf5e6ae56524827014fc30790b185f2c3,D4_cycle_rank_norm,0.16161616161616163,0.19753086419753085,22.2222,"fix: correct 35-column offset — extra column is between TRABALHO_INF(24) and RENDA_PER_CAPITA, not at position 0"
+prefeitura-rio-smas__pipelines,2026-06-24T18:28:59,c2f20f6fa4336b0aea42e5a5b46a9e990252e181,D1_csi,0.7142857142857143,0.5714285714285714,20.0,feat(pic): reestrutura Medallion do mart_pic_prontuario_carioca
+prefeitura-rio-smas__pipelines,2026-06-24T18:28:59,c2f20f6fa4336b0aea42e5a5b46a9e990252e181,D3_alg_conn,0.15717980586619362,0.029239338322804204,81.3975,feat(pic): reestrutura Medallion do mart_pic_prontuario_carioca
+prefeitura-rio-smas__pipelines,2026-06-24T18:28:59,c2f20f6fa4336b0aea42e5a5b46a9e990252e181,D4_cycle_rank_norm,0.19753086419753085,0.3524590163934426,78.4324,feat(pic): reestrutura Medallion do mart_pic_prontuario_carioca
+prefeitura-rio-smas__pipelines,2026-07-21T23:24:18,8f56d3efe40768cb546ffcc11eafbc5b23990e34,D1_csi,0.5714285714285714,0.7857142857142857,37.5,"feat(mart_profissionais_unidades): separar nomes, UPPER, flag_unidade_valida, filtro sem_conta"
+prefeitura-rio-smas__pipelines,2026-07-21T23:24:18,8f56d3efe40768cb546ffcc11eafbc5b23990e34,D4_cycle_rank_norm,0.3524590163934426,0.48936170212765956,38.8422,"feat(mart_profissionais_unidades): separar nomes, UPPER, flag_unidade_valida, filtro sem_conta"
+prefeitura-rio__pipelines_rj_civitas,2025-09-13T18:07:09,eca2aeedbe1c329a0ab8ce72a17c1c32b929bdf7,D3_alg_conn,1.0,0.17779142837460438,82.2209,feat: add codcet camera numero mapping table with tests and docs
+prefeitura-rio__pipelines_rj_civitas,2026-05-14T18:16:58,e92998e0cbfef66ec338b25517fe2622da3b66cc,D3_alg_conn,0.17779142837460438,0.22580430859341452,27.0052,refactor: add civitas streaming url
+prefeitura-rio__pipelines_rj_smtr,2024-03-15T16:32:48,f79d4a578c17288200e8497e023d9d75860f0697,D3_alg_conn,0.018151130319465844,0.3819660112501052,2004.3649,alterar dataset dicionario
+prefeitura-rio__pipelines_rj_smtr,2024-03-15T16:32:48,f79d4a578c17288200e8497e023d9d75860f0697,D4_cycle_rank_norm,0.43333333333333335,0.0,100.0,alterar dataset dicionario
+prefeitura-rio__pipelines_rj_smtr,2024-06-19T15:54:20,fe6f8b3b4244b532af1cf069669f5d8b9fc5d4f4,D3_alg_conn,0.3819660112501052,0.01278879811817287,96.6518,HOTFIX - Remove filtro de gratuidade da tabela transacao (#69)
+prefeitura-rio__pipelines_rj_smtr,2024-09-17T19:34:52,e0cfb90b56a5af2fdf409151bc2d77cafd0c72b1,D1_csi,0.9285714285714286,0.7142857142857143,23.0769,corrige tratamento de viagens (#234)
+prefeitura-rio__pipelines_rj_smtr,2024-11-14T13:58:50,e433d0b7f8ac611f8c694309550b666c17258be5,D3_alg_conn,0.014439447125577775,0.022321562884018993,54.5874,[HOTFIX] Corrige referência nas colunas do modelo `calendario` (#328)
+prefeitura-rio__pipelines_rj_smtr,2024-12-16T17:56:12,bfdc2497ddb37406d67ca96fa97cb2c90148696e,D3_alg_conn,0.022321562884018993,0.02769747254633638,24.0839,Desativa temporariamente o modelo `viagem_planejada_planejamento` (#364)
+prefeitura-rio__pipelines_rj_smtr,2025-02-14T14:11:51,f64c2a768eaf602cff9d4c29b12b6fac7090fb4a,D1_csi,0.7857142857142857,0.5,36.3636,corrige virgula entre campos (#432)
+prefeitura-rio__pipelines_rj_smtr,2025-03-13T19:14:03,8df1c1ed90ca455f583843a2c76b8f41983a677a,D1_csi,0.5,0.7857142857142857,57.1429,Financeiro - Adiciona testes do DBT na tabela de ordem de pagamento (#474)
+prefeitura-rio__pipelines_rj_smtr,2025-08-13T14:40:07,04706f3205491289d31517752f74f66c1dadb9dc,D3_alg_conn,0.027187228123670863,0.02063429450627228,24.103,Merge branch 'main' into staging/testes-bilhetagem
+prefeitura-rio__pipelines_rj_smtr,2025-10-10T10:12:40,82f574d063f6fbbe8b5c40356efd5da684c9bcb2,D1_csi,0.8571428571428571,0.6428571428571429,25.0,Adiciona BRT ESP na regra de modo do modelo (#937)
+prefeitura-rio__pipelines_rj_smtr,2025-11-11T20:28:12,7189b68e2887cf5ab82462462dc719cfdb552d4f,D1_csi,0.6428571428571429,0.9285714285714286,44.4444,Mudança de regra de vistoria ao trocar placa do veículo (#1048)
+prefeitura-rio__queries-datario,2022-06-03T21:51:41,0e4d9b7287e6787a385773a0a5665c86e0a06985,D3_alg_conn,2.0,0.0,100.0,alterações queries para salvarem a data da última partição
+prefeitura-rio__queries-rj-iplanrio,2025-07-22T05:37:19,5a9c73be4535c94c63f4d5420d133085af6f2fd5,D3_alg_conn,1.0,0.3819660112501054,61.8034,refactor: enhance raw_bcadastro_cnpj model by updating descriptions
+prefeitura-rio__queries-rj-iplanrio,2025-12-18T12:41:07,6f54b40f5a3e3a6c80c9955b26f71b8dad3e1cf9,D4_cycle_rank_norm,0.0877742946708464,0.11077844311377245,26.2083,Merge branch 'master' into feat/add-sicop_new
+prefeitura-rio__queries-rj-iplanrio,2026-03-20T15:11:02,269e6428fb91915174a33a204b92f7fcb28039e4,D3_alg_conn,0.34011750515948413,0.18272945971665489,46.2746,fix: add table alias prefixes to selected columns for clarity in SQL queries
+prefeitura-rio__queries-rj-sms,2023-11-06T19:13:03,d70ce8d6e8ddfbca9aaabd9a51a19f01f573fda9,D3_alg_conn,0.9999999999999997,0.44957945303561786,55.0421,Update SQL queries to include mes_particao column
+prefeitura-rio__queries-rj-sms,2023-12-04T16:04:03,98d020efbc7a302d338b44154a8521290caed502,D4_cycle_rank_norm,0.34615384615384615,0.6060606060606061,75.0842,Update dimension and mart schema names
+prefeitura-rio__queries-rj-sms,2024-06-07T16:09:32,15f7b41289cbbaadcacf82b25862bd3422078a6d,D3_alg_conn,0.3605755803080698,0.09997101570224225,72.2746,Merge branch 'tabela_profissionais' of https://github.com/prefeitura-rio/queries-rj-sms into tabela_profissionais
+prefeitura-rio__queries-rj-sms,2024-07-09T16:29:13,4370a69e75fd13163e204f9d5c9fdaf4da8e0ca6,D3_alg_conn,0.09997101570224225,0.13778612269484133,37.8261,refactor: Standardize inventory movements in fct_estoque_movimento.sql
+prefeitura-rio__queries-rj-sms,2024-08-08T15:25:36,1ab9cb7f60adb2c65772cee056c965866090b109,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,feat: Add tipo field to prontuario_vitacare schema and update paciente vitacare model
+prefeitura-rio__queries-rj-sms,2024-08-08T15:25:36,1ab9cb7f60adb2c65772cee056c965866090b109,D4_cycle_rank_norm,0.5625,0.38095238095238093,32.2751,feat: Add tipo field to prontuario_vitacare schema and update paciente vitacare model
+prefeitura-rio__queries-rj-sms,2024-09-07T16:30:37,7503c02b1d05b1ecfdd997626d82ee330c0d5470,D4_cycle_rank_norm,0.38095238095238093,0.5401459854014599,41.7883,Merge branch 'fix/hci/paciente-cardinalidade-equipe'
+prefeitura-rio__queries-rj-sms,2024-11-05T18:47:26,97b34e5bf895e58c4b038804ebab8ce5167de54f,D3_alg_conn,0.17443029768639967,0.1082381324091729,37.9476,feat: adding schema and table label configuration
+prefeitura-rio__queries-rj-sms,2024-12-06T15:22:54,793f16b0b6196cf87fcf6d17ca63a2287bf0c15e,D3_alg_conn,0.1082381324091729,0.07279732594640184,32.7434,typo
+prefeitura-rio__queries-rj-sms,2025-02-04T12:54:35,f5ef0df3134bf7885d932c6099a809984ba1e6b8,D3_alg_conn,0.0809333584948449,0.10212703710387966,26.1866,debugging
+prefeitura-rio__queries-rj-sms,2025-08-02T10:47:21,7eea51dfe3e06203912a996eb8eded5e8e8656fb,D1_csi,0.9285714285714286,0.7142857142857143,23.0769,fix: incorrect naming in schemas
+prefeitura-rio__queries-rj-sms,2025-08-02T10:47:21,7eea51dfe3e06203912a996eb8eded5e8e8656fb,D4_cycle_rank_norm,0.6156351791530945,0.472289156626506,23.2842,fix: incorrect naming in schemas
+prefeitura-rio__queries-rj-sms,2025-09-02T12:24:01,f83576146dfe493e3e063b2f1111a58075557e2a,D3_alg_conn,0.07284905646470592,0.106265094006919,45.8702,fix: tag→tags
+prefeitura-rio__queries-rj-sms,2025-10-30T20:23:29,946437bb9c1807a0c2293a1a60e3e20bb99d8b41,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,fix: oops
+prefeitura-rio__queries-rj-sms,2025-10-30T20:23:29,946437bb9c1807a0c2293a1a60e3e20bb99d8b41,D3_alg_conn,0.11277988006065283,0.0889629817634402,21.118,fix: oops
+prefeitura-rio__queries-rj-sms,2025-11-28T20:23:40,b3082601fdc264b630a776449c90f832a5289e09,D3_alg_conn,0.0889629817634402,0.11169905273114183,25.5568,feat: adiciona lógica para medicamentos de uso contínuo
+prefeitura-rio__queries-rj-sms,2025-12-30T09:42:58,f8e1418e6326f04aed680ed593fc1ae894fa349e,D3_alg_conn,0.11169905273114183,0.03710517556478447,66.7811,refactor: streamline SQL query for vaccination transmission model
+prefeitura-rio__queries-rj-sms,2026-04-30T09:59:02,08d9f0976081dd5cd25f0f87d0f59bd6b89d797e,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,Merge remote-tracking branch 'origin/master' into fix/subpav-sinanrio
+prefeitura-rio__queries-rj-sms,2026-06-26T08:53:45,764544e72282ae9ae87564ec32ac66c5e6258c8c,D3_alg_conn,0.03442074328255603,0.0515322115003299,49.7127,feat: adiciona modelo de estabelecimentos para o mart acolher mais
+prefeitura-rio__queries-rj-sms,2026-08-03T10:52:57,241ef134b3a8ae5aff5e560b7324910f159b6d83,D1_csi,0.5714285714285714,0.7142857142857143,25.0,Merge pull request #776 from prefeitura-rio/feat/add-api-teleconsultas
+prefeitura-rio__queries-rj-smtr,2022-05-31T15:15:47,29f0d9fecc18a7cef4c6ae5b4a0e4edf43d1552d,D3_alg_conn,0.6972243622680052,0.27979710024270493,59.8699,fix partition field
+prefeitura-rio__queries-rj-smtr,2022-05-31T15:15:47,29f0d9fecc18a7cef4c6ae5b4a0e4edf43d1552d,D4_cycle_rank_norm,0.04,0.12,200.0,fix partition field
+prefeitura-rio__queries-rj-smtr,2022-06-17T10:56:12,17cae5e9a1fd5908edfeb9ebb967e59378479bd8,D3_alg_conn,0.27979710024270493,0.08625039727908873,69.1739,adjust refs
+prefeitura-rio__queries-rj-smtr,2022-06-17T10:56:12,17cae5e9a1fd5908edfeb9ebb967e59378479bd8,D4_cycle_rank_norm,0.12,0.23684210526315788,97.3684,adjust refs
+prefeitura-rio__queries-rj-smtr,2022-07-26T16:53:32,839b62d52f8cfece656cf3fc956ae80ca2458fc2,D3_alg_conn,0.08625039727908873,0.03115247761912791,63.8814,test gps sppo materialize
+prefeitura-rio__queries-rj-smtr,2022-12-19T19:34:24,414d3e98cc21b406b969dc3e85f2d0f016a1a35f,D3_alg_conn,0.03115247761912791,0.016187835848899032,48.0368,Merge branch 'master' into feat/subsidio-sppo-recurso
+prefeitura-rio__queries-rj-smtr,2023-07-25T02:27:03,cbe7f616ec4e0bcdcbde02353995866b0b705e34,D4_cycle_rank_norm,0.28205128205128205,0.3875,37.3864,Adiciona planjeado de jul/q2 subsidio_data_versao_efetiva
+prefeitura-rio__queries-rj-smtr,2024-02-15T14:49:30,d4c30d7fce901e3cac48c8a530b5a2ad102b2522,D1_csi,0.9285714285714286,0.7142857142857143,23.0769,Adiciona OS Verão e Carnaval no Calendário (Fev/Q2) de 2024 (#215)
+prefeitura-rio__queries-rj-smtr,2024-02-15T14:49:30,d4c30d7fce901e3cac48c8a530b5a2ad102b2522,D3_alg_conn,0.018002847656030836,0.022851155773874268,26.9308,Adiciona OS Verão e Carnaval no Calendário (Fev/Q2) de 2024 (#215)
+prefeitura-rio__queries-rj-smtr,2024-03-21T12:44:26,2306f91950c570b6c1279a46217a220ae35bb7f9,D1_csi,0.7142857142857143,0.9285714285714286,30.0,Adiciona datas no calendário de mar/2024 (#231)
+prefeitura-rio__queries-rj-smtr,2024-03-21T12:44:26,2306f91950c570b6c1279a46217a220ae35bb7f9,D3_alg_conn,0.022851155773874268,0.01775368652898837,22.3073,Adiciona datas no calendário de mar/2024 (#231)
+prefeitura-rio__queries-rj-smtr,2024-04-19T15:44:29,b153f310414096e182ab6eaa97b86b12d3ac82cf,D3_alg_conn,0.01775368652898837,0.012475807096547874,29.7284,[hotfix] Trajetos alternativos (#278)
+re-data__dbt-re-data,2021-07-03T14:15:41,fb83c7a492db6e721eb7ac43823fb4a5039c195c,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Fix typo
+re-data__dbt-re-data,2021-07-03T14:15:41,fb83c7a492db6e721eb7ac43823fb4a5039c195c,D3_alg_conn,0.5139605971027527,1.0,94.5674,Fix typo
+re-data__dbt-re-data,2021-07-03T14:15:41,fb83c7a492db6e721eb7ac43823fb4a5039c195c,D4_cycle_rank_norm,0.1111111111111111,0.05555555555555555,50.0,Fix typo
+re-data__dbt-re-data,2021-07-29T06:33:38,5ec571bcae401354d89f8e57a083274e6fc4f120,D4_cycle_rank_norm,0.05555555555555555,0.1,80.0,Update union type
+re-data__dbt-re-data,2021-09-05T11:53:03,6cd64bbcdd03de7fb3a12183b1350535b11f30ba,D3_alg_conn,0.8299135133739661,0.6377274937551463,23.1574,new logic and code
+re-data__dbt-re-data,2021-09-05T11:53:03,6cd64bbcdd03de7fb3a12183b1350535b11f30ba,D4_cycle_rank_norm,0.1,0.13793103448275862,37.931,new logic and code
+re-data__dbt-re-data,2021-10-21T11:13:22,ffe832c175557b1af1ed0d127302d8e353ff9700,D4_cycle_rank_norm,0.125,0.0967741935483871,22.5806,"ensure docs can be generated for every change, serving as a type of test (#31)"
+re-data__dbt-re-data,2021-12-20T07:42:55,d3fa56d1982d5a371841d0cfb02f915d9e06d418,D4_cycle_rank_norm,0.0967741935483871,0.15,55.0,All frontend changes required for frontend (#42)
+re-data__dbt-re-data,2022-01-31T22:23:39,a66e9931457ae2ea4f9f9d36518e7b52c32b7068,D3_alg_conn,0.5928890429442838,0.08645937908278958,85.4173,Feature/dbt config support (#54)
+re-data__dbt-re-data,2022-01-31T22:23:39,a66e9931457ae2ea4f9f9d36518e7b52c32b7068,D4_cycle_rank_norm,0.15,0.19047619047619047,26.9841,Feature/dbt config support (#54)
+re-data__dbt-re-data,2022-03-23T12:16:27,cf39124e5d8bf3dcfaee5c586a11211cbc5216ac,D1_csi,0.6428571428571429,0.5,22.2222,fix bug in schema changes (#66)
+re-data__dbt-re-data,2022-03-23T12:16:27,cf39124e5d8bf3dcfaee5c586a11211cbc5216ac,D3_alg_conn,0.08645937908278958,0.16748865881030206,93.7195,fix bug in schema changes (#66)
+re-data__dbt-re-data,2022-03-23T12:16:27,cf39124e5d8bf3dcfaee5c586a11211cbc5216ac,D4_cycle_rank_norm,0.19047619047619047,0.2857142857142857,50.0,fix bug in schema changes (#66)
+re-data__dbt-re-data,2022-06-06T10:07:51,4232f0e109c6b23e4ce0539a2428c8a720550382,D1_csi,0.5,0.6428571428571429,28.5714,implement selecting subset of tables (#77)
+re-data__dbt-re-data,2022-06-06T10:07:51,4232f0e109c6b23e4ce0539a2428c8a720550382,D3_alg_conn,0.16528189805909896,0.4216199852313417,155.0914,implement selecting subset of tables (#77)
+re-data__dbt-re-data,2022-06-06T10:07:51,4232f0e109c6b23e4ce0539a2428c8a720550382,D4_cycle_rank_norm,0.24,0.4230769230769231,76.2821,implement selecting subset of tables (#77)
+re-data__dbt-re-data,2023-11-23T01:53:39,b3db48bb97d710ab3d5f7b859dd43e6750f55c3a,D3_alg_conn,0.4216199852313417,0.3036220378960318,27.9868,add re_data_anomalies_filtered as var (#116)
+rittmananalytics__ra_data_warehouse,2020-08-11T20:59:34,bf8788c083c9b317949f9d0ecbac30fde515d03f,D3_alg_conn,0.06918607943840245,0.04438527724810492,35.8465,attribution split-out
+rittmananalytics__ra_data_warehouse,2020-11-12T12:50:54,78a7ecfed8934241e58d3a741ee5458120e10868,D3_alg_conn,0.04452272577893726,0.06759316572123866,51.8172,added delivery tasks
+rittmananalytics__ra_data_warehouse,2020-12-12T13:57:45,55f4c14bdfc791a4ae26f322c463d529bf651941,D3_alg_conn,0.06759316572123866,0.009665422528679555,85.7006,more campaigns
+rittmananalytics__ra_data_warehouse,2021-01-09T23:51:30,d77e248c59c617452826f29f4164ec1cbd296007,D3_alg_conn,0.009665422528679555,0.021183444972446747,119.1673,Update int_web_events_sessions_initial.sql
+rittmananalytics__ra_data_warehouse,2021-03-09T19:41:50,d51967d07a98f938a8a346fdb2020054df5c2ec9,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,"added customer and contact audiences, events and segments"
+rittmananalytics__ra_data_warehouse,2021-03-09T19:41:50,d51967d07a98f938a8a346fdb2020054df5c2ec9,D3_alg_conn,0.021183444972446747,0.042591786244589015,101.0617,"added customer and contact audiences, events and segments"
+rittmananalytics__ra_data_warehouse,2021-03-09T19:41:50,d51967d07a98f938a8a346fdb2020054df5c2ec9,D4_cycle_rank_norm,0.09554140127388536,0.1951219512195122,104.2276,"added customer and contact audiences, events and segments"
+rittmananalytics__ra_data_warehouse,2021-08-28T10:39:19,2aa42ce69caf8c1bcb79c4d2d0a8dc9ec919808d,D1_csi,0.5714285714285714,0.8571428571428571,50.0,more rationalisation
+rittmananalytics__ra_data_warehouse,2021-09-13T22:12:50,d619fcd76ad103dbf1b8f01159427c10cd12a609,D1_csi,0.8571428571428571,0.5714285714285714,33.3333,source fixes
+rittmananalytics__ra_data_warehouse,2021-11-07T13:50:25,9b9c136348ec295571f8e131b535fda557d7d763,D1_csi,0.5714285714285714,0.7142857142857143,25.0,reintroduced deleted modules
+rittmananalytics__ra_data_warehouse,2021-11-07T13:50:25,9b9c136348ec295571f8e131b535fda557d7d763,D3_alg_conn,0.04025524532684542,0.08278178574108183,105.6422,reintroduced deleted modules
+sacundim__covid-19-puerto-rico,2021-12-24T15:35:17,ff7ba4676b175a4f5b40fe9e3fbc629e92d4cc99,D3_alg_conn,0.03232360228729477,0.02455526594665399,24.033,"Big refactor of hospitalizations data, in service of making the NewCases and RecentCases chart use them"
+sacundim__covid-19-puerto-rico,2023-05-23T15:49:31,97e992f91e75afb21d8dbfb4fb6c2ed1c06dbe8a,D4_cycle_rank_norm,0.06578947368421052,0.05154639175257732,21.6495,Biostatistics cases aggregates
+sacundim__covid-19-puerto-rico,2023-06-16T16:49:44,61a1a7bfac37d97446866acb2df7cafc04d02e3d,D3_alg_conn,0.02584530972564716,0.052643146315456184,103.6855,"Bump up time ranges for Biostatistics extractions, since we need to look further back for the lateness reports."
+sacundim__covid-19-puerto-rico,2023-06-16T16:49:44,61a1a7bfac37d97446866acb2df7cafc04d02e3d,D4_cycle_rank_norm,0.05154639175257732,0.07216494845360824,40.0,"Bump up time ranges for Biostatistics extractions, since we need to look further back for the lateness reports."
+sacundim__covid-19-puerto-rico,2023-07-17T09:45:03,b8c35120ade14dbcc269b70356a9426385c85da5,D3_alg_conn,0.052643146315456184,0.040477352060330735,23.1099,"Contrary to what their metadata says, the CDC is not updating its Excess Deaths Associated with COVID-19 dataset on a we"
+sfc-gh-dflippo__snowflake-dbt-demo,2023-08-11T08:52:32,ddc7da0471e96776dea331cc21c1c95f208efb46,D3_alg_conn,0.2722742223944587,0.18826341319999024,30.8552,Added incr without being all macro
+sfc-gh-dflippo__snowflake-dbt-demo,2025-10-06T08:15:40,545a3a297574d0cd4fc4c251fb72cb25777ada0e,D3_alg_conn,0.18826341319999024,0.07255299472076061,61.462,Removed unnecessary meta sections in schema.yml
+sfc-gh-dflippo__snowflake-dbt-demo,2025-10-06T08:15:40,545a3a297574d0cd4fc4c251fb72cb25777ada0e,D4_cycle_rank_norm,0.047619047619047616,0.029411764705882353,38.2353,Removed unnecessary meta sections in schema.yml
+slide-rule-tech__dbt-nexus,2025-10-09T15:35:17,1245851baf58c0135cc7abb1e5c34ba63d13da41,D3_alg_conn,0.9999999999999999,0.4524933868350235,54.7507,feat: switch to entities and relationships [WORK-2456] (#31)
+slide-rule-tech__dbt-nexus,2025-10-09T15:35:17,1245851baf58c0135cc7abb1e5c34ba63d13da41,D4_cycle_rank_norm,0.02127659574468085,0.0,100.0,feat: switch to entities and relationships [WORK-2456] (#31)
+slide-rule-tech__dbt-nexus,2025-11-06T12:46:29,4389a9934b16e2bdfe230677293f7ae31f2687b9,D3_alg_conn,0.4524933868350235,1.2984378812835762,186.9518,feat: MCP for snowflake (#42)
+slide-rule-tech__dbt-nexus,2025-12-09T13:54:03,e76f782f78c8fae5be46afe9286dc140121eea8a,D3_alg_conn,1.2984378812835762,0.34600757070928706,73.352,fix: gmail and google calendar sources. update state logic
+slide-rule-tech__dbt-nexus,2025-12-17T13:08:25,12dc9bf385d541ac12c83b8c758a12eba9ecbd57,D3_alg_conn,0.34600757070928706,0.22205091272052638,35.8248,fix: fix cross account threads [WORK-2307] (#52)
+slide-rule-tech__dbt-nexus,2025-12-17T13:08:25,12dc9bf385d541ac12c83b8c758a12eba9ecbd57,D4_cycle_rank_norm,0.13043478260869565,0.16455696202531644,26.1603,fix: fix cross account threads [WORK-2307] (#52)
+slide-rule-tech__dbt-nexus,2026-06-04T09:31:27,eb08171894d4711ca410e39cca391e518a34a359,D3_alg_conn,0.22787290729404097,0.15930997382662546,30.0882,feat(significance): bump gmail/calendar significance + fix calendar column name (#81)
+slunsford__coffee-analytics,2023-10-04T12:25:24,f24fd30595b34a7151017b2bae21298963e430b9,D3_alg_conn,0.3368043960526828,0.541758252964031,60.8525,Add availability flag (#25)
+slunsford__coffee-analytics,2023-10-04T12:25:24,f24fd30595b34a7151017b2bae21298963e430b9,D4_cycle_rank_norm,0.2,0.5,150.0,Add availability flag (#25)
+slunsford__coffee-analytics,2023-10-23T16:00:00,3535d3069da77627becdc7a8b968e226346ac192,D4_cycle_rank_norm,0.5,0.375,25.0,Create Fivetran staging models Can’t run against Iceberg yet
+slunsford__coffee-analytics,2024-01-04T23:30:28,1f1a1011abcddc51b453fbf73295c631727761b6,D4_cycle_rank_norm,0.375,0.5,33.3333,Add brew method to report views
+slunsford__coffee-analytics,2024-09-30T11:48:31,6da81bc7286abc7fabd58058e5c35f577d3e34d9,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,Add `is_favorite` to coffees
+slunsford__coffee-analytics,2024-09-30T11:48:31,6da81bc7286abc7fabd58058e5c35f577d3e34d9,D3_alg_conn,0.541758252964031,0.26539757397701497,51.0118,Add `is_favorite` to coffees
+slunsford__coffee-analytics,2024-09-30T11:48:31,6da81bc7286abc7fabd58058e5c35f577d3e34d9,D4_cycle_rank_norm,0.5,0.18181818181818182,63.6364,Add `is_favorite` to coffees
+slunsford__coffee-analytics,2024-11-10T01:16:02,3adf25a6e05e1c7781c9c31af4d4931e83087396,D3_alg_conn,0.26539757397701497,0.16791385573574755,36.7312,Re-add ratings model with history
+slunsford__coffee-analytics,2024-11-10T01:16:02,3adf25a6e05e1c7781c9c31af4d4931e83087396,D4_cycle_rank_norm,0.18181818181818182,0.1111111111111111,38.8889,Re-add ratings model with history
+snowplow__dbt-snowplow-ecommerce,2023-10-26T14:06:25,49db51a4b11f55c36726c4bc9fd9af77f82a19b9,D3_alg_conn,0.30217508782298275,0.5857864376269047,93.8566,Add base macro functionality
+snowplow__dbt-snowplow-media-player,2023-09-15T13:05:21,e02bbaa0df29ef2c3718fd469af633fff55bddba,D3_alg_conn,0.2537868118726481,0.11344837829504394,55.2978,Update license to SPAL
+snowplow__dbt-snowplow-mobile,2023-10-13T16:20:55,e316c8757aeb1a1c2bb9afd81f11475904a52b01,D1_csi,0.8571428571428571,0.5714285714285714,33.3333,Implement new base macros throughout package and passthrough fields
+snowplow__dbt-snowplow-mobile,2023-10-13T16:20:55,e316c8757aeb1a1c2bb9afd81f11475904a52b01,D3_alg_conn,0.1065750960482302,0.48625076443280135,356.2518,Implement new base macros throughout package and passthrough fields
+snowplow__dbt-snowplow-mobile,2023-10-13T16:20:55,e316c8757aeb1a1c2bb9afd81f11475904a52b01,D4_cycle_rank_norm,0.24,0.3157894736842105,31.5789,Implement new base macros throughout package and passthrough fields
+snowplow__dbt-snowplow-unified,2024-02-08T14:50:47,36bbde78aaa41cf1018ec62fbd135ea7425b0d2d,D4_cycle_rank_norm,0.21875,0.2777777777777778,26.9841,Use macros for field lists where possible (Close #27)
+snowplow__dbt-snowplow-web,2021-10-19T10:00:18,02f2c34cc252f070f90e3de07491968a7c1f623b,D3_alg_conn,0.08104337763499062,0.10405328015217251,28.3921,Create manifest table using native dbt (Close #39)
+snowplow__dbt-snowplow-web,2023-04-25T13:42:06,1ea22b3d92e73f945a704ee3a16faa7a6f698b62,D4_cycle_rank_norm,0.5666666666666667,0.2413793103448276,57.4037,Add core web vitals module
+snowplow__dbt-snowplow-web,2023-07-13T10:21:03,dd55d8ddcb0e8bf3fd24940a3dd62059a40efadc,D3_alg_conn,0.07250528650729521,0.08937640835712594,23.2688,Add passthrough for derived tables
+stellar__stellar-dbt-public,2023-10-26T16:10:27,fd9b58242ec810ece654e2efbdeebc93a7bf4259,D3_alg_conn,1.0,0.4384471871911696,56.1553,"Some fixes to materialization, source schemas and addition of fee_stats and trade_agg tables"
+stellar__stellar-dbt-public,2024-02-15T15:33:46,670a9761f39633aaee33b9989857a270edec1e38,D3_alg_conn,0.4384471871911696,0.2023666828129578,53.8447,Fix asset_id typo
+stellar__stellar-dbt-public,2024-02-15T15:33:46,670a9761f39633aaee33b9989857a270edec1e38,D4_cycle_rank_norm,0.15,0.1,33.3333,Fix asset_id typo
+stellar__stellar-dbt-public,2025-10-09T20:30:32,3b9a29262ef257a8b0529ec8be6972bbe5ec1433,D3_alg_conn,0.1820500614431875,0.25378681187264773,39.405,Update ttl_current.sql (#154)
+stellar__stellar-dbt-public,2025-11-08T16:28:15,a14f9df45e26af58a7ff7382576ddf5c32c99ebe,D3_alg_conn,0.25378681187264773,1.627718676730987,541.3724,Add account balances for smart contracts (#159)
+stellar__stellar-dbt-public,2025-11-08T16:28:15,a14f9df45e26af58a7ff7382576ddf5c32c99ebe,D4_cycle_rank_norm,0.06818181818181818,0.2127659574468085,212.0567,Add account balances for smart contracts (#159)
+stellar__stellar-dbt-public,2025-12-09T11:48:48,feea8dd7d1ed4b1efd2d2b574e47c759082f88bf,D3_alg_conn,1.627718676730987,0.9344058720976094,42.5941,Incluse G addresses in custom contract token balances (#184)
+stellar__stellar-dbt-public,2026-02-04T11:21:42,cd54424d48414b1dbc49f07f8eba945f5bff738c,D3_alg_conn,0.9344058720976094,0.06937469475115779,92.5755,[#556] Include decimals as an acceptable key for precision
+stellar__stellar-dbt-public,2026-04-09T10:17:05,bb580ce2f90a183846e0232f07b92e002501c07d,D3_alg_conn,0.06937469475115779,0.04142000972066899,40.2952,[645] Update contract_id field name in tvl_agg
+stellar__stellar-dbt-public,2026-05-08T08:50:55,198c00cc43b6e150b24decf8aa699d47ce844272,D1_csi,0.5714285714285714,0.7142857142857143,25.0,drop deprecated fee_stats_agg model (#239)
+tconbeer__gitlab-analytics-sqlfmt,2018-12-14T16:40:17,19047f9bc37f0df4b7f9add8aa2ddc693f07024f,D3_alg_conn,0.9999999999999997,0.08997273846060677,91.0027,it's alivegit add .git add .
+tconbeer__gitlab-analytics-sqlfmt,2019-01-12T00:05:30,6645f97e604e5752139592d530502dc9c343c8c7,D3_alg_conn,0.08997273846060677,0.020655547620730904,77.0424,"Resolve ""Update dbt version"""
+tconbeer__gitlab-analytics-sqlfmt,2019-01-12T00:05:30,6645f97e604e5752139592d530502dc9c343c8c7,D4_cycle_rank_norm,0.17391304347826086,0.2536231884057971,45.8333,"Resolve ""Update dbt version"""
+tconbeer__gitlab-analytics-sqlfmt,2019-07-13T14:47:47,f5c88a7f8932d391e91612468a3a3db5009d9c14,D3_alg_conn,0.018923521480514117,0.010904870730091361,42.374,"Resolve ""Fix Zendesk Models"""
+tconbeer__gitlab-analytics-sqlfmt,2019-08-13T19:11:48,7b75349e76bcddc3c6dedbd6d19e6c7828305fc8,D1_csi,1.0,0.7142857142857143,28.5714,"Resolve ""Move members to `analytics` schema"""
+tconbeer__gitlab-analytics-sqlfmt,2019-08-13T19:11:48,7b75349e76bcddc3c6dedbd6d19e6c7828305fc8,D3_alg_conn,0.010904870730091361,0.02096651694705221,92.2675,"Resolve ""Move members to `analytics` schema"""
+tconbeer__gitlab-analytics-sqlfmt,2019-08-13T19:11:48,7b75349e76bcddc3c6dedbd6d19e6c7828305fc8,D4_cycle_rank_norm,0.21304347826086956,0.3093220338983051,45.192,"Resolve ""Move members to `analytics` schema"""
+tconbeer__gitlab-analytics-sqlfmt,2019-09-12T15:11:14,5aa040fa1e39a3022e1ccb3f1e3489baa5dffda8,D3_alg_conn,0.02096651694705221,0.04772329965452619,127.6167,Materialized in the yml
+tconbeer__gitlab-analytics-sqlfmt,2020-01-10T16:19:40,0f3dcaddac363ca297bfaab7b8da09806714ba8e,D3_alg_conn,0.03561700045345816,0.01865790559613427,47.6152,adding from 1st cte
+tconbeer__gitlab-analytics-sqlfmt,2020-06-08T13:44:10,5f26ac945f3700cdf985b72ac7e672f273f748d7,D1_csi,0.8571428571428571,0.5714285714285714,33.3333,add fct_invoice_items table
+tconbeer__gitlab-analytics-sqlfmt,2020-07-08T19:35:44,82f1e218f4f9c932184bb351a87e7e7ea720984f,D1_csi,0.5714285714285714,0.8571428571428571,50.0,add models + test
+tconbeer__gitlab-analytics-sqlfmt,2020-08-07T16:49:02,8c6d311519b5dc8df556d253b6027d8081d8d910,D1_csi,0.8571428571428571,0.5714285714285714,33.3333,Merge branch 'rkohnke-master-patch-92122' into 'master'
+tconbeer__gitlab-analytics-sqlfmt,2020-08-07T16:49:02,8c6d311519b5dc8df556d253b6027d8081d8d910,D3_alg_conn,0.016002663787794257,0.01081602634085125,32.4111,Merge branch 'rkohnke-master-patch-92122' into 'master'
+tconbeer__gitlab-analytics-sqlfmt,2020-09-06T19:59:44,b908f0bcb917a59239e0260ff6c7787df883c244,D1_csi,0.5714285714285714,0.7142857142857143,25.0,adding is_outbound and is_sourced fields
+tconbeer__gitlab-analytics-sqlfmt,2021-02-03T19:49:54,c5e89427f0b0707b47b36896daccf9c734e3dcd8,D1_csi,0.8571428571428571,0.6428571428571429,25.0,Merge branch '7770-create-seat-link-mart-tables' into 'master'
+tconbeer__gitlab-analytics-sqlfmt,2021-04-04T16:56:07,4c46355ea0eb26b5a84fad9b5dfc5306145d6247,D3_alg_conn,0.01005252524489128,0.007915717235891255,21.2564,update ids
+tconbeer__gitlab-analytics-sqlfmt,2021-05-04T16:04:28,ef2b7221ae888030d5dbb6e3755996180fd32b2b,D1_csi,0.7142857142857143,0.42857142857142855,40.0,add survey invitation emails sent model
+tconbeer__gitlab-analytics-sqlfmt,2021-06-03T20:09:30,acd78a3b4200931d8d45817083e5906550058647,D1_csi,0.42857142857142855,0.7857142857142857,83.3333,Merge remote-tracking branch 'origin/master' into fct-retention-snapshot
+tconbeer__gitlab-analytics-sqlfmt,2021-07-02T14:40:27,e2a0cdd1d2802f37ecdfbf6ec0cf09ae85504da5,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,Apply 3 suggestion(s) to 3 file(s)
+tconbeer__gitlab-analytics-sqlfmt,2021-08-02T16:15:57,4d847507ff35e58810f2d20bc808a22301cc654f,D1_csi,0.5714285714285714,0.7142857142857143,25.0,revert cohort changes
+tconbeer__gitlab-analytics-sqlfmt,2021-09-01T14:27:55,0eea0223991b7a2880cf144f041ef9124cb411b5,D1_csi,0.7142857142857143,1.0,40.0,Added CASE statement to fix boolean issue
+tconbeer__gitlab-analytics-sqlfmt,2021-10-01T15:57:06,eeaa7d1c193f9058f8ea67b20a1c15647cc7a5bb,D1_csi,1.0,0.7142857142857143,28.5714,update macro and add email
+tconbeer__gitlab-analytics-sqlfmt,2021-11-30T12:21:53,10d0623cef16507572a7f6b2317302508d485924,D3_alg_conn,0.007312632680901148,0.004447986513893992,39.1739,bucketed column docs
+tconbeer__gitlab-analytics-sqlfmt,2022-03-30T10:23:42,9e931e1d6d267eb6c7cbc3deb0319bf915b159a2,D1_csi,0.7142857142857143,0.9285714285714286,30.0,alias field in rpt_crm_person_with_opp
+tconbeer__gitlab-analytics-sqlfmt,2022-04-29T14:16:25,8e8739823a7914b63b8603afe3ab302054c5b435,D1_csi,0.9285714285714286,0.7142857142857143,23.0769,Merge branch '12101-add-new-fields-to-restricted_safe_legacy-customers_db_leads' into 'master'
+techindicium__dbt-dag-monitoring,2023-12-19T12:30:38,ce097b9915d3dbb1099237b0de9c4efefc14f1d4,D3_alg_conn,0.5755026278697969,1.4384471871911695,149.9462,Replacing airflow_monitoring to dag_monitoring
+techindicium__dbt-dag-monitoring,2023-12-19T12:30:38,ce097b9915d3dbb1099237b0de9c4efefc14f1d4,D4_cycle_rank_norm,0.5,0.16666666666666666,66.6667,Replacing airflow_monitoring to dag_monitoring
+techindicium__dbt-dag-monitoring,2024-11-05T17:09:52,29408ee9eef5d77f58b288f5d6f6fda85e6f46ff,D3_alg_conn,1.4384471871911695,1.7381977547400282,20.8385,Changing the name of the macro to 'day_of_week'.
+techindicium__dbt-dag-monitoring,2024-11-05T17:09:52,29408ee9eef5d77f58b288f5d6f6fda85e6f46ff,D4_cycle_rank_norm,0.15789473684210525,0.25,58.3333,Changing the name of the macro to 'day_of_week'.
+thegoodparty__gp-data-platform,2025-04-28T17:59:26,f8c9050770f9020fcca4cf48d88e27a07f5e76a0,D1_csi,0.9285714285714286,0.5,46.1538,"[WEB-4100, WEB-4104] fix: handle position-place by rolling up to parent (#41)"
+thegoodparty__gp-data-platform,2025-04-28T17:59:26,f8c9050770f9020fcca4cf48d88e27a07f5e76a0,D3_alg_conn,2.0,0.5734930533901966,71.3253,"[WEB-4100, WEB-4104] fix: handle position-place by rolling up to parent (#41)"
+thegoodparty__gp-data-platform,2025-05-24T18:53:16,87cccd23f3bb8a8508f7704e14b71475a71969bf,D1_csi,0.5,0.7142857142857143,42.8571,perf: add `loaded_at` to l2 data sets (#53)
+thegoodparty__gp-data-platform,2025-05-24T18:53:16,87cccd23f3bb8a8508f7704e14b71475a71969bf,D3_alg_conn,0.5734930533901966,0.2770363718044711,51.6932,perf: add `loaded_at` to l2 data sets (#53)
+thegoodparty__gp-data-platform,2025-05-24T18:53:16,87cccd23f3bb8a8508f7704e14b71475a71969bf,D4_cycle_rank_norm,0.2972972972972973,0.053497942386831275,82.0052,perf: add `loaded_at` to l2 data sets (#53)
+thegoodparty__gp-data-platform,2025-06-26T15:40:22,a9c9049278b47851a0e2fc193029a323e900ecde,D4_cycle_rank_norm,0.053497942386831275,0.037142857142857144,30.5714,[DT-119] general mart: candidacy v0 (#64)
+thegoodparty__gp-data-platform,2025-08-22T14:40:36,b78890b0267b2157c5e4ce65a6b98fead020e14f,D3_alg_conn,0.2770363718044711,0.07157848374203443,74.1628,[DT-253] keep 2 years of past election races (#81)
+thegoodparty__gp-data-platform,2025-09-24T14:02:38,edbcce18d72302d6887b4022e4e0d58ba604ed22,D3_alg_conn,0.07157848374203443,0.018231147277065436,74.5298,[DATA-1196] add Amplitude data to dbt (#100)
+thegoodparty__gp-data-platform,2025-09-24T14:02:38,edbcce18d72302d6887b4022e4e0d58ba604ed22,D4_cycle_rank_norm,0.043243243243243246,0.06582278481012659,52.2152,[DATA-1196] add Amplitude data to dbt (#100)
+thegoodparty__gp-data-platform,2025-11-19T16:42:13,439b08ab06be315ba54a2a899e841211629447e8,D3_alg_conn,0.018711463001730176,0.04631839779194813,147.5402,[DATA-1339] add domain and website tables from gp-api db (#125)
+thegoodparty__gp-data-platform,2025-11-19T16:42:13,439b08ab06be315ba54a2a899e841211629447e8,D4_cycle_rank_norm,0.06352941176470588,0.09195402298850575,44.7424,[DATA-1339] add domain and website tables from gp-api db (#125)
+thegoodparty__gp-data-platform,2026-02-20T15:52:26,6eaad43ef6a3e9a66b9733fcf3a7edb1306c9db2,D4_cycle_rank_norm,0.07454545454545454,0.11896551724137931,59.5879,Add HubSpot race context columns to candidates_outreach (#205)
+thegoodparty__gp-data-platform,2026-03-24T14:30:15,cadee12bc453d9a110285661eddc373a9a74e374,D1_csi,0.6428571428571429,0.35714285714285715,44.4444,[DATA-1804] Fix HubSpot staging models failing on removed columns (#274)
+thegoodparty__gp-data-platform,2026-04-23T15:14:09,cc63dbe08bcbc8f3d9fe2b875ca81d7908119de4,D1_csi,0.35714285714285715,0.6428571428571429,80.0,[DATA-1797] Civics mart README and YAML description improvements (#314)
+thegoodparty__gp-data-platform,2026-04-23T15:14:09,cc63dbe08bcbc8f3d9fe2b875ca81d7908119de4,D3_alg_conn,0.03711357855197955,0.0674985384327151,81.8702,[DATA-1797] Civics mart README and YAML description improvements (#314)
+thegoodparty__gp-data-platform,2026-04-23T15:14:09,cc63dbe08bcbc8f3d9fe2b875ca81d7908119de4,D4_cycle_rank_norm,0.1171875,0.15228426395939088,29.9492,[DATA-1797] Civics mart README and YAML description improvements (#314)
+thegoodparty__gp-data-platform,2026-05-18T12:16:45,2d8f0daafd004301ad1c98afbf0629dda98ea5fb,D4_cycle_rank_norm,0.15228426395939088,0.21641791044776118,42.1144,[DATA-1496] Add prospects mart for Connect Rate / Activation Rate metrics (#397)
+thegoodparty__gp-data-platform,2026-06-22T15:42:17,ece7f69f55dc733f8584b3422d2f4fbd4543aea2,D3_alg_conn,0.06963673098908536,0.08403825516965653,20.6809,[DATA-2005] Amplitude event catalog: warehouse metadata + rename (#525)
+thegoodparty__gp-data-platform,2026-07-21T17:21:04,a355ba9a879f93b23bde3ad991648348c8186d8b,D3_alg_conn,0.08403825516965653,0.04041191182450857,51.9125,[DATA-2166] Add hf_most_important_policy_item to public.Voter (#652)
+thegoodparty__gp-data-platform,2026-07-21T17:21:04,a355ba9a879f93b23bde3ad991648348c8186d8b,D4_cycle_rank_norm,0.25421686746987954,0.3286549707602339,29.2813,[DATA-2166] Add hf_most_important_policy_item to public.Voter (#652)
+thegoodparty__gp-data-platform,2026-08-04T17:03:33,4cf74213808559d3fff4fde0e410193393951749,D1_csi,0.5714285714285714,0.42857142857142855,25.0,[DATA-2190] Seed candidacy/party worklist from upcoming API race rosters (#759)
+tuva-health__medicare_cclf_connector,2022-12-08T11:45:05,0baea7126e6995585c293d4661d52e9232dd2a6d,D3_alg_conn,0.4384471871911691,0.30647479777212755,30.1,Fix bug in eligibility and add cross-database support (#25)
+tuva-health__medicare_cclf_connector,2024-08-26T08:58:37,ac37b7bda2aeb1f2b4593e7fa7c9d47025f33f8b,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Upgrade to Tuva package v0.10 (#64)
+tuva-health__medicare_cclf_connector,2024-08-26T08:58:37,ac37b7bda2aeb1f2b4593e7fa7c9d47025f33f8b,D3_alg_conn,0.30647479777212755,0.19705235480916605,35.7036,Upgrade to Tuva package v0.10 (#64)
+tuva-health__medicare_cclf_connector,2024-11-18T16:29:56,b84bffb81ada2f361f0acb3b47cc15c22ebba74b,D3_alg_conn,0.19705235480916605,0.1066403861233147,45.8822,Add effective date to xref window logic
+tuva-health__medicare_cclf_connector,2026-04-15T21:35:58,c24e124822eb145b79fc7ea8cb032044bb4fddec,D4_cycle_rank_norm,0.06896551724137931,0.275,298.75,Fix issue with ALR specific objects being built when demo data is enabled
+tuva-health__medicare_lds_connector,2024-01-05T17:59:12,c2f4e1446ddf3fca75f5ab4dcbaeaaad8489d110,D3_alg_conn,0.9999999999999993,2.0,100.0,moved paid amount for outpatient; changed union syntax so mismatch in column order does not cause issues
+tuva-health__medicare_lds_connector,2024-07-02T15:56:43,73328394bb55a03f15f5b93649ccf430331b666b,D3_alg_conn,2.0,0.585786437626905,70.7107,adding coalesce to facility npi
+tuva-health__tuva-core,2022-03-07T09:30:39,060c4aa7b7f63205e82119ff7a1875ae47785b28,D1_csi,0.7142857142857143,0.5,30.0,adding encounter overlap analytics
+tuva-health__tuva-core,2022-03-07T09:30:39,060c4aa7b7f63205e82119ff7a1875ae47785b28,D3_alg_conn,0.29492799101628614,0.5895111265777289,99.8831,adding encounter overlap analytics
+tuva-health__tuva-core,2022-03-07T09:30:39,060c4aa7b7f63205e82119ff7a1875ae47785b28,D4_cycle_rank_norm,0.6666666666666666,1.0,50.0,adding encounter overlap analytics
+tuva-health__tuva-core,2022-04-08T21:48:12,eaf9b2a6cff6ff5bf574219aba37df8bca4be26d,D3_alg_conn,0.5895111265777289,0.0,100.0,major updates for next release
+tuva-health__tuva-core,2022-04-08T21:48:12,eaf9b2a6cff6ff5bf574219aba37df8bca4be26d,D4_cycle_rank_norm,1.0,0.0,100.0,major updates for next release
+tuva-health__tuva-core,2023-05-05T09:58:34,b66ad6a9ee5dcba2a2952b6fd58ff857a5f0adf8,D1_csi,0.5,0.6428571428571429,28.5714,removed the parent folders anaytics and preprocessing (#76)
+tuva-health__tuva-core,2023-06-01T15:58:45,33de6bdbaf85cc06b76fc32df1c73c6d706b6347,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,Added Staging to Layer to Data Marts (#107)
+tuva-health__tuva-core,2023-06-01T15:58:45,33de6bdbaf85cc06b76fc32df1c73c6d706b6347,D3_alg_conn,0.1434287776570285,0.015660832426228448,89.0811,Added Staging to Layer to Data Marts (#107)
+tuva-health__tuva-core,2023-06-01T15:58:45,33de6bdbaf85cc06b76fc32df1c73c6d706b6347,D4_cycle_rank_norm,0.96,0.5714285714285714,40.4762,Added Staging to Layer to Data Marts (#107)
+tuva-health__tuva-core,2023-06-19T15:06:03,03cf2a291265bf651deb31d9762a062d540de747,D1_csi,0.7857142857142857,1.0,27.2727,updated acute inpatient yml (#166)
+tuva-health__tuva-core,2023-06-19T15:06:03,03cf2a291265bf651deb31d9762a062d540de747,D3_alg_conn,0.015660832426228448,0.010853939276809183,30.6937,updated acute inpatient yml (#166)
+tuva-health__tuva-core,2023-10-02T22:44:25,2b1e1be0fd458070c93bc3363d03d144bea45abc,D3_alg_conn,0.011097205203783293,0.016020594384537113,44.366,Revise serv cat (#249)
+tuva-health__tuva-core,2023-11-01T15:02:37,579b314d2b60fd367a7faa933dd07872a1e63728,D3_alg_conn,0.016020594384537113,0.029037227079407615,81.2494,"Bug fixes for Breast Cancer Screening and CMS HCC, and improvements for quality measure performance periods (#273)"
+tuva-health__tuva-core,2023-11-01T15:02:37,579b314d2b60fd367a7faa933dd07872a1e63728,D4_cycle_rank_norm,0.6035242290748899,0.7923728813559322,31.291,"Bug fixes for Breast Cancer Screening and CMS HCC, and improvements for quality measure performance periods (#273)"
+tuva-health__tuva-core,2023-12-21T18:36:18,04fd65ed54f738127fc16465cb3a9d42903ba047,D3_alg_conn,0.029098397834268992,0.04113156522415714,41.3534,Normalization fixes 2 (#320)
+tuva-health__tuva-core,2024-03-29T11:33:55,30944bfd29502089f0e841b22246620aad014fbb,D1_csi,1.0,0.7857142857142857,21.4286,Add observation suspecting logic for HCC 48 - Morbid Obesity (#429)
+tuva-health__tuva-core,2024-04-29T13:15:35,e3bc58a859384600255720f9e5007638362e578d,D1_csi,0.7857142857142857,1.0,27.2727,Added tuva prefix to schema name (#450)
+tuva-health__tuva-core,2024-07-25T17:43:38,1a239177fc8727ea11c968c8d767b01997910edc,D4_cycle_rank_norm,1.101123595505618,0.6523031203566122,40.7602,using dbt utils tests for safer compatibility (#554)
+tuva-health__tuva-core,2024-09-24T14:27:29,af81e97dd24ecee770049af357816dd5a104cabf,D3_alg_conn,0.036051980835129685,0.02465091886055283,31.624,Encounters and Service Categories (#585)
+tuva-health__tuva-core,2024-09-24T14:27:29,af81e97dd24ecee770049af357816dd5a104cabf,D4_cycle_rank_norm,0.6710526315789473,0.8156911581569116,21.554,Encounters and Service Categories (#585)
+tuva-health__tuva-core,2025-03-25T16:09:44,28fb2e28361a35e14f4df17d345cdcffb4ab0d91,D3_alg_conn,0.031108395778502433,0.0024143082613675916,92.239,Add columns to single condition CCSR mart (#744)
+tuva-health__tuva-core,2025-06-20T14:27:17,d07e82a21a01c10e2eb17b1653c32408592b1634,D3_alg_conn,0.0024109110066025123,0.0014833676858887924,38.4727,932 if encounters between claims and clinical datasets overlap ie adt both encounter get thrown out in readmissions (#93
+tuva-health__tuva-core,2025-06-20T14:27:17,d07e82a21a01c10e2eb17b1653c32408592b1634,D4_cycle_rank_norm,0.7034400948991696,0.884009009009009,25.6694,932 if encounters between claims and clinical datasets overlap ie adt both encounter get thrown out in readmissions (#93
+tuva-health__tuva-core,2025-09-15T11:59:10,09e15a34a03ce50a7feb679e958f49e85417754a,D4_cycle_rank_norm,0.8993362831858407,0.6890243902439024,23.3852,Prospective benchmarks (#1049)
+wnl-icb-analytics__dbt-OLIDS,2025-07-28T19:40:07,ba49a48c9016831189af0958f14eb973dca56849,D1_csi,0.35714285714285715,0.5714285714285714,60.0,feat: enhance flu vaccination models with dual-campaign support and uptake analysis
+wnl-icb-analytics__dbt-OLIDS,2025-09-18T22:53:06,6d65d31eaa33a150340072042906ca35a56145c2,D1_csi,0.5714285714285714,0.7142857142857143,25.0,fix: correct model references and add connection info display
+wnl-icb-analytics__dbt-OLIDS,2025-09-18T22:53:06,6d65d31eaa33a150340072042906ca35a56145c2,D3_alg_conn,0.12661623542427894,0.0858977521451594,32.159,fix: correct model references and add connection info display
+wnl-icb-analytics__dbt-OLIDS,2025-10-31T17:32:37,197064156a0be7dcd4dddbb078daf96da05c51a1,D3_alg_conn,0.0858977521451594,0.3591349570084962,318.0959,feat: add POSTCODE_HASH reference table and update clone databases
+wnl-icb-analytics__dbt-OLIDS,2025-10-31T17:32:37,197064156a0be7dcd4dddbb078daf96da05c51a1,D4_cycle_rank_norm,0.8443983402489627,0.576271186440678,31.7536,feat: add POSTCODE_HASH reference table and update clone databases
+wnl-icb-analytics__dbt-OLIDS,2025-12-12T22:39:20,c8821cd7f9b3c6c67896d5f364b8dcd699bec4d0,D4_cycle_rank_norm,0.576271186440678,0.3728813559322034,35.2941,feat: add comprehensive dbt data quality tests and align models with Alpha schema
+wnl-icb-analytics__dbt-OLIDS,2026-05-13T22:32:54,89425160585146cfece2c87857a833d1b41d220a,D3_alg_conn,0.34661182076696345,0.23664116079163544,31.7273,feat: add BNF chapter/section/code to MEDICATION_ORDER and MEDICATION_STATEMENT (#234)
+wnl-icb-analytics__dbt-OLIDS,2026-06-12T17:22:53,7d1651af5d0bf2819377b016f217ac737cd947d0,D1_csi,0.6428571428571429,0.7857142857142857,22.2222,feat: align dbt project with Data_Store_OLIDS schema release (#237)
+wnl-icb-analytics__dbt-OLIDS,2026-06-12T17:22:53,7d1651af5d0bf2819377b016f217ac737cd947d0,D3_alg_conn,0.23664116079163544,0.1322495639818213,44.1139,feat: align dbt project with Data_Store_OLIDS schema release (#237)
+wnl-icb-analytics__dbt-OLIDS,2026-07-20T10:21:08,1cd933b31c58de742ca6e6549a49d84a14ac4eaf,D1_csi,0.7857142857142857,0.5714285714285714,27.2727,style: explicit ASC on qualify tie-breakers (sqlfluff AM03)
+wnl-icb-analytics__dbt-OLIDS,2026-07-20T10:21:08,1cd933b31c58de742ca6e6549a49d84a14ac4eaf,D3_alg_conn,0.1322495639818213,0.08038153121393465,39.2198,style: explicit ASC on qualify tie-breakers (sqlfluff AM03)
+wnl-icb-analytics__dbt-OLIDS,2026-07-20T10:21:08,1cd933b31c58de742ca6e6549a49d84a14ac4eaf,D4_cycle_rank_norm,0.3387096774193548,0.8493975903614458,150.7745,style: explicit ASC on qualify tie-breakers (sqlfluff AM03)

@@ -1,0 +1,75 @@
+{
+ "project_id": "fivetran__dbt_salesforce",
+ "repo_url": "https://github.com/fivetran/dbt_salesforce.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:32:02Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "87e05378f2f5de92911624492f03137adfbfd138",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "salesforce",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "salesforce",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 92,
+   "first_commit": "2020-04-17T23:19:54",
+   "last_commit": "2026-07-20T15:05:21"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 92,
+ "history_start": "2020-04-17T23:19:54",
+ "history_end": "2026-07-20T15:05:21",
+ "n_snapshots_planned": 19,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 19,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:33:45Z",
+ "snapshot_shas": [
+  "e7a36f599a9097e25a58ae03b03ee830ca9d9a46",
+  "b273401365689b618c63d91423a0ad32f34a6b46",
+  "53becf7b713f25e37de7118ae2907e2d91ac0295",
+  "f1d592067f0b5127253075f3e2a26ef248cfc630",
+  "5afea73ad393094b21f48a5265f1f5aa9dc725f2",
+  "f717a887ed1fa07939480e534974981419faf251",
+  "0101892ab5bb0b428286e77967515813a6367eea",
+  "78762054016f9494835837cec0c31619d391c08d",
+  "ba9612bc83f598f72f5643efb36339a595f8e620",
+  "6dc547b345ebd2a6668592e1004d80a958204817",
+  "49cfcc69e2ec1b70dc946423fc8d7c38fa5aacc5",
+  "1637195370e26fcd0e2e58be0cdedb4844771ac1",
+  "4ce1be79d2a9a02cce00296c1f3bdaa993f8c377",
+  "12e6932c79e2e688e068b43f389d1ce023882616",
+  "74387f7247212789d38541a2c08c009773ff8857",
+  "614880a579af74e2c38d4b9401513c4f272b28b2",
+  "bd882149020173c9680cb42c0a40fa51c16dac48",
+  "5a68ce8b57096aa24157e23d0015bfa4d9ae4cdc",
+  "87e05378f2f5de92911624492f03137adfbfd138"
+ ],
+ "stars": 53,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt",
+  "S3_code"
+ ]
+}

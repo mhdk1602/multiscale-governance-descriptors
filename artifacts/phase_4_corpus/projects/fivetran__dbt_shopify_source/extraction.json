@@ -1,0 +1,83 @@
+{
+ "project_id": "fivetran__dbt_shopify_source",
+ "repo_url": "https://github.com/fivetran/dbt_shopify_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:32:30Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "5645eb3e819809905af1a8cc6a9ff44daa7f43a8",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "shopify_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "shopify_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 148,
+   "first_commit": "2020-09-01T09:18:48",
+   "last_commit": "2025-08-14T15:40:01"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 148,
+ "history_start": "2020-09-01T09:18:48",
+ "history_end": "2025-08-14T15:40:01",
+ "n_snapshots_planned": 28,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 28,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:34:29Z",
+ "snapshot_shas": [
+  "88f4b6516202fa6b00f0b4ba3f20ffb1f2f40dfa",
+  "34a260ad5e070c558cc386b4f3e1cd9e617b051b",
+  "06f331bf18e9d6ba6310e4b13afdae7f5fdba8b4",
+  "785d257df2caeadb3538b6842ded87b1fc143337",
+  "3a1b0ec219dc7ad5b963ddebe9ab212510d405ed",
+  "2a9e7feb1bea559658c6273c95dfc8d37f558573",
+  "c303c3773275dcf6f89ac41c4074a7bccfffe4bf",
+  "2d1fa3ccba4ce2cf3f8fa431cee73726fbe97614",
+  "029ac527a12402923122bd974cb83725e170f65d",
+  "f5a17d7f588a6c69ab8af5752783a8f515108716",
+  "4d72c7d43294c3c3ef9e461711ec49580425b198",
+  "eb35770fb06d15394955164f56bbeaf9adaf87a4",
+  "10efb1bd7ddda6b2d608b70f7f37fcb8f18dabf5",
+  "1df74dadfd3b82c11261c8f65d8e8ce5d1f44022",
+  "950684df1ba169d862ee7e08ed0ab2023fbddd05",
+  "5d86f6546f7333653951c09507bd7994eb67be90",
+  "2c080e2c700ed74d79c5754e31b88024b8637fb0",
+  "738491aef12c2b8faf0ce031ba5f93c3cb1f5381",
+  "c4949c160e53aad0f8768855876b6276ab0e041b",
+  "34a31b22658ead447ee72c423205a7e80d02fdff",
+  "de1f561c84a14960f88a1669357faad9f7710f19",
+  "5963347119107838d6eb658f53723a649c551ea5",
+  "9456612a6396baec86d049f9d5f19c0796611859",
+  "df1670c063ef5882e931820ddf6929c66fce5de0",
+  "d2d8c8e5bad295c4d895e828046fdcc8590540df",
+  "ced17044a2449e7a8b0643a18a81f092f8f66408",
+  "0fb37dac9674cdc619d98db6dafe08d2cd173d96",
+  "37f944fe4682cce6746201e75b24364bffe6eb21"
+ ],
+ "stars": 31,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}

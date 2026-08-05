@@ -1,0 +1,78 @@
+{
+ "project_id": "fivetran__dbt_quickbooks_source",
+ "repo_url": "https://github.com/fivetran/dbt_quickbooks_source.git",
+ "tool_version": "1.0.0",
+ "extraction_started_utc": "2026-08-05T02:31:30Z",
+ "window_days": 30,
+ "descriptors_computed": true,
+ "status": "success",
+ "error": null,
+ "head_sha": "a5c2c6a6259d7814439fb99f65e051c90b9e0f41",
+ "default_branch": "main",
+ "model_path_universe": [
+  "models"
+ ],
+ "dbt_project_chosen": {
+  "primary_config": "dbt_project.yml",
+  "name": "quickbooks_source",
+  "chained_configs": [
+   "dbt_project.yml"
+  ],
+  "n_configs_chained": 1,
+  "model_paths": [
+   "models"
+  ]
+ },
+ "dbt_projects_seen": [
+  {
+   "config": "dbt_project.yml",
+   "name": "quickbooks_source",
+   "model_paths": [
+    "models"
+   ],
+   "commits_on_model_paths": 89,
+   "first_commit": "2021-01-07T16:00:18",
+   "last_commit": "2025-09-11T15:37:19"
+  }
+ ],
+ "n_dbt_projects_seen": 1,
+ "n_commits_touching_models": 89,
+ "history_start": "2021-01-07T16:00:18",
+ "history_end": "2025-09-11T15:37:19",
+ "n_snapshots_planned": 23,
+ "model_paths_stable": true,
+ "snapshot_errors": [],
+ "n_snapshots": 23,
+ "snapshot_coverage": 1.0,
+ "extraction_finished_utc": "2026-08-05T02:33:25Z",
+ "snapshot_shas": [
+  "ab2917e36148a0d402e4f280f4da1bddb84f9805",
+  "481cfa5181230beb90c87ce6adf3db911b483d1a",
+  "ea3270e357f28bae6846a4dae9eb69d31fb46242",
+  "f1709c5e6171131857a3aa4035ac952310b110da",
+  "a3f3e6bf76027b1360dd1a9cc36773fa32b889d5",
+  "ad1880c5fdf1da22cafaf25f2f8b1bb56c892845",
+  "fd1c3d28fae70c5fcace696a38191bcdc1994c2d",
+  "f193d1cc406070f1ca0e5ec465fdafbacf97677a",
+  "47ec3a2ca972615d84328260b27ff9250b47925a",
+  "8a2af71b8c6bc559651b6f1b0142dea5fc29b656",
+  "89825768502314eed69d5b8833a6d405d840dcac",
+  "94841bbf8176bea8868fd7d70ebebfe19eaea860",
+  "1ed6f1a2d5462dbfab524b21e32760286d1c65a2",
+  "7297b1d50bb63030cb32bb72b49364912cc20909",
+  "1276da15434a87b4cd8482c1775f58626439d9cb",
+  "197796389d23951578f2cd483f69227596136596",
+  "e671520ddde095738389e02ad40d1cfb2926391b",
+  "5fb091807a2a877e0444c8d8c7936632d8cf0ad1",
+  "c82c1d7b420a4066e0df44ba4431a1ea23e01ba7",
+  "3473036f877454356e3d6c8cb14e123ffc9521e3",
+  "d6202c863241e594b851952fe036b7d9bd78f1b0",
+  "590f376d79de4446c1d6d27d40e057f1908a958d",
+  "31c370cf4a5474c38cd596d963d57e242c4e2c0b"
+ ],
+ "stars": 10,
+ "license": "Apache-2.0",
+ "strata": [
+  "S2_topic_dbt"
+ ]
+}
