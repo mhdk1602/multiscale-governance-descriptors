@@ -2,37 +2,31 @@
 \begin{table*}[t]
   \centering
   \footnotesize
-  \caption{Schema of the released longitudinal corpus. Every field in every released file.}
+  \caption{Schema of the released corpus. Every field in every released
+    file. Fields marked not reproducible are excluded from every figure
+    and from Table~\ref{tab:summary}.}
   \label{tab:schema}
-  \begin{tabular}{llp{0.56\linewidth}}
+  \begin{tabular}{llcp{0.55\linewidth}}
     \toprule
-    Field & Type & Description \\
+    Field & Type & Repro. & Description \\
     \midrule
-    \multicolumn{3}{l}{\textit{\texttt{longitudinal\_\textless{}project\textgreater{}.csv}}} \\
-    \midrule
-    \texttt{date} & ISO-8601 datetime & Author timestamp of the sampled commit. \\
-    \texttt{sha} & string (40 hex) & Full git commit SHA the snapshot was extracted at. \\
-    \texttt{commit\_msg} & string & Commit subject line, truncated to 120 characters. \\
-    \texttt{N} & integer & Nodes in the lineage DAG, one per resolved dbt model. \\
-    \texttt{M} & integer & Directed edges, one per ref() call between two resolved models. \\
-    \texttt{too\_small} & boolean & True when N \textless{} 5 and the D1-D4 descriptors were skipped. False throughout the release. \\
-    \texttt{D1\_csi} & float [0,1] & Community stability index. Fraction of consecutive steps in a 15-point Louvain resolution sweep whose partitions differ by NVI \textless{} 0.1. \\
-    \texttt{D1\_n\_comm} & integer & Communities found at Louvain resolution gamma = 1. \\
-    \texttt{D2\_max\_gini} & float [0,1] & Maximum over depth of the Gini coefficient of the blast-radius distribution. \\
-    \texttt{D3\_alg\_conn} & float $\geq$ 0 & Algebraic connectivity, the second-smallest Laplacian eigenvalue of the undirected connected skeleton. \\
-    \texttt{D3\_norm\_gap} & float [0,1] & Algebraic connectivity divided by the largest Laplacian eigenvalue. \\
-    \texttt{D3\_fiedler\_bim} & float [0,1] & Bimodality coefficient of the Fiedler vector. \\
-    \texttt{D4\_cycle\_rank\_norm} & float $\geq$ 0 & Cycle rank (M - N + C) of the undirected skeleton, divided by N. \\
-    \midrule
-    \multicolumn{3}{l}{\textit{\texttt{drift\_events\_refined.csv}}} \\
-    \midrule
-    \texttt{project} & string & cal-itp or mattermost. \\
-    \texttt{date} & ISO-8601 date & Date of the later snapshot in the pair that produced the step change. \\
-    \texttt{descriptor} & string & Which descriptor drifted. One of D1\_csi, D3\_alg\_conn, D4\_cycle\_rank\_norm. \\
-    \texttt{prev} & float & Descriptor value at the preceding snapshot. \\
-    \texttt{curr} & float & Descriptor value at this snapshot. \\
-    \texttt{pct\_change} & float \textgreater{} 20 & 100 * \textbar{}curr - prev\textbar{} / \textbar{}prev\textbar{}. Rows are emitted only above 20. \\
-    \texttt{commit\_msg} & string & Commit subject line at the later snapshot. \\
+    \texttt{date} & ISO-8601 datetime & yes & Author timestamp of the sampled commit. \\
+    \texttt{sha} & string (40 hex) & yes & Full git commit SHA the snapshot was extracted at. \\
+    \texttt{commit\_msg} & string & yes & Commit subject line, truncated to 120 characters. \\
+    \texttt{N} & integer & yes & Nodes in the lineage DAG, one per resolved dbt model. \\
+    \texttt{M} & integer & yes & Directed edges, one per ref() call between two resolved models. \\
+    \texttt{too\_small} & boolean & yes & True when N is below 5 and the descriptors were skipped. \\
+    \texttt{D1\_csi} & float [0,1] & no & Community stability index. Excluded, see note below. \\
+    \texttt{D1\_n\_comm} & integer & no & Louvain communities at gamma 1. Excluded, see note below. \\
+    \texttt{D2\_max\_gini} & float [0,1] & yes & Maximum over depth of the Gini coefficient of the blast-radius distribution. \\
+    \texttt{D3\_alg\_conn} & float $\geq$ 0 & yes & Algebraic connectivity, the second-smallest Laplacian eigenvalue of the undirected connected skeleton. \\
+    \texttt{D3\_norm\_gap} & float [0,1] & yes & Algebraic connectivity divided by the largest Laplacian eigenvalue. \\
+    \texttt{D3\_fiedler\_bim} & float [0,1] & yes & Bimodality coefficient of the Fiedler vector. Order-stable to 5e-6 relative, five orders below its corpus SD. \\
+    \texttt{D4\_cycle\_rank\_norm} & float $\geq$ 0 & yes & Cycle rank (M - N + C) of the undirected skeleton, divided by N. \\
     \bottomrule
   \end{tabular}
+  \par\vspace{3pt}
+  \begin{minipage}{\linewidth}\footnotesize\raggedright
+  \texttt{D1\_csi}. Nondeterministic. extract\_lineage\_at\_commit seeds the graph from a Python set, so node insertion order follows PYTHONHASHSEED, and Louvain is order-sensitive. Across eight node orderings of one fixed 223-node graph the value took four distinct values spanning 0.714 to 0.929, a swing of 0.214 against a corpus SD of 0.123. \texttt{D1\_n\_comm}. Nondeterministic, same cause. The same fixed graph yielded 9 or 10 communities depending on node insertion order.
+  \end{minipage}
 \end{table*}

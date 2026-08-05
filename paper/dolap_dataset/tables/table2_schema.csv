@@ -1,21 +1,14 @@
-file,field,type,description
-longitudinal_<project>.csv,date,ISO-8601 datetime,Author timestamp of the sampled commit.
-longitudinal_<project>.csv,sha,string (40 hex),Full git commit SHA the snapshot was extracted at.
-longitudinal_<project>.csv,commit_msg,string,"Commit subject line, truncated to 120 characters."
-longitudinal_<project>.csv,N,integer,"Nodes in the lineage DAG, one per resolved dbt model."
-longitudinal_<project>.csv,M,integer,"Directed edges, one per ref() call between two resolved models."
-longitudinal_<project>.csv,too_small,boolean,True when N < 5 and the D1-D4 descriptors were skipped. False throughout the release.
-longitudinal_<project>.csv,D1_csi,"float [0,1]",Community stability index. Fraction of consecutive steps in a 15-point Louvain resolution sweep whose partitions differ by NVI < 0.1.
-longitudinal_<project>.csv,D1_n_comm,integer,Communities found at Louvain resolution gamma = 1.
-longitudinal_<project>.csv,D2_max_gini,"float [0,1]",Maximum over depth of the Gini coefficient of the blast-radius distribution.
-longitudinal_<project>.csv,D3_alg_conn,float ≥ 0,"Algebraic connectivity, the second-smallest Laplacian eigenvalue of the undirected connected skeleton."
-longitudinal_<project>.csv,D3_norm_gap,"float [0,1]",Algebraic connectivity divided by the largest Laplacian eigenvalue.
-longitudinal_<project>.csv,D3_fiedler_bim,"float [0,1]",Bimodality coefficient of the Fiedler vector.
-longitudinal_<project>.csv,D4_cycle_rank_norm,float ≥ 0,"Cycle rank (M - N + C) of the undirected skeleton, divided by N."
-drift_events_refined.csv,project,string,cal-itp or mattermost.
-drift_events_refined.csv,date,ISO-8601 date,Date of the later snapshot in the pair that produced the step change.
-drift_events_refined.csv,descriptor,string,"Which descriptor drifted. One of D1_csi, D3_alg_conn, D4_cycle_rank_norm."
-drift_events_refined.csv,prev,float,Descriptor value at the preceding snapshot.
-drift_events_refined.csv,curr,float,Descriptor value at this snapshot.
-drift_events_refined.csv,pct_change,float > 20,100 * |curr - prev| / |prev|. Rows are emitted only above 20.
-drift_events_refined.csv,commit_msg,string,Commit subject line at the later snapshot.
+file,field,type,reproducible,description
+"longitudinal_<project>.csv, 2 files in phase_4/",date,ISO-8601 datetime,yes,Author timestamp of the sampled commit.
+"longitudinal_<project>.csv, 2 files in phase_4/",sha,string (40 hex),yes,Full git commit SHA the snapshot was extracted at.
+"longitudinal_<project>.csv, 2 files in phase_4/",commit_msg,string,yes,"Commit subject line, truncated to 120 characters."
+"longitudinal_<project>.csv, 2 files in phase_4/",N,integer,yes,"Nodes in the lineage DAG, one per resolved dbt model."
+"longitudinal_<project>.csv, 2 files in phase_4/",M,integer,yes,"Directed edges, one per ref() call between two resolved models."
+"longitudinal_<project>.csv, 2 files in phase_4/",too_small,boolean,yes,True when N is below 5 and the descriptors were skipped.
+"longitudinal_<project>.csv, 2 files in phase_4/",D1_csi,"float [0,1]",no,"Community stability index. Excluded, see note below."
+"longitudinal_<project>.csv, 2 files in phase_4/",D1_n_comm,integer,no,"Louvain communities at gamma 1. Excluded, see note below."
+"longitudinal_<project>.csv, 2 files in phase_4/",D2_max_gini,"float [0,1]",yes,Maximum over depth of the Gini coefficient of the blast-radius distribution.
+"longitudinal_<project>.csv, 2 files in phase_4/",D3_alg_conn,float ≥ 0,yes,"Algebraic connectivity, the second-smallest Laplacian eigenvalue of the undirected connected skeleton."
+"longitudinal_<project>.csv, 2 files in phase_4/",D3_norm_gap,"float [0,1]",yes,Algebraic connectivity divided by the largest Laplacian eigenvalue.
+"longitudinal_<project>.csv, 2 files in phase_4/",D3_fiedler_bim,"float [0,1]",yes,"Bimodality coefficient of the Fiedler vector. Order-stable to 5e-6 relative, five orders below its corpus SD."
+"longitudinal_<project>.csv, 2 files in phase_4/",D4_cycle_rank_norm,float ≥ 0,yes,"Cycle rank (M - N + C) of the undirected skeleton, divided by N."

@@ -3,8 +3,8 @@
   \centering
   \footnotesize
   \caption{Longitudinal dbt lineage corpus. One snapshot per 30-day window
-    of commits touching the models path. Growth is the last snapshot over
-    the first. Drift counts descriptor-level step changes above 20\%.}
+    of commits touching the models path. Drift counts step changes above
+    20\% in a descriptor that is free of D1.}
   \label{tab:dataset}
   \begin{tabular}{lrlrrrrrrr}
     \toprule
@@ -12,14 +12,14 @@
     \cmidrule(lr){4-5}\cmidrule(lr){6-7}
     Project & Snap. & Date span & first$\to$last & min--max & first$\to$last & min--max & $N\times$ & $M\times$ & Drift \\
     \midrule
-    Cal-ITP & 51 & 2022-04 -- 2026-05 & 74$\to$631 & 74--631 & 69$\to$756 & 69--756 & 8.5$\times$ & 11.0$\times$ & 26 \\
-    Mattermost & 55 & 2020-01 -- 2025-01 & 16$\to$235 & 16--301 & 14$\to$376 & 14--517 & 14.7$\times$ & 26.9$\times$ & 18 \\
+    Mattermost & 55 & 2020-01 -- 2025-01 & 16$\to$235 & 16--301 & 14$\to$376 & 14--517 & 14.7$\times$ & 26.9$\times$ & 7 \\
+    Cal-ITP & 51 & 2022-04 -- 2026-05 & 74$\to$631 & 74--631 & 69$\to$756 & 69--756 & 8.5$\times$ & 11.0$\times$ & 10 \\
     \midrule
-    All & 106 & 2020-01 -- 2026-05 & \multicolumn{4}{c}{9.0 cumulative years} & & & 44 \\
+    All & 106 & 2020-01 -- 2026-05 & \multicolumn{4}{c}{9.0 cumulative years} & & & 17 \\
     \bottomrule
   \end{tabular}
   \par\vspace{3pt}
   \begin{minipage}{\linewidth}\footnotesize\raggedright
-  Neither series is monotone. Cal-ITP peaks at $N$=631 (2026-05) and $M$=756. Mattermost peaks at $N$=301 (2023-02) and $M$=517. Mattermost ends 21.9\% below its own peak.
+  Growth is the last snapshot over the first. 1 of 2 projects end below their own node peak, so a growth multiple is not the full range a graph traverses.
   \end{minipage}
 \end{table*}

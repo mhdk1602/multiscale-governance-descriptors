@@ -4,29 +4,29 @@
   \centering
   \footnotesize
   \caption{Longitudinal dbt lineage corpus. One snapshot per 30-day window
-    of commits touching the models path. Growth is the last snapshot over
-    the first. Drift counts descriptor-level step changes above 20\%.}
+    of commits touching the models path. Drift counts step changes above
+    20\% in a descriptor that is free of D1.}
   \label{tab:dataset}
   \begin{tabular}{lrr}
     \toprule
-    & Cal-ITP & Mattermost \\
+    & Mattermost & Cal-ITP \\
     \midrule
-    Snapshots & 51 & 55 \\
-    First snapshot & 2022-04-26 & 2020-01-13 \\
-    Last snapshot & 2026-05-08 & 2025-01-17 \\
-    Nodes, first$\to$last & 74$\to$631 & 16$\to$235 \\
-    Nodes, min--max & 74--631 & 16--301 \\
-    Edges, first$\to$last & 69$\to$756 & 14$\to$376 \\
-    Edges, min--max & 69--756 & 14--517 \\
-    Node growth & 8.5$\times$ & 14.7$\times$ \\
-    Edge growth & 11.0$\times$ & 26.9$\times$ \\
-    Drift events & 26 & 18 \\
+    Snapshots & 55 & 51 \\
+    First snapshot & 2020-01-13 & 2022-04-26 \\
+    Last snapshot & 2025-01-17 & 2026-05-08 \\
+    Nodes, first$\to$last & 16$\to$235 & 74$\to$631 \\
+    Nodes, min--max & 16--301 & 74--631 \\
+    Edges, first$\to$last & 14$\to$376 & 69$\to$756 \\
+    Edges, min--max & 14--517 & 69--756 \\
+    Node growth & 14.7$\times$ & 8.5$\times$ \\
+    Edge growth & 26.9$\times$ & 11.0$\times$ \\
+    Drift events & 7 & 10 \\
     Snapshot gap, med (d) & 29 & 29 \\
-    Snapshot gap, max (d) & 42 & 125 \\
+    Snapshot gap, max (d) & 125 & 42 \\
     \bottomrule
   \end{tabular}
   \par\vspace{3pt}
   \begin{minipage}{\linewidth}\footnotesize\raggedright
-  Corpus totals, 106 snapshots over 9.0 cumulative years with 44 drift events. Neither series is monotone. Cal-ITP peaks at $N$=631 (2026-05) and $M$=756. Mattermost peaks at $N$=301 (2023-02) and $M$=517. Mattermost ends 21.9\% below its own peak.
+  Corpus totals, 106 snapshots over 9.0 cumulative years with 17 drift events. Growth is the last snapshot over the first. 1 of 2 projects end below their own node peak, so a growth multiple is not the full range a graph traverses.
   \end{minipage}
 \end{table}
