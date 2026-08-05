@@ -67,10 +67,9 @@ nothing else.
 No corpus exists today because the instrumentation that would produce one is
 private by construction. OpenLineage defines an open standard for run-time
 lineage events and ships a dbt wrapper~\cite{openlineage}; Marquez is its
-reference backend and Egeria is a second one. All three are mature, all three
-are adopted, and the events they carry describe a company's own warehouse, so
-none of them can publish a historical record. Repository reconstruction is the
-remaining route.
+reference backend and Egeria is a second one. All three are mature and adopted,
+and the events they carry describe a company's own warehouse, so none can
+publish a historical record. Repository reconstruction is the remaining route.
 
 That route is not a parser invoked $N$ times, and I want the distinction visible
 here rather than defended in Section~\ref{sec:limits}. The frame is a
@@ -106,10 +105,10 @@ star bands for the same reason. S3 is the code search above. The union is
 Screening removed only candidates for which no monthly series can exist. Fewer
 than 40 commits on the default branch removed 2{,}275, fewer than 12 months
 between creation and last push removed 811, and unresolvable metadata removed
-one. What a repository looks like at HEAD was recorded and never used to
-exclude, because a HEAD test is blind to the adoption-and-abandonment lifecycle
-a longitudinal corpus should contain. One project in the release used dbt for
-two years, stopped, and still contributes 27 snapshots.
+one. HEAD was recorded and never used to exclude, because a HEAD test is blind
+to the adoption-and-abandonment lifecycle a longitudinal corpus should contain.
+One project used dbt for two years, stopped, and still contributes 27
+snapshots.
 
 The 631 survivors were cloned and extracted, and membership was decided from the
 extraction. A project enters the corpus on three conditions, at least 12 monthly
@@ -124,8 +123,7 @@ Two labels partition the corpus and both ship as columns. Composition separates
 55 analytics estates from 95 reusable packages and 4 demos by ordered rules, of
 which the independent one, shipping an \texttt{integration\_tests} project,
 reaches 0.857 accuracy alone on a hand-labelled sample of 28. The naming rule
-after it is partly circular on that sample and the release says so. Connectivity
-was tried as a classifier and rejected at 0.643.
+after it is partly circular on that sample and the release says so.
 
 I also split the corpus into 33 \texttt{core} and 121 \texttt{extended}
 projects. A package can clear the inclusion criteria with fifty model files and three
@@ -152,11 +150,10 @@ from a single \texttt{git cat-file -{}-batch} process per snapshot, so the
 worktree is never mutated and one clone can be read concurrently. Cal-ITP's 53
 snapshots take under 30 seconds on one core, against minutes for the
 checkout-per-snapshot predecessor. Two tests hold the shortcut honest. One
-asserts that HEAD, the porcelain status and the branch are unchanged after a
-run. The other rebuilds every commit of a scripted history both ways and asserts
-that the object-database read and a real checkout give the same nodes and the
-same edges, over a macro-passed ref, a commented-out ref, a vendored tree and a
-stem collision.
+asserts the worktree is untouched. The other rebuilds every commit of a scripted
+history both ways and asserts the object-database read and a real checkout give
+the same nodes and edges, over a macro-passed ref, a commented-out ref, a
+vendored tree and a stem collision.
 
 Comments are stripped before matching, \texttt{-{}-}, \texttt{/* */} and
 \texttt{\{\# \#\}} alike. Without that step a commented-out reference becomes an
@@ -210,13 +207,12 @@ snapshot, so a reader can rebuild any graph rather than trust the scalars.
 
 Two counts of this corpus circulate and I reconcile them here rather than let a
 reader find the gap. The release carries all 3{,}586 snapshots, 566 cumulative
-years and 989 drift events. The characterization script that drew Fig.~1 reports
-3{,}577, 560.9 and 621, because it drops the nine snapshots at
+years and 989 drift events. The characterization script behind Fig.~1 and
+Fig.~2 reports 3{,}577, 560.9 and 621, because it drops the nine snapshots at
 $N \leq 1$ where density is undefined, excludes D1 as order-dependent, and gates
 the giant-component descriptors to projects whose median component clears half
-of $N$. Snapshot cadence divides the same way, 39 days being the median
-project's own median gap and 33 days the median pooled over every gap. Each
-number is right for its stated scope, the release being the complete record and
+of $N$. Cadence divides the same way, 39 days per project against 33 pooled.
+Each number is right for its scope, the release being the complete record and
 the script the analyzable subset.
 
 Provenance is pinned rather than described. \texttt{MANIFEST.json} records the
@@ -239,10 +235,10 @@ sites are plain string literals and dbt resolves them, so the corpus reports the
 permissive parse.
 
 The aggregate is the number that would have misled. Across the corpus the anchor
-hides 43{,}893 of 503{,}925 edges, 8.7\,\%, and quoting that alone implies a
-uniform tax. The distribution says otherwise. The median project loses nothing,
-99 of the 154 lose no edge at all to the anchor, the ninetieth percentile is
-8.5\,\% and the worst project loses 54.4\,\%. Fidelity is a per-repository
+hides 43{,}893 of 503{,}925 edges, 8.7\,\%, which implies a uniform tax. The
+distribution says otherwise. The median project loses nothing, 99 of the 154
+lose no edge at all, the ninetieth percentile is 8.5\,\% and the worst loses
+54.4\,\%. Fidelity is a per-repository
 property and \texttt{corpus\_index.csv} reports it that way. Every row in
 \texttt{edges/} carries \texttt{capture\_mode}, so filtering to \texttt{strict}
 reconstructs the 460{,}032 edges of the anchored parse exactly.
@@ -254,9 +250,9 @@ The characterization supports the artifact and is deliberately short.
 \textbf{The canonical layer taxonomy does not describe the median public dbt
 project.} Staging, intermediate and mart is the architecture dbt's own
 documentation teaches. Across the 154 projects the median per-project share of
-intermediate models is exactly 0.00 and the median share of mart models is
-exactly 0.00. At their final snapshot, 56 projects have more unclassified models
-than staging, intermediate and mart put together. Layer labels come from naming
+intermediate models and the median share of mart models are both exactly 0.00,
+and at their final snapshot 56 projects have more unclassified models than the
+three named layers put together. Layer labels come from naming
 conventions rather than dbt metadata, so a private convention reads as
 unclassified. That is itself the finding. A taxonomy
 nobody names in a file path is not one a tool can rely on.
@@ -273,8 +269,8 @@ rests on.
 \textbf{Growth is real but modest.} The median project ends at 4.09 times its
 first-snapshot node count, and at 2.41 times its first \emph{viable} snapshot,
 the latter being the honest figure because many histories start at two or three
-models. Growth is heterogeneous rather than uniform, and the released
-per-project trajectories carry the spread the medians hide.
+models. Fig.~\ref{fig:growth} normalizes every trajectory to its own origin,
+and the spread around the median is the part a single multiple hides.
 
 \textbf{The failures are a finding.} Of the 631 repositories cloned, 186
 produced no usable series. Two had gone unreachable between harvest and clone.
@@ -282,16 +278,25 @@ Of the 184 with a recorded reason, 81 carry no \texttt{dbt\_project.yml} anywher
 on their first-parent history, which means GitHub's code index served me a file
 that had been deleted, and 78 declare model paths to which no commit ever wrote.
 A public mirror of an internal estate often publishes the project file and
-withholds the SQL. Anyone sizing a dbt study from search counts should expect to
-lose roughly a third of the hits this way.
+withholds the SQL, so anyone sizing a dbt study from search counts should expect
+to lose roughly a third of the hits.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig4_acyclicity_by_composition.pdf}
+\includegraphics[width=0.92\columnwidth]{fig4_acyclicity_by_composition.pdf}
 \caption{Per-project median normalized cycle rank, by composition. The value at
 $x=0$ reads directly as the share of projects with no cycle in the undirected
 skeleton. Demo projects ($n=4$) are omitted as too few for an ECDF.}
 \label{fig:acyclic}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.82\columnwidth]{fig2_growth_normalized.pdf}
+\caption{Node and edge counts normalized to each project's own first snapshot,
+all 154 projects, corpus median and interquartile range in black. The log
+ordinate spans three orders of magnitude.}
+\label{fig:growth}
 \end{figure}
 
 \section{Related datasets}
@@ -299,10 +304,9 @@ skeleton. Demo projects ($n=4$) are omitted as too few for an ECDF.}
 \textbf{Schema histories.} Vassiliadis et al.~\cite{vassiliadis2023} mine 195
 FOSS relational schema histories per commit without running the systems, and
 their framing of the absence of public schema histories is the one I echo here.
-The object separates us cleanly. They record how a storage schema changes; I
-record how the transformation topology above it changes, which is a different
-graph over different artifacts, and their 195 is a precedent for my 154 rather
-than a comparison I need to win.
+The object separates us cleanly. They record how a storage schema changes, I
+record how the transformation topology above it changes, and their 195 is a
+precedent for my 154 rather than a comparison I need to win.
 
 \textbf{Declarative artifact histories.} Cardoen et al.~\cite{cardoen2024}
 release the commit histories of GitHub Actions workflow files and the
@@ -315,16 +319,15 @@ deliberately theirs.
 \textbf{Static pipeline extraction.} APEX-DAG~\cite{eggers2025} extracts data
 pipelines from Python ML code by static analysis, explicitly without executing
 the code. Extraction without execution is therefore already claimed and I do not
-repeat it. Two things differ. APEX-DAG infers
-dataflow where I read an explicit declaration, and it operates on single
-snapshots and releases no dataset, where the longitudinal axis and the release
-are the whole of my contribution. The sentence I do claim is narrow. This is the
-first publicly available longitudinal corpus of data-transformation lineage.
+repeat it. Two things differ. APEX-DAG infers dataflow where I read an explicit
+declaration, and it works on single snapshots and releases no dataset, where the
+longitudinal axis and the release are the whole of my contribution. The sentence
+I claim is narrow. This is the first publicly available longitudinal corpus of
+data-transformation lineage.
 
 \textbf{Workflow execution traces.} WfCommons~\cite{coleman2022} publishes
 traces of workflow runs, a record of execution rather than of repository-derived
-topology, and the precedent that a workflow-structure corpus of roughly 180
-units is publishable.
+topology, and the precedent that a corpus of roughly 180 units is publishable.
 
 \section{Use to date, and what to improve}
 
@@ -339,10 +342,10 @@ organizations. No other use has been published.
 Four improvements are worth naming. Resolving \texttt{source()} and seeds from
 the schema YAML beside the models would close most of the gap against a compiled
 manifest. Git similarity detection would let a rename read as a rename rather
-than as a birth and a death. A real \texttt{dbt compile} manifest for the subset
-of projects that still build would give a ground-truth calibration set instead
-of my single audited project. And an event-archive frame would escape the
-pagination cap that costs me 3{,}133 code-search hits.
+than a birth and a death. A \texttt{dbt compile} manifest for the projects that
+still build would give a ground-truth calibration set instead of my single
+audited project. And an event-archive frame would escape the pagination cap that
+costs me 3{,}133 code-search hits.
 
 \section{Research opportunities}
 
@@ -350,14 +353,13 @@ Four questions become answerable, and nothing else public can answer them.
 
 Do transformation DAGs stabilize the way relational schemas do? Skoulis et
 al.~\cite{skoulis2015} found expansion under a perfective-maintenance brake in
-open-source databases. The corpus carries 566 project-years and 989 marked drift
-events, so their named shapes can be tested directly on a different artifact.
+open-source databases, and 566 project-years with 989 marked drift events let
+their named shapes be tested on a different artifact.
 
 Does documentation keep pace with structure? Every snapshot carries
-\texttt{doc\_rate} and \texttt{test\_rate} beside $N$. A within-project analysis
-over 119 projects with a non-constant series already gives a median Spearman
-$\rho$ of $-0.152$ between documentation rate and size, a weak negative worth a
-proper treatment.
+\texttt{doc\_rate} and \texttt{test\_rate} beside $N$, and the 119 projects with
+a non-constant series give a median within-project Spearman $\rho$ of $-0.152$
+against size, a weak negative worth a proper treatment.
 
 Does layer composition converge as independently developed estates mature? The
 institutional-convergence question becomes testable without interviewing
@@ -366,30 +368,6 @@ anybody.
 And what does an abandoned dbt estate look like on the way down? Thirty-nine
 projects end below their own node peak, one of them 84.6\,\% below, so a growth
 multiple is not the range a graph traverses.
-
-\begin{table}[t]
-\centering
-\caption{Descriptor sensitivity to node insertion order, over 12 permutations
-of each of 40 corpus graphs. Range is max minus min across permutations of the
-same graph, so a reproducible descriptor sits at zero. D1 is the reason the
-characterization excludes it.}
-\label{tab:ordersens}
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lrrrc}
-\toprule
-Field & Median & Mean & Max & Released \\
-\midrule
-\texttt{D1\_csi} & 0.1429 & 0.1607 & 0.5714 & no \\
-\texttt{D1\_n\_comm} & 0 & 0.9250 & 5 & no \\
-\texttt{D2\_max\_gini} & 0 & 0 & 0 & yes \\
-\texttt{D3\_alg\_conn} & 2.2e--15 & 4.6e--15 & 2.5e--14 & yes \\
-\texttt{D3\_norm\_gap} & 1.9e--16 & 2.1e--16 & 8.4e--16 & yes \\
-\texttt{D3\_fiedler\_bim} & 2.1e--07 & 0.0061 & 0.2424 & yes \\
-\texttt{D4\_cycle\_rank\_norm} & 0 & 0 & 0 & yes \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 \section{Limitations}
 \label{sec:limits}
@@ -410,10 +388,10 @@ single gap in the corpus is 1{,}686 days.
 
 Two descriptors are unsafe and I say which. \texttt{D1\_csi} and
 \texttt{D1\_n\_comm} come from Louvain, whose result depends on node insertion
-order. Table~\ref{tab:ordersens} measures that, and \texttt{D1\_csi} moves by up
-to 0.5714 against a published standard deviation of 0.123 while five of the
-other descriptors do not move at all. Both D1 columns are excluded from every
-figure. \texttt{D3\_fiedler\_bim} is not unstable but
+order. Over 40 corpus snapshots at twelve node orderings each, \texttt{D1\_csi}
+ranges by up to 0.5714 against a corpus standard deviation of 0.123, while D2
+and D4 do not move at all and the two stable D3 fields agree to
+$2.5\times10^{-14}$. Both D1 columns are excluded from every figure. \texttt{D3\_fiedler\_bim} is not unstable but
 undefined wherever the second Laplacian eigenvalue is degenerate, since the
 Fiedler vector is then not unique, and the corpus contains a 15-node component
 whose $\lambda_2$ through $\lambda_6$ are separated by $4.4\times10^{-16}$.
@@ -425,15 +403,15 @@ estates, and \texttt{ref()} records declared dependencies, not executed ones.
 
 Finally, path resolution can silently shrink a real estate.
 \texttt{catalyst-cooperative/pudl} has 11{,}147 commits and was excluded at a
-peak of 2 nodes, because the models the extractor resolved were not the models
-the project runs. Nothing detects that case.
+peak of 2 nodes, because the models the extractor resolved were not the ones the
+project runs, and nothing detects that case.
 
 \section{Availability}
 
 Corpus, tool, frame and manifest are MIT licensed under concept DOI
 \href{https://doi.org/10.5281/zenodo.20099999}{10.5281/zenodo.20099999}, with a
 \texttt{requirements.txt} and a command line per stage. Data and code carry
-separate citable version DOIs.
+separate version DOIs.
 
 \balance
 
