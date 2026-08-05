@@ -5,13 +5,18 @@
 ### Longitudinal dbt lineage corpus, two projects to 154 (2026-08-04)
 
 The longitudinal study in `artifacts/phase_4/` rested on Cal-ITP and Mattermost,
-106 snapshots between them. `artifacts/phase_4_corpus/` adds a census of the
-public dbt population beside it. **154 projects, 3,586 monthly snapshots, 566
+106 snapshots between them. `artifacts/phase_4_corpus/` adds a systematic
+sample of the public dbt population beside it, drawn from a documented and
+reproducible frame. **154 projects, 3,586 monthly snapshots, 566
 cumulative project-years, 2016-07-27 to 2026-08-04.** Nothing in
 `artifacts/phase_4/` was changed.
 
 Sampling frame of 3,718 repositories, recorded per entry in
-`sampling_frame.csv`, from three strata.
+`sampling_frame.csv`, from three strata. Every member of the frame was cloned
+and extracted, so nothing is sampled out of it, but the frame is not the
+population. GitHub code search caps pagination, and the twelve-band
+partitioning recovered 2,207 of the 5,340 hits it reports, so the frame is a
+documented subset of what exists rather than an enumeration of it.
 
 - The 20 entries in `InfuseAI/awesome-public-dbt-projects`.
 - GitHub repository search over five dbt topics, each split into ten star bands.
@@ -141,14 +146,111 @@ with the recorded artifact, and N, M and `D2_max_gini` identical to the last
 digit. Cal-ITP gives 53 against the recorded 51, because the repository gained
 three months of history, and every one of the 50 shared commits is identical.
 
+#### The published preprint, checked rather than assumed
+
+Three questions were open about whether the defects reach the published paper.
+All three are answered by execution.
+
+**`tab:exp1` is unaffected and reproduces exactly.** The synthetic generators in
+`generators.py` build node order from ordered lists (`src_0`, `stg_0`, ...),
+never from a set, so the hash-seed defect cannot reach them. Re-derived under
+five process hash seeds including two `random` runs, D1 CSI comes back
+0.6526 well against 0.3737 poor, d = +3.8966, U = 100, p = 1.64e-4, and D1
+fragmentation onset 0.7999 against 0.1535, d = +4.7352, U = 100, p = 1.49e-4.
+Byte-identical across all five. The published 0.653 / 0.374 / +3.90 and
+0.800 / 0.154 / +4.74 stand, and the FDR-corrected significance is untouched.
+The defect is confined to `extract_lineage_at_commit`, which only the real-data
+dbt lineage path uses.
+
+**The published 223-node estate is one dbt project, not several.** The
+multi-project union bug therefore does not reach phase 3. The estate has 38
+components and a giant component of 185 nodes, 82.96 percent, but all 36
+isolated nodes are `source/raw` tables that nothing references, 68 percent of
+edges cross domain boundaries, and 25 of the 26 domains have nodes inside the
+giant component with 13 straddling its boundary. That is one interconnected
+estate with unreferenced sources, not a union of independent projects, so the
+giant-component reduction there is the disclosed behaviour applied to a single
+graph.
+
+**Twelve of the 44 published drift events are hash-seed artifacts.** Re-derived
+with sorted insertion under the same 20 percent step-change rule on the same two
+projects, every one of the 17 comparable D3 and D4 events still fires, and 14 of
+the 26 comparable D1 events do. The corrected series produces 40 events against
+44, but the count understates the change, since the D1 event set differs rather
+than merely shrinking.
+
+| descriptor | published | comparable | still fires |
+|---|---|---|---|
+| D1_csi | 27 | 26 | 14 |
+| D3_alg_conn | 8 | 8 | 8 |
+| D4_cycle_rank_norm | 9 | 9 | 9 |
+
+#### The entry point could destroy a published artifact
+
+`experiments/phase_4/exp_longitudinal_dbt.py` is the command the README
+documents. It had no clone step, so on any machine without `/tmp/cal-itp` it
+skipped both projects, fell through to the bottom with an empty summary, and
+overwrote `artifacts/phase_4/summary.json` with `{"drift_events_detected": 0}`
+while exiting 0. Following the documented instructions in a fresh checkout
+destroyed a published artifact and reported success.
+
+It now clones or raises, refuses to write when no project produced a series, and
+takes `--out-dir` so a run can be directed away from the published artifacts.
+The exclusion test that read `'macros' not in str(f)` against the absolute path,
+which would have dropped every model in any checkout under a directory named
+"macros", now tests the path relative to the models directory.
+
+#### Composition, because size and age do not separate the population
+
+62 percent of the corpus is dbt packages, 36 percent production analytics
+estates, 3 percent demos. `corpus_index.csv` carries `composition` and the rule
+that assigned it.
+
+Connectivity was the obvious classifier and it does not work. Best
+single-threshold accuracy on `giant_component_frac` is 0.643 over a 28-project
+hand-labelled sample. `fivetran/dbt_zendesk`, a package, has a giant component
+of 1.000, above every estate in the sample, and `duneanalytics/spellbook`, an
+estate, sits at 0.328. Fivetran's `_source` packages score near zero while their
+downstream transform packages score near one, so connectivity separates source
+packages from everything else rather than packages from estates.
+
+The rule that works is `integration_tests/`, which dbt packages ship and estates
+do not, at 0.857 alone. Combined with name and documentation signals the ordered
+rule reaches 0.964 on the sample, with the caveat that the name component is
+circular there because the labels were partly assigned from names.
+
+#### Yield curve
+
+`composition_and_yield.json`, computed from the raw extraction rather than the
+built index so it is not censored by the chosen floor.
+
+| snapshot floor | projects | snapshots | median peak N |
+|---|---|---|---|
+| 3 | 278 | 4,394 | 34 |
+| 6 | 228 | 4,195 | 39 |
+| 9 | 184 | 3,888 | 44 |
+| **12** | **154** | **3,586** | **44** |
+| 18 | 92 | 2,716 | 61 |
+| 24 | 57 | 2,015 | 97 |
+| 36 | 26 | 1,109 | 145 |
+| 48 | 7 | 366 | 530 |
+
+Twelve is the elbow. Dropping to six adds 74 projects and only 609 snapshots,
+eight apiece, while raising to eighteen costs 62 projects and 870 snapshots.
+
 #### Tool and tests
 
 - `src/governance_descriptors/dbt_lineage.py` replaces the two-project script.
   Snapshots are read with `git ls-tree` and `git cat-file --batch` instead of
   `git checkout`, so nothing is written to the worktree and repositories can be
   read concurrently. Cal-ITP's 53 snapshots take under 30 seconds.
-- `tests/test_dbt_lineage.py` adds 37 unit tests including a regression for each
-  defect above. The suite goes from 48 to 85.
+- `tests/test_dbt_lineage.py` adds 38 unit tests including a regression for each
+  defect above. The suite goes from 48 to 86.
+  `test_d1_is_identical_across_process_hash_seeds` spawns real interpreters
+  under four `PYTHONHASHSEED` values, because asserting sorted order in-process
+  cannot catch a defect that only appears across processes.
+- Tests that touch git are marked `slow`. `pytest -m "not slow"` runs 71 tests
+  in 9 seconds, the full suite 86 in 54 seconds on an idle machine.
 - `experiments/phase_4/dbt_corpus/` holds the pipeline and a README with the
   exact commands.
 - `MANIFEST.json` pins every sampled commit SHA and carries a SHA-256 for every

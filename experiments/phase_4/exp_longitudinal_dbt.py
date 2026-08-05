@@ -89,14 +89,24 @@ def extract_lineage_at_commit(repo, sha, models_subpath):
     if not models_dir.exists():
         return None
 
+    # Exclusions are tested against the path relative to the models directory.
+    # Testing the absolute path, as this did originally, drops every model in
+    # any checkout whose parent directory happens to contain "macros".
     sql_files = [f for f in models_dir.rglob("*.sql")
-                 if 'macros' not in str(f) and '/tests/' not in str(f)
-                 and '/snapshots/' not in str(f)]
+                 if 'macros' not in str(f.relative_to(models_dir))
+                 and '/tests/' not in str(f.relative_to(models_dir))
+                 and '/snapshots/' not in str(f.relative_to(models_dir))]
     ref_pat = re.compile(r"\{\{\s*ref\(\s*['\"](\w+)['\"]\s*\)\s*\}\}", re.IGNORECASE)
     model_names = {f.stem for f in sql_files}
     g = nx.DiGraph()
-    g.add_nodes_from(model_names)
-    for f in sql_files:
+    # Sorted, not set order. Python randomises string set iteration per process
+    # via PYTHONHASHSEED, NetworkX's Louvain is an order-sensitive greedy pass,
+    # and D1_csi therefore differed between runs of this script on an unchanged
+    # repository. The artifacts in artifacts/phase_4/ were produced before this
+    # line was sorted, so their D1_csi and D1_n_comm columns will not reproduce.
+    # N, M, D2 and D4 never depended on the ordering and reproduce exactly.
+    g.add_nodes_from(sorted(model_names))
+    for f in sorted(sql_files, key=lambda p: str(p)):
         try:
             for r in ref_pat.findall(f.read_text(errors='ignore')):
                 if r in model_names:
@@ -206,20 +216,57 @@ def detect_drift_events(df, descriptor_col, threshold_sigma=2.5):
     return drifts
 
 
+PROJECTS = [
+    ('https://github.com/cal-itp/data-infra.git', 'warehouse/models', 'cal-itp'),
+    ('https://github.com/mattermost/mattermost-data-warehouse.git',
+     'transform/snowflake-dbt/models', 'mattermost'),
+]
+
+
+def clone_or_fail(url, dest):
+    """Clone if absent. Raise rather than skip.
+
+    This script used to `continue` past a missing clone, reach the bottom with
+    an empty summary, and overwrite artifacts/phase_4/summary.json with
+    {"drift_events_detected": 0} while exiting 0. Following the documented
+    command in a fresh checkout destroyed a published artifact and reported
+    success. A missing repository is now a hard failure.
+    """
+    if os.path.isdir(os.path.join(dest, '.git')):
+        return dest
+    print(f"Cloning {url} -> {dest}", flush=True)
+    proc = subprocess.run(
+        ['git', 'clone', '--quiet', '--single-branch', '--no-tags', url, dest],
+        capture_output=True, text=True,
+        env=dict(os.environ, GIT_TERMINAL_PROMPT='0'))
+    if proc.returncode != 0 or not os.path.isdir(os.path.join(dest, '.git')):
+        raise SystemExit(
+            f"clone failed for {url}: {proc.stderr.strip()[:300]}\n"
+            "Refusing to continue. Running with no repositories would write an "
+            "empty summary over the published artifact.")
+    return dest
+
+
 if __name__ == '__main__':
-    out_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'artifacts', 'phase_4')
+    import argparse
+
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--clones', default=os.environ.get('DBT_CLONE_DIR', '/tmp'),
+                    help='directory to clone the two projects into')
+    ap.add_argument('--out-dir', default=os.path.join(
+        os.path.dirname(__file__), '..', '..', 'artifacts', 'phase_4'),
+        help='where to write the artifacts. Point this somewhere else to '
+             'avoid overwriting the published phase_4 outputs.')
+    args = ap.parse_args()
+
+    out_dir = args.out_dir
     os.makedirs(out_dir, exist_ok=True)
 
     summary = {}
     all_drift = []
 
-    for repo, sub, name in [
-        ('/tmp/cal-itp', 'warehouse/models', 'cal-itp'),
-        ('/tmp/mattermost', 'transform/snowflake-dbt/models', 'mattermost'),
-    ]:
-        if not os.path.isdir(repo):
-            print(f"Skipping {name}: repo not found at {repo}")
-            continue
+    for url, sub, name in PROJECTS:
+        repo = clone_or_fail(url, os.path.join(args.clones, name))
         df = run_project(repo, sub, name, window_days=30, out_dir=out_dir)
         if df is None or len(df) < 4:
             continue
@@ -231,6 +278,13 @@ if __name__ == '__main__':
             if len(drifts) > 0:
                 drifts['project'] = name
                 all_drift.append(drifts)
+
+    projects_measured = [k for k in summary if k != 'drift_events_detected']
+    if not projects_measured:
+        raise SystemExit(
+            "No project produced a usable series. Refusing to write "
+            f"{out_dir}/summary.json, because an empty summary here overwrites "
+            "the published artifact with a result that describes nothing.")
 
     if all_drift:
         all_drift_df = pd.concat(all_drift, ignore_index=True)

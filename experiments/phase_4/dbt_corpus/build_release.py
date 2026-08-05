@@ -239,6 +239,22 @@ branch, under 12 months between creation and last push, forks, and empty
 repositories. Everything else was cloned and extracted, and membership was
 decided from the extraction rather than from the screen.
 
+## Reconstructing any snapshot
+
+`MANIFEST.json` pins `head_sha`, the commit each repository was cloned at, and
+`projects/<id>/extraction.json` lists the SHA of every sampled commit. Neither
+depends on the repository still looking the way it did, so a row stays
+reconstructible after the project moves on.
+
+    git clone <repository>
+    git -C <repo> checkout <head_sha>          # the state the corpus saw
+    git -C <repo> ls-tree -r <snapshot_sha> -- <model_paths>
+
+Rerunning the pipeline against a live repository will not reproduce the corpus,
+because repositories gain commits, get renamed, go private and get deleted.
+Cal-ITP had 1,019 model-touching commits when the two-project study ran and
+1,049 when this corpus was built. Reproduce from the pinned SHAs, not from HEAD.
+
 ## Reproducibility
 
 `D1_csi` and `D1_n_comm` come from a Louvain resolution sweep. Louvain is
@@ -270,6 +286,33 @@ computed from.
   conventions, not from dbt metadata. Projects that do not follow a convention
   land in `n_unclassified`.
 """
+
+
+def refresh_manifest(dest):
+    """Recompute the checksum table in place.
+
+    Composition labelling and the D1 order-sensitivity measurement both need a
+    built release to run against, so they necessarily write after the manifest
+    exists. Without this the manifest would describe a release that no longer
+    matches it, which is worse than having no manifest.
+    """
+    mpath = os.path.join(dest, 'MANIFEST.json')
+    manifest = json.load(open(mpath))
+    checksums = {}
+    for root, _dirs, files in os.walk(dest):
+        for fn in sorted(files):
+            p = os.path.join(root, fn)
+            rel = os.path.relpath(p, dest)
+            if rel == 'MANIFEST.json':
+                continue
+            checksums[rel] = sha256_file(p)
+    manifest['sha256'] = checksums
+    manifest['manifest_refreshed_utc'] = datetime.now(timezone.utc).isoformat(
+        timespec='seconds')
+    with open(mpath, 'w') as f:
+        json.dump(manifest, f, indent=1)
+    print(f'refreshed {len(checksums)} checksums in {mpath}')
+    return 0
 
 
 def sha256_file(path):
@@ -384,21 +427,26 @@ def write_csv(path, columns, rows):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--results', nargs='+', required=True)
+    ap.add_argument('--results', nargs='+', default=[])
     ap.add_argument('--dest', required=True)
-    ap.add_argument('--decisions', required=True,
+    ap.add_argument('--decisions', default='',
                     help='frame/decisions.json from finalize_frame.py')
     ap.add_argument('--min-snapshots', type=int, default=12)
     ap.add_argument('--min-nodes', type=int, default=10)
     ap.add_argument('--core-min-nodes', type=int, default=25)
     ap.add_argument('--core-min-snapshots', type=int, default=24)
     ap.add_argument('--core-min-giant-frac', type=float, default=0.5)
+    ap.add_argument('--refresh-manifest-only', action='store_true',
+                    help='recompute the SHA-256 table over an existing release, '
+                         'for steps that add or edit files after the build')
     ap.add_argument('--attach', nargs='*', default=[],
                     help='extra files to copy into the release and checksum, '
                          'for outputs produced from an earlier build')
     a = ap.parse_args()
 
     dest = a.dest
+    if a.refresh_manifest_only:
+        return refresh_manifest(dest)
     shutil.rmtree(dest, ignore_errors=True)
     os.makedirs(os.path.join(dest, 'projects'), exist_ok=True)
 

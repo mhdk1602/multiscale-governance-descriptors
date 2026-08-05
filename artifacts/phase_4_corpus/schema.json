@@ -286,7 +286,13 @@
     {
      "name": "error"
     }
-   ]
+   ],
+   "added_after_build": {
+    "composition": "production analytics estate, dbt package, documentation site, or demo. See composition_and_yield.json for the rule order and its validation.",
+    "composition_rule": "which rule assigned the composition label",
+    "has_integration_tests": "the repository ships an integration_tests project, the strongest independent package signal at 0.857 accuracy",
+    "consumes_packages": "a packages.yml exists, meaning the repository consumes dbt packages"
+   }
   },
   "excluded.csv": {
    "description": "Every repository that was cloned and extracted but did not meet the inclusion criteria, with the reason.",
@@ -308,6 +314,12 @@
   },
   "MANIFEST.json": {
    "description": "Dataset provenance. Repository URL, default branch, HEAD SHA, resolved model paths, first and last snapshot SHA and date, extraction timestamps, and a SHA-256 for every other file in the release."
+  },
+  "composition_and_yield.json": {
+   "description": "Composition distribution, the classifier rules and their validation, and the corpus size against the snapshot floor."
+  },
+  "d1_order_sensitivity.json": {
+   "description": "How far each descriptor moves when only the node insertion order changes. D2 and D4 move by exactly zero, D1_csi by up to 0.571."
   }
  },
  "conventions": {

@@ -121,7 +121,10 @@ paper needs the size of that effect rather than the fact of it.
 
 ## What is deliberately not automated
 
-The corpus is a census of the frame at one point in time. Rerunning it will not
+The corpus is every member of the frame at one point in time, and the frame is
+a documented subset of the population rather than an enumeration of it, because
+GitHub code search caps pagination at 1,000 results per query and the size-band
+partitioning recovers 2,207 of the 5,340 hits it reports. Rerunning it will not
 reproduce it exactly, because repositories gain commits, get renamed, go private
 and get deleted. Two of the twenty curated entries were already unreachable when
 this corpus was built. `MANIFEST.json` pins every sampled commit SHA, so the

@@ -11,6 +11,7 @@ the defect coming back.
 
 Run: python -m pytest tests/ -q
 """
+import json
 import os
 import shutil
 import subprocess
@@ -159,6 +160,7 @@ def test_sample_one_per_window_handles_empty_and_single():
 # Lineage reconstruction
 # --------------------------------------------------------------------------- #
 
+@pytest.mark.slow
 def test_extract_lineage_resolves_refs_between_models(simple_repo):
     head = git(simple_repo, "rev-parse", "HEAD").strip()
     g, meta = extract_lineage_at_commit(simple_repo, head, ["models"])
@@ -169,6 +171,7 @@ def test_extract_lineage_resolves_refs_between_models(simple_repo):
     assert meta["n_sql_files"] == 12
 
 
+@pytest.mark.slow
 def test_extract_lineage_ignores_refs_to_unknown_models(tmp_path):
     repo = init_repo(str(tmp_path / "unknown"))
     write(repo, "dbt_project.yml", "name: u\n")
@@ -182,6 +185,7 @@ def test_extract_lineage_ignores_refs_to_unknown_models(tmp_path):
     assert "a_source_not_a_model" not in g
 
 
+@pytest.mark.slow
 def test_extract_lineage_node_order_is_sorted_not_hash_dependent(simple_repo):
     """Regression. Set iteration order made D1 vary with PYTHONHASHSEED."""
     head = git(simple_repo, "rev-parse", "HEAD").strip()
@@ -189,6 +193,52 @@ def test_extract_lineage_node_order_is_sorted_not_hash_dependent(simple_repo):
     assert list(g.nodes()) == sorted(g.nodes())
 
 
+D1_PROBE = r'''
+import json, sys
+sys.path.insert(0, {src!r})
+from governance_descriptors.dbt_lineage import (
+    compute_descriptors_safe, extract_lineage_at_commit)
+g, _m = extract_lineage_at_commit({repo!r}, {sha!r}, ["models"])
+d = compute_descriptors_safe(g)
+print(json.dumps({{k: d[k] for k in
+    ("N", "M", "D1_csi", "D1_n_comm", "D2_max_gini", "D4_cycle_rank_norm")}}))
+'''
+
+
+@pytest.mark.slow
+def test_d1_is_identical_across_process_hash_seeds(simple_repo, tmp_path):
+    """Regression, and the one that would have caught the published defect.
+
+    The predecessor built its node set with `{f.stem for f in sql_files}` and
+    inserted straight from it. CPython randomises string set iteration per
+    process, Louvain is an order-sensitive greedy pass, and D1_csi therefore
+    differed between runs of unchanged code on an unchanged repository. On one
+    Cal-ITP commit three hash seeds gave 0.6429, 0.7857 and 0.5000.
+
+    Asserting sorted order in-process is not enough to catch that, because the
+    defect only shows across processes. This spawns real interpreters.
+    """
+    src = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src"))
+    head = git(simple_repo, "rev-parse", "HEAD").strip()
+    probe = tmp_path / "probe.py"
+    probe.write_text(D1_PROBE.format(src=src, repo=simple_repo, sha=head))
+
+    results = []
+    for hashseed in ("0", "1", "2", "random"):
+        env = dict(os.environ, PYTHONHASHSEED=hashseed)
+        out = subprocess.run([sys.executable, str(probe)], capture_output=True,
+                             text=True, env=env, check=True).stdout
+        results.append((hashseed, json.loads(out)))
+
+    first = results[0][1]
+    for hashseed, got in results[1:]:
+        assert got == first, (
+            f"descriptors changed under PYTHONHASHSEED={hashseed}. "
+            f"{first} became {got}. Node insertion order has stopped being "
+            f"deterministic, which silently corrupts D1.")
+
+
+@pytest.mark.slow
 def test_extract_lineage_skips_macros_tests_and_snapshots(tmp_path):
     repo = init_repo(str(tmp_path / "skips"))
     write(repo, "dbt_project.yml", "name: s\n")
@@ -202,6 +252,7 @@ def test_extract_lineage_skips_macros_tests_and_snapshots(tmp_path):
     assert set(g.nodes()) == {f"m{i}" for i in range(5)}
 
 
+@pytest.mark.slow
 def test_extract_lineage_excludes_vendored_package_models(tmp_path):
     """Regression. dbt_utils models were being counted as project models."""
     repo = init_repo(str(tmp_path / "vendored"))
@@ -217,6 +268,7 @@ def test_extract_lineage_excludes_vendored_package_models(tmp_path):
     assert not any(n.startswith("vendor_") for n in g.nodes())
 
 
+@pytest.mark.slow
 def test_extract_lineage_returns_none_when_no_model_sql(tmp_path):
     repo = init_repo(str(tmp_path / "empty"))
     write(repo, "dbt_project.yml", "name: e\n")
@@ -231,6 +283,7 @@ def test_extract_lineage_returns_none_when_no_model_sql(tmp_path):
 # Project discovery and selection
 # --------------------------------------------------------------------------- #
 
+@pytest.mark.slow
 def test_discover_model_paths_resolves_relative_to_the_config(tmp_path):
     repo = init_repo(str(tmp_path / "nested"))
     write(repo, "transform/dbt_project.yml",
@@ -242,6 +295,7 @@ def test_discover_model_paths_resolves_relative_to_the_config(tmp_path):
     assert projects[0]["name"] == "nested"
 
 
+@pytest.mark.slow
 def test_path_universe_picks_the_project_with_the_most_commits(tmp_path):
     """Two coexisting dbt projects are not one graph. Track the busier one."""
     repo = init_repo(str(tmp_path / "two"))
@@ -267,6 +321,7 @@ def test_path_universe_picks_the_project_with_the_most_commits(tmp_path):
     assert info["n_configs_chained"] == 1
 
 
+@pytest.mark.slow
 def test_path_universe_chains_a_relocated_project(tmp_path):
     """One project that moved is one series, not two rivals."""
     repo = init_repo(str(tmp_path / "moved"))
@@ -356,6 +411,7 @@ def test_descriptors_are_invariant_to_node_insertion_order():
 # End to end
 # --------------------------------------------------------------------------- #
 
+@pytest.mark.slow
 def test_run_project_produces_a_monthly_series(simple_repo, tmp_path):
     """Four commits a calendar month apart give three snapshots, not four.
 
@@ -379,6 +435,7 @@ def test_run_project_produces_a_monthly_series(simple_repo, tmp_path):
     assert os.path.exists(os.path.join(out, "simple.json"))
 
 
+@pytest.mark.slow
 def test_run_project_records_layer_counts(simple_repo, tmp_path):
     res = run_project(simple_repo, "simple", "", str(tmp_path / "o"),
                       verbose=False)
@@ -388,6 +445,7 @@ def test_run_project_records_layer_counts(simple_repo, tmp_path):
     assert last["n_intermediate"] == 1
 
 
+@pytest.mark.slow
 def test_run_project_reports_a_repo_with_no_dbt_project_as_failed(tmp_path):
     repo = init_repo(str(tmp_path / "nodbt"))
     write(repo, "README.md", "not a dbt project")
@@ -397,6 +455,7 @@ def test_run_project_reports_a_repo_with_no_dbt_project_as_failed(tmp_path):
     assert "dbt_project.yml" in res["error"]
 
 
+@pytest.mark.slow
 def test_run_project_reports_partial_when_a_commit_has_no_models(tmp_path):
     """A published config with the models removed is a gap, not a crash."""
     repo = init_repo(str(tmp_path / "gap"))
@@ -416,6 +475,7 @@ def test_run_project_reports_partial_when_a_commit_has_no_models(tmp_path):
     assert res["snapshot_errors"][0]["reason"] == "no model SQL at this commit"
 
 
+@pytest.mark.slow
 def test_run_project_does_not_touch_the_worktree(simple_repo, tmp_path):
     """Regression. The predecessor ran git checkout per snapshot."""
     before = git(simple_repo, "rev-parse", "HEAD").strip()

@@ -83,6 +83,22 @@ branch, under 12 months between creation and last push, forks, and empty
 repositories. Everything else was cloned and extracted, and membership was
 decided from the extraction rather than from the screen.
 
+## Reconstructing any snapshot
+
+`MANIFEST.json` pins `head_sha`, the commit each repository was cloned at, and
+`projects/<id>/extraction.json` lists the SHA of every sampled commit. Neither
+depends on the repository still looking the way it did, so a row stays
+reconstructible after the project moves on.
+
+    git clone <repository>
+    git -C <repo> checkout <head_sha>          # the state the corpus saw
+    git -C <repo> ls-tree -r <snapshot_sha> -- <model_paths>
+
+Rerunning the pipeline against a live repository will not reproduce the corpus,
+because repositories gain commits, get renamed, go private and get deleted.
+Cal-ITP had 1,019 model-touching commits when the two-project study ran and
+1,049 when this corpus was built. Reproduce from the pinned SHAs, not from HEAD.
+
 ## Reproducibility
 
 `D1_csi` and `D1_n_comm` come from a Louvain resolution sweep. Louvain is

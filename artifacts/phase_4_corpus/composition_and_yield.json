@@ -1,0 +1,74 @@
+{
+ "composition_distribution": {
+  "estate": 55,
+  "package": 95,
+  "demo": 4
+ },
+ "classifier": {
+  "rules_in_order": [
+   "ships an integration_tests project -> package",
+   "repository name indicates a docs site -> documentation",
+   "repository name indicates a demo or tutorial -> demo",
+   "repository name matches the dbt package convention -> package",
+   "otherwise -> estate"
+  ],
+  "validation": {
+   "n": 28,
+   "accuracy_estate_vs_other": 0.9643
+  },
+  "caveat": "The name rule is circular on the validation sample, because the hand labels were partly assigned from the names. The integration_tests rule is independent and reaches 0.857 alone on the same sample.",
+  "rejected": {
+   "giant_component_frac": "best single-threshold accuracy 0.643 on the same sample. A package can be fully connected and an estate can be sparse, so connectivity does not separate the classes."
+  }
+ },
+ "yield_curve": [
+  {
+   "snapshot_floor": 3,
+   "projects": 278,
+   "snapshots": 4394,
+   "median_peak_nodes": 34
+  },
+  {
+   "snapshot_floor": 6,
+   "projects": 228,
+   "snapshots": 4195,
+   "median_peak_nodes": 39
+  },
+  {
+   "snapshot_floor": 9,
+   "projects": 184,
+   "snapshots": 3888,
+   "median_peak_nodes": 44
+  },
+  {
+   "snapshot_floor": 12,
+   "projects": 154,
+   "snapshots": 3586,
+   "median_peak_nodes": 44
+  },
+  {
+   "snapshot_floor": 18,
+   "projects": 92,
+   "snapshots": 2716,
+   "median_peak_nodes": 61
+  },
+  {
+   "snapshot_floor": 24,
+   "projects": 57,
+   "snapshots": 2015,
+   "median_peak_nodes": 97
+  },
+  {
+   "snapshot_floor": 36,
+   "projects": 26,
+   "snapshots": 1109,
+   "median_peak_nodes": 145
+  },
+  {
+   "snapshot_floor": 48,
+   "projects": 7,
+   "snapshots": 366,
+   "median_peak_nodes": 530
+  }
+ ]
+}
