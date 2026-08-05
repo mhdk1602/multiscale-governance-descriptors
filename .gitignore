@@ -19,3 +19,10 @@ venv/
 *.pdf
 data/change_risk/**
 !data/change_risk/README.md
+
+# LaTeX build byproducts
+paper/*.log
+paper/*.blg
+paper/*.aux
+paper/*.out
+paper/*.bbl
