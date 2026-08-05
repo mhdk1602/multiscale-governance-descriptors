@@ -241,7 +241,7 @@ def discover_projects(corpus_dir):
 
 
 def load_tiers(corpus_dir):
-    """{project_id: tier} from the released corpus_index.csv, or {} if absent.
+    """({project_id: tier}, {project_id: composition}, path) from corpus_index.csv.
 
     Looked for beside the longitudinal files and one level up, since --corpus
     points at <release>/longitudinal/ while the index sits at <release>/.
@@ -251,8 +251,10 @@ def load_tiers(corpus_dir):
         if candidate.is_file():
             idx = pd.read_csv(candidate)
             if {"project_id", "tier"} <= set(idx.columns):
-                return dict(zip(idx["project_id"], idx["tier"])), candidate
-    return {}, None
+                comp = (dict(zip(idx["project_id"], idx["composition"]))
+                        if "composition" in idx.columns else {})
+                return dict(zip(idx["project_id"], idx["tier"])), comp, candidate
+    return {}, {}, None
 
 
 def label_of(project):
@@ -1021,14 +1023,22 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir,
 
     for ax, desc in zip(flat, descriptors):
         gated = is_component_gated(desc)
-        shown = eligible if gated else frames
+        # Draw every project. Excluding 74 of 154 from a dataset paper's own
+        # descriptor figure hides more than it protects, and the LWCC label
+        # already carries the scope that the exclusion was invented to fix. What
+        # the gate still does is keep the median and IQR off projects where the
+        # descriptor describes a minority of N, so it applies to the summary
+        # statistic rather than to the population.
+        shown = frames
+        band_over = eligible if gated else frames
         curves, by_tier = [], {"core": [], "extended": []}
         for project, df in shown.items():
             years = relative_years(df)
             vals = df[desc].astype(float).values
-            curves.append((years, vals))
+            if project in band_over:
+                curves.append((years, vals))
             tier = tiers.get(project)
-            if split and tier in by_tier:
+            if split and tier in by_tier and project in band_over:
                 by_tier[tier].append((years, vals))
             ax.plot(
                 years, vals,
@@ -1048,8 +1058,6 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir,
         if gated:
             # The real fix for "the axis reports an N the descriptor never saw".
             title += f", {LWCC_SUFFIX}"
-            if excluded:
-                title += f" ($-${len(excluded)})"
         ax.set_title(title, fontsize=7.5, pad=3)
         if not shown:
             ax.text(0.5, 0.5, "no eligible project", transform=ax.transAxes,
@@ -1060,10 +1068,11 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir,
     if excluded:
         wrapped_supxlabel(
             fig,
-            f"LWCC panels are computed on the largest weakly connected component, "
-            f"not on all N nodes. They exclude {len(excluded)} of {len(frames)} "
-            f"projects whose median component is below {floor:g} of N, marked "
-            f"-{len(excluded)}. D2 and D4 are whole-graph and use every project.",
+            f"Lines show all {len(frames)} projects. LWCC panels are computed on "
+            f"the largest weakly connected component, not on all N nodes, so their "
+            f"median and IQR are taken over the {len(frames) - len(excluded)} "
+            f"projects whose median component is at least {floor:g} of N. Below "
+            f"that the descriptor describes a minority. D2 and D4 are whole-graph.",
             FULL_W if ncols > 1 else COL_W,
         )
     blank_unused(flat, k)
@@ -1153,6 +1162,51 @@ def fig_contraction_and_drift(frames, drift, tiers, fig_dir):
     fig.align_ylabels(axes)
     fig.tight_layout(pad=0.3)
     return save(fig, "fig3_contraction_and_drift", fig_dir), stats
+
+
+def fig_acyclicity(frames, compositions, fig_dir):
+    """The median public dbt package is a forest.
+
+    Per-project median D4 cycle rank by composition. The mass at exactly zero is
+    the point, so this is an ECDF: the y-intercept reads directly as the share of
+    projects with no cycle in the undirected skeleton at all. Needs no tier, no
+    size control and no connectivity gate, unlike everything else in the corpus.
+    """
+    if not compositions:
+        return []
+    rows = []
+    for project, df in frames.items():
+        kind = compositions.get(project)
+        if kind:
+            rows.append({"composition": kind,
+                         "d4": float(df["D4_cycle_rank_norm"].median())})
+    stats = pd.DataFrame(rows)
+    # Ten projects is the floor for an ECDF that a reader should trust. On this
+    # corpus that keeps estate and package and drops demo at n=4.
+    order = [k for k in ("estate", "package", "demo", "documentation")
+             if (stats["composition"] == k).sum() >= 10]
+    if len(order) < 2:
+        return []
+
+    fig, ax = plt.subplots(figsize=(COL_W, 2.5))
+    for i, kind in enumerate(order):
+        vals = stats.loc[stats["composition"] == kind, "d4"].values
+        x, y = ecdf(vals)
+        zero = float((vals == 0).mean())
+        ax.step(x, y, where="post", color=SERIES_PALETTE[i % len(SERIES_PALETTE)],
+                label=f"{kind} ($n$={len(vals)}), {zero:.0%} acyclic")
+    ax.set_xlabel("Median normalized cycle rank, D4")
+    ax.set_ylabel("ECDF over projects")
+    ax.set_ylim(0, 1.0)
+    ax.set_xlim(left=-0.01)
+    ax.grid(axis="y")
+    ax.legend(loc="lower right", handlelength=1.6, borderaxespad=0.2)
+    ax.text(0.02, 0.97,
+            "value at $x$=0 is the share with\nno cycle in the skeleton",
+            transform=ax.transAxes, fontsize=6, color="#333333",
+            va="top", linespacing=1.4)
+    fig.tight_layout(pad=0.3)
+    return save(fig, "fig4_acyclicity_by_composition", fig_dir)
 
 
 def fig_layer_composition(frames, cols, fig_dir, max_panels=MAX_PANELS):
@@ -1802,7 +1856,7 @@ def main(argv=None):
         d for d in (args.drift_descriptors or DEFAULT_DRIFT_DESCRIPTORS)
         if d in descriptors
     ]
-    tiers, index_path = load_tiers(args.corpus)
+    tiers, compositions, index_path = load_tiers(args.corpus)
     # Gate on the connectivity cut alone. Tier also encodes snapshot count and
     # peak size, which are sampling criteria rather than validity ones, so tier
     # is used to split the population in the figures, not to gate it.
@@ -1839,6 +1893,7 @@ def main(argv=None):
     written += fig_drift_characterization(drift, frames, drift_descs, fig_dir)
     written += fig_snapshot_cadence(frames, fig_dir, args.max_panels)
     written += fig_density_evolution(frames, fig_dir)
+    written += fig_acyclicity(frames, compositions, fig_dir)
     written += fig_descriptor_trajectories(
         frames, descriptors, fig_dir, args.giant_component_floor,
         eligible, excluded, tiers,
