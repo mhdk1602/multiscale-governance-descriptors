@@ -73,6 +73,16 @@ STRUCTURAL_COLUMNS = (
     # descriptor panels or sit beside D2/D3/D4 in the summary table.
     "n_components", "giant_component_frac", "isolated_frac",
     "n_sql_files", "n_dbt_projects",
+    # Parse-fidelity bookkeeping from tool_version 2.0.0. These describe how
+    # much of the graph the extractor recovered, not anything about the
+    # project, and belong in the fidelity table rather than beside a descriptor.
+    "M_strict", "M_recovered_by_permissive", "nodes_touched_by_recovered",
+    "edges_dropped_as_commented_out",
+    # Coverage counts and rates. doc_rate and test_rate are substantive, but
+    # they are governance attributes rather than graph descriptors and they
+    # already have their own figure, so they must not be averaged in beside
+    # D2/D3/D4 as though they measured topology.
+    "n_documented", "n_tested", "n_yaml_files", "doc_rate", "test_rate",
 )
 REQUIRED_COLUMNS = ("date", "N", "M")
 
