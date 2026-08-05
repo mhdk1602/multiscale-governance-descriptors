@@ -128,4 +128,10 @@ computed from.
   in `excluded.csv`.
 - Layer labels in `n_staging`, `n_intermediate` and `n_mart` come from naming
   conventions, not from dbt metadata. Projects that do not follow a convention
-  land in `n_unclassified`.
+  land in `n_unclassified`. The four columns sum to `N` on every snapshot.
+- `median_giant_component_frac` in `corpus_index.csv` is a per-project median.
+  Pooling snapshots across a tier gives a different number, 0.794 against 0.765
+  for `core` and 0.370 against 0.383 for `extended`. Both are correct and they
+  answer different questions, so state which one a figure is showing.
+- `D3_fiedler_bim` is not defined on graphs whose second Laplacian eigenvalue is
+  degenerate, and the corpus contains such graphs.

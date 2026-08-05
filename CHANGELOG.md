@@ -84,6 +84,8 @@ node-order permutations each:
 | `D2_max_gini` | 0 | 0 |
 | `D4_cycle_rank_norm` | 0 | 0 |
 | `D3_alg_conn` | 2.2e-15 | 1.6e-14 |
+| `D3_norm_gap` | 1.7e-16 | 1.3e-15 |
+| `D3_fiedler_bim` | 1.6e-07 | **0.174** |
 
 **This changes a claim.** `table3_summary_statistics.csv` reports `D1_csi` with
 sd 0.123 over n=106. The order-induced range reaches 0.571 on a single graph.
@@ -100,9 +102,23 @@ The two-project release reports node growth of 8.53x and 14.69x, which reads as
 Cal-ITP and Mattermost sit at the 71st and 78th percentiles. Measured instead
 from the first snapshot at or above the N>=10 inclusion floor, which removes the
 multiple a project earns merely for starting from an empty repository, the
-median is **2.41x** and 12 percent of projects end smaller than they started.
-`corpus_index.csv` carries both as `node_growth_multiple` and
-`node_growth_from_first_viable`.
+median is **2.41x**. `corpus_index.csv` carries both as `node_growth_multiple`
+and `node_growth_from_first_viable`.
+
+**Six of 154 projects, 3.9 percent, end strictly smaller than they started**, on
+all three definitions: raw growth multiple below one, viable-baseline growth
+below one, and last node count below first. A further 13 end exactly the size
+they started, 11 of those with N constant at every snapshot above the floor, so
+**19 of 154, 12.3 percent, do not grow at all**. An earlier draft of this entry
+reported the 12.3 percent figure under the words "end smaller than they
+started", which is the 3.9 percent quantity. The comparison script printed the
+two counts on one line labelled "shrank or flat" and they are now printed apart.
+
+The counterexamples concentrate in packages. Of the six that shrink, two are
+analytics estates and four are dbt packages. Of the 19 that do not grow, four
+are estates and 15 are packages. Among the 55 estates alone, two shrink and four
+do not grow. Any argument resting on counterexamples to "lineage grows" should
+quote the stratum it is about.
 
 Contraction behaves the same way. 74 percent of projects never fall below their
 peak at all, so Mattermost's 21.9 percent net contraction is the tail rather

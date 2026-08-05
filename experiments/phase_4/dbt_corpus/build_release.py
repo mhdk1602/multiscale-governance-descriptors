@@ -70,7 +70,12 @@ FIELD_DOC = {
                                   'eigenvalue of the undirected connected skeleton.'),
     'D3_norm_gap': ('float [0,1]', 'Algebraic connectivity divided by the largest '
                                    'Laplacian eigenvalue.'),
-    'D3_fiedler_bim': ('float [0,1]', 'Bimodality coefficient of the Fiedler vector.'),
+    'D3_fiedler_bim': ('float [0,1]', 'Bimodality coefficient of the Fiedler vector. '
+                                      'Undefined when the second Laplacian eigenvalue '
+                                      'is degenerate, since the Fiedler vector is then '
+                                      'not unique. See d1_order_sensitivity.json, where '
+                                      'one snapshot moves by 0.174 on node order alone '
+                                      'for exactly that reason.'),
     'D4_cycle_rank_norm': ('float >= 0', 'Cycle rank (M - N + C) of the undirected '
                                          'skeleton, divided by N.'),
     'n_staging': ('integer', 'Models classified as staging by name prefix or directory.'),
@@ -284,7 +289,13 @@ computed from.
   in `excluded.csv`.
 - Layer labels in `n_staging`, `n_intermediate` and `n_mart` come from naming
   conventions, not from dbt metadata. Projects that do not follow a convention
-  land in `n_unclassified`.
+  land in `n_unclassified`. The four columns sum to `N` on every snapshot.
+- `median_giant_component_frac` in `corpus_index.csv` is a per-project median.
+  Pooling snapshots across a tier gives a different number, 0.794 against 0.765
+  for `core` and 0.370 against 0.383 for `extended`. Both are correct and they
+  answer different questions, so state which one a figure is showing.
+- `D3_fiedler_bim` is not defined on graphs whose second Laplacian eigenvalue is
+  degenerate, and the corpus contains such graphs.
 """
 
 

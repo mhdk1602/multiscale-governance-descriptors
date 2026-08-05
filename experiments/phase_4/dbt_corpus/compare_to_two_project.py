@@ -51,8 +51,13 @@ def main():
     print(f'  n projects with a growth multiple : {len(g)}')
     print(f'  min {g.min():.2f}  p25 {q(g,25):.2f}  median {g.median():.2f}  '
           f'p75 {q(g,75):.2f}  max {g.max():.2f}')
-    print(f'  shrank or flat (<= 1.0x)          : {(g <= 1.0).sum()} '
-          f'({100*(g<=1.0).mean():.0f}%)')
+    # Two different counts, printed apart. Collapsing them into one line
+    # labelled "shrank or flat" is how a 12.3 percent did-not-grow figure got
+    # written up as a 3.9 percent ended-smaller figure.
+    print(f'  ended strictly smaller (< 1.0x)   : {(g < 1.0).sum()} '
+          f'({100*(g<1.0).mean():.1f}%)')
+    print(f'  ended exactly flat (= 1.0x)       : {(g == 1.0).sum()} '
+          f'({100*(g==1.0).mean():.1f}%)')
     print(f'  grew more than 5x                 : {(g > 5).sum()} '
           f'({100*(g>5).mean():.0f}%)')
     print(f'  both original projects sit at the {100*(g < 8.53).mean():.0f}th and '
@@ -61,7 +66,18 @@ def main():
     print('  which removes the multiple a project gets just for starting empty:')
     print(f'    min {gv.min():.2f}  p25 {q(gv,25):.2f}  median {gv.median():.2f}  '
           f'p75 {q(gv,75):.2f}  max {gv.max():.2f}')
-    print(f'    shrank or flat : {(gv <= 1.0).sum()} ({100*(gv<=1.0).mean():.0f}%)')
+    print(f'    ended strictly smaller : {(gv < 1.0).sum()} '
+          f'({100*(gv<1.0).mean():.1f}%)')
+    print(f'    ended exactly flat     : {(gv == 1.0).sum()} '
+          f'({100*(gv==1.0).mean():.1f}%)')
+    print(f'    did not grow, the two above together : {(gv <= 1.0).sum()} '
+          f'({100*(gv<=1.0).mean():.1f}%)')
+    if 'composition' in idx.columns:
+        est = idx[idx['composition'] == 'estate']
+        ev = est['node_growth_from_first_viable'].astype(float).dropna()
+        print(f'    among the {len(ev)} analytics estates alone: '
+              f'{(ev < 1.0).sum()} smaller, {(ev <= 1.0).sum()} did not grow '
+              f'({100*(ev<=1.0).mean():.1f}%)')
 
     print()
     print('=' * 78)
@@ -136,9 +152,14 @@ def main():
     print('=' * 78)
     for tier, grp in idx.groupby('tier'):
         sub = snaps[snaps['project_id'].isin(grp['project_id'])]
+        # Two medians, because a gate operates on projects while a distribution
+        # summary usually pools snapshots, and they are not the same number.
+        pooled = sub['giant_component_frac'].median()
+        per_project = grp['median_giant_component_frac'].astype(float).median()
         print(f'  {tier:9s} projects {len(grp):4d}  snapshots {len(sub):5d}  '
               f'median N {sub["N"].median():6.0f}  '
-              f'median giant frac {sub["giant_component_frac"].median():.3f}  '
+              f'giant frac, snapshot-pooled {pooled:.3f}, '
+              f'per-project {per_project:.3f}  '
               f'median growth {grp["node_growth_from_first_viable"].median():.2f}x')
 
     print()

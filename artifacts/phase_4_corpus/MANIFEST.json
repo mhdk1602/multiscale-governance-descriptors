@@ -4304,14 +4304,14 @@
   }
  ],
  "sha256": {
-  "README.md": "2315f72d778b0b8b39e5230b8b1b937ccb973824978c5edd89137ca4a1ffcb5d",
+  "README.md": "fe8b9dad5438b38c7408d081195ecb21b267f6f3c1c14defdc8d1601067cd653",
   "composition_and_yield.json": "a4c181045c4633b1bd24af09b0c05183d0cef7a58f1bd0379fa909b8d6421367",
   "corpus_index.csv": "8684936654f14dd6887e78aa3b4e3a6672498e77861bf697bff9351a3633d038",
-  "d1_order_sensitivity.json": "a8b44d2bc6428e2c727f621e7ce0452b6510c05bc93ba5b04d6b8dfddead1970",
+  "d1_order_sensitivity.json": "b8d5eb2715b791b3e9ce7721122d3f7f644ca3b5c029e25a8c78dd7b3f6979b2",
   "drift_events.csv": "767fb1e1728defdc68cb2a3e6886d7313e060808a547c2285c2e2d01b75c9fca",
   "excluded.csv": "4d8e13c8fbb063c4335acc9cfd2a38ebce6953b2e23ed0aef95738de260ae95f",
   "sampling_frame.csv": "72b781640ceafc6c3c926c51272a2ccfa9413678dd4e21a1a061b844ec50fff8",
-  "schema.json": "ee16b9054011a0d8eed7b434689e0c4a8edf48abf5ac767954c3219d8ac1e565",
+  "schema.json": "837855b8e01b5de2b4acff1b8618cb4e344cfbd63fef2bbf2e878b5b85e7bf06",
   "snapshots.csv": "2d28126e390fbc624caf5665d69290b73e8ed241663069aa6afe9ac67f4a8f24",
   "projects/edanalytics__edu_edfi_source/extraction.json": "12aebf61947f43304ed8c231aff430c248bbb41d87cfb882c07c0512d882b748",
   "projects/edanalytics__edu_edfi_source/snapshots.csv": "c0f497b057269d3e7daede493ca4765041d89aeee2e3144b59928901c6e15aab",
@@ -4776,5 +4776,5 @@
   "longitudinal/longitudinal_tuva-health__tuva-core.csv": "f13c5d7806d9bde7ed36fe404dec88eef02f93b4c5403f313de1710091212737",
   "longitudinal/longitudinal_wnl-icb-analytics__dbt-OLIDS.csv": "588e5b8ab5d8c560dc06e2f781686f3e513ea96aa485320f928a727e4067f613"
  },
- "manifest_refreshed_utc": "2026-08-05T04:25:04+00:00"
+ "manifest_refreshed_utc": "2026-08-05T04:32:23+00:00"
 }

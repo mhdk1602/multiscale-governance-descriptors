@@ -33,7 +33,11 @@ from governance_descriptors.dbt_lineage import (  # noqa: E402
     compute_descriptors_safe, extract_lineage_at_commit,
 )
 
-CONTROLS = ['D2_max_gini', 'D3_alg_conn', 'D3_norm_gap', 'D4_cycle_rank_norm']
+# Every descriptor the corpus reports, so the table is complete rather than
+# silently partial. D3_fiedler_bim is the one that is not exactly order-stable,
+# because the Fiedler vector is not unique under near-degenerate eigenvalues.
+CONTROLS = ['D2_max_gini', 'D3_alg_conn', 'D3_norm_gap', 'D3_fiedler_bim',
+            'D4_cycle_rank_norm']
 SUBJECTS = ['D1_csi', 'D1_n_comm']
 
 
