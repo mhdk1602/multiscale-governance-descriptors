@@ -25,6 +25,7 @@ order-sensitive. Every D1 figure, table row and drift event is dropped. D2, D3
 and D4 are order-stable and are kept.
 """
 import argparse
+import json
 import math
 import sys
 from pathlib import Path
@@ -217,6 +218,21 @@ def discover_projects(corpus_dir):
     return {p: frames[p] for p in ordered}, skipped
 
 
+def load_tiers(corpus_dir):
+    """{project_id: tier} from the released corpus_index.csv, or {} if absent.
+
+    Looked for beside the longitudinal files and one level up, since --corpus
+    points at <release>/longitudinal/ while the index sits at <release>/.
+    """
+    for candidate in (corpus_dir / "corpus_index.csv",
+                      corpus_dir.parent / "corpus_index.csv"):
+        if candidate.is_file():
+            idx = pd.read_csv(candidate)
+            if {"project_id", "tier"} <= set(idx.columns):
+                return dict(zip(idx["project_id"], idx["tier"])), candidate
+    return {}, None
+
+
 def label_of(project):
     """Display label. Known slugs keep their capitalisation.
 
@@ -230,6 +246,14 @@ def label_of(project):
         owner, _, repo = project.partition("__")
         return f"{owner}/{repo}"
     return project.replace("_", " ")
+
+
+def elide(text, max_chars):
+    """Shorten by removing the middle, so the distinguishing suffix survives."""
+    if len(text) <= max_chars:
+        return text
+    keep = max_chars - 1
+    return text[: keep // 2] + "\u2026" + text[-(keep - keep // 2):]
 
 
 def panel_labels(projects, max_chars=17):
@@ -248,10 +272,7 @@ def panel_labels(projects, max_chars=17):
     for project in projects:
         repo = project.partition("__")[2] if "__" in project else project
         text = label_of(project) if len(repos[repo]) > 1 else repo
-        if len(text) > max_chars:
-            keep = max_chars - 1
-            text = text[: keep // 2] + "\u2026" + text[-(keep - keep // 2):]
-        out[project] = text
+        out[project] = elide(text, max_chars)
     return out
 
 
@@ -882,6 +903,22 @@ def is_component_gated(descriptor):
     return descriptor.startswith(GIANT_COMPONENT_PREFIXES)
 
 
+def tier_eligible(frames, tiers, keep="core"):
+    """({project: df}, excluded) using the release's own tier definition.
+
+    Preferred over an invented threshold. `core` already encodes a median giant
+    component of at least half of N, alongside a snapshot-count and size floor,
+    so one documented rule from the release replaces two competing knobs.
+    """
+    kept, excluded = {}, []
+    for project, df in frames.items():
+        if tiers.get(project, keep) == keep:
+            kept[project] = df
+        else:
+            excluded.append(project)
+    return kept, excluded
+
+
 def component_eligible(frames, floor=MIN_GIANT_COMPONENT_FRAC):
     """({project: DataFrame}, excluded_names) for giant-component descriptors.
 
@@ -904,7 +941,9 @@ def component_eligible(frames, floor=MIN_GIANT_COMPONENT_FRAC):
     return kept, excluded
 
 
-def fig_descriptor_trajectories(frames, descriptors, fig_dir, floor=MIN_GIANT_COMPONENT_FRAC):
+def fig_descriptor_trajectories(frames, descriptors, fig_dir,
+                                floor=MIN_GIANT_COMPONENT_FRAC,
+                                eligible=None, excluded=None):
     """One panel per deterministic descriptor, every project overlaid.
 
     Gating is per panel, not per figure. D2 and D4 are computed on the whole
@@ -914,7 +953,9 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir, floor=MIN_GIANT_CO
     """
     if not descriptors:
         return []
-    eligible, excluded = component_eligible(frames, floor)
+    if eligible is None:
+        eligible, excluded = component_eligible(frames, floor)
+    excluded = excluded or []
     n = len(frames)
     thin = n > LEGEND_MAX_PROJECTS
     k = len(descriptors)
@@ -956,8 +997,9 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir, floor=MIN_GIANT_CO
     if excluded:
         fig.supxlabel(
             f"D1 and D3 panels exclude {len(excluded)} of {len(frames)} projects "
-            f"whose median giant component is below {floor:g} of nodes, marked "
-            f"$-${len(excluded)}. D2 and D4 use every project.",
+            f"outside the core tier, marked $-${len(excluded)}. Core requires a "
+            f"median giant component of at least half of $N$. D2 and D4 are "
+            f"computed on the whole graph and use every project.",
             fontsize=6.5, y=-0.03,
         )
     blank_unused(flat, k)
@@ -972,6 +1014,73 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir, floor=MIN_GIANT_CO
         ax.tick_params(labelbottom=True)
     fig.tight_layout(pad=0.4)
     return save(fig, "figB_descriptor_trajectories", fig_dir)
+
+
+def fig_contraction_and_drift(frames, drift, tiers, fig_dir):
+    """Two corpus-level distributions that only exist at corpus scale.
+
+    (a) how far each project ends below its own node peak, (b) drift events per
+    snapshot. Split by tier where the release defines one, because the two tiers
+    are different populations and pooling them hides that.
+    """
+    rows = []
+    for project, df in frames.items():
+        years = max((df["date"].max() - df["date"].min()).days, 1) / 365.25
+        events = int((drift["project"] == project).sum()) if not drift.empty else 0
+        rows.append({
+            "project": project,
+            "tier": tiers.get(project, "all"),
+            "contraction": 100.0 * (1.0 - df["N"].iloc[-1] / df["N"].max()),
+            "ends_below_start": df["N"].iloc[-1] < df["N"].iloc[0],
+            "drift_per_snapshot": events / len(df),
+        })
+    stats = pd.DataFrame(rows)
+    groups = ([("core", "#0072B2"), ("extended", "#D55E00")]
+              if set(stats["tier"]) >= {"core", "extended"} else [("all", "#0072B2")])
+
+    fig, axes = plt.subplots(2, 1, figsize=(COL_W, 3.7))
+
+    ax = axes[0]
+    for tier, color in groups:
+        vals = stats.loc[stats["tier"] == tier, "contraction"].values
+        if not len(vals):
+            continue
+        x, y = ecdf(vals)
+        ax.step(x, y, where="post", color=color,
+                label=f"{tier} ($n$={len(vals)})")
+    flat = float((stats["contraction"] <= 0).mean())
+    ax.axvline(0, color=MUTED, linewidth=0.6, linestyle=":")
+    ax.text(0.02, 0.94, f"{flat:.0%} never fall below their peak",
+            transform=ax.transAxes, fontsize=6, color="#333333", va="top")
+    ax.set_xlabel("Percent below own node peak at last snapshot")
+    ax.set_ylabel("ECDF")
+    ax.set_ylim(0, 1.0)
+    ax.grid(axis="y")
+    ax.legend(loc="lower right", handlelength=1.6, borderaxespad=0.2)
+
+    ax = axes[1]
+    for tier, color in groups:
+        vals = stats.loc[stats["tier"] == tier, "drift_per_snapshot"].values
+        if not len(vals):
+            continue
+        x, y = ecdf(vals)
+        ax.step(x, y, where="post", color=color,
+                label=f"{tier} ($n$={len(vals)})")
+    zero = int((stats["drift_per_snapshot"] == 0).sum())
+    ax.text(0.02, 0.94, f"{zero} of {len(stats)} projects never drift",
+            transform=ax.transAxes, fontsize=6, color="#333333",
+            ha="left", va="top")
+    ax.set_xlabel("Drift events per snapshot")
+    ax.set_ylabel("ECDF")
+    ax.set_ylim(0, 1.0)
+    ax.grid(axis="y")
+    ax.legend(loc="lower right", handlelength=1.6, borderaxespad=0.2)
+
+    panel_tag(axes[0], "(a)")
+    panel_tag(axes[1], "(b)")
+    fig.align_ylabels(axes)
+    fig.tight_layout(pad=0.3)
+    return save(fig, "fig3_contraction_and_drift", fig_dir), stats
 
 
 def fig_layer_composition(frames, cols, fig_dir, max_panels=MAX_PANELS):
@@ -1147,6 +1256,7 @@ def table_dataset_characterization(frames, drift, tab_dir, max_rows):
         rows.append(
             {
                 "project": label_of(project),
+                "project_id": project,
                 "snapshots": len(df),
                 "date_start": df["date"].min().strftime("%Y-%m-%d"),
                 "date_end": df["date"].max().strftime("%Y-%m-%d"),
@@ -1203,7 +1313,8 @@ def table_dataset_characterization(frames, drift, tab_dir, max_rows):
     caption = [
         r"  \caption{Longitudinal dbt lineage corpus. One snapshot per 30-day window",
         r"    of commits touching the models path. Drift counts step changes above",
-        r"    20\% in a descriptor that is free of D1.}",
+        r"    20\% in a descriptor that is free of D1. Long project ids are elided;",
+        r"    the released CSV carries them in full.}",
         r"  \label{tab:dataset}",
     ]
 
@@ -1213,6 +1324,7 @@ def table_dataset_characterization(frames, drift, tab_dir, max_rows):
         r"  \centering",
         r"  \footnotesize",
         *caption,
+        r"  \setlength{\tabcolsep}{4pt}",
         r"  \begin{tabular}{lrlrrrrrrr}",
         r"    \toprule",
         r"    & & & \multicolumn{2}{c}{Nodes $N$} & \multicolumn{2}{c}{Edges $M$}"
@@ -1227,7 +1339,7 @@ def table_dataset_characterization(frames, drift, tab_dir, max_rows):
             "    {p} & {s} & {d0} -- {d1} & {n0}$\\to${n1} & {nmin}--{nmax} & "
             "{m0}$\\to${m1} & {mmin}--{mmax} & {ng}$\\times$ & {mg}$\\times$ & "
             "{dr} \\\\".format(
-                p=tex_escape(r["project"]), s=r["snapshots"],
+                p=tex_escape(elide(r["project"], 20)), s=r["snapshots"],
                 d0=r["date_start"][:7], d1=r["date_end"][:7],
                 n0=tex_int(r["nodes_first"]), n1=tex_int(r["nodes_last"]),
                 nmin=tex_int(r["nodes_min"]), nmax=tex_int(r["nodes_max"]),
@@ -1482,6 +1594,70 @@ def table_summary_statistics(frames, drift, descriptors, tab_dir, eligible=None)
     return write_table("table3_summary_statistics", frame, "\n".join(body), tab_dir)
 
 
+def table_order_sensitivity(corpus_dir, tab_dir):
+    """Node-order sensitivity per descriptor, from the release's own measurement.
+
+    This is the evidence for excluding D1, measured on real snapshots under
+    repeated node permutation rather than argued from one graph.
+    """
+    for candidate in (corpus_dir / "d1_order_sensitivity.json",
+                      corpus_dir.parent / "d1_order_sensitivity.json"):
+        if candidate.is_file():
+            payload = json.loads(candidate.read_text())
+            break
+    else:
+        return []
+    ranges = payload.get("range_across_permutations", {})
+    if not ranges:
+        return []
+
+    rows = []
+    for field, stat in ranges.items():
+        rows.append({
+            "field": field,
+            "n_snapshots": stat.get("n"),
+            "median_range": stat.get("median"),
+            "max_range": stat.get("max"),
+            "mean_range": stat.get("mean"),
+            "excluded": "yes" if field in EXCLUDED_FIELDS else "no",
+        })
+    frame = pd.DataFrame(rows)
+
+    def fmt(v):
+        if v is None or (isinstance(v, float) and math.isnan(v)):
+            return "--"
+        if v == 0:
+            return "0"
+        return f"{v:.4f}" if abs(v) >= 1e-3 else f"{v:.1e}"
+
+    body = [
+        "% Generated by paper/dolap_dataset/make_figures.py. Do not edit by hand.",
+        r"\begin{table}[t]",
+        r"  \centering",
+        r"  \footnotesize",
+        r"  \caption{Descriptor sensitivity to node insertion order, measured on"
+        f" {payload.get('n_snapshots_tested', '?')} corpus snapshots at"
+        f" {payload.get('n_permutations_each', '?')} permutations each. Range is"
+        r" max minus min across permutations of the same graph. D1 is excluded"
+        r" from every figure and from Table~\ref{tab:summary}.}",
+        r"  \label{tab:ordersens}",
+        r"  \setlength{\tabcolsep}{3.5pt}",
+        r"  \begin{tabular}{lrrrc}",
+        r"    \toprule",
+        r"    Field & Median & Mean & Max & Excluded \\",
+        r"    \midrule",
+    ]
+    for r in rows:
+        body.append(
+            "    \\texttt{{{f}}} & {md} & {mu} & {mx} & {ex} \\\\".format(
+                f=tex_escape(r["field"]), md=fmt(r["median_range"]),
+                mu=fmt(r["mean_range"]), mx=fmt(r["max_range"]), ex=r["excluded"],
+            )
+        )
+    body += [r"    \bottomrule", r"  \end{tabular}", r"\end{table}", ""]
+    return write_table("table4_order_sensitivity", frame, "\n".join(body), tab_dir)
+
+
 # --------------------------------------------------------------------------
 
 def parse_args(argv):
@@ -1497,6 +1673,11 @@ def parse_args(argv):
     p.add_argument(
         "--drift-descriptors", nargs="*", default=None,
         help=f"Descriptors monitored for step changes (default {DEFAULT_DRIFT_DESCRIPTORS}).",
+    )
+    p.add_argument(
+        "--ignore-tier", action="store_true",
+        help="Ignore corpus_index.csv tiers and gate D1/D3 on "
+             "--giant-component-floor instead. Sensitivity analysis only.",
     )
     p.add_argument(
         "--giant-component-floor", type=float, default=MIN_GIANT_COMPONENT_FRAC,
@@ -1532,7 +1713,16 @@ def main(argv=None):
         d for d in (args.drift_descriptors or DEFAULT_DRIFT_DESCRIPTORS)
         if d in descriptors
     ]
-    eligible, excluded = component_eligible(frames, args.giant_component_floor)
+    tiers, index_path = load_tiers(args.corpus)
+    if tiers and not args.ignore_tier:
+        # The release defines core as median giant component >= 0.5 plus a
+        # snapshot-count and size floor. One documented rule from the release
+        # beats a second threshold invented here.
+        eligible, excluded = tier_eligible(frames, tiers)
+        gate_desc = f"tier == core (from {index_path.name})"
+    else:
+        eligible, excluded = component_eligible(frames, args.giant_component_floor)
+        gate_desc = f"giant_component_frac >= {args.giant_component_floor:g}"
     drift = compute_drift(frames, drift_descs, eligible)
 
     print(
@@ -1553,11 +1743,8 @@ def main(argv=None):
         print(f"  {GIANT_COMPONENT_COLUMN} per-project median, deciles "
               f"min {q[0]}, p10 {q[0.1]}, p25 {q[0.25]}, p50 {q[0.5]}, "
               f"p75 {q[0.75]}, max {q[1]}")
-        print(f"  D1/D3 floor {args.giant_component_floor:g} excludes "
-              f"{len(excluded)} of {len(frames)} projects"
-              + (f": {', '.join(sorted(excluded)[:8])}" if excluded else ""))
-    else:
-        print(f"  No {GIANT_COMPONENT_COLUMN} column, no D1/D3 gating applied.")
+    print(f"  D1/D3 gate: {gate_desc}, excludes {len(excluded)} of "
+          f"{len(frames)} projects")
     for project, why in skipped:
         print(f"  SKIPPED project {project}: {why}")
 
@@ -1568,7 +1755,7 @@ def main(argv=None):
     written += fig_snapshot_cadence(frames, fig_dir, args.max_panels)
     written += fig_density_evolution(frames, fig_dir)
     written += fig_descriptor_trajectories(
-        frames, descriptors, fig_dir, args.giant_component_floor
+        frames, descriptors, fig_dir, args.giant_component_floor, eligible, excluded
     )
 
     if layers:
@@ -1606,7 +1793,12 @@ def main(argv=None):
             "and M and are not a degree distribution.",
         ))
 
+    contraction_files, contraction_stats = fig_contraction_and_drift(
+        frames, drift, tiers, fig_dir
+    )
+    written += contraction_files
     written += table_dataset_characterization(frames, drift, tab_dir, args.max_table_rows)
+    written += table_order_sensitivity(args.corpus, tab_dir)
     written += table_schema(frames, args.corpus, tab_dir)
     # Coverage has its own figure but still belongs in the summary statistics.
     written += table_summary_statistics(

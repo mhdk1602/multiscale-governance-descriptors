@@ -1,14 +1,24 @@
 file,field,type,reproducible,description
-"longitudinal_<project>.csv, 2 files in phase_4/",date,ISO-8601 datetime,yes,Author timestamp of the sampled commit.
-"longitudinal_<project>.csv, 2 files in phase_4/",sha,string (40 hex),yes,Full git commit SHA the snapshot was extracted at.
-"longitudinal_<project>.csv, 2 files in phase_4/",commit_msg,string,yes,"Commit subject line, truncated to 120 characters."
-"longitudinal_<project>.csv, 2 files in phase_4/",N,integer,yes,"Nodes in the lineage DAG, one per resolved dbt model."
-"longitudinal_<project>.csv, 2 files in phase_4/",M,integer,yes,"Directed edges, one per ref() call between two resolved models."
-"longitudinal_<project>.csv, 2 files in phase_4/",too_small,boolean,yes,True when N is below 5 and the descriptors were skipped.
-"longitudinal_<project>.csv, 2 files in phase_4/",D1_csi,"float [0,1]",no,"Community stability index. Excluded, see note below."
-"longitudinal_<project>.csv, 2 files in phase_4/",D1_n_comm,integer,no,"Louvain communities at gamma 1. Excluded, see note below."
-"longitudinal_<project>.csv, 2 files in phase_4/",D2_max_gini,"float [0,1]",yes,Maximum over depth of the Gini coefficient of the blast-radius distribution.
-"longitudinal_<project>.csv, 2 files in phase_4/",D3_alg_conn,float ≥ 0,yes,"Algebraic connectivity, the second-smallest Laplacian eigenvalue of the undirected connected skeleton."
-"longitudinal_<project>.csv, 2 files in phase_4/",D3_norm_gap,"float [0,1]",yes,Algebraic connectivity divided by the largest Laplacian eigenvalue.
-"longitudinal_<project>.csv, 2 files in phase_4/",D3_fiedler_bim,"float [0,1]",yes,"Bimodality coefficient of the Fiedler vector. Order-stable to 5e-6 relative, five orders below its corpus SD."
-"longitudinal_<project>.csv, 2 files in phase_4/",D4_cycle_rank_norm,float ≥ 0,yes,"Cycle rank (M - N + C) of the undirected skeleton, divided by N."
+"longitudinal_<project>.csv, 154 files in longitudinal/",project_id,string,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",date,ISO-8601 datetime,yes,Author timestamp of the sampled commit.
+"longitudinal_<project>.csv, 154 files in longitudinal/",sha,string (40 hex),yes,Full git commit SHA the snapshot was extracted at.
+"longitudinal_<project>.csv, 154 files in longitudinal/",commit_msg,string,yes,"Commit subject line, truncated to 120 characters."
+"longitudinal_<project>.csv, 154 files in longitudinal/",N,integer,yes,"Nodes in the lineage DAG, one per resolved dbt model."
+"longitudinal_<project>.csv, 154 files in longitudinal/",M,integer,yes,"Directed edges, one per ref() call between two resolved models."
+"longitudinal_<project>.csv, 154 files in longitudinal/",too_small,boolean,yes,True when N is below 5 and the descriptors were skipped.
+"longitudinal_<project>.csv, 154 files in longitudinal/",D1_csi,"float [0,1]",no,"Community stability index. Excluded, see note below."
+"longitudinal_<project>.csv, 154 files in longitudinal/",D1_n_comm,integer,no,"Louvain communities at gamma 1. Excluded, see note below."
+"longitudinal_<project>.csv, 154 files in longitudinal/",D2_max_gini,"float [0,1]",yes,Maximum over depth of the Gini coefficient of the blast-radius distribution.
+"longitudinal_<project>.csv, 154 files in longitudinal/",D3_alg_conn,float ≥ 0,yes,"Algebraic connectivity, the second-smallest Laplacian eigenvalue of the undirected connected skeleton."
+"longitudinal_<project>.csv, 154 files in longitudinal/",D3_norm_gap,"float [0,1]",yes,Algebraic connectivity divided by the largest Laplacian eigenvalue.
+"longitudinal_<project>.csv, 154 files in longitudinal/",D3_fiedler_bim,"float [0,1]",yes,"Bimodality coefficient of the Fiedler vector. Order-stable to 5e-6 relative, five orders below its corpus SD."
+"longitudinal_<project>.csv, 154 files in longitudinal/",D4_cycle_rank_norm,float ≥ 0,yes,"Cycle rank (M - N + C) of the undirected skeleton, divided by N."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_components,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",giant_component_frac,float,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",isolated_frac,float,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_staging,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_intermediate,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_mart,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_unclassified,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_sql_files,integer,yes,"Undocumented field, present in the corpus."
+"longitudinal_<project>.csv, 154 files in longitudinal/",n_dbt_projects,integer,yes,"Undocumented field, present in the corpus."

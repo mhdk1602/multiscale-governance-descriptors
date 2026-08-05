@@ -2,31 +2,31 @@
 \begin{table}[t]
   \centering
   \footnotesize
-  \caption{Corpus summary. Distributions pool all 106 snapshots across 2 projects. Field names are defined in Table~\ref{tab:schema}.}
+  \caption{Corpus summary. Distributions pool all 3577 snapshots across 154 projects. Field names are defined in Table~\ref{tab:schema}.}
   \label{tab:summary}
   \setlength{\tabcolsep}{2.5pt}
   \begin{tabular}{lrrrrr}
     \toprule
     \multicolumn{6}{l}{\textit{Corpus}} \\
     \midrule
-    Projects & \multicolumn{5}{r}{2} \\
-    Snapshots & \multicolumn{5}{r}{106} \\
-    Cumulative years & \multicolumn{5}{r}{9.0} \\
-    Observation window & \multicolumn{5}{r}{2020-01 -- 2026-05} \\
-    Drift events ($>$20\%) & \multicolumn{5}{r}{17} \\
-    Snapshot gap (d) & \multicolumn{5}{r}{29 median, 125 max} \\
+    Projects & \multicolumn{5}{r}{154} \\
+    Snapshots & \multicolumn{5}{r}{3577} \\
+    Cumulative years & \multicolumn{5}{r}{560.9} \\
+    Observation window & \multicolumn{5}{r}{2016-07 -- 2026-08} \\
+    Drift events ($>$20\%) & \multicolumn{5}{r}{521} \\
+    Snapshot gap (d) & \multicolumn{5}{r}{33 median, 1686 max} \\
     \midrule
     \multicolumn{6}{l}{\textit{Per-snapshot fields}} \\
     \midrule
     Field & Min & Median & Mean & Max & SD \\
     \midrule
-    \texttt{N} & 16 & 288 & 318.3 & 631 & 154.8 \\
-    \texttt{M} & 14 & 430 & 401.2 & 756 & 172.1 \\
-    \texttt{D2\_max\_gini} & 0.506 & 0.775 & 0.775 & 0.880 & 0.090 \\
-    \texttt{D3\_alg\_conn} & 0.009 & 0.043 & 0.055 & 0.426 & 0.065 \\
-    \texttt{D3\_fiedler\_bim} & 0.195 & 0.907 & 0.775 & 0.968 & 0.268 \\
-    \texttt{D3\_norm\_gap} & 0.000 & 0.001 & 0.003 & 0.082 & 0.011 \\
-    \texttt{D4\_cycle\_rank\_norm} & 0.055 & 0.423 & 0.494 & 0.824 & 0.215 \\
+    \texttt{N} & 2 & 34 & 126.7 & 3673 & 294.6 \\
+    \texttt{M} & 0 & 26 & 129.7 & 2723 & 299.2 \\
+    \texttt{D2\_max\_gini} & 0.000 & 0.653 & 0.620 & 0.998 & 0.209 \\
+    \texttt{D3\_alg\_conn} & 0.000 & 0.099 & 0.176 & 2.000 & 0.218 \\
+    \texttt{D3\_fiedler\_bim} & 0.000 & 0.707 & 0.681 & 0.992 & 0.230 \\
+    \texttt{D3\_norm\_gap} & 0.000 & 0.006 & 0.022 & 1.000 & 0.063 \\
+    \texttt{D4\_cycle\_rank\_norm} & 0.000 & 0.103 & 0.220 & 1.417 & 0.263 \\
     \bottomrule
   \end{tabular}
 \end{table}

@@ -4,22 +4,38 @@
   \footnotesize
   \caption{Longitudinal dbt lineage corpus. One snapshot per 30-day window
     of commits touching the models path. Drift counts step changes above
-    20\% in a descriptor that is free of D1.}
+    20\% in a descriptor that is free of D1. Long project ids are elided;
+    the released CSV carries them in full.}
   \label{tab:dataset}
+  \setlength{\tabcolsep}{4pt}
   \begin{tabular}{lrlrrrrrrr}
     \toprule
     & & & \multicolumn{2}{c}{Nodes $N$} & \multicolumn{2}{c}{Edges $M$} & & & \\
     \cmidrule(lr){4-5}\cmidrule(lr){6-7}
     Project & Snap. & Date span & first$\to$last & min--max & first$\to$last & min--max & $N\times$ & $M\times$ & Drift \\
     \midrule
-    Mattermost & 55 & 2020-01 -- 2025-01 & 16$\to$235 & 16--301 & 14$\to$376 & 14--517 & 14.7$\times$ & 26.9$\times$ & 7 \\
-    Cal-ITP & 51 & 2022-04 -- 2026-05 & 74$\to$631 & 74--631 & 69$\to$756 & 69--756 & 8.5$\times$ & 11.0$\times$ & 10 \\
+    tconbeer/…ics-sqlfmt & 56 & 2018-10 -- 2025-10 & 3$\to$2{,}167 & 3--2{,}168 & 1$\to$2{,}124 & 1--2{,}124 & 722.3$\times$ & 2124.0$\times$ & 3 \\
+    mattermos…-warehouse & 55 & 2020-01 -- 2025-01 & 16$\to$235 & 16--301 & 14$\to$376 & 14--517 & 14.7$\times$ & 26.9$\times$ & 7 \\
+    cal-itp/data-infra & 53 & 2022-04 -- 2026-07 & 74$\to$620 & 74--643 & 69$\to$740 & 69--776 & 8.4$\times$ & 10.7$\times$ & 11 \\
+    fivetran/dbt\_zendesk & 53 & 2020-08 -- 2026-06 & 27$\to$98 & 27--98 & 34$\to$156 & 34--156 & 3.6$\times$ & 4.6$\times$ & 9 \\
+    mitodl/ol…a-platform & 51 & 2022-07 -- 2026-08 & 8$\to$662 & 8--662 & 0$\to$1{,}126 & 0--1{,}126 & 82.8$\times$ & nan$\times$ & 16 \\
+    patkearns…\_workspace & 50 & 2021-02 -- 2026-06 & 6$\to$527 & 6--530 & 1$\to$864 & 1--865 & 87.8$\times$ & 864.0$\times$ & 12 \\
+    jyablonsk…ba\_elt\_dbt & 48 & 2021-10 -- 2026-07 & 33$\to$122 & 33--122 & 34$\to$219 & 34--219 & 3.7$\times$ & 6.4$\times$ & 9 \\
+    fivetran/…quickbooks & 47 & 2021-02 -- 2026-07 & 33$\to$144 & 33--144 & 34$\to$208 & 26--208 & 4.4$\times$ & 6.1$\times$ & 3 \\
+    fivetran/…vetran\_log & 44 & 2020-07 -- 2026-04 & 15$\to$20 & 15--21 & 11$\to$25 & 11--25 & 1.3$\times$ & 2.3$\times$ & 3 \\
+    tuva-heal…/tuva-core & 44 & 2021-11 -- 2026-07 & 13$\to$1{,}182 & 12--1{,}182 & 22$\to$1{,}740 & 0--1{,}757 & 90.9$\times$ & 79.1$\times$ & 20 \\
+    fivetran/dbt\_jira & 41 & 2020-12 -- 2026-06 & 20$\to$61 & 19--61 & 23$\to$90 & 23--91 & 3.0$\times$ & 3.9$\times$ & 6 \\
+    DITP-pilo…e/pilote-2 & 40 & 2023-04 -- 2026-07 & 33$\to$85 & 33--90 & 35$\to$167 & 35--174 & 2.6$\times$ & 4.8$\times$ & 16 \\
+    CDPVD/cdp…ards\_store & 39 & 2022-09 -- 2026-07 & 2$\to$103 & 2--169 & 1$\to$121 & 1--289 & 51.5$\times$ & 121.0$\times$ & 11 \\
+    Sciance-I…ards\_store & 39 & 2022-09 -- 2026-08 & 2$\to$208 & 2--208 & 1$\to$374 & 1--375 & 104.0$\times$ & 374.0$\times$ & 14 \\
+    elementar…eliability & 39 & 2022-01 -- 2026-06 & 7$\to$30 & 7--30 & 6$\to$18 & 6--46 & 4.3$\times$ & 3.0$\times$ & 7 \\
+    \multicolumn{10}{l}{\textit{\ldots{} and 139 further projects, in the released CSV}} \\
     \midrule
-    All & 106 & 2020-01 -- 2026-05 & \multicolumn{4}{c}{9.0 cumulative years} & & & 17 \\
+    All & 3577 & 2016-07 -- 2026-08 & \multicolumn{4}{c}{560.9 cumulative years} & & & 521 \\
     \bottomrule
   \end{tabular}
   \par\vspace{3pt}
   \begin{minipage}{\linewidth}\footnotesize\raggedright
-  Growth is the last snapshot over the first. 1 of 2 projects end below their own node peak, so a growth multiple is not the full range a graph traverses.
+  Growth is the last snapshot over the first. 39 of 154 projects end below their own node peak, so a growth multiple is not the full range a graph traverses.
   \end{minipage}
 \end{table*}

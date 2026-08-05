@@ -10,6 +10,7 @@
     \toprule
     Field & Type & Repro. & Description \\
     \midrule
+    \texttt{project\_id} & string & yes & Undocumented field, present in the corpus. \\
     \texttt{date} & ISO-8601 datetime & yes & Author timestamp of the sampled commit. \\
     \texttt{sha} & string (40 hex) & yes & Full git commit SHA the snapshot was extracted at. \\
     \texttt{commit\_msg} & string & yes & Commit subject line, truncated to 120 characters. \\
@@ -23,6 +24,15 @@
     \texttt{D3\_norm\_gap} & float [0,1] & yes & Algebraic connectivity divided by the largest Laplacian eigenvalue. \\
     \texttt{D3\_fiedler\_bim} & float [0,1] & yes & Bimodality coefficient of the Fiedler vector. Order-stable to 5e-6 relative, five orders below its corpus SD. \\
     \texttt{D4\_cycle\_rank\_norm} & float $\geq$ 0 & yes & Cycle rank (M - N + C) of the undirected skeleton, divided by N. \\
+    \texttt{n\_components} & integer & yes & Undocumented field, present in the corpus. \\
+    \texttt{giant\_component\_frac} & float & yes & Undocumented field, present in the corpus. \\
+    \texttt{isolated\_frac} & float & yes & Undocumented field, present in the corpus. \\
+    \texttt{n\_staging} & integer & yes & Undocumented field, present in the corpus. \\
+    \texttt{n\_intermediate} & integer & yes & Undocumented field, present in the corpus. \\
+    \texttt{n\_mart} & integer & yes & Undocumented field, present in the corpus. \\
+    \texttt{n\_unclassified} & integer & yes & Undocumented field, present in the corpus. \\
+    \texttt{n\_sql\_files} & integer & yes & Undocumented field, present in the corpus. \\
+    \texttt{n\_dbt\_projects} & integer & yes & Undocumented field, present in the corpus. \\
     \bottomrule
   \end{tabular}
   \par\vspace{3pt}
