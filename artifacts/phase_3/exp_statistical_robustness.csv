@@ -1,0 +1,161 @@
+subset,n,descriptor,target,rho,perm_p,param_p,fdr_p
+A: all N≥5,18,D2_max_gini,doc_rate,-0.5627282238889862,0.0170982901709829,0.015046887209003096,0.10942905709429056
+A: all N≥5,18,D2_transition,doc_rate,0.21370097683115655,0.5518448155184481,0.39451019284859346,0.5886344698863446
+A: all N≥5,18,D3_alg_conn,doc_rate,-0.7084712767944846,0.0016998300169983002,0.0009989790416941962,0.0287971202879712
+A: all N≥5,18,D3_norm_gap,doc_rate,-0.7005903722804974,0.0017998200179982,0.0012026607687123467,0.0287971202879712
+A: all N≥5,18,D3_fiedler_bim,doc_rate,-0.5606646737637675,0.016698330166983303,0.015503388539251409,0.10942905709429056
+A: all N≥5,18,D3_entropy,doc_rate,-0.5627282238889862,0.016698330166983303,0.015046887209003096,0.10942905709429056
+A: all N≥5,18,D4_h1_bars,doc_rate,0.21370097683115655,0.5518448155184481,0.39451019284859346,0.5886344698863446
+A: all N≥5,18,D4_h1_persist,doc_rate,0.21370097683115655,0.5518448155184481,0.39451019284859346,0.5886344698863446
+A: all N≥5,18,D4_h1_entropy,doc_rate,0.21370097683115655,0.5518448155184481,0.39451019284859346,0.5886344698863446
+A: all N≥5,18,D4_h1_bars_norm,doc_rate,0.21370097683115655,0.5518448155184481,0.39451019284859346,0.5886344698863446
+A: all N≥5,18,D4_cycle_rank,doc_rate,0.21370097683115655,0.5518448155184481,0.39451019284859346,0.5886344698863446
+A: all N≥5,18,D4_cycle_rank_norm,doc_rate,0.21370097683115655,0.5518448155184481,0.39451019284859346,0.5886344698863446
+A: all N≥5,18,D1_csi,doc_rate,-0.447213595499958,1.0,0.3739009663000589,1.0
+A: all N≥5,18,D1_frag_onset,doc_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.25201289394870036
+A: all N≥5,18,D1_n_comm,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.25201289394870036
+A: all N≥5,18,D1_modularity,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.25201289394870036
+A: all N≥5,18,D2_max_gini,test_rate,0.4750407527930202,0.05779422057794221,0.04634848236806342,0.12329433723294338
+A: all N≥5,18,D2_transition,test_rate,1.0,0.05779422057794221,0.0,0.12329433723294338
+A: all N≥5,18,D3_alg_conn,test_rate,0.19780536646510763,0.33556644335566443,0.431404702242408,0.46687505162527226
+A: all N≥5,18,D3_norm_gap,test_rate,0.1956050158559495,0.33556644335566443,0.43664969357333416,0.46687505162527226
+A: all N≥5,18,D3_fiedler_bim,test_rate,0.47329875663342574,0.05779422057794221,0.04726897362456577,0.12329433723294338
+A: all N≥5,18,D3_entropy,test_rate,0.4750407527930202,0.05779422057794221,0.04634848236806342,0.12329433723294338
+A: all N≥5,18,D4_h1_bars,test_rate,1.0,0.05779422057794221,0.0,0.12329433723294338
+A: all N≥5,18,D4_h1_persist,test_rate,1.0,0.05779422057794221,0.0,0.12329433723294338
+A: all N≥5,18,D4_h1_entropy,test_rate,1.0,0.05779422057794221,0.0,0.12329433723294338
+A: all N≥5,18,D4_h1_bars_norm,test_rate,1.0,0.05779422057794221,0.0,0.12329433723294338
+A: all N≥5,18,D4_cycle_rank,test_rate,1.0,0.05779422057794221,0.0,0.12329433723294338
+A: all N≥5,18,D4_cycle_rank_norm,test_rate,1.0,0.05779422057794221,0.0,0.12329433723294338
+A: all N≥5,18,D1_csi,test_rate,-0.447213595499958,1.0,0.3739009663000589,1.0
+A: all N≥5,18,D1_frag_onset,test_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.25201289394870036
+A: all N≥5,18,D1_n_comm,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.25201289394870036
+A: all N≥5,18,D1_modularity,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.25201289394870036
+B: internal edges only,6,D2_max_gini,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D2_transition,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D3_alg_conn,doc_rate,-1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D3_norm_gap,doc_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D3_fiedler_bim,doc_rate,0.6546536707079772,0.33036696330366966,0.15830242337545783,0.3523914275239143
+B: internal edges only,6,D3_entropy,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D4_h1_bars,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_h1_persist,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_h1_entropy,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_h1_bars_norm,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_cycle_rank,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_cycle_rank_norm,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D1_csi,doc_rate,-0.447213595499958,1.0,0.3739009663000589,1.0
+B: internal edges only,6,D1_frag_onset,doc_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D1_n_comm,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D1_modularity,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D2_max_gini,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D2_transition,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D3_alg_conn,test_rate,-1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D3_norm_gap,test_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D3_fiedler_bim,test_rate,0.6546536707079772,0.33036696330366966,0.15830242337545783,0.3523914275239143
+B: internal edges only,6,D3_entropy,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D4_h1_bars,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_h1_persist,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_h1_entropy,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_h1_bars_norm,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_cycle_rank,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D4_cycle_rank_norm,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+B: internal edges only,6,D1_csi,test_rate,-0.447213595499958,1.0,0.3739009663000589,1.0
+B: internal edges only,6,D1_frag_onset,test_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D1_n_comm,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+B: internal edges only,6,D1_modularity,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D2_max_gini,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D2_transition,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D3_alg_conn,doc_rate,-1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D3_norm_gap,doc_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D3_fiedler_bim,doc_rate,0.6546536707079772,0.33036696330366966,0.15830242337545783,0.3523914275239143
+C: no source-dominant,6,D3_entropy,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D4_h1_bars,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_h1_persist,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_h1_entropy,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_h1_bars_norm,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_cycle_rank,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_cycle_rank_norm,doc_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D1_csi,doc_rate,-0.447213595499958,1.0,0.3739009663000589,1.0
+C: no source-dominant,6,D1_frag_onset,doc_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D1_n_comm,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D1_modularity,doc_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D2_max_gini,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D2_transition,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D3_alg_conn,test_rate,-1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D3_norm_gap,test_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D3_fiedler_bim,test_rate,0.6546536707079772,0.33036696330366966,0.15830242337545783,0.3523914275239143
+C: no source-dominant,6,D3_entropy,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D4_h1_bars,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_h1_persist,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_h1_entropy,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_h1_bars_norm,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_cycle_rank,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D4_cycle_rank_norm,test_rate,1.0,0.1653834616538346,0.0,0.18900967046152525
+C: no source-dominant,6,D1_csi,test_rate,-0.447213595499958,1.0,0.3739009663000589,1.0
+C: no source-dominant,6,D1_frag_onset,test_rate,-0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D1_n_comm,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+C: no source-dominant,6,D1_modularity,test_rate,0.7071067811865477,0.1653834616538346,0.11611652351681541,0.18900967046152525
+D: no largest domain,17,D2_max_gini,doc_rate,-0.7939245862403176,0.0004999500049995,0.0001417837388942225,0.0038396160383961605
+D: no largest domain,17,D2_transition,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D3_alg_conn,doc_rate,-0.8055153392903583,0.0005999400059994001,9.522916319448549e-05,0.0038396160383961605
+D: no largest domain,17,D3_norm_gap,doc_rate,-0.7939245862403176,0.0004999500049995,0.0001417837388942225,0.0038396160383961605
+D: no largest domain,17,D3_fiedler_bim,doc_rate,-0.790170784661606,0.0004999500049995,0.00016044394653813882,0.0038396160383961605
+D: no largest domain,17,D3_entropy,doc_rate,-0.7939245862403176,0.0005999400059994001,0.0001417837388942225,0.0038396160383961605
+D: no largest domain,17,D4_h1_bars,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_h1_persist,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_h1_entropy,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_h1_bars_norm,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_cycle_rank,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_cycle_rank_norm,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D1_csi,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D1_frag_onset,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D1_n_comm,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D1_modularity,doc_rate,,1.0,1.0,1.0
+D: no largest domain,17,D2_max_gini,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D2_transition,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D3_alg_conn,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D3_norm_gap,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D3_fiedler_bim,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D3_entropy,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_h1_bars,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_h1_persist,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_h1_entropy,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_h1_bars_norm,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_cycle_rank,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D4_cycle_rank_norm,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D1_csi,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D1_frag_onset,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D1_n_comm,test_rate,,1.0,1.0,1.0
+D: no largest domain,17,D1_modularity,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D2_max_gini,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D2_transition,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D3_alg_conn,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D3_norm_gap,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D3_fiedler_bim,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D3_entropy,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_h1_bars,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_h1_persist,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_h1_entropy,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_h1_bars_norm,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_cycle_rank,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_cycle_rank_norm,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D1_csi,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D1_frag_onset,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D1_n_comm,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D1_modularity,doc_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D2_max_gini,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D2_transition,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D3_alg_conn,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D3_norm_gap,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D3_fiedler_bim,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D3_entropy,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_h1_bars,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_h1_persist,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_h1_entropy,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_h1_bars_norm,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_cycle_rank,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D4_cycle_rank_norm,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D1_csi,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D1_frag_onset,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D1_n_comm,test_rate,,1.0,1.0,1.0
+E: internal + no largest,5,D1_modularity,test_rate,,1.0,1.0,1.0

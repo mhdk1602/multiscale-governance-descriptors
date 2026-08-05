@@ -11,6 +11,10 @@ venv/
 .pytest_cache/
 .mypy_cache/
 *.csv
+# Experiment outputs are the evidence behind the published tables, so they
+# ship with the reproducibility package. The blanket rule above still covers
+# scratch CSVs everywhere else.
+!artifacts/**/*.csv
 *.png
 *.pdf
 data/change_risk/**

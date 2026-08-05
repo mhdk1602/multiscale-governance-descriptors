@@ -1,0 +1,7 @@
+features,model,mean_auc,std_auc,n_features
+baselines_only,logistic,1.0,0.0,9
+baselines_only,random_forest,1.0,0.0,9
+multiscale_only,logistic,0.996875,0.00625,11
+multiscale_only,random_forest,1.0,0.0,11
+combined,logistic,1.0,0.0,20
+combined,random_forest,1.0,0.0,20

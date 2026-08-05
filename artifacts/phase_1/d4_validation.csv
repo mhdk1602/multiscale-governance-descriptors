@@ -1,0 +1,5 @@
+graph,h0_persistence_entropy,h0_total_persistence,h0_n_persistent,h1_persistence_entropy,h1_total_persistence,h1_n_persistent,h0_n_bars,h1_n_bars
+cycle (N=15),3.8073549220575833,14.0,0,-1.601713251907458e-15,4.0,0,15,1
+binary_tree (N=31),4.906890595608473,30.0,0,0.0,0.0,0,31,0
+karate_club (N=34),5.044394119358405,33.0,0,3.1699250014422993,9.0,0,34,9
+grid_5x5 (N=25),4.584962500721121,24.0,0,3.999999999999977,16.0,0,25,16
