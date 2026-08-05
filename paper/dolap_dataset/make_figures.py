@@ -4,7 +4,8 @@ Reads a corpus directory of per-project snapshot CSVs and writes figures (PDF +
 PNG) and tables (CSV + booktabs LaTeX). Nothing about the project list is
 hardcoded. The script discovers whatever ``longitudinal_*.csv`` files the corpus
 directory holds and lays every per-project figure out as small multiples, so the
-same code renders two projects today and fifty after the wider extraction lands.
+same code renders two projects today and hundreds after the wider extraction
+lands. Per-project grids cap at MAX_PANELS; corpus-level figures use every project.
 
 Run:
 
@@ -72,6 +73,11 @@ MIN_SNAPSHOTS = 4
 BAND_MIN_PROJECTS = 5
 # Above this the per-project legend and coloured overlay lines are dropped.
 LEGEND_MAX_PROJECTS = 6
+# Small multiples stop working long before the corpus does. At 303 projects an
+# uncapped grid renders a 41-inch-tall figure, so the per-project grids show the
+# largest MAX_PANELS and say how many they left out. Corpus-level figures still
+# use every project.
+MAX_PANELS = 24
 
 # Fields that exist in the release but must not be plotted or summarised.
 EXCLUDED_FIELDS = {
@@ -300,6 +306,21 @@ def set_style():
     )
 
 
+def capped(frames, max_panels):
+    """(subset, omitted) keeping the largest projects. frames is already sorted."""
+    if max_panels is None or len(frames) <= max_panels:
+        return frames, 0
+    keep = list(frames)[:max_panels]
+    return {p: frames[p] for p in keep}, len(frames) - max_panels
+
+
+def omitted_note(omitted, total):
+    return (
+        f"{total - omitted} largest of {total} projects, "
+        f"{omitted} not shown" if omitted else None
+    )
+
+
 def grid_layout(n, panel_h_small=1.15, panel_h_large=0.80):
     """(nrows, ncols, figsize) for n small multiples.
 
@@ -408,12 +429,15 @@ def relative_years(df):
 # Figures
 # --------------------------------------------------------------------------
 
-def fig_growth_trajectories(frames, drift, fig_dir):
+def fig_growth_trajectories(frames, drift, fig_dir, max_panels=MAX_PANELS):
     """Anchor figure. Nodes and edges per project as small multiples.
 
     Project identity is carried by panel position, not colour, which is what
-    keeps this readable as the corpus grows.
+    keeps this readable as the corpus grows. Past max_panels the grid shows the
+    largest projects only; fig2 carries the whole population.
     """
+    total = len(frames)
+    frames, omitted = capped(frames, max_panels)
     n = len(frames)
     nrows, ncols, figsize = grid_layout(n)
     fig, axes = plt.subplots(nrows, ncols, figsize=figsize, squeeze=False)
@@ -451,6 +475,11 @@ def fig_growth_trajectories(frames, drift, fig_dir):
         plt.Line2D([], [], color="#444444", linewidth=0.6),
     ]
     labels = ["nodes $N$", "edges $M$", f"drift event ({len(drift)})"]
+    note = omitted_note(omitted, total)
+    if note:
+        labels[-1] = f"drift event"
+        handles.append(plt.Line2D([], [], color="none"))
+        labels.append(note)
     grid_legend(fig, flat, n, handles, labels, "Snapshot date", figsize)
     fig.tight_layout(pad=0.3, h_pad=0.7, w_pad=0.6)
     return save(fig, "fig1_growth_trajectories", fig_dir)
@@ -574,17 +603,22 @@ def fig_drift_characterization(drift, frames, descriptors, fig_dir):
     return save(fig, "fig5_drift_characterization", fig_dir)
 
 
-def fig_snapshot_cadence(frames, fig_dir):
+def fig_snapshot_cadence(frames, fig_dir, max_panels=MAX_PANELS):
     """Where snapshots fall, and how far apart they are.
 
     Sampling is one commit per 30-day window of commits touching the models path.
     A window with no such commit yields no snapshot, so the series is not evenly
     spaced and the gaps are the honest limitation.
+
+    Panel (a) shows the largest max_panels projects, because a 303-row strip is
+    an illegible smear. Panel (b) pools every project in the corpus.
     """
+    all_frames = frames
+    total = len(frames)
+    frames, omitted = capped(frames, max_panels)
     n = len(frames)
     wide = n > 6
-    row_h = 0.14 if n > 24 else 0.24
-    # Cap the timeline so the whole figure still fits one page at any corpus size.
+    row_h = 0.24 if n <= 8 else 0.16
     timeline_h = min(6.0, max(0.9, n * row_h))
     fig, axes = plt.subplots(
         2, 1,
@@ -609,6 +643,9 @@ def fig_snapshot_cadence(frames, fig_dir):
     ax.tick_params(axis="y", length=0)
     year_axis(ax)
     ax.set_xlabel("Snapshot date", labelpad=1)
+    note = omitted_note(omitted, total)
+    if note:
+        ax.set_title(note, fontsize=6.5, color="#333333", pad=3)
 
     worst_project, worst_gap, worst_at = None, -1.0, None
     for project, df in frames.items():
@@ -627,22 +664,23 @@ def fig_snapshot_cadence(frames, fig_dir):
             arrowprops=dict(arrowstyle="-", linewidth=0.5, color="#333333"),
         )
 
+    # Panel (b) pools every project, including any the timeline above omitted.
     ax = axes[1]
     pooled = []
-    for i, (project, df) in enumerate(frames.items()):
+    for i, (project, df) in enumerate(all_frames.items()):
         gaps = df["date"].diff().dt.days.dropna().values
         pooled.extend(gaps.tolist())
         x, y = ecdf(gaps)
-        if n <= LEGEND_MAX_PROJECTS:
+        if total <= LEGEND_MAX_PROJECTS:
             ax.step(
                 x, y, where="post", color=SERIES_PALETTE[i % len(SERIES_PALETTE)],
                 linewidth=0.9,
                 label=f"{label_of(project)} (med {np.median(gaps):.0f} d)",
             )
         else:
-            ax.step(x, y, where="post", color=MUTED, linewidth=0.5, alpha=0.4)
-    if n > LEGEND_MAX_PROJECTS:
-        ax.plot([], [], color=MUTED, linewidth=0.5, label=f"per project ({n})")
+            ax.step(x, y, where="post", color=MUTED, linewidth=0.5, alpha=0.25)
+    if total > LEGEND_MAX_PROJECTS:
+        ax.plot([], [], color=MUTED, linewidth=0.5, label=f"per project ({total})")
     x, y = ecdf(pooled)
     ax.step(
         x, y, where="post", color="#000000", linewidth=1.3,
@@ -763,8 +801,10 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir):
     return save(fig, "figB_descriptor_trajectories", fig_dir)
 
 
-def fig_layer_composition(frames, cols, fig_dir):
+def fig_layer_composition(frames, cols, fig_dir, max_panels=MAX_PANELS):
     """Stacked composition per project, small multiples. Only if the corpus has it."""
+    total = len(frames)
+    frames, omitted = capped(frames, max_panels)
     n = len(frames)
     nrows, ncols, figsize = grid_layout(n)
     fig, axes = plt.subplots(nrows, ncols, figsize=figsize, squeeze=False)
@@ -789,6 +829,10 @@ def fig_layer_composition(frames, cols, fig_dir):
 
     blank_unused(flat, n)
     handles, labels = flat[0].get_legend_handles_labels()
+    note = omitted_note(omitted, total)
+    if note:
+        handles.append(plt.Line2D([], [], color="none"))
+        labels.append(note)
     fig.supylabel("Share of nodes", fontsize=8)
     grid_legend(
         fig, flat, n, handles, labels, "Snapshot date", figsize,
@@ -836,7 +880,7 @@ def fig_coverage_trajectories(frames, cols, fig_dir):
     return save(fig, "figD_coverage_trajectories", fig_dir)
 
 
-def fig_degree_distribution(frames, paths, fig_dir):
+def fig_degree_distribution(frames, paths, fig_dir, max_panels=MAX_PANELS):
     """First against last snapshot degree distribution, per project, log-log CCDF."""
     usable = {}
     for project, path in paths.items():
@@ -848,6 +892,8 @@ def fig_degree_distribution(frames, paths, fig_dir):
     if not usable:
         return []
 
+    total = len(usable)
+    usable, omitted = capped(usable, max_panels)
     n = len(usable)
     nrows, ncols, figsize = grid_layout(n, panel_h_small=1.3, panel_h_large=0.95)
     fig, axes = plt.subplots(nrows, ncols, figsize=figsize, squeeze=False)
@@ -874,6 +920,10 @@ def fig_degree_distribution(frames, paths, fig_dir):
 
     blank_unused(flat, n)
     handles, labels = flat[0].get_legend_handles_labels()
+    note = omitted_note(omitted, total)
+    if note:
+        handles.append(plt.Line2D([], [], color="none"))
+        labels.append(note)
     fig.supylabel(r"$P(\mathrm{degree} \geq x)$", fontsize=8)
     grid_legend(fig, flat, n, handles, labels, "Degree", figsize, ncol=2)
     fig.tight_layout(pad=0.3, h_pad=0.7, w_pad=0.6, rect=[0.028, 0, 1, 1])
@@ -1271,6 +1321,11 @@ def parse_args(argv):
         help=f"Descriptors monitored for step changes (default {DEFAULT_DRIFT_DESCRIPTORS}).",
     )
     p.add_argument(
+        "--max-panels", type=int, default=MAX_PANELS,
+        help=f"Projects drawn as small multiples before the grid is capped "
+             f"(default {MAX_PANELS}). Corpus-level figures always use all of them.",
+    )
+    p.add_argument(
         "--max-table-rows", type=int, default=15,
         help="Projects printed in the LaTeX table before the rest are summarised.",
     )
@@ -1307,15 +1362,15 @@ def main(argv=None):
         print(f"  SKIPPED project {project}: {why}")
 
     written, unsupported = [], []
-    written += fig_growth_trajectories(frames, drift, fig_dir)
+    written += fig_growth_trajectories(frames, drift, fig_dir, args.max_panels)
     written += fig_growth_normalized(frames, fig_dir)
     written += fig_drift_characterization(drift, frames, drift_descs, fig_dir)
-    written += fig_snapshot_cadence(frames, fig_dir)
+    written += fig_snapshot_cadence(frames, fig_dir, args.max_panels)
     written += fig_density_evolution(frames, fig_dir)
     written += fig_descriptor_trajectories(frames, descriptors, fig_dir)
 
     if layers:
-        written += fig_layer_composition(frames, layers, fig_dir)
+        written += fig_layer_composition(frames, layers, fig_dir, args.max_panels)
     else:
         unsupported.append((
             "Layer composition over time (figC)",
@@ -1337,7 +1392,7 @@ def main(argv=None):
 
     degrees = degree_files(args.corpus, frames)
     if degrees:
-        written += fig_degree_distribution(frames, degrees, fig_dir)
+        written += fig_degree_distribution(frames, degrees, fig_dir, args.max_panels)
     else:
         unsupported.append((
             "Degree distribution, first against last (figE)",
