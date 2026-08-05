@@ -13,7 +13,7 @@
     Snapshots & \multicolumn{5}{r}{3577} \\
     Cumulative years & \multicolumn{5}{r}{560.9} \\
     Observation window & \multicolumn{5}{r}{2016-07 -- 2026-08} \\
-    Drift events ($>$20\%) & \multicolumn{5}{r}{521} \\
+    Drift events ($>$20\%) & \multicolumn{5}{r}{631} \\
     Snapshot gap (d) & \multicolumn{5}{r}{33 median, 1686 max} \\
     \midrule
     \multicolumn{6}{l}{\textit{Per-snapshot fields}} \\
@@ -22,11 +22,16 @@
     \midrule
     \texttt{N} & 2 & 34 & 126.7 & 3673 & 294.6 \\
     \texttt{M} & 0 & 26 & 129.7 & 2723 & 299.2 \\
+    \texttt{giant\_component\_frac} & 0.002 & 0.583 & 0.545 & 1.000 & 0.338 \\
     \texttt{D2\_max\_gini} & 0.000 & 0.653 & 0.620 & 0.998 & 0.209 \\
-    \texttt{D3\_alg\_conn} & 0.000 & 0.099 & 0.176 & 2.000 & 0.218 \\
-    \texttt{D3\_fiedler\_bim} & 0.000 & 0.707 & 0.681 & 0.992 & 0.230 \\
-    \texttt{D3\_norm\_gap} & 0.000 & 0.006 & 0.022 & 1.000 & 0.063 \\
+    \texttt{D3\_alg\_conn}$^{\dagger}$ & 0.000 & 0.143 & 0.257 & 2.000 & 0.316 \\
+    \texttt{D3\_fiedler\_bim}$^{\dagger}$ & 0.000 & 0.628 & 0.599 & 0.992 & 0.250 \\
+    \texttt{D3\_norm\_gap}$^{\dagger}$ & 0.000 & 0.012 & 0.042 & 1.000 & 0.093 \\
     \texttt{D4\_cycle\_rank\_norm} & 0.000 & 0.103 & 0.220 & 1.417 & 0.263 \\
     \bottomrule
   \end{tabular}
+  \par\vspace{3pt}
+  \begin{minipage}{\linewidth}\footnotesize\raggedright
+  $^{\dagger}$Computed on the largest weakly connected component, not on all $N$ nodes. Read against \texttt{giant\_component\_frac} above, and pooled over projects whose median clears 0.5.
+  \end{minipage}
 \end{table}

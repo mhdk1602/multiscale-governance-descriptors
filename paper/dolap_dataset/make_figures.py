@@ -28,6 +28,7 @@ import argparse
 import json
 import math
 import sys
+import textwrap
 from pathlib import Path
 
 import matplotlib
@@ -74,13 +75,18 @@ STRUCTURAL_COLUMNS = (
 )
 REQUIRED_COLUMNS = ("date", "N", "M")
 
-# D1 and D3 are computed on the largest connected component only, so the N on an
-# axis is not the N those descriptors saw. At 0.9 the two agree within 10%, which
-# is a discrepancy a caption can carry. At 0.5 the descriptor would be free to
-# ignore half the graph, which is the problem rather than a bound on it. The
-# floor is a CLI flag and every run prints the observed distribution, so it can
-# be retuned against the real corpus rather than left at a guess.
-MIN_GIANT_COMPONENT_FRAC = 0.9
+# D1 and D3 are computed on the largest weakly connected component, not the whole
+# graph. The primary correction for that is the axis label, not the population:
+# every gated descriptor is labelled LWCC so a reader is never invited to compare
+# a subgraph statistic against a whole-graph N. The floor is then doing much less
+# work, which is the right amount for a threshold the data cannot justify. On
+# this corpus median giant_component_frac is 0.522, spread near-uniformly from
+# 0.003 to 1.0 with no natural cut, so 0.9 would have excluded 82% of projects.
+# 0.5 is adopted because it is the connectivity cut the release already uses
+# inside its own core definition, so the paper carries one documented threshold
+# rather than a second one invented here.
+MIN_GIANT_COMPONENT_FRAC = 0.5
+LWCC_SUFFIX = "LWCC"
 GIANT_COMPONENT_COLUMN = "giant_component_frac"
 GIANT_COMPONENT_PREFIXES = ("D1_", "D3_")
 
@@ -124,26 +130,41 @@ FIELD_DOCS = {
     "N": ("integer", "Nodes in the lineage DAG, one per resolved dbt model."),
     "M": ("integer", "Directed edges, one per ref() call between two resolved models."),
     "too_small": ("boolean", "True when N is below 5 and the descriptors were skipped."),
-    "D1_csi": ("float [0,1]", "Community stability index. Excluded, see note below."),
-    "D1_n_comm": ("integer", "Louvain communities at gamma 1. Excluded, see note below."),
+    "D1_csi": ("float [0,1]", "Community stability index over a Louvain resolution sweep, on the largest "
+        "weakly connected component. Excluded, see note below."),
+    "D1_n_comm": ("integer", "Louvain communities at gamma 1, on the largest weakly connected component. "
+        "Excluded, see note below."),
     "D2_max_gini": (
         "float [0,1]",
         "Maximum over depth of the Gini coefficient of the blast-radius distribution.",
     ),
     "D3_alg_conn": (
         "float ≥ 0",
-        "Algebraic connectivity, the second-smallest Laplacian eigenvalue of the "
-        "undirected connected skeleton.",
+        "Algebraic connectivity, the second-smallest Laplacian eigenvalue, on the "
+        "largest weakly connected component. Not on all N nodes.",
     ),
     "D3_norm_gap": (
         "float [0,1]",
-        "Algebraic connectivity divided by the largest Laplacian eigenvalue.",
+        "Algebraic connectivity divided by the largest Laplacian eigenvalue, on "
+        "the largest weakly connected component.",
     ),
     "D3_fiedler_bim": (
         "float [0,1]",
-        "Bimodality coefficient of the Fiedler vector. Order-stable to 5e-6 "
-        "relative, five orders below its corpus SD.",
+        "Bimodality coefficient of the Fiedler vector, on the largest weakly "
+        "connected component. Order-stable to 5e-6 relative, five orders below "
+        "its corpus SD, and the one descriptor the release does not measure.",
     ),
+    "giant_component_frac": (
+        "float (0,1]",
+        "Share of N in the largest weakly connected component. The covariate for "
+        "every LWCC descriptor: where it is small, those descriptors describe a "
+        "fraction of the project.",
+    ),
+    "n_components": ("integer", "Weakly connected components in the lineage DAG."),
+    "isolated_frac": ("float [0,1]", "Share of N with no lineage edge at all."),
+    "n_sql_files": ("integer", "Model .sql files found at the sampled commit."),
+    "n_dbt_projects": ("integer", "dbt_project.yml files found at the sampled commit."),
+    "project_id": ("string", "GitHub owner and repo joined by a double underscore."),
     "D4_cycle_rank_norm": (
         "float ≥ 0",
         "Cycle rank (M - N + C) of the undirected skeleton, divided by N.",
@@ -515,23 +536,49 @@ def ecdf(values):
 
 
 def median_band(ax, curves, color="#000000", label="corpus median, IQR"):
-    """Median and interquartile band over per-project curves on a common x grid.
+    """Median and interquartile band over per-project curves.
 
-    curves is a list of (x, y). Returns True when a band was drawn. Below
-    BAND_MIN_PROJECTS the quantiles are noise and nothing is drawn.
+    curves is a list of (x, y). Below BAND_MIN_PROJECTS the quantiles are noise
+    and nothing is drawn.
+
+    The grid runs to the median series end, and each series contributes only
+    where it has data. Intersecting the series ranges instead, which is the
+    obvious approach, collapses at corpus scale: with 121 projects the shortest
+    one truncates the common window to nothing and no band renders at all.
     """
     if len(curves) < BAND_MIN_PROJECTS:
         return False
-    lo = max(float(x.min()) for x, _ in curves)
-    hi = min(float(x.max()) for x, _ in curves)
+    ends = np.array([float(x.max()) for x, _ in curves])
+    lo = float(min(float(x.min()) for x, _ in curves))
+    hi = float(np.median(ends))
     if not (np.isfinite(lo) and np.isfinite(hi)) or hi <= lo:
         return False
     grid = np.linspace(lo, hi, 120)
-    stack = np.vstack([np.interp(grid, x, y) for x, y in curves])
-    q25, q50, q75 = np.percentile(stack, [25, 50, 75], axis=0)
+    stack = np.full((len(curves), grid.size), np.nan)
+    for i, (x, y) in enumerate(curves):
+        inside = (grid >= x.min()) & (grid <= x.max())
+        stack[i, inside] = np.interp(grid[inside], x, y)
+    # Only report a quantile where enough series are actually present.
+    enough = np.count_nonzero(~np.isnan(stack), axis=0) >= BAND_MIN_PROJECTS
+    if not enough.any():
+        return False
+    grid, stack = grid[enough], stack[:, enough]
+    q25, q50, q75 = np.nanpercentile(stack, [25, 50, 75], axis=0)
     ax.fill_between(grid, q25, q75, color=color, alpha=0.15, linewidth=0)
     ax.plot(grid, q50, color=color, linewidth=1.3, label=label)
     return True
+
+
+def wrapped_supxlabel(fig, text, width_in, fontsize=6.5, y=-0.03):
+    """Shared caption wrapped to the figure width.
+
+    matplotlib does not wrap supxlabel, and with bbox_inches tight a long single
+    line widens the saved figure past the text block it has to fit inside.
+    """
+    # 0.62em per character is a safe average for this serif at small sizes;
+    # 0.5 underestimates and the wrapped block still overhangs the text block.
+    chars = max(40, int(width_in * 72 / (fontsize * 0.62)))
+    fig.supxlabel("\n".join(textwrap.wrap(text, chars)), fontsize=fontsize, y=y)
 
 
 def save(fig, stem, fig_dir):
@@ -943,7 +990,7 @@ def component_eligible(frames, floor=MIN_GIANT_COMPONENT_FRAC):
 
 def fig_descriptor_trajectories(frames, descriptors, fig_dir,
                                 floor=MIN_GIANT_COMPONENT_FRAC,
-                                eligible=None, excluded=None):
+                                eligible=None, excluded=None, tiers=None):
     """One panel per deterministic descriptor, every project overlaid.
 
     Gating is per panel, not per figure. D2 and D4 are computed on the whole
@@ -967,26 +1014,41 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir,
     )
     flat = axes.ravel()
     order = {p: i for i, p in enumerate(frames)}
+    tiers = tiers or {}
+    split = thin and set(tiers.values()) >= {"core", "extended"}
+    TIER_COLOR = {"core": "#0072B2", "extended": "#D55E00"}
 
     for ax, desc in zip(flat, descriptors):
         gated = is_component_gated(desc)
         shown = eligible if gated else frames
-        curves = []
+        curves, by_tier = [], {"core": [], "extended": []}
         for project, df in shown.items():
             years = relative_years(df)
             vals = df[desc].astype(float).values
             curves.append((years, vals))
+            tier = tiers.get(project)
+            if split and tier in by_tier:
+                by_tier[tier].append((years, vals))
             ax.plot(
                 years, vals,
                 color=MUTED if thin else SERIES_PALETTE[order[project] % len(SERIES_PALETTE)],
                 linewidth=0.6 if thin else 1.0,
-                alpha=0.45 if thin else 1.0,
+                alpha=0.30 if thin else 1.0,
                 label=None if thin else label_of(project),
             )
-        median_band(ax, curves)
+        if split and all(by_tier.values()):
+            # Two populations. Pooling their medians hides that they differ.
+            for tier, curves_t in by_tier.items():
+                median_band(ax, curves_t, color=TIER_COLOR[tier],
+                            label=f"{tier} ($n$={len(curves_t)})")
+        else:
+            median_band(ax, curves)
         title = desc.replace("_", " ")
-        if gated and excluded:
-            title += f" ($-${len(excluded)})"
+        if gated:
+            # The real fix for "the axis reports an N the descriptor never saw".
+            title += f", {LWCC_SUFFIX}"
+            if excluded:
+                title += f" ($-${len(excluded)})"
         ax.set_title(title, fontsize=7.5, pad=3)
         if not shown:
             ax.text(0.5, 0.5, "no eligible project", transform=ax.transAxes,
@@ -995,12 +1057,13 @@ def fig_descriptor_trajectories(frames, descriptors, fig_dir,
         ax.tick_params(labelsize=6.5)
 
     if excluded:
-        fig.supxlabel(
-            f"D1 and D3 panels exclude {len(excluded)} of {len(frames)} projects "
-            f"outside the core tier, marked $-${len(excluded)}. Core requires a "
-            f"median giant component of at least half of $N$. D2 and D4 are "
-            f"computed on the whole graph and use every project.",
-            fontsize=6.5, y=-0.03,
+        wrapped_supxlabel(
+            fig,
+            f"LWCC panels are computed on the largest weakly connected component, "
+            f"not on all N nodes. They exclude {len(excluded)} of {len(frames)} "
+            f"projects whose median component is below {floor:g} of N, marked "
+            f"-{len(excluded)}. D2 and D4 are whole-graph and use every project.",
+            FULL_W if ncols > 1 else COL_W,
         )
     blank_unused(flat, k)
     handles, labels = flat[0].get_legend_handles_labels()
@@ -1493,7 +1556,11 @@ def table_summary_statistics(frames, drift, descriptors, tab_dir, eligible=None)
         [df.assign(project=p) for p, df in frames.items()], ignore_index=True
     )
     gated_pool = pooled if eligible is None else pooled[pooled["project"].isin(eligible)]
-    fields = ["N", "M"] + descriptors
+    # The covariate belongs in the summary table, since every LWCC descriptor
+    # above has to be read against it.
+    covariate = ([GIANT_COMPONENT_COLUMN]
+                 if GIANT_COMPONENT_COLUMN in pooled.columns else [])
+    fields = ["N", "M"] + covariate + descriptors
     counts = ("N", "M", "D1_n_comm")
 
     rows = []
@@ -1583,14 +1650,27 @@ def table_summary_statistics(frames, drift, descriptors, tab_dir, eligible=None)
     for r in rows:
         col = r["field"]
         body.append(
-            "    \\texttt{{{lab}}} & {mn} & {md} & {mu} & {mx} & {sd} \\\\".format(
+            "    \\texttt{{{lab}}}{sfx} & {mn} & {md} & {mu} & {mx} & {sd} \\\\".format(
                 lab=tex_escape(col),
+                sfx="$^{\\dagger}$" if is_component_gated(col) else "",
                 mn=fmt(r["min"], col, "min"), md=fmt(r["median"], col, "median"),
                 mu=fmt(r["mean"], col, "mean"), mx=fmt(r["max"], col, "max"),
                 sd=fmt(r["sd"], col, "sd"),
             )
         )
-    body += [r"    \bottomrule", r"  \end{tabular}", r"\end{table}", ""]
+    body += [
+        r"    \bottomrule",
+        r"  \end{tabular}",
+        r"  \par\vspace{3pt}",
+        r"  \begin{minipage}{\linewidth}\footnotesize\raggedright",
+        "  $^{\\dagger}$Computed on the largest weakly connected component, not on "
+        "all $N$ nodes. Read against \\texttt{giant\\_component\\_frac} above, and "
+        "pooled over projects whose median clears "
+        f"{MIN_GIANT_COMPONENT_FRAC:g}.",
+        r"  \end{minipage}",
+        r"\end{table}",
+        "",
+    ]
     return write_table("table3_summary_statistics", frame, "\n".join(body), tab_dir)
 
 
@@ -1714,15 +1794,11 @@ def main(argv=None):
         if d in descriptors
     ]
     tiers, index_path = load_tiers(args.corpus)
-    if tiers and not args.ignore_tier:
-        # The release defines core as median giant component >= 0.5 plus a
-        # snapshot-count and size floor. One documented rule from the release
-        # beats a second threshold invented here.
-        eligible, excluded = tier_eligible(frames, tiers)
-        gate_desc = f"tier == core (from {index_path.name})"
-    else:
-        eligible, excluded = component_eligible(frames, args.giant_component_floor)
-        gate_desc = f"giant_component_frac >= {args.giant_component_floor:g}"
+    # Gate on the connectivity cut alone. Tier also encodes snapshot count and
+    # peak size, which are sampling criteria rather than validity ones, so tier
+    # is used to split the population in the figures, not to gate it.
+    eligible, excluded = component_eligible(frames, args.giant_component_floor)
+    gate_desc = f"median {GIANT_COMPONENT_COLUMN} >= {args.giant_component_floor:g}"
     drift = compute_drift(frames, drift_descs, eligible)
 
     print(
@@ -1755,7 +1831,8 @@ def main(argv=None):
     written += fig_snapshot_cadence(frames, fig_dir, args.max_panels)
     written += fig_density_evolution(frames, fig_dir)
     written += fig_descriptor_trajectories(
-        frames, descriptors, fig_dir, args.giant_component_floor, eligible, excluded
+        frames, descriptors, fig_dir, args.giant_component_floor,
+        eligible, excluded, tiers,
     )
 
     if layers:

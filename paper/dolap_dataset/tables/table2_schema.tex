@@ -10,29 +10,29 @@
     \toprule
     Field & Type & Repro. & Description \\
     \midrule
-    \texttt{project\_id} & string & yes & Undocumented field, present in the corpus. \\
+    \texttt{project\_id} & string & yes & GitHub owner and repo joined by a double underscore. \\
     \texttt{date} & ISO-8601 datetime & yes & Author timestamp of the sampled commit. \\
     \texttt{sha} & string (40 hex) & yes & Full git commit SHA the snapshot was extracted at. \\
     \texttt{commit\_msg} & string & yes & Commit subject line, truncated to 120 characters. \\
     \texttt{N} & integer & yes & Nodes in the lineage DAG, one per resolved dbt model. \\
     \texttt{M} & integer & yes & Directed edges, one per ref() call between two resolved models. \\
     \texttt{too\_small} & boolean & yes & True when N is below 5 and the descriptors were skipped. \\
-    \texttt{D1\_csi} & float [0,1] & no & Community stability index. Excluded, see note below. \\
-    \texttt{D1\_n\_comm} & integer & no & Louvain communities at gamma 1. Excluded, see note below. \\
+    \texttt{D1\_csi} & float [0,1] & no & Community stability index over a Louvain resolution sweep, on the largest weakly connected component. Excluded, see note below. \\
+    \texttt{D1\_n\_comm} & integer & no & Louvain communities at gamma 1, on the largest weakly connected component. Excluded, see note below. \\
     \texttt{D2\_max\_gini} & float [0,1] & yes & Maximum over depth of the Gini coefficient of the blast-radius distribution. \\
-    \texttt{D3\_alg\_conn} & float $\geq$ 0 & yes & Algebraic connectivity, the second-smallest Laplacian eigenvalue of the undirected connected skeleton. \\
-    \texttt{D3\_norm\_gap} & float [0,1] & yes & Algebraic connectivity divided by the largest Laplacian eigenvalue. \\
-    \texttt{D3\_fiedler\_bim} & float [0,1] & yes & Bimodality coefficient of the Fiedler vector. Order-stable to 5e-6 relative, five orders below its corpus SD. \\
+    \texttt{D3\_alg\_conn} & float $\geq$ 0 & yes & Algebraic connectivity, the second-smallest Laplacian eigenvalue, on the largest weakly connected component. Not on all N nodes. \\
+    \texttt{D3\_norm\_gap} & float [0,1] & yes & Algebraic connectivity divided by the largest Laplacian eigenvalue, on the largest weakly connected component. \\
+    \texttt{D3\_fiedler\_bim} & float [0,1] & yes & Bimodality coefficient of the Fiedler vector, on the largest weakly connected component. Order-stable to 5e-6 relative, five orders below its corpus SD, and the one descriptor the release does not measure. \\
     \texttt{D4\_cycle\_rank\_norm} & float $\geq$ 0 & yes & Cycle rank (M - N + C) of the undirected skeleton, divided by N. \\
-    \texttt{n\_components} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{giant\_component\_frac} & float & yes & Undocumented field, present in the corpus. \\
-    \texttt{isolated\_frac} & float & yes & Undocumented field, present in the corpus. \\
+    \texttt{n\_components} & integer & yes & Weakly connected components in the lineage DAG. \\
+    \texttt{giant\_component\_frac} & float (0,1] & yes & Share of N in the largest weakly connected component. The covariate for every LWCC descriptor: where it is small, those descriptors describe a fraction of the project. \\
+    \texttt{isolated\_frac} & float [0,1] & yes & Share of N with no lineage edge at all. \\
     \texttt{n\_staging} & integer & yes & Undocumented field, present in the corpus. \\
     \texttt{n\_intermediate} & integer & yes & Undocumented field, present in the corpus. \\
     \texttt{n\_mart} & integer & yes & Undocumented field, present in the corpus. \\
     \texttt{n\_unclassified} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{n\_sql\_files} & integer & yes & Undocumented field, present in the corpus. \\
-    \texttt{n\_dbt\_projects} & integer & yes & Undocumented field, present in the corpus. \\
+    \texttt{n\_sql\_files} & integer & yes & Model .sql files found at the sampled commit. \\
+    \texttt{n\_dbt\_projects} & integer & yes & dbt\_project.yml files found at the sampled commit. \\
     \bottomrule
   \end{tabular}
   \par\vspace{3pt}
