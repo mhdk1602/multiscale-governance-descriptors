@@ -17,6 +17,11 @@ venv/
 !artifacts/**/*.csv
 *.png
 *.pdf
+# Generated paper deliverables are tracked for the same reason. Without these
+# carve-outs a regeneration would silently drop every figure and table.
+!paper/dolap_dataset/figures/*.pdf
+!paper/dolap_dataset/figures/*.png
+!paper/dolap_dataset/tables/*.csv
 data/change_risk/**
 !data/change_risk/README.md
 
