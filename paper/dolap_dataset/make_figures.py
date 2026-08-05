@@ -176,7 +176,7 @@ def discover_projects(corpus_dir):
             f"No longitudinal_*.csv under {corpus_dir}. Point --corpus at the "
             f"directory the extraction writes."
         )
-    frames, skipped = {}, []
+    frames, skipped, dropped_snapshots = {}, [], []
     for path in paths:
         project = path.stem[len("longitudinal_"):]
         df = pd.read_csv(path)
@@ -192,14 +192,28 @@ def discover_projects(corpus_dir):
         if df[["N", "M"]].isna().any().any():
             skipped.append((project, "missing N or M"))
             continue
-        if (df["N"] <= 1).any():
-            skipped.append((project, "a snapshot has N <= 1, density is undefined"))
-            continue
+        degenerate = int((df["N"] <= 1).sum())
+        if degenerate:
+            # A one-node snapshot has no graph to describe and an undefined
+            # density. Drop those rows, not the project: on this corpus the
+            # whole-project rule discarded 180 snapshots to avoid 9 bad values.
+            df = df[df["N"] > 1].reset_index(drop=True)
+            dropped_snapshots.append((project, degenerate))
+            if len(df) < MIN_SNAPSHOTS:
+                skipped.append(
+                    (project, f"{len(df)} snapshots left after dropping "
+                              f"{degenerate} with N <= 1")
+                )
+                continue
         frames[project] = df
     if not frames:
         raise SystemExit(f"Every project under {corpus_dir} was skipped: {skipped}")
     # Largest first, so the small-multiples grid reads in a meaningful order.
     ordered = sorted(frames, key=lambda p: (-len(frames[p]), p))
+    if dropped_snapshots:
+        total = sum(n for _, n in dropped_snapshots)
+        print(f"  dropped {total} degenerate snapshot(s) with N <= 1 across "
+              f"{len(dropped_snapshots)} project(s), projects retained")
     return {p: frames[p] for p in ordered}, skipped
 
 
@@ -216,6 +230,29 @@ def label_of(project):
         owner, _, repo = project.partition("__")
         return f"{owner}/{repo}"
     return project.replace("_", " ")
+
+
+def panel_labels(projects, max_chars=17):
+    """Short titles for small-multiple panels.
+
+    Full owner/repo does not fit a 1.15in panel and the titles collide. Use the
+    repo alone where that is unambiguous across the corpus, fall back to
+    owner/repo where two owners ship the same repo name, and elide the middle
+    rather than the tail so a truncated name keeps its distinguishing suffix.
+    """
+    repos = {}
+    for project in projects:
+        repo = project.partition("__")[2] if "__" in project else project
+        repos.setdefault(repo, []).append(project)
+    out = {}
+    for project in projects:
+        repo = project.partition("__")[2] if "__" in project else project
+        text = label_of(project) if len(repos[repo]) > 1 else repo
+        if len(text) > max_chars:
+            keep = max_chars - 1
+            text = text[: keep // 2] + "\u2026" + text[-(keep - keep // 2):]
+        out[project] = text
+    return out
 
 
 def descriptor_fields(frames, also_exclude=()):
@@ -489,6 +526,16 @@ def relative_years(df):
     return (df["date"] - df["date"].iloc[0]).dt.days.values / 365.25
 
 
+def growth_multiple(series):
+    """Last over first, or NaN when the first value is zero.
+
+    A project whose first snapshot has no edges has an undefined multiple, not
+    an infinite one, and feeding inf into a median or an axis is worse than a gap.
+    """
+    first, last = float(series.iloc[0]), float(series.iloc[-1])
+    return last / first if first > 0 else float("nan")
+
+
 # --------------------------------------------------------------------------
 # Figures
 # --------------------------------------------------------------------------
@@ -507,6 +554,7 @@ def fig_growth_trajectories(frames, drift, fig_dir, max_panels=MAX_PANELS):
     fig, axes = plt.subplots(nrows, ncols, figsize=figsize, squeeze=False)
     flat = axes.ravel()
     compact = n > 3
+    titles = panel_labels(list(frames))
 
     for ax, (project, df) in zip(flat, frames.items()):
         for col in ("N", "M"):
@@ -520,8 +568,8 @@ def fig_growth_trajectories(frames, drift, fig_dir, max_panels=MAX_PANELS):
         ax.grid(axis="y")
         ax.tick_params(labelsize=6 if compact else 7)
         ax.set_title(
-            f"{label_of(project)} ($n$={len(df)})",
-            fontsize=6.8 if compact else 8, pad=2.5,
+            f"{titles[project]} ($n$={len(df)})",
+            fontsize=6.2 if compact else 8, pad=2.5,
         )
         # Drift events as a rug in the gutter reserved below zero.
         dates = drift_dates(drift, project)
@@ -564,7 +612,10 @@ def fig_growth_normalized(frames, fig_dir):
         curves = []
         for i, (project, df) in enumerate(frames.items()):
             years = relative_years(df)
-            rel = df[metric].values / float(df[metric].iloc[0])
+            base = float(df[metric].iloc[0])
+            if base <= 0:
+                continue
+            rel = df[metric].values / base
             curves.append((years, rel))
             ax.plot(
                 years, rel,
@@ -709,7 +760,10 @@ def fig_snapshot_cadence(frames, fig_dir, max_panels=MAX_PANELS):
     ax.set_xlabel("Snapshot date", labelpad=1)
     note = omitted_note(omitted, total)
     if note:
-        ax.set_title(note, fontsize=6.5, color="#333333", pad=3)
+        # Left-aligned inside the axes. As a centred title it collided with the
+        # worst-gap annotation, which is also placed along the top.
+        ax.text(0.0, 1.01, note, transform=ax.transAxes, fontsize=6.5,
+                color="#333333", ha="left", va="bottom")
 
     worst_project, worst_gap, worst_at = None, -1.0, None
     for project, df in frames.items():
@@ -758,8 +812,13 @@ def fig_snapshot_cadence(frames, fig_dir, max_panels=MAX_PANELS):
     ax.set_xlabel("Days between consecutive snapshots")
     ax.set_ylabel("ECDF")
     ax.set_ylim(0, 1.0)
+    # Gaps span 2 days to 1686. On a linear axis the whole distribution collapses
+    # against the left edge to make room for one outlier.
+    if max(pooled) / max(1.0, min(pooled)) > 30:
+        ax.set_xscale("log")
+        plain_log_ticks(ax.xaxis, [3, 10, 30, 100, 300, 1000])
     ax.grid(axis="y")
-    ax.legend(loc="lower right", handlelength=1.6, borderaxespad=0.2)
+    ax.legend(loc="upper left", handlelength=1.6, borderaxespad=0.2)
 
     panel_tag(axes[0], "(a)")
     panel_tag(axes[1], "(b)")
@@ -924,6 +983,7 @@ def fig_layer_composition(frames, cols, fig_dir, max_panels=MAX_PANELS):
     fig, axes = plt.subplots(nrows, ncols, figsize=figsize, squeeze=False)
     flat = axes.ravel()
     compact = n > 3
+    titles = panel_labels(list(frames))
     names = [c.replace(LAYER_PREFIX, "").replace("n_", "") for c in cols]
 
     for ax, (project, df) in zip(flat, frames.items()):
@@ -937,7 +997,7 @@ def fig_layer_composition(frames, cols, fig_dir, max_panels=MAX_PANELS):
         )
         ax.set_ylim(0, 1)
         ax.set_yticks([0, 0.5, 1.0])
-        ax.set_title(label_of(project), fontsize=6.8 if compact else 8, pad=2.5)
+        ax.set_title(titles[project], fontsize=6.2 if compact else 8, pad=2.5)
         ax.tick_params(labelsize=6 if compact else 7)
         year_axis(ax, compact=compact)
 
@@ -1028,7 +1088,7 @@ def fig_degree_distribution(frames, paths, fig_dir, max_panels=MAX_PANELS):
                     markersize=1.8, linewidth=0.8, label=when)
         ax.set_xscale("log")
         ax.set_yscale("log")
-        ax.set_title(label_of(project), fontsize=7, pad=2.5)
+        ax.set_title(panel_labels(list(usable))[project], fontsize=6.5, pad=2.5)
         ax.tick_params(labelsize=6)
         ax.grid(which="major", alpha=0.25)
 
@@ -1101,8 +1161,8 @@ def table_dataset_characterization(frames, drift, tab_dir, max_rows):
                 "edges_last": int(df["M"].iloc[-1]),
                 "edges_min": int(df["M"].min()),
                 "edges_max": int(df["M"].max()),
-                "node_growth_multiple": round(df["N"].iloc[-1] / df["N"].iloc[0], 2),
-                "edge_growth_multiple": round(df["M"].iloc[-1] / df["M"].iloc[0], 2),
+                "node_growth_multiple": round(growth_multiple(df["N"]), 2),
+                "edge_growth_multiple": round(growth_multiple(df["M"]), 2),
                 "net_contraction_from_peak_pct": round(
                     100.0 * (1.0 - df["N"].iloc[-1] / df["N"].max()), 1
                 ),
