@@ -171,7 +171,7 @@ The repo is organized around executable experiments and saved result artifacts.
 | `experiments/phase_5/` | DLG-DG-23 node-level core-asset prediction |
 | `research/governance_change_risk/` | preregistration, annotation codebook, and manifest-pair contract for the PR-level successor study |
 | `src/governance_descriptors/change_risk/` | exact manifest extraction, graph-delta features, collection, and held-out evaluation |
-| `data/` | anonymized dbt metadata plus public external graph datasets |
+| `data/` | anonymized dbt metadata plus public external graph datasets, see `data/README.md` for which domain-level file is authoritative |
 | `paper/` | preprint source, references, submission materials |
 | `artifacts/` | JSON, CSV, and Markdown outputs used by the paper |
 

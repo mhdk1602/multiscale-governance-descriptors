@@ -55,6 +55,63 @@ artifact now also records the per-stratum descriptor spread, which shows D3 is
 constant inside all three strata and explains why every permutation returns the
 observed correlation. Null model A is unchanged to ten significant figures.
 
+### Subset robustness artifact regenerated (2026-08-04)
+
+`artifacts/phase_3/exp_statistical_robustness_summary.json` predated the
+constant-input permutation fix and still carried its output. Subset E read
+`rho = NaN` beside `fdr_p = 9.999e-05`, which presented an undefined
+correlation as the most significant row in the table.
+
+Regenerated against the corrected `permutation_spearman`. Subsets A, B, and C
+are unchanged. Two rows moved.
+
+| Subset | n | rho | FDR p before | FDR p after |
+|---|---|---|---|---|
+| A, all N>=5 | 18 | -0.708 | 0.0288 | 0.0288 |
+| B, internal edges only | 6 | -1.000 | 0.1890 | 0.1890 |
+| C, no source-dominant | 6 | -1.000 | 0.1890 | 0.1890 |
+| D, no largest domain | 17 | -0.806 | 0.0006 | 0.0038 |
+| E, internal + no largest | 5 | undefined | 0.0001 | 1.0000 |
+
+Subset D moved because Benjamini-Hochberg is applied across every test in a
+subset. Eight or more constant-input tests in subset D previously returned the
+minimum attainable p-value of 0.0001 with an undefined rho, which dragged the
+adjustment down. With those tests correctly at p = 1.0, subset D's significance
+now rests on five genuine doc_rate correlations between -0.79 and -0.81.
+
+**This changes a claim.** Table `tab:subset` in the preprint labelled subset D
+"Spurious" with the footnote "Significance driven by test\_rate constant-input
+artifact". That was true of the buggy numbers and is false now. The row is
+relabelled "Survives", with a footnote recording that dropping the largest
+domain leaves the layer composition intact, so surviving it says nothing about
+within-layer governance signal. Subset E is added to the table rather than
+omitted. The paper's argument is untouched, since it rests on subset A, subset
+B, and the layer-stratified permutation, all unchanged.
+
+The summary also wrote a bare `NaN` token, which is not valid JSON under
+RFC 8259 and is rejected by `JSON.parse` and most non-Python parsers. Undefined
+rho is now `null` with an explicit `rho_defined` flag so it cannot be misread
+as zero.
+
+### Documented the two domain labelings (2026-08-04)
+
+`data/dbt_domain_summary.csv` and
+`artifacts/phase_3/exp_2b_dbt_domain_descriptors.csv` describe the same 26
+domains and the same 223 nodes under two unrelated anonymization passes.
+Added `data/README.md` recording which is authoritative and why.
+
+`data/dbt_nodes.csv` is ground truth. The descriptors CSV is the authoritative
+rollup, reproducing node-level `N`, `doc_rate`, and `test_rate` exactly on the
+canonical zero-padded labels. The summary file is rounded to 4 dp, names its
+columns `documentation_coverage` and `test_coverage`, and uses an unpadded
+labeling that maps to nothing else in the repository. Of the six domains
+matchable without ambiguity, none keeps its own number. Sorted against each
+other the two files agree to 4.3e-05, so only the row-to-label assignment
+differs. Padding the keys does not repair the join, it aligns the wrong rows
+and produces documentation values off by up to 1.0.
+
+Neither column is removed. No code reads the summary file today.
+
 ### Pointer and citation hygiene (2026-08-04)
 
 - README now points each headline number at the artifact that contains it.

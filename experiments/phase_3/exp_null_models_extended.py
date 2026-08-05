@@ -222,7 +222,9 @@ def main():
     # zero-padded domain key used by dbt_nodes.csv, so it is read directly.
     # An earlier version joined it against dbt_domain_summary.csv, whose
     # unpadded keys (domain_1 vs domain_001) never matched and silently
-    # emptied this null model.
+    # emptied this null model. Do not reinstate that join. The two files use
+    # unrelated anonymization labelings, so padding the keys aligns the wrong
+    # rows rather than fixing it. See data/README.md.
     domain_desc_path = os.path.join(
         os.path.dirname(__file__), '..', '..', 'artifacts', 'phase_3', 'exp_2b_dbt_domain_descriptors.csv'
     )

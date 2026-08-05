@@ -175,11 +175,19 @@ def main():
     pd.DataFrame(all_tests).to_csv(
         os.path.join(out_dir, 'exp_statistical_robustness.csv'), index=False)
 
+    # rho is undefined when the descriptor is constant across the subset, and
+    # a bare NaN token is not valid JSON (RFC 8259), so it is written as null
+    # with an explicit flag. Consumers must not read a null rho as zero.
     summary = {
         'experiment': 'statistical_robustness',
         'n_permutations': N_PERMS,
         'd3_doc_robustness': {
-            t['subset']: {'n': t['n'], 'rho': t['rho'], 'fdr_p': t['fdr_p']}
+            t['subset']: {
+                'n': t['n'],
+                'rho': None if not np.isfinite(t['rho']) else float(t['rho']),
+                'rho_defined': bool(np.isfinite(t['rho'])),
+                'fdr_p': t['fdr_p'],
+            }
             for t in all_tests
             if t['descriptor'] == 'D3_alg_conn' and t['target'] == 'doc_rate'
         },

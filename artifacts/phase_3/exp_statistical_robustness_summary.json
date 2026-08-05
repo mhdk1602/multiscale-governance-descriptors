@@ -5,27 +5,32 @@
     "A: all N\u22655": {
       "n": 18,
       "rho": -0.7084712767944846,
+      "rho_defined": true,
       "fdr_p": 0.0287971202879712
     },
     "B: internal edges only": {
       "n": 6,
       "rho": -1.0,
+      "rho_defined": true,
       "fdr_p": 0.18900967046152525
     },
     "C: no source-dominant": {
       "n": 6,
       "rho": -1.0,
+      "rho_defined": true,
       "fdr_p": 0.18900967046152525
     },
     "D: no largest domain": {
       "n": 17,
       "rho": -0.8055153392903583,
-      "fdr_p": 0.0005999400059994001
+      "rho_defined": true,
+      "fdr_p": 0.0038396160383961605
     },
     "E: internal + no largest": {
       "n": 5,
-      "rho": NaN,
-      "fdr_p": 9.999000099990002e-05
+      "rho": null,
+      "rho_defined": false,
+      "fdr_p": 1.0
     }
   }
 }

@@ -903,9 +903,17 @@ Subset & $n$ & $\rho$ & FDR $p$ & Status \\
 A: all $N \geq 5$ & 18 & $-0.708$ & 0.029 & Survives \\
 B: internal edges only & 6 & $-1.000$ & 0.189 & Fails \\
 C: no source-dominant & 6 & $-1.000$ & 0.189 & Fails \\
-D: no largest domain & 17 & $-0.806$ & $<0.01$ & Spurious$^\dagger$ \\
+D: no largest domain & 17 & $-0.806$ & 0.004 & Survives$^\dagger$ \\
+E: internal + no largest & 5 & undefined & 1.000 & Undefined$^\ddagger$ \\
 \bottomrule
-\multicolumn{5}{l}{\small $^\dagger$Significance driven by test\_rate constant-input artifact.}
+\multicolumn{5}{p{0.86\linewidth}}{\small $^\dagger$Dropping the largest
+domain leaves the layer composition intact, so surviving this subset says
+nothing about within-layer governance signal. Subset B and the
+layer-stratified permutation are the tests that bear on that question.} \\
+\multicolumn{5}{p{0.86\linewidth}}{\small $^\ddagger$D3 algebraic connectivity
+is constant across all five domains in this subset, so Spearman $\rho$ is
+undefined and the permutation test returns $p = 1.000$. The row carries no
+evidence either way.}
 \end{tabular}
 \end{table}
 
