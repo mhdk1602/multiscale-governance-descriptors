@@ -1,13 +1,13 @@
-project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects
-datafold__demo,2022-11-04T17:38:26,571e2bad676e4b3d8eb2d8a4407ed68664ae0ff3,switch to ref,3,2,True,,,,,,,,1,1.0,0.0,0,0,2,1,3,1
-datafold__demo,2023-01-11T13:54:22,cb18a3bdaa2ffbb387aeb4c4b243b30e3bef241c,setup for data-diff dbt (#25),4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1
-datafold__demo,2023-03-15T09:34:02,13264571850f1cf2df660c08e4f1b5b8d44630e9,add dev logic,4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1
-datafold__demo,2023-04-04T13:13:22,ffa9168896c85b86811d6ff893a4a8c6d55159f5,"undo test, facepalm",4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1
-datafold__demo,2023-06-12T15:01:06,a57b871bc57703ab8ab390f94da469718a9df7c4,select dim_orgs columns explicitly,4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1
-datafold__demo,2023-08-04T12:39:18,610afc663193c8caf5be8fae0bd63ecd4fd6ea58,undo accidental change,4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1
-datafold__demo,2024-03-06T11:24:42,4545620b480fa71ef4ced90207997aca8c6cabef,revert casing test,4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1
-datafold__demo,2024-04-19T12:48:05,97ee3ace356bb61f94b7894764f991a57ba1cc49,add dim_users,5,3,False,0.8571428571428571,2,0.7,0.5857864376269047,0.1715728752538099,0.08333333333341264,0.0,2,0.8,0.2,0,0,4,1,5,1
-datafold__demo,2024-07-04T18:56:11,e0f207656595ea86b67b4c9d49cdbe81a26521a7,Update schema.yml,5,3,False,0.8571428571428571,2,0.7,0.5857864376269047,0.1715728752538099,0.08333333333335036,0.0,2,0.8,0.2,0,0,4,1,5,1
-datafold__demo,2024-07-28T02:46:27,286a9514b98aee9177c4a71209d1032c41d84ce6,fix,10,6,False,0.8571428571428571,2,0.7,0.5857864376269047,0.17157287525380988,0.08333333333327775,0.0,4,0.4,0.2,0,0,8,2,10,1
-datafold__demo,2025-03-04T18:54:23,3f20bed7b63a810bab47b4bb15adceefcc75c0be,fix,13,6,False,0.8571428571428571,2,0.7692307692307693,0.5857864376269047,0.17157287525380988,0.08333333333331595,0.0,7,0.307692,0.384615,0,0,8,5,13,1
-datafold__demo,2025-03-18T22:09:48,986d7527733c6397798eef51c01e52f936ab8e28,informatica models upd,13,6,False,0.8571428571428571,2,0.7692307692307693,0.5857864376269047,0.17157287525380988,0.08333333333340155,0.0,7,0.307692,0.384615,0,0,8,5,13,1
+project_id,date,sha,commit_msg,N,M,too_small,D1_csi,D1_n_comm,D2_max_gini,D3_alg_conn,D3_norm_gap,D3_fiedler_bim,D4_cycle_rank_norm,n_components,giant_component_frac,isolated_frac,n_staging,n_intermediate,n_mart,n_unclassified,n_sql_files,n_dbt_projects,M_strict,M_recovered_by_permissive,nodes_touched_by_recovered,edges_dropped_as_commented_out,n_documented,n_tested,n_yaml_files,doc_rate,test_rate
+datafold__demo,2022-11-04T17:38:26,571e2bad676e4b3d8eb2d8a4407ed68664ae0ff3,switch to ref,3,2,True,,,,,,,,1,1.0,0.0,0,0,2,1,3,1,2,0,0,0,0,3,3,0.0,1.0
+datafold__demo,2023-01-11T13:54:22,cb18a3bdaa2ffbb387aeb4c4b243b30e3bef241c,setup for data-diff dbt (#25),4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1,3,0,0,0,0,4,3,0.0,1.0
+datafold__demo,2023-03-15T09:34:02,13264571850f1cf2df660c08e4f1b5b8d44630e9,add dev logic,4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1,3,0,0,0,0,4,2,0.0,1.0
+datafold__demo,2023-04-04T13:13:22,ffa9168896c85b86811d6ff893a4a8c6d55159f5,"undo test, facepalm",4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1,3,0,0,0,0,4,2,0.0,1.0
+datafold__demo,2023-06-12T15:01:06,a57b871bc57703ab8ab390f94da469718a9df7c4,select dim_orgs columns explicitly,4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1,3,0,0,0,0,4,2,0.0,1.0
+datafold__demo,2023-08-04T12:39:18,610afc663193c8caf5be8fae0bd63ecd4fd6ea58,undo accidental change,4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1,3,0,0,0,0,4,2,0.0,1.0
+datafold__demo,2024-03-06T11:24:42,4545620b480fa71ef4ced90207997aca8c6cabef,revert casing test,4,3,True,,,,,,,,1,1.0,0.0,0,0,3,1,4,1,3,0,0,0,0,4,2,0.0,1.0
+datafold__demo,2024-04-19T12:48:05,97ee3ace356bb61f94b7894764f991a57ba1cc49,add dim_users,5,3,False,0.8571428571428571,2,0.7,0.5857864376269047,0.1715728752538099,0.0833333333333942,0.0,2,0.8,0.2,0,0,4,1,5,1,3,0,0,0,0,5,2,0.0,1.0
+datafold__demo,2024-07-04T18:56:11,e0f207656595ea86b67b4c9d49cdbe81a26521a7,Update schema.yml,5,3,False,0.8571428571428571,2,0.7,0.5857864376269047,0.1715728752538099,0.08333333333339306,0.0,2,0.8,0.2,0,0,4,1,5,1,3,0,0,0,0,5,2,0.0,1.0
+datafold__demo,2024-07-28T02:46:27,286a9514b98aee9177c4a71209d1032c41d84ce6,fix,10,6,False,0.8571428571428571,2,0.7,0.5857864376269047,0.17157287525380988,0.08333333333323928,0.0,4,0.4,0.2,0,0,8,2,10,1,6,0,0,0,0,10,4,0.0,1.0
+datafold__demo,2025-03-04T18:54:23,3f20bed7b63a810bab47b4bb15adceefcc75c0be,fix,13,6,False,0.8571428571428571,2,0.7692307692307693,0.5857864376269047,0.17157287525380988,0.08333333333333576,0.0,7,0.307692,0.384615,0,0,8,5,13,1,6,0,0,0,0,10,4,0.0,0.769231
+datafold__demo,2025-03-18T22:09:48,986d7527733c6397798eef51c01e52f936ab8e28,informatica models upd,13,6,False,0.8571428571428571,2,0.7692307692307693,0.5857864376269047,0.17157287525380988,0.08333333333344489,0.0,7,0.307692,0.384615,0,0,8,5,13,1,6,0,0,0,0,10,4,0.0,0.769231

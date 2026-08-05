@@ -1,8 +1,8 @@
 {
  "project_id": "fivetran__dbt_xero",
  "repo_url": "https://github.com/fivetran/dbt_xero.git",
- "tool_version": "1.0.0",
- "extraction_started_utc": "2026-08-05T02:33:25Z",
+ "tool_version": "2.0.0",
+ "extraction_started_utc": "2026-08-05T04:59:30Z",
  "window_days": 30,
  "descriptors_computed": true,
  "status": "partial",
@@ -41,6 +41,8 @@
  "history_end": "2026-07-27T17:51:35",
  "n_snapshots_planned": 22,
  "model_paths_stable": true,
+ "edges_file": "edges/fivetran__dbt_xero.csv.gz",
+ "n_edge_rows": 321,
  "snapshot_errors": [
   {
    "sha": "ccf0e8c04df8b707d02d1be1d277b6409d9bb04d",
@@ -50,7 +52,7 @@
  ],
  "n_snapshots": 21,
  "snapshot_coverage": 0.9545,
- "extraction_finished_utc": "2026-08-05T02:35:43Z",
+ "extraction_finished_utc": "2026-08-05T05:00:23Z",
  "snapshot_shas": [
   "40750d0fb7be8d2bba1e8e5831a438320d1dd6de",
   "1c9c33b16f675172f44682ca81a06e88204aebde",

@@ -30,6 +30,9 @@ SNAPSHOT_COLUMNS = [
     'n_components', 'giant_component_frac', 'isolated_frac',
     'n_staging', 'n_intermediate', 'n_mart', 'n_unclassified',
     'n_sql_files', 'n_dbt_projects',
+    'M_strict', 'M_recovered_by_permissive', 'nodes_touched_by_recovered',
+    'edges_dropped_as_commented_out',
+    'n_documented', 'n_tested', 'n_yaml_files', 'doc_rate', 'test_rate',
 ]
 
 DRIFT_COLUMNS = ['project_id', 'date', 'sha', 'descriptor', 'prev', 'curr',
@@ -44,7 +47,10 @@ INDEX_COLUMNS = [
     'tier', 'net_contraction_from_peak_pct', 'median_giant_component_frac',
     'median_edges_per_node', 'median_snapshot_gap_days',
     'max_snapshot_gap_days', 'drift_events', 'n_dbt_projects_at_head',
-    'model_paths', 'head_sha', 'stars', 'license', 'strata', 'error',
+    'model_paths', 'head_sha', 'stars', 'license', 'strata',
+    'edge_recall_strict', 'pct_edges_recovered', 'pct_nodes_touched_by_recovered',
+    'edges_dropped_as_commented_out', 'median_doc_rate', 'median_test_rate',
+    'error',
 ]
 
 DRIFT_DESCRIPTORS = ['D1_csi', 'D3_alg_conn', 'D4_cycle_rank_norm']
@@ -87,6 +93,20 @@ FIELD_DOC = {
                                'different directories share a filename.'),
     'n_dbt_projects': ('integer', 'dbt_project.yml files visible at this commit, '
                                   'vendored packages excluded.'),
+    'M_strict': ('integer', 'Edges the anchored {{ ref(...) }} pattern finds on its '
+                            'own. M minus this is what dropping the anchor recovers.'),
+    'M_recovered_by_permissive': ('integer', 'Edges visible only once the anchor is '
+                                             'dropped, almost all refs passed as '
+                                             'arguments to a macro.'),
+    'nodes_touched_by_recovered': ('integer', 'Nodes incident to at least one '
+                                              'recovered edge.'),
+    'edges_dropped_as_commented_out': ('integer', 'Edges that a parse without comment '
+                                                  'stripping would have invented.'),
+    'n_documented': ('integer', 'Models with a non-empty description in the schema YAML.'),
+    'n_tested': ('integer', 'Models carrying a test at model or column level.'),
+    'n_yaml_files': ('integer', 'Schema YAML files read under the model paths.'),
+    'doc_rate': ('float [0,1]', 'n_documented divided by N.'),
+    'test_rate': ('float [0,1]', 'n_tested divided by N.'),
     'n_components': ('integer', 'Connected components of the undirected skeleton.'),
     'giant_component_frac': ('float (0,1]', 'Largest connected component divided by N. '
                                             'D1 and D3 are computed on the giant '
@@ -137,6 +157,23 @@ def build_schema(dest):
                                 'name the phase_4 scripts glob for. Byte-identical '
                                 'content to projects/<id>/snapshots.csv.'),
                 'primary_key': ['sha'],
+            },
+            'edges/<id>.csv.gz': {
+                'description': ('Every edge of every snapshot, gzipped, one file per '
+                                'project. Lets a reader rebuild any graph in the '
+                                'corpus rather than trusting the scalars.'),
+                'primary_key': ['sha', 'source', 'target'],
+                'fields': [
+                    {'name': 'sha', 'type': 'string (40 hex)'},
+                    {'name': 'date', 'type': 'ISO-8601 datetime'},
+                    {'name': 'source', 'type': 'string', 'description': 'model referenced'},
+                    {'name': 'target', 'type': 'string', 'description': 'model containing the ref'},
+                    {'name': 'capture_mode', 'type': 'string',
+                     'description': 'strict when the anchored {{ ref(...) }} pattern '
+                                    'finds it, permissive_only when only the unanchored '
+                                    'pattern does. Filter to strict to reconstruct the '
+                                    'parse the two-project release used.'},
+                ],
             },
             'sampling_frame.csv': {
                 'description': ('The full candidate population and the screening outcome '
@@ -275,11 +312,30 @@ repository URL, the default branch, the HEAD SHA at extraction time, and the SHA
 of every sampled commit, so any row can be traced back to the exact tree it was
 computed from.
 
+## How refs are matched, and the two parses
+
+Comments are stripped first, `--`, `/* */` and `{{# #}}` alike. Without that a
+commented-out reference becomes an edge, which is how the two-project release
+acquired seven Mattermost edges that exist in no compiled manifest.
+
+Two patterns then run. The **strict** one requires `{{{{` immediately before
+`ref(`, so it only sees a ref that is the entire Jinja expression. The
+**permissive** one drops that anchor and also accepts the two-argument
+`ref('package', 'model')` form, so it sees a ref handed to a macro. That is not
+a corner case. On Cal-ITP the anchor hides 114 of 854 edges, 13 percent,
+touching 186 of 620 nodes, and every hidden site is a plain string literal
+inside `dbt_utils.union_relations`, `unpivot` or a project-local macro.
+
+The corpus reports the permissive parse, because those edges are real
+dependencies that dbt itself resolves. `edges/<id>.csv.gz` labels every edge
+`strict` or `permissive_only`, and `M_strict` is on every snapshot row, so
+filtering to `strict` reconstructs the older parse exactly.
+
 ## Known limitations
 
-- `ref()` calls constructed dynamically, for example inside a macro or from a
-  loop variable, are not resolved. The regex matches literal string arguments
-  only.
+- A `ref()` whose argument is genuinely computed, from a loop variable or string
+  concatenation, is still not resolved. Both patterns match string literals only.
+  On the two projects audited by hand there were no such sites.
 - A repository that fans a single dbt project out into several subprojects
   leaves the tracked project empty from that point on. Those snapshots are
   recorded as gaps in `projects/<id>/extraction.json` and the project's status
@@ -294,8 +350,41 @@ computed from.
   Pooling snapshots across a tier gives a different number, 0.794 against 0.765
   for `core` and 0.370 against 0.383 for `extended`. Both are correct and they
   answer different questions, so state which one a figure is showing.
-- `D3_fiedler_bim` is not defined on graphs whose second Laplacian eigenvalue is
-  degenerate, and the corpus contains such graphs.
+### `D3_fiedler_bim` is undefined on part of this corpus
+
+Not unstable, undefined, and the distinction matters to anyone computing
+spectral descriptors on small sparse graphs.
+
+Algebraic connectivity is the second-smallest Laplacian eigenvalue, and an
+eigenvalue is unique whatever the solver does, so `D3_alg_conn` reproduces to
+the last bit under any node ordering. The Fiedler vector is an eigen*vector* of
+that eigenvalue, and it is only unique when the eigenvalue is simple. When it is
+not, any vector in the eigenspace qualifies and the bimodality coefficient of
+whichever basis the solver happens to return is arbitrary.
+
+The corpus contains such graphs. One snapshot of `DalgoT4D/dbt_shofco` has a
+15-node giant component whose Laplacian carries lambda_2 through lambda_6 all
+equal to 1.0, a five-fold degeneracy with a separation of 4.4e-16. Under twelve
+node-order permutations of that one graph `D3_alg_conn` does not move at all
+while `D3_fiedler_bim` moves by 0.174, which is 65 percent of the descriptor's
+published standard deviation of 0.268. Across the 40 snapshots measured in
+`d1_order_sensitivity.json` the other 39 move by at most 8.9e-06, so this is a
+tail that a small sample will miss rather than a pervasive wobble.
+
+Small, sparse and symmetric graphs are where degeneracy arises, and a corpus of
+public dbt projects is full of them. Check the eigenvalue separation before
+reporting anything that rests on a Fiedler vector.
+
+## Other known limitations
+
+- `D3_fiedler_bim`, as above.
+- `tier` is defined partly by median giant component, and D1 and D3 are computed
+  on that same component. Testing `tier` against a D3 descriptor is therefore
+  partly circular. `composition` carries no such dependence, and D4 is computed
+  on the whole graph.
+- Documentation and test coverage come from the schema YAML beside the models.
+  A project that documents elsewhere, or generates its YAML at build time, will
+  read as uncovered when it is not.
 """
 
 
@@ -359,6 +448,13 @@ def step_change_drift(rows, threshold=DRIFT_THRESHOLD_PCT):
 VIABLE_N = 10
 
 
+def _median(vals):
+    v = sorted(x for x in vals if isinstance(x, (int, float)))
+    if not v:
+        return None
+    return round(v[len(v) // 2], 6)
+
+
 def summarise(pid, res, rows, extra):
     dates = [r['date'][:10] for r in rows]
     ns = [r['N'] for r in rows if isinstance(r.get('N'), (int, float))]
@@ -413,6 +509,19 @@ def summarise(pid, res, rows, extra):
         'node_growth_from_first_viable': (
             round(ns[-1] / viable[1]['N'], 2)
             if viable and ns and viable[1]['N'] else None),
+        'edge_recall_strict': (
+            round(sum(r.get('M_strict') or 0 for r in rows)
+                  / max(1, sum(r.get('M') or 0 for r in rows)), 4)),
+        'pct_edges_recovered': (
+            round(100 * sum(r.get('M_recovered_by_permissive') or 0 for r in rows)
+                  / max(1, sum(r.get('M') or 0 for r in rows)), 2)),
+        'pct_nodes_touched_by_recovered': (
+            round(100 * sum(r.get('nodes_touched_by_recovered') or 0 for r in rows)
+                  / max(1, sum(r.get('N') or 0 for r in rows)), 2)),
+        'edges_dropped_as_commented_out': sum(
+            r.get('edges_dropped_as_commented_out') or 0 for r in rows),
+        'median_doc_rate': _median([r.get('doc_rate') for r in rows]),
+        'median_test_rate': _median([r.get('test_rate') for r in rows]),
         'net_contraction_from_peak_pct': contraction,
         'median_giant_component_frac': (round(gcf[len(gcf) // 2], 4) if gcf else None),
         'median_edges_per_node': (round(epn[len(epn) // 2], 4) if epn else None),
@@ -519,6 +628,13 @@ def main():
         with open(os.path.join(pdir, 'extraction.json'), 'w') as f:
             json.dump(prov, f, indent=1)
 
+        for d in a.results:
+            src = os.path.join(d, 'edges', f'{pid}.csv.gz')
+            if os.path.isfile(src):
+                os.makedirs(os.path.join(dest, 'edges'), exist_ok=True)
+                shutil.copy2(src, os.path.join(dest, 'edges', f'{pid}.csv.gz'))
+                break
+
         drifts = step_change_drift(rows)
         for e in drifts:
             e['project_id'] = pid
@@ -555,6 +671,10 @@ def main():
                 'snapshots': f'projects/{pid}/snapshots.csv',
                 'extraction': f'projects/{pid}/extraction.json',
                 'legacy_name': f'longitudinal/longitudinal_{pid}.csv',
+                'edges': (f'edges/{pid}.csv.gz'
+                          if os.path.isfile(os.path.join(dest, 'edges',
+                                                         f'{pid}.csv.gz'))
+                          else None),
             },
         })
 

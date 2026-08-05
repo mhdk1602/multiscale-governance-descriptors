@@ -1,8 +1,8 @@
 {
  "project_id": "prefeitura-rio__pipelines_rj_smtr",
  "repo_url": "https://github.com/prefeitura-rio/pipelines_rj_smtr.git",
- "tool_version": "1.0.0",
- "extraction_started_utc": "2026-08-05T02:37:01Z",
+ "tool_version": "2.0.0",
+ "extraction_started_utc": "2026-08-05T05:01:46Z",
  "window_days": 30,
  "descriptors_computed": true,
  "status": "partial",
@@ -41,6 +41,8 @@
  "history_end": "2026-05-15T15:19:01",
  "n_snapshots_planned": 28,
  "model_paths_stable": true,
+ "edges_file": "edges/prefeitura-rio__pipelines_rj_smtr.csv.gz",
+ "n_edge_rows": 12811,
  "snapshot_errors": [
   {
    "sha": "df34c52abb6e5468f5f116d92685189955836909",
@@ -50,7 +52,7 @@
  ],
  "n_snapshots": 27,
  "snapshot_coverage": 0.9643,
- "extraction_finished_utc": "2026-08-05T02:38:25Z",
+ "extraction_finished_utc": "2026-08-05T05:03:32Z",
  "snapshot_shas": [
   "d48614dc80267cf288a295f42026a377c01c4821",
   "f79d4a578c17288200e8497e023d9d75860f0697",

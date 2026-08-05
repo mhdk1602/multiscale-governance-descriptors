@@ -148,6 +148,43 @@ def main():
 
     print()
     print('=' * 78)
+    print('PARSER FIDELITY. What dropping the {{ anchor and stripping comments')
+    print('changed, per snapshot and per project.')
+    print('=' * 78)
+    if 'M_strict' in snaps.columns:
+        ms = pd.to_numeric(snaps['M_strict'], errors='coerce')
+        mm = pd.to_numeric(snaps['M'], errors='coerce')
+        rec = pd.to_numeric(snaps['M_recovered_by_permissive'], errors='coerce')
+        com = pd.to_numeric(snaps['edges_dropped_as_commented_out'],
+                            errors='coerce')
+        print(f'  edges, strict parse   : {int(ms.sum()):,}')
+        print(f'  edges, corpus parse   : {int(mm.sum()):,}')
+        print(f'  recovered by dropping the anchor : {int(rec.sum()):,} '
+              f'({100*rec.sum()/max(1,mm.sum()):.1f}% of all edges)')
+        print(f'  invented by comments, now removed: {int(com.sum()):,}')
+        pr = idx['pct_edges_recovered'].astype(float)
+        print(f'  per-project recovery rate: min {pr.min():.1f}%  '
+              f'median {pr.median():.1f}%  p90 {q(pr,90):.1f}%  max {pr.max():.1f}%')
+        print(f'  projects losing nothing to the anchor : {(pr == 0).sum()} of {len(pr)}')
+        print(f'  projects losing more than 10 percent : {(pr > 10).sum()}')
+        cm = idx['edges_dropped_as_commented_out'].astype(float)
+        print(f'  projects with commented-out refs     : {(cm > 0).sum()}, '
+              f'{int(cm.sum())} edges in total')
+
+    print()
+    print('=' * 78)
+    print('COVERAGE, read from the schema YAML the extractor never used to open.')
+    print('=' * 78)
+    if 'doc_rate' in snaps.columns:
+        for col in ('doc_rate', 'test_rate'):
+            v = pd.to_numeric(idx['median_' + col], errors='coerce').dropna()
+            print(f'  median_{col:10s} across projects: min {v.min():.3f}  '
+                  f'p25 {q(v,25):.3f}  median {v.median():.3f}  p75 {q(v,75):.3f}  '
+                  f'max {v.max():.3f}')
+            print(f'    projects at exactly zero: {(v == 0).sum()} of {len(v)}')
+
+    print()
+    print('=' * 78)
     print('TIERS. `core` is the subset where the descriptors describe most of N.')
     print('=' * 78)
     for tier, grp in idx.groupby('tier'):

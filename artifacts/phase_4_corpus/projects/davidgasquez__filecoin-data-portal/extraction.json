@@ -1,8 +1,8 @@
 {
  "project_id": "davidgasquez__filecoin-data-portal",
  "repo_url": "https://github.com/davidgasquez/filecoin-data-portal.git",
- "tool_version": "1.0.0",
- "extraction_started_utc": "2026-08-05T02:41:48Z",
+ "tool_version": "2.0.0",
+ "extraction_started_utc": "2026-08-05T05:06:33Z",
  "window_days": 30,
  "descriptors_computed": true,
  "status": "partial",
@@ -41,6 +41,8 @@
  "history_end": "2026-04-15T18:49:41",
  "n_snapshots_planned": 28,
  "model_paths_stable": true,
+ "edges_file": "edges/davidgasquez__filecoin-data-portal.csv.gz",
+ "n_edge_rows": 218,
  "snapshot_errors": [
   {
    "sha": "e94d08c9a75c6992607aa358dfce6717f87557ba",
@@ -50,7 +52,7 @@
  ],
  "n_snapshots": 27,
  "snapshot_coverage": 0.9643,
- "extraction_finished_utc": "2026-08-05T02:43:17Z",
+ "extraction_finished_utc": "2026-08-05T05:07:57Z",
  "snapshot_shas": [
   "660468446cc4730eb875c30ee2067fc8c271f042",
   "5b65552cbe5f49205429a875ec161361886bd74b",

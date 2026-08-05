@@ -1,8 +1,8 @@
 {
  "project_id": "beyondessential__tamanu-source-dbt",
  "repo_url": "https://github.com/beyondessential/tamanu-source-dbt.git",
- "tool_version": "1.0.0",
- "extraction_started_utc": "2026-08-05T02:21:59Z",
+ "tool_version": "2.0.0",
+ "extraction_started_utc": "2026-08-05T04:52:58Z",
  "window_days": 30,
  "descriptors_computed": true,
  "status": "partial",
@@ -41,6 +41,8 @@
  "history_end": "2026-08-02T07:47:50",
  "n_snapshots_planned": 25,
  "model_paths_stable": true,
+ "edges_file": "edges/beyondessential__tamanu-source-dbt.csv.gz",
+ "n_edge_rows": 3838,
  "snapshot_errors": [
   {
    "sha": "2b67b5ece8c69ac5ec917b4c309f2164eefe1e02",
@@ -65,7 +67,7 @@
  ],
  "n_snapshots": 21,
  "snapshot_coverage": 0.84,
- "extraction_finished_utc": "2026-08-05T02:23:15Z",
+ "extraction_finished_utc": "2026-08-05T04:54:46Z",
  "snapshot_shas": [
   "61fe899ac24aa4e0952a9d9f528b20d1f297dc08",
   "ee2d717e9bc1ce848d1528b5056be66ed46aaf9e",

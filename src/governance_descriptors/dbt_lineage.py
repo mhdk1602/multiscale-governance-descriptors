@@ -38,6 +38,8 @@ Cal-ITP reproduces every commit it shares with the recorded 51.
 """
 from __future__ import annotations
 
+import csv
+import gzip
 import json
 import os
 import re
@@ -55,12 +57,39 @@ from governance_descriptors.spectral import spectral_descriptors
 from governance_descriptors.blast_radius import concentration_profile
 from governance_descriptors.persistent_homology import cycle_rank_descriptors
 
-TOOL_VERSION = '1.0.0'
+TOOL_VERSION = '2.0.0'
 
-# Identical to exp_longitudinal_dbt.py
-REF_PAT = re.compile(r"\{\{\s*ref\(\s*['\"](\w+)['\"]\s*\)\s*\}\}", re.IGNORECASE)
+# The strict pattern from exp_longitudinal_dbt.py. It requires `{{` immediately
+# before `ref(`, so it only sees a ref that is the entire Jinja expression.
+REF_STRICT = re.compile(r"\{\{\s*ref\(\s*['\"](\w+)['\"]\s*\)\s*\}\}",
+                        re.IGNORECASE)
+
+# The permissive pattern drops the anchor and accepts the two-argument form.
+# A ref passed as an argument to a macro is invisible to the strict pattern, and
+# that is not an edge case: on Cal-ITP it hides 113 of 869 model-to-model edges,
+# 13.0 percent, touching 29.2 percent of nodes. Every missed site is a plain
+# literal, none is dynamically constructed, and 93 percent span multiple lines.
+# The wrapping callables are `dbt_utils.union_relations`, `unpivot` and
+# project-local macros. The lookbehind keeps `something.ref(` and `my_ref(` out.
+REF_PERMISSIVE = re.compile(
+    r"(?<![\w.])ref\s*\(\s*(?:['\"][\w.\-]+['\"]\s*,\s*)?['\"](\w+)['\"]\s*\)",
+    re.IGNORECASE)
+
+# Comments are stripped before either pattern runs. Without this a commented-out
+# model reference becomes an edge, which is how the published Mattermost graphs
+# acquired 7 edges that exist in no compiled manifest.
+SQL_BLOCK_COMMENT = re.compile(r"/\*.*?\*/", re.DOTALL)
+SQL_LINE_COMMENT = re.compile(r"--[^\n]*")
+JINJA_COMMENT = re.compile(r"\{#.*?#\}", re.DOTALL)
 
 DEFAULT_MODEL_PATHS = ['models']
+
+
+def strip_sql_comments(text):
+    """Remove block, line and Jinja comments, preserving line structure."""
+    text = SQL_BLOCK_COMMENT.sub(lambda m: '\n' * m.group(0).count('\n'), text)
+    text = JINJA_COMMENT.sub(lambda m: '\n' * m.group(0).count('\n'), text)
+    return SQL_LINE_COMMENT.sub('', text)
 
 
 # --------------------------------------------------------------------------
@@ -488,6 +517,74 @@ def classify_layer(name, path):
     return 'unclassified'
 
 
+def coverage_at_commit(repo, sha, model_paths, model_names, blobs=None,
+                       contents=None):
+    """Documentation and test coverage from the schema YAML beside the models.
+
+    The extractor never opened these files, so the two governance-adjacent
+    variables the corpus could most usefully carry were invisible. dbt records a
+    model's description and its tests in a `.yml` next to it, not in the SQL.
+
+    A model counts as documented when its `description` is a non-empty string,
+    and as tested when it carries a `tests` or `data_tests` key at model level or
+    on any of its columns. Both are measured against the models actually present
+    in the graph, so a YAML entry for a model that no longer exists is ignored.
+    """
+    # The caller has already listed this tree and read most of it. Listing it
+    # again costs two process spawns per snapshot, and process spawns dominate
+    # the runtime on a project with fifty snapshots.
+    if blobs is None:
+        blobs = ls_tree(repo, sha, list(model_paths))
+    ymls = [(osha, path) for _m, _t, osha, path in blobs
+            if path.endswith(('.yml', '.yaml')) and not is_vendored(path)]
+    out = {'n_documented': 0, 'n_tested': 0, 'n_yaml_files': len(ymls),
+            'doc_rate': None, 'test_rate': None, 'yaml_parse_errors': 0}
+    if not model_names:
+        return out
+    if not ymls:
+        out['doc_rate'] = 0.0
+        out['test_rate'] = 0.0
+        return out
+
+    if contents is None:
+        contents = cat_blobs(repo, [y[0] for y in ymls])
+    documented, tested, errors = set(), set(), 0
+    for osha, _path in ymls:
+        raw = contents.get(osha)
+        if raw is None:
+            continue
+        try:
+            doc = yaml.safe_load(raw.decode('utf-8', 'replace'))
+        except Exception:
+            errors += 1
+            continue
+        if not isinstance(doc, dict):
+            continue
+        for entry in (doc.get('models') or []):
+            if not isinstance(entry, dict):
+                continue
+            name = entry.get('name')
+            if name not in model_names:
+                continue
+            desc = entry.get('description')
+            if isinstance(desc, str) and desc.strip():
+                documented.add(name)
+            has_tests = bool(entry.get('tests') or entry.get('data_tests'))
+            for col in (entry.get('columns') or []):
+                if isinstance(col, dict) and (col.get('tests')
+                                              or col.get('data_tests')):
+                    has_tests = True
+                    break
+            if has_tests:
+                tested.add(name)
+    n = len(model_names)
+    out.update({'n_documented': len(documented), 'n_tested': len(tested),
+                'doc_rate': round(len(documented) / n, 6),
+                'test_rate': round(len(tested) / n, 6),
+                'yaml_parse_errors': errors})
+    return out
+
+
 def extract_lineage_at_commit(repo, sha, model_paths, fixed_paths=False,
                               chosen_config=None):
     """Parse ref() out of the model SQL at a commit. Returns (DiGraph, meta).
@@ -526,7 +623,9 @@ def extract_lineage_at_commit(repo, sha, model_paths, fixed_paths=False,
     if not sql:
         return None, {'model_paths': paths, 'projects': projects, 'n_sql_files': 0}
 
-    contents = cat_blobs(repo, [s[0] for s in sql])
+    yml_shas = [osha for _m, _t, osha, path in blobs
+                if path.endswith(('.yml', '.yaml')) and not is_vendored(path)]
+    contents = cat_blobs(repo, [s[0] for s in sql] + yml_shas)
     stems = {}
     for osha, path in sql:
         stems.setdefault(PurePosixPath(path).stem, path)
@@ -535,21 +634,60 @@ def extract_lineage_at_commit(repo, sha, model_paths, fixed_paths=False,
     g = nx.DiGraph()
     # Sorted, not set order. See module docstring.
     g.add_nodes_from(sorted(model_names))
+    # capture_mode per edge, so the strict parse stays reconstructable from the
+    # released data and the difference between the two is auditable rather than
+    # merely disclosed.
+    edge_mode = {}
+    n_raw_comment_hits = 0
     for osha, path in sorted(sql, key=lambda x: x[1]):
         raw = contents.get(osha)
         if raw is None:
             continue
         text = raw.decode('utf-8', 'replace')
+        clean = strip_sql_comments(text)
         stem = PurePosixPath(path).stem
-        for r in REF_PAT.findall(text):
-            if r in model_names:
-                g.add_edge(r, stem)
+        strict = {r for r in REF_STRICT.findall(clean) if r in model_names}
+        permissive = {r for r in REF_PERMISSIVE.findall(clean) if r in model_names}
+        # What the uncleaned text would have produced, to size the comment bug.
+        # Only worth a second regex pass when stripping actually removed
+        # something, which is the minority of files.
+        if len(clean) != len(text):
+            n_raw_comment_hits += len(
+                {r for r in REF_PERMISSIVE.findall(text) if r in model_names}
+                - permissive)
+        for r in sorted(permissive):
+            g.add_edge(r, stem)
+            edge_mode[(r, stem)] = ('strict' if r in strict else 'permissive_only')
 
     layers = {}
     for name, path in stems.items():
         layers[classify_layer(name, path)] = layers.get(classify_layer(name, path), 0) + 1
+
+    # Nodes come from the file listing, never from the regex. Changing how refs
+    # are matched must move M and leave N alone, so an inflated node count means
+    # an edge was added for a target that is not a model in this snapshot. The
+    # `r in model_names` filter is what prevents it, and this is the guard that
+    # notices if the filter is ever dropped.
+    if g.number_of_nodes() != len(model_names):
+        raise AssertionError(
+            f'ref matching changed the node set at {sha[:12]}: '
+            f'{len(model_names)} model files produced {g.number_of_nodes()} '
+            f'nodes. Edges must never introduce a node.')
+
+    n_strict = sum(1 for m in edge_mode.values() if m == 'strict')
+    n_recovered = len(edge_mode) - n_strict
+    touched = {n for (a, b), m in edge_mode.items()
+               if m == 'permissive_only' for n in (a, b)}
     meta = {'model_paths': paths, 'projects': projects, 'n_sql_files': len(sql),
-            'layers': layers, 'n_stem_collisions': len(sql) - len(stems)}
+            'layers': layers, 'n_stem_collisions': len(sql) - len(stems),
+            'edge_mode': edge_mode,
+            'M_strict': n_strict,
+            'M_recovered_by_permissive': n_recovered,
+            'nodes_touched_by_recovered': len(touched),
+            'edges_dropped_as_commented_out': n_raw_comment_hits,
+            'model_files': dict(stems)}
+    meta.update(coverage_at_commit(repo, sha, paths, model_names,
+                                   blobs=blobs, contents=contents))
     return g, meta
 
 
@@ -627,7 +765,7 @@ def compute_descriptors_safe(g):
 
 def run_project(repo, project_id, repo_url, out_dir, window_days=30,
                 fixed_model_paths=None, max_snapshots=None, verbose=True,
-                descriptors=True):
+                descriptors=True, emit_edges=True):
     started = datetime.utcnow().isoformat(timespec='seconds') + 'Z'
     result = {
         'project_id': project_id,
@@ -706,6 +844,7 @@ def run_project(repo, project_id, repo_url, out_dir, window_days=30,
         result['model_paths_stable'] = bool(info.get('model_paths_stable'))
 
         rows, errors = [], []
+        edges_out = [] if emit_edges else None
         for i, entry in enumerate(sampled):
             dt, sha = entry[0], entry[1]
             subject = entry[2] if len(entry) > 2 else ''
@@ -727,6 +866,17 @@ def run_project(repo, project_id, repo_url, out_dir, window_days=30,
                 row['n_sql_files'] = meta['n_sql_files']
                 row['n_dbt_projects'] = (len(meta.get('projects') or [])
                                          or info.get('n_dbt_projects_seen', 0))
+                for k in ('M_strict', 'M_recovered_by_permissive',
+                          'nodes_touched_by_recovered',
+                          'edges_dropped_as_commented_out',
+                          'n_documented', 'n_tested', 'n_yaml_files',
+                          'doc_rate', 'test_rate'):
+                    row[k] = meta.get(k)
+                if edges_out is not None:
+                    for (a, b), mode in sorted(meta['edge_mode'].items()):
+                        edges_out.append({'sha': sha, 'date': dt.isoformat(),
+                                          'source': a, 'target': b,
+                                          'capture_mode': mode})
                 rows.append(row)
                 if verbose and (i % 10 == 0 or i == len(sampled) - 1):
                     print(f'  {project_id} [{i+1}/{len(sampled)}] {dt.date()} '
@@ -736,6 +886,22 @@ def run_project(repo, project_id, repo_url, out_dir, window_days=30,
                                'reason': f'{type(e).__name__}: {str(e)[:200]}'})
 
         result['snapshots'] = rows
+        # Edges go to their own gzipped file rather than into the result JSON.
+        # Cal-ITP alone carries 31,345 of them across its 53 snapshots, and a
+        # reader who only wants the descriptor series should not have to parse
+        # them.
+        if edges_out is not None and out_dir:
+            edir = os.path.join(out_dir, 'edges')
+            os.makedirs(edir, exist_ok=True)
+            epath = os.path.join(edir, f'{project_id}.csv.gz')
+            with gzip.open(epath, 'wt', newline='') as f:
+                w = csv.DictWriter(
+                    f, fieldnames=['sha', 'date', 'source', 'target',
+                                   'capture_mode'])
+                w.writeheader()
+                w.writerows(edges_out)
+            result['edges_file'] = f'edges/{project_id}.csv.gz'
+            result['n_edge_rows'] = len(edges_out)
         result['snapshot_errors'] = errors
         result['n_snapshots'] = len(rows)
         result['snapshot_coverage'] = (round(len(rows) / len(sampled), 4)

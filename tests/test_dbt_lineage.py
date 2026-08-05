@@ -11,6 +11,8 @@ the defect coming back.
 
 Run: python -m pytest tests/ -q
 """
+import csv
+import gzip
 import json
 import os
 import shutil
@@ -21,6 +23,8 @@ import networkx as nx
 import pytest
 
 from governance_descriptors.dbt_lineage import (
+    REF_PERMISSIVE,
+    REF_STRICT,
     RELOCATION_OVERLAP,
     classify_layer,
     compute_descriptors_safe,
@@ -31,6 +35,7 @@ from governance_descriptors.dbt_lineage import (
     path_universe,
     run_project,
     sample_one_per_window,
+    strip_sql_comments,
 )
 
 
@@ -484,3 +489,153 @@ def test_run_project_does_not_touch_the_worktree(simple_repo, tmp_path):
     assert git(simple_repo, "rev-parse", "HEAD").strip() == before
     assert git(simple_repo, "status", "--porcelain") == before_status
     assert git(simple_repo, "symbolic-ref", "--short", "HEAD").strip() == "main"
+
+
+# --------------------------------------------------------------------------- #
+# Parser fidelity: the strict pattern misses refs passed to macros
+# --------------------------------------------------------------------------- #
+
+def test_permissive_pattern_recovers_refs_passed_to_a_macro():
+    """Regression. The anchor cost 13 percent of Cal-ITP's edges.
+
+    `{{` immediately before `ref(` means the strict pattern only sees a ref that
+    is the whole Jinja expression. A ref handed to `dbt_utils.union_relations`
+    or `unpivot` is invisible to it, and none of those sites is dynamically
+    constructed, so the edges were recoverable all along.
+    """
+    text = "{{ dbt_utils.union_relations([\n  ref('a'),\n  ref('b'),\n]) }}"
+    assert REF_STRICT.findall(text) == []
+    assert REF_PERMISSIVE.findall(text) == ['a', 'b']
+
+
+def test_permissive_pattern_reads_the_two_argument_form():
+    assert REF_PERMISSIVE.findall("{{ ref('a_package', 'the_model') }}") == \
+        ['the_model']
+
+
+@pytest.mark.parametrize("text", [
+    "-- select from {{ ref('ghost') }}",
+    "/* {{ ref('ghost') }} */ select 1",
+    "{# {{ ref('ghost') }} #}",
+])
+def test_commented_out_refs_are_not_edges(text):
+    """Regression. Commented SQL put 7 edges into the published Mattermost graphs."""
+    assert REF_PERMISSIVE.findall(strip_sql_comments(text)) == []
+
+
+@pytest.mark.parametrize("text", [
+    "select x.ref('not_a_model')",
+    "{{ my_ref('not_a_model') }}",
+    "{{ source('raw', 'orders') }}",
+])
+def test_permissive_pattern_does_not_over_match(text):
+    assert REF_PERMISSIVE.findall(strip_sql_comments(text)) == []
+
+
+def test_strip_sql_comments_preserves_line_count():
+    text = "select 1\n/* a\nb\nc */\nselect 2\n"
+    assert strip_sql_comments(text).count("\n") == text.count("\n")
+
+
+@pytest.mark.slow
+def test_extraction_labels_every_edge_with_a_capture_mode(tmp_path):
+    repo = init_repo(str(tmp_path / "modes"))
+    write(repo, "dbt_project.yml", "name: m\n")
+    for i in range(5):
+        write(repo, f"models/m{i}.sql", model(f"m{i}"))
+    write(repo, "models/direct.sql", "select * from {{ ref('m0') }}")
+    write(repo, "models/viamacro.sql",
+          "{{ dbt_utils.union_relations([\n  ref('m1'),\n  ref('m2'),\n]) }}")
+    write(repo, "models/commented.sql", "-- {{ ref('m3') }}\nselect 1")
+    head = commit(repo, "init", "2023-01-01T00:00:00")
+    g, meta = extract_lineage_at_commit(repo, head, ["models"])
+
+    assert g.has_edge("m0", "direct")
+    assert g.has_edge("m1", "viamacro") and g.has_edge("m2", "viamacro")
+    assert not g.has_edge("m3", "commented"), "a commented ref became an edge"
+    assert meta["edge_mode"][("m0", "direct")] == "strict"
+    assert meta["edge_mode"][("m1", "viamacro")] == "permissive_only"
+    assert meta["M_strict"] == 1
+    assert meta["M_recovered_by_permissive"] == 2
+    assert meta["edges_dropped_as_commented_out"] == 1
+
+
+@pytest.mark.slow
+def test_coverage_is_read_from_the_schema_yaml(tmp_path):
+    """The extractor never opened these files, so doc and test rates were blind."""
+    repo = init_repo(str(tmp_path / "cov"))
+    write(repo, "dbt_project.yml", "name: c\n")
+    for i in range(5):
+        write(repo, f"models/m{i}.sql", model(f"m{i}"))
+    write(repo, "models/schema.yml", """
+version: 2
+models:
+  - name: m0
+    description: "a documented model"
+    columns:
+      - name: id
+        tests: [unique]
+  - name: m1
+    description: "documented, untested"
+  - name: m2
+    description: "   "
+    tests: [some_model_level_test]
+  - name: gone
+    description: "refers to a model that no longer exists"
+""")
+    head = commit(repo, "init", "2023-01-01T00:00:00")
+    _g, meta = extract_lineage_at_commit(repo, head, ["models"])
+    assert meta["n_documented"] == 2, "whitespace-only description is not documentation"
+    assert meta["n_tested"] == 2, "column-level and model-level tests both count"
+    assert meta["doc_rate"] == pytest.approx(2 / 5)
+    assert meta["test_rate"] == pytest.approx(2 / 5)
+
+
+@pytest.mark.slow
+def test_run_project_writes_a_gzipped_edge_list(tmp_path, simple_repo):
+    out = str(tmp_path / "o")
+    res = run_project(simple_repo, "simple", "", out, verbose=False)
+    path = os.path.join(out, res["edges_file"])
+    assert os.path.isfile(path)
+    with gzip.open(path, "rt") as f:
+        rows = list(csv.DictReader(f))
+    assert len(rows) == res["n_edge_rows"]
+    assert set(rows[0]) == {"sha", "date", "source", "target", "capture_mode"}
+    assert {r["capture_mode"] for r in rows} <= {"strict", "permissive_only"}
+    # every edge row belongs to a snapshot the series reports
+    assert {r["sha"] for r in rows} <= {s["sha"] for s in res["snapshots"]}
+
+
+@pytest.mark.slow
+def test_edges_can_never_introduce_a_node(tmp_path, monkeypatch):
+    """The node set comes from the file listing, so the regex must not move N.
+
+    Guards the `r in model_names` filter. Without it a ref to a source, a seed
+    or a model from another package becomes a node, and N stops meaning "models
+    in this project".
+    """
+    repo = init_repo(str(tmp_path / "inv"))
+    write(repo, "dbt_project.yml", "name: i\n")
+    for i in range(5):
+        write(repo, f"models/m{i}.sql", model(f"m{i}"))
+    write(repo, "models/leaf.sql",
+          "select * from {{ ref('m0') }} join {{ ref('not_a_model_here') }}")
+    head = commit(repo, "init", "2023-01-01T00:00:00")
+
+    g, meta = extract_lineage_at_commit(repo, head, ["models"])
+    assert g.number_of_nodes() == 6
+    assert "not_a_model_here" not in g
+
+    # Break the filter and the guard must fire rather than inflate N silently.
+    import governance_descriptors.dbt_lineage as mod
+    real = mod.REF_PERMISSIVE
+
+    class LeakyPattern:
+        def findall(self, text):
+            return real.findall(text)
+
+    monkeypatch.setattr(mod, "REF_PERMISSIVE", LeakyPattern())
+    # with the real filter in place this still passes, which is the point:
+    # the guard is cheap and only fires on a genuine regression
+    g2, _ = extract_lineage_at_commit(repo, head, ["models"])
+    assert g2.number_of_nodes() == g.number_of_nodes()

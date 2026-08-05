@@ -1,8 +1,8 @@
 {
  "project_id": "ImpulsoGov__saude-mental-indicadores",
  "repo_url": "https://github.com/ImpulsoGov/saude-mental-indicadores.git",
- "tool_version": "1.0.0",
- "extraction_started_utc": "2026-08-05T02:18:25Z",
+ "tool_version": "2.0.0",
+ "extraction_started_utc": "2026-08-05T04:49:55Z",
  "window_days": 30,
  "descriptors_computed": true,
  "status": "partial",
@@ -44,6 +44,8 @@
  "history_end": "2024-11-14T13:18:45",
  "n_snapshots_planned": 19,
  "model_paths_stable": false,
+ "edges_file": "edges/ImpulsoGov__saude-mental-indicadores.csv.gz",
+ "n_edge_rows": 1171,
  "snapshot_errors": [
   {
    "sha": "1453e512c2980c928363530285b51461a3c17253",
@@ -53,7 +55,7 @@
  ],
  "n_snapshots": 18,
  "snapshot_coverage": 0.9474,
- "extraction_finished_utc": "2026-08-05T02:20:30Z",
+ "extraction_finished_utc": "2026-08-05T04:50:59Z",
  "snapshot_shas": [
   "1a946ae85ba23410fff037ad001251b50f020b77",
   "76ffecbaa002a57692a6ab45d8d9fc1c07d7146d",
